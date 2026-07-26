@@ -79,6 +79,17 @@ examples/synthetic-company-research.json
 
 ### 作为 Codex Skill
 
+使用 Codex 自带的 Skill Installer 从公共仓库直接安装：
+
+```bash
+python3 \
+  "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
+  --repo farmcan/buffett-munger-company-research \
+  --path skills/research-buffett-munger-company
+```
+
+下一轮对话即可使用。需要保留开发 checkout 时，也可以 clone 后建立软链接：
+
 ```bash
 git clone https://github.com/farmcan/buffett-munger-company-research.git
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"

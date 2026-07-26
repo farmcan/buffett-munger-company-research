@@ -10,8 +10,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
 SCRIPT_DIR = Path(__file__).resolve().parent
+SKILL_ROOT = SCRIPT_DIR.parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
@@ -68,9 +68,9 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _repo_relative(path: Path) -> str:
+def _skill_relative(path: Path) -> str:
     try:
-        return str(path.resolve().relative_to(REPO_ROOT.resolve()))
+        return str(path.resolve().relative_to(SKILL_ROOT.resolve()))
     except ValueError:
         return str(path)
 
@@ -137,7 +137,7 @@ def validate_crosswalk(
     if not isinstance(ledger_ref, dict):
         errors.append("methodology_ledger must be an object")
     else:
-        expected_path = _repo_relative(ledger_path)
+        expected_path = _skill_relative(ledger_path)
         if ledger_ref.get("path") != expected_path:
             errors.append(
                 f"methodology_ledger.path must be {expected_path!r}, got {ledger_ref.get('path')!r}"
@@ -152,9 +152,7 @@ def validate_crosswalk(
     else:
         if company_contract.get("schema_version") != COMPANY_SCHEMA_VERSION:
             errors.append(f"company_contract.schema_version must match {COMPANY_SCHEMA_VERSION}")
-        if company_contract.get("implementation") != (
-            "skills/research-buffett-munger-company/scripts/company_research_validation.py"
-        ):
+        if company_contract.get("implementation") != "scripts/company_research_validation.py":
             errors.append("company_contract.implementation must point to the v2 validator")
         if company_contract.get("dimension_count") != len(EXPECTED_RESEARCH_DIMENSIONS):
             errors.append("company_contract.dimension_count must match the v2 contract")

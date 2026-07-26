@@ -3,12 +3,12 @@
   "artifact_type": "buffett_munger_methodology_implementation_crosswalk",
   "generated_at": "2026-07-26T15:37:17Z",
   "methodology_ledger": {
-    "path": "skills/research-buffett-munger-company/references/methodology-source-ledger.json",
+    "path": "references/methodology-source-ledger.json",
     "sha256": "5bbfb1a52984dcbce8ead191928ae81f4e22ede4d424459b2cb1d28643126ac4"
   },
   "company_contract": {
     "schema_version": "seed.stock-fundamentals-valuation.v2",
-    "implementation": "skills/research-buffett-munger-company/scripts/company_research_validation.py",
+    "implementation": "scripts/company_research_validation.py",
     "dimension_count": 25
   },
   "origin_definitions": {

@@ -77,7 +77,17 @@ tests/
 
 ## Use as a Codex skill
 
-Copy or symlink the skill folder into your Codex skills directory:
+Install directly from the public GitHub repository with Codex's bundled Skill Installer:
+
+```bash
+python3 \
+  "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
+  --repo farmcan/buffett-munger-company-research \
+  --path skills/research-buffett-munger-company
+```
+
+The install is available to Codex on the next turn. To keep a development checkout instead, clone
+and symlink the skill folder:
 
 ```bash
 git clone https://github.com/farmcan/buffett-munger-company-research.git
