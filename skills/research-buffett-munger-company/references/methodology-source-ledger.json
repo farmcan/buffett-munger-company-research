@@ -1,0 +1,925 @@
+{
+  "schema_version": "seed.buffett-munger-methodology-source-ledger.v1",
+  "artifact_type": "buffett_munger_methodology_source_ledger",
+  "snapshot_at": "2026-07-26T15:08:39Z",
+  "status": "validated_source_snapshot",
+  "method_boundary": {
+    "purpose": "Bind the production methodology to attributable public sources and keep engineering references separate from method authority.",
+    "principle_authority": [
+      "A",
+      "A-"
+    ],
+    "supplemental_tiers": [
+      "B"
+    ],
+    "engineering_tiers": [
+      "C"
+    ],
+    "prohibited_promotions": [
+      "A GitHub star count cannot promote a repository to method authority.",
+      "A secondary transcript cannot be labeled an official verbatim transcript.",
+      "A fixed threshold, weighted score or trading signal in an open-source repository cannot be attributed to Buffett or Munger without a primary source.",
+      "No third-party code or copyrighted long-form text was copied into the Seed methodology."
+    ]
+  },
+  "official_sources": [
+    {
+      "id": "berkshire_owner_manual",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "Berkshire Hathaway Owner's Manual",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/ownman.pdf",
+      "published_year": 1996,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "claim_ids": [
+        "owner_orientation",
+        "per_share_intrinsic_value",
+        "capital_allocation_and_candor",
+        "survival_and_leverage"
+      ],
+      "allowed_use": "Primary authority for owner-related business principles and intrinsic-value definition.",
+      "rights_boundary": "Store short paraphrases and citations; do not reproduce the document."
+    },
+    {
+      "id": "berkshire_1977_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "1977 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/1977.html",
+      "published_year": 1978,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": [
+        "business_selection_criteria",
+        "capital_returns_over_eps_growth"
+      ],
+      "allowed_use": "Primary authority for understandable businesses, long-term prospects, management, price and return-on-equity context.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_1983_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "1983 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/1983.html",
+      "published_year": 1984,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": [
+        "capital_allocation_and_candor",
+        "per_share_intrinsic_value"
+      ],
+      "allowed_use": "Primary authority for owner principles, issuance, debt and per-share value.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_1986_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "1986 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/1986.html",
+      "published_year": 1987,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": [
+        "owner_earnings"
+      ],
+      "allowed_use": "Primary authority for the owner-earnings concept and maintenance-capex uncertainty.",
+      "rights_boundary": "Store the formula as a paraphrased concept with citation; do not reproduce long passages."
+    },
+    {
+      "id": "berkshire_1989_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "1989 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/1989.html",
+      "published_year": 1990,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": [
+        "quality_over_cigar_butt",
+        "institutional_imperative"
+      ],
+      "allowed_use": "Primary authority for good-business economics and institutional-imperative risks.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_1996_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "1996 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/1996.html",
+      "published_year": 1997,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": [
+        "circle_of_competence",
+        "predictable_long_term_economics"
+      ],
+      "allowed_use": "Primary authority for circle-of-competence boundaries and long-term predictability.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_2005_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "2005 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/2005ltr.pdf",
+      "published_year": 2006,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "claim_ids": [
+        "moat_direction"
+      ],
+      "allowed_use": "Primary authority for testing whether a moat is widening or narrowing.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_2007_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "2007 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/2007ltr.pdf",
+      "published_year": 2008,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "claim_ids": [
+        "great_business_capital_intensity",
+        "durable_moat"
+      ],
+      "allowed_use": "Primary authority for durable moats, capital-light economics and predictability limits.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_2009_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "2009 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/2009ltr.pdf",
+      "published_year": 2010,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "claim_ids": [
+        "survival_and_leverage",
+        "industry_growth_value_leakage"
+      ],
+      "allowed_use": "Primary authority for financing resilience and the difference between industry growth and shareholder economics.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_2018_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "2018 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/2018ltr.pdf",
+      "published_year": 2019,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "claim_ids": [
+        "business_picker_not_market_timer",
+        "repurchase_per_share_value",
+        "owner_earnings",
+        "predictable_long_term_economics",
+        "great_business_capital_intensity"
+      ],
+      "allowed_use": "Primary authority for business ownership, price-sensitive repurchases and maintenance-capex economics.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_2021_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "2021 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/2021ltr.pdf",
+      "published_year": 2022,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "claim_ids": [
+        "business_picker_not_market_timer",
+        "capital_allocation_and_candor"
+      ],
+      "allowed_use": "Primary authority for the business-picker framing and owner communication.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_2022_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "2022 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/2022ltr.pdf",
+      "published_year": 2023,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "claim_ids": [
+        "patience_learning_uncertainty",
+        "survival_and_leverage"
+      ],
+      "allowed_use": "Primary authority for the published Munger maxims selected by Berkshire.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_2023_letter",
+      "tier": "A",
+      "source_kind": "official_primary",
+      "title": "2023 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "url": "https://www.berkshirehathaway.com/letters/2023ltr.pdf",
+      "published_year": 2024,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "claim_ids": [
+        "quality_over_cigar_butt",
+        "munger_method_contribution"
+      ],
+      "allowed_use": "Primary authority for Buffett's account of Munger's role in shifting Berkshire toward wonderful businesses at fair prices.",
+      "rights_boundary": "Store short paraphrases and citations."
+    },
+    {
+      "id": "berkshire_cnbc_meeting_archive",
+      "tier": "A-",
+      "source_kind": "berkshire_shared_authorized_archive",
+      "title": "Warren Buffett Archive: Berkshire Hathaway Annual Meetings",
+      "publisher": "CNBC with Berkshire Hathaway",
+      "url": "https://buffett.cnbc.com/annual-meetings/",
+      "published_year": 2018,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 403,
+      "retrieval_note": "Direct curl automation returned 403; the indexed archive and individual meeting transcript pages were available through search. CNBC states that Berkshire shared its internal recordings.",
+      "content_type": "text/html",
+      "claim_ids": [
+        "circle_of_competence",
+        "capital_allocation_and_candor",
+        "munger_method_contribution"
+      ],
+      "allowed_use": "Context verification through dated synchronized meeting transcripts; cite the exact year and segment.",
+      "rights_boundary": "Do not reproduce full transcripts or video."
+    },
+    {
+      "id": "usc_2007_munger_record",
+      "tier": "A-",
+      "source_kind": "official_university_event_record",
+      "title": "300 graduate from USC Law",
+      "publisher": "USC Gould School of Law",
+      "url": "https://gould.usc.edu/news/300-graduate-from-usc-law/",
+      "published_year": 2007,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": [
+        "patience_learning_uncertainty"
+      ],
+      "allowed_use": "Corroborate the dated university event and its summary of Munger's learning emphasis; not a full transcript.",
+      "rights_boundary": "Do not label the event summary a verbatim speech."
+    },
+    {
+      "id": "munger_1994_usc_transcript_chain",
+      "tier": "B",
+      "source_kind": "dated_secondary_transcript",
+      "title": "A Lesson on Elementary, Worldly Wisdom",
+      "publisher": "Munger Archive",
+      "url": "https://mungerarchive.com/recordings/usc-1994-worldly-wisdom/",
+      "published_year": 1994,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": [
+        "multidisciplinary_latticework"
+      ],
+      "allowed_use": "Supplemental structure for multidisciplinary models and checklist questions.",
+      "rights_boundary": "Not an official verbatim transcript; do not use as sole authority or reproduce long text."
+    },
+    {
+      "id": "munger_1995_misjudgment_transcript",
+      "tier": "B",
+      "source_kind": "dated_secondary_transcript",
+      "title": "The Psychology of Human Misjudgment",
+      "publisher": "James Clear",
+      "url": "https://jamesclear.com/great-speeches/the-psychology-of-human-misjudgment-by-charlie-munger",
+      "published_year": 1995,
+      "retrieved_at": "2026-07-26T15:08:39Z",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": [
+        "psychology_and_incentives"
+      ],
+      "allowed_use": "Supplemental structure for incentive and bias red-team checks.",
+      "rights_boundary": "Not an official verbatim transcript; do not use as sole authority or reproduce long text."
+    }
+  ],
+  "method_claims": [
+    {
+      "id": "owner_orientation",
+      "method_role": "core",
+      "statement": "Treat a share as a fractional ownership interest in a business and judge long-term business progress rather than short-term quotation changes.",
+      "source_ids": [
+        "berkshire_owner_manual"
+      ],
+      "gate_mappings": [
+        "identity_and_source_integrity",
+        "business_economics"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "per_share_intrinsic_value",
+      "method_role": "core",
+      "statement": "Optimize per-share intrinsic business value; intrinsic value is an estimate of discounted owner cash, not a precise reported number.",
+      "source_ids": [
+        "berkshire_owner_manual",
+        "berkshire_1983_letter"
+      ],
+      "gate_mappings": [
+        "intrinsic_value_and_margin_of_safety",
+        "management_and_capital_allocation"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "business_selection_criteria",
+      "method_role": "core",
+      "statement": "Research understandable businesses with favorable long-term prospects, capable and trustworthy management, and a sensible price.",
+      "source_ids": [
+        "berkshire_1977_letter"
+      ],
+      "gate_mappings": [
+        "circle_of_competence",
+        "business_economics",
+        "management_and_capital_allocation",
+        "intrinsic_value_and_margin_of_safety"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "capital_returns_over_eps_growth",
+      "method_role": "core",
+      "statement": "Separate genuine return improvement from growth created by a larger capital base; EPS growth alone is insufficient.",
+      "source_ids": [
+        "berkshire_1977_letter"
+      ],
+      "gate_mappings": [
+        "business_economics",
+        "owner_earnings"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "owner_earnings",
+      "method_role": "core",
+      "statement": "Bridge reported earnings to owner earnings by considering attributable non-cash charges, maintenance capex and required working capital, and retain uncertainty as a range.",
+      "source_ids": [
+        "berkshire_1986_letter",
+        "berkshire_2018_letter"
+      ],
+      "gate_mappings": [
+        "owner_earnings"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "quality_over_cigar_butt",
+      "method_role": "core",
+      "statement": "Prefer a durable, high-quality business at a sensible price to a statistically cheap mediocre business whose economics consume value.",
+      "source_ids": [
+        "berkshire_1989_letter",
+        "berkshire_2023_letter"
+      ],
+      "gate_mappings": [
+        "business_economics",
+        "durable_moat",
+        "intrinsic_value_and_margin_of_safety"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "institutional_imperative",
+      "method_role": "core",
+      "statement": "Test empire building, peer imitation, inertia and other incentives that can make management allocate capital against per-share value.",
+      "source_ids": [
+        "berkshire_1989_letter"
+      ],
+      "gate_mappings": [
+        "management_and_capital_allocation",
+        "decision_and_disconfirming_evidence"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "circle_of_competence",
+      "method_role": "core",
+      "statement": "The boundary and evidence quality of the circle of competence matter more than its size; outside-circle is a valid terminal state.",
+      "source_ids": [
+        "berkshire_1996_letter",
+        "berkshire_cnbc_meeting_archive"
+      ],
+      "gate_mappings": [
+        "circle_of_competence"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "predictable_long_term_economics",
+      "method_role": "core",
+      "statement": "A long holding horizon requires a defensible view of future business economics, not confidence in short-term price forecasts.",
+      "source_ids": [
+        "berkshire_1996_letter",
+        "berkshire_2018_letter"
+      ],
+      "gate_mappings": [
+        "circle_of_competence",
+        "business_economics"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "moat_direction",
+      "method_role": "core",
+      "statement": "A moat is a mechanism and a direction of change; test whether it is widening or narrowing and preserve disconfirming evidence.",
+      "source_ids": [
+        "berkshire_2005_letter"
+      ],
+      "gate_mappings": [
+        "durable_moat",
+        "decision_and_disconfirming_evidence"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "great_business_capital_intensity",
+      "method_role": "core",
+      "statement": "Distinguish businesses that can reinvest at attractive returns from capital-intensive businesses that consume cash merely to remain competitive.",
+      "source_ids": [
+        "berkshire_2007_letter",
+        "berkshire_2018_letter"
+      ],
+      "gate_mappings": [
+        "business_economics",
+        "owner_earnings"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "durable_moat",
+      "method_role": "core",
+      "statement": "High returns require a durable competitive mechanism; a famous manager or a high margin is not by itself a moat.",
+      "source_ids": [
+        "berkshire_2007_letter"
+      ],
+      "gate_mappings": [
+        "durable_moat"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "survival_and_leverage",
+      "method_role": "core",
+      "statement": "Avoid financing structures that can force permanent loss or dependence on external capital, even if leverage could improve average returns.",
+      "source_ids": [
+        "berkshire_owner_manual",
+        "berkshire_2009_letter",
+        "berkshire_2022_letter"
+      ],
+      "gate_mappings": [
+        "survival_and_balance_sheet"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "industry_growth_value_leakage",
+      "method_role": "core",
+      "statement": "Industry growth does not prove that a specific company will retain profits or attractive capital returns.",
+      "source_ids": [
+        "berkshire_2009_letter"
+      ],
+      "gate_mappings": [
+        "business_economics",
+        "durable_moat"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "business_picker_not_market_timer",
+      "method_role": "core",
+      "statement": "Separate business-value research from short-term market forecasting; price is an input to value comparison, not evidence of business quality.",
+      "source_ids": [
+        "berkshire_2018_letter",
+        "berkshire_2021_letter"
+      ],
+      "gate_mappings": [
+        "business_economics",
+        "intrinsic_value_and_margin_of_safety"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "repurchase_per_share_value",
+      "method_role": "core",
+      "statement": "Evaluate repurchases through price, intrinsic value, share-count change and opportunity cost for continuing owners.",
+      "source_ids": [
+        "berkshire_2018_letter"
+      ],
+      "gate_mappings": [
+        "management_and_capital_allocation",
+        "intrinsic_value_and_margin_of_safety"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "capital_allocation_and_candor",
+      "method_role": "core",
+      "statement": "Evaluate management through candid owner communication and the per-share results of reinvestment, acquisition, debt, distribution, repurchase and issuance decisions.",
+      "source_ids": [
+        "berkshire_owner_manual",
+        "berkshire_1983_letter",
+        "berkshire_2021_letter",
+        "berkshire_cnbc_meeting_archive"
+      ],
+      "gate_mappings": [
+        "management_and_capital_allocation",
+        "decision_and_disconfirming_evidence"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "patience_learning_uncertainty",
+      "method_role": "core",
+      "statement": "Preserve uncertainty, continue learning, wait for evidence and avoid leverage that removes the ability to wait.",
+      "source_ids": [
+        "berkshire_2022_letter",
+        "usc_2007_munger_record"
+      ],
+      "gate_mappings": [
+        "circle_of_competence",
+        "survival_and_balance_sheet",
+        "decision_and_disconfirming_evidence"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "munger_method_contribution",
+      "method_role": "core",
+      "statement": "Buffett's own account credits Munger with moving Berkshire away from merely cheap cigar-butt businesses toward wonderful businesses purchased at fair prices.",
+      "source_ids": [
+        "berkshire_2023_letter",
+        "berkshire_cnbc_meeting_archive"
+      ],
+      "gate_mappings": [
+        "business_economics",
+        "durable_moat",
+        "intrinsic_value_and_margin_of_safety"
+      ],
+      "status": "primary_supported"
+    },
+    {
+      "id": "multidisciplinary_latticework",
+      "method_role": "supplemental",
+      "statement": "Use multiple disciplines and explicit checklists to understand causal business systems and expose missing models.",
+      "source_ids": [
+        "munger_1994_usc_transcript_chain"
+      ],
+      "gate_mappings": [
+        "circle_of_competence",
+        "decision_and_disconfirming_evidence"
+      ],
+      "status": "secondary_transcript_supported_not_officially_complete"
+    },
+    {
+      "id": "psychology_and_incentives",
+      "method_role": "supplemental",
+      "statement": "Use incentive and cognitive-bias checks as red-team questions, supported by company facts rather than psychological labels.",
+      "source_ids": [
+        "munger_1995_misjudgment_transcript"
+      ],
+      "gate_mappings": [
+        "management_and_capital_allocation",
+        "decision_and_disconfirming_evidence"
+      ],
+      "status": "secondary_transcript_supported_not_officially_complete"
+    }
+  ],
+  "engineering_sources": [
+    {
+      "id": "github_agentskills_spec",
+      "tier": "C",
+      "repository": "agentskills/agentskills",
+      "url": "https://github.com/agentskills/agentskills",
+      "snapshot_at": "2026-07-26T15:08:39Z",
+      "stars": 23503,
+      "license_spdx": "Apache-2.0",
+      "archived": false,
+      "default_branch": "main",
+      "head_sha": "38a2ff82958afee88dadf4831509e6f7e9d8ef4e",
+      "relevant_paths": [
+        "README.md",
+        "docs"
+      ],
+      "adopt_patterns": [
+        "Portable skill folder structure",
+        "Progressive disclosure between SKILL.md, references and scripts"
+      ],
+      "reject_patterns": [
+        "No finance or Buffett-Munger method authority is implied by the skill format"
+      ],
+      "method_authority": false,
+      "code_reuse_status": "format_reference_only_no_code_copied"
+    },
+    {
+      "id": "github_openbb",
+      "tier": "C",
+      "repository": "OpenBB-finance/OpenBB",
+      "url": "https://github.com/OpenBB-finance/OpenBB",
+      "snapshot_at": "2026-07-26T15:08:39Z",
+      "stars": 71029,
+      "license_spdx": "NOASSERTION",
+      "archived": false,
+      "default_branch": "develop",
+      "head_sha": "3e071fcc2cd9f891cac6040ae60296dba76dab46",
+      "relevant_paths": [
+        "openbb_platform"
+      ],
+      "adopt_patterns": [
+        "Provider abstraction",
+        "Normalized multi-source data interfaces",
+        "Separation of data retrieval from analysis"
+      ],
+      "reject_patterns": [
+        "The repository is infrastructure, not Buffett-Munger method authority",
+        "Module and data licenses require separate review before reuse"
+      ],
+      "method_authority": false,
+      "code_reuse_status": "architecture_reference_only_no_code_copied"
+    },
+    {
+      "id": "github_ai_hedge_fund",
+      "tier": "C",
+      "repository": "virattt/ai-hedge-fund",
+      "url": "https://github.com/virattt/ai-hedge-fund",
+      "snapshot_at": "2026-07-26T15:08:39Z",
+      "stars": 62421,
+      "license_spdx": "MIT",
+      "archived": false,
+      "default_branch": "main",
+      "head_sha": "9557e64273e212635a4a28cbd8128df22f166c07",
+      "relevant_paths": [
+        "src/agents/warren_buffett.py",
+        "src/agents/charlie_munger.py",
+        "src/agents/fundamentals.py",
+        "src/agents/valuation.py"
+      ],
+      "adopt_patterns": [
+        "Role-separated agent orchestration",
+        "Structured intermediate outputs",
+        "Independent fundamentals and valuation stages"
+      ],
+      "reject_patterns": [
+        "Warren agent hard-codes thresholds such as ROE above 15 percent and debt-to-equity below 0.5",
+        "Munger agent combines moat, management, predictability and valuation with fixed weights",
+        "Bullish, bearish and neutral signals are not production research states",
+        "Margin and ROIC thresholds are not attributable Buffett-Munger rules"
+      ],
+      "method_authority": false,
+      "code_reuse_status": "workflow_reference_only_no_code_copied"
+    },
+    {
+      "id": "github_ai_berkshire",
+      "tier": "C",
+      "repository": "xbtlin/ai-berkshire",
+      "url": "https://github.com/xbtlin/ai-berkshire",
+      "snapshot_at": "2026-07-26T15:08:39Z",
+      "stars": 14170,
+      "license_spdx": "MIT",
+      "archived": false,
+      "default_branch": "main",
+      "head_sha": "634a399288a8eec7b65aaba6454c778fd82ed15d",
+      "relevant_paths": [
+        "codex-skills/investment-checklist/SKILL.md",
+        "codex-skills/deep-company-series/SKILL.md",
+        "codex-skills/management-deep-dive/SKILL.md",
+        "codex-skills/investment-research/SKILL.md"
+      ],
+      "adopt_patterns": [
+        "Information-richness and evidence-gap states",
+        "Deep-company research series",
+        "Management promise-versus-result review",
+        "Parallel evidence gathering and explicit bear case"
+      ],
+      "reject_patterns": [
+        "Uniform star ratings and hard thresholds across industries",
+        "ROE, gross-margin, leverage and safety-margin cutoffs presented as checklist standards",
+        "Buy, add-position or decision language",
+        "Attributions to investor masters that do not resolve to primary sources"
+      ],
+      "method_authority": false,
+      "code_reuse_status": "workflow_reference_only_no_code_copied"
+    },
+    {
+      "id": "github_finance_skills",
+      "tier": "C",
+      "repository": "himself65/finance-skills",
+      "url": "https://github.com/himself65/finance-skills",
+      "snapshot_at": "2026-07-26T15:08:39Z",
+      "stars": 3071,
+      "license_spdx": "MIT",
+      "archived": false,
+      "default_branch": "main",
+      "head_sha": "fa526ce0011800896e78037ffa0302ed54a3d94f",
+      "relevant_paths": [
+        "plugins/market-analysis/skills/company-valuation/SKILL.md",
+        "plugins/market-analysis/skills/company-valuation/references/dcf.md",
+        "plugins/market-analysis/skills/company-valuation/references/relative_valuation.md",
+        "plugins/market-analysis/skills/company-valuation/references/sotp.md"
+      ],
+      "adopt_patterns": [
+        "DCF, relative valuation and SOTP applicability routing",
+        "WACC and terminal-growth sensitivity",
+        "Bull, base and bear scenario presentation"
+      ],
+      "reject_patterns": [
+        "yfinance and live quote fields cannot substitute for statutory filing facts",
+        "US-centric default rates and method weights cannot be silently applied to A/H companies",
+        "A blended implied price is not a Buffett-Munger decision"
+      ],
+      "method_authority": false,
+      "code_reuse_status": "interface_reference_only_no_code_copied"
+    },
+    {
+      "id": "github_claude_trading_skills",
+      "tier": "C",
+      "repository": "tradermonty/claude-trading-skills",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "snapshot_at": "2026-07-26T15:08:39Z",
+      "stars": 2499,
+      "license_spdx": "MIT",
+      "archived": false,
+      "default_branch": "main",
+      "head_sha": "62a16359964b80de118716b0b8cf27520d4e6dfe",
+      "relevant_paths": [
+        "skills/data-quality-checker/SKILL.md",
+        "examples/weekly-trade-strategy/skills/us-stock-analysis/SKILL.md",
+        "examples/weekly-trade-strategy/skills/us-stock-analysis/references/fundamental-analysis.md"
+      ],
+      "adopt_patterns": [
+        "Reusable data-quality checks",
+        "Explicit missing-data handling",
+        "Environment and source diagnostics"
+      ],
+      "reject_patterns": [
+        "Technical and tactical trading signals cannot alter value-quality gates",
+        "A trading-oriented host workflow is not long-term method authority"
+      ],
+      "method_authority": false,
+      "code_reuse_status": "qa_reference_only_no_code_copied"
+    },
+    {
+      "id": "github_investskill",
+      "tier": "C",
+      "repository": "yennanliu/InvestSkill",
+      "url": "https://github.com/yennanliu/InvestSkill",
+      "snapshot_at": "2026-07-26T15:08:39Z",
+      "stars": 143,
+      "license_spdx": "MIT",
+      "archived": false,
+      "default_branch": "main",
+      "head_sha": "0524154f7500a8ce4e144a20a13ca804d39530c0",
+      "relevant_paths": [
+        "plugins/us-stock-analysis/skills/10k-digest/SKILL.md",
+        "plugins/us-stock-analysis/skills/bear-case/SKILL.md",
+        "plugins/us-stock-analysis/skills/result-validator/SKILL.md",
+        "plugins/us-stock-analysis/skills/fundamental-analysis/SKILL.md"
+      ],
+      "adopt_patterns": [
+        "SEC filing item-level evidence",
+        "Separate bear-case stage",
+        "Result validation after research"
+      ],
+      "reject_patterns": [
+        "Composite stock evaluation that mixes technicals, sentiment or macro into value quality",
+        "Buy or sell signals",
+        "US-only source assumptions for A/H work"
+      ],
+      "method_authority": false,
+      "code_reuse_status": "workflow_reference_only_no_code_copied"
+    },
+    {
+      "id": "github_octagon_skills",
+      "tier": "C",
+      "repository": "OctagonAI/skills",
+      "url": "https://github.com/OctagonAI/skills",
+      "snapshot_at": "2026-07-26T15:08:39Z",
+      "stars": 133,
+      "license_spdx": "MIT",
+      "archived": false,
+      "default_branch": "main",
+      "head_sha": "51e938c4d086f658de8bdcf734e864d34637167e",
+      "relevant_paths": [
+        "skills/earnings-analyst-master/SKILL.md",
+        "skills/earnings-analyst-master/references/workflow-overview.md",
+        "skills/cash-flow-statement/SKILL.md",
+        "skills/balance-sheet/SKILL.md"
+      ],
+      "adopt_patterns": [
+        "Earnings question decomposition",
+        "Separate management, guidance, competition and capital-allocation lenses",
+        "Composable financial-data skills"
+      ],
+      "reject_patterns": [
+        "External MCP output is not a statutory primary source by default",
+        "Metric ratings cannot replace company-level evidence reconciliation"
+      ],
+      "method_authority": false,
+      "code_reuse_status": "interface_reference_only_no_code_copied"
+    },
+    {
+      "id": "github_buffett_letters_skill",
+      "tier": "C",
+      "repository": "kangarooking/buffett-letters-skill",
+      "url": "https://github.com/kangarooking/buffett-letters-skill",
+      "snapshot_at": "2026-07-26T15:08:39Z",
+      "stars": 57,
+      "license_spdx": "MIT",
+      "archived": false,
+      "default_branch": "main",
+      "head_sha": "5b1fbe1d93f155fcf4acf236841bf8e1b5951c91",
+      "relevant_paths": [
+        "business-picker/SKILL.md",
+        "circle-of-competence/SKILL.md",
+        "economic-moat/SKILL.md",
+        "institutional-imperative/SKILL.md",
+        "look-through-earnings/SKILL.md"
+      ],
+      "adopt_patterns": [
+        "Atomic topic indexing across shareholder letters",
+        "Small reusable questions for circle, moat and capital allocation"
+      ],
+      "reject_patterns": [
+        "Year or chapter references must resolve back to the official letter",
+        "Author interpretations and thresholds are not primary authority"
+      ],
+      "method_authority": false,
+      "code_reuse_status": "topic_index_reference_only_no_code_copied"
+    },
+    {
+      "id": "github_poor_charlies_skill",
+      "tier": "C",
+      "repository": "kangarooking/poor-charlies-almanack-skill",
+      "url": "https://github.com/kangarooking/poor-charlies-almanack-skill",
+      "snapshot_at": "2026-07-26T15:08:39Z",
+      "stars": 26,
+      "license_spdx": "MIT",
+      "archived": false,
+      "default_branch": "main",
+      "head_sha": "d477e516920995b6e54d66c7441f17048188303a",
+      "relevant_paths": [
+        "inversion-thinking/SKILL.md",
+        "incentive-analysis/SKILL.md",
+        "latticework-mental-models/SKILL.md",
+        "misjudgment-psychology-checklist/SKILL.md"
+      ],
+      "adopt_patterns": [
+        "Inversion and incentive question structure",
+        "Bias checklist as a red-team prompt"
+      ],
+      "reject_patterns": [
+        "A repository summary of a copyrighted book is not an original public speech",
+        "No long-form book text or secondary paraphrase can become source-layer company facts"
+      ],
+      "method_authority": false,
+      "code_reuse_status": "question_structure_reference_only_no_code_copied"
+    }
+  ],
+  "audit_summary": {
+    "official_source_count": 17,
+    "core_claim_count": 19,
+    "supplemental_claim_count": 2,
+    "engineering_source_count": 10,
+    "github_method_authority_count": 0,
+    "copied_code_source_count": 0,
+    "primary_source_policy_status": "pass",
+    "github_separation_status": "pass"
+  }
+}

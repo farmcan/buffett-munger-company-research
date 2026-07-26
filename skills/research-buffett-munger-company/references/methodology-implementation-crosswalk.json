@@ -1,0 +1,700 @@
+{
+  "schema_version": "seed.buffett-munger-methodology-implementation-crosswalk.v1",
+  "artifact_type": "buffett_munger_methodology_implementation_crosswalk",
+  "generated_at": "2026-07-26T15:37:17Z",
+  "methodology_ledger": {
+    "path": "skills/research-buffett-munger-company/references/methodology-source-ledger.json",
+    "sha256": "5bbfb1a52984dcbce8ead191928ae81f4e22ede4d424459b2cb1d28643126ac4"
+  },
+  "company_contract": {
+    "schema_version": "seed.stock-fundamentals-valuation.v2",
+    "implementation": "skills/research-buffett-munger-company/scripts/company_research_validation.py",
+    "dimension_count": 25
+  },
+  "origin_definitions": {
+    "primary_method": "The research dimension directly implements one or more claims supported by the methodology source ledger. Concrete metrics remain Seed's operationalization.",
+    "mixed": "A primary-source method claim determines the question or gate, while Seed adds evidence, accounting or process controls needed for repeatable company research.",
+    "seed_operating_control": "Seed added the dimension to prevent evidence loss or false inference. It may provide context for a method claim but must not be attributed to Buffett or Munger."
+  },
+  "shared_row_contract": {
+    "required_company_artifact_fields": [
+      "dimension",
+      "status",
+      "summary",
+      "indicators",
+      "source_refs",
+      "positive_evidence",
+      "counter_evidence",
+      "source_gaps"
+    ],
+    "applicability_statuses": [
+      "applicable",
+      "not_applicable",
+      "unknown",
+      "conflicting"
+    ],
+    "indicator_fields": [
+      "id",
+      "status",
+      "summary",
+      "source_refs",
+      "source_gaps"
+    ],
+    "indicator_statuses": [
+      "conflicting",
+      "not_applicable",
+      "not_disclosed",
+      "observed"
+    ],
+    "evidence_layers": [
+      "facts",
+      "reported_claims",
+      "interpretations",
+      "assumptions",
+      "source_gaps"
+    ]
+  },
+  "dimensions": [
+    {
+      "id": "security_and_legal_subject",
+      "label_zh": "证券与法律主体",
+      "origin": "mixed",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "identity_and_source_integrity"
+      ],
+      "method_claim_ids": [
+        "owner_orientation"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "A share is an ownership interest, but exact issuer, share class, rights, currency and listing identity are Seed source-integrity controls.",
+      "required_indicator_ids": [
+        "exact_security_issuer_share_class_and_rights",
+        "dated_price_share_count_currency_and_listing_status"
+      ],
+      "required_checks": [
+        "Resolve exact security, legal issuer, share class and rights.",
+        "Bind price, share count, currency and listing status to dated primary evidence."
+      ],
+      "attribution_boundary": "The ownership orientation is primary-source method; the security-master and legal-identity protocol is Seed engineering."
+    },
+    {
+      "id": "control_and_beneficial_ownership",
+      "label_zh": "控制权与受益所有权",
+      "origin": "mixed",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "identity_and_source_integrity",
+        "management_and_capital_allocation"
+      ],
+      "method_claim_ids": [
+        "institutional_imperative",
+        "capital_allocation_and_candor"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed translates incentives, candor and capital stewardship into an auditable controller, related-party and minority-interest map.",
+      "required_indicator_ids": [
+        "controller_voting_pledges_and_cross_holdings",
+        "value_transfers_nci_and_related_party_exposure"
+      ],
+      "required_checks": [
+        "Identify controller, voting arrangements, pledges and cross-holdings.",
+        "Trace value transfers, NCI and related-party exposures."
+      ],
+      "attribution_boundary": "Primary sources support incentive and stewardship questions; the beneficial-ownership evidence graph is a Seed control."
+    },
+    {
+      "id": "business_model",
+      "label_zh": "商业模式",
+      "origin": "mixed",
+      "stage": "company_research",
+      "gate_ids": [
+        "circle_of_competence",
+        "business_economics"
+      ],
+      "method_claim_ids": [
+        "business_selection_criteria",
+        "circle_of_competence",
+        "predictable_long_term_economics",
+        "business_picker_not_market_timer"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed requires a falsifiable customer-to-cash explanation rather than a descriptive company summary.",
+      "required_indicator_ids": [
+        "payer_value_proposition_revenue_and_cash_mechanism",
+        "capital_needs_and_business_failure_variables"
+      ],
+      "required_checks": [
+        "Explain who pays, why they pay and how revenue becomes cash.",
+        "Name the capital needs and variables that would invalidate the explanation."
+      ],
+      "attribution_boundary": "Understanding and predictability are primary method; the customer-to-cash template is Seed operationalization."
+    },
+    {
+      "id": "revenue_structure",
+      "label_zh": "营收结构",
+      "origin": "seed_operating_control",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "business_economics"
+      ],
+      "method_claim_ids": [],
+      "context_claim_ids": [
+        "owner_orientation",
+        "predictable_long_term_economics"
+      ],
+      "seed_control_rationale": "Primary filings must separate product, segment, geography, volume, price, organic and acquired growth before long-term economics can be interpreted.",
+      "required_indicator_ids": [
+        "segment_product_and_geography_reconciliation",
+        "volume_price_mix_acquisition_and_scope_bridge"
+      ],
+      "required_checks": [
+        "Reconcile reported revenue by segment, product and geography.",
+        "Separate volume, price, mix, acquisition and accounting-scope effects."
+      ],
+      "attribution_boundary": "The detailed revenue bridge is a Seed evidence control, not a Buffett/Munger checklist item."
+    },
+    {
+      "id": "industry_chain_position",
+      "label_zh": "产业链位置",
+      "origin": "mixed",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "business_economics",
+        "durable_moat"
+      ],
+      "method_claim_ids": [
+        "industry_growth_value_leakage"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed maps where pricing power, inventory, credit and reinvestment risk sit so industry growth is not mistaken for shareholder value.",
+      "required_indicator_ids": [
+        "upstream_process_customer_payer_and_substitute_map",
+        "profit_pool_and_inventory_credit_technology_risk"
+      ],
+      "required_checks": [
+        "Map upstream inputs, core process, direct customers, end payer and substitutes.",
+        "Identify who captures the profit pool and who bears inventory, credit and technology risk."
+      ],
+      "attribution_boundary": "Industry growth versus shareholder economics is primary method; the value-chain graph is Seed operationalization."
+    },
+    {
+      "id": "product_and_unit_economics",
+      "label_zh": "产品与单位经济",
+      "origin": "mixed",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "circle_of_competence",
+        "business_economics"
+      ],
+      "method_claim_ids": [
+        "business_selection_criteria"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed requires price, volume, contribution economics, retention or utilization evidence appropriate to the industry.",
+      "required_indicator_ids": [
+        "price_volume_mix_and_incremental_economics",
+        "industry_denominator_scope_and_comparability"
+      ],
+      "required_checks": [
+        "Measure price, volume, mix and incremental economics at the most decision-useful grain.",
+        "State industry-specific denominator, scope and comparability limits."
+      ],
+      "attribution_boundary": "Favorable long-term economics is primary method; the unit-economics measurement contract is Seed engineering."
+    },
+    {
+      "id": "customers",
+      "label_zh": "客户",
+      "origin": "seed_operating_control",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "circle_of_competence",
+        "business_economics",
+        "durable_moat"
+      ],
+      "method_claim_ids": [],
+      "context_claim_ids": [
+        "business_selection_criteria",
+        "circle_of_competence"
+      ],
+      "seed_control_rationale": "Customer concentration, behavior, receivables and end demand are mandatory evidence for understanding a business and testing a moat.",
+      "required_indicator_ids": [
+        "customer_channel_end_user_and_payer_separation",
+        "concentration_retention_receivables_inventory_and_external_evidence"
+      ],
+      "required_checks": [
+        "Separate direct customer, channel, end user and payer.",
+        "Test concentration, retention, receivables, channel inventory and independent customer evidence."
+      ],
+      "attribution_boundary": "Mandatory customer evidence is a Seed control; it supports but is not itself a quoted Buffett/Munger rule."
+    },
+    {
+      "id": "suppliers",
+      "label_zh": "供应商",
+      "origin": "seed_operating_control",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "circle_of_competence",
+        "business_economics",
+        "survival_and_balance_sheet"
+      ],
+      "method_claim_ids": [],
+      "context_claim_ids": [
+        "business_selection_criteria",
+        "circle_of_competence"
+      ],
+      "seed_control_rationale": "Supply concentration, substitution, prepayments and cost pass-through can invalidate apparent economics or resilience.",
+      "required_indicator_ids": [
+        "critical_inputs_concentration_related_parties_and_substitution",
+        "terms_prepayments_availability_and_cost_pass_through"
+      ],
+      "required_checks": [
+        "Identify critical inputs, concentration, related parties and substitution time.",
+        "Test procurement terms, prepayments, availability and cost pass-through."
+      ],
+      "attribution_boundary": "Mandatory supplier evidence is a Seed control, not an attributed Buffett/Munger checklist."
+    },
+    {
+      "id": "competition_structure",
+      "label_zh": "竞争结构",
+      "origin": "mixed",
+      "stage": "company_research",
+      "gate_ids": [
+        "business_economics",
+        "durable_moat"
+      ],
+      "method_claim_ids": [
+        "durable_moat",
+        "industry_growth_value_leakage"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed turns the moat question into competitor, capacity, price, entry, exit and substitution tests.",
+      "required_indicator_ids": [
+        "entry_exit_capacity_price_and_substitution",
+        "competitor_customer_and_regulator_corroboration"
+      ],
+      "required_checks": [
+        "Measure entry, exit, capacity, price and substitution behavior.",
+        "Compare company claims with competitor, customer and regulator evidence."
+      ],
+      "attribution_boundary": "Durable competition protection is primary method; the market-structure test battery is Seed operationalization."
+    },
+    {
+      "id": "durable_moat",
+      "label_zh": "护城河及其方向",
+      "origin": "primary_method",
+      "stage": "company_research",
+      "gate_ids": [
+        "durable_moat",
+        "decision_and_disconfirming_evidence"
+      ],
+      "method_claim_ids": [
+        "quality_over_cigar_butt",
+        "moat_direction",
+        "durable_moat",
+        "munger_method_contribution"
+      ],
+      "context_claim_ids": [],
+      "required_indicator_ids": [
+        "mechanism_economic_result_durability_and_direction",
+        "strongest_falsifying_evidence"
+      ],
+      "required_checks": [
+        "Name the mechanism, visible economic result, durability and direction of change.",
+        "Preserve the strongest evidence that would falsify the moat."
+      ],
+      "attribution_boundary": "Moat, quality and direction are primary method; specific indicator thresholds are not."
+    },
+    {
+      "id": "revenue_quality",
+      "label_zh": "收入质量",
+      "origin": "seed_operating_control",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "business_economics",
+        "owner_earnings"
+      ],
+      "method_claim_ids": [],
+      "context_claim_ids": [
+        "owner_earnings",
+        "predictable_long_term_economics"
+      ],
+      "seed_control_rationale": "Seed checks whether recognized revenue converts to collectible cash and whether accounting timing obscures economics.",
+      "required_indicator_ids": [
+        "revenue_receivables_contract_assets_returns_and_cash",
+        "acquisition_period_end_channel_and_recognition_distortion"
+      ],
+      "required_checks": [
+        "Compare revenue growth with receivables, contract assets, returns and cash collection.",
+        "Identify acquisition, quarter-end, channel or recognition distortions."
+      ],
+      "attribution_boundary": "Revenue-quality diagnostics are Seed accounting controls that support owner-economics analysis."
+    },
+    {
+      "id": "earnings_quality",
+      "label_zh": "盈利质量",
+      "origin": "mixed",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "business_economics",
+        "owner_earnings"
+      ],
+      "method_claim_ids": [
+        "owner_earnings"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed reconciles parent-attributable profit, non-operating items, estimates and scope before using earnings economically.",
+      "required_indicator_ids": [
+        "reported_to_normalized_parent_earnings_bridge",
+        "tax_attribution_scope_and_adjustment_disagreement"
+      ],
+      "required_checks": [
+        "Bridge reported parent earnings to a defensible normalized range.",
+        "Preserve tax, attribution, accounting-scope and adjustment disagreements."
+      ],
+      "attribution_boundary": "Owner earnings is primary method; the reported-to-normalized accounting bridge is Seed operationalization."
+    },
+    {
+      "id": "cash_conversion",
+      "label_zh": "现金转换",
+      "origin": "mixed",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "owner_earnings",
+        "survival_and_balance_sheet"
+      ],
+      "method_claim_ids": [
+        "owner_earnings"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed separates operating cash, financing effects, restricted cash and industry-specific cash-flow distortion.",
+      "required_indicator_ids": [
+        "profit_operating_cash_and_distributable_cash_bridge",
+        "factoring_payment_restricted_cash_and_sector_scope"
+      ],
+      "required_checks": [
+        "Reconcile profit, operating cash and distributable cash across periods.",
+        "Identify factoring, delayed payments, restricted cash and financial-sector scope distortions."
+      ],
+      "attribution_boundary": "Cash economics is part of owner earnings; detailed cash-flow diagnostics are Seed controls."
+    },
+    {
+      "id": "working_capital",
+      "label_zh": "营运资本",
+      "origin": "mixed",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "business_economics",
+        "owner_earnings"
+      ],
+      "method_claim_ids": [
+        "owner_earnings",
+        "great_business_capital_intensity"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed measures the incremental working capital needed to sustain normal operations and growth.",
+      "required_indicator_ids": [
+        "receivables_inventory_payables_prepayments_and_contract_balances",
+        "sustainable_financing_vs_temporary_cash_release"
+      ],
+      "required_checks": [
+        "Track receivables, inventory, payables, prepayments and contract balances.",
+        "Separate sustainable operating financing from temporary cash release."
+      ],
+      "attribution_boundary": "Required incremental working capital follows owner-economics logic; the detailed schedule is Seed engineering."
+    },
+    {
+      "id": "capital_intensity",
+      "label_zh": "资本强度与再投资",
+      "origin": "primary_method",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "business_economics",
+        "owner_earnings"
+      ],
+      "method_claim_ids": [
+        "great_business_capital_intensity"
+      ],
+      "context_claim_ids": [],
+      "required_indicator_ids": [
+        "maintenance_vs_growth_investment_range",
+        "capex_capacity_utilization_and_competitive_requirements"
+      ],
+      "required_checks": [
+        "Separate maintenance from growth investment using a transparent range.",
+        "Relate capex, capacity, utilization and competitive requirements."
+      ],
+      "attribution_boundary": "Capital required to maintain competitive position is primary method; estimation techniques are Seed operationalization."
+    },
+    {
+      "id": "returns_on_capital",
+      "label_zh": "资本回报与增量回报",
+      "origin": "primary_method",
+      "stage": "company_research",
+      "gate_ids": [
+        "business_economics",
+        "management_and_capital_allocation"
+      ],
+      "method_claim_ids": [
+        "capital_returns_over_eps_growth"
+      ],
+      "context_claim_ids": [],
+      "required_indicator_ids": [
+        "multiperiod_roe_roic_and_incremental_returns",
+        "leverage_buyback_cycle_and_accounting_decomposition"
+      ],
+      "required_checks": [
+        "Reproduce multi-period ROE, ROIC and incremental returns with scope and formula.",
+        "Separate leverage, buybacks, cyclicality and accounting changes from operating returns."
+      ],
+      "attribution_boundary": "Returns on capital over cosmetic EPS growth is primary method; exact ratio formulas are Seed controls."
+    },
+    {
+      "id": "balance_sheet_survival",
+      "label_zh": "资产负债表与生存",
+      "origin": "primary_method",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "survival_and_balance_sheet"
+      ],
+      "method_claim_ids": [
+        "survival_and_leverage",
+        "patience_learning_uncertainty"
+      ],
+      "context_claim_ids": [],
+      "required_indicator_ids": [
+        "debt_liquidity_covenants_guarantees_pledges_and_off_balance",
+        "adverse_scenario_financing_need"
+      ],
+      "required_checks": [
+        "Test debt maturity, liquidity, covenants, guarantees, pledges and off-balance-sheet obligations.",
+        "Describe financing needs under an adverse but plausible operating scenario."
+      ],
+      "attribution_boundary": "Avoiding leverage-driven ruin and preserving uncertainty are primary method; stress design is Seed operationalization."
+    },
+    {
+      "id": "capital_allocation",
+      "label_zh": "资本配置",
+      "origin": "primary_method",
+      "stage": "company_research",
+      "gate_ids": [
+        "management_and_capital_allocation",
+        "intrinsic_value_and_margin_of_safety"
+      ],
+      "method_claim_ids": [
+        "per_share_intrinsic_value",
+        "repurchase_per_share_value",
+        "capital_allocation_and_candor"
+      ],
+      "context_claim_ids": [],
+      "required_indicator_ids": [
+        "reinvestment_ma_dividend_buyback_issuance_debt_and_cash_ledger",
+        "diluted_per_share_outcomes_and_opportunity_cost"
+      ],
+      "required_checks": [
+        "Track reinvestment, acquisitions, dividends, repurchases, issuance, debt and idle cash.",
+        "Judge outcomes per diluted share and against alternative uses of capital."
+      ],
+      "attribution_boundary": "Capital allocation and price-sensitive repurchases are primary method; the historical ledger is Seed engineering."
+    },
+    {
+      "id": "management",
+      "label_zh": "管理层",
+      "origin": "mixed",
+      "stage": "company_research",
+      "gate_ids": [
+        "management_and_capital_allocation",
+        "decision_and_disconfirming_evidence"
+      ],
+      "method_claim_ids": [
+        "institutional_imperative",
+        "capital_allocation_and_candor",
+        "psychology_and_incentives"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed tests claims against outcomes, incentives, compensation, succession and regulatory records rather than tone.",
+      "required_indicator_ids": [
+        "dated_commitments_vs_outcomes",
+        "incentives_compensation_succession_insider_actions_and_candor"
+      ],
+      "required_checks": [
+        "Compare dated management commitments with subsequent outcomes.",
+        "Evaluate incentives, compensation, succession, insider actions and candor."
+      ],
+      "attribution_boundary": "Candor, incentives and institutional behavior are method context; the commitment ledger is a Seed control."
+    },
+    {
+      "id": "governance_and_related_parties",
+      "label_zh": "治理与关联交易",
+      "origin": "mixed",
+      "stage": "company_research",
+      "gate_ids": [
+        "identity_and_source_integrity",
+        "management_and_capital_allocation",
+        "survival_and_balance_sheet"
+      ],
+      "method_claim_ids": [
+        "institutional_imperative",
+        "capital_allocation_and_candor",
+        "psychology_and_incentives"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed makes minority treatment, related transactions, guarantees and board dissent explicit failure tests.",
+      "required_indicator_ids": [
+        "related_sales_purchases_loans_guarantees_and_asset_transfers",
+        "pricing_minority_fairness_oversight_and_dissent"
+      ],
+      "required_checks": [
+        "Trace related sales, purchases, loans, guarantees and asset transfers.",
+        "Test pricing basis, minority fairness, audit oversight and dissent."
+      ],
+      "attribution_boundary": "Incentive and stewardship principles motivate the question; the governance checklist is Seed operationalization."
+    },
+    {
+      "id": "accounting_and_audit",
+      "label_zh": "会计与审计",
+      "origin": "seed_operating_control",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "identity_and_source_integrity",
+        "owner_earnings",
+        "survival_and_balance_sheet"
+      ],
+      "method_claim_ids": [],
+      "context_claim_ids": [
+        "owner_earnings",
+        "survival_and_leverage"
+      ],
+      "seed_control_rationale": "Audit opinion, accounting policy, restatements and primary-statement reproduction are required before economic interpretation.",
+      "required_indicator_ids": [
+        "audit_kam_standard_policy_and_restatement",
+        "statement_reproduction_and_conflict_preservation"
+      ],
+      "required_checks": [
+        "Record audit opinion, key audit matters, standard, policy changes and restatements.",
+        "Reproduce material statement facts and preserve conflicts."
+      ],
+      "attribution_boundary": "The accounting-integrity gate is Seed engineering; it protects but is not attributed as a Buffett/Munger checklist."
+    },
+    {
+      "id": "tax_and_legal",
+      "label_zh": "税务与法律",
+      "origin": "seed_operating_control",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "survival_and_balance_sheet"
+      ],
+      "method_claim_ids": [],
+      "context_claim_ids": [
+        "survival_and_leverage"
+      ],
+      "seed_control_rationale": "Unrecorded tax, litigation, environmental, data or regulatory liabilities can create permanent capital loss.",
+      "required_indicator_ids": [
+        "effective_deferred_and_uncertain_tax",
+        "litigation_penalties_compliance_and_tail_exposure"
+      ],
+      "required_checks": [
+        "Reconcile effective tax, deferred tax and material uncertain positions.",
+        "Record litigation, penalties, compliance obligations and plausible tail exposure."
+      ],
+      "attribution_boundary": "Detailed tax and legal review is a Seed survival control, not a direct Buffett/Munger claim."
+    },
+    {
+      "id": "per_share_economics",
+      "label_zh": "每股经济",
+      "origin": "primary_method",
+      "stage": "fact_pack",
+      "gate_ids": [
+        "business_economics",
+        "management_and_capital_allocation",
+        "intrinsic_value_and_margin_of_safety"
+      ],
+      "method_claim_ids": [
+        "per_share_intrinsic_value",
+        "repurchase_per_share_value"
+      ],
+      "context_claim_ids": [],
+      "required_indicator_ids": [
+        "basic_diluted_and_fully_diluted_share_reconciliation",
+        "per_share_growth_distribution_issuance_and_repurchase_outcomes"
+      ],
+      "required_checks": [
+        "Reconcile basic, diluted and fully diluted share counts across dates.",
+        "Translate growth, distributions, issuance and repurchases into per-share outcomes."
+      ],
+      "attribution_boundary": "Per-share intrinsic value is primary method; dilution reconciliation is Seed engineering."
+    },
+    {
+      "id": "valuation",
+      "label_zh": "估值与安全边际",
+      "origin": "primary_method",
+      "stage": "valuation",
+      "gate_ids": [
+        "intrinsic_value_and_margin_of_safety"
+      ],
+      "method_claim_ids": [
+        "business_selection_criteria",
+        "quality_over_cigar_butt",
+        "business_picker_not_market_timer",
+        "munger_method_contribution"
+      ],
+      "context_claim_ids": [],
+      "required_indicator_ids": [
+        "currency_consistent_value_range_assumptions_and_dates",
+        "reverse_expectations_sensitivities_and_cross_check"
+      ],
+      "required_checks": [
+        "Produce a currency-consistent value range with explicit assumptions and dates.",
+        "Run reverse expectations, sensitivities and at least one suitable cross-check."
+      ],
+      "attribution_boundary": "Price versus intrinsic value and quality-aware selection are primary method; DCF fields and scenario shapes are Seed implementation."
+    },
+    {
+      "id": "disconfirming_evidence",
+      "label_zh": "反方证据与失效条件",
+      "origin": "mixed",
+      "stage": "red_team",
+      "gate_ids": [
+        "decision_and_disconfirming_evidence"
+      ],
+      "method_claim_ids": [
+        "institutional_imperative",
+        "moat_direction",
+        "patience_learning_uncertainty",
+        "multidisciplinary_latticework",
+        "psychology_and_incentives"
+      ],
+      "context_claim_ids": [],
+      "seed_control_rationale": "Seed implements inversion and bias resistance through an independent red-team artifact and observable invalidation tests.",
+      "required_indicator_ids": [
+        "independent_strongest_counter_thesis",
+        "observable_invalidation_next_evidence_and_review_date"
+      ],
+      "required_checks": [
+        "State the strongest counter-thesis before merging the main conclusion.",
+        "Record observable invalidation conditions, next evidence and review date."
+      ],
+      "attribution_boundary": "Inversion, learning and incentive awareness are method context; the independent red-team stage is Seed engineering."
+    }
+  ],
+  "audit_summary": {
+    "dimension_count": 25,
+    "required_indicator_count": 50,
+    "origin_counts": {
+      "primary_method": 7,
+      "mixed": 12,
+      "seed_operating_control": 6
+    },
+    "stage_counts": {
+      "fact_pack": 16,
+      "company_research": 7,
+      "red_team": 1,
+      "valuation": 1
+    },
+    "direct_method_claim_count": 21,
+    "core_method_claim_count": 19,
+    "uncovered_core_method_claim_count": 0,
+    "covered_gate_count": 9,
+    "github_method_authority_count": 0
+  }
+}

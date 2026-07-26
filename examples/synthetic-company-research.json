@@ -1,0 +1,1114 @@
+{
+  "schema_version": "seed.stock-fundamentals-valuation.v2",
+  "artifact_type": "stock_fundamentals_valuation",
+  "artifact_role": "synthetic_example",
+  "status": "needs_human_review",
+  "generated_at": "2026-07-26T12:00:00+08:00",
+  "security": {
+    "security_id": "CN-SSE-000001",
+    "company_name": "Synthetic Example Company",
+    "ticker": "EXAMPLE",
+    "exchange": "TEST",
+    "listing_type": "synthetic_security",
+    "currency": "CNY",
+    "fiscal_year_end": "12-31",
+    "reporting_standard": "PRC_ASBE"
+  },
+  "as_of": {
+    "research_date": "2026-07-26",
+    "price": 10.0,
+    "price_date": "2026-07-25",
+    "price_source_ref": "price-source"
+  },
+  "methodology_refs": [
+    {
+      "id": "berkshire_1996_letter",
+      "title": "1996 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/1996.html",
+      "use": "Circle-of-competence and predictability gate."
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "annual-report",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "Annual report",
+      "url": "https://example.com/annual-report.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-03-20",
+      "accessed_at": "2026-07-26",
+      "period": "FY2025",
+      "audit_status": "audited",
+      "scope": "consolidated_group",
+      "covers": [
+        "financial_statements",
+        "business",
+        "governance"
+      ],
+      "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "price-source",
+      "tier": "C",
+      "source_type": "market_data",
+      "title": "Price source",
+      "url": "https://example.com/price-source",
+      "published_at_status": "known",
+      "published_at": "2026-07-25",
+      "accessed_at": "2026-07-26",
+      "period": "2026-07-25",
+      "audit_status": "not_applicable",
+      "scope": "listed_security",
+      "covers": [
+        "price"
+      ],
+      "content_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "source_boundaries": {
+    "facts": "Primary filing facts."
+  },
+  "ownership_structure": {
+    "controller": "Test controller"
+  },
+  "financial_history": {
+    "periods": [
+      {
+        "period": "FY2023"
+      },
+      {
+        "period": "FY2024"
+      },
+      {
+        "period": "FY2025"
+      }
+    ]
+  },
+  "segment_data": {
+    "status": "applicable",
+    "segments": [
+      "Test segment"
+    ]
+  },
+  "research_dimensions": [
+    {
+      "dimension": "security_and_legal_subject",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for security_and_legal_subject.",
+      "indicators": [
+        {
+          "id": "exact_security_issuer_share_class_and_rights",
+          "status": "observed",
+          "summary": "Observed evidence for exact_security_issuer_share_class_and_rights.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "dated_price_share_count_currency_and_listing_status",
+          "status": "observed",
+          "summary": "Observed evidence for dated_price_share_count_currency_and_listing_status.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "control_and_beneficial_ownership",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for control_and_beneficial_ownership.",
+      "indicators": [
+        {
+          "id": "controller_voting_pledges_and_cross_holdings",
+          "status": "observed",
+          "summary": "Observed evidence for controller_voting_pledges_and_cross_holdings.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "value_transfers_nci_and_related_party_exposure",
+          "status": "observed",
+          "summary": "Observed evidence for value_transfers_nci_and_related_party_exposure.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "business_model",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for business_model.",
+      "indicators": [
+        {
+          "id": "payer_value_proposition_revenue_and_cash_mechanism",
+          "status": "observed",
+          "summary": "Observed evidence for payer_value_proposition_revenue_and_cash_mechanism.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "capital_needs_and_business_failure_variables",
+          "status": "observed",
+          "summary": "Observed evidence for capital_needs_and_business_failure_variables.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "revenue_structure",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for revenue_structure.",
+      "indicators": [
+        {
+          "id": "segment_product_and_geography_reconciliation",
+          "status": "observed",
+          "summary": "Observed evidence for segment_product_and_geography_reconciliation.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "volume_price_mix_acquisition_and_scope_bridge",
+          "status": "observed",
+          "summary": "Observed evidence for volume_price_mix_acquisition_and_scope_bridge.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "industry_chain_position",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for industry_chain_position.",
+      "indicators": [
+        {
+          "id": "upstream_process_customer_payer_and_substitute_map",
+          "status": "observed",
+          "summary": "Observed evidence for upstream_process_customer_payer_and_substitute_map.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "profit_pool_and_inventory_credit_technology_risk",
+          "status": "observed",
+          "summary": "Observed evidence for profit_pool_and_inventory_credit_technology_risk.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "product_and_unit_economics",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for product_and_unit_economics.",
+      "indicators": [
+        {
+          "id": "price_volume_mix_and_incremental_economics",
+          "status": "observed",
+          "summary": "Observed evidence for price_volume_mix_and_incremental_economics.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "industry_denominator_scope_and_comparability",
+          "status": "observed",
+          "summary": "Observed evidence for industry_denominator_scope_and_comparability.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "customers",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for customers.",
+      "indicators": [
+        {
+          "id": "customer_channel_end_user_and_payer_separation",
+          "status": "observed",
+          "summary": "Observed evidence for customer_channel_end_user_and_payer_separation.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "concentration_retention_receivables_inventory_and_external_evidence",
+          "status": "observed",
+          "summary": "Observed evidence for concentration_retention_receivables_inventory_and_external_evidence.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "suppliers",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for suppliers.",
+      "indicators": [
+        {
+          "id": "critical_inputs_concentration_related_parties_and_substitution",
+          "status": "observed",
+          "summary": "Observed evidence for critical_inputs_concentration_related_parties_and_substitution.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "terms_prepayments_availability_and_cost_pass_through",
+          "status": "observed",
+          "summary": "Observed evidence for terms_prepayments_availability_and_cost_pass_through.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "competition_structure",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for competition_structure.",
+      "indicators": [
+        {
+          "id": "entry_exit_capacity_price_and_substitution",
+          "status": "observed",
+          "summary": "Observed evidence for entry_exit_capacity_price_and_substitution.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "competitor_customer_and_regulator_corroboration",
+          "status": "observed",
+          "summary": "Observed evidence for competitor_customer_and_regulator_corroboration.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "durable_moat",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for durable_moat.",
+      "indicators": [
+        {
+          "id": "mechanism_economic_result_durability_and_direction",
+          "status": "observed",
+          "summary": "Observed evidence for mechanism_economic_result_durability_and_direction.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "strongest_falsifying_evidence",
+          "status": "observed",
+          "summary": "Observed evidence for strongest_falsifying_evidence.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "revenue_quality",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for revenue_quality.",
+      "indicators": [
+        {
+          "id": "revenue_receivables_contract_assets_returns_and_cash",
+          "status": "observed",
+          "summary": "Observed evidence for revenue_receivables_contract_assets_returns_and_cash.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "acquisition_period_end_channel_and_recognition_distortion",
+          "status": "observed",
+          "summary": "Observed evidence for acquisition_period_end_channel_and_recognition_distortion.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "earnings_quality",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for earnings_quality.",
+      "indicators": [
+        {
+          "id": "reported_to_normalized_parent_earnings_bridge",
+          "status": "observed",
+          "summary": "Observed evidence for reported_to_normalized_parent_earnings_bridge.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "tax_attribution_scope_and_adjustment_disagreement",
+          "status": "observed",
+          "summary": "Observed evidence for tax_attribution_scope_and_adjustment_disagreement.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "cash_conversion",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for cash_conversion.",
+      "indicators": [
+        {
+          "id": "profit_operating_cash_and_distributable_cash_bridge",
+          "status": "observed",
+          "summary": "Observed evidence for profit_operating_cash_and_distributable_cash_bridge.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "factoring_payment_restricted_cash_and_sector_scope",
+          "status": "observed",
+          "summary": "Observed evidence for factoring_payment_restricted_cash_and_sector_scope.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "working_capital",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for working_capital.",
+      "indicators": [
+        {
+          "id": "receivables_inventory_payables_prepayments_and_contract_balances",
+          "status": "observed",
+          "summary": "Observed evidence for receivables_inventory_payables_prepayments_and_contract_balances.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "sustainable_financing_vs_temporary_cash_release",
+          "status": "observed",
+          "summary": "Observed evidence for sustainable_financing_vs_temporary_cash_release.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "capital_intensity",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for capital_intensity.",
+      "indicators": [
+        {
+          "id": "maintenance_vs_growth_investment_range",
+          "status": "observed",
+          "summary": "Observed evidence for maintenance_vs_growth_investment_range.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "capex_capacity_utilization_and_competitive_requirements",
+          "status": "observed",
+          "summary": "Observed evidence for capex_capacity_utilization_and_competitive_requirements.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "returns_on_capital",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for returns_on_capital.",
+      "indicators": [
+        {
+          "id": "multiperiod_roe_roic_and_incremental_returns",
+          "status": "observed",
+          "summary": "Observed evidence for multiperiod_roe_roic_and_incremental_returns.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "leverage_buyback_cycle_and_accounting_decomposition",
+          "status": "observed",
+          "summary": "Observed evidence for leverage_buyback_cycle_and_accounting_decomposition.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "balance_sheet_survival",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for balance_sheet_survival.",
+      "indicators": [
+        {
+          "id": "debt_liquidity_covenants_guarantees_pledges_and_off_balance",
+          "status": "observed",
+          "summary": "Observed evidence for debt_liquidity_covenants_guarantees_pledges_and_off_balance.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "adverse_scenario_financing_need",
+          "status": "observed",
+          "summary": "Observed evidence for adverse_scenario_financing_need.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "capital_allocation",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for capital_allocation.",
+      "indicators": [
+        {
+          "id": "reinvestment_ma_dividend_buyback_issuance_debt_and_cash_ledger",
+          "status": "observed",
+          "summary": "Observed evidence for reinvestment_ma_dividend_buyback_issuance_debt_and_cash_ledger.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "diluted_per_share_outcomes_and_opportunity_cost",
+          "status": "observed",
+          "summary": "Observed evidence for diluted_per_share_outcomes_and_opportunity_cost.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "management",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for management.",
+      "indicators": [
+        {
+          "id": "dated_commitments_vs_outcomes",
+          "status": "observed",
+          "summary": "Observed evidence for dated_commitments_vs_outcomes.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "incentives_compensation_succession_insider_actions_and_candor",
+          "status": "observed",
+          "summary": "Observed evidence for incentives_compensation_succession_insider_actions_and_candor.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "governance_and_related_parties",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for governance_and_related_parties.",
+      "indicators": [
+        {
+          "id": "related_sales_purchases_loans_guarantees_and_asset_transfers",
+          "status": "observed",
+          "summary": "Observed evidence for related_sales_purchases_loans_guarantees_and_asset_transfers.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "pricing_minority_fairness_oversight_and_dissent",
+          "status": "observed",
+          "summary": "Observed evidence for pricing_minority_fairness_oversight_and_dissent.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "accounting_and_audit",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for accounting_and_audit.",
+      "indicators": [
+        {
+          "id": "audit_kam_standard_policy_and_restatement",
+          "status": "observed",
+          "summary": "Observed evidence for audit_kam_standard_policy_and_restatement.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "statement_reproduction_and_conflict_preservation",
+          "status": "observed",
+          "summary": "Observed evidence for statement_reproduction_and_conflict_preservation.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "tax_and_legal",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for tax_and_legal.",
+      "indicators": [
+        {
+          "id": "effective_deferred_and_uncertain_tax",
+          "status": "observed",
+          "summary": "Observed evidence for effective_deferred_and_uncertain_tax.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "litigation_penalties_compliance_and_tail_exposure",
+          "status": "observed",
+          "summary": "Observed evidence for litigation_penalties_compliance_and_tail_exposure.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "per_share_economics",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for per_share_economics.",
+      "indicators": [
+        {
+          "id": "basic_diluted_and_fully_diluted_share_reconciliation",
+          "status": "observed",
+          "summary": "Observed evidence for basic_diluted_and_fully_diluted_share_reconciliation.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "per_share_growth_distribution_issuance_and_repurchase_outcomes",
+          "status": "observed",
+          "summary": "Observed evidence for per_share_growth_distribution_issuance_and_repurchase_outcomes.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "valuation",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for valuation.",
+      "indicators": [
+        {
+          "id": "currency_consistent_value_range_assumptions_and_dates",
+          "status": "observed",
+          "summary": "Observed evidence for currency_consistent_value_range_assumptions_and_dates.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "reverse_expectations_sensitivities_and_cross_check",
+          "status": "observed",
+          "summary": "Observed evidence for reverse_expectations_sensitivities_and_cross_check.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    },
+    {
+      "dimension": "disconfirming_evidence",
+      "status": "applicable",
+      "summary": "Evidence-backed test coverage for disconfirming_evidence.",
+      "indicators": [
+        {
+          "id": "independent_strongest_counter_thesis",
+          "status": "observed",
+          "summary": "Observed evidence for independent_strongest_counter_thesis.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "observable_invalidation_next_evidence_and_review_date",
+          "status": "observed",
+          "summary": "Observed evidence for observable_invalidation_next_evidence_and_review_date.",
+          "source_refs": [
+            "annual-report"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "annual-report"
+      ],
+      "positive_evidence": [
+        "Primary filing evidence."
+      ],
+      "counter_evidence": [],
+      "source_gaps": []
+    }
+  ],
+  "earnings_quality_bridge": {
+    "reported_parent_net_income": 1.0
+  },
+  "capital_allocation": {
+    "status": "reviewed",
+    "uses": [
+      "reinvestment"
+    ]
+  },
+  "balance_sheet_quality": {
+    "status": "reviewed",
+    "net_debt": 0.0
+  },
+  "owner_earnings": {
+    "status": "calculated",
+    "currency": "CNY",
+    "range": [
+      {
+        "case": "low",
+        "value": 0.8,
+        "formula": "earnings - reinvestment"
+      },
+      {
+        "case": "high",
+        "value": 1.0,
+        "formula": "earnings - maintenance"
+      }
+    ],
+    "limitations": [
+      "Maintenance capex is estimated."
+    ]
+  },
+  "pe_matrix": [
+    {
+      "label": "reported_fy",
+      "status": "calculated",
+      "price": 10.0,
+      "currency": "CNY",
+      "price_as_of": "2026-07-25",
+      "eps": 1.0,
+      "eps_period": "FY2025",
+      "eps_type": "reported_diluted",
+      "formula": "10 / 1",
+      "pe": 10.0,
+      "confidence": "high"
+    },
+    {
+      "label": "reported_ttm",
+      "status": "calculated",
+      "price": 10.0,
+      "currency": "CNY",
+      "price_as_of": "2026-07-25",
+      "eps": 1.0,
+      "eps_period": "TTM",
+      "eps_type": "reported_diluted",
+      "formula": "10 / 1",
+      "pe": 10.0,
+      "confidence": "high"
+    }
+  ],
+  "forward_scenarios": {
+    "currency": "CNY",
+    "price_anchor": 10.0,
+    "scenarios": [
+      {
+        "scenario": "bear",
+        "status": "calculated_pe",
+        "forecast_eps": 0.8,
+        "implied_pe_at_current_price": 12.5
+      },
+      {
+        "scenario": "base",
+        "status": "calculated_pe",
+        "forecast_eps": 1.0,
+        "implied_pe_at_current_price": 10.0
+      },
+      {
+        "scenario": "upside",
+        "status": "calculated_pe",
+        "forecast_eps": 1.25,
+        "implied_pe_at_current_price": 8.0
+      }
+    ]
+  },
+  "intrinsic_value_scenarios": {
+    "currency": "CNY",
+    "scenarios": [
+      {
+        "scenario": "conservative",
+        "status": "calculated",
+        "discount_rate_pct": 10.0,
+        "terminal_growth_pct": 1.0,
+        "intrinsic_value_per_share": 7.0
+      },
+      {
+        "scenario": "base",
+        "status": "calculated",
+        "discount_rate_pct": 9.0,
+        "terminal_growth_pct": 2.0,
+        "intrinsic_value_per_share": 10.0
+      },
+      {
+        "scenario": "high",
+        "status": "calculated",
+        "discount_rate_pct": 8.0,
+        "terminal_growth_pct": 2.5,
+        "intrinsic_value_per_share": 13.0
+      }
+    ]
+  },
+  "moat_evidence": {
+    "positive_evidence": [
+      "High returns with primary-source support."
+    ],
+    "counter_evidence": [
+      "Returns may regress."
+    ],
+    "missing_tests": [
+      "Independent customer evidence."
+    ]
+  },
+  "red_team": [
+    {
+      "risk": "Demand"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "identity_and_source_integrity",
+      "result": "pass",
+      "reason": "Evidence-backed calibration result."
+    },
+    {
+      "gate": "circle_of_competence",
+      "result": "pass",
+      "reason": "Evidence-backed calibration result."
+    },
+    {
+      "gate": "business_economics",
+      "result": "pass",
+      "reason": "Evidence-backed calibration result."
+    },
+    {
+      "gate": "durable_moat",
+      "result": "pass",
+      "reason": "Evidence-backed calibration result."
+    },
+    {
+      "gate": "management_and_capital_allocation",
+      "result": "pass",
+      "reason": "Evidence-backed calibration result."
+    },
+    {
+      "gate": "owner_earnings",
+      "result": "pass",
+      "reason": "Evidence-backed calibration result."
+    },
+    {
+      "gate": "survival_and_balance_sheet",
+      "result": "pass",
+      "reason": "Evidence-backed calibration result."
+    },
+    {
+      "gate": "intrinsic_value_and_margin_of_safety",
+      "result": "pass",
+      "reason": "Evidence-backed calibration result."
+    },
+    {
+      "gate": "decision_and_disconfirming_evidence",
+      "result": "pass",
+      "reason": "Evidence-backed calibration result."
+    }
+  ],
+  "historical_valuation": {
+    "status": "limited_history"
+  },
+  "price_move_attribution": {
+    "status": "not_causal"
+  },
+  "source_gaps": [
+    {
+      "gap": "Maintenance capex"
+    }
+  ],
+  "invalidation_tests": [
+    {
+      "test": "Margin durability"
+    }
+  ],
+  "review": {
+    "human_review_required": true
+  },
+  "disclaimer": "Research support only; not investment advice."
+}

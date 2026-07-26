@@ -1,0 +1,4 @@
+interface:
+  display_name: "Buffett–Munger Company Research"
+  short_description: "Source-backed company quality and value research"
+  default_prompt: "Use $research-buffett-munger-company to research this listed company with primary sources, owner earnings, moat evidence, valuation scenarios, and a red-team review."
