@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this research workflow, please cite the repository."
+title: "Buffett–Munger Company Research"
+type: software
+version: 0.1.0
+date-released: 2026-07-27
+authors:
+  - family-names: "farmcan"
+repository-code: "https://github.com/farmcan/buffett-munger-company-research"
+url: "https://github.com/farmcan/buffett-munger-company-research"
+license: MIT
+keywords:
+  - value investing
+  - company research
+  - Buffett
+  - Munger
+  - financial analysis
+  - Agent Skill
+  - Hong Kong Stock Connect
+abstract: >-
+  An independent, unofficial, source-backed company-research workflow that
+  translates publicly documented Buffett and Munger principles into an
+  auditable nine-gate contract, 25 research dimensions, 50 required indicator
+  families, deterministic validators, and a human-review boundary.

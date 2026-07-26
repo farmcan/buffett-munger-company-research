@@ -194,9 +194,11 @@ The repository does not bundle a live eligibility list because eligibility chang
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Changes to a method claim require a source-ledger update;
 changes to a dimension, indicator, stage, or gate require a crosswalk and validator update.
+The evidence-based path from v0.1 to v1.0 is tracked in [ROADMAP.md](ROADMAP.md).
 
 ## License and disclaimer
 
 Original code and documentation in this repository are available under the [MIT License](LICENSE).
 Third-party source documents and names remain the property of their respective owners and are not
-redistributed here. Read [DISCLAIMER.md](DISCLAIMER.md) before use.
+redistributed here. Read [DISCLAIMER.md](DISCLAIMER.md) before use. Cite the project using
+[CITATION.cff](CITATION.cff).

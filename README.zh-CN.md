@@ -172,4 +172,5 @@ GitHub 高星项目只用于借鉴 Skill 包装、provider 分层、数据审计
 
 本仓库的原创代码和文档采用 [MIT License](LICENSE)。第三方来源文件和名称仍归各自权利人
 所有，仓库只保留短摘要、链接和研究用途边界。使用前请阅读
-[DISCLAIMER.md](DISCLAIMER.md)。
+[DISCLAIMER.md](DISCLAIMER.md)。从 v0.1 到 v1.0 的验收路线见
+[ROADMAP.md](ROADMAP.md)，引用信息见 [CITATION.cff](CITATION.cff)。
