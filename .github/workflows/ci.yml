@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - run: ruff check .
+      - run: pytest
+      - run: >-
+          python
+          skills/research-buffett-munger-company/scripts/validate_company_research.py
+          examples/synthetic-company-research.json
+      - run: >-
+          python
+          skills/research-buffett-munger-company/scripts/validate_methodology_source_ledger.py
+          skills/research-buffett-munger-company/references/methodology-source-ledger.json
+      - run: >-
+          python
+          skills/research-buffett-munger-company/scripts/validate_methodology_implementation_crosswalk.py
+          skills/research-buffett-munger-company/references/methodology-implementation-crosswalk.json
