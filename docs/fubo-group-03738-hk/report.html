@@ -116,6 +116,7 @@
     <a href="#capital">债务与摊薄</a>
     <a href="#ai-thesis">AI版权</a>
     <a href="#market-pricing">估值</a>
+    <a href="#peer-valuation">同行估值</a>
     <a href="#event-monitor">事件监控</a>
     <a href="#buffett">巴芒框架</a>
     <a href="#dimensions">25×50×9</a>
@@ -332,6 +333,19 @@
 </div>
 <h3>PE 分母矩阵</h3>
 <div class="table-wrap"><table class=""><thead><tr><th>分母</th><th>EPS</th><th>PE</th><th>状态</th><th>限制</th></tr></thead><tbody><tr><td>FY2025 reported diluted</td><td>0.0775</td><td>30.84×</td><td>calculated</td><td>静态 FY，不是 TTM</td></tr><tr><td>TTM to 2026Q1</td><td>—</td><td>—</td><td>unavailable</td><td>Q1 无利润/EPS</td></tr><tr><td>company adjusted group proxy</td><td>0.0901</td><td>26.51×</td><td>illustrative only</td><td>集团利润/母公司股数范围错配</td></tr><tr><td>normalized / owner earnings</td><td>—</td><td>—</td><td>unavailable</td><td>维护研发和正常营运资本不可审计</td></tr></tbody></table></div>
+<h3 id="peer-valuation">同行估值：没有纯同行，也必须把“为什么不能比”展示出来</h3>
+<p>阜博的利润池横跨版权指纹、权利数据、平台工作流、追踪归因与变现。公开市场暂未找到三家同时覆盖这些环节的纯同行。Veritone 是 AI 媒体工作流相邻公司，Getty 与 Shutterstock 是内容授权平台；它们可以帮助识别商业模式和生存风险，但不能硬凑成阜博的 PE 中位数。</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>公司</th><th>角色 / 资格</th><th>价格日期</th><th>FY2025 EPS</th><th>PE</th><th>为何相邻</th><th>为何不能进入中位数</th><th>主源</th></tr></thead>
+  <tbody>
+    <tr><td>阜博集团 03738.HK</td><td><span class="tag good">target</span></td><td>HK$2.39<br>2026-07-27</td><td>HK$0.0775 diluted</td><td>30.84×</td><td>跨平台版权识别、权利数据、运营与变现</td><td>TTM、forward 与 owner earnings 分母仍不可得</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043003894.pdf">FY2025 年报</a></td></tr>
+    <tr><td>Veritone / VERI</td><td><span class="tag warn">excluded</span></td><td>US$1.05<br>2026-07-27</td><td>−US$1.76</td><td>N/M</td><td>AI 媒体工作流相邻</td><td>持续亏损，业务组合、债务与版权经济性不同</td><td><a href="https://www.sec.gov/Archives/edgar/data/1615165/000162828026025214/veri-20251231.htm">FY2025 10-K</a><br><small>Item 8 EPS table · SEC text lines 1819—1823</small></td></tr>
+    <tr><td>Getty Images / GETY</td><td><span class="tag warn">excluded</span></td><td>US$0.4178<br>2026-07-27</td><td>−US$0.50</td><td>N/M</td><td>内容库、许可与权利资产相邻</td><td>不是跨平台版权 SaaS/变现中间层，且 GAAP 亏损</td><td><a href="https://www.sec.gov/Archives/edgar/data/1898496/000162828026018160/gety-20251231.htm">FY2025 10-K</a><br><small>Item 8 EPS table · SEC text lines 2294—2298</small></td></tr>
+    <tr><td>Shutterstock / SSTK</td><td><span class="tag warn">excluded</span></td><td>US$5.81<br>2026-07-27</td><td>US$1.25</td><td>4.65×</td><td>创意内容搜索与授权相邻</td><td>客户、成本、平台角色与事件状态差异过大</td><td><a href="https://www.sec.gov/Archives/edgar/data/1549346/000154934626000008/sstk-20251231.htm">FY2025 10-K</a><br><small>Item 8 EPS table · SEC text lines 1877—1882</small></td></tr>
+    <tr><td>合格上市同行集合</td><td><span class="tag warn">empty</span></td><td>2026-07-27</td><td>—</td><td>unavailable</td><td>未找到 ≥3 家纯同行</td><td>“无中位数”本身就是结论；平台内部工具也不是上市可比公司</td><td><a href="./data/peer-valuation-comparison.csv">完整矩阵</a></td></tr>
+  </tbody>
+</table></div>
+<div class="callout"><strong>可支持的结论：</strong>阜博 30.84× 静态 FY PE 不能与 Shutterstock 的 4.65×直接比较，也不能用两个亏损样本推导区间。当前相对同行估值状态是 <code>not_determinable</code>；更有用的交叉检查仍是全摊薄每股现金收益、应收、资本化研发、MRR/NRR 质量与 9 月可转债资金桥。</div>
 <p><strong>高估/低估空间暂不输出。</strong> 当前 FY PE 可复算，但没有 TTM、forward、owner earnings 或无前视偏差历史分位数。价格低于 200 日均线和 52 周高点只能说明中期趋势弱、历史套牢供给可能存在，不能推出“低估”。</p>
 <h3>长周期定价：不用目标价，也能看清市场要求什么</h3>
 <div class="table-wrap"><table><thead><tr><th>交叉检查</th><th>结果</th><th>它回答什么</th><th>主要限制</th></tr></thead><tbody>

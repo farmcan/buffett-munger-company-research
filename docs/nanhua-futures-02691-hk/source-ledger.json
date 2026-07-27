@@ -643,6 +643,28 @@
         "net_interest"
       ],
       "limitations": "Primary-source facts remain subject to stated scope and audit status."
+    },
+    {
+      "id": "PEER_CN_FUTURES_20260726",
+      "tier": "B",
+      "source_type": "frozen_secondary_quote_snapshot",
+      "title": "Eastmoney valuation-field snapshots for listed PRC futures companies",
+      "url": "https://quote.eastmoney.com/center/gridlist.html",
+      "published_at_status": "known",
+      "published_at": "2026-07-26",
+      "accessed_at": "2026-07-27",
+      "period": "2026-07-26 16:49 CST quote snapshot",
+      "audit_status": "secondary_market_data",
+      "scope": "peer valuation scatter only",
+      "covers": ["provider_dynamic_pe", "provider_pb", "peer_eligibility"],
+      "component_sha256": {
+        "603093.SH": "c51a3921a695f68b5ce2af499e271c05978d1eff2396ba011ddac144f67ec132",
+        "600927.SH": "e7c37b61d546a02f47f02e38b5ace337597d68eab5dc6ee52f9bbd965801bded",
+        "002961.SZ": "c1e7aa0182100e38feb2cc6e65ba1776a017754334ce6e97585d3550c680c9ae",
+        "001236.SZ": "88aecef0e3235cbd05e1fe6234695358fa2e277d65949f224e71252260e96a37"
+      },
+      "locator": "Eastmoney quote snapshot fields f9/f23; source pages 0043, 0040, 0016 and 0006",
+      "limitations": "Provider dynamic PE does not disclose its EPS period. The three-peer median describes only one provider field and cannot be mechanically compared with Nanhua's reconstructed reported TTM PE."
     }
   ]
 }

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>上市公司研究方法 V2.4</title>
+  <title>上市公司研究方法 V2.5</title>
   <style>
     :root{--ink:#17221e;--muted:#607068;--paper:#f4f1ea;--card:#fffdf8;--line:#d8d1c3;--green:#176b50;--amber:#a66f16;--red:#9a403a;--blue:#386a8e}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 8% 0,rgba(23,107,80,.11),transparent 31rem),var(--paper);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans CJK SC",sans-serif}
@@ -18,12 +18,12 @@
 </head>
 <body>
   <header>
-    <div class="eyebrow">Reusable company research · V2.4</div>
+    <div class="eyebrow">Reusable company research · V2.5</div>
     <h1>上市公司基本面 × 行业 × 事件研究方法</h1>
     <p class="lead">把“长期公司质量”和“近期市场事件”拆成两个产品入口，底层共享同一套官方事实、口径桥、证据锚点和发布状态。目标不是给出更肯定的结论，而是让每个结论可复算、可证伪、可更新。</p>
     <div class="meta"><span class="pill">25 个研究维度</span><span class="pill">50 个指标族</span><span class="pill">9 道闸门</span><span class="pill">事实级引用</span><span class="pill">非投资建议</span></div>
   </header>
-  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#counterparties">客户/上下游</a><a href="#inflection">增长变量</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#status-legend">状态图例</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#template-contract">统一母版</a><a href="#publication">发布闭环</a><a href="./templates/report-publication-shell-v1.html">HTML 模板</a></div></nav>
+  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#counterparties">客户/上下游</a><a href="#inflection">增长变量</a><a href="#peers">同行估值</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#status-legend">状态图例</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#template-contract">统一母版</a><a href="#publication">发布闭环</a><a href="./templates/report-publication-shell-v1.html">HTML 模板</a></div></nav>
   <main>
     <section id="views">
       <h2>一个事实底座，两个阅读入口</h2>
@@ -134,6 +134,35 @@
         <tr><td><a href="./fubo-group-03738-hk/report.html">阜博集团</a></td><td><code>I3_early_inflection</code></td><td>Q1 收入约 +21%、MRR 约 +29%、活跃资产增长</td><td>改善幅度小且为约数；无 Q1 利润/现金，全投入现金为负且可转债临近到期</td><td><span class="tag warn">watch_early_signal</span></td></tr>
       </tbody></table></div>
       <div class="callout"><strong>当前结论：</strong>只看会计利润加速度，南华最显眼；只看领先经营 KPI，阜博更接近早期信号；只看经营质量，美图相对清晰但不是低位拐点。四项合并后，当前没有一家达到 <code>confirmed_inflection_for_research</code>。</div>
+    </section>
+
+    <section id="peers">
+      <h2>同行比较：先证明可比，再计算 PE</h2>
+      <p class="dek">同行池不是“同一概念板块”。目标、同发行人其他股类、直接经济同行、相邻经营公司、主题映射和平台替代必须分开；被排除的样本也要展示原因。</p>
+      <div class="table-wrap"><table><caption>同行资格矩阵</caption><thead><tr><th>资格项</th><th>至少回答什么</th><th>不通过时怎样处理</th></tr></thead><tbody>
+        <tr><td>产品与利润池</td><td>产品、付款方、单位经济与价值链位置是否相近</td><td>降级为 adjacent/thematic，不进入中位数</td></tr>
+        <tr><td>地区与监管</td><td>地域、牌照、补贴、出口管制与税制是否可比</td><td>披露差异，必要时排除</td></tr>
+        <tr><td>会计与分母</td><td>GAAP/IFRS、持续经营/集团、FY/TTM/forward、SBC 与一次性是否统一</td><td>禁止计算 relative premium</td></tr>
+        <tr><td>周期与增长</td><td>扩产、复苏、成熟、衰退或高增长阶段是否接近</td><td>倍数必须与增长、利润率并列</td></tr>
+        <tr><td>资本结构</td><td>净现金、租赁、NCI、可转债、稀释和股类是否统一</td><td>优先 EV 或先关闭股本桥</td></tr>
+        <tr><td>资本强度与回报</td><td>维护投入、资本化研发、ROIC/ROE 与现金转换是否接近</td><td>切换金融、重资产或 SaaS 分支</td></tr>
+        <tr><td>日期、币种与证券</td><td>价格日、EPS 可用日、汇率、股类和上市状态是否一致</td><td>只描述散点，不精算折价</td></tr>
+      </tbody></table></div>
+      <div class="formula">relative_premium = target_multiple / eligible_peer_median − 1<br>启用条件：eligible 同行 ≥ 3、相同价格日、相同盈利分母；否则写 bounded_no_median 或 not_determinable。</div>
+      <div class="grid">
+        <article class="card"><h3>一般盈利公司</h3><p>reported/TTM/normalized PE、P/owner earnings 和 EV/经营收益；增长、毛利、SBC 与现金质量并列。</p></article>
+        <article class="card"><h3>金融公司</h3><p>P/B—ROE/ROTE、正常化 PE、监管资本和利润波动；低 PE 不自动等于低估。</p></article>
+        <article class="card"><h3>晶圆代工 / 重资产</h3><p>PE、P/B、EV/EBITDA 只作交叉检查，同时展示资本开支、利用率和增量 ROIC。</p></article>
+        <article class="card"><h3>未稳定盈利 SaaS / AI</h3><p>EV/收入、毛利、留存、SBC 后 FCF；负盈利写 N/M，不制造调整后正 PE。</p></article>
+      </div>
+      <h3>四份报告的实际同行池</h3>
+      <div class="table-wrap"><table><thead><tr><th>公司</th><th>合格/有限同行</th><th>排除但保留的相邻样本</th><th>当前可支持结论</th></tr></thead><tbody>
+        <tr><td><a href="./meitu-01357-hk/report.html#peer-valuation">美图</a></td><td>Adobe（仅 1 家有限可比）</td><td>Figma、万兴科技、金山办公</td><td><span class="tag warn">bounded_no_median</span>；增长、SBC 与现金质量需并列</td></tr>
+        <tr><td><a href="./nanhua-futures-02691-hk/report.html#peer-valuation">南华期货</a></td><td>永安、瑞达、弘业（同一 provider 字段）</td><td>南华 A 股是同发行人其他股类</td><td>可展示 provider 横截面；不能与目标 reported TTM 精算折价</td></tr>
+        <tr><td><a href="./smic-00981-hk/report.html#peer-valuation">中芯国际</a></td><td>GFS、UMC（仅 2 家有限可比）</td><td>TSMC 是行业领导者映射</td><td><span class="tag warn">bounded_no_median</span>；目标真实交易后 EPS 仍缺</td></tr>
+        <tr><td><a href="./fubo-group-03738-hk/report.html#peer-valuation">阜博集团</a></td><td>没有 ≥3 家纯同行</td><td>Veritone、Getty、Shutterstock</td><td><span class="tag warn">not_determinable</span>；优先看现金和资本结构</td></tr>
+      </tbody></table></div>
+      <div class="callout"><strong>最小公开字段：</strong>公司/ticker、比较角色、eligible/excluded、价格与日期、币种、盈利期间和分母、PE/PB/EV、增长或资本回报、限制、原始 URL 与冻结哈希。<code>provider_dynamic_pe</code> 不能冒充 reported TTM，同行中位数也不是内在价值。</div>
     </section>
 
     <section id="pricing">

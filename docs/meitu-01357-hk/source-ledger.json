@@ -1401,6 +1401,52 @@
         "27 July incomplete half-day short-selling observation and intraday quote"
       ],
       "limitations": "Secondary presentation of HKEX-sourced market data. Short-selling turnover is gross trading activity, not the weekly change in reportable net short positions. The 27 July 30.503% observation was marked as half-day data and must not be compared directly with completed sessions."
+    },
+    {
+      "id": "PEER_ADBE_FY2025",
+      "tier": "A",
+      "kind": "sec_10k",
+      "title": "Adobe FY2025 Form 10-K",
+      "publisher": "SEC / Adobe",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+      "snapshot_sha256": "05096f93de2ef568d1c47955dd58800d7d24a3c771514c6d49402c43bcbf6158",
+      "locator": "Part II, Item 8, Consolidated Statements of Income, diluted EPS row",
+      "used_for": ["peer_eligibility", "fy2025_gaap_eps", "revenue_growth"],
+      "limitations": "Adobe is a limited mature creative-software anchor, not a direct match for Meitu's consumer/productivity app mix."
+    },
+    {
+      "id": "PEER_FIG_FY2025",
+      "tier": "A",
+      "kind": "sec_10k",
+      "title": "Figma FY2025 Form 10-K",
+      "publisher": "SEC / Figma",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.sec.gov/Archives/edgar/data/1579878/000162828026009228/fig-20251231.htm",
+      "snapshot_sha256": "6b98194140ed0aa4919bc9903ebd0f836fddf68b5e18a576ad28a20c7373140c",
+      "locator": "Part II, Item 8 EPS table and non-GAAP reconciliation",
+      "used_for": ["peer_exclusion", "fy2025_gaap_and_non_gaap_eps", "revenue_growth"],
+      "limitations": "GAAP loss and IPO-related share-based compensation make Figma ineligible for a positive-PE median."
+    },
+    {
+      "id": "PEER_CN_APPS_20260726",
+      "tier": "B",
+      "kind": "frozen_secondary_quote_snapshot",
+      "title": "Eastmoney A-share valuation-field snapshots for 300624 and 688111",
+      "publisher": "Eastmoney",
+      "published_at": "2026-07-26",
+      "retrieved_at": "2026-07-27",
+      "url": "https://quote.eastmoney.com/center/gridlist.html",
+      "snapshot_sha256": null,
+      "component_sha256": {
+        "300624.SZ": "b03500da176d1fe361cb231fc63f9bebc2953269b4645a86ab19e81c964946f9",
+        "688111.SH": "54cf481ba0e542217d7594b0aedb80261c76717c8abfa649f5c03828f01aae75"
+      },
+      "locator": "Eastmoney quote snapshot fields f9 (provider dynamic PE) and f23 (P/B), source pages 0023 and 0051",
+      "used_for": ["peer_exclusion", "provider_dynamic_pe", "provider_pb"],
+      "limitations": "Provider dynamic PE does not disclose the EPS period and cannot be relabeled reported TTM. Negative earnings are N/M."
     }
   ]
 }

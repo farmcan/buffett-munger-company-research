@@ -47,7 +47,7 @@ body.report-parity .review-item b{display:block;font-size:14px}body.report-parit
   <a href="#status-legend">状态</a><a href="#report-doors">双入口</a><a href="#snapshot">快照</a>
   <a href="#long-term">业务/利润</a><a href="#counterparties">客户/上下游</a><a href="#financials">五年财务</a><a href="#quarterly">Q1/Q2/H1</a>
   <a href="#owner-earnings">可分配利润桥</a><a href="#capital-quality">监管资本</a><a href="#capital">股本/回购</a>
-  <a href="#market-pricing">估值/长周期</a><a href="#event-monitor">行业/小盘</a><a href="#buffett">巴芒解释</a>
+  <a href="#market-pricing">估值/长周期</a><a href="#peer-valuation">同行估值</a><a href="#event-monitor">行业/小盘</a><a href="#buffett">巴芒解释</a>
   <a href="#research-contract">25×50×9</a><a href="#methodology">方法</a><a href="#timeline">时间轴</a>
   <a href="#monitor">下一验证</a><a href="#evidence">证据</a><a href="#sources">来源</a>
 </div></nav>
@@ -231,6 +231,20 @@ body.report-parity .review-item b{display:block;font-size:14px}body.report-parit
     <tbody><tr><td>reported_fy</td><td>486.264</td><td>0.541</td><td>6.65</td><td>12.3</td><td>1.07</td><td>calculated</td></tr><tr><td>reported_ttm</td><td>605.289</td><td>0.673</td><td>6.65</td><td>9.88</td><td>1.07</td><td>calculated</td></tr><tr><td>normalized_2022_2025_average</td><td>398.038</td><td>0.443</td><td>6.65</td><td>15.02</td><td>1.07</td><td>simple_cycle_average_not_forecast</td></tr></tbody>
   </table></div>
 <p class="callout">FY PE约12.3×，TTM PE约9.9×，FY2022-25简单正常化PE约15.0×。TTM最低，是因为Q1高增长中含投资与减值顺风；三种口径必须同时保留。</p>
+<h3 id="peer-valuation">同行估值：期货公司要把 PE、P/B、ROE 和监管资本一起看</h3>
+<p>同行池限定为期货经纪、风险管理和资管业务占主导的上市期货公司。南华 A 股是同一发行人的另一股类，只用于观察 A/H 定价分割，不进入同行中位数。三家直接同行的二级行情字段可形成分布，但其 <code>provider_dynamic_pe</code> 没有披露 EPS 期间，不能与南华自行重算的 reported TTM PE 机械计算折价。</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>公司</th><th>角色 / 资格</th><th>价格日期</th><th>PE×</th><th>P/B×</th><th>分母与读法</th><th>限制</th></tr></thead>
+  <tbody>
+    <tr><td>南华期货 H / 02691</td><td><span class="tag good">target</span></td><td>HK$6.65<br>2026-07-27</td><td>FY 12.30<br>TTM 9.88<br>正常化 15.02</td><td>1.07</td><td>由年报与 Q1 同口径桥重算</td><td>Q1 含投资收益与减值顺风；正常化只是四年均值</td></tr>
+    <tr><td>南华期货 A / 603093</td><td><span class="tag warn">excluded · same issuer</span></td><td>CNY16.39<br>2026-07-26</td><td>15.33</td><td>2.18</td><td>行情商动态字段</td><td>同一发行人、不同股类；不能进入同行中位数</td></tr>
+    <tr><td>永安期货 / 600927</td><td><span class="tag good">eligible</span></td><td>CNY12.44<br>2026-07-26</td><td>23.25</td><td>1.36</td><td><code>provider_dynamic_pe</code><br><small>f9 / f23 · page 0040</small></td><td>需再统一经常性利润、监管资本与境外占比</td></tr>
+    <tr><td>瑞达期货 / 002961</td><td><span class="tag good">eligible</span></td><td>CNY18.05<br>2026-07-26</td><td>10.57</td><td>2.15</td><td><code>provider_dynamic_pe</code><br><small>f9 / f23 · page 0016</small></td><td>低 PE 与较高 P/B 并存，应结合 ROE 解释</td></tr>
+    <tr><td>弘业期货 / 001236</td><td><span class="tag good">eligible</span></td><td>CNY6.95<br>2026-07-26</td><td>139.98</td><td>3.74</td><td><code>provider_dynamic_pe</code><br><small>f9 / f23 · page 0006</small></td><td>极高 PE 更可能源于低盈利分母，不能隐藏异常点</td></tr>
+    <tr><td>三家直接同行中位数</td><td><span class="tag info">provider field only</span></td><td>同日字段</td><td>23.25</td><td>2.15</td><td>只描述同一行情字段的横截面</td><td>不是南华合理价值，不能与 9.88× reported TTM 直接除算</td></tr>
+  </tbody>
+</table></div>
+<p class="callout amber"><strong>可支持的结论：</strong>南华自己的 reported FY/TTM PE 低于三家同行动态字段中位数，但分母定义不一致，所以“折价约多少”仍是 <code>not_determinable</code>。在金融分支里，低 PE 只有在可持续 ROE、监管资本和利润质量同时通过时才有意义。字段来源、快照哈希和排除理由见 <a href="./data/peer-valuation-comparison.csv">同行估值 CSV</a>。</p>
 <figure class="chart"><figcaption>P/B-ROE敏感性（HKD/股）</figcaption><svg viewBox="0 0 720 260" role="img" aria-label="P/B-ROE敏感性（HKD/股）">
     <text x="8" y="60">下行情景</text><rect x="190" y="42" width="238.88888888888886" height="25" rx="5" fill="#5ba7ff"/><text x="438.88888888888886" y="60">4.1</text><text x="8" y="105">基准情景</text><rect x="190" y="87" width="307.14450201496834" height="25" rx="5" fill="#5ba7ff"/><text x="507.14450201496834" y="105">5.3</text><text x="8" y="150">上行情景</text><rect x="190" y="132" width="430" height="25" rx="5" fill="#5ba7ff"/><text x="630" y="150">7.5</text><text x="8" y="195">研究日价格</text><rect x="190" y="177" width="382.84398388025335" height="25" rx="5" fill="#5ba7ff"/><text x="582.8439838802533" y="195">6.7</text>
   </svg></figure>

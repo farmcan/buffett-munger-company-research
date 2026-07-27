@@ -410,6 +410,77 @@
         "intel_foundry_mapping"
       ],
       "content_sha256": "4a21e4f984cf90d302ab9fce97d480974e602cdd602e9b6700752724cc0b96ec"
+    },
+    {
+      "id": "PEER_GFS_FY2025",
+      "tier": "A",
+      "source_type": "sec_companyfacts",
+      "title": "GlobalFoundries SEC company facts",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001709048.json",
+      "published_at_status": "unknown",
+      "published_at": null,
+      "accessed_at": "2026-07-27",
+      "period": "FY2025",
+      "audit_status": "filed_xbrl_facts",
+      "scope": "limited specialty-foundry peer",
+      "covers": ["fy2025_diluted_eps", "peer_static_pe", "peer_eligibility"],
+      "content_sha256": "868446b75e75ad0694ff80fe92b1c7692f0a8cf53122da12baab5ba7bb3c6b59",
+      "locator": "us-gaap:EarningsPerShareDiluted, FY2025 annual fact",
+      "limitations": "Geography, subsidies, customers and export-control exposure differ from SMIC."
+    },
+    {
+      "id": "PEER_UMC_FY2025",
+      "tier": "A",
+      "source_type": "issuer_results_release",
+      "title": "UMC Fourth Quarter and FY2025 Results",
+      "url": "https://www.umc.com/zh-TW/News/press_release/Content/investor/20260128",
+      "published_at_status": "known",
+      "published_at": "2026-01-28",
+      "accessed_at": "2026-07-27",
+      "period": "FY2025",
+      "audit_status": "issuer_reported",
+      "scope": "limited mature-node foundry peer",
+      "covers": ["fy2025_diluted_eps", "revenue", "gross_margin", "peer_static_pe"],
+      "content_sha256": "a460302e128f36da02105d6181d7c5cae8d37d9ee96bf60e3fbf03eaaca88e33",
+      "locator": "FY2025 results table: revenue, gross margin and EPS",
+      "limitations": "Region, product mix and capital structure differ from SMIC."
+    },
+    {
+      "id": "PEER_TSMC_FY2025",
+      "tier": "A",
+      "source_type": "issuer_annual_report",
+      "title": "TSMC 2025 Annual Report",
+      "url": "https://investor.tsmc.com/static/annualReports/2025/english/index.html",
+      "published_at_status": "unknown",
+      "published_at": null,
+      "accessed_at": "2026-07-27",
+      "period": "FY2025",
+      "audit_status": "audited",
+      "scope": "industry leader mapping; excluded from peer median",
+      "covers": ["fy2025_eps", "revenue_growth", "gross_margin", "leader_mapping"],
+      "content_sha256": "9ee91494e3acf4f831c083c17dedc053ede21ed6c744685bf11a7a3a0698e6ae",
+      "locator": "2025 annual report financial highlights: revenue, gross margin and diluted EPS",
+      "limitations": "Advanced-node and AI demand exposure, scale, margins and returns make TSMC structurally unlike SMIC's limited mature-node peer set."
+    },
+    {
+      "id": "PEER_FOUNDRY_PRICES_20260727",
+      "tier": "B",
+      "source_type": "frozen_secondary_quote_snapshot",
+      "title": "Yahoo Finance peer price snapshots for GFS, UMC and TSMC",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GFS",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026-07-27 market snapshots",
+      "audit_status": "secondary_market_data",
+      "scope": "dated peer prices",
+      "covers": ["peer_prices"],
+      "component_sha256": {
+        "GFS": "240b8d5625ce12238b897edf350b38a64a0e99f59c8fb532f5910bbe62877997",
+        "2303.TW": "c504b464b56607e43aa42a97611b8165cdf2f02f55ca163d89d3693f553f37bf",
+        "2330.TW": "1ed76cdd4aa5e6adf52a8bc2e35401331b09d288be0ec82e66d4a04774956662"
+      },
+      "limitations": "Secondary delayed/intraday quotes. Exact query URLs and timestamps are preserved in peer-valuation-comparison.csv."
     }
   ]
 }

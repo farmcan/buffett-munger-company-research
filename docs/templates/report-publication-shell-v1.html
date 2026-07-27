@@ -49,6 +49,7 @@
       <a href="#growth-inflection">增长变量</a>
       <a href="#capital">资本与每股</a>
       <a href="#market-pricing">估值</a>
+      <a href="#peer-valuation">同行估值</a>
       <a href="#event-monitor">事件监控</a>
       <a href="#buffett">巴芒框架</a>
       <a href="#research-contract">25×50×9</a>
@@ -149,6 +150,21 @@
       <h2>市场定价状态与估值区间</h2>
       <p class="section-dek">[[DATED_DENOMINATOR_MATRIX_HISTORICAL_RELATIVE_AND_INTRINSIC_VALUE_COORDINATES]]</p>
       [[VALUATION_TABLES_AND_CHARTS]]
+    </section>
+
+    <section id="peer-valuation">
+      <h2>同行资格与相对估值</h2>
+      <p class="section-dek">[[DEFINE_PROFIT_POOL_AND_PEER_UNIVERSE_BEFORE_SHOWING_MULTIPLES]]</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>公司 / ticker</th><th>角色</th><th>资格</th><th>价格 / 日期 / 币种</th><th>盈利分母 / 期间</th><th>PE / PB / EV</th><th>增长 / 回报 / 现金质量</th><th>可比性限制</th><th>主源</th></tr></thead>
+        <tbody>
+          <tr><td>[[TARGET]]</td><td>target</td><td>target</td><td>[[DATED_PRICE]]</td><td>[[DENOMINATOR]]</td><td>[[MULTIPLES]]</td><td>[[QUALITY_SIGNALS]]</td><td>[[TARGET_LIMITATIONS]]</td><td>[[SOURCE_LINK_AND_HASH]]</td></tr>
+          <tr><td>[[DIRECT_PEER]]</td><td>direct_economic_peer</td><td>[[eligible / excluded]]</td><td>[[DATED_PRICE]]</td><td>[[DENOMINATOR]]</td><td>[[MULTIPLES]]</td><td>[[QUALITY_SIGNALS]]</td><td>[[INCLUSION_OR_EXCLUSION_REASON]]</td><td>[[SOURCE_LINK_AND_HASH]]</td></tr>
+          <tr><td>[[ADJACENT_OR_THEMATIC]]</td><td>[[adjacent_operating_peer / thematic_peer / platform_or_substitute]]</td><td>excluded</td><td>[[DATED_PRICE]]</td><td>[[DENOMINATOR_OR_N_M]]</td><td>[[MULTIPLES]]</td><td>[[QUALITY_SIGNALS]]</td><td>[[WHY_NOT_IN_MEDIAN]]</td><td>[[SOURCE_LINK_AND_HASH]]</td></tr>
+          <tr><td>合格同行集合</td><td>peer_summary</td><td>[[eligible_count]]</td><td>[[SAME_AS_OF_TEST]]</td><td>[[SAME_DENOMINATOR_TEST]]</td><td>[[MEDIAN_OR_UNAVAILABLE]]</td><td>[[DISPERSION]]</td><td>[[N_LT_3_NO_MEDIAN / OTHER_LIMITATION]]</td><td>[[CSV_LINK]]</td></tr>
+        </tbody>
+      </table></div>
+      <p class="section-dek"><strong>硬规则：</strong><code>eligible</code> 少于 3 家时写 <code>bounded_no_median</code>；没有合格同行时写 <code>not_determinable</code>。<code>provider_dynamic_pe</code> 不得冒充 reported TTM，负盈利写 N/M，同发行人其他股类不进入同行中位数。</p>
     </section>
 
     <section id="event-monitor">

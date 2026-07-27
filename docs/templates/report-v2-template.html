@@ -1016,15 +1016,17 @@
           <div class="table-card">
             <div class="table-wrap">
               <table>
-                <caption>同业相对溢价 / 折价（统一业务、会计、周期和资本结构）</caption>
-                <thead><tr><th>公司/组别</th><th>关系</th><th>指标</th><th class="num">倍数</th><th class="num">相对中位差</th><th>可比性限制</th></tr></thead>
+                <caption>同业资格与相对溢价 / 折价（先证明业务、分母、日期、周期和资本结构可比）</caption>
+                <thead><tr><th>公司/组别</th><th>关系</th><th>资格</th><th>价格/日期/币种</th><th>盈利分母/期间</th><th>指标</th><th class="num">倍数</th><th class="num">相对中位差</th><th>增长/回报</th><th>可比性限制与主源</th></tr></thead>
                 <tbody>
-                  <tr><td>[[SUBJECT_COMPANY]]</td><td>same company</td><td>[[MULTIPLE]]</td><td class="num">[[VALUE]]</td><td class="num">[[PREMIUM_DISCOUNT]]</td><td>[[SCOPE]]</td></tr>
-                  <tr><td>[[DIRECT_PEER]]</td><td>[[same_economic_exposure / thematic_peer]]</td><td>[[MULTIPLE]]</td><td class="num">[[VALUE]]</td><td class="num">[[PREMIUM_DISCOUNT]]</td><td>[[ACCOUNTING / GROWTH / CAPITAL_STRUCTURE]]</td></tr>
-                  <tr><td>[[PEER_MEDIAN]]</td><td>peer median</td><td>[[MULTIPLE]]</td><td class="num">[[VALUE]]</td><td class="num">[[BASELINE]]</td><td>[[SAMPLE_SELECTION / AS_OF]]</td></tr>
+                  <tr><td>[[SUBJECT_COMPANY]]</td><td>target</td><td>target</td><td>[[DATED_PRICE]]</td><td>[[DENOMINATOR]]</td><td>[[MULTIPLE]]</td><td class="num">[[VALUE]]</td><td class="num">[[PREMIUM_DISCOUNT_OR_UNAVAILABLE]]</td><td>[[GROWTH_ROIC_OR_ROE]]</td><td>[[SCOPE / SOURCE_URL / HASH]]</td></tr>
+                  <tr><td>[[DIRECT_PEER]]</td><td>direct_economic_peer</td><td>[[eligible / excluded]]</td><td>[[DATED_PRICE]]</td><td>[[DENOMINATOR]]</td><td>[[MULTIPLE]]</td><td class="num">[[VALUE_OR_N_M]]</td><td class="num">[[PREMIUM_DISCOUNT_OR_UNAVAILABLE]]</td><td>[[GROWTH_ROIC_OR_ROE]]</td><td>[[INCLUSION_OR_EXCLUSION_REASON / SOURCE_URL / HASH]]</td></tr>
+                  <tr><td>[[ADJACENT_PEER]]</td><td>[[same_issuer_other_share_class / adjacent_operating_peer / thematic_peer / platform_or_substitute]]</td><td>excluded</td><td>[[DATED_PRICE]]</td><td>[[DENOMINATOR]]</td><td>[[MULTIPLE]]</td><td class="num">[[VALUE_OR_N_M]]</td><td class="num">unavailable</td><td>[[GROWTH_ROIC_OR_ROE]]</td><td>[[WHY_EXCLUDED / SOURCE_URL / HASH]]</td></tr>
+                  <tr><td>[[PEER_MEDIAN_OR_EMPTY_SET]]</td><td>peer summary</td><td>[[ELIGIBLE_COUNT]]</td><td>[[SAME_AS_OF_TEST]]</td><td>[[SAME_DENOMINATOR_TEST]]</td><td>[[MULTIPLE]]</td><td class="num">[[MEDIAN_OR_UNAVAILABLE]]</td><td class="num">[[BASELINE_OR_UNAVAILABLE]]</td><td>[[DISPERSION]]</td><td>eligible &lt; 3 → bounded_no_median；[[SAMPLE_SELECTION / LIMITATION]]</td></tr>
                 </tbody>
               </table>
             </div>
+            <p class="muted"><code>provider_dynamic_pe</code> 必须保留原标签；EPS 期间未知时不能改名为 reported TTM。负盈利写 N/M，同发行人其他股类不进入同行中位数，同行中位数不等于内在价值。</p>
           </div>
         </div>
 

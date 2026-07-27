@@ -261,6 +261,7 @@
       <a href="#smallcap">小盘风险</a>
       <a href="#valuation">估值</a>
       <a href="#market-pricing">市场定价状态</a>
+      <a href="#peer-valuation">同行估值</a>
       <a href="#positioning">4 港元与空头</a>
       <a href="#buffett">巴芒框架</a>
       <a href="#methodology">研究方法</a>
@@ -352,14 +353,14 @@
         </article>
         <article class="entry-card">
           <h3>阻断决策级结论的缺口</h3>
-          <p>三座估值桥和五年 ROIC 筛查已补齐；仍缺分产品 cohort/ARPU/CAC/毛利、同口径同行与无前视历史估值、同日奖励重叠消除、管理层承诺兑现账本和具名人工复核。</p>
+          <p>三座估值桥、五年 ROIC 筛查和同行资格矩阵已补齐；仍缺分产品 cohort/ARPU/CAC/毛利、三个以上直接同行、无前视历史估值、同日奖励重叠消除、管理层承诺兑现账本和具名人工复核。</p>
           <div class="entry-links">
             <a href="#valuation">盈利桥</a><a href="#market-pricing">估值位置</a><a href="#methodology">25 个维度</a><a href="#sources">证据索引</a>
           </div>
         </article>
       </div>
       <div class="status-strip" aria-label="长期底稿状态">
-        <div class="status-box"><strong>source_partial</strong><span>20 个关键事实已深链；客户、同行和产品 cohort 仍缺</span></div>
+        <div class="status-box"><strong>source_partial</strong><span>20 个关键事实已深链；客户具名、三家直接同行和产品 cohort 仍缺</span></div>
         <div class="status-box"><strong>25 dimensions</strong><span>缺证维度保持 unknown，不做补猜</span></div>
         <div class="status-box"><strong>needs_human_review</strong><span>独立 agent red-team 已完成；具名人工复核尚缺</span></div>
       </div>
@@ -1479,12 +1480,36 @@
           <tbody>
             <tr><td>历史 PE / PB / EV 分位</td><td><span class="tag warn">待同口径序列</span></td><td>必须按当时已公布 FY/TTM/正常化盈利重算，避免前视偏差</td><td>行情商动态 PE 不能冒充历史 reported TTM；当前不可声称处于某个精确分位</td></tr>
             <tr><td>当前价 vs. 内在价值区间</td><td>当前 HK$3.93；下行 HK$2.53；基础 HK$4.83；全转换上行 HK$7.32</td><td>位于下行与基础之间；基础及上行要求盈利继续增长</td><td>owner earnings、维护性投入、汇率、奖励重叠和长期增长均显著影响区间</td></tr>
-            <tr><td>同行溢价 / 折价</td><td><span class="tag warn">not_determinable</span></td><td>需在 Adobe、Canva/应用软件映射与中港同类公司间统一增长、毛利、SBC 和现金口径</td><td>题材相似不等于经济性可比；缺少同口径 peer set 时不输出折价百分比</td></tr>
+            <tr><td>同行溢价 / 折价</td><td><span class="tag warn">bounded_no_median</span></td><td>Adobe FY2025 GAAP PE 约 14.24×可作有限成熟软件锚；美图持续经营 IFRS PE 约 22.1×</td><td>仅 1 家通过有限资格筛查，业务与增长仍不同；不输出伪同行中位数或精确溢价</td></tr>
             <tr><td>Owner-earnings yield</td><td>约 6.1%—6.7%（9.409—10.245 亿元 / 人民币股权市值约 154 亿元）</td><td>反映当前价格隐含的经营收益率区间</td><td>不包含统一的 fully diluted 当前市值分母；不能与无风险利率机械比较后得出结论</td></tr>
             <tr><td>长期回撤 / 趋势 / 波动</td><td>较近 52 周最高收盘回撤约 67.5%；近 60 日年化历史波动约 86%</td><td>说明预期压缩和事件弹性都很高，应提高证据更新频率</td><td>大幅回撤不是安全边际；200 日/40 周趋势和长期换手分位待冻结价格序列后补齐</td></tr>
             <tr><td>3—5 年回报拆解</td><td><span class="tag info">框架已定义</span></td><td>年化回报 = 每股 owner earnings 增长 + 分红/回购净贡献 + 估值变化</td><td>需分别使用未转换偿债与完全转换情景；不把倍数回归当必然</td></tr>
           </tbody>
         </table>
+      </div>
+
+      <h3 id="peer-valuation">同行与相邻公司估值：先筛经济性，再看 PE</h3>
+      <p>
+        “图片/设计/AI”同一个标签下，商业模式差异很大。美图是消费级与生产力应用组合；Adobe 是成熟订阅软件，
+        Figma 仍受 IPO 股权激励影响，万兴科技当前盈利为负，金山办公则偏企业办公软件。下表把可用锚和被排除项同时展示；
+        <strong>只有 Adobe 通过有限可比筛查，样本不足 3 家，因此不计算同行中位数或相对折价。</strong>
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>公司</th><th>角色 / 资格</th><th>价格日期</th><th>盈利口径</th><th>PE</th><th>增长/质量线索</th><th>为何可比或排除</th><th>主源</th></tr></thead>
+          <tbody>
+            <tr><td>美图 01357.HK</td><td><span class="tag info">target</span></td><td>HK$3.93<br>2026-07-24</td><td>FY2025 持续经营 IFRS / owner earnings</td><td>22.1×<br>15.0—16.4× P/OE</td><td>核心业务收入 +28.8%；付费增长仍快但边际放缓</td><td>目标公司；多个分母并列，不能只选最低值</td><td><a href="./data/pe-denominator-matrix.csv">分母矩阵</a></td></tr>
+            <tr><td>Adobe / ADBE</td><td><span class="tag good">eligible · limited</span></td><td>US$237.88<br>2026-07-27</td><td>FY2025 GAAP diluted EPS US$16.70</td><td>14.24×</td><td>收入 +11%；成熟创意订阅、现金质量较强</td><td>同属创意工作流，但客户结构、规模、利润率和 AI 模型投入不同</td><td><a href="https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm">FY2025 10-K</a><br><small>Item 8 · Consolidated Statements of Income · diluted EPS</small></td></tr>
+            <tr><td>Figma / FIG</td><td><span class="tag warn">excluded</span></td><td>US$22.41<br>2026-07-27</td><td>FY2025 GAAP EPS −US$3.71；non-GAAP US$0.30</td><td>GAAP N/M<br>non-GAAP 74.70×</td><td>收入 +41%；IPO 年 SBC 显著</td><td>协作设计相邻，但 GAAP 亏损且调整口径与美图不一致</td><td><a href="https://www.sec.gov/Archives/edgar/data/1579878/000162828026009228/fig-20251231.htm">FY2025 10-K</a><br><small>Item 8 · EPS；non-GAAP reconciliation</small></td></tr>
+            <tr><td>万兴科技 300624.SZ</td><td><span class="tag warn">excluded</span></td><td>CNY44.38<br>2026-07-26</td><td>行情商动态 PE；EPS 期间未披露</td><td>N/M<br><small>provider −44.70×</small></td><td>P/B 8.79×</td><td>创意软件相邻但亏损，负 PE 不能进入正盈利中位数</td><td><a href="https://quote.eastmoney.com/center/gridlist.html">冻结行情字段</a><br><small>字段 f9 / f23；page 0023 snapshot</small></td></tr>
+            <tr><td>金山办公 688111.SH</td><td><span class="tag warn">excluded</span></td><td>CNY226.93<br>2026-07-26</td><td>行情商动态 PE；EPS 期间未披露</td><td>11.99×</td><td>P/B 7.19×</td><td>企业办公订阅为主；产品、客户和利润池不够接近</td><td><a href="https://quote.eastmoney.com/center/gridlist.html">冻结行情字段</a><br><small>字段 f9 / f23；page 0051 snapshot</small></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout amber">
+        <strong>可支持的结论：</strong>美图的持续经营 IFRS PE 高于唯一有限可比锚 Adobe，但成长更快、规模和现金质量也更弱；
+        这只能说明市场给了“更高增长但更高不确定性”的组合定价，不能据此算出精确高估幅度。完整字段、哈希与排除理由见
+        <a href="./data/peer-valuation-comparison.csv">同行估值 CSV</a>。
       </div>
 
       <h3 id="positioning">为什么近期在 HK$4 左右徘徊？空头还强吗？</h3>
@@ -2141,7 +2166,7 @@
   <footer>
     <div class="wrap">
       <p>本报告是基于公开资料的研究快照，不构成投资建议、要约、目标价或收益承诺。第三方流量与商店数据会变化；Q1 经营更新未经审核或审阅；估值对假设高度敏感。</p>
-      <p>配套数据：<a href="./data/financial-five-year.csv">五年财务主干</a> · <a href="./data/owner-earnings-bridge.csv">Owner earnings 桥</a> · <a href="./data/net-cash-bridge.csv">净现金桥</a> · <a href="./data/fully-diluted-share-bridge.csv">完全摊薄股份桥</a> · <a href="./data/roic-history.csv">ROIC 筛查</a> · <a href="./data/market-pricing-state.csv">市场定价状态</a> · <a href="./data/financial-half-year-series.csv">半年度财务</a> · <a href="./data/quarterly-watch.csv">Q1/Q2 验证</a> · <a href="./data/pe-denominator-matrix.csv">P/E 分母矩阵</a> · <a href="./data/app-public-signals.csv">App/网站信号</a> · <a href="./data/event-timeline.csv">事件时间轴</a> · <a href="./data/event-price-reactions.csv">事件 5 日价格窗</a> · <a href="./data/small-cap-risk-register.csv">小盘风险登记</a> · <a href="./data/valuation-scenarios.csv">估值情景</a></p>
+      <p>配套数据：<a href="./data/financial-five-year.csv">五年财务主干</a> · <a href="./data/owner-earnings-bridge.csv">Owner earnings 桥</a> · <a href="./data/net-cash-bridge.csv">净现金桥</a> · <a href="./data/fully-diluted-share-bridge.csv">完全摊薄股份桥</a> · <a href="./data/roic-history.csv">ROIC 筛查</a> · <a href="./data/market-pricing-state.csv">市场定价状态</a> · <a href="./data/peer-valuation-comparison.csv">同行估值矩阵</a> · <a href="./data/financial-half-year-series.csv">半年度财务</a> · <a href="./data/quarterly-watch.csv">Q1/Q2 验证</a> · <a href="./data/pe-denominator-matrix.csv">P/E 分母矩阵</a> · <a href="./data/app-public-signals.csv">App/网站信号</a> · <a href="./data/event-timeline.csv">事件时间轴</a> · <a href="./data/event-price-reactions.csv">事件 5 日价格窗</a> · <a href="./data/small-cap-risk-register.csv">小盘风险登记</a> · <a href="./data/valuation-scenarios.csv">估值情景</a></p>
     </div>
   </footer>
   <script>
