@@ -1,0 +1,4 @@
+scenario,starting_normalized_owner_earnings_rmb_bn,five_year_growth_pct,terminal_growth_pct,discount_rate_pct,net_cash_like_rmb_bn,implied_hkd_per_share,interpretation
+downside,0.70,0,0,13,3.323,2.22,"No growth and higher required return; not a target price"
+base,0.75,10,3,11,3.323,4.13,"Sustained paying conversion and moderate margin discipline; not a target price"
+upside,0.85,18,4,11,3.323,6.53,"Strong productivity/overseas execution; conversion dilution becomes relevant above HK$6; not a target price"

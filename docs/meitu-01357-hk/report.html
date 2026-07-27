@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>美图公司（01357.HK）研究报告｜2026-07-27</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --paper: #fffdf8;
+      --ink: #17221e;
+      --muted: #647068;
+      --line: #d9d7ce;
+      --green: #176b50;
+      --green-soft: #e1f2e9;
+      --amber: #9b6417;
+      --amber-soft: #fff0cf;
+      --red: #a33d35;
+      --red-soft: #fde8e4;
+      --blue: #315f8f;
+      --blue-soft: #e7eff8;
+      --shadow: 0 18px 45px rgba(42, 50, 44, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(23,107,80,.10), transparent 26rem),
+        radial-gradient(circle at 92% 6%, rgba(155,100,23,.09), transparent 24rem),
+        var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.68;
+    }
+    a { color: var(--green); text-decoration-thickness: .08em; text-underline-offset: .18em; }
+    a:hover { color: #0d4f39; }
+    .wrap { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .hero { padding: 68px 0 28px; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0; max-width: 980px; font-size: clamp(38px, 6vw, 72px); line-height: 1.04; letter-spacing: -.045em; }
+    .dek { max-width: 850px; margin: 24px 0 0; font-size: clamp(18px, 2.2vw, 25px); color: #3c4842; }
+    .meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 7px; padding: 6px 10px;
+      border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.55);
+      color: #48534d; font-size: 13px; font-weight: 650;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+    .verdict {
+      margin: 34px 0 22px;
+      display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(260px, .75fr);
+      border: 1px solid #d7c38f; border-radius: 22px; overflow: hidden;
+      background: linear-gradient(135deg, #fffaf0, #fff4d8);
+      box-shadow: var(--shadow);
+    }
+    .verdict-main { padding: 30px 32px; }
+    .verdict-side { padding: 30px 28px; background: rgba(255,255,255,.45); border-left: 1px solid #e1d0a4; }
+    .label { color: var(--amber); font-size: 12px; letter-spacing: .12em; font-weight: 850; text-transform: uppercase; }
+    .verdict h2 { margin: 8px 0 10px; font-size: clamp(25px, 3vw, 38px); line-height: 1.18; }
+    .verdict p { margin: 0; }
+    .signal { margin: 9px 0 0; font-size: 29px; font-weight: 850; color: var(--amber); }
+    .signal-note { color: #685c43; font-size: 14px; }
+    nav {
+      position: sticky; top: 0; z-index: 10; overflow-x: auto;
+      border-top: 1px solid rgba(217,215,206,.8); border-bottom: 1px solid rgba(217,215,206,.95);
+      background: rgba(244,241,234,.9); backdrop-filter: blur(14px);
+    }
+    nav .wrap { display: flex; gap: 4px; padding: 8px 0; }
+    nav a { flex: 0 0 auto; padding: 8px 11px; border-radius: 9px; color: #47534c; text-decoration: none; font-size: 13px; font-weight: 700; }
+    nav a:hover { background: var(--paper); color: var(--green); }
+    main { padding: 18px 0 90px; }
+    section { scroll-margin-top: 70px; margin-top: 22px; padding: 34px; border: 1px solid var(--line); border-radius: 22px; background: var(--paper); box-shadow: var(--shadow); }
+    section > h2 { margin: 0 0 8px; font-size: clamp(26px, 3vw, 38px); line-height: 1.18; letter-spacing: -.025em; }
+    .section-dek { margin: 0 0 24px; max-width: 900px; color: var(--muted); }
+    h3 { margin: 28px 0 10px; font-size: 20px; line-height: 1.3; }
+    p { margin: 10px 0; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .card { grid-column: span 3; padding: 18px; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
+    .card.wide { grid-column: span 6; }
+    .card .k { color: var(--muted); font-size: 12px; font-weight: 750; letter-spacing: .04em; }
+    .card .v { margin-top: 4px; font-size: 27px; line-height: 1.15; font-weight: 850; letter-spacing: -.025em; }
+    .card .s { margin-top: 7px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .up { color: var(--green); } .down { color: var(--red); } .flat { color: var(--amber); }
+    .callout { margin: 20px 0; padding: 18px 20px; border-left: 4px solid var(--green); border-radius: 4px 12px 12px 4px; background: var(--green-soft); }
+    .callout.amber { border-left-color: var(--amber); background: var(--amber-soft); }
+    .callout.red { border-left-color: var(--red); background: var(--red-soft); }
+    .callout.blue { border-left-color: var(--blue); background: var(--blue-soft); }
+    .callout strong { display: inline-block; margin-bottom: 3px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 11px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: #4b5650; background: #f3f3ed; font-size: 12px; letter-spacing: .025em; }
+    tbody tr:hover { background: #faf8f2; }
+    .table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--line); border-radius: 13px; }
+    .table-wrap table { min-width: 730px; }
+    .tag { display: inline-block; padding: 2px 7px; border-radius: 999px; font-size: 11px; font-weight: 780; white-space: nowrap; }
+    .tag.good { color: var(--green); background: var(--green-soft); }
+    .tag.warn { color: var(--amber); background: var(--amber-soft); }
+    .tag.risk { color: var(--red); background: var(--red-soft); }
+    .tag.info { color: var(--blue); background: var(--blue-soft); }
+    .bar-row { display: grid; grid-template-columns: 104px 1fr 86px; align-items: center; gap: 11px; margin: 10px 0; font-size: 13px; }
+    .track { height: 12px; border-radius: 999px; background: #eceae2; overflow: hidden; }
+    .fill { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #2d8c6b, #85c8a8); }
+    .fill.amber { background: linear-gradient(90deg, #b77619, #e4b76b); }
+    .fill.red { background: linear-gradient(90deg, #a84941, #dc8a82); }
+    .bar-val { text-align: right; font-variant-numeric: tabular-nums; font-weight: 750; }
+    .chart { padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
+    .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .axis { stroke: #d9d7ce; stroke-width: 1; }
+    .line-green { fill: none; stroke: var(--green); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .line-amber { fill: none; stroke: var(--amber); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .point { fill: var(--paper); stroke: var(--green); stroke-width: 3; }
+    .chart text { fill: #5c6861; font-size: 11px; font-family: inherit; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    ol.clean, ul.clean { margin: 8px 0 0; padding-left: 21px; }
+    ol.clean li, ul.clean li { margin: 7px 0; }
+    .scorecard { display: grid; grid-template-columns: 1.2fr .5fr 2fr; border: 1px solid var(--line); border-radius: 13px; overflow: hidden; }
+    .scorecard > div { padding: 12px 14px; border-bottom: 1px solid var(--line); }
+    .scorecard > div:nth-last-child(-n+3) { border-bottom: 0; }
+    .scorecard .head { background: #f3f3ed; font-size: 12px; font-weight: 780; color: #4b5650; }
+    .num { font-variant-numeric: tabular-nums; }
+    .source-list { columns: 2; column-gap: 28px; }
+    .source-list li { break-inside: avoid; margin: 0 0 9px; }
+    details { margin-top: 13px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+    summary { cursor: pointer; padding: 13px 15px; font-weight: 750; }
+    details > div { padding: 0 15px 15px; color: #455049; }
+    footer { padding: 28px 0 55px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 900px) {
+      .verdict, .two { grid-template-columns: 1fr; }
+      .verdict-side { border-left: 0; border-top: 1px solid #e1d0a4; }
+      .card { grid-column: span 6; }
+      .source-list { columns: 1; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 22px, 1180px); }
+      .hero { padding-top: 42px; }
+      section { padding: 24px 18px; border-radius: 16px; }
+      .card, .card.wide { grid-column: span 12; }
+      .scorecard { grid-template-columns: 1fr; }
+      .scorecard .head { display: none; }
+      .scorecard > div { border-bottom: 0; padding: 6px 13px; }
+      .scorecard > div:nth-child(3n+1) { padding-top: 14px; font-weight: 800; border-top: 1px solid var(--line); }
+      .scorecard > div:nth-child(3n) { padding-bottom: 14px; }
+    }
+    @media print {
+      body { background: white; color: black; }
+      nav { display: none; }
+      .hero { padding-top: 20px; }
+      section, .verdict { box-shadow: none; break-inside: avoid; }
+      a { color: black; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Company Research · 01357.HK</p>
+      <h1>美图：付费飞轮在转，<br>AI 应用轮动还没确认</h1>
+      <p class="dek">把公司基本面、付费客户、App 公开信号、网站流量、财务质量、创始人/高管讲话、模型替代风险与近期板块行情放在同一张证据地图上。</p>
+      <div class="meta">
+        <span class="pill"><span class="dot"></span>研究状态：条件性观察</span>
+        <span class="pill">快照：2026-07-27</span>
+        <span class="pill">价格锚点：2026-07-24 · HK$3.93</span>
+        <span class="pill">公开资料 · 非投资建议</span>
+      </div>
+      <div class="verdict">
+        <div class="verdict-main">
+          <div class="label">一句话结论</div>
+          <h2>AI 应用近期有“被轮动”的条件，但还没有被市场广度确认；美图的经营数据暂时支持继续观察，8 月 26 日中报是下一次硬验证。</h2>
+          <p>过去 20 个交易日，美图上涨 6.50%，但纯应用高弹性样本中只有美图为正。硬件下跌本身不是应用上涨的充分条件。若付费增速、生产力收入、AI credits 与毛利率同时守住，美图才有机会从“主题弹性”升级为“盈利兑现”。</p>
+        </div>
+        <div class="verdict-side">
+          <div class="label">Near-term AI apps</div>
+          <div class="signal">候选，未确认</div>
+          <p class="signal-note">确认需要：板块广度 + 排名留存 + 中报不爆雷，而不是一只股票或一天的上涨。</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="报告目录">
+    <div class="wrap">
+      <a href="#snapshot">核心快照</a>
+      <a href="#business">业务与收入</a>
+      <a href="#users">付费飞轮</a>
+      <a href="#apps">App 与网站</a>
+      <a href="#model">模型与替代</a>
+      <a href="#rotation">AI 应用轮动</a>
+      <a href="#financials">财务质量</a>
+      <a href="#capital">回购与治理</a>
+      <a href="#valuation">估值</a>
+      <a href="#buffett">巴芒框架</a>
+      <a href="#monitor">验证表</a>
+      <a href="#sources">来源</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="snapshot">
+      <h2>核心快照</h2>
+      <p class="section-dek">经营增长仍然真实，但资本市场已经把 2025 年的高预期大幅压缩。美图 2026-07-24 收盘较近 52 周最高收盘价回撤 67.5%。</p>
+      <div class="grid">
+        <div class="card">
+          <div class="k">2025 付费订阅用户</div>
+          <div class="v">1,691 万</div>
+          <div class="s"><span class="up">+34.1% YoY</span>；订阅率 6.1%</div>
+        </div>
+        <div class="card">
+          <div class="k">2026Q1 付费用户</div>
+          <div class="v">&gt;1,790 万</div>
+          <div class="s"><span class="up">+30.2% YoY</span>；未经审核/审阅</div>
+        </div>
+        <div class="card">
+          <div class="k">2025 核心业务收入</div>
+          <div class="v">29.54 亿</div>
+          <div class="s"><span class="up">+41.6% YoY</span>；占持续经营收入 76.6%</div>
+        </div>
+        <div class="card">
+          <div class="k">2026Q1 AI 生产力 ARR</div>
+          <div class="v">约 5.8 亿</div>
+          <div class="s"><span class="up">+56.2% YoY</span>；公司首次披露口径</div>
+        </div>
+        <div class="card">
+          <div class="k">2025 全球 MAU</div>
+          <div class="v">2.76 亿</div>
+          <div class="s"><span class="up">+3.8% YoY</span>；海外超过 1 亿</div>
+        </div>
+        <div class="card">
+          <div class="k">2025 毛利率</div>
+          <div class="v">73.6%</div>
+          <div class="s"><span class="down">同比 -2.4pct</span>；渠道费增长快于收入</div>
+        </div>
+        <div class="card">
+          <div class="k">2025 调整后归母利润</div>
+          <div class="v">9.65 亿</div>
+          <div class="s"><span class="up">+64.7% YoY</span>；公司定义，剔除股权激励</div>
+        </div>
+        <div class="card">
+          <div class="k">当前价格 / 52 周高点</div>
+          <div class="v">3.93 / 12.08</div>
+          <div class="s"><span class="down">最高收盘回撤 67.5%</span>；港元</div>
+        </div>
+      </div>
+      <div class="callout amber">
+        <strong>研究的关键不是“AI 图片很火”</strong><br>
+        而是美图能否把免费用户持续变成付费用户，再把订阅升级为 credits 消耗，同时让毛利、留存和每股 owner earnings 不被模型费、渠道费与稀释吃掉。
+      </div>
+    </section>
+
+    <section id="business">
+      <h2>公司到底赚什么钱</h2>
+      <p class="section-dek">美图已从“修图工具 + 广告 + 美业解决方案”收敛为以订阅为主的影像、视频和设计产品。2025 年美业解决方案被列为终止经营，历史总收入不能直接横比。</p>
+      <div class="two">
+        <div>
+          <h3>2025 持续经营收入结构</h3>
+          <div class="bar-row"><span>影像/视频/设计</span><div class="track"><span class="fill" style="width:76.6%"></span></div><span class="bar-val">76.6%</span></div>
+          <div class="bar-row"><span>广告</span><div class="track"><span class="fill amber" style="width:21.8%"></span></div><span class="bar-val">21.8%</span></div>
+          <div class="bar-row"><span>其他</span><div class="track"><span class="fill red" style="width:1.6%"></span></div><span class="bar-val">1.6%</span></div>
+          <p><small>影像/视频/设计收入 29.54 亿元；广告 8.43 亿元；其他 0.62 亿元。来源：<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042702560.pdf">2025 年报</a>。</small></p>
+        </div>
+        <div>
+          <h3>核心产品内部结构</h3>
+          <div class="bar-row"><span>休闲类应用</span><div class="track"><span class="fill amber" style="width:81%"></span></div><span class="bar-val">81%</span></div>
+          <div class="bar-row"><span>生产力应用</span><div class="track"><span class="fill" style="width:19%"></span></div><span class="bar-val">19%</span></div>
+          <p>休闲类以美图秀秀、BeautyCam、Wink 为主；生产力类包括 DesignKit、Kaipai、Vmake、RoboNeo 等。生产力占比仍小，却是增速更快、付费率更高、长期价值更关键的一侧。</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>业务</th><th>用户价值</th><th>商业模式</th><th>护城河判断</th><th>主要风险</th></tr></thead>
+          <tbody>
+            <tr><td>休闲影像/视频</td><td>低门槛修图、美颜、短视频效果与潮流模板</td><td>订阅 + credits/单次付费</td><td><span class="tag good">品牌/分发较强</span> 中国审美、本地化、用户习惯与多产品矩阵</td><td>低切换成本；通用模型直接提供编辑；潮流生命周期短</td></tr>
+            <tr><td>生产力应用</td><td>电商图、口播视频、商品视频、批量内容生产</td><td>订阅 + credits + 用量</td><td><span class="tag warn">正在形成</span> 若能沉淀工作流、模板、行业数据和商业集成，粘性高于修图工具</td><td>Canva/Adobe/模型平台一体化；企业用户留存和 ARPU 未披露</td></tr>
+            <tr><td>广告</td><td>利用内容和用户流量提供品牌曝光</td><td>广告</td><td><span class="tag risk">弱</span> 2025 收入同比下降 1.3%，非核心增长引擎</td><td>流量波动、宏观广告周期、隐私政策</td></tr>
+            <tr><td>美业解决方案</td><td>面向线下美业的软硬件和服务</td><td>项目/设备/服务</td><td><span class="tag info">已退出持续经营</span></td><td>不要再把历史美业收入并入当前核心增长叙事</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout blue">
+        <strong>有护城河的不是“能生成一张图”</strong><br>
+        通用生成能力会被模型厂商商品化。更可能保留价值的是：用户入口、审美与身份一致性、批量工作流、行业模板、商品/电商平台集成、跨语言本地化，以及从输入到可交付成品的结果负责。
+      </div>
+    </section>
+
+    <section id="users">
+      <h2>付费飞轮：最强的基本面证据</h2>
+      <p class="section-dek">2021—2025 年付费用户从约 400 万增至 1,691 万，四年复合增速约 43%。同时订阅率由 2024 年 4.7% 升至 2025 年 6.1%。这比总榜冲高或 MAU 单独增长更有经济意义。</p>
+      <div class="two">
+        <div class="chart">
+          <strong>付费订阅用户（百万）</strong>
+          <svg viewBox="0 0 600 280" role="img" aria-label="2021至2026年第一季度付费订阅用户增长">
+            <line class="axis" x1="50" y1="225" x2="560" y2="225"/>
+            <line class="axis" x1="50" y1="50" x2="50" y2="225"/>
+            <polyline class="line-green" points="65,185 160,169 255,137 350,105 445,64 540,54"/>
+            <circle class="point" cx="65" cy="185" r="6"/><circle class="point" cx="160" cy="169" r="6"/>
+            <circle class="point" cx="255" cy="137" r="6"/><circle class="point" cx="350" cy="105" r="6"/>
+            <circle class="point" cx="445" cy="64" r="6"/><circle class="point" cx="540" cy="54" r="6"/>
+            <text x="53" y="207">4.0</text><text x="148" y="191">5.6</text><text x="243" y="159">9.11</text>
+            <text x="335" y="127">12.61</text><text x="430" y="86">16.91</text><text x="520" y="42">&gt;17.90</text>
+            <text x="50" y="248">2021</text><text x="145" y="248">2022</text><text x="240" y="248">2023</text>
+            <text x="335" y="248">2024</text><text x="430" y="248">2025</text><text x="515" y="248">26Q1</text>
+          </svg>
+        </div>
+        <div>
+          <h3>为什么这条数据链重要</h3>
+          <ol class="clean">
+            <li><strong>用户增长与转化同时发生：</strong>2025 MAU 仅增 3.8%，付费用户却增 34.1%，说明增长主要来自渗透率而非单纯流量。</li>
+            <li><strong>生产力付费率更高：</strong>2025 生产力 MAU 2,400 万、付费 216 万，付费率 9.0%；休闲类约 5.9%。</li>
+            <li><strong>海外质量可能改善：</strong>公司称 2025 下半年国际付费新增多数来自欧美和东亚高 ARPU 地区，但未披露地区 ARPU 或留存。</li>
+            <li><strong>credits 提供第二曲线：</strong>2026 年 3 月 credits 消耗比 2025 年 12 月增 59%，但“消耗”还不能等同于确认收入和毛利。</li>
+          </ol>
+        </div>
+      </div>
+      <h3>必须补齐的单位经济性</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>指标</th><th>公司是否披露</th><th>为什么重要</th><th>研究处理</th></tr></thead>
+          <tbody>
+            <tr><td>总付费用户 / 订阅率</td><td><span class="tag good">已披露</span></td><td>核心转化结果</td><td>作为第一优先 KPI</td></tr>
+            <tr><td>生产力付费用户 / 付费率</td><td><span class="tag good">已披露</span></td><td>决定 SaaS/工作流质量</td><td>单独跟踪，不与休闲类混合</td></tr>
+            <tr><td>分产品 ARPU</td><td><span class="tag risk">未披露</span></td><td>区分涨价、地区结构和用量增长</td><td>不能用收入/期末付费用户粗算后冒充 ARPU</td></tr>
+            <tr><td>月/年留存、续费率、cohort</td><td><span class="tag risk">未披露</span></td><td>判断榜单流量能否沉淀为长期价值</td><td>是护城河最大的证据缺口</td></tr>
+            <tr><td>CAC、营销回收期</td><td><span class="tag risk">未披露</span></td><td>判断海外扩张是否买量驱动</td><td>用营销费增速和自然榜单仅作弱代理</td></tr>
+            <tr><td>credits 收入、毛利与复购</td><td><span class="tag warn">只披露消耗增速</span></td><td>判断从订阅到用量收费是否增值</td><td>中报需看收入贡献和成本匹配</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="apps">
+      <h2>App Store、Google Play 与网站公开信号</h2>
+      <p class="section-dek">榜单必须区分“历史活动峰值”“当前单点排名”“长期留存”。公司曾披露 2025 年多款产品在多国冲到总榜第一，但 2026-07-27 的 15 个市场总榜快照没有核心产品进入 overall top 100。</p>
+      <div class="grid">
+        <div class="card wide">
+          <div class="k">中国 iOS 累计公开评分数</div>
+          <div class="v">美图 239.8 万</div>
+          <div class="s">Wink 173.8 万；BeautyCam 101.1 万；Kaipai 13.0 万。评分数代表长期安装/使用沉淀的弱信号，不是活跃用户。</div>
+        </div>
+        <div class="card wide">
+          <div class="k">美国 App Store 当前品类榜</div>
+          <div class="v">Meitu #27</div>
+          <div class="s">BeautyCam #50（Photo &amp; Video）；单日、单市场、品类榜，不宜外推全球。</div>
+        </div>
+        <div class="card">
+          <div class="k">Google Play · Meitu</div>
+          <div class="v">1 亿+</div>
+          <div class="s">安装门槛；约 146 万条评价，4.5 星</div>
+        </div>
+        <div class="card">
+          <div class="k">Google Play · Wink</div>
+          <div class="v">5,000 万+</div>
+          <div class="s">安装门槛；约 95.9 万条评价，4.4 星</div>
+        </div>
+        <div class="card">
+          <div class="k">Google Play · RoboNeo</div>
+          <div class="v">50 万+</div>
+          <div class="s"><span class="down">3.5 星 / 1,560 条评价</span>，产品质量需继续验证</div>
+        </div>
+        <div class="card">
+          <div class="k">15 市场 iOS 总榜</div>
+          <div class="v">0 / Top 100</div>
+          <div class="s">一次快照，不否定历史冲榜，但显示当前未保持广泛总榜热度</div>
+        </div>
+      </div>
+      <h3>网站访问量只作方向性旁证</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>站点</th><th>月份</th><th>Similarweb 估算访问</th><th>环比</th><th>主要地域</th><th>读法</th></tr></thead>
+          <tbody>
+            <tr><td>wink.ai</td><td>2026-06</td><td>约 160 万</td><td class="up">+24.55%</td><td>美国、印度、印尼、巴西、越南</td><td>海外分布较广；不能映射 App 付费率</td></tr>
+            <tr><td>roboneo.com</td><td>2026-06</td><td>约 44.5 万</td><td class="down">-50.26%</td><td>巴西、埃及、美国、印度</td><td>首发热度可能衰减；也可能有测量/活动影响</td></tr>
+            <tr><td>designkit.com</td><td>2026-06</td><td>约 9.17 万</td><td class="up">+4.25%</td><td>中国 53.7%、美国 7.5%</td><td>Web 入口偏小，需结合 App/小程序和企业使用</td></tr>
+            <tr><td>zcool.com.cn</td><td>2026-06</td><td>约 190 万</td><td class="down">-1.2%</td><td>中国 92.3%</td><td>社区资产有粘性，但商业转化未知</td></tr>
+            <tr><td>meitu.com</td><td>2026-04</td><td>约 91.8 万</td><td class="up">+8.51%</td><td>中国 63.2%、美国 11.1%</td><td>企业站/产品入口混合，非核心消费 App 流量</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout red">
+        <strong>不要把榜单峰值写成护城河</strong><br>
+        排名能证明获客爆发力；只有 7/30/90 日留存、续费、自然流量占比和付费 cohort 才能证明经济价值。当前公开数据只能确认美图有全球分发能力，不能确认每次爆款都能长期沉淀。
+      </div>
+    </section>
+
+    <section id="model">
+      <h2>“没有好模型”需要改写得更准确</h2>
+      <p class="section-dek">美图有自研垂直视觉模型 MiracleVision，但没有独立证据证明它是通用前沿基础模型。管理层明确选择不从零训练基础模型，而是把自有垂直模型、开源模型和第三方 API 装进产品工作流。</p>
+      <div class="two">
+        <div>
+          <h3>这条路线为什么合理</h3>
+          <ul class="clean">
+            <li>避免与 OpenAI、Google、阿里、字节等进行高资本、高算力的基础模型军备竞赛。</li>
+            <li>把资源放在审美调优、产品体验、工作流、订阅转化与渠道分发。</li>
+            <li>可以快速选用最合适的模型，降低单一技术路线过时风险。</li>
+            <li>2025 年 R&amp;D 费用 9.45 亿元，仅增 3.8%；公司解释基础模型训练投入下降。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>它会把价值让给谁</h3>
+          <ul class="clean">
+            <li>第三方 API、云与模型供应商可提高价格，或把同样功能直接交付终端用户。</li>
+            <li>Apple/Google 渠道费用 2025 年达 6.18 亿元，相当于核心收入 20.9%。</li>
+            <li>Adobe 与 Canva 已有成熟设计工作流和企业关系；OpenAI/Google 有原生分发入口。</li>
+            <li>当“生成、换装、抠图、改背景”成为基础能力，单功能付费意愿可能下滑。</li>
+          </ul>
+        </div>
+      </div>
+      <h3>替代风险不是二选一，而是价值栈迁移</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>价值层</th><th>被模型厂商打包概率</th><th>美图保留价值的条件</th><th>当前证据</th></tr></thead>
+          <tbody>
+            <tr><td>单次生成、风格化、背景替换</td><td><span class="tag risk">高</span></td><td>极低摩擦、极强审美或本地化</td><td>Google/OpenAI 已在通用助手中直接集成</td></tr>
+            <tr><td>人像身份/美颜一致性</td><td><span class="tag warn">中高</span></td><td>长期用户偏好、稳定结果、隐私与品牌信任</td><td>美图品牌和用户规模有基础，技术优势未独立量化</td></tr>
+            <tr><td>电商批量生产工作流</td><td><span class="tag warn">中</span></td><td>商品数据、模板、审批、平台发布、可量化转化</td><td>DesignKit 与阿里/京东/Amazon 集成是早期证据</td></tr>
+            <tr><td>企业创意套件/协同</td><td><span class="tag risk">高竞争</span></td><td>更低成本或更强垂直闭环</td><td>Adobe/Canva 的套件与企业入口更强</td></tr>
+            <tr><td>全球消费影像分发</td><td><span class="tag good">相对可守</span></td><td>持续爆款、留存、跨市场本地化和交叉销售</td><td>海外 MAU &gt;1 亿，多 App 累计评分与安装门槛可验证</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <strong>长期生存方式：从“功能包装器”变成“结果系统”</strong><br>
+        如果美图只把更好的模型包进现有按钮，它会被替代；如果它掌握用户入口、审美偏好、行业模板、商品数据、审批/发布和效果反馈，模型反而可以成为可替换的低层供应品。
+      </div>
+    </section>
+
+    <section id="rotation">
+      <h2>近期 AI 应用会不会有机会</h2>
+      <p class="section-dek">答案必须拆成“催化剂存在”和“行情已经确认”。截至 2026-07-24，前者成立，后者不成立。</p>
+      <div class="grid">
+        <div class="card wide">
+          <div class="k">8 股 AI 应用/平台样本 · 20 日</div>
+          <div class="v">4 涨 / 4 跌</div>
+          <div class="s">中位数约 +1.50%；上涨集中在阿里、金山办公、美图、腾讯，尚非全面风险偏好扩张。</div>
+        </div>
+        <div class="card wide">
+          <div class="k">纯应用高弹性 4 股 · 20 日</div>
+          <div class="v">1 涨 / 3 跌</div>
+          <div class="s">美图 +6.50%；万兴 -13.00%、科大讯飞 -0.36%、昆仑万维 -5.34%；中位数约 -2.85%。</div>
+        </div>
+      </div>
+      <h3>近期收益率横截面</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>公司</th><th>角色</th><th>5 日</th><th>20 日</th><th>60 日</th><th>6/17 后</th><th>读法</th></tr></thead>
+          <tbody>
+            <tr><td>美图</td><td>AI 影像应用</td><td class="down">-0.76%</td><td class="up">+6.50%</td><td class="down">-7.96%</td><td class="down">-16.20%</td><td>20 日反弹，但中期仍弱</td></tr>
+            <tr><td>阿里巴巴</td><td>模型/平台</td><td class="down">-2.31%</td><td class="up">+15.79%</td><td class="down">-15.51%</td><td class="up">+2.90%</td><td>更像平台反弹，不等于应用扩散</td></tr>
+            <tr><td>腾讯</td><td>平台/分发</td><td class="down">-5.85%</td><td class="up">+3.13%</td><td class="down">-9.19%</td><td class="down">-2.42%</td><td>弱修复</td></tr>
+            <tr><td>金山办公</td><td>生产力应用</td><td class="up">+1.53%</td><td class="up">+14.16%</td><td class="down">-10.04%</td><td class="up">+6.02%</td><td>生产力软件出现相对强度</td></tr>
+            <tr><td>万兴科技</td><td>创意软件</td><td class="down">-2.91%</td><td class="down">-13.00%</td><td class="down">-36.17%</td><td class="down">-16.72%</td><td>纯应用风险偏好仍差</td></tr>
+            <tr><td>科大讯飞</td><td>模型/应用</td><td class="down">-5.45%</td><td class="down">-0.36%</td><td class="down">-21.79%</td><td class="down">-6.29%</td><td>未确认</td></tr>
+            <tr><td>昆仑万维</td><td>生成式应用</td><td class="down">-12.65%</td><td class="down">-5.34%</td><td class="down">-28.32%</td><td class="down">-5.34%</td><td>高弹性方向继续去风险</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>为什么仍然“有机会”</h3>
+      <ol class="clean">
+        <li><strong>技术可用性提高：</strong>图像模型的可控编辑、文字渲染、多轮一致性和速度继续改善，应用层更容易把模型能力变成结果。</li>
+        <li><strong>商业化从订阅走向用量：</strong>credits 能把高成本、高价值场景单独定价，理论上改善 ARPU，但必须验证毛利。</li>
+        <li><strong>资本开支叙事可能阶段性降温：</strong>当硬件拥挤度下降，市场可能寻找已有收入和利润的应用公司；但资金也可能直接离开成长股。</li>
+        <li><strong>美图有盈利和现金流：</strong>它不是只靠概念融资的应用公司，付费用户和核心收入已给出硬数据。</li>
+        <li><strong>8 月中报是近端事件：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf">董事会将在 2026-08-26 审议中期业绩</a>，预期差可能放大股价弹性。</li>
+      </ol>
+      <div class="callout amber">
+        <strong>当前判断：赔率线索先出现，胜率证据还不够</strong><br>
+        美图相对部分应用股更强，但行业扩散不够。要把结论升级为“AI 应用轮动确认”，至少需要纯应用样本多数上涨、相对恒生科技取得超额、榜单/流量持续而非单日冲高，以及中报兑现付费与利润。
+      </div>
+    </section>
+
+    <section id="financials">
+      <h2>财报质量：增长好看，调整项必须拆开</h2>
+      <p class="section-dek">2025 年收入和调整后利润强劲，但 IFRS 利润下降、毛利率回落。核心是把经营增长、估值波动、可转债一次性费用和股权激励分开。</p>
+      <div class="two">
+        <div class="chart">
+          <strong>持续经营收入（亿元人民币）</strong>
+          <svg viewBox="0 0 600 280" role="img" aria-label="2021至2025年持续经营收入">
+            <line class="axis" x1="55" y1="225" x2="555" y2="225"/>
+            <line class="axis" x1="55" y1="45" x2="55" y2="225"/>
+            <polyline class="line-amber" points="75,177 190,156 305,122 420,107 535,58"/>
+            <circle cx="75" cy="177" r="6" fill="#fff" stroke="#9b6417" stroke-width="3"/>
+            <circle cx="190" cy="156" r="6" fill="#fff" stroke="#9b6417" stroke-width="3"/>
+            <circle cx="305" cy="122" r="6" fill="#fff" stroke="#9b6417" stroke-width="3"/>
+            <circle cx="420" cy="107" r="6" fill="#fff" stroke="#9b6417" stroke-width="3"/>
+            <circle cx="535" cy="58" r="6" fill="#fff" stroke="#9b6417" stroke-width="3"/>
+            <text x="60" y="198">16.66</text><text x="175" y="177">20.85</text><text x="290" y="143">26.96</text>
+            <text x="405" y="128">29.96</text><text x="520" y="46">38.59</text>
+            <text x="58" y="248">2021</text><text x="173" y="248">2022</text><text x="288" y="248">2023</text>
+            <text x="403" y="248">2024</text><text x="518" y="248">2025</text>
+          </svg>
+        </div>
+        <div>
+          <h3>2025 利润的三种读法</h3>
+          <div class="bar-row"><span>调整后归母</span><div class="track"><span class="fill" style="width:100%"></span></div><span class="bar-val">9.65 亿</span></div>
+          <div class="bar-row"><span>持续经营归母</span><div class="track"><span class="fill amber" style="width:72.3%"></span></div><span class="bar-val">6.98 亿</span></div>
+          <div class="bar-row"><span>含终止经营归母</span><div class="track"><span class="fill red" style="width:60.4%"></span></div><span class="bar-val">5.83 亿</span></div>
+          <p>公司调整后归母同比增 64.7%；持续经营 IFRS 归母同比降约 12.7%；含终止经营归母同比降约 27.6%。三者都是真的，代表的经济含义不同。</p>
+        </div>
+      </div>
+      <h3>利润桥与现金质量</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>项目</th><th>2025</th><th>研究判断</th></tr></thead>
+          <tbody>
+            <tr><td>经营现金流</td><td>12.57 亿元</td><td><span class="tag good">强</span> 高于利润，但包含订阅预收和营运资本时点影响</td></tr>
+            <tr><td>粗略 CFO - 资本开支</td><td>约 12.09 亿元</td><td><span class="tag warn">上限代理</span> 不是稳态 owner earnings，不能直接资本化</td></tr>
+            <tr><td>股权激励</td><td>1.185 亿元</td><td><span class="tag risk">真实股东成本</span> 公司调整后利润将其加回，本研究不忽略</td></tr>
+            <tr><td>可转债股份支付一次性费用</td><td>5.118 亿元</td><td><span class="tag info">非经常</span> 加回有合理性，但债务、潜在稀释仍存在</td></tr>
+            <tr><td>金融资产/优先股公允价值波动</td><td>调整桥中 -4.811 亿元</td><td><span class="tag info">剔除波动</span> 不能把未实现投资收益当核心盈利</td></tr>
+            <tr><td>渠道分成</td><td>6.178 亿元，+43.5%</td><td><span class="tag risk">利润池外流</span> 约等于核心业务收入 20.9%</td></tr>
+            <tr><td>计算/带宽/存储/API</td><td>4.149 亿元，+23.3%</td><td><span class="tag warn">需拆推理成本</span> 公司称第三方 API 占总销售成本中个位数百分比</td></tr>
+            <tr><td>毛利率</td><td>73.6%，同比 -2.4pct</td><td><span class="tag warn">增长有成本</span> credits 和更重推理场景可能继续施压</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout blue">
+        <strong>Owner earnings 暂估：7.0—8.5 亿元人民币</strong><br>
+        这是保守研究区间：以经营性调整后利润为起点，把股权激励视作成本，考虑折旧/维护资本开支和正常营运资本，不采用 12.09 亿元的当期现金上限。公司没有披露“维护性资本开支”，因此估值必须做区间而非单点。
+      </div>
+    </section>
+
+    <section id="capital">
+      <h2>创始人增持与公司回购：好信号，不是免检章</h2>
+      <p class="section-dek">回购和增持能表明利益一致与管理层判断，但只有“低于每股内在价值、资产负债表安全、净股本不被更大规模发行稀释”时才真正增值。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>事项</th><th>已确认事实</th><th>正面解释</th><th>反方检查</th></tr></thead>
+          <tbody>
+            <tr><td>创始人买入</td><td>2026-07-03 买入 160 万股，均价 HK$4.023；2018 年以来累计买入 558 万股；披露权益 12.97%</td><td>真金白银、与外部股东方向一致</td><td>本次约 HK$644 万，相对持股规模小；不能替代估值和业绩验证</td></tr>
+            <tr><td>公司回购计划</td><td>2026-03-27 宣布一年内最多 HK$3 亿</td><td>在估值低于内在价值时可提高每股价值</td><td>授权不等于执行；也可能为稳定情绪</td></tr>
+            <tr><td>实际回购</td><td>新授权下截至 06-26 回购 2,546.7 万股；当日 274 万股，HK$3.58—3.66</td><td>价格低于创始人后续买入价，执行具有价格纪律的迹象</td><td>需看最终注销/库存股用途和全年净股数</td></tr>
+            <tr><td>库存股</td><td>截至 06-26 共 6,300.25 万股；流通（不含库存）45.2318 亿股</td><td>库存股暂不参与每股经济权利</td><td>未来再发行可能恢复稀释</td></tr>
+            <tr><td>阿里可转债</td><td>US$2.5 亿、1% 票息、2028 到期、转股价 HK$6；全部转换新增 3.355 亿股</td><td>提供现金与战略合作，当前股价低于转股价</td><td>潜在股份是当前全部库存股的 5.3 倍；完全转股后约 6.82% 稀释</td></tr>
+            <tr><td>股息</td><td>2025 年支付股息 8.656 亿元人民币；建议末期每股 HK$0.05</td><td>现金回报股东</td><td>资本回报、研发与增长投资的机会成本需并看</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout amber">
+        <strong>回答最初的问题：创始人和股东一直回购的股票不一定就是好股票。</strong><br>
+        研究顺序应是：回购价格 vs. 保守内在价值 → 回购后净股本是否下降 → 是否举债回购 → 是否挤压高回报再投资 → 管理层过去发行/回购是否一致 → 每股 owner earnings 是否真的提高。美图在“利益一致”上得分，在“可转债潜在稀释”和“内在价值置信区间”上仍需保留折扣。
+      </div>
+    </section>
+
+    <section id="valuation">
+      <h2>估值：价格便宜了，但不是无条件便宜</h2>
+      <p class="section-dek">以 2026-07-24 收盘 HK$3.93、流通股 45.2318 亿股和中国银行 CNY 0.8664/HKD 换算。估值日期、利润期间和股本口径保持一致。</p>
+      <div class="grid">
+        <div class="card">
+          <div class="k">股权市值</div>
+          <div class="v">HK$177.8 亿</div>
+          <div class="s">约人民币 154.0 亿元</div>
+        </div>
+        <div class="card">
+          <div class="k">净现金类资产</div>
+          <div class="v">约 33.2 亿</div>
+          <div class="s">人民币；扣借款、可转债账面值和优先股负债</div>
+        </div>
+        <div class="card">
+          <div class="k">2025 调整后归母 P/E</div>
+          <div class="v">约 16.0×</div>
+          <div class="s">公司调整口径，尚未扣回股权激励</div>
+        </div>
+        <div class="card">
+          <div class="k">持续经营 IFRS P/E</div>
+          <div class="v">约 22.1×</div>
+          <div class="s">基于持续经营归母 6.976 亿元</div>
+        </div>
+        <div class="card">
+          <div class="k">Owner earnings 倍数</div>
+          <div class="v">18.1—22.0×</div>
+          <div class="s">对应 7.0—8.5 亿元研究区间</div>
+        </div>
+        <div class="card">
+          <div class="k">EV / 核心收入</div>
+          <div class="v">约 4.09×</div>
+          <div class="s">EV 约人民币 120.8 亿元</div>
+        </div>
+      </div>
+      <h3>Owner-earnings DCF 敏感性</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>情景</th><th>起始 owner earnings</th><th>未来 5 年增长</th><th>永续增长</th><th>折现率</th><th>含净现金隐含值</th><th>解释</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag risk">下行情景</span></td><td>7.0 亿元</td><td>0%</td><td>0%</td><td>13%</td><td>HK$2.22/股</td><td>付费增长停滞、竞争挤压，当前价格没有安全边际</td></tr>
+            <tr><td><span class="tag warn">基础情景</span></td><td>7.5 亿元</td><td>10%</td><td>3%</td><td>11%</td><td>HK$4.13/股</td><td>与当前价接近，说明价格要求公司继续兑现而非只维持现状</td></tr>
+            <tr><td><span class="tag good">上行情景</span></td><td>8.5 亿元</td><td>18%</td><td>4%</td><td>11%</td><td>HK$6.53/股</td><td>生产力/海外高速增长；高于 HK$6 时需把转股稀释纳入</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><small>这些是 Seed 的透明敏感性假设，不是公司指引、市场一致预期或目标价。DCF 对长期增长、折现率和维护性投入高度敏感。</small></p>
+      <div class="callout red">
+        <strong>估值最容易犯的错</strong><br>
+        只看 16 倍“调整后 P/E”会忽略股权激励；只看 22 倍 IFRS P/E 会被可转债一次性费用和金融资产波动干扰；只看 12 亿元现金流又会把订阅预收和营运资本顺风永久化。合理做法是用 7—8.5 亿元 owner earnings 区间，再对增长和替代风险做敏感性。
+      </div>
+    </section>
+
+    <section id="buffett">
+      <h2>巴菲特—芒格框架下的美图</h2>
+      <p class="section-dek">方法来源于 Berkshire Owner’s Manual 与官方股东信：能力圈、可预测经济性、护城河方向、owner earnings、资本强度、管理层与价格纪律。不是把名人语录变成固定打分公式。</p>
+      <div class="scorecard" role="table" aria-label="巴菲特芒格研究评分卡">
+        <div class="head">维度</div><div class="head">状态</div><div class="head">证据与判断</div>
+        <div>业务是否能理解</div><div><span class="tag good">较高</span></div><div>订阅/credits 换取影像与生产结果，收入结构清楚；但多产品 cohort 和 AI 成本仍不透明。</div>
+        <div>长期经济性可预测</div><div><span class="tag warn">中低</span></div><div>付费增长已有五年轨迹，但基础模型迭代、平台打包和低切换成本让十年终局难预测。</div>
+        <div>护城河与方向</div><div><span class="tag warn">混合</span></div><div>品牌、用户、全球分发和付费率在增强；底层功能差异化与平台议价权在收窄。</div>
+        <div>资本强度</div><div><span class="tag good">较优</span></div><div>软件订阅、经营现金流强、实物资本开支低；但 R&amp;D、推理/API 和渠道费是经济资本开支。</div>
+        <div>Owner earnings</div><div><span class="tag warn">需归一化</span></div><div>现金转化强，但股权激励、预收款和一次性项目让单点利润失真；暂估 7—8.5 亿元。</div>
+        <div>管理层坦诚度</div><div><span class="tag good">相对正面</span></div><div>创始人公开承认大模型/初创竞争、组织惯性，并解释不从零训练基础模型；产品使用和排名主张仍需外部验证。</div>
+        <div>资本配置</div><div><span class="tag warn">待观察</span></div><div>分红、回购、研发与阿里合作并行；可转债带来现金、协同与潜在 6.82% 稀释。</div>
+        <div>价格与安全边际</div><div><span class="tag warn">情景依赖</span></div><div>基础 DCF 约 HK$4.13，接近市价；只有盈利继续增长时才显得便宜，下行情景仍有明显空间。</div>
+      </div>
+      <h3>质量生意还是“雪茄烟蒂”</h3>
+      <p>美图不是典型低倍数、资产清算型“烟蒂”，而是一个<strong>高速付费增长但终局不确定</strong>的软件消费/生产力平台。巴芒框架会要求更高的可预测性折扣：不能因为股价从 HK$12.08 跌到 HK$3.93，就把跌幅当安全边际；也不能因为创始人增持，就跳过护城河方向和每股价值。</p>
+      <details>
+        <summary>方法论一手来源</summary>
+        <div>
+          <ul class="clean">
+            <li><a href="https://www.berkshirehathaway.com/ownman.pdf">Berkshire Hathaway Owner's Manual</a>：股东视角、每股内在价值、资本配置。</li>
+            <li><a href="https://www.berkshirehathaway.com/letters/1986.html">1986 Chairman's Letter</a>：owner earnings 与维护性资本开支不确定性。</li>
+            <li><a href="https://www.berkshirehathaway.com/letters/1996.html">1996 Chairman's Letter</a>：能力圈和可预测长期经济性。</li>
+            <li><a href="https://www.berkshirehathaway.com/letters/2005ltr.pdf">2005 Chairman's Letter</a>：护城河是在拓宽还是收窄。</li>
+            <li><a href="https://www.berkshirehathaway.com/letters/2007ltr.pdf">2007 Chairman's Letter</a>：耐久护城河和低资本强度。</li>
+            <li><a href="https://www.berkshirehathaway.com/letters/2023ltr.pdf">2023 Chairman's Letter</a>：芒格推动从便宜资产转向合理价格的优质生意。</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="monitor">
+      <h2>接下来怎么验证，而不是怎么猜</h2>
+      <p class="section-dek">下一次硬催化是 2026-08-26 中期业绩。把短期行业情绪和中期公司财务分别设门槛，避免用股价反推基本面。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>层级</th><th>升级条件</th><th>维持观察</th><th>降级/证伪</th></tr></thead>
+          <tbody>
+            <tr><td>AI 应用板块</td><td>20 日样本 ≥70% 上涨；纯应用中位数跑赢恒生科技；成交扩散</td><td>美图/少数平台独强</td><td>硬件与应用一起跌，风险偏好整体收缩</td></tr>
+            <tr><td>App 热度</td><td>多市场品类榜 7—30 日留存，下载/评分增量扩散</td><td>单一市场短期冲榜</td><td>爆款后快速跌出、差评/退款上升</td></tr>
+            <tr><td>付费用户</td><td>中报同比仍 ≥30%，生产力继续快于休闲类</td><td>同比 20%—30%</td><td>低于 20% 或净新增明显停滞</td></tr>
+            <tr><td>生产力收入</td><td>占核心收入高于 19%，AI ARR 与确认收入同步</td><td>占比持平但绝对额增长</td><td>credits 消耗高增、收入和毛利不跟</td></tr>
+            <tr><td>毛利率</td><td>≥73%，渠道/API 成本增速受控</td><td>71%—73%</td><td>&lt;71% 且管理层无法证明 LTV/ARPU 补偿</td></tr>
+            <tr><td>现金/股本</td><td>经营现金流随利润增长，净股数下降</td><td>回购被股权激励部分抵消</td><td>回购同时高额发股/转股，owner earnings/股不升</td></tr>
+            <tr><td>替代风险</td><td>DesignKit/Kaipai 形成行业闭环与留存证据</td><td>继续做功能集成</td><td>模型/Canva/Adobe 直接覆盖核心任务并压价</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>中报“爆雷”预警表</h3>
+      <ul class="clean">
+        <li>付费用户增速显著低于 Q1 的 30.2%，且没有 ARPU 提升补偿；</li>
+        <li>生产力付费用户或收入占比停滞，AI ARR 口径与确认收入背离；</li>
+        <li>毛利率跌破约 71%，渠道费、推理/API 成本增长超过核心收入；</li>
+        <li>营销费继续高增而海外付费净新增放缓，提示买量效率恶化；</li>
+        <li>经营现金流明显落后于经营利润，或应收/合同成本异常上升；</li>
+        <li>回购金额被股权激励、库存股再发行或可转债稀释抵消。</li>
+      </ul>
+      <div class="callout">
+        <strong>最终判断</strong><br>
+        短期：AI 应用有机会，但现在还不是“行业已经轮动”的事实；美图是较有基本面支撑的候选。<br>
+        中期：核心看 8 月中报是否同时守住付费、生产力收入、毛利和现金流。<br>
+        长期：通用生图功能会被模型厂商打包，真正的胜负在垂直工作流、用户入口、付费留存与每股 owner earnings。
+      </div>
+    </section>
+
+    <section id="sources">
+      <h2>证据与来源</h2>
+      <p class="section-dek">完整机器可读来源记录包含来源级别、访问日期、用途、限制和本地冻结文件 SHA-256：<a href="./source-ledger.json">source-ledger.json</a>。原始大型 PDF 与行情/API 快照保留在本地研究区，不进入 Git。</p>
+      <ol class="source-list">
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042702560.pdf">2025 年报（审计）</a></li>
+        <li><a href="https://corp-static.meitu.com/corp-new/20250925/2025092501275.pdf">2025 中报</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0506/2026050600053.pdf">2026Q1 经营更新</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0327/2026032700936.pdf">最多 HK$3 亿回购计划</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0703/2026070302393.pdf">创始人 2026-07-03 增持</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0626/2026062600948.pdf">2026-06-26 股份回购申报</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1231/2025123101815.pdf">阿里可转债完成公告</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf">中期业绩董事会日期</a></li>
+        <li><a href="https://www.meitu.com/en/media/421">吴欣鸿 2025 年终演讲</a></li>
+        <li><a href="https://www.meitu.com/en/media/438">2026 美图影像节</a></li>
+        <li><a href="https://www.meitu.com/en/media/413">2024 美图影像节</a></li>
+        <li><a href="https://www.meitu.com/en/media/420">美图与阿里通义合作</a></li>
+        <li><a href="https://www.meitu.com/en/media/393">MiracleVision 发布</a></li>
+        <li><a href="https://apps.apple.com/us/app/meitu-ai-photo-video-editor/id416048305">Meitu US App Store</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.mt.mtxx.mtxx">Meitu Google Play</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.meitu.wink">Wink Google Play</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.meitu.roboneo">RoboNeo Google Play</a></li>
+        <li><a href="https://a16z.com/100-gen-ai-apps-6/">a16z Top 100 GenAI Consumer Apps #6</a></li>
+        <li><a href="https://www.similarweb.com/website/wink.ai/">Similarweb · wink.ai</a></li>
+        <li><a href="https://www.similarweb.com/website/roboneo.com/">Similarweb · roboneo.com</a></li>
+        <li><a href="https://www.similarweb.com/website/designkit.com/">Similarweb · designkit.com</a></li>
+        <li><a href="https://openai.com/index/introducing-chatgpt-images-2-0/">OpenAI · ChatGPT Images 2.0</a></li>
+        <li><a href="https://blog.google/products-and-platforms/products/gemini/updated-image-editing-model/">Google · Gemini image editing</a></li>
+        <li><a href="https://www.canva.com/newsroom/news/canva-create-2026-ai/">Canva Create 2026</a></li>
+        <li><a href="https://news.adobe.com/news/2026/06/adobe-unveils-major-expansion">Adobe Creative Agent expansion</a></li>
+        <li><a href="https://www.boc.cn/sourcedb/whpj/enindex.html">中国银行外汇牌价</a></li>
+      </ol>
+      <details>
+        <summary>事实、管理层主张、推断和信息缺口如何分层</summary>
+        <div>
+          <p><strong>事实：</strong>审计财务、HKEX 公告、公开 API 快照。<strong>管理层主张：</strong>产品调用占比、历史多国榜首、组织效率等。<strong>研究推断：</strong>模型厂商打包会压缩功能层价值，垂直工作流可能保留利润。<strong>信息缺口：</strong>留存、ARPU、CAC、credits 收入/毛利、分产品 cohort。</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>本报告是基于公开资料的研究快照，不构成投资建议、要约、目标价或收益承诺。第三方流量与商店数据会变化；Q1 经营更新未经审核或审阅；估值对假设高度敏感。</p>
+      <p>配套数据：<a href="./data/financial-operating-series.csv">财务与经营序列</a> · <a href="./data/app-public-signals.csv">App/网站信号</a> · <a href="./data/market-rotation.csv">行情轮动</a> · <a href="./data/valuation-scenarios.csv">估值情景</a></p>
+    </div>
+  </footer>
+</body>
+</html>

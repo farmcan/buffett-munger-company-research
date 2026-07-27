@@ -1,0 +1,27 @@
+{
+  "schema_version": "seed.public-research-publication.v1",
+  "reviewed_for_publication": true,
+  "reviewed_at": "2026-07-27T10:50:00+08:00",
+  "publication_scope": [
+    "index.html",
+    "meitu-01357-hk/README.md",
+    "meitu-01357-hk/report.html",
+    "meitu-01357-hk/source-ledger.json",
+    "meitu-01357-hk/data/app-public-signals.csv",
+    "meitu-01357-hk/data/financial-operating-series.csv",
+    "meitu-01357-hk/data/market-rotation.csv",
+    "meitu-01357-hk/data/valuation-scenarios.csv"
+  ],
+  "source_commit": "832661e8d8db81197884eb74409bc3e04cb9fc5f",
+  "review_checks": {
+    "contains_local_absolute_paths": false,
+    "contains_private_library_paths": false,
+    "contains_raw_media_or_transcripts": false,
+    "contains_credentials_or_personal_data": false,
+    "primary_sources_linked": true,
+    "third_party_estimates_labeled": true,
+    "investment_advice_boundary_present": true,
+    "desktop_and_mobile_html_checked": true
+  },
+  "publication_note": "Public, evidence-linked company research snapshot. Large raw PDFs and API snapshots remain outside the public repository; their SHA-256 values are retained in the source ledger."
+}

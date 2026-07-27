@@ -1,0 +1,800 @@
+{
+  "schema_version": "seed.company-research-source-ledger.v1",
+  "company": {
+    "name_zh": "美图公司",
+    "name_en": "Meitu, Inc.",
+    "ticker": "01357.HK"
+  },
+  "research_snapshot_at": "2026-07-27T10:06:00+08:00",
+  "market_data_cutoff": "2026-07-24",
+  "policy": {
+    "facts": "Audited filings and exchange announcements take precedence.",
+    "management_claims": "Speeches, press releases and company rankings are labeled as management claims unless independently corroborated.",
+    "public_proxies": "Store ratings, chart snapshots, install bands and website visits are not treated as MAU, paying users or audited revenue.",
+    "hashes": "snapshot_sha256 is supplied where a local research snapshot was frozen; null means a live web page was cited without a tracked local copy.",
+    "investment_boundary": "Scenario analysis is not a target price or buy/sell instruction."
+  },
+  "sources": [
+    {
+      "id": "F01",
+      "tier": "A",
+      "kind": "audited_annual_report",
+      "title": "Meitu, Inc. Annual Report 2025",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2026-04-27",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042702560.pdf",
+      "snapshot_sha256": "03cbf35ab1961e85e0c45fc31e6b58751a3cb7f4ff8135f0275d06521a1edd0f",
+      "used_for": [
+        "2025 audited financial statements",
+        "revenue mix",
+        "paying subscribers and subscription rate",
+        "MAU and geography",
+        "cost structure",
+        "cash flow",
+        "adjusted-profit bridge",
+        "share ownership"
+      ],
+      "limitations": "Adjusted measures are company-defined; the report changed continuing/discontinued-operation presentation."
+    },
+    {
+      "id": "F02",
+      "tier": "A",
+      "kind": "interim_report",
+      "title": "Meitu, Inc. Interim Report 2025",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2025-09-25",
+      "retrieved_at": "2026-07-27",
+      "url": "https://corp-static.meitu.com/corp-new/20250925/2025092501275.pdf",
+      "snapshot_sha256": "6b76a0f90583027c10d5aa8888e580f8344a1c75da93293149cbc36f7cc85e3c",
+      "used_for": [
+        "H1 2025 financials",
+        "channel and compute costs",
+        "management strategy on foundation models"
+      ],
+      "limitations": "Interim financial statements have lower assurance than full-year audited accounts."
+    },
+    {
+      "id": "F03",
+      "tier": "A-",
+      "kind": "voluntary_business_update",
+      "title": "First Quarter 2026 Business Update",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2026-05-06",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0506/2026050600053.pdf",
+      "snapshot_sha256": "26c2ce17d1e78a2e48408f53babd64be4b3b6e18d72858d31c13259630865bb2",
+      "used_for": [
+        "Q1 paying subscribers",
+        "Q1 core revenue",
+        "productivity/leisure mix",
+        "AI ARR",
+        "AI credits consumption"
+      ],
+      "limitations": "Expressly unaudited and unreviewed; ARR annualizes active subscriptions and usage-based consumption and excludes non-recurring revenue."
+    },
+    {
+      "id": "F04",
+      "tier": "A",
+      "kind": "exchange_announcement",
+      "title": "Share Repurchase Plan of Up to HK$300 Million",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2026-03-27",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0327/2026032700936.pdf",
+      "snapshot_sha256": "e54bf83411239189394fe66d985956511d62ba06922bdc840c3a4fc84295348f",
+      "used_for": [
+        "repurchase authorization size and duration"
+      ],
+      "limitations": "Authorization is discretionary and is not proof that the full amount will be executed."
+    },
+    {
+      "id": "F05",
+      "tier": "A",
+      "kind": "exchange_announcement",
+      "title": "Purchase of Shares by Founder and Chairman",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2026-07-03",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0703/2026070302393.pdf",
+      "snapshot_sha256": "7aecd4910aa515d92e255384c9f51fb766527bd22dd06d1ed76f8529cc3dadae",
+      "used_for": [
+        "founder purchase price and size",
+        "aggregate purchases since 2018",
+        "founder disclosed interest"
+      ],
+      "limitations": "The statement that the founder has never sold is a company disclosure; insider buying does not independently establish intrinsic value."
+    },
+    {
+      "id": "F06",
+      "tier": "A",
+      "kind": "next_day_disclosure_return",
+      "title": "Next Day Disclosure Return dated 26 June 2026",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2026-06-26",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0626/2026062600948.pdf",
+      "snapshot_sha256": "a5fe0c8775671376bb95b6eb399993cebd629b696f41ef91cbb49d09def123a5",
+      "used_for": [
+        "actual daily and mandate-period repurchases",
+        "treasury shares",
+        "issued and outstanding share counts"
+      ],
+      "limitations": "This is a point-in-time return and does not include later transactions."
+    },
+    {
+      "id": "F07",
+      "tier": "A",
+      "kind": "exchange_announcement",
+      "title": "Completion of Issue of Convertible Bonds to Alibaba",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2025-12-31",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1231/2025123101815.pdf",
+      "snapshot_sha256": "10041adb64d4f0ce4382f277b551800b284de887631a91767dd3068d0688d268",
+      "used_for": [
+        "US$250 million principal",
+        "HK$6 conversion price",
+        "335,513,916 potential conversion shares",
+        "6.82% post-conversion dilution"
+      ],
+      "limitations": "Conversion shares are potential, not current outstanding shares; conversion depends on bond terms and holder action."
+    },
+    {
+      "id": "F08",
+      "tier": "A",
+      "kind": "exchange_announcement",
+      "title": "Notice of Board Meeting for 2026 Interim Results",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2026-07-15",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf",
+      "snapshot_sha256": "598719d68c51f12783597a0347c2f3a591260fc62037696459cf75b1fae9ff0f",
+      "used_for": [
+        "26 August 2026 interim-results catalyst"
+      ],
+      "limitations": "The notice provides a date, not result content."
+    },
+    {
+      "id": "F09",
+      "tier": "A",
+      "kind": "audited_annual_report",
+      "title": "Meitu, Inc. Annual Report 2024",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2025-04-25",
+      "retrieved_at": "2026-07-27",
+      "url": "https://corp-static.meitu.com/corp-new/20250425/2024%20Annual%20Report%20%28E%29.pdf",
+      "snapshot_sha256": "b3a622bb05b44ead433d3bbbf4ec56051de16354d268d43ebc72cc4a0fd6b4ea",
+      "used_for": [
+        "2024 historical comparison",
+        "product and subscriber disclosures"
+      ],
+      "limitations": "2025 accounts restated discontinued operations; use 2025 comparative presentation for like-for-like revenue."
+    },
+    {
+      "id": "F10",
+      "tier": "A",
+      "kind": "audited_annual_report",
+      "title": "Meitu, Inc. Annual Report 2023",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2024",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=148851",
+      "snapshot_sha256": "4d939d5ea43cff5ec86619d34eddeca2e948bda049e5270d40d9a3905f4f74ce",
+      "used_for": [
+        "2023 historical comparison"
+      ],
+      "limitations": "Ledger links the official issuer title-search index because the frozen PDF URL was not preserved separately."
+    },
+    {
+      "id": "F11",
+      "tier": "A",
+      "kind": "official_filings_index",
+      "title": "Meitu Official HKEX Title Search",
+      "publisher": "HKEX",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=148851",
+      "snapshot_sha256": null,
+      "used_for": [
+        "official filing discovery and chronology"
+      ],
+      "limitations": "Live index; users should open the exact dated filing when verifying a claim."
+    },
+    {
+      "id": "M01",
+      "tier": "B",
+      "kind": "management_speech",
+      "title": "Meitu's 17th Anniversary: Full Text of Wu Xinhong's Speech",
+      "publisher": "Meitu",
+      "published_at": "2025-10-10",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/media/421",
+      "snapshot_sha256": null,
+      "used_for": [
+        "management assessment of model competition",
+        "RoboNeo launch claims",
+        "AI coding and organizational claims"
+      ],
+      "limitations": "Management narrative and internally measured claims; not independent product-quality evidence."
+    },
+    {
+      "id": "M02",
+      "tier": "B",
+      "kind": "management_product_event",
+      "title": "2026 Meitu Multimedia Festival",
+      "publisher": "Meitu",
+      "published_at": "2026-06-17",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/media/438",
+      "snapshot_sha256": null,
+      "used_for": [
+        "apps-to-agents strategy",
+        "subscriptions-to-credits strategy",
+        "MiracleVision V6 utilization claim",
+        "RMB100 million incubation fund"
+      ],
+      "limitations": "Product launch and management claims; the 96.3% call-share figure is not independently audited."
+    },
+    {
+      "id": "M03",
+      "tier": "B",
+      "kind": "management_product_event",
+      "title": "2024 Meitu Multimedia Festival",
+      "publisher": "Meitu",
+      "published_at": "2024",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/media/413",
+      "snapshot_sha256": null,
+      "used_for": [
+        "management view that AI technology advances faster than applications",
+        "focus on user value and monetizable workflows"
+      ],
+      "limitations": "Strategic framing, not a measured financial result."
+    },
+    {
+      "id": "M04",
+      "tier": "B",
+      "kind": "company_press_release",
+      "title": "Meitu and Alibaba Tongyi Strategic Cooperation",
+      "publisher": "Meitu",
+      "published_at": "2025",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/media/420",
+      "snapshot_sha256": null,
+      "used_for": [
+        "evidence of model-supplier partnership and dependency"
+      ],
+      "limitations": "Company-authored description of a partnership; product and economics are not fully disclosed."
+    },
+    {
+      "id": "M05",
+      "tier": "B",
+      "kind": "company_press_release",
+      "title": "Meitu Launches MiracleVision",
+      "publisher": "Meitu",
+      "published_at": "2023",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/media/393",
+      "snapshot_sha256": null,
+      "used_for": [
+        "existence and intended positioning of Meitu's vertical model"
+      ],
+      "limitations": "No independent benchmark in this source establishes frontier-model quality."
+    },
+    {
+      "id": "M06",
+      "tier": "B",
+      "kind": "company_results_release",
+      "title": "Meitu 2025 Annual Results Release",
+      "publisher": "Meitu",
+      "published_at": "2026-03-27",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/media/436",
+      "snapshot_sha256": null,
+      "used_for": [
+        "management explanation of paid growth",
+        "historical campaign chart claims"
+      ],
+      "limitations": "Company-selected narrative; audited figures are taken from F01 instead."
+    },
+    {
+      "id": "M07",
+      "tier": "B",
+      "kind": "company_results_release",
+      "title": "Meitu 2024 Annual Results Release",
+      "publisher": "Meitu",
+      "published_at": "2025-03-18",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/media/415",
+      "snapshot_sha256": null,
+      "used_for": [
+        "2024 paying subscribers, MAU and overseas MAU"
+      ],
+      "limitations": "Includes beauty-industry revenue later classified as discontinued; use F01 for continuing-operation comparisons."
+    },
+    {
+      "id": "M08",
+      "tier": "B",
+      "kind": "company_results_release",
+      "title": "Meitu 2023 Annual Results Release",
+      "publisher": "Meitu",
+      "published_at": "2024-03-15",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/media/411",
+      "snapshot_sha256": null,
+      "used_for": [
+        "2023 core revenue and paid subscriber history"
+      ],
+      "limitations": "Company-selected narrative; audited historical totals are taken from F01."
+    },
+    {
+      "id": "M09",
+      "tier": "B",
+      "kind": "company_results_release",
+      "title": "Meitu 2022 Annual Results Release",
+      "publisher": "Meitu",
+      "published_at": "2023",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/media/390",
+      "snapshot_sha256": null,
+      "used_for": [
+        "2022 paying subscriber and MAU history"
+      ],
+      "limitations": "Historical adjusted-profit definitions differ from later five-year restatement."
+    },
+    {
+      "id": "M10",
+      "tier": "B",
+      "kind": "company_results_release",
+      "title": "Meitu 2021 Annual Results Release",
+      "publisher": "Meitu",
+      "published_at": "2022",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/media/366",
+      "snapshot_sha256": null,
+      "used_for": [
+        "2021 paid subscriber history"
+      ],
+      "limitations": "Historical adjusted-profit definitions differ from later five-year restatement."
+    },
+    {
+      "id": "A01",
+      "tier": "B-",
+      "kind": "app_store_search_api",
+      "title": "Apple iTunes Search API — Meitu portfolio, CN and US",
+      "publisher": "Apple",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://itunes.apple.com/search?term=meitu&country=cn&entity=software&limit=200",
+      "snapshot_sha256": {
+        "cn": "58961a1389e2340c2b0e28a7eeed51c356012aa5e74670f02b6ed4e36bce58ec",
+        "us": "9d4bc9899e648d4c5873de83e84503a174026d62cbc57817e0965cee1ba19007"
+      },
+      "used_for": [
+        "public ratings, rating counts, seller and app IDs"
+      ],
+      "limitations": "Cumulative storefront metadata, not MAU, paying users, downloads or retention."
+    },
+    {
+      "id": "A02",
+      "tier": "B-",
+      "kind": "app_store_chart_api",
+      "title": "Apple Top Free Apps — 15 Storefront Snapshot",
+      "publisher": "Apple",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://rss.marketingtools.apple.com/api/v2/cn/apps/top-free/100/apps.json",
+      "snapshot_sha256": {
+        "au": "ba9c690eddb83a91d5add46219a34c69e94da0d9dd3d61eabef92a8b2d3a3be0",
+        "br": "ac94e66187a2fd5b87bc834af7410c50b08c45e913b6fc56cb2db09685be5bd8",
+        "ca": "c40e95cb9114434c6d1c5fffaabc59dd8e5398831d008fbdedbae706fe12c896",
+        "cn": "ac39432e9b711f73eef282de99e061652d4ee519148e5d181c0f0f0d2307ae42",
+        "de": "c73cd450a423db5aca0bfeb220c40ffab0e3633acc02cceb70613262244ab0cf",
+        "fr": "35c87b8954843571456cd7553160a0282729c86dc5722346fd0ad69ce613530d",
+        "gb": "168ed8474df3b234f288a1b4310103e47ec615b3db7136f7a79ed306c6b193e2",
+        "hk": "841f626361fd5ee54e307f38576f3bb32bd0f8eefd18b09cc86334c59ef7d5bd",
+        "id": "232b0ded0d32448814e6ca37854d6ec3a7f529d3a87881b09481eeec31ce7edd",
+        "jp": "6c5903d4ce8d1fa5da248f0e3e96a31ba6b57f44d847ab530a5a9cc6f1ec57b6",
+        "kr": "b1c6d88fb5b94bb8c8f01c906522cf864e10f2b9a31d1ffa3e82de0e8c6c240f",
+        "sg": "4671c8347e6ed07f4a3c5ac5c43bf5797b96716a313e7995383858ccb37cae6d",
+        "th": "5259b304af177de15b5c6f7f546e0e36df4892e79cafdf87bcfe2f16134eb48f",
+        "tw": "62be4472741fbf7d201baa4e0a348d901592f090cc61a21ce54373dd110168de",
+        "us": "baa3cab1b7d470dd77708d861c85183e188ce0e2833de51ef46a4308e760f157"
+      },
+      "used_for": [
+        "current overall top-free-100 presence test"
+      ],
+      "limitations": "One-day overall chart snapshot. It does not refute temporary historical campaign peaks or category-chart positions."
+    },
+    {
+      "id": "A03",
+      "tier": "B-",
+      "kind": "app_store_page",
+      "title": "Meitu — US App Store",
+      "publisher": "Apple",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://apps.apple.com/us/app/meitu-ai-photo-video-editor/id416048305",
+      "snapshot_sha256": null,
+      "used_for": [
+        "visible US Photo & Video category rank",
+        "rating and subscription pricing"
+      ],
+      "limitations": "Mutable live page and single-storefront snapshot."
+    },
+    {
+      "id": "A04",
+      "tier": "B-",
+      "kind": "app_store_page",
+      "title": "BeautyCam — US App Store",
+      "publisher": "Apple",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://apps.apple.com/us/app/beautycam-digicam-photo-editor/id592331499",
+      "snapshot_sha256": null,
+      "used_for": [
+        "visible US Photo & Video category rank"
+      ],
+      "limitations": "Mutable live page and single-storefront snapshot."
+    },
+    {
+      "id": "A05",
+      "tier": "B-",
+      "kind": "google_play_page",
+      "title": "Meitu — Google Play",
+      "publisher": "Google",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://play.google.com/store/apps/details?id=com.mt.mtxx.mtxx",
+      "snapshot_sha256": null,
+      "used_for": [
+        "public install band and rating"
+      ],
+      "limitations": "Install band is a threshold, not exact installs; rating is mutable."
+    },
+    {
+      "id": "A06",
+      "tier": "B-",
+      "kind": "google_play_page",
+      "title": "Wink — Google Play",
+      "publisher": "Google",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://play.google.com/store/apps/details?id=com.meitu.wink",
+      "snapshot_sha256": null,
+      "used_for": [
+        "public install band and rating"
+      ],
+      "limitations": "Install band is a threshold, not exact installs; rating is mutable."
+    },
+    {
+      "id": "A07",
+      "tier": "B-",
+      "kind": "google_play_page",
+      "title": "RoboNeo — Google Play",
+      "publisher": "Google",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://play.google.com/store/apps/details?id=com.meitu.roboneo",
+      "snapshot_sha256": null,
+      "used_for": [
+        "public install band, rating and review count"
+      ],
+      "limitations": "Low review count and storefront mix prevent extrapolation to the full user base."
+    },
+    {
+      "id": "A08",
+      "tier": "C",
+      "kind": "industry_ranking",
+      "title": "Top 100 Gen AI Consumer Apps, 6th Edition",
+      "publisher": "Andreessen Horowitz",
+      "published_at": "2026-03-09",
+      "retrieved_at": "2026-07-27",
+      "url": "https://a16z.com/100-gen-ai-apps-6/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "independent evidence that several Meitu-related apps remain material in mobile GenAI usage"
+      ],
+      "limitations": "Mobile list uses Sensor Tower January 2026 MAU and a broadened definition that includes AI-powered incumbents; exact chart positions were not independently extracted."
+    },
+    {
+      "id": "W01",
+      "tier": "C",
+      "kind": "estimated_web_traffic",
+      "title": "meitu.com Traffic Analytics",
+      "publisher": "Similarweb",
+      "published_at": "2026-04",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.similarweb.com/website/meitu.com/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "estimated visits and country mix"
+      ],
+      "limitations": "Third-party modeled estimate; not company-reported app usage or paying traffic."
+    },
+    {
+      "id": "W02",
+      "tier": "C",
+      "kind": "estimated_web_traffic",
+      "title": "designkit.com Traffic Analytics",
+      "publisher": "Similarweb",
+      "published_at": "2026-06",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.similarweb.com/website/designkit.com/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "estimated visits and country mix"
+      ],
+      "limitations": "Third-party modeled estimate; not company-reported app usage or paying traffic."
+    },
+    {
+      "id": "W03",
+      "tier": "C",
+      "kind": "estimated_web_traffic",
+      "title": "roboneo.com Traffic Analytics",
+      "publisher": "Similarweb",
+      "published_at": "2026-06",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.similarweb.com/website/roboneo.com/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "estimated visits, direction and country mix"
+      ],
+      "limitations": "Third-party modeled estimate; a 50.26% monthly drop can reflect campaign timing, measurement changes or seasonality."
+    },
+    {
+      "id": "W04",
+      "tier": "C",
+      "kind": "estimated_web_traffic",
+      "title": "wink.ai Traffic Analytics",
+      "publisher": "Similarweb",
+      "published_at": "2026-06",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.similarweb.com/website/wink.ai/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "estimated visits, direction and country mix"
+      ],
+      "limitations": "Third-party modeled estimate; web traffic is not app MAU or paid conversion."
+    },
+    {
+      "id": "W05",
+      "tier": "C",
+      "kind": "estimated_web_traffic",
+      "title": "zcool.com.cn Traffic Analytics",
+      "publisher": "Similarweb",
+      "published_at": "2026-06",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.similarweb.com/website/zcool.com.cn/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "estimated visits and China concentration"
+      ],
+      "limitations": "Third-party modeled estimate; ZCOOL community traffic is not equivalent to Meitu app usage."
+    },
+    {
+      "id": "S01",
+      "tier": "A-",
+      "kind": "vendor_product_announcement",
+      "title": "Introducing ChatGPT Images 2.0",
+      "publisher": "OpenAI",
+      "published_at": "2026-04-21",
+      "retrieved_at": "2026-07-27",
+      "url": "https://openai.com/index/introducing-chatgpt-images-2-0/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "foundation-model vendor moving directly into image generation and editing"
+      ],
+      "limitations": "Vendor-authored product announcement."
+    },
+    {
+      "id": "S02",
+      "tier": "A-",
+      "kind": "vendor_product_announcement",
+      "title": "New ChatGPT Images Is Here",
+      "publisher": "OpenAI",
+      "published_at": "2025-12-16",
+      "retrieved_at": "2026-07-27",
+      "url": "https://openai.com/index/new-chatgpt-images-is-here/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "direct distribution to ChatGPT users and API availability"
+      ],
+      "limitations": "Vendor-authored product announcement."
+    },
+    {
+      "id": "S03",
+      "tier": "A-",
+      "kind": "vendor_product_announcement",
+      "title": "Updated Image Editing in Gemini",
+      "publisher": "Google",
+      "published_at": "2025-08-26",
+      "retrieved_at": "2026-07-27",
+      "url": "https://blog.google/products-and-platforms/products/gemini/updated-image-editing-model/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "Nano Banana integration directly inside Gemini"
+      ],
+      "limitations": "Vendor-authored product announcement."
+    },
+    {
+      "id": "S04",
+      "tier": "A-",
+      "kind": "vendor_product_announcement",
+      "title": "Canva Create 2026: AI and Visual Suite 2.0",
+      "publisher": "Canva",
+      "published_at": "2026",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "design incumbent bundling a foundation model, editable objects and agentic workflow"
+      ],
+      "limitations": "Vendor-authored product announcement."
+    },
+    {
+      "id": "S05",
+      "tier": "A-",
+      "kind": "vendor_product_announcement",
+      "title": "Adobe Unveils Major Expansion of Creative Agent",
+      "publisher": "Adobe",
+      "published_at": "2026-06",
+      "retrieved_at": "2026-07-27",
+      "url": "https://news.adobe.com/news/2026/06/adobe-unveils-major-expansion",
+      "snapshot_sha256": null,
+      "used_for": [
+        "workflow incumbent distributing agents across Creative Cloud and third-party assistants"
+      ],
+      "limitations": "Vendor-authored product announcement."
+    },
+    {
+      "id": "S06",
+      "tier": "A-",
+      "kind": "vendor_product_announcement",
+      "title": "Adobe Introduces New Creative Agent",
+      "publisher": "Adobe",
+      "published_at": "2026-04",
+      "retrieved_at": "2026-07-27",
+      "url": "https://news.adobe.com/news/2026/04/adobe-new-creative-agent",
+      "snapshot_sha256": null,
+      "used_for": [
+        "multi-model creative workflow bundling"
+      ],
+      "limitations": "Vendor-authored product announcement."
+    },
+    {
+      "id": "P01",
+      "tier": "B-",
+      "kind": "market_data",
+      "title": "Tencent qfq Daily Market Snapshots",
+      "publisher": "Tencent",
+      "published_at": "2026-07-24",
+      "retrieved_at": "2026-07-27",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2025-01-01,2026-07-27,640,qfq",
+      "snapshot_sha256": {
+        "01357.HK": "9a79b9154c1734502a39e873e40a182ff7d96f39e489b62c0d3e11410679c9e7",
+        "09988.HK": "5b125d18a9d8bad67b4f2569c31f2f1905ec4bba817f9d6702dd428a0eec3be7",
+        "00700.HK": "d2f5cc53682cc32b9a3921f90c9733edb36ad144161a98ead2e2db588ffcdb87",
+        "01024.HK": "84318e108a82e88016f4cb4c687d734325977bf11d2c87df7cd918de399fae8f",
+        "688111.SH": "4e0e8623e8454b22b91d1b4b5a40bc40b42bd09b2564464718f9915cca1c040b",
+        "300624.SZ": "ed13afadd5f58aa251e3c493132062bea5962171073a0bba2db7845af3a34fe3",
+        "002230.SZ": "3a180639db3f132997a1bee88cdf29420ab22662692b365c69e7520199d6867d",
+        "300418.SZ": "fe6ec2ddd1c85124dfeaafea91a778f2751f9423bc48adb09ef61ec7aa6a6e68"
+      },
+      "used_for": [
+        "5/20/60-trading-day and YTD returns",
+        "Meitu 52-week range and drawdown",
+        "AI-application rotation breadth"
+      ],
+      "limitations": "Vendor market data; adjusted-return calculation is deterministic but not exchange-certified."
+    },
+    {
+      "id": "P02",
+      "tier": "A-",
+      "kind": "official_fx_quote",
+      "title": "Bank of China Foreign Exchange Rates",
+      "publisher": "Bank of China",
+      "published_at": "2026-07-24",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.boc.cn/sourcedb/whpj/enindex.html",
+      "snapshot_sha256": null,
+      "used_for": [
+        "HKD/CNY middle-rate conversion"
+      ],
+      "limitations": "Valuation uses CNY 86.64 per HKD 100 as the selected 24 July middle-rate snapshot."
+    },
+    {
+      "id": "B01",
+      "tier": "A",
+      "kind": "methodology_primary",
+      "title": "Berkshire Hathaway Owner's Manual",
+      "publisher": "Berkshire Hathaway",
+      "published_at": "1996",
+      "retrieved_at": "2026-07-26",
+      "url": "https://www.berkshirehathaway.com/ownman.pdf",
+      "snapshot_sha256": null,
+      "used_for": [
+        "owner orientation",
+        "per-share intrinsic value",
+        "capital allocation"
+      ],
+      "limitations": "Method principle, not company evidence."
+    },
+    {
+      "id": "B02",
+      "tier": "A",
+      "kind": "methodology_primary",
+      "title": "1986 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "published_at": "1987",
+      "retrieved_at": "2026-07-26",
+      "url": "https://www.berkshirehathaway.com/letters/1986.html",
+      "snapshot_sha256": null,
+      "used_for": [
+        "owner earnings and maintenance-capex uncertainty"
+      ],
+      "limitations": "Method principle, not company evidence."
+    },
+    {
+      "id": "B03",
+      "tier": "A",
+      "kind": "methodology_primary",
+      "title": "1996 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "published_at": "1997",
+      "retrieved_at": "2026-07-26",
+      "url": "https://www.berkshirehathaway.com/letters/1996.html",
+      "snapshot_sha256": null,
+      "used_for": [
+        "circle of competence and predictable long-term economics"
+      ],
+      "limitations": "Method principle, not company evidence."
+    },
+    {
+      "id": "B04",
+      "tier": "A",
+      "kind": "methodology_primary",
+      "title": "2005 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "published_at": "2006",
+      "retrieved_at": "2026-07-26",
+      "url": "https://www.berkshirehathaway.com/letters/2005ltr.pdf",
+      "snapshot_sha256": null,
+      "used_for": [
+        "moat direction"
+      ],
+      "limitations": "Method principle, not company evidence."
+    },
+    {
+      "id": "B05",
+      "tier": "A",
+      "kind": "methodology_primary",
+      "title": "2007 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "published_at": "2008",
+      "retrieved_at": "2026-07-26",
+      "url": "https://www.berkshirehathaway.com/letters/2007ltr.pdf",
+      "snapshot_sha256": null,
+      "used_for": [
+        "durable moat and capital-light economics"
+      ],
+      "limitations": "Method principle, not company evidence."
+    },
+    {
+      "id": "B06",
+      "tier": "A",
+      "kind": "methodology_primary",
+      "title": "2023 Chairman's Letter",
+      "publisher": "Berkshire Hathaway",
+      "published_at": "2024",
+      "retrieved_at": "2026-07-26",
+      "url": "https://www.berkshirehathaway.com/letters/2023ltr.pdf",
+      "snapshot_sha256": null,
+      "used_for": [
+        "Munger's quality-business contribution"
+      ],
+      "limitations": "Method principle, not company evidence."
+    }
+  ]
+}
