@@ -130,6 +130,15 @@
     .num { font-variant-numeric: tabular-nums; }
     .source-list { columns: 2; column-gap: 28px; }
     .source-list li { break-inside: avoid; margin: 0 0 9px; }
+    .timeline { position: relative; margin: 20px 0 0; padding-left: 30px; }
+    .timeline::before { content: ""; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+    .timeline-item { position: relative; margin: 0 0 18px; padding: 0 0 18px 16px; border-bottom: 1px solid var(--line); }
+    .timeline-item:last-child { margin-bottom: 0; border-bottom: 0; }
+    .timeline-item::before { content: ""; position: absolute; left: -27px; top: 7px; width: 11px; height: 11px; border: 3px solid var(--paper); border-radius: 50%; background: var(--green); box-shadow: 0 0 0 1px var(--green); }
+    .timeline-item.future::before { background: var(--amber); box-shadow: 0 0 0 1px var(--amber); }
+    .timeline-date { color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .04em; }
+    .timeline-title { margin: 3px 0; font-size: 17px; font-weight: 820; }
+    .timeline-item p { margin: 4px 0; color: #4d5952; font-size: 14px; }
     details { margin-top: 13px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
     summary { cursor: pointer; padding: 13px 15px; font-weight: 750; }
     details > div { padding: 0 15px 15px; color: #455049; }
@@ -164,8 +173,8 @@
   <header class="hero">
     <div class="wrap">
       <p class="eyebrow">Company Research · 01357.HK</p>
-      <h1>美图：付费飞轮在转，<br>AI 应用轮动还没确认</h1>
-      <p class="dek">把公司基本面、付费客户、App 公开信号、网站流量、财务质量、创始人/高管讲话、模型替代风险与近期板块行情放在同一张证据地图上。</p>
+      <h1>美图：付费飞轮在转，<br>先过小盘风险门槛</h1>
+      <p class="dek">把 Q1/Q2 验证、产品组合、付费客户、App 与网站趋势、真实 P/E、CFO 讲话、可转债、港股通、小盘股风险和全球 AI 应用事件放在同一张证据地图上。</p>
       <div class="meta">
         <span class="pill"><span class="dot"></span>研究状态：条件性观察</span>
         <span class="pill">快照：2026-07-27</span>
@@ -175,13 +184,13 @@
       <div class="verdict">
         <div class="verdict-main">
           <div class="label">一句话结论</div>
-          <h2>AI 应用近期有“被轮动”的条件，但还没有被市场广度确认；美图的经营数据暂时支持继续观察，8 月 26 日中报是下一次硬验证。</h2>
-          <p>过去 20 个交易日，美图上涨 6.50%，但纯应用高弹性样本中只有美图为正。硬件下跌本身不是应用上涨的充分条件。若付费增速、生产力收入、AI credits 与毛利率同时守住，美图才有机会从“主题弹性”升级为“盈利兑现”。</p>
+          <h2>未来四周事件密集，AI 应用有交易机会的条件；但美图仍是高波动小盘股，Q2 财务未知，风险门槛未全部通过。</h2>
+          <p>判断从“最近 20 日涨没涨”改为事件链：美国平台财报是否把叙事从算力转向应用商业化 → 腾讯是否验证中国应用变现 → 8 月 26 日美图中报是否兑现付费、收入、毛利与现金流。若只有产品发布和硬件回落，没有盈利证据，不足以构成入场理由。</p>
         </div>
         <div class="verdict-side">
           <div class="label">Near-term AI apps</div>
-          <div class="signal">候选，未确认</div>
-          <p class="signal-note">确认需要：板块广度 + 排名留存 + 中报不爆雷，而不是一只股票或一天的上涨。</p>
+          <div class="signal">有窗口，先风控</div>
+          <p class="signal-note">当前最关键缺口：Q2/H1 利润与毛利、credits 单位经济性、净稀释、事件后的持续付费转化。</p>
         </div>
       </div>
     </div>
@@ -194,12 +203,15 @@
       <a href="#users">付费飞轮</a>
       <a href="#apps">App 与网站</a>
       <a href="#model">模型与替代</a>
-      <a href="#rotation">AI 应用轮动</a>
+      <a href="#rotation">事件驱动</a>
       <a href="#financials">财务质量</a>
+      <a href="#cfo">CFO 讲话</a>
       <a href="#capital">回购与治理</a>
+      <a href="#smallcap">小盘风险</a>
       <a href="#valuation">估值</a>
       <a href="#buffett">巴芒框架</a>
       <a href="#monitor">验证表</a>
+      <a href="#timeline">时间轴</a>
       <a href="#sources">来源</a>
     </div>
   </nav>
@@ -320,6 +332,23 @@
           </ol>
         </div>
       </div>
+      <h3>连续经营趋势：流量慢增，付费与收入快增</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>期间</th><th>MAU</th><th>海外 MAU</th><th>生产力 MAU</th><th>付费用户</th><th>订阅率</th><th>核心收入</th></tr></thead>
+          <tbody>
+            <tr><td>2022</td><td>2.43 亿</td><td>0.80 亿</td><td>1,014 万</td><td>560 万</td><td>约 2.3%（推导）</td><td>8.69 亿</td></tr>
+            <tr><td>2023</td><td>2.49 亿</td><td>0.78 亿</td><td>1,766 万</td><td>911 万</td><td>3.7%</td><td>13.27 亿</td></tr>
+            <tr><td>2024</td><td>2.66 亿</td><td>0.95 亿</td><td>2,219 万</td><td>1,261 万</td><td>4.7%</td><td>20.86 亿</td></tr>
+            <tr><td>2025</td><td>2.76 亿</td><td>1.01 亿</td><td>2,400 万</td><td>1,691 万</td><td>6.1%</td><td>29.54 亿</td></tr>
+            <tr><td>2026Q1</td><td>半年度才披露</td><td>—</td><td>—</td><td>&gt;1,790 万</td><td>—</td><td>8.52 亿</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout blue">
+        <strong>趋势不是“流量暴增”，而是“存量流量货币化”。</strong><br>
+        2022—2025 年 MAU 复合增速约 4.4%，付费用户约 44.5%，核心收入约 50.4%。付费同比增速由 2023 年 62.3% 放缓到 2024 年 38.4%、2025 年 34.1%、2026Q1 30.2%，但绝对净新增仍扩大。下一步不能只靠付费人数，必须证明 ARPU、留存和 credits 毛利。
+      </div>
       <h3>必须补齐的单位经济性</h3>
       <div class="table-wrap">
         <table>
@@ -337,13 +366,43 @@
     </section>
 
     <section id="apps">
-      <h2>App Store、Google Play 与网站公开信号</h2>
-      <p class="section-dek">榜单必须区分“历史活动峰值”“当前单点排名”“长期留存”。公司曾披露 2025 年多款产品在多国冲到总榜第一，但 2026-07-27 的 15 个市场总榜快照没有核心产品进入 overall top 100。</p>
+      <h2>不是一个美图 App：产品组合与累计趋势</h2>
+      <p class="section-dek">美图的经营单元是“多 App + Web 工作流”，不能拿某一个月的单站访问量代表公司。证据按三层看：公司连续经营指标是主证据；累计安装/评分反映历史沉淀；榜单和网站月环比只作前置热度信号。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>产品组</th><th>主要产品</th><th>任务</th><th>当前规模证据</th><th>应验证的趋势</th></tr></thead>
+          <tbody>
+            <tr><td>休闲影像</td><td>美图秀秀、BeautyCam、美颜相机、Picchi</td><td>修图、美颜、相机、潮流模板</td><td>2026Q1 休闲付费 &gt;1,556 万，占披露付费用户约 86.9%</td><td>27.4% 同比增长能否转成更高 ARPU，而非只靠活动获客</td></tr>
+            <tr><td>视频编辑</td><td>Wink</td><td>视频画质、去水印、短视频效果</td><td>Google Play 5,000 万+安装门槛；wink.ai 2026-06 估算 160 万访问</td><td>Web 访问环比 +24.55% 后是否连续三月保持，并转化为订阅</td></tr>
+            <tr><td>全球消费矩阵</td><td>AirBrush、BeautyPlus 等 Pixocial 产品</td><td>海外人像与影像编辑</td><td>公司披露 2025 海外 MAU 超 1 亿；没有分产品付费/留存</td><td>高 ARPU 地区新增、自然获客占比、续费率</td></tr>
+            <tr><td>电商设计</td><td>DesignKit、美图设计室</td><td>商品图、海报、批量电商素材</td><td>2026Q1 生产力收入同比 +45.4%（可比口径）</td><td>模板/平台集成能否形成留存与企业 ARPU</td></tr>
+            <tr><td>口播与商品视频</td><td>开拍 Kaipai、Vmake</td><td>口播、商品视频、跨境电商</td><td>生产力付费 234 万，同比 +52.9%；Vmake 站点估算 240 万访问</td><td>ARR 转确认收入、credits 毛利、复购与 CAC</td></tr>
+            <tr><td>Agent / 工作流</td><td>RoboNeo</td><td>多步骤视觉 Agent、短剧/营销流程</td><td>Google Play 50 万+；roboneo.com 6 月估算访问环比 -50.26%</td><td>发布热度消退后仍有多少周活、付费和任务完成率</td></tr>
+            <tr><td>设计社区</td><td>站酷 ZCOOL</td><td>设计师内容、社区与人才入口</td><td>zcool.com.cn 6 月估算 190 万访问，流量高度集中中国</td><td>社区能否向生产力产品导流及产生商业收入</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>产品级累计经营证据</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>产品</th><th>连续/累计证据</th><th>研究读法</th></tr></thead>
+          <tbody>
+            <tr><td>Meitu</td><td>2025 AI Group Photo 将 MAU 推至历史新高；Google Play 1 亿+；中国 iOS 累计评分 1,239.8 万</td><td>组合最大入口，收入未单独拆分</td></tr>
+            <tr><td>BeautyCam</td><td>公司称 2025 AI Wardrobe 带来 &gt;2,300 万新用户；Google Play 1 亿+</td><td>第二消费入口；新用户不等于留存或付费</td></tr>
+            <tr><td>Wink</td><td>全球 MAU：2024 年末 &gt;3,000 万 → 2025 年 &gt;4,000 万；Google Play 5,000 万+</td><td>已从功能孵化为重要独立入口</td></tr>
+            <tr><td>DesignKit</td><td>收入：2023 &gt;1 亿 → 2024 约 2 亿；付费约 87 万 → 113 万；2025 累计服务 &gt;840 万商家</td><td>生产力矩阵中最成熟的收入验证</td></tr>
+            <tr><td>Kaipai</td><td>2024 MAU &gt;100 万；2025 MAU 近翻倍、付费约 3 倍；2026Q1 credits +360%</td><td>国内口播工作流的早期 PMF 证据</td></tr>
+            <tr><td>Vmake</td><td>2025 年末 ARR 约 US$300 万；2026Q1 credits +78%</td><td>海外生产力早期验证，绝对规模仍小</td></tr>
+            <tr><td>RoboNeo</td><td>2025-07 上线；Google Play 当前保守 50 万+，约 3.5 星；Web 访问 6 月环比 -50.26%</td><td><span class="tag risk">产品红旗</span> 获客快但留存/质量待核验</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>累计公开信号与当前排名</h3>
       <div class="grid">
         <div class="card wide">
           <div class="k">中国 iOS 累计公开评分数</div>
-          <div class="v">美图 239.8 万</div>
-          <div class="s">Wink 173.8 万；BeautyCam 101.1 万；Kaipai 13.0 万。评分数代表长期安装/使用沉淀的弱信号，不是活跃用户。</div>
+          <div class="v">美图 1,239.8 万</div>
+          <div class="s">Wink 173.8 万；BeautyCam 101.1 万；Kaipai 13.0 万。评分数是累计沉淀的弱信号，不是活跃用户；核心样本高度集中于美图主 App。</div>
         </div>
         <div class="card wide">
           <div class="k">美国 App Store 当前品类榜</div>
@@ -377,16 +436,18 @@
           <thead><tr><th>站点</th><th>月份</th><th>Similarweb 估算访问</th><th>环比</th><th>主要地域</th><th>读法</th></tr></thead>
           <tbody>
             <tr><td>wink.ai</td><td>2026-06</td><td>约 160 万</td><td class="up">+24.55%</td><td>美国、印度、印尼、巴西、越南</td><td>海外分布较广；不能映射 App 付费率</td></tr>
+            <tr><td>vmake.ai</td><td>2026-06</td><td>约 240 万</td><td class="up">+0.57%</td><td>印度、韩国、美国、菲律宾、巴西</td><td>组合中较大的 Web 生产力入口；仍缺付费转化</td></tr>
             <tr><td>roboneo.com</td><td>2026-06</td><td>约 44.5 万</td><td class="down">-50.26%</td><td>巴西、埃及、美国、印度</td><td>首发热度可能衰减；也可能有测量/活动影响</td></tr>
-            <tr><td>designkit.com</td><td>2026-06</td><td>约 9.17 万</td><td class="up">+4.25%</td><td>中国 53.7%、美国 7.5%</td><td>Web 入口偏小，需结合 App/小程序和企业使用</td></tr>
+            <tr><td>designkit.cn</td><td>2026-06</td><td>约 75.39 万</td><td class="down">-6.07%</td><td>中国 84.8%</td><td>主中国 Web 入口；近三月全球排名 46,196 → 49,217</td></tr>
+            <tr><td>designkit.com</td><td>2026-06</td><td>约 9.17 万</td><td class="up">+4.25%</td><td>中国 53.7%、美国 7.5%</td><td>国际域名入口较小，不能代表 DesignKit 总使用量</td></tr>
             <tr><td>zcool.com.cn</td><td>2026-06</td><td>约 190 万</td><td class="down">-1.2%</td><td>中国 92.3%</td><td>社区资产有粘性，但商业转化未知</td></tr>
             <tr><td>meitu.com</td><td>2026-04</td><td>约 91.8 万</td><td class="up">+8.51%</td><td>中国 63.2%、美国 11.1%</td><td>企业站/产品入口混合，非核心消费 App 流量</td></tr>
           </tbody>
         </table>
       </div>
       <div class="callout red">
-        <strong>不要把榜单峰值写成护城河</strong><br>
-        排名能证明获客爆发力；只有 7/30/90 日留存、续费、自然流量占比和付费 cohort 才能证明经济价值。当前公开数据只能确认美图有全球分发能力，不能确认每次爆款都能长期沉淀。
+        <strong>趋势结论：经营转化上行，公开热度分化</strong><br>
+        2021—2025 付费用户从约 400 万累积到 1,691 万，2026Q1 再同比增 30.2%，这是最可靠的长趋势。网站端则是 Wink 上升、Vmake/DesignKit 大致稳定、RoboNeo 明显回落，说明产品并非同步爆发。排名能证明获客爆发力；只有 7/30/90 日留存、续费、自然流量占比和付费 cohort 才能证明经济价值。
       </div>
     </section>
 
@@ -433,52 +494,109 @@
     </section>
 
     <section id="rotation">
-      <h2>近期 AI 应用会不会有机会</h2>
-      <p class="section-dek">答案必须拆成“催化剂存在”和“行情已经确认”。截至 2026-07-24，前者成立，后者不成立。</p>
-      <div class="grid">
-        <div class="card wide">
-          <div class="k">8 股 AI 应用/平台样本 · 20 日</div>
-          <div class="v">4 涨 / 4 跌</div>
-          <div class="s">中位数约 +1.50%；上涨集中在阿里、金山办公、美图、腾讯，尚非全面风险偏好扩张。</div>
-        </div>
-        <div class="card wide">
-          <div class="k">纯应用高弹性 4 股 · 20 日</div>
-          <div class="v">1 涨 / 3 跌</div>
-          <div class="s">美图 +6.50%；万兴 -13.00%、科大讯飞 -0.36%、昆仑万维 -5.34%；中位数约 -2.85%。</div>
-        </div>
-      </div>
-      <h3>近期收益率横截面</h3>
+      <h2>AI 应用机会：看事件链，不看机械 20 日窗口</h2>
+      <p class="section-dek">小盘应用股通常在事件发生前后快速完成定价。真正的问题不是“最近涨了没”，而是未来是否存在能改变收入、成本、分发或替代概率的事件，以及市场预期是否低于可能结果。</p>
+      <h3>什么事件通常会让 AI 应用波动</h3>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>公司</th><th>角色</th><th>5 日</th><th>20 日</th><th>60 日</th><th>6/17 后</th><th>读法</th></tr></thead>
+          <thead><tr><th>事件</th><th>正面传导</th><th>负面传导</th><th>美图要看的硬指标</th></tr></thead>
           <tbody>
-            <tr><td>美图</td><td>AI 影像应用</td><td class="down">-0.76%</td><td class="up">+6.50%</td><td class="down">-7.96%</td><td class="down">-16.20%</td><td>20 日反弹，但中期仍弱</td></tr>
-            <tr><td>阿里巴巴</td><td>模型/平台</td><td class="down">-2.31%</td><td class="up">+15.79%</td><td class="down">-15.51%</td><td class="up">+2.90%</td><td>更像平台反弹，不等于应用扩散</td></tr>
-            <tr><td>腾讯</td><td>平台/分发</td><td class="down">-5.85%</td><td class="up">+3.13%</td><td class="down">-9.19%</td><td class="down">-2.42%</td><td>弱修复</td></tr>
-            <tr><td>金山办公</td><td>生产力应用</td><td class="up">+1.53%</td><td class="up">+14.16%</td><td class="down">-10.04%</td><td class="up">+6.02%</td><td>生产力软件出现相对强度</td></tr>
-            <tr><td>万兴科技</td><td>创意软件</td><td class="down">-2.91%</td><td class="down">-13.00%</td><td class="down">-36.17%</td><td class="down">-16.72%</td><td>纯应用风险偏好仍差</td></tr>
-            <tr><td>科大讯飞</td><td>模型/应用</td><td class="down">-5.45%</td><td class="down">-0.36%</td><td class="down">-21.79%</td><td class="down">-6.29%</td><td>未确认</td></tr>
-            <tr><td>昆仑万维</td><td>生成式应用</td><td class="down">-12.65%</td><td class="down">-5.34%</td><td class="down">-28.32%</td><td class="down">-5.34%</td><td>高弹性方向继续去风险</td></tr>
+            <tr><td>模型能力跃迁 / 爆款</td><td>扩大需求、刺激新玩法与付费</td><td>模型厂商直接把修图/设计打包，功能层被替代</td><td>发布后 30/90 日留存、付费净新增、价格是否承压</td></tr>
+            <tr><td>推理/API 降价、开源模型</td><td>降低应用成本，扩大 credits 毛利空间</td><td>竞争者成本同时下降，供给激增</td><td>计算/API 成本占收入、毛利率、credits 单位毛利</td></tr>
+            <tr><td>平台分发 / 战略合作</td><td>降低 CAC、打通电商和内容场景</td><td>平台掌握客户、数据和议价权</td><td>合作带来的确认收入、自然新增、渠道分成</td></tr>
+            <tr><td>榜单/病毒式功能</td><td>快速放大下载与品牌</td><td>活动结束后流量坍塌、退款/差评上升</td><td>7/30/90 日排名与 cohort，不看单日峰值</td></tr>
+            <tr><td>财报 / KPI 披露</td><td>付费、ARR、ARPU、毛利共同超预期</td><td>增速、留存或毛利低于叙事</td><td>这是最强验证：Q2/H1 利润与现金流不能缺席</td></tr>
+            <tr><td>版权、隐私、平台政策</td><td>合规能力形成门槛</td><td>下架、限制训练/生成、获客或内容风险</td><td>下架记录、诉讼/监管披露、内容审核成本</td></tr>
           </tbody>
         </table>
       </div>
-      <h3>为什么仍然“有机会”</h3>
-      <ol class="clean">
-        <li><strong>技术可用性提高：</strong>图像模型的可控编辑、文字渲染、多轮一致性和速度继续改善，应用层更容易把模型能力变成结果。</li>
-        <li><strong>商业化从订阅走向用量：</strong>credits 能把高成本、高价值场景单独定价，理论上改善 ARPU，但必须验证毛利。</li>
-        <li><strong>资本开支叙事可能阶段性降温：</strong>当硬件拥挤度下降，市场可能寻找已有收入和利润的应用公司；但资金也可能直接离开成长股。</li>
-        <li><strong>美图有盈利和现金流：</strong>它不是只靠概念融资的应用公司，付费用户和核心收入已给出硬数据。</li>
-        <li><strong>8 月中报是近端事件：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf">董事会将在 2026-08-26 审议中期业绩</a>，预期差可能放大股价弹性。</li>
-      </ol>
+      <h3>历史案例：行情在事件上完成，不按固定窗口慢慢走</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>事件</th><th>美图价格观察</th><th>能证明什么</th><th>不能证明什么</th></tr></thead>
+          <tbody>
+            <tr><td>2025-01 DeepSeek / 开源成本冲击</td><td>1/24 HK$3.13 → 2/19 HK$6.50，约 +107.7%</td><td>模型成本与中国 AI 应用叙事可触发大幅重估</td><td>同期事件很多，不能把全段涨幅单因果归给 DeepSeek</td></tr>
+            <tr><td>2025-05-21 阿里可转债/合作</td><td>单日 HK$5.90 → HK$7.02，约 +19.0%</td><td>资本、分发和平台合作是强公司事件</td><td>不等于合作已经转成收入</td></tr>
+            <tr><td>2026-05-06 Q1 经营更新</td><td>单日 HK$4.19 → HK$4.66，约 +11.2%</td><td>付费、收入和 ARR 的硬 KPI 能重新定价</td><td>Q1 未披露利润、毛利与现金流</td></tr>
+            <tr><td>2026-06-17 影像节</td><td>当日 HK$4.69；至 6/26 HK$3.61，约 -23.0%</td><td>只有产品叙事未必能维持估值</td><td>价格同期受多因素影响，不能说发布会导致下跌</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>美国映射与未来四周催化</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>层级</th><th>美国/全球映射</th><th>传导到美图的方式</th><th>近期事件</th></tr></thead>
+          <tbody>
+            <tr><td>创意工作流直接对手</td><td>Adobe；Canva（未上市）</td><td>定价、Agent 工作流、模型打包决定美图生产力业务的竞争边界</td><td>持续跟踪产品发布与 Adobe 财报，不把股价当唯一信号</td></tr>
+            <tr><td>平台/模型/分发</td><td>Microsoft、Meta、Alphabet、Amazon、Apple、OpenAI</td><td>决定模型成本、入口分发、广告与电商内容需求，也可能直接替代</td><td>7/29 Microsoft/Meta；7/30 Apple/Amazon</td></tr>
+            <tr><td>应用商业化代理</td><td>AppLovin、Unity 等</td><td>反映应用获客、广告变现与风险偏好，但业务并非直接可比</td><td>只作二级确认，不能替代美图付费/毛利</td></tr>
+            <tr><td>中国平台</td><td>腾讯、阿里、字节（未上市）</td><td>更接近中国流量、模型与电商分发环境</td><td>腾讯 8/12；阿里合作进展待公司披露</td></tr>
+            <tr><td>公司自身</td><td>Meitu H1</td><td>直接决定 Q2/H1 盈利预期</td><td><strong>8/26 中期业绩</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
       <div class="callout amber">
-        <strong>当前判断：赔率线索先出现，胜率证据还不够</strong><br>
-        美图相对部分应用股更强，但行业扩散不够。要把结论升级为“AI 应用轮动确认”，至少需要纯应用样本多数上涨、相对恒生科技取得超额、榜单/流量持续而非单日冲高，以及中报兑现付费与利润。
+        <strong>当前判断：未来四周“有机会”，但不是已确认机会</strong><br>
+        事件密度高于平时：美国平台财报 → 腾讯 → 美图中报，确实可能把注意力从硬件资本开支转向应用商业化。确认条件不是硬件下跌，而是平台管理层强调应用收入/分发/推理效率，随后美图交出付费增长、生产力收入、毛利和现金流。若平台直接打包创意工作流，或美图 Q2 增长靠营销且毛利恶化，则窗口反而是风险事件。
       </div>
     </section>
 
     <section id="financials">
-      <h2>财报质量：增长好看，调整项必须拆开</h2>
-      <p class="section-dek">2025 年收入和调整后利润强劲，但 IFRS 利润下降、毛利率回落。核心是把经营增长、估值波动、可转债一次性费用和股权激励分开。</p>
+      <h2>新增财务章节：真营收、利润来源与 Q1/Q2</h2>
+      <p class="section-dek">2022—2025 的真实变化是订阅业务取代美业和广告成为主引擎；利润则同时受经营增长、加密资产/金融资产、公允价值、终止经营和可转债会计影响。年度、半年度和季度口径不能混用。</p>
+      <h3>年度收入来源：核心业务变大，广告停滞，美业退出</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>年度</th><th>报告收入</th><th>影像/视频/设计</th><th>广告</th><th>美业</th><th>毛利率</th><th>调整后归母</th><th>读法</th></tr></thead>
+          <tbody>
+            <tr><td>2022</td><td>20.85 亿</td><td>8.69 亿</td><td>6.30 亿</td><td>4.41 亿</td><td>56.9%</td><td>1.11 亿</td><td>订阅转型初期，收入仍较分散</td></tr>
+            <tr><td>2023</td><td>26.96 亿</td><td>13.27 亿</td><td>7.59 亿</td><td>5.69 亿</td><td>61.4%</td><td>3.68 亿</td><td>核心收入加速；法定利润含 2.68 亿加密减值转回</td></tr>
+            <tr><td>2024</td><td>33.41 亿</td><td>20.86 亿</td><td>8.53 亿</td><td>3.85 亿</td><td>68.7%</td><td>5.86 亿</td><td>核心业务成为主导；法定利润含 6.40 亿加密处置/转回收益</td></tr>
+            <tr><td>2025</td><td>38.59 亿（持续经营）</td><td>29.54 亿</td><td>8.43 亿</td><td>列为终止经营</td><td>73.6%</td><td>9.65 亿</td><td>核心 +41.6%，广告 -1.3%；增长几乎全部来自订阅/用量</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><small>2024 的 33.41 亿元是当年报告总收入；2025 年报将 2024 持续经营比较数重列为 29.96 亿元。表中保留当年业务分部以解释来源，不把两套口径直接算同比。</small></p>
+      <div class="callout blue">
+        <strong>“真营收变化”的两层答案</strong><br>
+        持续经营收入 2025 年同比 +28.8%；若把 2025 已终止供应链收入约 0.325 亿元加回，集团经济总销售约 38.91 亿元，相对 2024 原报 33.41 亿元约 +16.5%。退出低质量收入改善了结构，但不能把 28.8%说成全集团同口径增长。类似地，2024 原报毛利率 68.7%含低毛利美业；按持续经营重述是 76.0%，所以 2025 的 73.6%实际同比下降 2.4pct。
+      </div>
+      <h3>半年度连续序列：比只看全年更接近经营拐点</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>期间</th><th>核心收入</th><th>广告收入</th><th>调整后归母</th><th>付费/订阅率</th><th>变化</th></tr></thead>
+          <tbody>
+            <tr><td>2022H1</td><td>3.71 亿</td><td>2.72 亿</td><td>0.36 亿</td><td>未披露同口径</td><td>IFRS 归母亏损约 2.66 亿，订阅转型尚早</td></tr>
+            <tr><td>2022H2（推导）</td><td>4.97 亿</td><td>3.57 亿</td><td>0.75 亿</td><td>—</td><td>核心环比 H1 +34.0%</td></tr>
+            <tr><td>2023H1</td><td>6.02 亿</td><td>3.49 亿</td><td>1.51 亿</td><td>未披露同口径</td><td>核心收入开始加速</td></tr>
+            <tr><td>2023H2（推导）</td><td>7.25 亿</td><td>4.10 亿</td><td>2.17 亿</td><td>—</td><td>核心环比 H1 +20.4%</td></tr>
+            <tr><td>2024H1</td><td>9.31 亿</td><td>4.13 亿</td><td>2.73 亿</td><td>&gt;1,081 万 / 4.2%</td><td>核心同比 +54.5%</td></tr>
+            <tr><td>2024H2（推导）</td><td>11.55 亿</td><td>4.41 亿</td><td>3.13 亿</td><td>—</td><td>核心继续增长，广告近平台期</td></tr>
+            <tr><td>2025H1</td><td>13.51 亿</td><td>4.34 亿</td><td>4.67 亿</td><td>1,540 万 / 5.5%</td><td>核心同比 +45.2%；广告同比 +5.0%</td></tr>
+            <tr><td>2025H2（推导）</td><td>16.03 亿</td><td>4.09 亿</td><td>4.98 亿</td><td>—</td><td>核心环比 +18.6%；广告环比 -5.7%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><small>H2 是全年减 H1 的确定性推导，仅用于同口径核心收入、广告和公司调整后归母；2025 终止经营会污染部分总收入/利润比较，不能伪装成独立季度披露。</small></p>
+      <h3>2026Q1 相对去年，以及尚未披露的 Q2</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>指标</th><th>2026Q1</th><th>同比</th><th>去年同期隐含/披露基数</th><th>判断</th></tr></thead>
+          <tbody>
+            <tr><td>核心收入</td><td>8.52 亿</td><td class="up">+34.3%</td><td>约 6.34 亿</td><td>仍高增长，但低于 2025H1 的 45.2%</td></tr>
+            <tr><td>总付费用户</td><td>&gt;1,790 万</td><td class="up">+30.2%</td><td>约 1,375 万</td><td>转化趋势延续</td></tr>
+            <tr><td>生产力付费</td><td>234 万</td><td class="up">+52.9%</td><td>约 153 万</td><td>快于休闲，是结构升级证据</td></tr>
+            <tr><td>休闲付费</td><td>1,556 万</td><td class="up">+27.4%</td><td>约 1,221 万</td><td>仍是绝对主力</td></tr>
+            <tr><td>AI 生产力 ARR</td><td>约 5.8 亿</td><td class="up">+56.2%</td><td>约 3.71 亿</td><td>ARR 不是确认收入，需看续费和用量</td></tr>
+            <tr><td>利润/毛利/现金流</td><td>未披露</td><td>—</td><td>—</td><td><span class="tag risk">关键缺口</span> 不能据 Q1 收入计算 forward P/E</td></tr>
+            <tr><td>2026Q2</td><td>尚未披露</td><td>—</td><td>8/26 公布 H1</td><td>只有在口径一致时，才可用 H1 减 Q1 反推 Q2</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout amber">
+        <strong>Q2 的正确处理：未知就是未知</strong><br>
+        4—6 月网站、榜单、影像节和回购可以做预警，但不能替代收入、利润和现金流。中报发布后首先核对 H1 核心收入是否至少保持约 30% 增长、付费增速是否仍接近 Q1、毛利是否守住约 73%，再判断 Q2 是加速还是减速。
+      </div>
       <div class="two">
         <div class="chart">
           <strong>持续经营收入（亿元人民币）</strong>
@@ -527,6 +645,29 @@
       </div>
     </section>
 
+    <section id="cfo">
+      <h2>CFO Gary Ngan 近期讲话：逻辑完整，仍待财报验证</h2>
+      <p class="section-dek">2026-07-14 的 AI Proem Podcast 访谈提供了最新战略口径；Apple 标注转录由系统生成、仅供参考，因此以下属于“管理层主张”，不是审计事实。正式经营数字仍以 HKEX 披露为准。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>CFO 主张</th><th>研究解读</th><th>验证指标</th><th>风险</th></tr></thead>
+          <tbody>
+            <tr><td>消费订阅仍是增长引擎，下一步提高 ARPU</td><td>与 2025/2026Q1 付费增长一致；从用户数转向价格/credits</td><td>收入增速 &gt; 付费增速、续费不降、地区 ARPU</td><td>涨价或 credits 增长同时抬高流失与推理成本</td></tr>
+            <tr><td>高价值垂直场景和 prosumer，而非通用模型竞赛</td><td>资本约束下合理，把研发放在审美、工作流与最后一公里</td><td>生产力收入占比 &gt;18%—19%、企业/专业用户留存</td><td>Adobe/Canva/模型厂商可直接包住同一工作流</td></tr>
+            <tr><td>产品来自用户行为：DesignKit、开拍、Picchi</td><td>说明多产品矩阵有交叉孵化能力</td><td>跨产品导流、自然新增、获客成本和付费 cohort</td><td>拆 App 也可能分散品牌、研发和渠道预算</td></tr>
+            <tr><td>超过 90% AI 输出由自有模型完成</td><td>若口径准确，可降低外部 API 依赖；但不等于模型质量领先</td><td>独立质量基准、自有/第三方成本、故障与切换能力</td><td>“调用占比”可被定义影响，缺少独立审计</td></tr>
+            <tr><td>海外高 ARPU 国家仍有提渗透空间</td><td>与全球化方向一致，是估值上行来源</td><td>地区付费、ARPU、CAC 回收期和毛利</td><td>公司尚未披露地区单位经济性</td></tr>
+            <tr><td>AI 扩大 TAM，而非只压缩利润</td><td>只有新增任务和更高付费超过推理/渠道成本才成立</td><td>credits 收入、毛利、复购和任务完成率</td><td>收入增长和成本增长可能同时发生</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout blue">
+        <strong>讲话中最值得相信与最需要怀疑的部分</strong><br>
+        最可信的是“美图不会从零烧钱训练通用基础模型”，与研发投入和产品路线一致；最需要验证的是“自有模型占比、垂直审美护城河、海外高 ARPU 和 credits 经济性”。CFO 讲清了战略，但没有补上留存、CAC、地区 ARPU 与分产品毛利。
+      </div>
+      <p><small>来源：<a href="https://podcasts.apple.com/us/podcast/ai-proem-podcast/id1838832643">Apple Podcasts · From Beauty Apps to AI Agents</a>；补充：<a href="https://www.meitu.com/en/media/436">美图 2025 年度业绩发布稿</a>。</small></p>
+    </section>
+
     <section id="capital">
       <h2>创始人增持与公司回购：好信号，不是免检章</h2>
       <p class="section-dek">回购和增持能表明利益一致与管理层判断，但只有“低于每股内在价值、资产负债表安全、净股本不被更大规模发行稀释”时才真正增值。</p>
@@ -538,8 +679,21 @@
             <tr><td>公司回购计划</td><td>2026-03-27 宣布一年内最多 HK$3 亿</td><td>在估值低于内在价值时可提高每股价值</td><td>授权不等于执行；也可能为稳定情绪</td></tr>
             <tr><td>实际回购</td><td>新授权下截至 06-26 回购 2,546.7 万股；当日 274 万股，HK$3.58—3.66</td><td>价格低于创始人后续买入价，执行具有价格纪律的迹象</td><td>需看最终注销/库存股用途和全年净股数</td></tr>
             <tr><td>库存股</td><td>截至 06-26 共 6,300.25 万股；流通（不含库存）45.2318 亿股</td><td>库存股暂不参与每股经济权利</td><td>未来再发行可能恢复稀释</td></tr>
-            <tr><td>阿里可转债</td><td>US$2.5 亿、1% 票息、2028 到期、转股价 HK$6；全部转换新增 3.355 亿股</td><td>提供现金与战略合作，当前股价低于转股价</td><td>潜在股份是当前全部库存股的 5.3 倍；完全转股后约 6.82% 稀释</td></tr>
+            <tr><td>阿里可转债</td><td>US$2.5 亿、1% 票息、三年期、初始转股价 HK$6；全部转换最多新增 3.355 亿股</td><td>提供现金与战略合作，当前股价低于初始转股价</td><td>潜在股份是当前全部库存股的 5.3 倍；完全转股后约 6.82% 稀释</td></tr>
             <tr><td>股息</td><td>2025 年支付股息 8.656 亿元人民币；建议末期每股 HK$0.05</td><td>现金回报股东</td><td>资本回报、研发与增长投资的机会成本需并看</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>“高于 6 转股、低于 6 还钱”只是一种经济直觉，不是合同自动规则</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>问题</th><th>准确答案</th><th>对股东的风险</th></tr></thead>
+          <tbody>
+            <tr><td>HK$6 以上会自动转股吗？</td><td>不会。转换权属于阿里，可在发行日至到期前第五个营业日之间选择全部或部分转换；也可等待。</td><td>股价明显高于有效转股价时，经济上更有转换吸引力，出现摊薄。</td></tr>
+            <tr><td>HK$6 以下一定不转吗？</td><td>也不是法律规则。阿里仍可因战略原因转换，只是单看市场价值通常不划算。</td><td>不能把 HK$6 当硬支撑或自动触发线。</td></tr>
+            <tr><td>未转换怎么办？</td><td>到期未转/未赎回部分，美图需偿还本金和应计利息；债券为直接、无抵押、非次级债务。</td><td>低股价情景从“稀释风险”转成“2028 现金偿付/再融资风险”。</td></tr>
+            <tr><td>转股价永远是 HK$6 吗？</td><td>初始价为 HK$6，分红、回购、供股、低价发行等条款可触发调整；应以届时有效转股价为准。</td><td>回购和分红需同时看反摊薄调整，不能只看表面股数下降。</td></tr>
+            <tr><td>退通会触发赎回吗？</td><td>不会自动触发。债券“Relevant Event”关注的是实际退市、连续停牌超过 20 个交易日或控制权变更；港股通调出与 HKEX 退市不同。</td><td>退通影响南向买盘，实际退市/长停牌才是不同层级的合同风险。</td></tr>
           </tbody>
         </table>
       </div>
@@ -549,9 +703,53 @@
       </div>
     </section>
 
+    <section id="smallcap">
+      <h2>小盘股风险：严格标准下，目前应先等中报</h2>
+      <p class="section-dek">美图约 HK$178 亿市值，不是无成交的微盘，但具有“高事件弹性 + 港股无日涨跌停 + 可卖空 + 业绩前信息缺口”的组合。若原则是“有未量化风险就不进”，当前状态不是通过，而是等待 8 月 26 日验证。</p>
+      <div class="grid">
+        <div class="card wide">
+          <div class="k">近 20 日平均 / 中位成交额</div>
+          <div class="v">2.63 / 2.37 亿港元</div>
+          <div class="s">不是典型卖不掉的仙股；大仓位仍不能假设按屏幕价一次退出。</div>
+        </div>
+        <div class="card wide">
+          <div class="k">近 60 日年化历史波动</div>
+          <div class="v">约 86%</div>
+          <div class="s">单日最大上涨约 26%；平均日内振幅约 6.7%。风险是跳价，不只是流动性。</div>
+        </div>
+      </div>
+      <h3>港股通：当前仍在，近端“退通”风险较低但不为零</h3>
+      <ul class="clean">
+        <li><strong>当前事实：</strong>截至 2026-07-27，美图同时在<a href="https://www.sse.com.cn/services/hkexsc/disclo/eligible/">沪市港股通名单</a>和<a href="https://www.szse.cn/szhk/hkbussiness/underlylist/">深市港股通名单</a>。</li>
+        <li><strong>小盘阈值：</strong>若股票属于恒生综合小型股，定期考察前 12 个月平均月末市值低于 HK$40 亿且不属于 A+H 等例外，可被调出；美图当前点位市值约 HK$178 亿，距离该绝对阈值较远，但仍需跟踪恒生综合指数成份/分类和规则变化。</li>
+        <li><strong>调出后：</strong>仍在联交所上市的股票，港股通投资者不得再买入但可以卖出。它会切断增量南向买盘，不等于退市，也不自动触发阿里可转债的退市条款。</li>
+      </ul>
+      <h3>Meitu-specific 风险清单</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>风险</th><th>当前证据</th><th>级别</th><th>否决/解除条件</th></tr></thead>
+          <tbody>
+            <tr><td>Q2/H1 二元业绩跳空</td><td>Q1 未披露利润、毛利和现金流；8/26 才有 H1</td><td><span class="tag risk">未通过</span></td><td>中报同时验证付费、核心收入、毛利、现金流</td></tr>
+            <tr><td>报备净空头</td><td>SFC 须申报净空仓由 4/24 约 6.10 亿股降至 7/17 约 3.58 亿股，约为不含库存股的 7.9%</td><td><span class="tag warn">偏高但缓解</span></td><td>不能称为全部空仓或“狙击”；若重新快速升向 13.5% 且伴随负面公告，延期</td></tr>
+            <tr><td>披露控制</td><td>3/26 因未经批准年度业绩短片误发而停牌；6/18 公布调查整改，并补披露两笔 2025 货币基金认购</td><td><span class="tag warn">治理黄旗</span></td><td>再次误发、迟报、停牌或审计问题即硬否决</td></tr>
+            <tr><td>净稀释</td><td>阿里 CB 最大约 6.82%；股权激励与库存股未来仍可能恢复流通</td><td><span class="tag warn">尾部风险</span></td><td>跟踪 fully diluted 股数和 owner earnings/股；折价配售、供股或新 CB 为硬否决</td></tr>
+            <tr><td>产品质量/热度</td><td>RoboNeo 约 3.5 星，6 月 Web 访问环比 -50.26%；其他站点分化</td><td><span class="tag warn">产品红旗</span></td><td>新品热度必须持续 4—8 周并转付费；下架、隐私/版权处罚为硬否决</td></tr>
+            <tr><td>股权集中/公众持股</td><td>吴欣鸿约 13%、蔡文胜约 10%；年报称符合公众持股要求，本次未发现 SFC 高度集中警告</td><td><span class="tag info">可监控</span></td><td>大股东大宗减持、质押强平或公众持股不足时重估</td></tr>
+            <tr><td>港股制度</td><td>无日涨跌停；VCM 只是短暂冷静期；股票可卖空</td><td><span class="tag warn">结构风险</span></td><td>业绩/复牌前控制仓位和流动性预算，不能用 A 股涨跌停思维</td></tr>
+            <tr><td>VIE/合规/平台</td><td>中国合同安排、AI 标识/内容、隐私、版权、App Store 抽成</td><td><span class="tag warn">慢风险</span></td><td>重大监管、诉讼、下架或平台费率冲击即重新估值</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout red">
+        <strong>严格入场闸门：现在先不通过</strong><br>
+        不是因为“马上退通”——当前退通距离较远；而是 Q2 利润/毛利未知、8/26 存在跳空、报备净空头仍偏高、披露控制出现过实际失误，且 CB/股权激励形成稀释尾部。中报过关后再评估，代价是可能错过一段上涨，换来避开不可量化的业绩雷。
+      </div>
+      <p><small>空仓数据为 SFC “reportable net short positions”，不是市场全部淡仓，可能包含对冲：<a href="https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/17/Short_Position_Reporting_Aggregated_Data_Eng_20260717.pdf?rev=869a1316d1014119b9546416126e2f89">2026-07-17 官方汇总</a>。停牌/整改：<a href="https://www.hkexnews.hk/listedco/listconews/sehk/2026/0326/2026032600217.htm">3/26 停牌</a>、<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061801536.pdf">6/18 调查及整改</a>。</small></p>
+    </section>
+
     <section id="valuation">
-      <h2>估值：价格便宜了，但不是无条件便宜</h2>
-      <p class="section-dek">以 2026-07-24 收盘 HK$3.93、流通股 45.2318 亿股和中国银行 CNY 0.8664/HKD 换算。估值日期、利润期间和股本口径保持一致。</p>
+      <h2>“真实 P/E”不是一个数：约 16—26 倍</h2>
+      <p class="section-dek">以 2026-07-24 收盘 HK$3.93、流通股 45.2318 亿股和中国银行 CNY 0.8664/HKD 换算。2026Q1 没有利润披露，所以不能可靠重建 forward/TTM P/E；当前 TTM 分母仍只能锚定 FY2025。</p>
       <div class="grid">
         <div class="card">
           <div class="k">股权市值</div>
@@ -583,6 +781,23 @@
           <div class="v">约 4.09×</div>
           <div class="s">EV 约人民币 120.8 亿元</div>
         </div>
+      </div>
+      <h3>利润分母矩阵</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>分母</th><th>盈利</th><th>P/E</th><th>经济含义</th></tr></thead>
+          <tbody>
+            <tr><td>2025 总法定归母</td><td>5.829 亿</td><td>26.4×</td><td>含终止经营和全部一次性会计项目</td></tr>
+            <tr><td>2025 持续经营 IFRS 归母</td><td>6.976 亿</td><td>22.1×</td><td>排除终止业务，但仍含可转债与投资波动</td></tr>
+            <tr><td>公司调整后归母</td><td>9.653 亿</td><td>16.0×</td><td>最乐观口径，包含终止经营且加回股权激励</td></tr>
+            <tr><td>调整后归母减股权激励</td><td>8.469 亿</td><td>18.2×</td><td>把股权激励视为真实股东成本</td></tr>
+            <tr><td>研究 owner earnings</td><td>7.0—8.5 亿</td><td>22.0—18.1×</td><td>用于估值敏感性，不是公司指引或市场一致预期</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout amber">
+        <strong>最诚实的估值表达：经营收益约 18—22 倍</strong><br>
+        26.4 倍是全部法定归母口径，16.0 倍是公司调整口径；任何只报一个“真实 P/E”的说法都隐藏了分母选择。还要注意 2025 年末约 49.37 亿元现金及流动金融资源已包含阿里可转债募集资金，不能把它全部当成发行前积累的自由净现金。
       </div>
       <h3>Owner-earnings DCF 敏感性</h3>
       <div class="table-wrap">
@@ -640,7 +855,7 @@
         <table>
           <thead><tr><th>层级</th><th>升级条件</th><th>维持观察</th><th>降级/证伪</th></tr></thead>
           <tbody>
-            <tr><td>AI 应用板块</td><td>20 日样本 ≥70% 上涨；纯应用中位数跑赢恒生科技；成交扩散</td><td>美图/少数平台独强</td><td>硬件与应用一起跌，风险偏好整体收缩</td></tr>
+            <tr><td>AI 应用事件链</td><td>平台财报强调应用变现/推理效率；ADBE/FIG/APP 等映射与中港应用共振；美图 KPI 兑现</td><td>只有硬件回落或单只应用冲高</td><td>平台直接打包工作流、应用 CAC/毛利恶化、事件后成交快速衰竭</td></tr>
             <tr><td>App 热度</td><td>多市场品类榜 7—30 日留存，下载/评分增量扩散</td><td>单一市场短期冲榜</td><td>爆款后快速跌出、差评/退款上升</td></tr>
             <tr><td>付费用户</td><td>中报同比仍 ≥30%，生产力继续快于休闲类</td><td>同比 20%—30%</td><td>低于 20% 或净新增明显停滞</td></tr>
             <tr><td>生产力收入</td><td>占核心收入高于 19%，AI ARR 与确认收入同步</td><td>占比持平但绝对额增长</td><td>credits 消耗高增、收入和毛利不跟</td></tr>
@@ -661,10 +876,87 @@
       </ul>
       <div class="callout">
         <strong>最终判断</strong><br>
-        短期：AI 应用有机会，但现在还不是“行业已经轮动”的事实；美图是较有基本面支撑的候选。<br>
+        短期：未来四周 AI 应用事件密集，有机会但未确认；严格小盘风险标准下，美图当前先等中报，不因担心错过而降低闸门。<br>
         中期：核心看 8 月中报是否同时守住付费、生产力收入、毛利和现金流。<br>
         长期：通用生图功能会被模型厂商打包，真正的胜负在垂直工作流、用户入口、付费留存与每股 owner earnings。
       </div>
+    </section>
+
+    <section id="timeline">
+      <h2>大事件时间轴：已发生与下一检查点</h2>
+      <p class="section-dek">沿用 Seed 时间轴方法：区分 completed / confirmed / TBA，记录事实、市场反应、传导机制和下一验证；颜色表示证据状态，不表示买卖方向。</p>
+      <h3>历史已完成</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2023-06-19 · COMPLETED</div>
+          <div class="timeline-title">MiracleVision 发布</div>
+          <p>确立垂直视觉模型路线；仍缺独立质量/成本基准，不能据此认定前沿模型护城河。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2025-01-27 → 02-19 · COMPLETED</div>
+          <div class="timeline-title">DeepSeek / 开源成本冲击推动中国 AI 应用重估</div>
+          <p>美图从事件前 HK$3.13 到 HK$6.50，约 +107.7%。说明小盘应用对模型成本叙事极敏感，不证明利润已兑现。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2025-05-21 · COMPLETED</div>
+          <div class="timeline-title">阿里可转债与战略合作</div>
+          <p>单日约 +19.0%、成交显著放大；下一检查点是合作收入、分发贡献和有效转股价。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-03-26 → 06-18 · COMPLETED / GOVERNANCE</div>
+          <div class="timeline-title">未经批准业绩短片误发、停牌、调查整改</div>
+          <p>这是实际披露控制缺陷，不是抽象风险；后续任何重复误发、迟报或停牌应升级为硬否决。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-05-06 · COMPLETED</div>
+          <div class="timeline-title">Q1 经营更新</div>
+          <p>单日约 +11.2%；付费、核心收入和 ARR 是有效催化，但利润、毛利和现金流仍未披露。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-06-17 → 06-26 · COMPLETED</div>
+          <div class="timeline-title">影像节：发布会没有形成持续行情</div>
+          <p>事件日后收盘约 -23.0%；只能说明产品发布缺少持续成交确认，不能把后续下跌单因果归于发布会。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-07-03 · COMPLETED</div>
+          <div class="timeline-title">创始人增持</div>
+          <p>160 万股、均价 HK$4.023；是利益一致信号，不替代估值、治理和中报验证。</p>
+        </div>
+      </div>
+      <h3>未来已确认 / 待定</h3>
+      <div class="timeline">
+        <div class="timeline-item future">
+          <div class="timeline-date">2026-07-29—07-30 · CONFIRMED</div>
+          <div class="timeline-title">Microsoft、Meta、Apple、Amazon 财报</div>
+          <p>观察叙事是否从 Capex 转向 Agent/应用收入、分发和推理效率；平台直接打包创意功能则是替代风险。</p>
+        </div>
+        <div class="timeline-item future">
+          <div class="timeline-date">2026-08-03—08-05 · CONFIRMED</div>
+          <div class="timeline-title">Snap、AppLovin、Figma 财报</div>
+          <p>分别映射广告需求/CAC 与创意 SaaS 付费，不是美图直接可比；需与美图营销效率和生产力 KPI 交叉确认。</p>
+        </div>
+        <div class="timeline-item future">
+          <div class="timeline-date">2026-08-12 · CONFIRMED</div>
+          <div class="timeline-title">腾讯 Q2</div>
+          <p>中国平台/分发的最近 read-through；看 AI 应用参与度和变现，而非只看算力支出。</p>
+        </div>
+        <div class="timeline-item future">
+          <div class="timeline-date">2026-08-21 · CONFIRMED CALENDAR / OUTCOME UNKNOWN</div>
+          <div class="timeline-title">恒生指数系列季度检讨结果</div>
+          <p>可能影响指数/港股通预期；美图是否调整未知，任何市场预测都不能写成事实。</p>
+        </div>
+        <div class="timeline-item future">
+          <div class="timeline-date">2026-08-26 · CONFIRMED · 最高权重</div>
+          <div class="timeline-title">美图 H1 业绩；同日 NVIDIA 财报仅作间接映射</div>
+          <p>核心验证：付费用户、生产力收入/ARR 转换、ARPU、毛利、推理/API 成本、经营现金流、净股数与调整后→IFRS 利润桥。</p>
+        </div>
+        <div class="timeline-item future">
+          <div class="timeline-date">2026-09-10 · CONFIRMED</div>
+          <div class="timeline-title">Adobe FY2026 Q3</div>
+          <p>检验创意工作流的 AI 变现与捆绑竞争；Canva/OpenAI 未上市，产品发布只能列 TBA。</p>
+        </div>
+      </div>
+      <p><small>机器可读版本：<a href="./data/event-timeline.csv">event-timeline.csv</a>。</small></p>
     </section>
 
     <section id="sources">
@@ -672,14 +964,20 @@
       <p class="section-dek">完整机器可读来源记录包含来源级别、访问日期、用途、限制和本地冻结文件 SHA-256：<a href="./source-ledger.json">source-ledger.json</a>。原始大型 PDF 与行情/API 快照保留在本地研究区，不进入 Git。</p>
       <ol class="source-list">
         <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042702560.pdf">2025 年报（审计）</a></li>
-        <li><a href="https://corp-static.meitu.com/corp-new/20250925/2025092501275.pdf">2025 中报</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0425/2025042502209.pdf">2024 年报（审计）</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0425/2024042502767.pdf">2023 年报（审计）</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0925/2025092501275.pdf">2025 中报</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0925/2024092501058.pdf">2024 中报</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2023/0828/2023082800511.pdf">2023H1 业绩</a></li>
         <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0506/2026050600053.pdf">2026Q1 经营更新</a></li>
         <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0327/2026032700936.pdf">最多 HK$3 亿回购计划</a></li>
         <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0703/2026070302393.pdf">创始人 2026-07-03 增持</a></li>
         <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0626/2026062600948.pdf">2026-06-26 股份回购申报</a></li>
         <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1231/2025123101815.pdf">阿里可转债完成公告</a></li>
+        <li><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2025/0520/2025052001407.pdf">阿里可转债原始条款</a></li>
         <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf">中期业绩董事会日期</a></li>
         <li><a href="https://www.meitu.com/en/media/421">吴欣鸿 2025 年终演讲</a></li>
+        <li><a href="https://podcasts.apple.com/us/podcast/ai-proem-podcast/id1838832643">CFO Gary Ngan 2026-07-14 访谈</a></li>
         <li><a href="https://www.meitu.com/en/media/438">2026 美图影像节</a></li>
         <li><a href="https://www.meitu.com/en/media/413">2024 美图影像节</a></li>
         <li><a href="https://www.meitu.com/en/media/420">美图与阿里通义合作</a></li>
@@ -690,12 +988,29 @@
         <li><a href="https://play.google.com/store/apps/details?id=com.meitu.roboneo">RoboNeo Google Play</a></li>
         <li><a href="https://a16z.com/100-gen-ai-apps-6/">a16z Top 100 GenAI Consumer Apps #6</a></li>
         <li><a href="https://www.similarweb.com/website/wink.ai/">Similarweb · wink.ai</a></li>
+        <li><a href="https://www.similarweb.com/website/vmake.ai/">Similarweb · vmake.ai</a></li>
+        <li><a href="https://www.similarweb.com/website/designkit.cn/">Similarweb · designkit.cn</a></li>
         <li><a href="https://www.similarweb.com/website/roboneo.com/">Similarweb · roboneo.com</a></li>
         <li><a href="https://www.similarweb.com/website/designkit.com/">Similarweb · designkit.com</a></li>
         <li><a href="https://openai.com/index/introducing-chatgpt-images-2-0/">OpenAI · ChatGPT Images 2.0</a></li>
         <li><a href="https://blog.google/products-and-platforms/products/gemini/updated-image-editing-model/">Google · Gemini image editing</a></li>
         <li><a href="https://www.canva.com/newsroom/news/canva-create-2026-ai/">Canva Create 2026</a></li>
         <li><a href="https://news.adobe.com/news/2026/06/adobe-unveils-major-expansion">Adobe Creative Agent expansion</a></li>
+        <li><a href="https://www.sse.com.cn/lawandrules/sselawsrules2025/global/hkexsc/c/c_20251017_10795123.shtml">上交所港股通实施办法</a></li>
+        <li><a href="https://www.sse.com.cn/services/hkexsc/disclo/eligible/">沪市港股通当前名单</a></li>
+        <li><a href="https://www.szse.cn/szhk/hkbussiness/underlylist/">深市港股通当前名单</a></li>
+        <li><a href="https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/17/Short_Position_Reporting_Aggregated_Data_Eng_20260717.pdf?rev=869a1316d1014119b9546416126e2f89">SFC 2026-07-17 须申报净空仓</a></li>
+        <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061801536.pdf">业绩短片误发调查及整改</a></li>
+        <li><a href="https://www.hkex.com.hk/Global/Exchange/FAQ/Securities-Market/Trading/VCM">HKEX 波动调节机制</a></li>
+        <li><a href="https://news.microsoft.com/source/2026/07/08/microsoft-announces-quarterly-earnings-release-date-68/">Microsoft 财报日历</a></li>
+        <li><a href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Second-Quarter-2026-Results/default.aspx">Meta 财报日历</a></li>
+        <li><a href="https://www.apple.com/investor/earnings-call/">Apple 财报日历</a></li>
+        <li><a href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-to-Webcast-Second-Quarter-2026-Financial-Results-Conference-Call/default.aspx">Amazon 财报日历</a></li>
+        <li><a href="https://investors.applovin.com/news/news-details/2026/AppLovin-to-Announce-Second-Quarter-2026-Results/default.aspx">AppLovin 财报日历</a></li>
+        <li><a href="https://investor.figma.com/news-events/news/news-details/2026/Figma-to-Announce-Second-Quarter-2026-Financial-Results-on-August-5-2026/default.aspx">Figma 财报日历</a></li>
+        <li><a href="https://www.tencent.com/en-us/investors.html">腾讯投资者日历</a></li>
+        <li><a href="https://investor.nvidia.com/events-and-presentations/events-and-presentations/event-details/2026/NVIDIA-2nd-Quarter-FY27-Financial-Results/default.aspx">NVIDIA 财报日历（间接映射）</a></li>
+        <li><a href="https://www.hsi.com.hk/en-hk/media-room/">恒生指数季度检讨日历</a></li>
         <li><a href="https://www.boc.cn/sourcedb/whpj/enindex.html">中国银行外汇牌价</a></li>
       </ol>
       <details>
@@ -710,7 +1025,7 @@
   <footer>
     <div class="wrap">
       <p>本报告是基于公开资料的研究快照，不构成投资建议、要约、目标价或收益承诺。第三方流量与商店数据会变化；Q1 经营更新未经审核或审阅；估值对假设高度敏感。</p>
-      <p>配套数据：<a href="./data/financial-operating-series.csv">财务与经营序列</a> · <a href="./data/app-public-signals.csv">App/网站信号</a> · <a href="./data/market-rotation.csv">行情轮动</a> · <a href="./data/valuation-scenarios.csv">估值情景</a></p>
+      <p>配套数据：<a href="./data/financial-history.csv">年度财务</a> · <a href="./data/financial-half-year-series.csv">半年度财务</a> · <a href="./data/quarterly-watch.csv">Q1/Q2 验证</a> · <a href="./data/pe-denominator-matrix.csv">P/E 分母矩阵</a> · <a href="./data/app-public-signals.csv">App/网站信号</a> · <a href="./data/event-timeline.csv">事件时间轴</a> · <a href="./data/small-cap-risk-register.csv">小盘风险登记</a> · <a href="./data/valuation-scenarios.csv">估值情景</a></p>
     </div>
   </footer>
 </body>

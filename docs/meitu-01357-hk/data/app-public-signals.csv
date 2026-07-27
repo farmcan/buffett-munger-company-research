@@ -1,5 +1,5 @@
 snapshot_date,store,storefront,app,public_signal,value,unit,interpretation_limit
-2026-07-27,Apple App Store,CN,Meitu,rating_count,2398054,count,Cumulative public rating count; not active users
+2026-07-27,Apple App Store,CN,Meitu,rating_count,12398054,count,Cumulative public rating count; not active users
 2026-07-27,Apple App Store,CN,Meitu,average_rating,4.8917,stars,Storefront-specific and mutable
 2026-07-27,Apple App Store,CN,BeautyCam,rating_count,1010858,count,Cumulative public rating count; not active users
 2026-07-27,Apple App Store,CN,Wink,rating_count,1737617,count,Cumulative public rating count; not active users
@@ -14,7 +14,14 @@ snapshot_date,store,storefront,app,public_signal,value,unit,interpretation_limit
 2026-07-27,Google Play,Global,RoboNeo,install_band_floor,500000,installs,Public threshold rather than exact installs
 2026-07-27,Google Play,Global,RoboNeo,average_rating,3.5,stars,"Low-sample public quality signal; 1.56K reviews, not a retention metric"
 2026-06,Similarweb,Global,wink.ai,estimated_visits,1600000,visits,Third-party estimate; web traffic is not app MAU or paying users
+2026-06,Similarweb,Global,wink.ai,estimated_visits_mom_change,24.55,pct,June versus May estimate; rounded modeled traffic
 2026-06,Similarweb,Global,roboneo.com,estimated_visits,445000,visits,Third-party estimate; down 50.26% month over month
+2026-06,Similarweb,Global,roboneo.com,estimated_visits_mom_change,-50.26,pct,June versus May estimate; launch or campaign traffic can be volatile
 2026-06,Similarweb,Global,designkit.com,estimated_visits,91700,visits,Third-party estimate
+2026-06,Similarweb,Global,designkit.com,estimated_visits_mom_change,4.25,pct,June versus May estimate; rounded modeled traffic
+2026-06,Similarweb,Global,designkit.cn,estimated_visits,753900,visits,Third-party estimate; primary China web entry
+2026-06,Similarweb,Global,designkit.cn,estimated_visits_mom_change,-6.07,pct,June versus May estimate; global rank moved from 46196 to 49217 over three months
+2026-06,Similarweb,Global,vmake.ai,estimated_visits,2400000,visits,Third-party estimate; web traffic is not app MAU or paying users
+2026-06,Similarweb,Global,vmake.ai,estimated_visits_mom_change,0.57,pct,June versus May estimate; rounded modeled traffic
 2026-06,Similarweb,Global,zcool.com.cn,estimated_visits,1900000,visits,Third-party estimate; 92.3% China traffic
 2026-04,Similarweb,Global,meitu.com,estimated_visits,918300,visits,Third-party estimate; latest visible snapshot was April 2026
