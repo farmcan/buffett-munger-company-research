@@ -1,0 +1,11 @@
+as_of,item,value_usd_m,operator,broad_net_cash_contribution_usd_m,status,source
+2025-12-31,cash_and_equivalents,5872.500,add,5872.500,observed,AR2025
+2025-12-31,financial_assets_amortised_cost_noncurrent,1532.265,add,1532.265,observed,AR2025
+2025-12-31,financial_assets_amortised_cost_current,4150.600,add,4150.600,observed,AR2025
+2025-12-31,fvtpl_assets_noncurrent,810.501,add,810.501,observed,AR2025
+2025-12-31,fvtpl_assets_current,380.857,add,380.857,observed,AR2025
+2025-12-31,borrowings_noncurrent,9994.773,subtract,-9994.773,observed,AR2025
+2025-12-31,borrowings_current,2593.077,subtract,-2593.077,observed,AR2025
+2025-12-31,lease_liabilities,8.331,subtract,-8.331,observed,AR2025
+2025-12-31,broad_net_cash,150.542,result,150.542,derived,"AR2025"
+2025-12-31,cash_only_net_debt,6723.681,result,-6723.681,derived,"cash less borrowings and leases; financial assets excluded"

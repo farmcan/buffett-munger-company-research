@@ -1,0 +1,12 @@
+item,value,unit,status,as_of,source_id,note
+H_share_close,6.65,HKD,secondary_market_frozen,2026-07-27,P01,2026-07-27 close
+pre_capitalisation_total_issued,717.724893,million_shares,official,2026-05-22,F06,includes 5.681234m A treasury shares
+capitalisation_eligible_base,712.043659,million_shares,derived_from_official,2026-05-22,F06,717.724893 - 5.681234
+capitalisation_new_shares,320.419647,million_shares,derived_from_official,2026-05-22,F06,"712.043659 × 4.5 / 10, rounded"
+post_capitalisation_total_issued,1038.14454,million_shares,official_expected,2026-08-11,F06,final registration controls; 717.724893 + 320.419647
+FY2025_post_cap_EPS,0.468397,RMB_per_share,derived_audited_numerator,2025-12-31,F01;F06,"486.264 / 1,038.144540"
+FY2025_post_cap_BVPS,5.390245,RMB_per_share,derived_audited_numerator,2025-12-31,F01;F06,"5,595.853 / 1,038.144540"
+FY2025_PE,12.3,x,derived,2026-07-27,F01;F06;P01;P02,currency-consistent post-cap denominator
+FY2025_PB,1.07,x,derived,2026-07-27,F01;F06;P01;P02,currency-consistent post-cap denominator
+proposed_CB_max_principal,1200,RMB_million,proposed_not_issued,2026-07-27,F06,final terms unknown
+illustrative_CB_conversion_shares,75.901328,million_shares,illustrative_only,2026-07-27,F06,"RMB1,200m / RMB15.81 per A share"

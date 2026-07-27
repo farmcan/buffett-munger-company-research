@@ -1,0 +1,11 @@
+date,event,type,evidence_layer,source,what_changed,next_check
+2024-12-02,US advanced semiconductor controls strengthened,policy,official,BIS_2026,"Advanced equipment software and HBM control framework tightened","EAR amendments licenses and company capex"
+2025-08-07,SMIC 2025Q2 results,earnings,company_actual,Q2_2025,"Revenue US$2.209bn utilization92.5% gross margin20.4%","Q3 actual"
+2025-11-13,SMIC 2025Q3 results,earnings,company_actual,Q3_2025,"Revenue US$2.382bn utilization95.8% gross margin22.0%","Q4 actual"
+2026-02-10,SMIC 2025Q4 results,earnings,company_actual,Q4_2025,"Revenue US$2.489bn utilization95.7% gross margin19.2%","Annual report and Q1"
+2026-03-10,BIS enforcement order,policy,official,BIS_2026,"Reconfirmed SMIC Entity List and licensing context","New rules licenses and enforcement"
+2026-04-08,SMIC 2025 annual report,annual_report,audited,AR2025,"Five-year financial and operating history frozen","2026 interim/annual"
+2026-05-14,SMIC 2026Q1 results and Q2 guidance,earnings,company_actual_and_guidance,Q1_2026,"Q1 actual; Q2 revenue +14% to +16% QoQ and GM20% to22% guidance","Q2 actual; date not officially confirmed at cutoff"
+2026-06-23,SMNC remaining49% acquisition share registration,capital_allocation,official_transaction,SMNC_REG,"547.182m new A shares and NCI attribution change","Post-deal parent EPS ROIC and diluted shares"
+2026-07-16,TSMC 2026Q2 results,global_mapping,official_peer,TSMC_Q2,"Strong leading-edge cycle signal","Do not assume same node economics for SMIC"
+2026-07-27,Research cutoff,research_state,needs_human_review,SC_CURRENT,"H closeHK$70.65 and Southbound eligibility current","Next formal company or policy evidence"

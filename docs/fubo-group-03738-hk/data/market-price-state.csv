@@ -1,0 +1,8 @@
+metric,value,unit,as_of,formula
+20d_sma,2.362,HKD,2026-07-27,mean(last 20 daily closes)
+60d_sma,2.634,HKD,2026-07-27,mean(last 60 daily closes)
+200d_sma,4.0233,HKD,2026-07-27,mean(last 200 daily closes)
+last_close,2.39,HKD,2026-07-27,market close
+52w_high,6.64,HKD,2026-07-27,max(last 252 closes)
+52w_low,2.22,HKD,2026-07-27,min(last 252 closes)
+1y_return,-36.94,%,2026-07-27,last close / close 252 sessions ago - 1

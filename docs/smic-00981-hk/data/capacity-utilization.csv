@@ -1,0 +1,5 @@
+period,status,utilization_pct,month_end_capacity_8in_eq_wpm,source,note
+FY2023,actual,75.0,805500,AR2023,audited_annual
+FY2024,actual,85.6,947625,AR2024,audited_annual
+FY2025,actual,93.5,1058750,AR2025,audited_annual
+2026Q1,actual,93.1,1078250,Q1_2026,unaudited_quarter

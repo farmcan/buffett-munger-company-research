@@ -1,0 +1,6 @@
+entity,market,mapping_type,relationship,source
+YouTube Content ID,United States/global,downstream_platform_internal_substitute,Platform-native rights matching and monetization; can complement or displace third-party layers.,I01
+Meta Rights Manager,United States/global,downstream_platform_internal_substitute,Platform-native rights tooling; not a listed pure-play comparable.,platform primary documentation
+C2PA / Content Credentials,global standard,thematic_adjacent_complement,Authenticity/provenance standard; does not by itself establish ownership or monetize rights.,I02/I04
+Veritone (NASDAQ: VERI),United States,thematic_peer,"AI/media workflow peer; business mix, scale and rights economics differ.","company public filings, not normalized here"
+U.S. Copyright Office AI reports,United States,regulatory_lead_signal,"Copyrightability, replicas and training policy shape demand and liability, not a company comparable.",I03

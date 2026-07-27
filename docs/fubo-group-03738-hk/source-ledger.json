@@ -1,0 +1,352 @@
+{
+  "schema_version": "seed.company-research-source-ledger.v1",
+  "company": {
+    "name_zh": "阜博集团",
+    "name_en": "Vobile Group Limited",
+    "ticker": "03738.HK"
+  },
+  "research_snapshot_at": "2026-07-27T18:45:00+08:00",
+  "market_data_cutoff": "2026-07-27",
+  "policy": {
+    "facts": "Audited filing and exchange announcements take precedence.",
+    "management_claims": "Company-defined MRR, active assets, NRR, retention and transcript comments remain reported claims.",
+    "public_proxies": "Website visits are not used as a primary KPI for this enterprise infrastructure business.",
+    "hashes": "Local frozen files have SHA-256; live pages without a frozen copy remain null.",
+    "investment_boundary": "Scenario analysis and market-state descriptions are not trading instructions."
+  },
+  "sources": [
+    {
+      "id": "F01",
+      "tier": "A",
+      "kind": "exchange_filing",
+      "title": "Vobile Group Annual Report 2025",
+      "publisher": "HKEX / Vobile",
+      "published_at": "2026-04-30",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043003894.pdf",
+      "snapshot_sha256": "0f4c34299259887c418fc1599a6df4c2174615296b0013493cd919fd6267c7fa",
+      "used_for": [
+        "financial_statements",
+        "revenue",
+        "cash_flow",
+        "share_capital",
+        "governance",
+        "customers"
+      ],
+      "limitations": "Primary filing facts are used within their stated period, scope and assurance."
+    },
+    {
+      "id": "F02",
+      "tier": "A",
+      "kind": "exchange_filing",
+      "title": "Vobile Group Interim Report 2025",
+      "publisher": "HKEX / Vobile",
+      "published_at": "2025-09-30",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2025/0930/2025093003000.pdf",
+      "snapshot_sha256": "7493774c0dce9632f8fe8fa9f25fcdc8216a34ea4e1c836ccd3db643af2f1f76",
+      "used_for": [
+        "financial_statements",
+        "revenue",
+        "cash_flow",
+        "operating_kpis"
+      ],
+      "limitations": "Primary filing facts are used within their stated period, scope and assurance."
+    },
+    {
+      "id": "F03",
+      "tier": "A",
+      "kind": "exchange_announcement",
+      "title": "Unaudited Operating Data for Q1 2026",
+      "publisher": "HKEX / Vobile",
+      "published_at": "2026-05-19",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0519/2026051900384.pdf",
+      "snapshot_sha256": "48366f874f224a4a0e59e49903250e35cf723118e730059fac2dda9ad10d9a8c",
+      "used_for": [
+        "revenue_growth",
+        "monthly_recurring_revenue"
+      ],
+      "limitations": "Preliminary, unaudited percentage changes; no absolute quarterly revenue, margin, profit or cash flow."
+    },
+    {
+      "id": "F04",
+      "tier": "A",
+      "kind": "exchange_announcement",
+      "title": "Proposed HK$1.6bn Zero-Coupon Convertible Bonds due 2026",
+      "publisher": "HKEX / Vobile",
+      "published_at": "2025-09-23",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0923/2025092300072.pdf",
+      "snapshot_sha256": "30458b857b382f0706dc128f87153c776d7435423300a43cfb8006d06fab41df",
+      "used_for": [
+        "convertible_bond",
+        "dilution",
+        "use_of_proceeds"
+      ],
+      "limitations": "Primary filing facts are used within their stated period, scope and assurance."
+    },
+    {
+      "id": "F05",
+      "tier": "A",
+      "kind": "monthly_return",
+      "title": "Monthly Return for June 2026",
+      "publisher": "HKEX / Vobile",
+      "published_at": "2026-07-07",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070701937.pdf",
+      "snapshot_sha256": "6af5a0718526315c90d23ddf8c7ebebc846364d6054ede48c3d3d0d60991352d",
+      "used_for": [
+        "issued_shares",
+        "treasury_shares",
+        "options",
+        "convertible_bond"
+      ],
+      "limitations": "Primary filing facts are used within their stated period, scope and assurance."
+    },
+    {
+      "id": "F06",
+      "tier": "B",
+      "kind": "company_presentation",
+      "title": "FY2025 Results Presentation",
+      "publisher": "HKEX / Vobile",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://vobile.com/storage/upload/260522/6a101d1b03327.pdf",
+      "snapshot_sha256": "cfc82492af0c0af963342d706df15a7bdde175ec5fefa861b215c482f51d5fb8",
+      "used_for": [
+        "active_assets",
+        "subscription_mrr",
+        "retention",
+        "products"
+      ],
+      "limitations": "Company-defined KPI deck; NRR, retention and active-asset definitions are not independently audited."
+    },
+    {
+      "id": "F07",
+      "tier": "B",
+      "kind": "management_transcript",
+      "title": "Q1 2026 Earnings Call Transcript",
+      "publisher": "HKEX / Vobile",
+      "published_at": "2026-05-27",
+      "retrieved_at": "2026-07-27",
+      "url": "https://vobile.com/storage/upload/260527/6a16cc402ca76.pdf",
+      "snapshot_sha256": "bcfc9dfaf406905180d0d21a34a5b75c41e67124902b6a53608f14b00b3856be",
+      "used_for": [
+        "active_assets",
+        "ai_assets",
+        "platform_policy",
+        "management_commentary"
+      ],
+      "limitations": "Management transcript; claims are not audited facts."
+    },
+    {
+      "id": "F08",
+      "tier": "A",
+      "kind": "audited_annual_report",
+      "title": "Vobile Group Annual Report 2024",
+      "publisher": "HKEX / Vobile",
+      "published_at": "2025-04-30",
+      "retrieved_at": "2026-07-27",
+      "url": "https://vobile.com/storage/upload/250430/68123d631b833.pdf",
+      "snapshot_sha256": "4130d4d43e367c0bcd601688206fb666653143e78f5d77b6895f5dddab0dd210",
+      "used_for": [
+        "financial_statements",
+        "cash_flow",
+        "revenue"
+      ],
+      "limitations": "Primary filing facts are used within their stated period, scope and assurance."
+    },
+    {
+      "id": "F09",
+      "tier": "A",
+      "kind": "audited_annual_report",
+      "title": "Vobile Group Annual Report 2023",
+      "publisher": "HKEX / Vobile",
+      "published_at": "2024-04-30",
+      "retrieved_at": "2026-07-27",
+      "url": "https://vobile.com/storage/upload/250430/6812417b860ae.pdf",
+      "snapshot_sha256": "3d455c081481bc7743ce602536ca4e684c435fc828bcaa171a0530b02a758561",
+      "used_for": [
+        "financial_statements",
+        "cash_flow",
+        "revenue"
+      ],
+      "limitations": "Primary filing facts are used within their stated period, scope and assurance."
+    },
+    {
+      "id": "F10",
+      "tier": "A",
+      "kind": "audited_annual_report",
+      "title": "Vobile Group Annual Report 2022",
+      "publisher": "HKEX / Vobile",
+      "published_at": "2023-04-28",
+      "retrieved_at": "2026-07-27",
+      "url": "https://vobile.com/storage/upload/240424/66287e5980439.pdf",
+      "snapshot_sha256": "9623e2f9344efb01c6b3e43164c8d71febae7f3c47c2fc635fe2a60362780c7d",
+      "used_for": [
+        "financial_statements",
+        "cash_flow",
+        "revenue"
+      ],
+      "limitations": "Primary filing facts are used within their stated period, scope and assurance."
+    },
+    {
+      "id": "M01",
+      "tier": "C",
+      "kind": "market_data",
+      "title": "Yahoo Finance 3738.HK chart API snapshot",
+      "publisher": "Yahoo Finance",
+      "published_at": "2026-07-27",
+      "retrieved_at": "2026-07-27",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/3738.HK?range=5y&interval=1d&events=history",
+      "snapshot_sha256": "e7873401f2aa541b476b0c318300c295779eb470a23ff6862a2092b788c3d60f",
+      "used_for": [
+        "price",
+        "volume"
+      ],
+      "limitations": "Third-party adjusted/unadjusted daily market data; corporate-action completeness not independently certified."
+    },
+    {
+      "id": "M02",
+      "tier": "C",
+      "kind": "market_data",
+      "title": "Yahoo Finance Hang Seng Index chart API snapshot",
+      "publisher": "Yahoo Finance",
+      "published_at": "2026-07-27",
+      "retrieved_at": "2026-07-27",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=5y&interval=1d&events=history",
+      "snapshot_sha256": "6440865a7ddc8481d178fbf41867e37f70b1bdca9ba903206b14b324fd3a20a6",
+      "used_for": [
+        "benchmark_price"
+      ],
+      "limitations": "Third-party Hang Seng Index benchmark snapshot; used only for event-window context, not as a primary industry or regulatory source."
+    },
+    {
+      "id": "S01",
+      "tier": "A",
+      "kind": "regulator_data",
+      "title": "SFC Aggregated Reportable Short Positions 2026-07-17",
+      "publisher": "SFC",
+      "published_at": "2026-07-24",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/17/Short_Position_Reporting_Aggregated_Data_Eng_20260717.pdf",
+      "snapshot_sha256": "06a022febb026e6b3897705239419a11530c3156789513f8dfa5f6901c68b890",
+      "used_for": [
+        "short_position"
+      ],
+      "limitations": "Only positions above statutory reporting thresholds; publication lag and hedging positions may exist."
+    },
+    {
+      "id": "I01",
+      "tier": "B",
+      "kind": "platform_primary",
+      "title": "YouTube: New tools to protect creators and artists",
+      "publisher": "YouTube",
+      "published_at": "2024-09-05",
+      "retrieved_at": "2026-07-27",
+      "url": "https://blog.youtube/news-and-events/responsible-ai-tools/",
+      "snapshot_sha256": "0e2024dd0574ce51fbf2a386c4a1d58728966ad07bcbe1b05f312500102a5856",
+      "used_for": [
+        "platform_substitution",
+        "ai_content_identification"
+      ],
+      "limitations": "Primary industry or regulatory source; it does not establish Vobile revenue or valuation."
+    },
+    {
+      "id": "I02",
+      "tier": "B",
+      "kind": "platform_primary",
+      "title": "YouTube: Improving AI labels for viewers and creators",
+      "publisher": "YouTube",
+      "published_at": "2026-05-27",
+      "retrieved_at": "2026-07-27",
+      "url": "https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/",
+      "snapshot_sha256": "55e0d1c26cf46dc4fc46bf8d48efcc90c7251a5c9e5be109116e042c2b8bc438",
+      "used_for": [
+        "automatic_ai_detection",
+        "c2pa_handling"
+      ],
+      "limitations": "Primary industry or regulatory source; it does not establish Vobile revenue or valuation."
+    },
+    {
+      "id": "I03",
+      "tier": "A",
+      "kind": "regulator_primary",
+      "title": "U.S. Copyright Office releases Part 2 of AI Report",
+      "publisher": "U.S. Copyright Office",
+      "published_at": "2025-01-29",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.copyright.gov/newsnet/2025/1060.html?loclr=licop",
+      "snapshot_sha256": "b508523831f07b8a37357d062391482d40238b527643e83e38dbc79e9739a88c",
+      "used_for": [
+        "ai_output_copyrightability"
+      ],
+      "limitations": "Primary industry or regulatory source; it does not establish Vobile revenue or valuation."
+    },
+    {
+      "id": "I04",
+      "tier": "A",
+      "kind": "industry_standard",
+      "title": "C2PA Technical Specification",
+      "publisher": "C2PA",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://spec.c2pa.org/specifications/specifications/1.0/specs/C2PA_Specification.html",
+      "snapshot_sha256": "7b220209e866a612a2bb803ff45ca0788232b8dee13e357161300fa10cf00c38",
+      "used_for": [
+        "content_provenance",
+        "adjacent_technology"
+      ],
+      "limitations": "Primary industry or regulatory source; it does not establish Vobile revenue or valuation."
+    },
+    {
+      "id": "C01",
+      "tier": "A",
+      "kind": "official_connect_lists",
+      "title": "SSE/SZSE Southbound eligible-security snapshot",
+      "publisher": "Shanghai Stock Exchange / Shenzhen Stock Exchange",
+      "published_at": "2026-07-27",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.sse.com.cn/services/hkexsc/disclo/eligible/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "current Stock Connect eligibility"
+      ],
+      "limitations": "Current frozen Seed master records eligibility in both Shanghai and Shenzhen southbound programs; broker/account permission is separate."
+    },
+    {
+      "id": "H01",
+      "tier": "A",
+      "kind": "official_filings_index",
+      "title": "HKEX Listed Company Title Search: 03738",
+      "publisher": "HKEX",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=170283",
+      "snapshot_sha256": null,
+      "used_for": [
+        "filing discovery",
+        "release time",
+        "event chronology"
+      ],
+      "limitations": "Index entry locates filings; filing PDFs remain the fact source."
+    },
+    {
+      "id": "I05",
+      "tier": "A-",
+      "kind": "company_ir",
+      "title": "Vobile Investor Relations Overview",
+      "publisher": "Vobile Group",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://vobile.com/overview?lang=en-us",
+      "snapshot_sha256": null,
+      "used_for": [
+        "product map",
+        "company-defined KPIs"
+      ],
+      "limitations": "Company marketing and KPI presentation; use audited filings for financial facts."
+    }
+  ]
+}

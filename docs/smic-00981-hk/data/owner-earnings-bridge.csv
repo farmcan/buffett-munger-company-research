@@ -1,0 +1,8 @@
+period,step,value_usd_m,status,formula_or_reason,source
+FY2025,parent_profit,685.131,observed,Owners of the Company,AR2025
+FY2025,group_depreciation_amortisation,3810.010,observed,Consolidated group non-cash charge,AR2025
+FY2025,maintenance_capex,,not_disclosed,"D&A is not automatically maintenance capex in a technology-intensive fab.",AR2025
+FY2025,growth_capex,,not_disclosed,Company does not split maintenance and growth cash PP&E,AR2025
+FY2025,normal_working_capital_need,,not_disclosed,Inventory and receivables increased materially,AR2025
+FY2025,parent_attributable_owner_earnings,,unavailable,"Group D&A/capex/OCF cannot be allocated to parent holders reliably while NCI is material.",AR2025
+FY2025,group_ocf_less_cash_ppe,-5205.523,diagnostic_proxy,"3194.303 - 8399.826; not owner earnings.",AR2025

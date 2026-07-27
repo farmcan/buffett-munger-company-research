@@ -1,0 +1,10 @@
+period,metric,value_pct,direction,scope,source,limitation
+FY2023,largest_customer_revenue_share,15.0,baseline,consolidated_revenue,AR2023,customer_identity_not_disclosed
+FY2024,largest_customer_revenue_share,8.1,down,consolidated_revenue,AR2024,customer_identity_not_disclosed
+FY2025,largest_customer_revenue_share,8.0,flat,consolidated_revenue,AR2025,customer_identity_not_disclosed
+FY2023,top_five_customer_revenue_share,37.1,baseline,consolidated_revenue,AR2023,customer_identity_not_disclosed
+FY2024,top_five_customer_revenue_share,36.0,down,consolidated_revenue,AR2024,customer_identity_not_disclosed
+FY2025,top_five_customer_revenue_share,35.8,down,consolidated_revenue,AR2025,customer_identity_not_disclosed
+FY2023,top_five_raw_material_supplier_share,32.5,baseline,raw_material_purchases,AR2023,"Does not cover critical equipment software and service concentration."
+FY2024,top_five_raw_material_supplier_share,31.5,down,raw_material_purchases,AR2024,"Does not cover critical equipment software and service concentration."
+FY2025,top_five_raw_material_supplier_share,25.7,down,raw_material_purchases,AR2025,"Does not cover critical equipment software and service concentration."

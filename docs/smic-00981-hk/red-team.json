@@ -1,0 +1,68 @@
+{
+  "schema_version": "seed.company-research-red-team.v1",
+  "artifact_type": "independent_adversarial_review",
+  "company_name": "中芯国际",
+  "security_id": "XHKG:00981",
+  "reviewer_or_agent": "codex-independent-adversarial-review-agent",
+  "reviewed_at": "2026-07-27T20:30:00+08:00",
+  "review_status": "needs_human_review",
+  "independence": "本反方审阅独立于管理层口径，优先寻找资本回报、现金流、制裁与每股经济性反证。",
+  "counter_thesis": "中芯的本土稀缺性和高利用率可能被市场错误等同于高股东回报。若成熟节点扩产压低ASP、先进工艺受关键设备/服务限制、折旧和维护/更新投入长期高于经营现金，而交易后的归母增量又不足以覆盖新股摊薄，则规模增长不能转成每股owner earnings。TSMC、SOX或AI硬件强势也可能只是全球先进节点/存储链情绪，不能直接映射中芯自身利润。",
+  "strongest_disconfirming_evidence": [
+    "FY2021-FY2025 OCF-现金PP&E代理连续为负，FY2025约-US$5.206bn。",
+    "FY2023-FY2025晶圆收入/8英寸等值出货ASP代理约US$988→US$907。",
+    "节点级收入、良率、毛利和ROIC未披露。",
+    "BIS官方文件显示SMIC实体清单与许可风险持续。",
+    "2026Q1收入增长但毛利和经营利润同比下降，归母方向受NCI变化影响。"
+  ],
+  "failure_modes": [
+    {
+      "mode": "utilization_without_returns",
+      "signal": "利用率>90%但毛利、OCF-capex和ROIC不改善"
+    },
+    {
+      "mode": "mature_node_price_pressure",
+      "signal": "出货增长、ASP代理和毛利连续下降、库存快于收入"
+    },
+    {
+      "mode": "advanced_node_bottleneck",
+      "signal": "capex高但产能/良率/客户认证兑现慢，折旧先行"
+    },
+    {
+      "mode": "smnc_per_share_failure",
+      "signal": "交易后归母增长低于全摊薄股数增长"
+    },
+    {
+      "mode": "theme_mapping_error",
+      "signal": "SOX/TSMC强而中芯自身收入、毛利、现金流未确认"
+    }
+  ],
+  "invalidation_conditions": [
+    "交易后连续数期显示归母owner earnings per share与ROIC显著改善。",
+    "节点级量产良率、毛利和客户认证出现可审计提升。",
+    "OCF在维持高利用率时持续覆盖维护及增长投入。",
+    "出口许可/国产替代证据显示关键瓶颈的吞吐、成本和良率已被实质解决。"
+  ],
+  "unresolved_issues": [
+    "交易后当前TTM归母、basic/diluted股数和权益未披露。",
+    "维护性capex与增长性capex未拆分。",
+    "节点级收入、ASP、良率、毛利和项目ROIC未披露。",
+    "关键设备许可和国产替代的量产经济性未独立验证。",
+    "恒生指数家族成分和下一调整未冻结。",
+    "尚无具名人工reviewer批准。"
+  ],
+  "next_review": "2026Q2正式结果（截至截止日发布日期未获官方确认）或重大BIS/交易后财务披露，以较早者为准。",
+  "source_refs": [
+    "AR2025",
+    "Q1_2026",
+    "SMNC_BOOK",
+    "SMNC_REG",
+    "BIS_2026",
+    "TSMC_Q2",
+    "UMC_Q1",
+    "GFS_Q1",
+    "P_H",
+    "P_HSTECH"
+  ],
+  "disclaimer": "Independent research-support review, not investment advice or a transaction instruction."
+}

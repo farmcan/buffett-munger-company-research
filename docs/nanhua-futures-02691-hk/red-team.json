@@ -1,0 +1,50 @@
+{
+  "schema_version": "seed.company-research-red-team.v1",
+  "artifact_type": "counter_thesis_review",
+  "security_id": "XHKG:02691",
+  "company_name": "Nanhua Futures Co., Ltd.",
+  "reviewer_or_agent": "Codex counter-thesis pass (machine, non-human)",
+  "reviewed_at": "2026-07-27T18:10:00+08:00",
+  "independence": "Separate counter-thesis pass; not a human approval.",
+  "counter_thesis": "Apparent growth may be a favorable trading-volume, investment-gain, impairment and client-fund cycle rather than a durable fee-rate moat. Capital compression, overseas concentration and small-cap liquidity can dominate near-term outcomes.",
+  "strongest_disconfirming_evidence": [
+    "Q1 investment gains rose by RMB93.949m while fair value and FX moved adversely.",
+    "A favorable credit-impairment swing contributed about RMB30.399m.",
+    "Net capital/risk capital fell from 240% to 137%.",
+    "FY2025 overseas PBT represented about 91.9% of group PBT.",
+    "Stock Connect inclusion and strong Q1 growth did not produce uniform positive five-day windows."
+  ],
+  "failure_modes": [
+    "Regulatory capital approaches minimums or capital raising is needed to maintain the current business.",
+    "Overseas profitability reverses because of rates, regulation, customer assets or trading activity.",
+    "Net fee rates fall despite higher industry volume.",
+    "Accounting-estimate effects or investment gains dominate reported earnings.",
+    "Proposed convertible financing causes greater per-share dilution than operating gains offset."
+  ],
+  "unresolved_issues": [
+    "Formal H1 statements and regulatory-capital table.",
+    "Customer concentration, retention, net fee rate and market share.",
+    "Actual H-share repurchase execution.",
+    "Final convertible bond terms.",
+    "Statutory distributable-cash bridge."
+  ],
+  "invalidation_conditions": [
+    "If formal H1 profit falls outside RMB375m-RMB405m or contains a larger one-off component than indicated, reassess normalization.",
+    "If net capital/risk capital approaches the regulatory minimum or needs external capital merely to sustain current business, survival and capital-allocation gates weaken.",
+    "If overseas PBT falls without offsetting domestic fee economics, the cross-border advantage thesis weakens.",
+    "If customer assets rise but fee and net-interest monetization both deteriorate, unit economics weaken.",
+    "If Stock Connect current lists cease to include 02691, revise liquidity and flow assumptions without treating removal itself as a fundamental verdict."
+  ],
+  "next_review": "At formal 2026 interim results or earlier upon material regulatory-capital, auditor, repurchase, convertible or Stock Connect disclosure.",
+  "review_status": "needs_human_review",
+  "source_refs": [
+    "F01",
+    "F02",
+    "F03",
+    "F06",
+    "F11",
+    "G04",
+    "P01"
+  ],
+  "disclaimer": "Machine counter-thesis for research review only; not investment advice."
+}

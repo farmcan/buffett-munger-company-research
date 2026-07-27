@@ -1,0 +1,4 @@
+date,event,mechanism,smic_exposure,evidence_layer,source,next_test
+2020-12,SMIC_added_to_US_Entity_List,"Licensing requirements for items subject to the EAR","Equipment software service and named entities",official_status_reconfirmed_2026,BIS_2026,"Current EAR and transaction-specific license review"
+2024-12-02,Advanced_semiconductor_controls_strengthened,"Controls on advanced semiconductors manufacturing equipment software and HBM","Advanced-node expansion and service availability",official_rule_context,BIS_2026,"Subsequent rule amendments and company capex/yield"
+2026-03-10,BIS_enforcement_order,"Order cites continuing SMIC Entity List status and named subsidiaries","Structural rather than one-day risk",official_enforcement_order,BIS_2026,"New entities items license outcomes or relief"

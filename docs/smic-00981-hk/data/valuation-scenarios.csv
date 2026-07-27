@@ -1,0 +1,5 @@
+as_of,reverse_pe_x,required_eps_hkd,required_parent_profit_usd_m,required_profit_vs_fy2025_x,status,interpretation
+2026-07-27,50,1.4130,1542.4,2.25,reverse_expectation,"At the current H price a 50x PE requires parent profit about 2.25x FY2025, before full dilution refinement."
+2026-07-27,75,0.9420,1028.3,1.50,reverse_expectation,"Requires parent profit about 1.50x FY2025."
+2026-07-27,100,0.7065,771.2,1.13,reverse_expectation,"Requires parent profit about 1.13x FY2025."
+2026-07-27,125,0.5652,617.0,0.90,reverse_expectation,"High multiple can coexist with profit below FY2025; not an intrinsic-value conclusion."

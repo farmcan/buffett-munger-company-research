@@ -1,0 +1,6 @@
+period,bridge_step,value_usd_m,operator,result_usd_m,scope,source,note
+FY2025,group_profit,988.944,start,988.944,consolidated_group,AR2025,audited
+FY2025,nci_profit,303.813,subtract,685.131,non_controlling_interests,AR2025,audited
+FY2025,parent_profit,685.131,result,685.131,owners_of_company,AR2025,audited
+TTM_to_2026Q1,old_share_parent_profit_proxy,694.544,result,694.544,pre_transaction_old_ownership,Q1_2026,"685.131 - 188.035 + 197.448; historical proxy only."
+Post_SMNC,current_ttm_parent_profit,,unknown,,post_transaction,SMNC_BOOK,"Cannot derive from NCI balance; wait for formal post-deal reporting."

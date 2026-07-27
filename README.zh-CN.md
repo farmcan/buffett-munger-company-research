@@ -11,6 +11,12 @@
 > 本项目与 Berkshire Hathaway、Warren Buffett、Charlie Munger、其遗产管理方及任何
 > 被引用的出版者均无隶属、授权、背书或赞助关系。仅供研究辅助，不构成投资建议。
 
+## 公开公司报告
+
+[GitHub Pages 研究首页](https://farmcan.github.io/buffett-munger-company-research/)
+现已公开美图公司、南华期货、中芯国际与阜博集团四份可追溯报告。每份 HTML 都直接展示
+25 个维度、50 个指标、九道 gate、来源账本、页码/行号证据定位、估值边界与失效条件。
+
 ## 为什么它不是普通的“价值投资提示词”
 
 当前版本固定并自动校验：

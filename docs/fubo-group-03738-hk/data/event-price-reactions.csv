@@ -1,0 +1,11 @@
+announcement_date,first_trading_date,event,category,source,pre_close_hkd,t0_close_hkd,t0_return_pct,t1_return_pct,t5_return_pct,hsi_t0_return_pct,causal_confidence,limitations,t0_excess_vs_hsi_pct
+2025-05-23,2025-05-26,2025Q1 operating update,operating_kpi,H01,4.07,4.17,2.46,-14.74,-13.51,-1.35,low_to_medium,"Window overlaps market/sector/company events; price reaction is association, not proof of causality.",3.81
+2025-06-03,2025-06-04,Placement completion,dilution,H01,3.43,3.38,-1.46,-2.33,-6.71,0.6,low_to_medium,"Window overlaps market/sector/company events; price reaction is association, not proof of causality.",-2.06
+2025-08-28,2025-08-29,2025H1 results,earnings,F02,6.36,6.64,4.4,-0.47,-14.78,0.32,low_to_medium,"Window overlaps market/sector/company events; price reaction is association, not proof of causality.",4.08
+2025-09-23,2025-09-23,HK$1.6bn convertible proposed,financing,F04,5.1,5.23,2.55,4.51,17.06,-0.7,low_to_medium,"Window overlaps market/sector/company events; price reaction is association, not proof of causality.",3.25
+2025-09-29,2025-09-30,Convertible issue completion,financing,H01,5.54,5.97,7.76,9.75,16.43,0.87,low_to_medium,"Window overlaps market/sector/company events; price reaction is association, not proof of causality.",6.89
+2025-11-05,2025-11-06,2025Q3 operating update,operating_kpi,H01,5.01,5.07,1.2,-2.2,-5.79,2.12,low_to_medium,"Window overlaps market/sector/company events; price reaction is association, not proof of causality.",-0.92
+2026-03-27,2026-03-27,FY2025 results,earnings,F01,3.81,3.7,-2.89,-7.35,3.94,0.38,low_to_medium,"Window overlaps market/sector/company events; price reaction is association, not proof of causality.",-3.27
+2026-05-19,2026-05-20,2026Q1 operating update,operating_kpi,F03,2.82,2.85,1.06,-3.19,0.0,-0.57,low_to_medium,"Window overlaps market/sector/company events; price reaction is association, not proof of causality.",1.63
+2026-07-07,2026-07-08,June monthly return: CB repurchase,financing,F05,2.36,2.45,3.81,3.39,-3.39,2.99,low_to_medium,"Window overlaps market/sector/company events; price reaction is association, not proof of causality.",0.82
+2026-07-12,2026-07-13,Director change announcement,governance,H01,2.39,2.3,-3.77,-3.77,-5.44,0.16,low_to_medium,"Window overlaps market/sector/company events; price reaction is association, not proof of causality.",-3.93

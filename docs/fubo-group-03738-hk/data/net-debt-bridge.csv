@@ -1,0 +1,7 @@
+item,hkd_m,sign,as_of,source,note
+cash_and_cash_equivalents,1157.048,1,2025-12-31,F01,
+restricted_cash,10.05,1,2025-12-31,F01,
+bank_loans,401.006,-1,2025-12-31,F01,
+convertible_bond_liabilities,1608.554,-1,2025-12-31,F01,
+lease_liabilities,21.925,-1,2025-12-31,F01,
+reported_net_debt,842.462,,2025-12-31,F01,Company net-debt definition excludes leases in cited bridge.

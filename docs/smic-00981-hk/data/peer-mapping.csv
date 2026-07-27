@@ -1,0 +1,9 @@
+market,company,ticker,mapping_type,role,latest_primary_signal,why_not_equivalent,source
+United_States,GlobalFoundries,GFS,same_economic_exposure,specialty_foundry_cash_conversion,"2026Q1 revenue US$1.634bn gross margin27.6% OCFUS$542m adjustedFCFUS$233m","US subsidies customer mix and export-control exposure differ.",GFS_Q1
+United_States,Intel_Foundry,INTC,thematic_peer,IDM_foundry_capex_and_policy,"2026Q1 is latest filing in package at cutoff","Foundry is embedded in diversified IDM; no clean SMIC-equivalent security or margin.",INTEL_Q1
+United_States,PHLX_Semiconductor_Index,SOX,thematic_peer,macro_beta,"Semiconductor risk-appetite mapping only","Index mixes fabless memory equipment and foundries; no direct earnings equivalence.",P_HSTECH
+Taiwan,TSMC,2330.TW_or_TSM,same_economic_exposure,leading_edge_foundry_cycle,"2026Q2 revenue US$40.20bn gross margin67.7%; Q3 revenue guideUS$44.6bn-US$45.8bn","Leading-edge mix customer trust and sanctions exposure differ radically.",TSMC_Q2
+Taiwan,UMC,2303.TW_or_UMC,same_economic_exposure,mature_specialty_foundry_cycle,"2026Q1 utilization79%; Q2 shipments high-single-digit higher and GM around30% guidance","Geography technology mix and policy exposure differ.",UMC_Q1
+South_Korea,Samsung_Foundry,005930.KS,thematic_peer,advanced_node_competition,"Foundry is embedded in a diversified electronics and memory group","No clean foundry-only public margin in this package.",source_gap
+South_Korea,SK_Hynix,000660.KS,thematic_peer,memory_and_HBM_sentiment,"HBM and memory can move semiconductor risk appetite","Memory is not foundry and should not map directly to SMIC earnings.",source_gap
+United_States,Nvidia,NVDA,no_direct_mapping,AI_accelerator_sentiment,"AI accelerator demand drives global semiconductor sentiment","No disclosed direct economic equivalence to SMIC application/node mix.",source_gap

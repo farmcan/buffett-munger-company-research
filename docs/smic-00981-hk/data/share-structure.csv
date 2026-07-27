@@ -1,0 +1,3 @@
+date,a_shares,h_shares,total_shares,a_share_pct,h_share_pct,event,source
+2025-12-31,1999562549,6000845486,8000408035,24.99,75.01,annual_report_year_end,AR2025
+2026-06-23,2546744622,6013933328,8560677950,29.75,70.25,SMNC_49pct_acquisition_share_registration,SMNC_REG

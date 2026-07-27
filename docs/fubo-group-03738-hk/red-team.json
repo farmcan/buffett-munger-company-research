@@ -1,0 +1,140 @@
+{
+  "schema_version": "seed.company-research-red-team.v1",
+  "company": "Vobile Group Limited",
+  "security_id": "XHKG:03738",
+  "reviewer_or_agent": "independent Codex research subagent",
+  "reviewed_at": "2026-07-27T18:45:00+08:00",
+  "status": "needs_human_review",
+  "counter_thesis": "阜博可能把 AI 内容数量增长误当成股东现金收益增长：平台可自建识别与规则层，应收、资本化研发和并购商誉吸收现金，而低股价使 2026 可转债从摊薄风险转成偿付/再融资风险。",
+  "strongest_disconfirming_evidence": [
+    {
+      "claim_challenged": "AI 内容越多必然越利好阜博。",
+      "evidence": "YouTube 已在 Content ID 内开发合成歌声及肖像识别，并自动识别部分 AI 内容。",
+      "source_refs": [
+        "I01",
+        "I02"
+      ],
+      "why_it_matters": "内容增量与平台内生替代可同时发生。"
+    },
+    {
+      "claim_challenged": "软件收入增长等于轻资产现金复利。",
+      "evidence": "FY2025 CFO 0.699 亿、无形资产投入 4.277 亿，扣全部投入后的现金代理为 -3.634 亿。",
+      "source_refs": [
+        "F01"
+      ],
+      "why_it_matters": "研发资本化与营运资本使利润和现金显著分离。"
+    },
+    {
+      "claim_challenged": "可转债高于转股价才有风险。",
+      "evidence": "6 月末剩余本金 14.58 亿、转股价 HK$5.87、到期 2026-09-27；现价 HK$2.39。",
+      "source_refs": [
+        "F04",
+        "F05",
+        "M01"
+      ],
+      "why_it_matters": "价外时转股动机弱，风险形态转向现金偿付或再融资。"
+    },
+    {
+      "claim_challenged": "高留存足以证明护城河。",
+      "evidence": "公司口径 NRR 128%、客户留存 98.2%，但前五客户占收入 40%，且指标定义未完全披露。",
+      "source_refs": [
+        "F01",
+        "F06"
+      ],
+      "why_it_matters": "高留存与集中度、并购口径和平台依赖可以并存。"
+    }
+  ],
+  "failure_modes": [
+    {
+      "name": "platform_internalization",
+      "mechanism": "平台把识别、标签、争议与变现封装在内部工具。",
+      "observable_signals": [
+        "NRR下降",
+        "单资产收入下降",
+        "平台API权限收紧",
+        "增值收入增速落后资产数"
+      ]
+    },
+    {
+      "name": "cash_conversion_failure",
+      "mechanism": "应收、预付款、资本化研发和并购持续吸收现金。",
+      "observable_signals": [
+        "CFO/利润低位",
+        "应收增速高于收入",
+        "研发资本化率上升",
+        "持续外部融资"
+      ]
+    },
+    {
+      "name": "refinancing_or_dilution",
+      "mechanism": "价外债券到期需要偿付或新融资；若股价上升则转为稀释。",
+      "observable_signals": [
+        "新配股/供股/债券",
+        "转股价调整",
+        "现金覆盖不足",
+        "每股现金收益下降"
+      ]
+    },
+    {
+      "name": "goodwill_impairment",
+      "mechanism": "并购增长不达预期导致商誉/无形资产减值。",
+      "observable_signals": [
+        "CGU预测下修",
+        "减值测试折现率上升",
+        "有机增长落后",
+        "商誉继续升高"
+      ]
+    }
+  ],
+  "invalidation_conditions": [
+    {
+      "condition": "连续两期 CFO、扣全部开发投入后的现金代理和全摊薄每股现金收益同步改善。",
+      "effect_on_counter_thesis": "削弱会计增长无法转成现金的反方。"
+    },
+    {
+      "condition": "到期前以现有现金和已承诺低成本融资覆盖债券，且无重大摊薄。",
+      "effect_on_counter_thesis": "削弱生存/再融资反方。"
+    },
+    {
+      "condition": "平台推出内部 AI 权利工具后，公司 NRR、收入/资产和价值增值毛利仍稳定。",
+      "effect_on_counter_thesis": "削弱平台替代反方。"
+    }
+  ],
+  "unresolved_issues": [
+    "2026Q1 absolute revenue, gross margin, profit, cash flow and share denominator.",
+    "June/July 2026 cash, bank facilities, covenant headroom and exact convertible redemption funding plan.",
+    "Auditable CAC, cohort retention, product/geography margins, asset monetization yield and platform mix.",
+    "Maintenance versus growth split for capitalized development and acquired intangibles.",
+    "Point-in-time historical PE and normalized public peer set without look-ahead bias.",
+    "Borrow fee, lendable inventory and daily free-float-adjusted short interest."
+  ],
+  "next_review": {
+    "date": "2026-09-27",
+    "event": "HK$1.6bn convertible bond maturity",
+    "minimum_checks": [
+      "remaining principal",
+      "cash balance",
+      "committed facilities",
+      "repurchase/conversion",
+      "new dilution",
+      "covenant headroom"
+    ],
+    "source_refs": [
+      "F04",
+      "F05"
+    ]
+  },
+  "source_refs": [
+    "F01",
+    "F03",
+    "F04",
+    "F05",
+    "F06",
+    "F07",
+    "I01",
+    "I02",
+    "M01",
+    "S01"
+  ],
+  "disclaimer": "Independent red-team for evidence audit; not investment advice or named human approval."
+}

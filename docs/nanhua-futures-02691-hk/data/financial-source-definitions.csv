@@ -1,0 +1,6 @@
+metric,definition,unit,scope,formula_or_boundary,source_id
+operating_income,HKFRS net operating income for financial institution,RMBm,consolidated,not equivalent to PRC gross commodity sales revenue,F01
+parent_profit,profit attributable to equity shareholders of the parent,RMBm,consolidated attribution,used for EPS numerator,F01
+client_payables,amounts payable to clients backed by segregated client assets,RMBm,customer funds,not ordinary corporate funding,F01
+TTM_parent_profit,FY2025 + 2026Q1 - 2025Q1,RMBm,derived,486.264+204.763-85.738=605.289,F01;F02
+normalized_profit,simple FY2022-FY2025 parent-profit average,RMBm,derived cycle cross-check,(246.060+401.855+457.972+486.264)/4=398.038,F01

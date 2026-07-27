@@ -1,0 +1,2118 @@
+{
+  "schema_version": "seed.stock-fundamentals-valuation.v2",
+  "artifact_type": "stock_fundamentals_valuation",
+  "artifact_role": "public_company_research_upgrade",
+  "status": "needs_human_review",
+  "generated_at": "2026-07-27T20:30:00+08:00",
+  "security": {
+    "security_id": "XHKG:00981",
+    "company_name": "Semiconductor Manufacturing International Corporation",
+    "company_name_zh": "中芯国际集成电路制造有限公司",
+    "ticker": "00981",
+    "exchange": "HKEX",
+    "listing_type": "ordinary_h_share_same_issuer_as_688981_SH",
+    "currency": "HKD",
+    "fiscal_year_end": "12-31",
+    "reporting_standard": "IFRS"
+  },
+  "as_of": {
+    "research_date": "2026-07-27",
+    "price": 70.65,
+    "price_date": "2026-07-27",
+    "price_source_ref": "P_H"
+  },
+  "methodology_refs": [
+    {
+      "id": "berkshire_1996_letter",
+      "title": "1996 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/1996.html",
+      "use": "用可理解、可预测和能力圈约束对先进工艺与政策叙事的外推。"
+    },
+    {
+      "id": "berkshire_1986_letter",
+      "title": "1986 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/1986.html",
+      "use": "用owner earnings桥区分净利润、折旧、维护性资本开支和营运资本。"
+    },
+    {
+      "id": "berkshire_2005_letter",
+      "title": "2005 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/2005ltr.pdf",
+      "use": "把竞争位置、资本配置与每股长期结果放在同一框架。"
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "AR2025",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "SMIC Annual Report 2025",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0408/2026040801181.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-04-08",
+      "accessed_at": "2026-07-27",
+      "period": "FY2021-FY2025, with audited FY2025 statements",
+      "audit_status": "audited",
+      "scope": "consolidated_group_and_parent_attribution",
+      "covers": [
+        "financial_statements",
+        "capacity",
+        "utilization",
+        "shipments",
+        "business_mix",
+        "customers",
+        "suppliers",
+        "share_structure",
+        "issuer_identity"
+      ],
+      "content_sha256": "4ce8f7a22e09f5322a3b03621e596b42f941d43f12a58e303183209c279e3111",
+      "text_snapshot_sha256": "61070288c60ab4797e2a0a6cd6832d3de5ca7375fbfc891c814e2327b3392eb9",
+      "page_count": 163
+    },
+    {
+      "id": "AR2024",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "SMIC Annual Report 2024",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0409/2025040900322.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-04-09",
+      "accessed_at": "2026-07-27",
+      "period": "FY2024",
+      "audit_status": "audited",
+      "scope": "consolidated_group",
+      "covers": [
+        "financial_statements",
+        "historical_operating_metrics"
+      ],
+      "content_sha256": "b184a848a948b236497cabddc4d3c8bf943abeeaeccd2bb4e8dd4a2785213eca",
+      "text_snapshot_sha256": "5dc1f14f0d0dff270c656c303a972545b17b505ac282afa142b553a5d6ac8388",
+      "page_count": 159
+    },
+    {
+      "id": "AR2023",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "SMIC Annual Report 2023",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0409/2024040900356.pdf",
+      "published_at_status": "known",
+      "published_at": "2024-04-09",
+      "accessed_at": "2026-07-27",
+      "period": "FY2023",
+      "audit_status": "audited",
+      "scope": "consolidated_group",
+      "covers": [
+        "financial_statements",
+        "historical_operating_metrics"
+      ],
+      "content_sha256": "b2f7bbde6dd59456b7fd5d8a6336298086c9ac3d59c8028ed034844f0050c8ac",
+      "text_snapshot_sha256": "6c3454e17c0c5b900c1df5550d6872eb178717f5496342e3ceb181a87cd7b62d",
+      "page_count": 163
+    },
+    {
+      "id": "Q1_2026",
+      "tier": "A",
+      "source_type": "unaudited_quarterly_results",
+      "title": "Unaudited Results for the Three Months Ended March 31, 2026",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0514/2026051400908.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-05-14",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q1 actual and 2026Q2 management guidance",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "quarterly_financials",
+        "capacity",
+        "utilization",
+        "shipments",
+        "business_mix",
+        "management_guidance"
+      ],
+      "content_sha256": "64901d4c50f4dabbc120a6b6ced4da73eafc0472821dca6ed3623c0b773a4854"
+    },
+    {
+      "id": "Q2_2025",
+      "tier": "A",
+      "source_type": "unaudited_quarterly_results",
+      "title": "Unaudited Results for the Three Months Ended June 30, 2025",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0807/2025080700636.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-08-07",
+      "accessed_at": "2026-07-27",
+      "period": "2025Q2",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "quarterly_financials",
+        "capacity",
+        "utilization",
+        "shipments"
+      ],
+      "content_sha256": "234f4e517bf54734a39d5c61e1987bf5b9e0a6afea7c8cf2c6b676bf2e9693a2"
+    },
+    {
+      "id": "Q3_2025",
+      "tier": "A",
+      "source_type": "unaudited_quarterly_results",
+      "title": "Unaudited Results for the Three Months Ended September 30, 2025",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1113/2025111300757.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-11-13",
+      "accessed_at": "2026-07-27",
+      "period": "2025Q3",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "quarterly_financials",
+        "capacity",
+        "utilization",
+        "shipments"
+      ],
+      "content_sha256": "cb942330012a8dc4bb4aef8c189ef687a41c0809fea6be56d99e64474b3d2784"
+    },
+    {
+      "id": "Q4_2025",
+      "tier": "A",
+      "source_type": "unaudited_quarterly_results",
+      "title": "Unaudited Results for the Three Months Ended December 31, 2025",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0210/2026021000518.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-02-10",
+      "accessed_at": "2026-07-27",
+      "period": "2025Q4",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "quarterly_financials",
+        "capacity",
+        "utilization",
+        "shipments"
+      ],
+      "content_sha256": "a7049ce9968c9783f55e24889fd3802e80936338b42d99dd2f2b08cf8c42a194"
+    },
+    {
+      "id": "SMNC_BOOK",
+      "tier": "A",
+      "source_type": "exchange_transaction_filing",
+      "title": "Listing book for shares issued to acquire the remaining 49% of SMNC",
+      "url": "https://star.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-06-25/688981_20260625_WKJL.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-06-25",
+      "accessed_at": "2026-07-27",
+      "period": "2026 SMNC minority-interest acquisition",
+      "audit_status": "not_applicable",
+      "scope": "issuer_share_issue_and_historical_pro_forma",
+      "covers": [
+        "share_issue",
+        "transaction_structure",
+        "historical_pro_forma_eps",
+        "nci_attribution"
+      ],
+      "content_sha256": "d73afe31dc2ccc6dd67a5acfecdd078350c3575642b65e6d315704913983fa99"
+    },
+    {
+      "id": "SMNC_REG",
+      "tier": "A",
+      "source_type": "exchange_transaction_filing",
+      "title": "Result of share issuance and registration for SMNC acquisition",
+      "url": "https://star.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-06-25/688981_20260625_QG4I.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-06-25",
+      "accessed_at": "2026-07-27",
+      "period": "2026-06 share registration",
+      "audit_status": "not_applicable",
+      "scope": "issuer_share_registration",
+      "covers": [
+        "share_count",
+        "registration",
+        "lock_up"
+      ],
+      "content_sha256": "96df3182584be073925124be7b7d2878dee9ab5f5f79dc0d43c563468f9f01af"
+    },
+    {
+      "id": "SC_CURRENT",
+      "tier": "A",
+      "source_type": "official_southbound_eligibility_snapshot",
+      "title": "SSE and SZSE Southbound eligible-security snapshot",
+      "url": "https://www.sse.com.cn/services/hkexsc/disclo/eligible/",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026-07-27",
+      "audit_status": "not_applicable",
+      "scope": "00981 under Shanghai and Shenzhen Southbound programs",
+      "covers": [
+        "stock_connect",
+        "listing_status"
+      ],
+      "content_sha256": "7e75c0c573a62f4088466d98ae820258edca0b73903febd064ac308845f97ba9",
+      "alternate_url": "https://www.szse.cn/szhk/hkbussiness/underlylist/",
+      "checksum_scope": "Frozen combined security snapshot generated from the two official lists; actual exchange notices prevail."
+    },
+    {
+      "id": "SC_RULES",
+      "tier": "A",
+      "source_type": "exchange_rules",
+      "title": "Shanghai-Hong Kong Stock Connect Measures (2024 Revision)",
+      "url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/global/hkexsc/c/c_20251017_10795123.shtml",
+      "published_at_status": "known",
+      "published_at": "2024-06-14",
+      "accessed_at": "2026-07-27",
+      "period": "current rule page at research cut-off",
+      "audit_status": "not_applicable",
+      "scope": "Southbound inclusion_removal_and_sell_only_mechanics",
+      "covers": [
+        "stock_connect_rules",
+        "removal_mechanics"
+      ],
+      "content_sha256": "8b3e4e1f0e80f6563400e9fe735d0e83f8483db4c56ffc5846a520cf04eb247b"
+    },
+    {
+      "id": "BIS_2026",
+      "tier": "A",
+      "source_type": "official_enforcement_order",
+      "title": "BIS enforcement order describing SMIC Entity List status",
+      "url": "https://www.bis.gov/media/2587",
+      "published_at_status": "known",
+      "published_at": "2026-03-10",
+      "accessed_at": "2026-07-27",
+      "period": "status cited through 2026-03-10",
+      "audit_status": "not_applicable",
+      "scope": "US_export_control_entity_list_and_named_entities",
+      "covers": [
+        "export_controls",
+        "entity_list",
+        "license_requirements"
+      ],
+      "content_sha256": "c5bd2e4e6c0be93e54b67ca255cf08f9542561f8fbf7aa8c60ad8a426854b1b6"
+    },
+    {
+      "id": "P_H",
+      "tier": "B",
+      "source_type": "secondary_market_data",
+      "title": "Tencent qfq Daily Market Snapshot — 00981.HK",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk00981,day,2026-05-01,2026-07-27,100,qfq",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026-05-04 to 2026-07-27",
+      "audit_status": "not_applicable",
+      "scope": "00981.HK adjusted_daily_prices",
+      "covers": [
+        "price",
+        "returns",
+        "event_windows",
+        "volume"
+      ],
+      "content_sha256": "dbffdbeff86c3abb4ef591a743c0bcc8ce7392b3c5f91148634b942ccb0dd097"
+    },
+    {
+      "id": "P_A",
+      "tier": "B",
+      "source_type": "secondary_market_data",
+      "title": "Tencent qfq Daily Market Snapshot — 688981.SH",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh688981,day,2026-07-24,2026-07-27,5,qfq",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026-07-24 to 2026-07-27",
+      "audit_status": "not_applicable",
+      "scope": "688981.SH adjusted_daily_prices",
+      "covers": [
+        "price",
+        "a_h_price_gap"
+      ],
+      "content_sha256": "798445181885686c5358602d56cbb89f877370974d9033a869f9519f73c16635"
+    },
+    {
+      "id": "P_HSTECH",
+      "tier": "B",
+      "source_type": "secondary_market_data",
+      "title": "Tencent qfq Daily Market Snapshot — Hang Seng TECH Index",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2026-05-01,2026-07-27,100,qfq",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026-05-04 to 2026-07-27",
+      "audit_status": "not_applicable",
+      "scope": "Hang_Seng_TECH_adjusted_daily_prices",
+      "covers": [
+        "benchmark_returns",
+        "event_windows"
+      ],
+      "content_sha256": "20ba14cb55d1136ce4ab27187d3e5134c06fa70e98cd74edb07f3623f548592c"
+    },
+    {
+      "id": "FX_ECB",
+      "tier": "A",
+      "source_type": "official_fx_reference_rates",
+      "title": "ECB euro foreign exchange reference rates",
+      "url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml",
+      "published_at_status": "known",
+      "published_at": "2026-07-24",
+      "accessed_at": "2026-07-27",
+      "period": "2026-07-24",
+      "audit_status": "not_applicable",
+      "scope": "EUR_cross_rates_for_USD_HKD_CNY",
+      "covers": [
+        "fx",
+        "currency_translation"
+      ],
+      "content_sha256": "3ae8c2902628f31cb8b771e78f238e62c0bd932ac5d401e53aed73ffa604af14"
+    },
+    {
+      "id": "TSMC_Q2",
+      "tier": "A",
+      "source_type": "official_ir_fact_snapshot",
+      "title": "TSMC 2026 Q2 Quarterly Results",
+      "url": "https://investor.tsmc.com/english/quarterly-results/2026/q2",
+      "published_at_status": "known",
+      "published_at": "2026-07-16",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q2 actual and 2026Q3 guidance",
+      "audit_status": "unaudited",
+      "scope": "global_leading_edge_foundry_cycle_signal",
+      "covers": [
+        "peer_signal",
+        "global_foundry_cycle"
+      ],
+      "content_sha256": "6fc8481e4c1fb92ff1bc082381d16a49e5c4caf02d7d9aae55a62c5307b07503",
+      "checksum_scope": "SHA-256 of the exact fact snapshot consumed by this report."
+    },
+    {
+      "id": "UMC_Q1",
+      "tier": "A",
+      "source_type": "official_ir_fact_snapshot",
+      "title": "UMC 1Q 2026 Financial Results",
+      "url": "https://www.umc.com/en/Download/quarterly_results/QuarterlyResultsDetail/2026/2026Q1",
+      "published_at_status": "known",
+      "published_at": "2026-04-29",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q1 actual and 2026Q2 guidance",
+      "audit_status": "unaudited",
+      "scope": "mature_and_specialty_foundry_cycle_signal",
+      "covers": [
+        "peer_signal",
+        "mature_node_cycle"
+      ],
+      "content_sha256": "dcd1f2a964e5907bdb7d786495b26d2ee1263983c3d1a14d20843b71d94b115c",
+      "checksum_scope": "SHA-256 of the exact fact snapshot consumed by this report."
+    },
+    {
+      "id": "GFS_Q1",
+      "tier": "A",
+      "source_type": "official_ir_fact_snapshot",
+      "title": "GlobalFoundries Reports First Quarter 2026 Financial Results",
+      "url": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-first-quarter-2026-financial-results",
+      "published_at_status": "known",
+      "published_at": "2026-05-05",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q1 actual and 2026Q2 guidance",
+      "audit_status": "unaudited",
+      "scope": "specialty_foundry_profitability_and_cash_flow_signal",
+      "covers": [
+        "peer_signal",
+        "foundry_cash_conversion"
+      ],
+      "content_sha256": "96d927b21df851aa774cee3f4000c1ae4877a610114aac85de68af86307dfdba",
+      "checksum_scope": "SHA-256 of the exact fact snapshot consumed by this report."
+    },
+    {
+      "id": "INTEL_Q1",
+      "tier": "A",
+      "source_type": "sec_filing_and_results_release",
+      "title": "Intel First-Quarter 2026 Financial Results",
+      "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000077/0000050863-26-000077.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-04-23",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q1",
+      "audit_status": "unaudited",
+      "scope": "integrated_device_manufacturer_and_foundry_segment_signal",
+      "covers": [
+        "peer_signal",
+        "intel_foundry_mapping"
+      ],
+      "content_sha256": "4a21e4f984cf90d302ab9fce97d480974e602cdd602e9b6700752724cc0b96ec"
+    }
+  ],
+  "source_boundaries": {
+    "facts": "财务、股本与交易优先采用带SHA-256的HKEX/SSE文件；港股通采用2026-07-27冻结的沪深官方名单；价格为腾讯二级行情。",
+    "reported_claims": "2026Q2收入与毛利区间是管理层指引，不是已实现财务结果；同业指引同样保留为管理层主张。",
+    "interpretations": "ASP代理、机械PE/PB/EV、广义净现金、护城河和事件映射均为研究推导，与公司披露分列。",
+    "assumptions": "FX用ECB 2026-07-24交叉汇率；H股经济市值用所有普通股按H价等价计值，仅用于H股估值口径。",
+    "source_gaps": "节点收入/毛利、良率、维护性capex、交易后TTM归母、全摊薄股数和正式Q2发布日期均保持unknown。",
+    "page_level_evidence": "evidence-index提供18条关键事实，审计年报事实绑定PDF页码、原文和文档哈希；季度/行情点保留URL、期间和快照哈希。"
+  },
+  "ownership_structure": {
+    "legal_subject": "2025年报第112页确认同一开曼公司普通股分别在香港主板和上交所科创板上市。",
+    "listing_relationship": "same_company_listing",
+    "share_classes": [
+      {
+        "class": "A",
+        "ticker": "688981.SH",
+        "shares": 2546744622
+      },
+      {
+        "class": "H",
+        "ticker": "00981.HK",
+        "shares": 6013933328
+      }
+    ],
+    "post_transaction_total_shares": 8560677950,
+    "smnc_transaction": "2026-06发行547,182,073股A股收购已合并子公司SMNC剩余49%；股数增加与归母份额增加同时发生。",
+    "fully_diluted_status": "unavailable_without_same_date_options_awards_and_post_transaction_diluted_eps",
+    "source_refs": [
+      "AR2025",
+      "SMNC_BOOK",
+      "SMNC_REG"
+    ]
+  },
+  "financial_history": {
+    "periods": [
+      {
+        "period": "FY2021",
+        "currency": "USD",
+        "unit": "million",
+        "revenue": 5443.112,
+        "gross_profit": 1675.77,
+        "gross_margin_pct": 30.8,
+        "parent_net_income": 1701.803,
+        "operating_cash_flow": 3011.895,
+        "cash_ppe_acquisition": 4120.275,
+        "source_refs": [
+          "AR2025"
+        ]
+      },
+      {
+        "period": "FY2022",
+        "currency": "USD",
+        "unit": "million",
+        "revenue": 7273.284,
+        "gross_profit": 2761.648,
+        "gross_margin_pct": 38,
+        "parent_net_income": 1817.942,
+        "operating_cash_flow": 5347.916,
+        "cash_ppe_acquisition": 6172.106,
+        "source_refs": [
+          "AR2025"
+        ]
+      },
+      {
+        "period": "FY2023",
+        "currency": "USD",
+        "unit": "million",
+        "revenue": 6321.56,
+        "gross_profit": 1217.744,
+        "gross_margin_pct": 19.3,
+        "parent_net_income": 902.526,
+        "operating_cash_flow": 3358.294,
+        "cash_ppe_acquisition": 7630.407,
+        "source_refs": [
+          "AR2025",
+          "AR2023"
+        ]
+      },
+      {
+        "period": "FY2024",
+        "currency": "USD",
+        "unit": "million",
+        "revenue": 8029.921,
+        "gross_profit": 1447.968,
+        "gross_margin_pct": 18,
+        "parent_net_income": 492.748,
+        "operating_cash_flow": 3175.555,
+        "cash_ppe_acquisition": 7664.215,
+        "depreciation_and_amortisation": 3223.063,
+        "source_refs": [
+          "AR2025",
+          "AR2024"
+        ]
+      },
+      {
+        "period": "FY2025",
+        "currency": "USD",
+        "unit": "million",
+        "revenue": 9326.799,
+        "gross_profit": 1956.599,
+        "gross_margin_pct": 21,
+        "group_net_income": 988.944,
+        "nci_profit": 303.813,
+        "parent_net_income": 685.131,
+        "operating_cash_flow": 3194.303,
+        "cash_ppe_acquisition": 8399.826,
+        "depreciation_and_amortisation": 3810.01,
+        "source_refs": [
+          "AR2025"
+        ]
+      },
+      {
+        "period": "2026Q1",
+        "currency": "USD",
+        "unit": "million",
+        "revenue": 2505.487,
+        "gross_profit": 503.603,
+        "gross_margin_pct": 20.1,
+        "operating_profit": 247.792,
+        "parent_net_income": 197.448,
+        "operating_cash_flow": 684.985,
+        "company_defined_capex": 1562.8,
+        "depreciation_and_amortisation": 1088,
+        "source_refs": [
+          "Q1_2026"
+        ]
+      }
+    ],
+    "comparability_note": "年报五年摘要口径可比；季度为未审计。现金购置PP&E与公司定义capex不是同一指标，图表分列。",
+    "data_artifact": "data/annual-financials.csv"
+  },
+  "segment_data": {
+    "status": "single_operating_segment_with_mix_disclosures",
+    "period": "FY2025 and 2026Q1",
+    "currency": "USD",
+    "unit": "million_or_percent",
+    "reported_segments": 1,
+    "wafer_revenue_fy2025": 8796.4,
+    "fy2025_mix": {
+      "china_revenue_pct": 85.6,
+      "consumer_electronics_pct": 43.2,
+      "twelve_inch_pct": 77.1
+    },
+    "q1_2026_mix": {
+      "china_revenue_pct": 88.9,
+      "consumer_electronics_pct": 46.2,
+      "twelve_inch_pct": 76.4
+    },
+    "node_level_revenue_and_margin": null,
+    "source_refs": [
+      "AR2025",
+      "Q1_2026"
+    ]
+  },
+  "research_dimensions": [
+    {
+      "dimension": "security_and_legal_subject",
+      "status": "applicable",
+      "summary": "00981.HK 与 688981.SH 是同一开曼法律主体的两类普通股上市；00981 于 2026-07-27 同时在沪、深港股通南向名单内。",
+      "indicators": [
+        {
+          "id": "exact_security_issuer_share_class_and_rights",
+          "status": "observed",
+          "summary": "年报第112页明确同一公司的普通股分别在香港主板与上交所科创板上市。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_REG",
+            "SC_CURRENT",
+            "P_H"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "dated_price_share_count_currency_and_listing_status",
+          "status": "observed",
+          "summary": "港股收盘 HK$70.65；交易后总股数 8,560,677,950 股，南向资格为当日点时状态。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_REG",
+            "SC_CURRENT",
+            "P_H"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "SMNC_REG",
+        "SC_CURRENT",
+        "P_H"
+      ],
+      "positive_evidence": [
+        "同一发行人和上市类别可由正式文件直接核验。"
+      ],
+      "counter_evidence": [
+        "港股通资格、价格和股数都是点时状态。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "control_and_beneficial_ownership",
+      "status": "unknown",
+      "summary": "SMNC 49% 少数股权收购改变归母归属和股数，但最终控制人、国家股东影响与全部质押/交叉持股尚未形成完整穿透图。",
+      "indicators": [
+        {
+          "id": "controller_voting_pledges_and_cross_holdings",
+          "status": "not_disclosed",
+          "summary": "本公开包未完成最终受益所有权、投票安排、质押和交叉持股的逐项穿透。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_BOOK",
+            "SMNC_REG"
+          ],
+          "source_gaps": [
+            "最终控制与关联股东影响需要单独穿透。"
+          ]
+        },
+        {
+          "id": "value_transfers_nci_and_related_party_exposure",
+          "status": "observed",
+          "summary": "FY2025 期末 NCI 为 US$13.581bn；交易以 547.182m 新 A 股换取 SMNC 剩余 49%。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_BOOK",
+            "SMNC_REG"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "SMNC_BOOK",
+        "SMNC_REG"
+      ],
+      "positive_evidence": [
+        "收购的股数、价格与注册结果有交易所文件。"
+      ],
+      "counter_evidence": [
+        "NCI 余额不是 NCI 利润；交易后归母增量不能用余额机械推算。"
+      ],
+      "source_gaps": [
+        "最终控制与关联股东影响需要单独穿透。"
+      ]
+    },
+    {
+      "dimension": "business_model",
+      "status": "applicable",
+      "summary": "核心是晶圆代工：客户付费购买工艺制造、测试及配套设计/IP/光罩服务；成败变量是良率、利用率、ASP/产品组合、折旧和持续资本投入。",
+      "indicators": [
+        {
+          "id": "payer_value_proposition_revenue_and_cash_mechanism",
+          "status": "observed",
+          "summary": "晶圆收入 FY2025 为 US$8.796bn，占总收入约94.3%；其他服务不是主要收入池。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "capital_needs_and_business_failure_variables",
+          "status": "observed",
+          "summary": "FY2025 现金购置 PP&E US$8.400bn，远高于 US$3.194bn 经营现金流。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026"
+      ],
+      "positive_evidence": [
+        "代工收入机制清晰，产能、出货与利用率可观测。"
+      ],
+      "counter_evidence": [
+        "良率和节点级经济性没有披露，资本需求极高。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "revenue_structure",
+      "status": "unknown",
+      "summary": "公司只报告一个经营分部；应用、地区和晶圆尺寸可见，但节点、客户产品和分节点利润未披露。",
+      "indicators": [
+        {
+          "id": "segment_product_and_geography_reconciliation",
+          "status": "observed",
+          "summary": "FY2025 中国区 85.6%、消费电子 43.2%、12英寸 77.1%；2026Q1 中国区升至88.9%。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "volume_price_mix_acquisition_and_scope_bridge",
+          "status": "not_disclosed",
+          "summary": "出货增长、ASP下降、节点迁移、产能爬坡与收购范围的完整收入桥未披露。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": [
+            "缺少节点、客户项目与分产品毛利。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026"
+      ],
+      "positive_evidence": [
+        "应用/地区/晶圆尺寸结构可按季度跟踪。"
+      ],
+      "counter_evidence": [
+        "单分部口径掩盖先进与成熟节点的盈利差异。"
+      ],
+      "source_gaps": [
+        "缺少节点、客户项目与分产品毛利。"
+      ]
+    },
+    {
+      "dimension": "industry_chain_position",
+      "status": "applicable",
+      "summary": "位于无晶圆设计公司与设备/材料之间的制造瓶颈；本土替代带来需求，但设备、EDA、材料和工艺服务受到出口管制约束。",
+      "indicators": [
+        {
+          "id": "upstream_process_customer_payer_and_substitute_map",
+          "status": "observed",
+          "summary": "上游关键设备/材料与下游设计和系统客户共同决定良率、产能和议价。",
+          "source_refs": [
+            "AR2025",
+            "BIS_2026",
+            "TSMC_Q2",
+            "UMC_Q1",
+            "GFS_Q1",
+            "INTEL_Q1"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "profit_pool_and_inventory_credit_technology_risk",
+          "status": "observed",
+          "summary": "库存、折旧、出口许可、技术代际与客户预付款/取消均可能转移利润池。",
+          "source_refs": [
+            "AR2025",
+            "BIS_2026",
+            "TSMC_Q2",
+            "UMC_Q1",
+            "GFS_Q1",
+            "INTEL_Q1"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "BIS_2026",
+        "TSMC_Q2",
+        "UMC_Q1",
+        "GFS_Q1",
+        "INTEL_Q1"
+      ],
+      "positive_evidence": [
+        "中国本土的大规模晶圆制造平台具有稀缺性。"
+      ],
+      "counter_evidence": [
+        "稀缺性不等于高 ROIC；先进设备约束可能提高每片合格晶圆成本。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "product_and_unit_economics",
+      "status": "unknown",
+      "summary": "FY2023–FY2025 晶圆收入/8英寸等值出货代理 ASP 约从 US$988 降至 US$907，同时利用率从75%升至93.5%；价量与组合方向可见，良率/节点成本不可见。",
+      "indicators": [
+        {
+          "id": "price_volume_mix_and_incremental_economics",
+          "status": "observed",
+          "summary": "量升、利用率升而 ASP 代理下降，说明收入增长不能只解释为定价权。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "industry_denominator_scope_and_comparability",
+          "status": "not_disclosed",
+          "summary": "不同晶圆尺寸、节点、层数和客户组合不可直接用统一8英寸等值 ASP 比较。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": [
+            "缺少节点良率、单位成本和分节点毛利。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026"
+      ],
+      "positive_evidence": [
+        "高利用率改善固定成本吸收。"
+      ],
+      "counter_evidence": [
+        "折旧和先进工艺良率可能抵消利用率收益。"
+      ],
+      "source_gaps": [
+        "缺少节点良率、单位成本和分节点毛利。"
+      ]
+    },
+    {
+      "dimension": "customers",
+      "status": "unknown",
+      "summary": "最大客户占比从 FY2023 的15.0%降至 FY2025 的8.0%，但前五客户仍占35.8%；最终终端和客户身份未披露。",
+      "indicators": [
+        {
+          "id": "customer_channel_end_user_and_payer_separation",
+          "status": "not_disclosed",
+          "summary": "客户、渠道、终端品牌和实际付款方未逐一披露。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": [
+            "缺少客户留存、长约、取消条款与应收分客户数据。"
+          ]
+        },
+        {
+          "id": "concentration_retention_receivables_inventory_and_external_evidence",
+          "status": "observed",
+          "summary": "前五客户35.8%，中国区收入88.9%（2026Q1），区域政策与需求集中仍高。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026"
+      ],
+      "positive_evidence": [
+        "单一最大客户集中度下降。"
+      ],
+      "counter_evidence": [
+        "前五客户与中国地区集中仍可能放大周期。"
+      ],
+      "source_gaps": [
+        "缺少客户留存、长约、取消条款与应收分客户数据。"
+      ]
+    },
+    {
+      "dimension": "suppliers",
+      "status": "unknown",
+      "summary": "前五原材料供应商采购占比由 FY2023 32.5%降至 FY2025 25.7%，但关键设备、软件和服务的供应集中与替代周期未量化。",
+      "indicators": [
+        {
+          "id": "critical_inputs_concentration_related_parties_and_substitution",
+          "status": "observed",
+          "summary": "原材料前五集中度可见，BIS 文件证明受管制物项许可风险持续存在。",
+          "source_refs": [
+            "AR2025",
+            "BIS_2026"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "terms_prepayments_availability_and_cost_pass_through",
+          "status": "not_disclosed",
+          "summary": "关键设备交期、预付款、许可成功率、国产替代良率和成本传导未披露。",
+          "source_refs": [
+            "AR2025",
+            "BIS_2026"
+          ],
+          "source_gaps": [
+            "需关键设备供应商、许可与国产替代的可审计数据。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "BIS_2026"
+      ],
+      "positive_evidence": [
+        "原材料采购集中度方向改善。"
+      ],
+      "counter_evidence": [
+        "原材料指标不能代表光刻、量测、刻蚀、EDA 等瓶颈设备/软件。"
+      ],
+      "source_gaps": [
+        "需关键设备供应商、许可与国产替代的可审计数据。"
+      ]
+    },
+    {
+      "dimension": "competition_structure",
+      "status": "applicable",
+      "summary": "晶圆代工进入壁垒高但供给扩张具有周期性；TSMC/UMC/GFS/Intel Foundry 各自代表不同节点和商业模型，均非中芯的等价替代。",
+      "indicators": [
+        {
+          "id": "entry_exit_capacity_price_and_substitution",
+          "status": "observed",
+          "summary": "新厂资本、客户认证和工艺积累构成进入壁垒，成熟节点扩产仍会带来价格竞争。",
+          "source_refs": [
+            "AR2025",
+            "TSMC_Q2",
+            "UMC_Q1",
+            "GFS_Q1",
+            "INTEL_Q1"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "competitor_customer_and_regulator_corroboration",
+          "status": "observed",
+          "summary": "官方同业结果可交叉验证行业周期，但节点、补贴、客户和制裁暴露差异巨大。",
+          "source_refs": [
+            "AR2025",
+            "TSMC_Q2",
+            "UMC_Q1",
+            "GFS_Q1",
+            "INTEL_Q1"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "TSMC_Q2",
+        "UMC_Q1",
+        "GFS_Q1",
+        "INTEL_Q1"
+      ],
+      "positive_evidence": [
+        "客户认证、工艺库和制造规模提高切换成本。"
+      ],
+      "counter_evidence": [
+        "成熟节点供给扩张和更强同业可能压缩 ASP 与毛利。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "durable_moat",
+      "status": "unknown",
+      "summary": "候选护城河是本土规模、客户认证、PDK/IP/制造协同和供应保障；现有证据不足以证明这些机制已转成持续高回报。",
+      "indicators": [
+        {
+          "id": "mechanism_economic_result_durability_and_direction",
+          "status": "not_disclosed",
+          "summary": "规模与客户黏性是否产生长期超额 ROIC，尚缺节点利润、良率和增量资本回报。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "BIS_2026"
+          ],
+          "source_gaps": [
+            "缺少分节点 ROIC、良率、认证周期和客户迁移证据。"
+          ]
+        },
+        {
+          "id": "strongest_falsifying_evidence",
+          "status": "observed",
+          "summary": "最强反证是五年持续负的 CFO-现金PP&E、ASP代理下降和出口管制。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "BIS_2026"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026",
+        "BIS_2026"
+      ],
+      "positive_evidence": [
+        "累计专利14,511项、客户资源与百万片级月产能形成工程壁垒。"
+      ],
+      "counter_evidence": [
+        "高壁垒行业也可能因资本密集和技术追赶而只有低股东回报。"
+      ],
+      "source_gaps": [
+        "缺少分节点 ROIC、良率、认证周期和客户迁移证据。"
+      ]
+    },
+    {
+      "dimension": "revenue_quality",
+      "status": "unknown",
+      "summary": "FY2025 收入增长16.2%，但应收和库存增速更快；现金转化没有随收入同步改善。",
+      "indicators": [
+        {
+          "id": "revenue_receivables_contract_assets_returns_and_cash",
+          "status": "observed",
+          "summary": "FY2025 应收从US$0.840bn升至US$1.433bn，库存从US$2.958bn升至US$3.630bn。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "acquisition_period_end_channel_and_recognition_distortion",
+          "status": "not_disclosed",
+          "summary": "期末冲量、渠道库存、退货、客户取消和政府项目对收入确认的影响未拆分。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": [
+            "缺少应收账龄与库存节点/客户结构。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026"
+      ],
+      "positive_evidence": [
+        "晶圆出货增长20.9%支撑收入增长的实物基础。"
+      ],
+      "counter_evidence": [
+        "营运资本占用和ASP代理下降降低收入质量。"
+      ],
+      "source_gaps": [
+        "缺少应收账龄与库存节点/客户结构。"
+      ]
+    },
+    {
+      "dimension": "earnings_quality",
+      "status": "unknown",
+      "summary": "FY2025 集团利润 US$988.9m，NCI US$303.8m，归母 US$685.1m；2026Q1 归母增长主要受 NCI 同比下降影响，经营利润反而下降。",
+      "indicators": [
+        {
+          "id": "reported_to_normalized_parent_earnings_bridge",
+          "status": "observed",
+          "summary": "集团利润→NCI→归母桥已保留，避免把集团利润全部归给普通股股东。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "SMNC_BOOK"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "tax_attribution_scope_and_adjustment_disagreement",
+          "status": "not_disclosed",
+          "summary": "交易后 FY2025/TTM 归母备考和节点级政府补助/税率归属没有完整披露。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "SMNC_BOOK"
+          ],
+          "source_gaps": [
+            "缺少交易后 FY2025 与当前 TTM 完整备考。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026",
+        "SMNC_BOOK"
+      ],
+      "positive_evidence": [
+        "审计报表明确区分集团与归母。"
+      ],
+      "counter_evidence": [
+        "SMNC交易使历史归母与当前股数不可直接机械拼接。"
+      ],
+      "source_gaps": [
+        "缺少交易后 FY2025 与当前 TTM 完整备考。"
+      ]
+    },
+    {
+      "dimension": "cash_conversion",
+      "status": "applicable",
+      "summary": "FY2025 OCF US$3.194bn，而现金购置PP&E US$8.400bn；2026Q1 OCF US$0.685bn、公司口径capex US$1.563bn。",
+      "indicators": [
+        {
+          "id": "profit_operating_cash_and_distributable_cash_bridge",
+          "status": "observed",
+          "summary": "FY2021–FY2025 的 OCF-现金PP&E 代理均为负，FY2025 为 -US$5.206bn。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "factoring_payment_restricted_cash_and_sector_scope",
+          "status": "observed",
+          "summary": "广义流动金融资产、受限资金和子公司融资必须与现金分列，不能把 EBITDA 当可分配现金。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026"
+      ],
+      "positive_evidence": [
+        "经营活动持续产生正现金。"
+      ],
+      "counter_evidence": [
+        "扩产现金需求显著高于经营现金，外部融资和少数股东注资仍重要。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "working_capital",
+      "status": "unknown",
+      "summary": "FY2025 应收+70.5%、库存+22.7%，合同负债下降49.5%，三项共同拖累现金；持续性尚不能判断。",
+      "indicators": [
+        {
+          "id": "receivables_inventory_payables_prepayments_and_contract_balances",
+          "status": "observed",
+          "summary": "现金流表披露应收、库存、应付和合同负债变动。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "sustainable_financing_vs_temporary_cash_release",
+          "status": "not_disclosed",
+          "summary": "增长性安全库存、设备备件与需求错配库存无法拆分。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": [
+            "缺少库存账龄、节点和在制品良率信息。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026"
+      ],
+      "positive_evidence": [
+        "工作资本变动可以和经营现金流逐项复核。"
+      ],
+      "counter_evidence": [
+        "库存若继续快于收入增长，可能导致减值和价格压力。"
+      ],
+      "source_gaps": [
+        "缺少库存账龄、节点和在制品良率信息。"
+      ]
+    },
+    {
+      "dimension": "capital_intensity",
+      "status": "unknown",
+      "summary": "FY2025 D&A US$3.810bn、现金PP&E US$8.400bn；维护性与增长性资本开支未披露，owner earnings 无法给精确单点。",
+      "indicators": [
+        {
+          "id": "maintenance_vs_growth_investment_range",
+          "status": "not_disclosed",
+          "summary": "维护性资本投入未单列；先进工艺的技术更新使 D&A 也不必然等于维护投入。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": [
+            "需要管理层给出维护/增长 capex 区间和项目回报。"
+          ]
+        },
+        {
+          "id": "capex_capacity_utilization_and_competitive_requirements",
+          "status": "observed",
+          "summary": "利用率93.5%仍伴随约US$8.4bn现金PP&E，竞争性扩产要求很高。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026"
+      ],
+      "positive_evidence": [
+        "高利用率显示新增产能有需求吸收。"
+      ],
+      "counter_evidence": [
+        "高利用率不等于正自由现金，折旧和扩产可能长期吞噬利润。"
+      ],
+      "source_gaps": [
+        "需要管理层给出维护/增长 capex 区间和项目回报。"
+      ]
+    },
+    {
+      "dimension": "returns_on_capital",
+      "status": "unknown",
+      "summary": "FY2025 归母ROE约3.3%，但NCI注资、政府支持、在建工程和交易后权益重组使简化ROIC不可靠。",
+      "indicators": [
+        {
+          "id": "multiperiod_roe_roic_and_incremental_returns",
+          "status": "not_disclosed",
+          "summary": "缺少按项目/晶圆厂和节点划分的投入资本、NOPAT与增量ROIC。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_BOOK"
+          ],
+          "source_gaps": [
+            "项目级ROIC和交易后资本桥缺失。"
+          ]
+        },
+        {
+          "id": "leverage_buyback_cycle_and_accounting_decomposition",
+          "status": "observed",
+          "summary": "利润、资本注入、债务和新股发行必须分解，不能把规模增长直接当回报提升。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_BOOK"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "SMNC_BOOK"
+      ],
+      "positive_evidence": [
+        "2025归母利润和毛利率较2024回升。"
+      ],
+      "counter_evidence": [
+        "资本基数巨大，归母回报率仍低。"
+      ],
+      "source_gaps": [
+        "项目级ROIC和交易后资本桥缺失。"
+      ]
+    },
+    {
+      "dimension": "balance_sheet_survival",
+      "status": "unknown",
+      "summary": "FY2025 广义现金类资产约US$12.747bn、借款及租赁约US$12.596bn，接近净现金；但现金单独口径为明显净债务。",
+      "indicators": [
+        {
+          "id": "debt_liquidity_covenants_guarantees_pledges_and_off_balance",
+          "status": "observed",
+          "summary": "现金、各类金融资产、借款和租赁已分层；广义净现金约US$0.151bn。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "BIS_2026"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "adverse_scenario_financing_need",
+          "status": "not_disclosed",
+          "summary": "出口限制收紧、利用率下降和持续高capex并发时的最低现金与再融资契约未披露。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "BIS_2026"
+          ],
+          "source_gaps": [
+            "需要Q1后完整债务、受限现金和压力融资表。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026",
+        "BIS_2026"
+      ],
+      "positive_evidence": [
+        "广义金融资产可覆盖大部分有息负债。"
+      ],
+      "counter_evidence": [
+        "部分金融资产流动性/用途受限，且持续扩产依赖融资。"
+      ],
+      "source_gaps": [
+        "需要Q1后完整债务、受限现金和压力融资表。"
+      ]
+    },
+    {
+      "dimension": "capital_allocation",
+      "status": "unknown",
+      "summary": "主要资本配置是晶圆厂扩产、研发、债务与少数股东资本，以及以547.182m新A股收购SMNC剩余49%。",
+      "indicators": [
+        {
+          "id": "reinvestment_ma_dividend_buyback_issuance_debt_and_cash_ledger",
+          "status": "observed",
+          "summary": "扩产、研发、债务、NCI注资和新股收购已进入同一资本配置账本。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_BOOK",
+            "SMNC_REG"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "diluted_per_share_outcomes_and_opportunity_cost",
+          "status": "not_disclosed",
+          "summary": "交易后全摊薄每股owner earnings和各晶圆厂长期回报尚未披露。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_BOOK",
+            "SMNC_REG"
+          ],
+          "source_gaps": [
+            "交易后每股利润、ROIC和全摊薄股数仍待正式财报。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "SMNC_BOOK",
+        "SMNC_REG"
+      ],
+      "positive_evidence": [
+        "收购消除SMNC未来49%的NCI分流。"
+      ],
+      "counter_evidence": [
+        "新股摊薄约6.4%总股本，只有增量归母回报超过机会成本才创造每股价值。"
+      ],
+      "source_gaps": [
+        "交易后每股利润、ROIC和全摊薄股数仍待正式财报。"
+      ]
+    },
+    {
+      "dimension": "management",
+      "status": "unknown",
+      "summary": "管理层持续强调产能扩张、本土需求和折旧压力，短期指引可追踪；长期承诺兑现、激励和继任评分未完成。",
+      "indicators": [
+        {
+          "id": "dated_commitments_vs_outcomes",
+          "status": "observed",
+          "summary": "2026Q2收入+14%~16% QoQ、毛利20%~22%是有日期的管理层指引，后续可核验。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "Q4_2025"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "incentives_compensation_succession_insider_actions_and_candor",
+          "status": "not_disclosed",
+          "summary": "长期资本回报目标、节点良率目标、薪酬绩效条件和继任安排未形成完整评分卡。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "Q4_2025"
+          ],
+          "source_gaps": [
+            "需建立历次收入、毛利、capex与产能承诺对结果的评分。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026",
+        "Q4_2025"
+      ],
+      "positive_evidence": [
+        "季度收入/毛利指引提供短周期检验点。"
+      ],
+      "counter_evidence": [
+        "指引不是实绩，且不包含自由现金或项目回报承诺。"
+      ],
+      "source_gaps": [
+        "需建立历次收入、毛利、capex与产能承诺对结果的评分。"
+      ]
+    },
+    {
+      "dimension": "governance_and_related_parties",
+      "status": "unknown",
+      "summary": "年报与交易文件提供治理和关联事项基础，但国家股东影响、关联融资/采购定价和少数股东公平性尚未逐项复核。",
+      "indicators": [
+        {
+          "id": "related_sales_purchases_loans_guarantees_and_asset_transfers",
+          "status": "observed",
+          "summary": "年报和SMNC交易文件提供正式关联方及交易审议基础。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_BOOK"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "pricing_minority_fairness_oversight_and_dissent",
+          "status": "not_disclosed",
+          "summary": "本公开包未完成关联销售、采购、贷款、担保和资产转移的金额/定价表。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_BOOK"
+          ],
+          "source_gaps": [
+            "需关联方金额、表决回避、估值与独董意见证据。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "SMNC_BOOK"
+      ],
+      "positive_evidence": [
+        "重大SMNC交易有交易所文件和历史备考。"
+      ],
+      "counter_evidence": [
+        "程序披露不自动证明交易对所有股东公平。"
+      ],
+      "source_gaps": [
+        "需关联方金额、表决回避、估值与独董意见证据。"
+      ]
+    },
+    {
+      "dimension": "accounting_and_audit",
+      "status": "applicable",
+      "summary": "FY2023–FY2025 年报均为审计IFRS报表，2025审计意见无保留；季度结果未审计，二者状态分开。",
+      "indicators": [
+        {
+          "id": "audit_kam_standard_policy_and_restatement",
+          "status": "observed",
+          "summary": "年报包含审计意见、KAM、IFRS政策和完整报表。",
+          "source_refs": [
+            "AR2025",
+            "AR2024",
+            "AR2023",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "statement_reproduction_and_conflict_preservation",
+          "status": "observed",
+          "summary": "报告保留集团利润、NCI、归母、公司调整口径与现金代理的差异。",
+          "source_refs": [
+            "AR2025",
+            "AR2024",
+            "AR2023",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "AR2024",
+        "AR2023",
+        "Q1_2026"
+      ],
+      "positive_evidence": [
+        "三年HKEX年报已校验PDF哈希。"
+      ],
+      "counter_evidence": [
+        "自动抽取审阅仍是 needs_more_evidence，未有具名人工批准。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "tax_and_legal",
+      "status": "unknown",
+      "summary": "所得税与递延税可由年报核验；出口管制、许可、技术服务和潜在处罚具有交易级法律复杂性。",
+      "indicators": [
+        {
+          "id": "effective_deferred_and_uncertain_tax",
+          "status": "observed",
+          "summary": "FY2025所得税费用US$84.3m，年报含递延税附注。",
+          "source_refs": [
+            "AR2025",
+            "BIS_2026"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "litigation_penalties_compliance_and_tail_exposure",
+          "status": "not_disclosed",
+          "summary": "许可申请结果、产品级EAR适用和潜在诉讼尾部风险未披露。",
+          "source_refs": [
+            "AR2025",
+            "BIS_2026"
+          ],
+          "source_gaps": [
+            "需持续跟踪EAR更新、许可与公司法律披露。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "BIS_2026"
+      ],
+      "positive_evidence": [
+        "官方BIS文件可证明当前制度风险，不依赖传闻。"
+      ],
+      "counter_evidence": [
+        "实体清单不等于所有交易一律禁止，具体许可也不能从总表推断。"
+      ],
+      "source_gaps": [
+        "需持续跟踪EAR更新、许可与公司法律披露。"
+      ]
+    },
+    {
+      "dimension": "per_share_economics",
+      "status": "unknown",
+      "summary": "交易后已发行约8.561bn股；但激励工具和交易后归母利润没有同日完整桥，因此精确全摊薄EPS仍未知。",
+      "indicators": [
+        {
+          "id": "basic_diluted_and_fully_diluted_share_reconciliation",
+          "status": "not_disclosed",
+          "summary": "交易后 basic、diluted、期权/奖励和所有潜在股份的同日完整对账未披露。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_BOOK",
+            "SMNC_REG",
+            "Q1_2026"
+          ],
+          "source_gaps": [
+            "等待交易后正式basic/diluted EPS与归母桥。"
+          ]
+        },
+        {
+          "id": "per_share_growth_distribution_issuance_and_repurchase_outcomes",
+          "status": "observed",
+          "summary": "新发547.182m A股，约占交易后总股数6.39%；收购同时减少未来NCI分流。",
+          "source_refs": [
+            "AR2025",
+            "SMNC_BOOK",
+            "SMNC_REG",
+            "Q1_2026"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "SMNC_BOOK",
+        "SMNC_REG",
+        "Q1_2026"
+      ],
+      "positive_evidence": [
+        "发行股数和历史备考EPS由官方交易文件提供。"
+      ],
+      "counter_evidence": [
+        "只看股数会高估摊薄，只看NCI消失会高估增厚。"
+      ],
+      "source_gaps": [
+        "等待交易后正式basic/diluted EPS与归母桥。"
+      ]
+    },
+    {
+      "dimension": "valuation",
+      "status": "unknown",
+      "summary": "7月27日港股HK$70.65；机械历史口径约111–113倍，官方FY2024交易备考约115倍，但当前精确TTM PE/PB/EV仍受交易后利润与权益缺口限制。",
+      "indicators": [
+        {
+          "id": "currency_consistent_value_range_assumptions_and_dates",
+          "status": "observed",
+          "summary": "价格、汇率、历史利润、当前股数和官方备考EPS分别冻结，所有倍数标明口径。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "SMNC_BOOK",
+            "P_H",
+            "P_A",
+            "FX_ECB"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "reverse_expectations_sensitivities_and_cross_check",
+          "status": "not_disclosed",
+          "summary": "缺少交易后当前TTM归母、权益和维护性capex，不能给精确内在价值单点。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "SMNC_BOOK",
+            "P_H",
+            "P_A",
+            "FX_ECB"
+          ],
+          "source_gaps": [
+            "等待交易后正式财报重建 PE/PB/EV 与 owner earnings。"
+          ]
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026",
+        "SMNC_BOOK",
+        "P_H",
+        "P_A",
+        "FX_ECB"
+      ],
+      "positive_evidence": [
+        "反向盈利门槛可量化市场需要的归母利润。"
+      ],
+      "counter_evidence": [
+        "高倍数对利用率、毛利、出口限制和资本回报极敏感。"
+      ],
+      "source_gaps": [
+        "等待交易后正式财报重建 PE/PB/EV 与 owner earnings。"
+      ]
+    },
+    {
+      "dimension": "disconfirming_evidence",
+      "status": "applicable",
+      "summary": "最强反方不是单一制裁新闻，而是高capex、ASP代理下降、节点经济性不透明和高估值同时存在。",
+      "indicators": [
+        {
+          "id": "independent_strongest_counter_thesis",
+          "status": "observed",
+          "summary": "独立反方覆盖出口限制、资本吞噬、成熟节点供给、交易摊薄和高估值。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "BIS_2026",
+            "SMNC_BOOK",
+            "P_H",
+            "P_HSTECH"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "observable_invalidation_next_evidence_and_review_date",
+          "status": "observed",
+          "summary": "下一证据是2026Q2实绩、交易后归母/股数桥与后续BIS规则；官方Q2发布日期截至截止日未确认。",
+          "source_refs": [
+            "AR2025",
+            "Q1_2026",
+            "BIS_2026",
+            "SMNC_BOOK",
+            "P_H",
+            "P_HSTECH"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "AR2025",
+        "Q1_2026",
+        "BIS_2026",
+        "SMNC_BOOK",
+        "P_H",
+        "P_HSTECH"
+      ],
+      "positive_evidence": [
+        "反方机制与可观察指标已绑定。"
+      ],
+      "counter_evidence": [
+        "尚无具名人工reviewer签署。"
+      ],
+      "source_gaps": []
+    }
+  ],
+  "earnings_quality_bridge": {
+    "period": "FY2025 with 2026Q1 direction",
+    "currency": "USD",
+    "unit": "million",
+    "fy2025_group_profit": 988.944,
+    "less_nci_profit": 303.813,
+    "fy2025_parent_profit": 685.131,
+    "formula": "988.944 - 303.813 = 685.131",
+    "q1_2026_read": "收入同比+11.5%，毛利-0.4%，经营利润约-20%，归母+5%；归母方向受到NCI同比下降影响。",
+    "transaction_break": "2026-06收购SMNC剩余49%后，未来NCI分流减少但总股数增加；旧TTM利润不能与新股数直接定义当前真实EPS。",
+    "source_refs": [
+      "AR2025",
+      "Q1_2026",
+      "SMNC_BOOK"
+    ]
+  },
+  "owner_earnings": {
+    "status": "unavailable",
+    "currency": "HKD",
+    "range": [],
+    "reason": "维护性资本开支未披露，且D&A/OCF/capex包含重大NCI子公司；交易后归母现金流归属也未给出，无法可靠构造股东owner earnings。",
+    "limitations": [
+      "FY2025集团OCF-现金PP&E为-US$5.206bn，只是集团扩张期现金代理，不是归母owner earnings。",
+      "D&A US$3.810bn低于现金PP&E US$8.400bn，但D&A不能自动当维护性capex。",
+      "2026Q1 EBITDA利润率不能替代自由现金或owner earnings。"
+    ],
+    "source_refs": [
+      "AR2025",
+      "Q1_2026",
+      "SMNC_BOOK"
+    ],
+    "data_artifact": "data/owner-earnings-bridge.csv"
+  },
+  "capital_allocation": {
+    "status": "high_reinvestment_and_equity_transaction_open_return_test",
+    "period": "FY2021 to 2026-07-27",
+    "items": [
+      "FY2021-FY2025持续大额晶圆厂资本投入",
+      "FY2025研发US$773.6m",
+      "子公司少数股东注资与借款",
+      "2026年以新A股收购SMNC剩余49%"
+    ],
+    "per_share_test": "观察交易后归母利润、全摊薄股数、项目ROIC和owner earnings per share是否同步改善。",
+    "source_refs": [
+      "AR2025",
+      "SMNC_BOOK",
+      "SMNC_REG"
+    ]
+  },
+  "balance_sheet_quality": {
+    "status": "broad_liquidity_near_net_cash_but_cash_only_net_debt",
+    "currency": "USD",
+    "unit": "million",
+    "as_of": "2025-12-31",
+    "cash_and_equivalents": 5872.5,
+    "amortised_cost_financial_assets": 5682.865,
+    "fvtpl_financial_assets": 1191.358,
+    "broad_cash_like_assets": 12746.723,
+    "borrowings_and_lease_liabilities": 12596.181,
+    "broad_net_cash": 150.542,
+    "cash_only_net_debt": 6723.681,
+    "source_refs": [
+      "AR2025"
+    ],
+    "limitations": [
+      "广义金融资产的期限、用途与流动性并不等同于现金。",
+      "该点时值早于SMNC交易后的下一份完整资产负债表。"
+    ]
+  },
+  "pe_matrix": [
+    {
+      "label": "reported_fy",
+      "status": "calculated",
+      "price": 70.65,
+      "currency": "HKD",
+      "price_as_of": "2026-07-27",
+      "eps": 0.6276597183724729,
+      "eps_period": "FY2025",
+      "eps_type": "mechanical_current_share_count_without_smnc_profit_accretion",
+      "formula": "US$685.131m / 8,560.678m current shares × 7.842577 HKD/USD",
+      "pe": 112.5609911421368,
+      "confidence": "low_mechanical_stress_case",
+      "source_refs": [
+        "AR2025",
+        "SMNC_REG",
+        "P_H",
+        "FX_ECB"
+      ],
+      "limitations": [
+        "只加入新股、不加入收购后归母增量，不能称为当前真实FY PE。"
+      ]
+    },
+    {
+      "label": "reported_ttm",
+      "status": "unavailable",
+      "price": 70.65,
+      "currency": "HKD",
+      "price_as_of": "2026-07-27",
+      "eps": null,
+      "eps_period": "TTM to 2026Q1",
+      "eps_type": "post_smnc_transaction_reported_diluted",
+      "pe": null,
+      "reason": "交易后的完整TTM归母利润和同日稀释股数尚未披露；旧股本TTM约103.8倍仅为历史示意。",
+      "confidence": "unavailable",
+      "source_refs": [
+        "AR2025",
+        "Q1_2026",
+        "SMNC_BOOK",
+        "SMNC_REG",
+        "P_H"
+      ]
+    },
+    {
+      "label": "official_fy2024_transaction_pro_forma",
+      "status": "calculated",
+      "price": 70.65,
+      "currency": "HKD",
+      "price_as_of": "2026-07-27",
+      "eps": 0.6137714641717061,
+      "eps_period": "FY2024 historical pro forma",
+      "eps_type": "official_transaction_pro_forma_eps_translated_from_CNY",
+      "formula": "RMB0.53 / 0.8635136 CNY per HKD",
+      "pe": 115.10799071661509,
+      "confidence": "medium_historical_not_forward",
+      "source_refs": [
+        "SMNC_BOOK",
+        "P_H",
+        "FX_ECB"
+      ],
+      "limitations": [
+        "官方历史备考不是FY2025、TTM或未来预测。"
+      ]
+    },
+    {
+      "label": "pre_transaction_old_share_ttm",
+      "status": "calculated",
+      "price": 70.65,
+      "currency": "HKD",
+      "price_as_of": "2026-07-27",
+      "eps": 0.6808421352839836,
+      "eps_period": "TTM to 2026Q1 on old share basis",
+      "eps_type": "historical_old_share_basis",
+      "formula": "(FY2025 parent profit - 2025Q1 + 2026Q1) / 8,000.408m × 7.842577 HKD/USD",
+      "pe": 103.76854830015982,
+      "confidence": "medium_historical_only",
+      "source_refs": [
+        "AR2025",
+        "Q1_2026",
+        "P_H",
+        "FX_ECB"
+      ],
+      "limitations": [
+        "交易已完成，该行不能代表当前股东分母。"
+      ]
+    }
+  ],
+  "forward_scenarios": {
+    "currency": "HKD",
+    "price_anchor": 70.65,
+    "scenarios": [
+      {
+        "scenario": "bear",
+        "status": "unavailable",
+        "forecast_eps": null,
+        "implied_pe_at_current_price": null,
+        "reason": "节点良率、折旧、出口许可和交易后归母缺口使下行情景EPS不可审计。"
+      },
+      {
+        "scenario": "base",
+        "status": "unavailable",
+        "forecast_eps": null,
+        "implied_pe_at_current_price": null,
+        "reason": "公司只给2026Q2收入/毛利指引，没有全年归母或稀释EPS指引。"
+      },
+      {
+        "scenario": "upside",
+        "status": "unavailable",
+        "forecast_eps": null,
+        "implied_pe_at_current_price": null,
+        "reason": "先进工艺收入、良率、节点毛利和资本回报未披露，不能制造上行EPS。"
+      }
+    ],
+    "reverse_expectations_artifact": "data/valuation-scenarios.csv"
+  },
+  "intrinsic_value_scenarios": {
+    "currency": "HKD",
+    "scenarios": [
+      {
+        "scenario": "bear",
+        "status": "unavailable",
+        "discount_rate_pct": null,
+        "terminal_growth_pct": null,
+        "intrinsic_value_per_share": null,
+        "reason": "owner earnings不可用，DCF输入不具备审计基础。"
+      },
+      {
+        "scenario": "base",
+        "status": "unavailable",
+        "discount_rate_pct": null,
+        "terminal_growth_pct": null,
+        "intrinsic_value_per_share": null,
+        "reason": "维护性capex与交易后归母现金流未知。"
+      },
+      {
+        "scenario": "upside",
+        "status": "unavailable",
+        "discount_rate_pct": null,
+        "terminal_growth_pct": null,
+        "intrinsic_value_per_share": null,
+        "reason": "不能以产业政策或先进工艺叙事替代可分配现金。"
+      }
+    ]
+  },
+  "moat_evidence": {
+    "positive_evidence": [
+      "中国大陆大规模晶圆制造平台的稀缺性、百万片级月产能和客户认证。",
+      "工艺平台、PDK/IP/光罩/测试协同与客户迁移成本。",
+      "FY2023-FY2025利用率75%→93.5%，表明新增产能被需求吸收。"
+    ],
+    "counter_evidence": [
+      "FY2023-FY2025 ASP代理约US$988→US$907，未见强定价权。",
+      "五年OCF-现金PP&E均为负，规模尚未转成可分配现金。",
+      "节点级良率/毛利未披露且出口管制限制先进设备与服务。"
+    ],
+    "missing_tests": [
+      "分节点良率、ASP、毛利和ROIC。",
+      "客户认证周期、复购/迁移和长约经济性。",
+      "国产替代设备在量产良率、维护成本和吞吐量上的独立验证。"
+    ]
+  },
+  "red_team": [
+    {
+      "risk": "高利用率掩盖低资本回报",
+      "mechanism": "订单填满产线但ASP、折旧和维护/更新投入使增量资本回报仍低。",
+      "source_refs": [
+        "AR2025",
+        "Q1_2026"
+      ],
+      "invalidation_test": "连续复核利用率、毛利、OCF-现金PP&E和项目ROIC是否同时改善。"
+    },
+    {
+      "risk": "本土替代叙事无法抵消设备与服务瓶颈",
+      "mechanism": "需求有保障，但出口许可、关键设备、备件和EDA限制压低先进工艺良率或拉长爬坡。",
+      "source_refs": [
+        "BIS_2026",
+        "AR2025"
+      ],
+      "invalidation_test": "跟踪BIS规则、公司capex落地、节点良率/产能和折旧成本。"
+    },
+    {
+      "risk": "SMNC交易被错误解释",
+      "mechanism": "市场只计算NCI消失而忽略547.182m新股，或只计算摊薄而忽略归母份额上升。",
+      "source_refs": [
+        "SMNC_BOOK",
+        "SMNC_REG"
+      ],
+      "invalidation_test": "以交易后正式归母、basic/diluted股数和每股现金流重建桥。"
+    },
+    {
+      "risk": "全球AI半导体强势被错误映射",
+      "mechanism": "TSMC先进节点、HBM和GPU需求推升SOX，但中芯应用/节点组合与制裁暴露不同。",
+      "source_refs": [
+        "TSMC_Q2",
+        "UMC_Q1",
+        "GFS_Q1",
+        "INTEL_Q1"
+      ],
+      "invalidation_test": "只在中芯自身收入、毛利、利用率和现金流确认后升级映射强度。"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "identity_and_source_integrity",
+      "result": "provisional",
+      "reason": "A/H同发行人、主要报表与港股通点时资格已核验；控制穿透与人工签署未完成。"
+    },
+    {
+      "gate": "circle_of_competence",
+      "result": "provisional",
+      "reason": "晶圆代工机制可理解，但节点良率、设备许可与先进工艺经济性超出公开证据。"
+    },
+    {
+      "gate": "business_economics",
+      "result": "inconclusive",
+      "reason": "量、价代理、利用率与毛利可见；节点级利润和增量ROIC不可见。"
+    },
+    {
+      "gate": "durable_moat",
+      "result": "inconclusive",
+      "reason": "规模/认证壁垒明确，但未证明能持续产生高owner earnings或ROIC。"
+    },
+    {
+      "gate": "management_and_capital_allocation",
+      "result": "provisional",
+      "reason": "扩产、研发和SMNC交易可追踪；交易后每股结果和项目回报仍待验证。"
+    },
+    {
+      "gate": "owner_earnings",
+      "result": "blocked",
+      "reason": "维护性capex、NCI现金流归属和交易后归母现金桥缺失。"
+    },
+    {
+      "gate": "survival_and_balance_sheet",
+      "result": "provisional",
+      "reason": "广义流动金融资产接近覆盖有息负债，但高capex与出口压力情景未闭环。"
+    },
+    {
+      "gate": "intrinsic_value_and_margin_of_safety",
+      "result": "blocked",
+      "reason": "owner earnings不可用，当前真实TTM EPS和交易后权益未披露。"
+    },
+    {
+      "gate": "decision_and_disconfirming_evidence",
+      "result": "provisional",
+      "reason": "反方与下一证据明确，但多项维度unknown且没有具名人工reviewer。"
+    }
+  ],
+  "source_gaps": [
+    {
+      "gap": "交易后当前TTM归母、权益与稀释股数未披露。",
+      "resolution": "下一份正式季报/中报后重建PE、PB、EV和每股桥。"
+    },
+    {
+      "gap": "维护性与增长性capex未拆分。",
+      "resolution": "用管理层口径、晶圆厂项目和折旧寿命建立区间，不以D&A自动替代。"
+    },
+    {
+      "gap": "节点收入、良率、ASP和毛利未披露。",
+      "resolution": "保持unknown，并用应用/晶圆尺寸/利用率作为有限代理。"
+    },
+    {
+      "gap": "2026Q2发布日期截至研究截止日未获官方确认。",
+      "resolution": "以HKEX后续公告为准；历史发布节奏只作日历提示。"
+    },
+    {
+      "gap": "当前恒生指数家族成分和下一次指数调整未冻结。",
+      "resolution": "只保留港股通官方点时资格，不将指数推测写成事实。"
+    }
+  ],
+  "invalidation_tests": [
+    {
+      "test": "利用率改善没有转成现金回报",
+      "trigger": "利用率持续高于90%但毛利、OCF-现金PP&E或归母ROE不改善。",
+      "next_evidence": "2026Q2及后续年度现金流。"
+    },
+    {
+      "test": "成熟节点供给压价",
+      "trigger": "出货增长但ASP代理和毛利连续下降，库存继续快于收入增长。",
+      "next_evidence": "季度出货、应用组合、库存与同业利用率。"
+    },
+    {
+      "test": "出口限制升级",
+      "trigger": "新增实体/物项、许可收紧或关键设备服务中断。",
+      "next_evidence": "BIS/EAR更新与公司capex/产能披露。"
+    },
+    {
+      "test": "SMNC每股增厚未兑现",
+      "trigger": "交易后归母增长低于股数增幅，或项目ROIC继续走弱。",
+      "next_evidence": "交易后正式basic/diluted EPS与SMNC利润归属。"
+    },
+    {
+      "test": "南向资格变化",
+      "trigger": "沪深交易所正式调出、A/H上市状态变化或规则触发卖出限定。",
+      "next_evidence": "SSE/SZSE官方名单与公告。"
+    }
+  ],
+  "historical_valuation": {
+    "status": "unavailable",
+    "metric": "look_ahead_safe_historical_pe",
+    "reason": "缺少每个历史日期当时已知的EPS、股数、NCI和A/H汇率快照，不能用事后信息回填历史PE。",
+    "current_cross_checks": {
+      "mechanical_fy2025_post_deal_share_pe": 112.5609911421368,
+      "historical_old_share_ttm_pe": 103.76854830015982,
+      "official_fy2024_transaction_pro_forma_pe": 115.10799071661509
+    },
+    "source_refs": [
+      "AR2025",
+      "Q1_2026",
+      "SMNC_BOOK",
+      "SMNC_REG",
+      "P_H",
+      "FX_ECB"
+    ]
+  },
+  "price_move_attribution": {
+    "status": "event_window_monitor_not_causal_proof",
+    "as_of": "2026-07-27",
+    "method": "按披露时点使用T-1/首个完整交易日/T+5，并与恒生科技同窗口比较；重叠消息、A/H流动性和宏观因素使因果置信度保持低。",
+    "current_price_hkd": 70.65,
+    "current_close": {
+      "date": "2026-07-27",
+      "open": 71,
+      "high": 72.1,
+      "low": 68.05,
+      "volume_shares": 76674251
+    },
+    "source_refs": [
+      "P_H",
+      "P_HSTECH",
+      "Q1_2026",
+      "SMNC_BOOK",
+      "TSMC_Q2"
+    ],
+    "data_artifact": "data/event-price-reactions.csv"
+  },
+  "review": {
+    "human_review_required": true,
+    "status": "needs_human_review",
+    "validator_status": "passed",
+    "reviewer": null,
+    "reviewed_at": null,
+    "reviewed_for_publication": false,
+    "publication_state": "structured_research_snapshot_not_production_reviewed",
+    "critical_gaps": [
+      "交易后当前TTM归母与全摊薄EPS未披露。",
+      "维护性capex和节点级良率/利润未披露。",
+      "自动事实包审阅为needs_more_evidence，尚无具名人工批准。"
+    ]
+  },
+  "disclaimer": "This is a research-support artifact, not investment advice. 估值口径、事件窗口和情景用于证据审计，不构成收益承诺或证券交易指令。"
+}

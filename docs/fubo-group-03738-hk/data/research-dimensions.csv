@@ -1,0 +1,51 @@
+dimension,dimension_status,indicator,indicator_status,summary,source_refs,source_gaps
+security_and_legal_subject,applicable,exact_security_issuer_share_class_and_rights,observed,03738.HK 普通股、港元报价；截至 2026-06-30 已发行不含库存股 25.929 亿股，现为沪深南向合资格证券。,F01/F05/M01,
+security_and_legal_subject,applicable,dated_price_share_count_currency_and_listing_status,observed,03738.HK 普通股、港元报价；截至 2026-06-30 已发行不含库存股 25.929 亿股，现为沪深南向合资格证券。,F01/F05/M01,
+control_and_beneficial_ownership,applicable,controller_voting_pledges_and_cross_holdings,observed,创始人兼主席/CEO 王扬斌披露权益约 16.35%；主席与 CEO 合一，需要把执行力优势与监督风险同时保留。,F01,
+control_and_beneficial_ownership,applicable,value_transfers_nci_and_related_party_exposure,observed,创始人兼主席/CEO 王扬斌披露权益约 16.35%；主席与 CEO 合一，需要把执行力优势与监督风险同时保留。,F01,
+business_model,applicable,payer_value_proposition_revenue_and_cash_mechanism,observed,向权利人和平台提供版权识别、保护、归因与变现；订阅与按资产变现相关的增值服务构成两条收入链。,F01/F06/F07,
+business_model,applicable,capital_needs_and_business_failure_variables,observed,向权利人和平台提供版权识别、保护、归因与变现；订阅与按资产变现相关的增值服务构成两条收入链。,F01/F06/F07,
+revenue_structure,applicable,segment_product_and_geography_reconciliation,observed,FY2025 订阅收入 12.235 亿港元、增值及其他 16.488 亿；后者占 57.4%，不能把全部收入当 ARR。,F01/F02,
+revenue_structure,applicable,volume_price_mix_acquisition_and_scope_bridge,observed,FY2025 订阅收入 12.235 亿港元、增值及其他 16.488 亿；后者占 57.4%，不能把全部收入当 ARR。,F01/F02,
+industry_chain_position,applicable,upstream_process_customer_payer_and_substitute_map,observed,位于权利人—平台—用户生成内容之间；生成式 AI 扩张增加可识别资产，也加强平台自建与规则控制。,F01/I01/I02/I03/I04,
+industry_chain_position,applicable,profit_pool_and_inventory_credit_technology_risk,observed,位于权利人—平台—用户生成内容之间；生成式 AI 扩张增加可识别资产，也加强平台自建与规则控制。,F01/I01/I02/I03/I04,
+product_and_unit_economics,applicable,price_volume_mix_and_incremental_economics,observed,公司披露 MRR、活跃资产和留存，但未完整披露 CAC、单位毛利、分产品价格与 cohort 经济性。,F01/F06,缺 CAC、分产品毛利、cohort 留存和可复核单位经济性。
+product_and_unit_economics,applicable,industry_denominator_scope_and_comparability,observed,公司披露 MRR、活跃资产和留存，但未完整披露 CAC、单位毛利、分产品价格与 cohort 经济性。,F01/F06,缺 CAC、分产品毛利、cohort 留存和可复核单位经济性。
+customers,applicable,customer_channel_end_user_and_payer_separation,observed,最大客户占 13%、前五占 40%；公司口径 NRR 128%、客户留存 98.2%，定义与分母仍需补证。,F01/F06,NRR 与留存的 cohort、分母、汇率及并购口径未完整披露。
+customers,applicable,concentration_retention_receivables_inventory_and_external_evidence,observed,最大客户占 13%、前五占 40%；公司口径 NRR 128%、客户留存 98.2%，定义与分母仍需补证。,F01/F06,NRR 与留存的 cohort、分母、汇率及并购口径未完整披露。
+suppliers,applicable,critical_inputs_concentration_related_parties_and_substitution,observed,平台、云/技术与专业服务是关键投入；前五供应商占 34%、最大 8%，但平台依赖不完全等于会计供应商集中度。,F01,没有把平台依赖、云/API 成本与会计供应商前五名完整映射。
+suppliers,applicable,terms_prepayments_availability_and_cost_pass_through,observed,平台、云/技术与专业服务是关键投入；前五供应商占 34%、最大 8%，但平台依赖不完全等于会计供应商集中度。,F01,没有把平台依赖、云/API 成本与会计供应商前五名完整映射。
+competition_structure,applicable,entry_exit_capacity_price_and_substitution,observed,竞争不仅来自第三方版权技术商，也来自 YouTube/Meta 等平台内部工具及 C2PA 等相邻基础设施。,F01/I01/I02/I04,
+competition_structure,applicable,competitor_customer_and_regulator_corroboration,observed,竞争不仅来自第三方版权技术商，也来自 YouTube/Meta 等平台内部工具及 C2PA 等相邻基础设施。,F01/I01/I02/I04,
+durable_moat,applicable,mechanism_economic_result_durability_and_direction,observed,指纹库、历史权利数据、平台工作流与客户嵌入是护城河假设；平台 API/规则和并购形成的数据资产决定其耐久性。,F01/F06/F07/I01,
+durable_moat,applicable,strongest_falsifying_evidence,observed,指纹库、历史权利数据、平台工作流与客户嵌入是护城河假设；平台 API/规则和并购形成的数据资产决定其耐久性。,F01/F06/F07/I01,
+revenue_quality,applicable,revenue_receivables_contract_assets_returns_and_cash,observed,96.5% 收入按时间确认不等于 96.5% 可续费；应收净额 17.537 亿、同比增加 3.765 亿，是现金质量核心约束。,F01/F02,
+revenue_quality,applicable,acquisition_period_end_channel_and_recognition_distortion,observed,96.5% 收入按时间确认不等于 96.5% 可续费；应收净额 17.537 亿、同比增加 3.765 亿，是现金质量核心约束。,F01/F02,
+earnings_quality,applicable,reported_to_normalized_parent_earnings_bridge,observed,法定归母利润 1.993 亿；公司调整利润为集团口径 2.317 亿，范围不同，不能直接做调整后每股收益。,F01,
+earnings_quality,applicable,tax_attribution_scope_and_adjustment_disagreement,observed,法定归母利润 1.993 亿；公司调整利润为集团口径 2.317 亿，范围不同，不能直接做调整后每股收益。,F01,
+cash_conversion,applicable,profit_operating_cash_and_distributable_cash_bridge,observed,FY2025 CFO 0.699 亿，扣 PPE 与无形资产投入后现金代理为 -3.634 亿；五年均为负。,F01/F02/F08/F09/F10,
+cash_conversion,applicable,factoring_payment_restricted_cash_and_sector_scope,observed,FY2025 CFO 0.699 亿，扣 PPE 与无形资产投入后现金代理为 -3.634 亿；五年均为负。,F01/F02/F08/F09/F10,
+working_capital,applicable,receivables_inventory_payables_prepayments_and_contract_balances,observed,应收和预付款增长吸收现金；合同负债/剩余履约义务只覆盖较短期限，不能自动等同长期 ARR。,F01,
+working_capital,applicable,sustainable_financing_vs_temporary_cash_release,observed,应收和预付款增长吸收现金；合同负债/剩余履约义务只覆盖较短期限，不能自动等同长期 ARR。,F01,
+capital_intensity,applicable,maintenance_vs_growth_investment_range,observed,软件外观并不等于低投入：FY2025 资本化开发 3.677 亿，高于研发费用 3.208 亿。,F01/F08,
+capital_intensity,applicable,capex_capacity_utilization_and_competitive_requirements,observed,软件外观并不等于低投入：FY2025 资本化开发 3.677 亿，高于研发费用 3.208 亿。,F01/F08,
+returns_on_capital,applicable,multiperiod_roe_roic_and_incremental_returns,observed,并购、商誉、资本化研发和净债务快速变化使机械 ROIC 易失真；本版不输出伪精确经济 ROIC。,F01/F08/F09/F10,资本化研发、并购商誉和维护/增长投入尚未标准化。
+returns_on_capital,applicable,leverage_buyback_cycle_and_accounting_decomposition,observed,并购、商誉、资本化研发和净债务快速变化使机械 ROIC 易失真；本版不输出伪精确经济 ROIC。,F01/F08/F09/F10,资本化研发、并购商誉和维护/增长投入尚未标准化。
+balance_sheet_survival,applicable,debt_liquidity_covenants_guarantees_pledges_and_off_balance,observed,2026-09 到期大额可转债剩余本金 14.58 亿港元；低于 HK$5.87 时以偿付/再融资压力为主。,F01/F04/F05,
+balance_sheet_survival,applicable,adverse_scenario_financing_need,observed,2026-09 到期大额可转债剩余本金 14.58 亿港元；低于 HK$5.87 时以偿付/再融资压力为主。,F01/F04/F05,
+capital_allocation,applicable,reinvestment_ma_dividend_buyback_issuance_debt_and_cash_ledger,observed,2025 年多次发债、配股与并购扩张；必须用全摊薄每股现金收益审查，而非只看收入增长。,F01/F04/F05,
+capital_allocation,applicable,diluted_per_share_outcomes_and_opportunity_cost,observed,2025 年多次发债、配股与并购扩张；必须用全摊薄每股现金收益审查，而非只看收入增长。,F01/F04/F05,
+management,applicable,dated_commitments_vs_outcomes,observed,Q1 电话会披露活跃资产与平台政策影响，透明度有增量；但绝对季度利润和现金流仍未披露。,F01/F07,缺完整承诺—兑现逐年台账及具名客户独立访谈。
+management,applicable,incentives_compensation_succession_insider_actions_and_candor,observed,Q1 电话会披露活跃资产与平台政策影响，透明度有增量；但绝对季度利润和现金流仍未披露。,F01/F07,缺完整承诺—兑现逐年台账及具名客户独立访谈。
+governance_and_related_parties,applicable,related_sales_purchases_loans_guarantees_and_asset_transfers,observed,主席/CEO 合一、并购与激励规模需要持续监督；未发现并不等于不存在未披露的价值转移。,F01,关联方、激励与并购定价仍需逐页人工复核。
+governance_and_related_parties,applicable,pricing_minority_fairness_oversight_and_dissent,observed,主席/CEO 合一、并购与激励规模需要持续监督；未发现并不等于不存在未披露的价值转移。,F01,关联方、激励与并购定价仍需逐页人工复核。
+accounting_and_audit,applicable,audit_kam_standard_policy_and_restatement,observed,审计报表可复核，但研发资本化、商誉减值和应收损失假设是高判断领域。,F01/F08/F09/F10,
+accounting_and_audit,applicable,statement_reproduction_and_conflict_preservation,observed,审计报表可复核，但研发资本化、商誉减值和应收损失假设是高判断领域。,F01/F08/F09/F10,
+tax_and_legal,applicable,effective_deferred_and_uncertain_tax,observed,版权归属、AI 训练、数字替身及平台争议规则可能改变可变现资产和诉讼路径；本报告不是法律意见。,F01/I03,
+tax_and_legal,applicable,litigation_penalties_compliance_and_tail_exposure,observed,版权归属、AI 训练、数字替身及平台争议规则可能改变可变现资产和诉讼路径；本报告不是法律意见。,F01/I03,
+per_share_economics,applicable,basic_diluted_and_fully_diluted_share_reconciliation,observed,6 月底保守法律稀释上限约 30.066 亿股，较基本股数高约 15.96%；未来方案额度不计入已授予稀释。,F01/F04/F05,
+per_share_economics,applicable,per_share_growth_distribution_issuance_and_repurchase_outcomes,observed,6 月底保守法律稀释上限约 30.066 亿股，较基本股数高约 15.96%；未来方案额度不计入已授予稀释。,F01/F04/F05,
+valuation,applicable,currency_consistent_value_range_assumptions_and_dates,observed,HK$2.39 对 FY2025 稀释 EPS 的静态 PE 约 30.84 倍；TTM、forward 和 DCF 因缺少可审计分母而保持 unavailable。,F01/F05/M01,缺无前视偏差历史 PE、标准化同行与可审计 owner earnings。
+valuation,applicable,reverse_expectations_sensitivities_and_cross_check,observed,HK$2.39 对 FY2025 稀释 EPS 的静态 PE 约 30.84 倍；TTM、forward 和 DCF 因缺少可审计分母而保持 unavailable。,F01/F05/M01,缺无前视偏差历史 PE、标准化同行与可审计 owner earnings。
+disconfirming_evidence,applicable,independent_strongest_counter_thesis,observed,最强反方是：平台自建、规则改变、研发资本化与应收增长共同使会计增长无法转成全摊薄每股现金收益。,F01/F03/F04/F05/I01/I02,
+disconfirming_evidence,applicable,observable_invalidation_next_evidence_and_review_date,observed,最强反方是：平台自建、规则改变、研发资本化与应收增长共同使会计增长无法转成全摊薄每股现金收益。,F01/F03/F04/F05/I01/I02,

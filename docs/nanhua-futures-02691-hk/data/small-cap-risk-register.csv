@@ -1,0 +1,11 @@
+risk,likelihood,impact,evidence,monitor
+监管资本缓冲压缩,high,high,净资本/风险资本由240%降至137%,正式中报净资本、风险资本及业务扩张
+采购内控与员工行为整改,medium,high,浙江证监局警示函,整改结果、后续监管措施
+境外利润集中,high,high,2025境外PBT占集团约91.9%,美国/香港/新加坡业务利润和监管变化
+客户保证金利率敏感,high,medium_high,2025客户权益上升但净利息收入下降16.05%,客户权益、计息收益率、政策利率
+投资与公允价值波动,high,medium_high,2026Q1投资收益+107.4m、公允价值-44.7m,投资损益和OCI拆分
+可转债潜在摊薄,medium,medium_high,拟发行不超过RMB1.2bn，示例转股75.9m股,审批、发行、最终转股价与用途
+H股流动性与上市历史短,high,medium_high,上市不足一年；2026-07-27成交37.25万股，低于20日均量约140.20万股,成交量、价差、南向持股和股本事件
+回购执行不确定,medium,medium,授权已通过但截至研究日未发现成交披露,next-day disclosure和月报表
+港股通资格变化,low_current_conditional,high,研究日沪深两份名单均eligible；规则含A股风险警示/退市等条件,沪深当前名单和A股状态
+会计估计与审计师同年变化,high_as_event,medium_high,预期信用损失估计变更；拟更换为安永,2026中报会计影响和新审计师报告

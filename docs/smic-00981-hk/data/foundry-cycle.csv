@@ -1,0 +1,8 @@
+as_of,signal,smic_read,global_mapping,status,source
+2026-07-27,SMIC_utilization,"93.1% in 2026Q1 vs 89.6% a year earlier","Domestic foundry demand/capacity absorption",observed,Q1_2026
+2026-07-27,SMIC_Q2_guidance,"Revenue +14% to +16% QoQ; gross margin 20% to 22%","Near-term company cycle signal; not actual",management_guidance,Q1_2026
+2026-07-16,TSMC_Q2,"Revenue US$40.20bn and gross margin 67.7%; Q3 revenue guide US$44.6bn-US$45.8bn","Leading-edge AI foundry cycle; not equivalent to SMIC",observed,TSMC_Q2
+2026-04-29,UMC_Q1,"Utilization 79%; Q2 shipments high-single-digit QoQ higher and gross margin around 30%","Closer mature/specialty foundry signal",observed_and_guidance,UMC_Q1
+2026-05-05,GlobalFoundries_Q1,"Revenue US$1.634bn gross margin 27.6% OCF US$542m adjusted FCF US$233m","Specialty foundry cash-conversion cross-check",observed,GFS_Q1
+2026-04-23,Intel_Foundry,"Foundry embedded in a diversified IDM","US policy/capex and leading-node execution signal; not clean comparable",mapping_only,INTEL_Q1
+2026-07-27,SOX_beta,"Semiconductor index strength can lift theme sentiment","Macro beta only; no direct earnings equivalence",mapping_only,P_H

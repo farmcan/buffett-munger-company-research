@@ -1,0 +1,5 @@
+item,shares,as_of,treatment,source
+issued_shares_excluding_treasury,2592865836,2026-06-30,base,F05
+outstanding_options,165325000,2026-06-30,conservative legal overhang,F05
+remaining_large_cb_conversion_shares,248381602,2026-06-30,if converted at HK$5.87,F05
+fully_diluted_legal_ceiling,3006572438,2026-06-30,base + options + CB,F05

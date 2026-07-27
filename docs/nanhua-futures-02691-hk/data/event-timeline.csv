@@ -1,0 +1,10 @@
+event,disclosure_date,event_type,status,source_id,expected_or_actual
+IPO,2025-12-22,listing,occurred,F01,actual
+Stock Connect inclusion,2026-01-16,stock_connect,occurred,F09,actual
+Annual results and governance announcements,2026-03-27,earnings_governance,occurred,F01;G01;G02;G03;G04,actual
+CSRC warning letter,2026-04-01,regulatory,occurred,F11,actual
+2026Q1 report,2026-04-21,earnings,occurred,F02,actual
+H-share repurchase plan,2026-06-24,capital_allocation,authorized_not_executed,F04;F05,actual_authorization
+2026H1 profit alert,2026-07-07,earnings,occurred,F03,preliminary
+Expected capitalisation H shares begin trading,2026-08-11,share_capital,future_expected,F06,expected_not_completed_as_of_research_date
+Formal 2026 interim results,TBA,earnings,unknown,F03,not_found_as_of_research_date

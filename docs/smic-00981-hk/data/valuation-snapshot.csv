@@ -1,0 +1,9 @@
+as_of,metric,h_share_value,a_share_value,unit,formula_or_note,status
+2026-07-27,close_price,70.65,143.77,local_currency_per_share,H in HKD and A in CNY,secondary_market_data
+2026-07-27,h_price_converted_to_cny,61.01,,CNY_per_share,HKD70.65 times 0.8635136 CNY per HKD from 2026-07-24 ECB cross rates,derived
+2026-07-27,a_to_h_price_ratio,,2.3566,x,A local price divided by H converted CNY price,derived
+2026-07-27,a_premium_to_h,,135.7,percent,ratio minus one,derived
+2026-07-27,fy2025_pe_mechanical_post_deal_shares,112.56,,x,current H price divided by FY2025 parent profit per post-deal share without SMNC profit accretion,mechanical_stress_case_not_current_true_pe
+2026-07-27,ttm_pe_old_share_basis,103.77,,x,current H price divided by old-share-basis TTM parent EPS,historical_illustration_not_current
+2026-07-27,fy2024_official_transaction_pro_forma_pe,115.11,,x,current H price divided by RMB0.53 official FY2024 transaction pro forma EPS translated to HKD,comparison_only_not_forward_pe
+2026-07-27,current_true_post_deal_ttm_pe,,,x,post-deal TTM parent profit and same-date diluted shares are not disclosed,unavailable

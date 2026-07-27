@@ -1,0 +1,5 @@
+date,layer,a_shares,h_shares,total_shares,status,source,limitation
+2025-12-31,issued,1999562549,6000845486,8000408035,observed,AR2025,pre_SMNC_transaction
+2026-06-23,issued_post_SMNC,2546744622,6013933328,8560677950,observed,SMNC_REG,post_registration
+2026-06-23,new_A_shares_for_SMNC,547182073,,547182073,observed,SMNC_BOOK,about_6.39pct_of_post_deal_total
+2026-07-27,fully_diluted_total,,, ,not_disclosed,AR2025,"Same-date options awards and post-transaction diluted EPS are unavailable."

@@ -1,0 +1,2 @@
+security_id,ticker,as_of,shanghai_southbound,shenzhen_southbound,combined_status,relationship,source_ids
+XHKG:02691,02691,2026-07-27,eligible,eligible,eligible,same_company_listing_with_603093.SH,S01;S02;F10

@@ -1,0 +1,4 @@
+period,wafer_revenue_usd_m,shipments_8in_eq,asp_proxy_usd_per_8in_eq,utilization_pct,source,limitation
+FY2023,5794.5,5866683,987.74,75.0,AR2023,"Mix proxy; different nodes and wafer sizes are converted to 8-inch equivalent."
+FY2024,7486.9,8020798,933.44,85.6,AR2024,"Mix proxy; not a company-disclosed ASP."
+FY2025,8796.4,9696824,907.15,93.5,AR2025,"Mix proxy; decline can reflect node/wafer/application mix rather than like-for-like price."

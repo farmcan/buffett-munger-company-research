@@ -1,0 +1,5 @@
+period,net_capital_rmb_m,net_capital_to_risk_pct,net_capital_to_net_assets_pct,current_assets_to_current_liabilities_pct,liabilities_to_net_assets_pct,clearing_settlement_rmb_m
+FY2024,1509.67,166,48,525,28,1160.38
+FY2025,2744.257,240,65,696,23,601.474
+2026Q1,1750.832,137,41,536,23,457.71
+regulatory_minimum,30,100,20,100,,26.8

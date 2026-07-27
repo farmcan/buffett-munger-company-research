@@ -1,0 +1,5 @@
+date,risk,fact,mechanism,status,source
+2025-12-31,NCI_scale,"NCI equity US$13.581bn and NCI profit US$303.813m","Group results do not all belong to parent holders",observed,AR2025
+2026-06-23,SMNC_share_issue,"547.182m new A shares; post-deal total 8.561bn","Dilution and NCI capture occur together",observed,SMNC_REG
+2026-07-27,A_H_gap,"A CNY143.77; H HKD70.65; A premium about135.7% using 2026-07-24 ECB FX","Same issuer can carry very different local-market valuations",derived,P_A
+2026-07-27,Fully_diluted_gap,"Same-date options awards and post-deal diluted EPS unavailable","Exact per-share economics cannot be finalized",not_disclosed,AR2025

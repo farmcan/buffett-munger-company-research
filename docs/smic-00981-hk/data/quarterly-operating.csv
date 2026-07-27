@@ -1,0 +1,7 @@
+period,status,revenue_usd_m,revenue_qoq_pct,revenue_yoy_pct,gross_profit_usd_m,gross_profit_yoy_pct,gross_margin_pct,operating_profit_usd_m,operating_profit_yoy_pct,parent_profit_usd_m,parent_profit_yoy_pct,operating_cash_flow_usd_m,depreciation_amortisation_usd_m,depreciation_yoy_pct,shipments_8in_eq_thousand,shipments_yoy_pct,utilization_pct,monthly_capacity_8in_eq,capex_company_definition_usd_m,source,interpretation
+2025Q1,actual,2247.201,,,505.5,,22.5,309.437,,188.035,,-160.415,865.6,,2290.000,,89.6,973250,1415.5,AR2025,comparison_base
+2025Q2,actual,2209.066,-1.7,16.2,451.300,,20.4,150.677,,132.487,,1069.672,,,2390.000,,92.5,991250,1885.1,Q2_2025,actual
+2025Q3,actual,2381.822,7.8,,524.200,,22.0,,,191.758,,941.112,,,2499.000,,95.8,1022750,2394.2,Q3_2025,actual
+2025Q4,actual,2488.710,4.5,,477.700,,19.2,298.600,,172.851,,1343.934,,,2515.000,,95.7,1058750,2407.5,Q4_2025,actual
+2026Q1,actual,2505.487,0.7,11.5,503.603,-0.4,20.1,247.792,-19.9,197.448,5.0,684.985,1088.0,25.7,2509.137,9.5,93.1,1078250,1562.8,Q1_2026,"Revenue grew but gross profit and operating profit fell; parent profit direction was helped by lower NCI."
+2026Q2,management_guidance_midpoint,2881.310,15.0,30.4,,,21.0,,,,,,,,,,,,,Q1_2026,"Guidance midpoint only; not actual. Range: revenue +14% to +16% QoQ and gross margin 20% to 22%."

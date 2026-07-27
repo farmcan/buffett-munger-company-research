@@ -1,0 +1,4 @@
+case,reported_parent_profit_rmb_m,assumed_regulatory_retention_pct,candidate_distributable_rmb_m,status
+high_retention,486.264,70,145.879,sensitivity_not_owner_earnings
+base_retention,486.264,55,218.819,sensitivity_not_owner_earnings
+low_retention,486.264,40,291.758,sensitivity_not_owner_earnings

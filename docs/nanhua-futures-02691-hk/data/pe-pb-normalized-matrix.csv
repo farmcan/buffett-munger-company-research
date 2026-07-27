@@ -1,0 +1,4 @@
+label,profit_basis_rmb_m,eps_rmb,eps_hkd,price_hkd,pe_x,pb_x,status
+reported_fy,486.264,0.468397,0.540868,6.65,12.3,1.07,calculated
+reported_ttm,605.289,0.583049,0.673259,6.65,9.88,1.07,calculated
+normalized_2022_2025_average,398.038,0.383413,0.442735,6.65,15.02,1.07,simple_cycle_average_not_forecast

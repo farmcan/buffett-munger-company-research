@@ -1,0 +1,6 @@
+scenario,shares_m,treatment,included_in_base_valuation
+pre_capitalisation_issued,717.724893,A 610.065893m + H 107.659m,no
+post_capitalisation_expected,1038.14454,A 882.038990m + H 156.105550m; 4.5-for-10,yes
+employee_treasury_shares_reactivated,1043.825774,adds 5.681234m A treasury shares,scenario only
+illustrative_CB_full_conversion,1114.045868,adds 75.901328m illustrative shares; final terms unknown,scenario only
+employee_plus_CB,1119.727102,both optional dilution paths,scenario only

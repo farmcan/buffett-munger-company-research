@@ -1,0 +1,415 @@
+{
+  "schema_version": "seed.company-research-source-ledger.v1",
+  "company": {
+    "name_zh": "中芯国际集成电路制造有限公司",
+    "name_en": "Semiconductor Manufacturing International Corporation",
+    "hk_ticker": "00981.HK",
+    "a_ticker": "688981.SH",
+    "relationship": "same_company_listing"
+  },
+  "research_cutoff": "2026-07-27",
+  "timezone": "Asia/Shanghai",
+  "evidence_policy": {
+    "primary_sources_first": true,
+    "state": "needs_human_review",
+    "market_data_is_secondary": true,
+    "management_guidance_is_not_actual": true,
+    "unknowns_are_not_zero": true
+  },
+  "sources": [
+    {
+      "id": "AR2025",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "SMIC Annual Report 2025",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0408/2026040801181.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-04-08",
+      "accessed_at": "2026-07-27",
+      "period": "FY2021-FY2025, with audited FY2025 statements",
+      "audit_status": "audited",
+      "scope": "consolidated_group_and_parent_attribution",
+      "covers": [
+        "financial_statements",
+        "capacity",
+        "utilization",
+        "shipments",
+        "business_mix",
+        "customers",
+        "suppliers",
+        "share_structure",
+        "issuer_identity"
+      ],
+      "content_sha256": "4ce8f7a22e09f5322a3b03621e596b42f941d43f12a58e303183209c279e3111",
+      "text_snapshot_sha256": "61070288c60ab4797e2a0a6cd6832d3de5ca7375fbfc891c814e2327b3392eb9",
+      "page_count": 163
+    },
+    {
+      "id": "AR2024",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "SMIC Annual Report 2024",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0409/2025040900322.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-04-09",
+      "accessed_at": "2026-07-27",
+      "period": "FY2024",
+      "audit_status": "audited",
+      "scope": "consolidated_group",
+      "covers": [
+        "financial_statements",
+        "historical_operating_metrics"
+      ],
+      "content_sha256": "b184a848a948b236497cabddc4d3c8bf943abeeaeccd2bb4e8dd4a2785213eca",
+      "text_snapshot_sha256": "5dc1f14f0d0dff270c656c303a972545b17b505ac282afa142b553a5d6ac8388",
+      "page_count": 159
+    },
+    {
+      "id": "AR2023",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "SMIC Annual Report 2023",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0409/2024040900356.pdf",
+      "published_at_status": "known",
+      "published_at": "2024-04-09",
+      "accessed_at": "2026-07-27",
+      "period": "FY2023",
+      "audit_status": "audited",
+      "scope": "consolidated_group",
+      "covers": [
+        "financial_statements",
+        "historical_operating_metrics"
+      ],
+      "content_sha256": "b2f7bbde6dd59456b7fd5d8a6336298086c9ac3d59c8028ed034844f0050c8ac",
+      "text_snapshot_sha256": "6c3454e17c0c5b900c1df5550d6872eb178717f5496342e3ceb181a87cd7b62d",
+      "page_count": 163
+    },
+    {
+      "id": "Q1_2026",
+      "tier": "A",
+      "source_type": "unaudited_quarterly_results",
+      "title": "Unaudited Results for the Three Months Ended March 31, 2026",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0514/2026051400908.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-05-14",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q1 actual and 2026Q2 management guidance",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "quarterly_financials",
+        "capacity",
+        "utilization",
+        "shipments",
+        "business_mix",
+        "management_guidance"
+      ],
+      "content_sha256": "64901d4c50f4dabbc120a6b6ced4da73eafc0472821dca6ed3623c0b773a4854"
+    },
+    {
+      "id": "Q2_2025",
+      "tier": "A",
+      "source_type": "unaudited_quarterly_results",
+      "title": "Unaudited Results for the Three Months Ended June 30, 2025",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0807/2025080700636.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-08-07",
+      "accessed_at": "2026-07-27",
+      "period": "2025Q2",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "quarterly_financials",
+        "capacity",
+        "utilization",
+        "shipments"
+      ],
+      "content_sha256": "234f4e517bf54734a39d5c61e1987bf5b9e0a6afea7c8cf2c6b676bf2e9693a2"
+    },
+    {
+      "id": "Q3_2025",
+      "tier": "A",
+      "source_type": "unaudited_quarterly_results",
+      "title": "Unaudited Results for the Three Months Ended September 30, 2025",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1113/2025111300757.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-11-13",
+      "accessed_at": "2026-07-27",
+      "period": "2025Q3",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "quarterly_financials",
+        "capacity",
+        "utilization",
+        "shipments"
+      ],
+      "content_sha256": "cb942330012a8dc4bb4aef8c189ef687a41c0809fea6be56d99e64474b3d2784"
+    },
+    {
+      "id": "Q4_2025",
+      "tier": "A",
+      "source_type": "unaudited_quarterly_results",
+      "title": "Unaudited Results for the Three Months Ended December 31, 2025",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0210/2026021000518.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-02-10",
+      "accessed_at": "2026-07-27",
+      "period": "2025Q4",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "quarterly_financials",
+        "capacity",
+        "utilization",
+        "shipments"
+      ],
+      "content_sha256": "a7049ce9968c9783f55e24889fd3802e80936338b42d99dd2f2b08cf8c42a194"
+    },
+    {
+      "id": "SMNC_BOOK",
+      "tier": "A",
+      "source_type": "exchange_transaction_filing",
+      "title": "Listing book for shares issued to acquire the remaining 49% of SMNC",
+      "url": "https://star.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-06-25/688981_20260625_WKJL.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-06-25",
+      "accessed_at": "2026-07-27",
+      "period": "2026 SMNC minority-interest acquisition",
+      "audit_status": "not_applicable",
+      "scope": "issuer_share_issue_and_historical_pro_forma",
+      "covers": [
+        "share_issue",
+        "transaction_structure",
+        "historical_pro_forma_eps",
+        "nci_attribution"
+      ],
+      "content_sha256": "d73afe31dc2ccc6dd67a5acfecdd078350c3575642b65e6d315704913983fa99"
+    },
+    {
+      "id": "SMNC_REG",
+      "tier": "A",
+      "source_type": "exchange_transaction_filing",
+      "title": "Result of share issuance and registration for SMNC acquisition",
+      "url": "https://star.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-06-25/688981_20260625_QG4I.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-06-25",
+      "accessed_at": "2026-07-27",
+      "period": "2026-06 share registration",
+      "audit_status": "not_applicable",
+      "scope": "issuer_share_registration",
+      "covers": [
+        "share_count",
+        "registration",
+        "lock_up"
+      ],
+      "content_sha256": "96df3182584be073925124be7b7d2878dee9ab5f5f79dc0d43c563468f9f01af"
+    },
+    {
+      "id": "SC_CURRENT",
+      "tier": "A",
+      "source_type": "official_southbound_eligibility_snapshot",
+      "title": "SSE and SZSE Southbound eligible-security snapshot",
+      "url": "https://www.sse.com.cn/services/hkexsc/disclo/eligible/",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026-07-27",
+      "audit_status": "not_applicable",
+      "scope": "00981 under Shanghai and Shenzhen Southbound programs",
+      "covers": [
+        "stock_connect",
+        "listing_status"
+      ],
+      "content_sha256": "7e75c0c573a62f4088466d98ae820258edca0b73903febd064ac308845f97ba9",
+      "alternate_url": "https://www.szse.cn/szhk/hkbussiness/underlylist/",
+      "checksum_scope": "Frozen combined security snapshot generated from the two official lists; actual exchange notices prevail."
+    },
+    {
+      "id": "SC_RULES",
+      "tier": "A",
+      "source_type": "exchange_rules",
+      "title": "Shanghai-Hong Kong Stock Connect Measures (2024 Revision)",
+      "url": "https://www.sse.com.cn/lawandrules/sselawsrules2025/global/hkexsc/c/c_20251017_10795123.shtml",
+      "published_at_status": "known",
+      "published_at": "2024-06-14",
+      "accessed_at": "2026-07-27",
+      "period": "current rule page at research cut-off",
+      "audit_status": "not_applicable",
+      "scope": "Southbound inclusion_removal_and_sell_only_mechanics",
+      "covers": [
+        "stock_connect_rules",
+        "removal_mechanics"
+      ],
+      "content_sha256": "8b3e4e1f0e80f6563400e9fe735d0e83f8483db4c56ffc5846a520cf04eb247b"
+    },
+    {
+      "id": "BIS_2026",
+      "tier": "A",
+      "source_type": "official_enforcement_order",
+      "title": "BIS enforcement order describing SMIC Entity List status",
+      "url": "https://www.bis.gov/media/2587",
+      "published_at_status": "known",
+      "published_at": "2026-03-10",
+      "accessed_at": "2026-07-27",
+      "period": "status cited through 2026-03-10",
+      "audit_status": "not_applicable",
+      "scope": "US_export_control_entity_list_and_named_entities",
+      "covers": [
+        "export_controls",
+        "entity_list",
+        "license_requirements"
+      ],
+      "content_sha256": "c5bd2e4e6c0be93e54b67ca255cf08f9542561f8fbf7aa8c60ad8a426854b1b6"
+    },
+    {
+      "id": "P_H",
+      "tier": "B",
+      "source_type": "secondary_market_data",
+      "title": "Tencent qfq Daily Market Snapshot — 00981.HK",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk00981,day,2026-05-01,2026-07-27,100,qfq",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026-05-04 to 2026-07-27",
+      "audit_status": "not_applicable",
+      "scope": "00981.HK adjusted_daily_prices",
+      "covers": [
+        "price",
+        "returns",
+        "event_windows",
+        "volume"
+      ],
+      "content_sha256": "dbffdbeff86c3abb4ef591a743c0bcc8ce7392b3c5f91148634b942ccb0dd097"
+    },
+    {
+      "id": "P_A",
+      "tier": "B",
+      "source_type": "secondary_market_data",
+      "title": "Tencent qfq Daily Market Snapshot — 688981.SH",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh688981,day,2026-07-24,2026-07-27,5,qfq",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026-07-24 to 2026-07-27",
+      "audit_status": "not_applicable",
+      "scope": "688981.SH adjusted_daily_prices",
+      "covers": [
+        "price",
+        "a_h_price_gap"
+      ],
+      "content_sha256": "798445181885686c5358602d56cbb89f877370974d9033a869f9519f73c16635"
+    },
+    {
+      "id": "P_HSTECH",
+      "tier": "B",
+      "source_type": "secondary_market_data",
+      "title": "Tencent qfq Daily Market Snapshot — Hang Seng TECH Index",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2026-05-01,2026-07-27,100,qfq",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026-05-04 to 2026-07-27",
+      "audit_status": "not_applicable",
+      "scope": "Hang_Seng_TECH_adjusted_daily_prices",
+      "covers": [
+        "benchmark_returns",
+        "event_windows"
+      ],
+      "content_sha256": "20ba14cb55d1136ce4ab27187d3e5134c06fa70e98cd74edb07f3623f548592c"
+    },
+    {
+      "id": "FX_ECB",
+      "tier": "A",
+      "source_type": "official_fx_reference_rates",
+      "title": "ECB euro foreign exchange reference rates",
+      "url": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml",
+      "published_at_status": "known",
+      "published_at": "2026-07-24",
+      "accessed_at": "2026-07-27",
+      "period": "2026-07-24",
+      "audit_status": "not_applicable",
+      "scope": "EUR_cross_rates_for_USD_HKD_CNY",
+      "covers": [
+        "fx",
+        "currency_translation"
+      ],
+      "content_sha256": "3ae8c2902628f31cb8b771e78f238e62c0bd932ac5d401e53aed73ffa604af14"
+    },
+    {
+      "id": "TSMC_Q2",
+      "tier": "A",
+      "source_type": "official_ir_fact_snapshot",
+      "title": "TSMC 2026 Q2 Quarterly Results",
+      "url": "https://investor.tsmc.com/english/quarterly-results/2026/q2",
+      "published_at_status": "known",
+      "published_at": "2026-07-16",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q2 actual and 2026Q3 guidance",
+      "audit_status": "unaudited",
+      "scope": "global_leading_edge_foundry_cycle_signal",
+      "covers": [
+        "peer_signal",
+        "global_foundry_cycle"
+      ],
+      "content_sha256": "6fc8481e4c1fb92ff1bc082381d16a49e5c4caf02d7d9aae55a62c5307b07503",
+      "checksum_scope": "SHA-256 of the exact fact snapshot consumed by this report."
+    },
+    {
+      "id": "UMC_Q1",
+      "tier": "A",
+      "source_type": "official_ir_fact_snapshot",
+      "title": "UMC 1Q 2026 Financial Results",
+      "url": "https://www.umc.com/en/Download/quarterly_results/QuarterlyResultsDetail/2026/2026Q1",
+      "published_at_status": "known",
+      "published_at": "2026-04-29",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q1 actual and 2026Q2 guidance",
+      "audit_status": "unaudited",
+      "scope": "mature_and_specialty_foundry_cycle_signal",
+      "covers": [
+        "peer_signal",
+        "mature_node_cycle"
+      ],
+      "content_sha256": "dcd1f2a964e5907bdb7d786495b26d2ee1263983c3d1a14d20843b71d94b115c",
+      "checksum_scope": "SHA-256 of the exact fact snapshot consumed by this report."
+    },
+    {
+      "id": "GFS_Q1",
+      "tier": "A",
+      "source_type": "official_ir_fact_snapshot",
+      "title": "GlobalFoundries Reports First Quarter 2026 Financial Results",
+      "url": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-reports-first-quarter-2026-financial-results",
+      "published_at_status": "known",
+      "published_at": "2026-05-05",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q1 actual and 2026Q2 guidance",
+      "audit_status": "unaudited",
+      "scope": "specialty_foundry_profitability_and_cash_flow_signal",
+      "covers": [
+        "peer_signal",
+        "foundry_cash_conversion"
+      ],
+      "content_sha256": "96d927b21df851aa774cee3f4000c1ae4877a610114aac85de68af86307dfdba",
+      "checksum_scope": "SHA-256 of the exact fact snapshot consumed by this report."
+    },
+    {
+      "id": "INTEL_Q1",
+      "tier": "A",
+      "source_type": "sec_filing_and_results_release",
+      "title": "Intel First-Quarter 2026 Financial Results",
+      "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000077/0000050863-26-000077.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-04-23",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q1",
+      "audit_status": "unaudited",
+      "scope": "integrated_device_manufacturer_and_foundry_segment_signal",
+      "covers": [
+        "peer_signal",
+        "intel_foundry_mapping"
+      ],
+      "content_sha256": "4a21e4f984cf90d302ab9fce97d480974e602cdd602e9b6700752724cc0b96ec"
+    }
+  ]
+}

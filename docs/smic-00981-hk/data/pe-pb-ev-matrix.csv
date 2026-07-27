@@ -1,0 +1,8 @@
+as_of,metric,value_x,price_hkd,share_basis,earnings_or_book_or_sales_basis,status,formula,limitation
+2026-07-27,FY2025_PE_mechanical_post_deal_shares,112.56,70.65,8560.678m,FY2025_parent_profit_USD685.131m,mechanical_stress_case,"70.65 / (685.131/8560.678*7.842577)","Adds shares without SMNC profit accretion; not current true PE."
+2026-07-27,TTM_PE_old_share_basis,103.77,70.65,8000.408m,TTM_old_ownership_parent_profit_USD694.544m,historical_only,"70.65 / (694.544/8000.408*7.842577)","Transaction completed; old denominator."
+2026-07-27,FY2024_official_transaction_pro_forma_PE,115.11,70.65,official_transaction_basis,RMB0.53_EPS,historical_pro_forma,"70.65 / (0.53/0.8635136)","Not FY2025 current TTM or forecast."
+2026-07-27,FY2025_PB_mechanical_post_deal_shares,3.60,70.65,8560.678m,FY2025_parent_equity_USD21.440bn,mechanical_historical_book,"H-price economic market cap / FY2025 parent equity","Post-deal current book value unavailable."
+2026-07-27,FY2025_EV_revenue_H_price_economic,8.25,70.65,8560.678m,FY2025_revenue_USD9.327bn,mechanical_historical_balance,"(H-price market cap - broad net cash USD0.151bn) / revenue","Broad net cash uses FY2025 balance before post-deal reporting."
+2026-07-27,FY2025_EV_EBITDA_proxy_H_price_economic,15.64,70.65,8560.678m,FY2025_operating_profit_plus_DA_USD4.920bn,mechanical_historical_balance,"EV / (operating profit + D&A)","EBITDA is not owner earnings."
+2026-07-27,current_true_post_deal_TTM_PE,,,post_deal_current,current_TTM_parent_diluted_EPS,unavailable,,"Post-deal parent profit and diluted share bridge not disclosed."

@@ -1,0 +1,3 @@
+company,ticker,relationship,comparable_mechanism,non_comparable_boundary,source_id
+CME Group,CME,thematic_peer,交易所与清算基础设施，受衍生品交易活跃度影响,CME是市场基础设施，不是期货经纪商，也不是南华同一公司或同等经济敞口,U01
+Interactive Brokers,IBKR,thematic_peer,电子经纪、客户资产与净利息收入,客户结构、监管资本、产品与地域组合不同；不是南华同一公司或同等经济敞口,U02

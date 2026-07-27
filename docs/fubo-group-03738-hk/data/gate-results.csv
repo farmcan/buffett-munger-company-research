@@ -1,0 +1,10 @@
+gate,result,reason,blocking_gap,next_test
+identity_and_source_integrity,pass_with_scope,"Security, audited filings, current share count, price snapshot and official source hierarchy are resolved; human page review remains required.",无具名人工逐页签字。,人工复核 18 条关键页码、单位、范围和公式。
+circle_of_competence,provisional,"Rights-management mechanics are mapped, but platform algorithms, contracts and legal outcomes are not fully observable.",平台合同、算法与争议规则不公开。,补客户/权利人访谈与平台条款变化记录。
+business_economics,mixed,"Revenue and operating KPI growth are strong; receivables, capitalized development and negative all-in cash proxy weaken economic quality.",收入增长尚未稳定转成现金。,核对 2026H1 应收、CFO、资本化研发和有机增长。
+durable_moat,inconclusive,"Data/workflow and customer integration support a moat hypothesis, while platform-native substitutes and policy power remain unrefuted.",平台内部替代与跨平台数据优势均未被证实。,跟踪平台发布前后 NRR、收入/资产和毛利。
+management_and_capital_allocation,provisional,"Management supplies operating KPIs, but acquisition, capitalization, issuance and bond outcomes need full per-share return evidence.",并购、发行与债务的每股回报缺口。,建立承诺兑现和 fully diluted per-share return 台账。
+owner_earnings,range_only,Only a conservative cash proxy is reproducible; maintenance development and normalized working capital cannot be separated.,维护/增长开发与正常营运资本不可分。,用 H1 附注重建维护投入区间和现金桥。
+survival_and_balance_sheet,provisional,Large September 2026 redemption/refinancing need is material; June cash and committed funding are not disclosed in the monthly return.,6 月现金、融资承诺和债券资金桥缺失。,到期前核验现金、已承诺额度、赎回/转换及新融资。
+intrinsic_value_and_margin_of_safety,range_only,"Static reported FY PE is reproducible, but TTM, normalized earnings and DCF are unavailable.",TTM、正常化 owner earnings 和历史分位数缺失。,先补可审计分母，再做无前视偏差估值。
+decision_and_disconfirming_evidence,inconclusive,"Package is research-ready for human review but not decision-ready; bond coverage, cash conversion and platform substitution remain decisive gaps.",三个核心 Gate 仍为 provisional/range_only/inconclusive。,完成债券、现金转化和平台替代三项反方测试后人工复核。

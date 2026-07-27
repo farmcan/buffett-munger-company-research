@@ -45,7 +45,7 @@
       background: rgba(255, 253, 248, .75);
       color: #3e4c45;
     }
-    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
     .card {
       display: flex;
       min-height: 310px;
@@ -74,6 +74,7 @@
     .meitu { border-top: 5px solid var(--green); }
     .nanhua { border-top: 5px solid var(--gold); }
     .smic { border-top: 5px solid var(--blue); }
+    .vobile { border-top: 5px solid #8b5a91; }
     .pending { opacity: .72; }
     .pending .status {
       display: inline-flex;
@@ -120,20 +121,28 @@
         <a href="./meitu-01357-hk/report.html">阅读完整报告</a>
       </article>
 
-      <article class="card nanhua pending">
-        <div class="tag">PAUSED · 期货金融 · A/H 双重上市</div>
+      <article class="card nanhua">
+        <div class="tag">V2 NEEDS HUMAN REVIEW · 期货金融 · A/H 双重上市</div>
         <h2>南华期货</h2>
         <div class="ticker">02691.HK · 603093.SH</div>
-        <p>经纪、风险管理、资管与境外业务，客户权益与资本约束，利润质量、港股通、股本变化及小盘流动性。</p>
-        <span class="status">待美图 V2 确认后继续</span>
+        <p>经纪、风险管理、财富管理与境外业务；单独桥接客户保证金、利息收入、投资收益、监管净资本、A/H 股本与小盘流动性。</p>
+        <a href="./nanhua-futures-02691-hk/report.html">阅读完整报告</a>
       </article>
 
-      <article class="card smic pending">
-        <div class="tag">PAUSED · 晶圆代工 · 全球半导体链</div>
+      <article class="card smic">
+        <div class="tag">V2 NEEDS HUMAN REVIEW · 晶圆代工 · 全球半导体链</div>
         <h2>中芯国际</h2>
         <div class="ticker">00981.HK · 688981.SH</div>
-        <p>产能利用率、晶圆出货、ASP、毛利率、资本开支与折旧，AI/国产替代映射、出口管制和 A/H 估值。</p>
-        <span class="status">待美图 V2 确认后继续</span>
+        <p>产能利用率、晶圆出货、ASP、毛利率、资本开支与折旧；拆解 AI/国产替代映射、出口管制和 A/H 定价差异。</p>
+        <a href="./smic-00981-hk/report.html">阅读完整报告</a>
+      </article>
+
+      <article class="card vobile">
+        <div class="tag">V2 NEEDS HUMAN REVIEW · 内容科技 · AI 版权基础设施</div>
+        <h2>阜博集团</h2>
+        <div class="ticker">03738.HK</div>
+        <p>订阅与内容变现双引擎；跟踪平台依赖、客户集中、现金转化、研发资本化，以及 2026 年到期可转债与完全摊薄股本。</p>
+        <a href="./fubo-group-03738-hk/report.html">阅读完整报告</a>
       </article>
     </section>
 
@@ -142,7 +151,7 @@
       <p>阅读<a href="./listed-company-fundamentals-event-research-methodology.html">V2.1 方法论与交付规范</a>，或直接打开<a href="./templates/report-v2-template.html">可视化 HTML 模板</a>：双入口、25 个研究维度、50 个指标族、九道证据闸门、五年财务、长周期定价与空头定位。</p>
     </section>
 
-    <footer>Public snapshot · As of 2026-07-27 · Source URLs and limitations are preserved in each report.</footer>
+    <footer>Public snapshot · As of 2026-07-27 · Four company reports · Source URLs and limitations are preserved in each report.</footer>
   </main>
 </body>
 </html>

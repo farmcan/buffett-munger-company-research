@@ -14,6 +14,13 @@ and Munger principles.
 > Unofficial and not affiliated with Berkshire Hathaway, Warren Buffett, Charlie Munger, their
 > estates, or any cited publisher. Research support only—not investment advice.
 
+## Public research reports
+
+The [GitHub Pages research index](https://farmcan.github.io/buffett-munger-company-research/)
+currently publishes evidence-linked reports for Meitu, Nanhua Futures, SMIC, and Vobile Group.
+Each report exposes the 25 dimensions, 50 indicators, nine gates, source ledger, evidence
+locators, valuation boundaries, and invalidation tests directly in HTML.
+
 ## What is production-grade here?
 
 The repository ships a complete, testable research contract:

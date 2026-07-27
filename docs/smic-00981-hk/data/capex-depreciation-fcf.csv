@@ -1,0 +1,7 @@
+period,operating_cash_flow_usd_m,cash_ppe_acquisition_usd_m,company_defined_capex_usd_m,depreciation_amortisation_usd_m,ocf_less_cash_ppe_usd_m,status,source
+FY2021,3011.895,4120.275,,, -1108.380,group_cash_proxy_not_owner_earnings,AR2025
+FY2022,5347.916,6172.106,,, -824.190,group_cash_proxy_not_owner_earnings,AR2025
+FY2023,3358.294,7630.407,,, -4272.113,group_cash_proxy_not_owner_earnings,AR2025
+FY2024,3175.555,7664.215,,3223.063,-4488.660,group_cash_proxy_not_owner_earnings,AR2025
+FY2025,3194.303,8399.826,,3810.010,-5205.523,group_cash_proxy_not_owner_earnings,AR2025
+2026Q1,684.985,,1562.8,1088.0,,company_capex_definition_differs_from_cash_ppe,Q1_2026

@@ -1,0 +1,9 @@
+period,metric,value,unit,source_id,scope_note
+FY2025,domestic_client_equity,38.982,RMBbn,F01,segregated client equity
+FY2025,overseas_client_net_equity,23.306,HKDbn,F01,overseas operations
+FY2025,overseas_AUM,4.812,HKDbn,F01,overseas asset management
+FY2025,domestic_AUM,1.081,RMBbn,F01,domestic asset management
+FY2025,public_fund_scale,19.136,RMBbn,F01,Nanhua Fund
+FY2025,OTC_new_notional,74.9,RMBbn,F01,risk-management subsidiary
+FY2025,insurance_futures_projects,75+,projects,F01,management disclosure
+FY2025,risk_protection,1.881,RMBbn,F01,management disclosure

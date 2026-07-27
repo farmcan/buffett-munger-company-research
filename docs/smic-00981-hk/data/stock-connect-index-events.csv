@@ -1,0 +1,6 @@
+as_of,item,status,evidence,source,risk_read
+2026-07-27,Shanghai_Connect_Southbound,eligible,"00981 appears in frozen official program snapshot",SC_CURRENT,"Near-term removal risk low but not zero; official notices prevail."
+2026-07-27,Shenzhen_Connect_Southbound,eligible,"00981 appears in frozen official program snapshot",SC_CURRENT,"Near-term removal risk low but not zero; official notices prevail."
+2026-07-27,A_H_listing_anchor,observed,"Same issuer ordinary shares listed HKEX mainboard and SSE STAR",AR2025,"A/H status supports eligibility context but does not guarantee perpetual inclusion."
+2026-07-27,Removal_mechanics,rule_dependent,"Removal can lead to restricted new buying/sell-only treatment depending on rule trigger",SC_RULES,"Monitor delisting risk warnings and exchange exclusion notices."
+2026-07-27,Hang_Seng_index_membership,not_frozen,"No checksum-bound official constituent file captured in this package",source_gap,"Do not infer index inclusion or next rebalance."

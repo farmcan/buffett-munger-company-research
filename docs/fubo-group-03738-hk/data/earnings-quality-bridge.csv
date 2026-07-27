@@ -1,0 +1,8 @@
+item,hkd_m,operator,scope,source
+reported_group_profit,211.692,starting point,consolidated group,F01
+share_based_compensation,18.72,company adds back,group,F01
+derecognition,2.584,company adds back,group,F01
+transaction_cost,4.786,company adds back,group,F01
+FVTPL_gain,-6.038,company subtracts,group,F01
+company_adjusted_group_profit,231.744,result,"group, not parent-attributable",F01
+reported_parent_profit,199.312,separate reported denominator,parent-attributable,F01
