@@ -1,13 +1,14 @@
 {
   "schema_version": "seed.public-research-publication.v1",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-07-27T11:37:55+08:00",
+  "reviewed_at": "2026-07-27T12:07:12+08:00",
   "publication_scope": [
     "index.html",
     "meitu-01357-hk/README.md",
     "meitu-01357-hk/report.html",
     "meitu-01357-hk/source-ledger.json",
     "meitu-01357-hk/data/app-public-signals.csv",
+    "meitu-01357-hk/data/event-price-reactions.csv",
     "meitu-01357-hk/data/event-timeline.csv",
     "meitu-01357-hk/data/financial-half-year-series.csv",
     "meitu-01357-hk/data/financial-history.csv",
@@ -18,7 +19,7 @@
     "meitu-01357-hk/data/small-cap-risk-register.csv",
     "meitu-01357-hk/data/valuation-scenarios.csv"
   ],
-  "source_commit": "279eb1e1a79a9a5ab79db0939949269ae82fd7e3",
+  "source_commit": "9c7bb2de21e16d415af3c45fc14e8dac43f3d795",
   "review_checks": {
     "contains_local_absolute_paths": false,
     "contains_private_library_paths": false,

@@ -139,6 +139,9 @@
     .timeline-date { color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .04em; }
     .timeline-title { margin: 3px 0; font-size: 17px; font-weight: 820; }
     .timeline-item p { margin: 4px 0; color: #4d5952; font-size: 14px; }
+    .reaction-line { margin-top: 8px !important; padding: 8px 10px; border-radius: 9px; background: #f3f3ed; font-variant-numeric: tabular-nums; }
+    .event-study table { min-width: 1080px; }
+    .event-study td:nth-child(n+3):nth-child(-n+8) { white-space: nowrap; font-variant-numeric: tabular-nums; }
     details { margin-top: 13px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
     summary { cursor: pointer; padding: 13px 15px; font-weight: 750; }
     details > div { padding: 0 15px 15px; color: #455049; }
@@ -203,7 +206,7 @@
       <a href="#users">付费飞轮</a>
       <a href="#apps">App 与网站</a>
       <a href="#model">模型与替代</a>
-      <a href="#rotation">事件驱动</a>
+      <a href="#rotation">AI 应用主线</a>
       <a href="#financials">财务质量</a>
       <a href="#cfo">CFO 讲话</a>
       <a href="#capital">回购与治理</a>
@@ -494,8 +497,40 @@
     </section>
 
     <section id="rotation">
-      <h2>AI 应用机会：看事件链，不看机械 20 日窗口</h2>
-      <p class="section-dek">小盘应用股通常在事件发生前后快速完成定价。真正的问题不是“最近涨了没”，而是未来是否存在能改变收入、成本、分发或替代概率的事件，以及市场预期是否低于可能结果。</p>
+      <h2>AI 应用行业与资金主线：历史、近期与美国映射</h2>
+      <p class="section-dek">小盘应用股通常在事件发生前后快速完成定价。这里不靠单一 20 日涨跌判断“轮动”，而是把历史价格阶段、近期大波动、美国领先信号、应用层盈利证据和未来催化放进同一条可证伪链。</p>
+      <div class="callout amber">
+        <strong>截至 2026-07-27：存在应用层交易窗口，但“AI 主线已从硬件切到应用”尚未确认。</strong><br>
+        港股在 6 月 1 日出现过一次广泛的 AI 应用/SaaS 拉升，美图单日 +26.2%；但美图从 T0 到 T+5 又回吐 12.5%，7 月 17 日应用与模型股随恒生科技一起下跌。美国方面，Nasdaq 对 2026Q2 的官方回顾仍称反弹由半导体突出表现驱动，并强调软件与半导体分化扩大。更准确的状态是“硬件拥挤交易松动 + 应用等待财报证明”，而不是完成主线交接。
+      </div>
+      <h3>应用层的第一性原理链条</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>链条</th><th>必须发生什么</th><th>当前证据</th><th>证伪条件</th></tr></thead>
+          <tbody>
+            <tr><td>模型成本/能力</td><td>推理更便宜、效果更好，扩大可用场景</td><td>DeepSeek/开源与多模型供给降低应用进入门槛</td><td>成本下降只引发同质化和价格战，没有单位毛利改善</td></tr>
+            <tr><td>产品采用</td><td>下载/MAU 转成持续使用和工作流</td><td>美图多产品覆盖，Wink/DesignKit/Kaipai 有增长</td><td>榜单冲高后 30/90 日留存、自然流量和使用频次回落</td></tr>
+            <tr><td>付费/ARPU</td><td>订阅、credits、企业席位同步增长</td><td>美图 Q1 付费 +30.2%，AI 生产力 ARR +56.2%</td><td>新增靠促销买量，ARPU/续费下降，ARR 不转确认收入</td></tr>
+            <tr><td>利润转换</td><td>渠道费、推理/API 成本增速低于收入</td><td>2025 仍有高毛利，但同比重述后毛利率下降 2.4pct</td><td>收入增长而毛利、现金流、owner earnings/股恶化</td></tr>
+            <tr><td>竞争结构</td><td>应用掌握入口、数据和垂直工作流，模型可替换</td><td>美图有消费入口和审美/模板积累，生产力闭环仍早</td><td>Adobe/Canva/OpenAI/Google 直接打包核心任务并压价</td></tr>
+            <tr><td>估值/资金主线</td><td>盈利上修与板块广度持续，而非单日挤空</td><td>局部事件弹性极强，持续性尚弱</td><td>只有价格脉冲、没有多家公司财报和指引确认</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>历史走势分成六个阶段</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>阶段</th><th>主导叙事</th><th>美图价格证据</th><th>事后读法</th></tr></thead>
+          <tbody>
+            <tr><td>2023 · 生成式 AI 产品化</td><td>MiracleVision 与“影像生产力”带来首次应用想象</td><td>发布五日全窗口 +24.3%，但 T0 后仅 +2.5%</td><td>能力发布能点火，持续性仍要靠商业数据</td></tr>
+            <tr><td>2025-01—02 · 成本释放</td><td>DeepSeek/开源模型使市场相信低成本模型会释放应用需求</td><td>五日全窗口 +45.0%；1/24 至 2/19 +107.7%</td><td>典型行业叙事重估；长期窗口混有中国科技整体重估</td></tr>
+            <tr><td>2025-05—08 · 平台合作 + 盈利兑现</td><td>阿里合作、核心收入和付费增长把故事推进到商业化</td><td>阿里公告首日 +19.0%，但 T0 后五日 -9.4%；7/31 收盘一度达 12.08</td><td>公司事件能放大估值，也会因预期过满快速回吐</td></tr>
+            <tr><td>2026-02 · “AI 吞噬软件”</td><td>市场担心通用 Agent/模型压缩 SaaS 席位和功能层价值</td><td>Nasdaq 官方材料记录软件承压、硬件/半导体相对占优</td><td>应用不是自动受益者；能否守住工作流和定价决定分化</td></tr>
+            <tr><td>2026-05—06 · 应用商业化反弹</td><td>美图 Q1 硬 KPI、海外收入传闻、Agent/AI PC 叙事推动港股应用股</td><td>Q1 五日 +20.3%；6/1 单日 +26.2%，但其后五日 -12.5%</td><td>有广度但未形成稳定主线；二级来源收入数据需中报验证</td></tr>
+            <tr><td>2026-06—07 · 叙事退潮与风险重估</td><td>发布会缺少即时盈利、治理披露、港股科技风险偏好下行</td><td>影像节五日 -20.1%；7/17 广泛抛售窗口 -9.9%</td><td>小盘应用股弹性双向，产品新闻不能替代财务和治理</td></tr>
+          </tbody>
+        </table>
+      </div>
       <h3>什么事件通常会让 AI 应用波动</h3>
       <div class="table-wrap">
         <table>
@@ -510,34 +545,64 @@
           </tbody>
         </table>
       </div>
-      <h3>历史案例：行情在事件上完成，不按固定窗口慢慢走</h3>
+      <h3>近期大幅波动：原因、持续性与证据等级</h3>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>事件</th><th>美图价格观察</th><th>能证明什么</th><th>不能证明什么</th></tr></thead>
+          <thead><tr><th>窗口</th><th>价格反应</th><th>主要解释</th><th>分类</th><th>研究结论</th></tr></thead>
           <tbody>
-            <tr><td>2025-01 DeepSeek / 开源成本冲击</td><td>1/24 HK$3.13 → 2/19 HK$6.50，约 +107.7%</td><td>模型成本与中国 AI 应用叙事可触发大幅重估</td><td>同期事件很多，不能把全段涨幅单因果归给 DeepSeek</td></tr>
-            <tr><td>2025-05-21 阿里可转债/合作</td><td>单日 HK$5.90 → HK$7.02，约 +19.0%</td><td>资本、分发和平台合作是强公司事件</td><td>不等于合作已经转成收入</td></tr>
-            <tr><td>2026-05-06 Q1 经营更新</td><td>单日 HK$4.19 → HK$4.66，约 +11.2%</td><td>付费、收入和 ARR 的硬 KPI 能重新定价</td><td>Q1 未披露利润、毛利与现金流</td></tr>
-            <tr><td>2026-06-17 影像节</td><td>当日 HK$4.69；至 6/26 HK$3.61，约 -23.0%</td><td>只有产品叙事未必能维持估值</td><td>价格同期受多因素影响，不能说发布会导致下跌</td></tr>
+            <tr><td>2026-05-06 Q1</td><td>单日 +11.2%；五日全窗口 +20.3%，T0 后 +8.2%</td><td>付费用户、核心收入和 AI 生产力 ARR 均高增</td><td><span class="tag good">公司硬催化</span></td><td>这是最可靠的一次近期上涨；仍缺利润、毛利和现金流</td></tr>
+            <tr><td>2026-06-01 应用轮动</td><td>单日 +26.2%；五日全窗口 +10.3%，T0 后 -12.5%</td><td>港股 AI 应用/SaaS 集体上涨；二级报道引用 4 月 App 收入、海外增长、Agent/AI PC 叙事</td><td><span class="tag warn">板块叙事 + 挤压</span></td><td>有板块广度，但回吐快；底层券商报告未取得，不能当公司已披露收入</td></tr>
+            <tr><td>2026-06-17 影像节</td><td>五日全窗口 -20.1%，T0 后 -21.3%</td><td>产品发布缺少即时收入/利润确认；次日治理整改公告、回购与风险偏好同时作用</td><td><span class="tag risk">重叠负面共振</span></td><td>不能说发布会导致下跌，但可确认“仅产品新闻”没有维持估值</td></tr>
+            <tr><td>2026-07-03 创始人增持</td><td>首个可交易日收涨；五日全窗口 -1.3%，T0 后 -3.9%</td><td>利益一致信号，但金额与总市值相比有限</td><td><span class="tag info">治理/资本信号</span></td><td>内部人买入不能替代盈利和行业主线</td></tr>
+            <tr><td>2026-07-17 板块风险释放</td><td>单日 -9.2%；五日全窗口 -9.9%，T0 后 -0.8%</td><td>恒生科技 -4.37%，AI 应用、模型、芯片及大型平台普跌</td><td><span class="tag risk">宏观/板块 Beta</span></td><td>不是美图单独爆雷；也说明应用尚未形成独立于科技风险偏好的主线</td></tr>
           </tbody>
         </table>
       </div>
-      <h3>美国映射与未来四周催化</h3>
+      <p><small>6 月 1 日催化来自<a href="https://finance.sina.com.cn/wm/2026-06-01/doc-inhzwyqm5155141.shtml">二级市场报道</a>，其中 4 月 App 收入和 ARPU 属于转述券商数据，待中报核验；7 月 17 日板块广度参考<a href="https://stock.jrj.com.cn/2026/07/17161357834603.shtml">港股收市综述</a>。价格统一来自事件 5 日价格窗。</small></p>
+      <h3>主线切换记分卡：现在只通过一半</h3>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>层级</th><th>美国/全球映射</th><th>传导到美图的方式</th><th>近期事件</th></tr></thead>
+          <thead><tr><th>确认层</th><th>需要看到</th><th>当前结果</th><th>状态</th></tr></thead>
           <tbody>
-            <tr><td>创意工作流直接对手</td><td>Adobe；Canva（未上市）</td><td>定价、Agent 工作流、模型打包决定美图生产力业务的竞争边界</td><td>持续跟踪产品发布与 Adobe 财报，不把股价当唯一信号</td></tr>
-            <tr><td>平台/模型/分发</td><td>Microsoft、Meta、Alphabet、Amazon、Apple、OpenAI</td><td>决定模型成本、入口分发、广告与电商内容需求，也可能直接替代</td><td>7/29 Microsoft/Meta；7/30 Apple/Amazon</td></tr>
-            <tr><td>应用商业化代理</td><td>AppLovin、Unity 等</td><td>反映应用获客、广告变现与风险偏好，但业务并非直接可比</td><td>只作二级确认，不能替代美图付费/毛利</td></tr>
-            <tr><td>中国平台</td><td>腾讯、阿里、字节（未上市）</td><td>更接近中国流量、模型与电商分发环境</td><td>腾讯 8/12；阿里合作进展待公司披露</td></tr>
-            <tr><td>公司自身</td><td>Meitu H1</td><td>直接决定 Q2/H1 盈利预期</td><td><strong>8/26 中期业绩</strong></td></tr>
+            <tr><td>美国市场领导权</td><td>软件/应用相对半导体连续走强，而非单日反弹</td><td><a href="https://www.nasdaq.com/videos/nasdaq-100-weekly-nasdaq-100r-index-2q2026-performance-commentary">Nasdaq 2Q 回顾</a>仍称反弹由半导体突出表现驱动，软件分化扩大</td><td><span class="tag risk">未通过</span></td></tr>
+            <tr><td>应用财报广度</td><td>至少两至三家应用/创意软件上修收入、ARR 和指引</td><td><a href="https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm">Adobe Q2</a>收入 66.2 亿美元、+13%，AI-first ARR 超 5 亿美元且同比增至三倍，并上调全年目标；目前仍是单个强样本</td><td><span class="tag warn">部分通过</span></td></tr>
+            <tr><td>板块价格广度</td><td>应用股在硬件调整时能独立走强，并保持五日以上</td><td>6/1 港股应用股集体拉升，但美图 T0 后五日 -12.5%；7/17 又与科技股共跌</td><td><span class="tag risk">未通过</span></td></tr>
+            <tr><td>中国平台确认</td><td>腾讯/阿里披露应用参与度、商业化、分发或推理降本</td><td>腾讯 8/12 尚未披露；阿里合作的收入贡献未量化</td><td><span class="tag warn">待事件</span></td></tr>
+            <tr><td>美图利润转换</td><td>付费、生产力收入、毛利、现金流同时成立</td><td>Q1 只通过付费/收入/ARR；Q2/H1 利润、毛利、现金流未知</td><td><span class="tag warn">部分通过</span></td></tr>
+            <tr><td>替代风险</td><td>应用获得分发和降本，但平台不直接吞掉工作流</td><td>Adobe 已证明 incumbent 也能把 AI 变成 ARR；这既验证需求，也提高美图竞争门槛</td><td><span class="tag warn">双刃剑</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>美国映射：谁是直接对手，谁只是风险偏好代理</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>层级</th><th>美国/全球映射</th><th>关系类型</th><th>传导到美图的方式</th><th>近期验证</th></tr></thead>
+          <tbody>
+            <tr><td>创意工作流</td><td>Adobe、Figma；Canva（未上市）</td><td><strong>直接竞争/需求读穿</strong></td><td>定价、Agent 工作流、企业席位与模型打包决定生产力业务上限</td><td>Adobe Q2 已验证 AI 需求；Figma 8/5、Adobe 9/10</td></tr>
+            <tr><td>消费创意/社交</td><td>Meta、Snap</td><td><strong>相邻应用 + 平台替代</strong></td><td>创意工具参与度、广告需求和消费者付费；平台也可内置编辑能力</td><td>Meta 7/29；Snap 8/3</td></tr>
+            <tr><td>应用获客/变现</td><td>AppLovin、Unity</td><td><strong>CAC/广告代理</strong></td><td>反映应用买量效率、广告变现和风险偏好，不是美图估值可比</td><td>AppLovin 8/5；关注 CAC、广告转化与指引</td></tr>
+            <tr><td>模型/入口/云</td><td>Microsoft、Alphabet、Amazon、Apple、OpenAI（未上市）</td><td><strong>供应商 + 分发者 + 潜在替代者</strong></td><td>决定 API/推理成本、系统入口、电商/办公分发，也可能把创意任务直接包进助手</td><td>Microsoft 7/29；Apple/Amazon 7/30；Alphabet 产品更新持续</td></tr>
+            <tr><td>广义企业 AI 软件</td><td>Palantir、Snowflake、Datadog</td><td><strong>风险偏好/商业化广度</strong></td><td>验证企业是否愿意为 AI 软件付费，但客户、产品和毛利结构与美图差异大</td><td>只能做板块广度，不作直接可比估值</td></tr>
+            <tr><td>硬件对照组</td><td>NVIDIA、SOX/半导体</td><td><strong>间接成本与拥挤度</strong></td><td>硬件回落可能释放注意力；也可能代表整个 AI 风险偏好下降</td><td>NVIDIA 8/26；硬件弱不自动等于应用强</td></tr>
+            <tr><td>中国确认层</td><td>腾讯、阿里、字节（未上市）</td><td><strong>本地分发/模型/电商</strong></td><td>更接近中国流量、渠道、模型成本和电商内容需求</td><td>腾讯 8/12；阿里合作贡献待披露</td></tr>
+            <tr><td>最终公司验证</td><td>Meitu H1</td><td><strong>直接财务证明</strong></td><td>决定 Q2/H1 盈利、毛利、现金流和应用主线能否落到美图</td><td><strong>8/26 中期业绩</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>未来四周的三种情景</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>情景</th><th>可观察触发</th><th>行业含义</th><th>对美图的验证</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag good">主线切换确认</span></td><td>美国平台强调应用收入/分发/推理效率；Figma/AppLovin 等出现财报广度；腾讯确认中国应用变现</td><td>从硬件独占主线转成“硬件 + 应用盈利”双主线</td><td>中报同时守住付费、生产力收入、≥约 73% 毛利和现金流</td></tr>
+            <tr><td><span class="tag warn">战术性轮动</span></td><td>硬件继续调整，应用股反弹但财报只个别强、五日广度不持续</td><td>更多是拥挤度/空头回补，弹性大但持续性低</td><td>美图可随板块脉冲，但不能提高长期盈利假设</td></tr>
+            <tr><td><span class="tag risk">应用再定价向下</span></td><td>平台直接打包创意 Agent；软件席位/ARPU 承压；美图 Q2 增长靠营销且毛利/现金流恶化</td><td>“模型降本利好应用”被“平台吞工作流”反转</td><td>小盘、高波动、可转债/治理风险会放大下行</td></tr>
           </tbody>
         </table>
       </div>
       <div class="callout amber">
-        <strong>当前判断：未来四周“有机会”，但不是已确认机会</strong><br>
-        事件密度高于平时：美国平台财报 → 腾讯 → 美图中报，确实可能把注意力从硬件资本开支转向应用商业化。确认条件不是硬件下跌，而是平台管理层强调应用收入/分发/推理效率，随后美图交出付费增长、生产力收入、毛利和现金流。若平台直接打包创意工作流，或美图 Q2 增长靠营销且毛利恶化，则窗口反而是风险事件。
+        <strong>结论：近期“会不会有机会”——有条件、有事件密度，但不是高置信主线。</strong><br>
+        最早的确认顺序是：7/29—8/5 美国平台/应用财报出现盈利与广度 → 8/12 腾讯确认本地应用商业化 → 8/26 美图用 Q2/H1 证明收入能转成毛利、现金流和每股价值。任一层只有价格、没有财务，均按战术性轮动处理；本章节是研究支持，不构成投资建议。
       </div>
     </section>
 
@@ -884,43 +949,105 @@
 
     <section id="timeline">
       <h2>大事件时间轴：已发生与下一检查点</h2>
-      <p class="section-dek">沿用 Seed 时间轴方法：区分 completed / confirmed / TBA，记录事实、市场反应、传导机制和下一验证；颜色表示证据状态，不表示买卖方向。</p>
+      <p class="section-dek">沿用 Seed 时间轴方法：区分 completed / confirmed / TBA，记录事实、市场反应、传导机制和下一验证。历史事件统一对应五个交易日价格窗口；颜色表示证据状态，不表示买卖方向。</p>
+      <div class="callout blue">
+        <strong>5 日窗口怎么算</strong><br>
+        <code>T0</code> 是信息首次可交易的完整交易日：盘后公告顺延到下一交易日，停牌事件顺延到复牌日；<code>T+5</code> 是 T0 之后第 5 个美图交易日。表中“全窗口”为 T-1 收盘至 T+5，“后续”为 T0 收盘至 T+5，“超额”为全窗口收益减去相同起止日的恒生科技指数收益。价格使用截至 2026-07-24 的<a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-07-24,1000,qfq">腾讯前复权日线</a>；公告时间按<a href="https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&amp;lang=EN&amp;market=SEHK&amp;stockId=148851">HKEX 官方索引</a>。这是事件共振，不是单因果证明。
+      </div>
       <h3>历史已完成</h3>
+      <div class="table-wrap event-study">
+        <table>
+          <thead>
+            <tr><th>事件</th><th>T0 规则</th><th>T-1</th><th>T0</th><th>T+5</th><th>全窗口</th><th>T0 后续</th><th>恒生科技</th><th>超额</th><th>归因边界</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2023-06-19 MiracleVision</td><td>发布日期；时点未知</td><td>2.35</td><td>2.85</td><td>2.92</td><td><span class="up">+24.3%</span></td><td><span class="up">+2.5%</span></td><td>-6.2%</td><td><span class="up">+30.4pct</span></td><td>低置信；无法确认盘中/盘后</td></tr>
+            <tr><td>2025-01-27 DeepSeek/开源叙事</td><td>叙事冲击起点</td><td>3.13</td><td>3.64</td><td>4.54</td><td><span class="up">+45.0%</span></td><td><span class="up">+24.7%</span></td><td>+8.6%</td><td><span class="up">+36.4pct</span></td><td>行业叙事，多重催化</td></tr>
+            <tr><td>2025-05-21 阿里可转债/合作</td><td>5/20 22:59 后首日</td><td>5.90</td><td>7.02</td><td>6.36</td><td><span class="up">+7.8%</span></td><td><span class="down">-9.4%</span></td><td>-2.7%</td><td><span class="up">+10.5pct</span></td><td>首日跳升，随后回吐</td></tr>
+            <tr><td>2025-12-31 可转债完成</td><td>盘后公告 + 元旦后首日</td><td>7.00</td><td>7.43</td><td>7.93</td><td><span class="up">+13.3%</span></td><td><span class="up">+6.7%</span></td><td>+3.1%</td><td><span class="up">+10.2pct</span></td><td>条款早已公布，含年初风险偏好</td></tr>
+            <tr><td>2026-03-26 停牌/披露缺陷</td><td>3/30 复牌</td><td>4.73</td><td>4.32</td><td>4.39</td><td><span class="down">-7.2%</span></td><td><span class="up">+1.6%</span></td><td>-2.1%</td><td><span class="down">-5.1pct</span></td><td>与年报/回购同一窗口</td></tr>
+            <tr><td>2026-03-27 年报/回购计划</td><td>3/30 复牌</td><td>4.73</td><td>4.32</td><td>4.39</td><td><span class="down">-7.2%</span></td><td><span class="up">+1.6%</span></td><td>-2.1%</td><td><span class="down">-5.1pct</span></td><td>与停牌事件不可拆分</td></tr>
+            <tr><td>2026-05-06 Q1 更新</td><td>07:45 盘前同日</td><td>4.19</td><td>4.66</td><td>5.04</td><td><span class="up">+20.3%</span></td><td><span class="up">+8.2%</span></td><td>+3.3%</td><td><span class="up">+17.0pct</span></td><td>公司 KPI 催化，归因中等</td></tr>
+            <tr><td>2026-06-01 AI 应用轮动</td><td>板块交易日</td><td>4.36</td><td>5.50</td><td>4.81</td><td><span class="up">+10.3%</span></td><td><span class="down">-12.5%</span></td><td>-2.6%</td><td><span class="up">+13.0pct</span></td><td>集体上涨，二级催化，快速回吐</td></tr>
+            <tr><td>2026-06-17 影像节</td><td>活动日；时点未知</td><td>4.62</td><td>4.69</td><td>3.69</td><td><span class="down">-20.1%</span></td><td><span class="down">-21.3%</span></td><td>-5.4%</td><td><span class="down">-14.7pct</span></td><td>与 6/18 治理公告重叠</td></tr>
+            <tr><td>2026-06-18 调查整改</td><td>21:29 后 + 6/19 假期</td><td>4.38</td><td>4.10</td><td>3.78</td><td><span class="down">-13.7%</span></td><td><span class="down">-7.8%</span></td><td>-4.6%</td><td><span class="down">-9.1pct</span></td><td>与影像节、回购重叠</td></tr>
+            <tr><td>2026-07-03 创始人增持披露</td><td>20:44 后首日</td><td>4.00</td><td>4.11</td><td>3.95</td><td><span class="down">-1.3%</span></td><td><span class="down">-3.9%</span></td><td>+3.9%</td><td><span class="down">-5.2pct</span></td><td>首日上升未延续</td></tr>
+            <tr><td>2026-07-17 科技/应用共跌</td><td>板块交易日</td><td>4.36</td><td>3.96</td><td>3.93</td><td><span class="down">-9.9%</span></td><td><span class="down">-0.8%</span></td><td>-4.2%</td><td><span class="down">-5.6pct</span></td><td>宏观/板块 Beta，非公司公告</td></tr>
+          </tbody>
+        </table>
+      </div>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-date">2023-06-19 · COMPLETED</div>
           <div class="timeline-title">MiracleVision 发布</div>
           <p>确立垂直视觉模型路线；仍缺独立质量/成本基准，不能据此认定前沿模型护城河。</p>
+          <p class="reaction-line"><strong>5 日：</strong>2.35 → 2.85 → 2.92；全窗口 <span class="up">+24.3%</span>，但 T0 后仅 <span class="up">+2.5%</span>。发布时间未知，归因置信度低。</p>
         </div>
         <div class="timeline-item">
-          <div class="timeline-date">2025-01-27 → 02-19 · COMPLETED</div>
+          <div class="timeline-date">2025-01-27 · COMPLETED</div>
           <div class="timeline-title">DeepSeek / 开源成本冲击推动中国 AI 应用重估</div>
-          <p>美图从事件前 HK$3.13 到 HK$6.50，约 +107.7%。说明小盘应用对模型成本叙事极敏感，不证明利润已兑现。</p>
+          <p>此前用 2 月 19 日终点得到 +107.7%，窗口过长。统一五日后为 HK$4.54：全窗口 +45.0%、相对恒生科技 +36.4pct，仍显示小盘应用对模型成本叙事极敏感，但不证明利润已兑现。</p>
+          <p class="reaction-line"><strong>5 日：</strong>3.13 → 3.64 → 4.54；全窗口 <span class="up">+45.0%</span>，T0 后 <span class="up">+24.7%</span>。</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">2025-05-21 · COMPLETED</div>
           <div class="timeline-title">阿里可转债与战略合作</div>
-          <p>单日约 +19.0%、成交显著放大；下一检查点是合作收入、分发贡献和有效转股价。</p>
+          <p>5 月 20 日 22:59 公告，T0 为 5 月 21 日。首日约 +19.0%，但之后五个交易日回吐 9.4%；下一检查点仍是合作收入、分发贡献和有效转股价。</p>
+          <p class="reaction-line"><strong>5 日：</strong>5.90 → 7.02 → 6.36；全窗口 <span class="up">+7.8%</span>，T0 后 <span class="down">-9.4%</span>。</p>
         </div>
         <div class="timeline-item">
-          <div class="timeline-date">2026-03-26 → 06-18 · COMPLETED / GOVERNANCE</div>
-          <div class="timeline-title">未经批准业绩短片误发、停牌、调查整改</div>
-          <p>这是实际披露控制缺陷，不是抽象风险；后续任何重复误发、迟报或停牌应升级为硬否决。</p>
+          <div class="timeline-date">2025-12-31 · COMPLETED</div>
+          <div class="timeline-title">阿里可转债发行完成</div>
+          <p>12 月 31 日 18:37 盘后公告，元旦后首个交易日作为 T0。五日反应为正，但完成本身大部分已由原始条款预告，不能全归因于公告。</p>
+          <p class="reaction-line"><strong>5 日：</strong>7.00 → 7.43 → 7.93；全窗口 <span class="up">+13.3%</span>，T0 后 <span class="up">+6.7%</span>。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-03-26 · COMPLETED / GOVERNANCE</div>
+          <div class="timeline-title">未经批准业绩短片误发并停牌</div>
+          <p>股票 3 月 26—27 日停牌，T0 必须顺延到 3 月 30 日复牌。这是实际披露控制缺陷，不是抽象风险。</p>
+          <p class="reaction-line"><strong>5 日：</strong>4.73 → 4.32 → 4.39；全窗口 <span class="down">-7.2%</span>。与年报/回购计划共用同一可交易窗口，不能拆分归因。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-03-27 · COMPLETED / EARNINGS + CAPITAL</div>
+          <div class="timeline-title">2025 年报与最多 HK$3 亿回购计划</div>
+          <p>结果与回购公告均在收市后发布，复牌日出现负缺口，之后五个交易日仅修复 1.6%。正面经营/回购信号未抵消治理与预期差。</p>
+          <p class="reaction-line"><strong>5 日：</strong>4.73 → 4.32 → 4.39；全窗口 <span class="down">-7.2%</span>，相对恒生科技 <span class="down">-5.1pct</span>。</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">2026-05-06 · COMPLETED</div>
           <div class="timeline-title">Q1 经营更新</div>
-          <p>单日约 +11.2%；付费、核心收入和 ARR 是有效催化，但利润、毛利和现金流仍未披露。</p>
+          <p>07:45 盘前公告，T0 为当天。付费、核心收入和 ARR 是有效催化，五日后仍有跟随，但利润、毛利和现金流未披露。</p>
+          <p class="reaction-line"><strong>5 日：</strong>4.19 → 4.66 → 5.04；全窗口 <span class="up">+20.3%</span>，T0 后 <span class="up">+8.2%</span>。</p>
         </div>
         <div class="timeline-item">
-          <div class="timeline-date">2026-06-17 → 06-26 · COMPLETED</div>
+          <div class="timeline-date">2026-06-01 · COMPLETED / SECTOR ROTATION</div>
+          <div class="timeline-title">港股 AI 应用与 SaaS 集体拉升</div>
+          <p>美图单日 +26.2%，金蝶等应用/SaaS 同步上涨；二级报道引用 4 月 App 收入、海外增长、Agent/AI PC 叙事。底层券商数据未取得，不能升级为公司披露。</p>
+          <p class="reaction-line"><strong>5 日：</strong>4.36 → 5.50 → 4.81；全窗口 <span class="up">+10.3%</span>，但 T0 后 <span class="down">-12.5%</span>，显示轮动未持续。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-06-17 · COMPLETED</div>
           <div class="timeline-title">影像节：发布会没有形成持续行情</div>
-          <p>事件日后收盘约 -23.0%；只能说明产品发布缺少持续成交确认，不能把后续下跌单因果归于发布会。</p>
+          <p>五日后仍显著下跌，只能说明产品发布缺少持续成交确认；6 月 18 日治理整改公告与回购也在窗口内，不能把下跌单因果归于发布会。</p>
+          <p class="reaction-line"><strong>5 日：</strong>4.62 → 4.69 → 3.69；全窗口 <span class="down">-20.1%</span>，T0 后 <span class="down">-21.3%</span>。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-06-18 · COMPLETED / GOVERNANCE</div>
+          <div class="timeline-title">调查整改及迟报理财产品认购</div>
+          <p>21:29 盘后公告，且 6 月 19 日休市，T0 为 6 月 22 日。控制措施虽已提出，迟报事实仍是黄旗；价格窗口与影像节卖压重叠。</p>
+          <p class="reaction-line"><strong>5 日：</strong>4.38 → 4.10 → 3.78；全窗口 <span class="down">-13.7%</span>，T0 后 <span class="down">-7.8%</span>。</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">2026-07-03 · COMPLETED</div>
           <div class="timeline-title">创始人增持</div>
-          <p>160 万股、均价 HK$4.023；是利益一致信号，不替代估值、治理和中报验证。</p>
+          <p>160 万股、均价 HK$4.023；20:44 盘后披露，T0 为 7 月 6 日。首日上涨没有保持到 T+5，说明利益一致信号不替代估值、治理和中报验证。</p>
+          <p class="reaction-line"><strong>5 日：</strong>4.00 → 4.11 → 3.95；全窗口 <span class="down">-1.3%</span>，T0 后 <span class="down">-3.9%</span>。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-07-17 · COMPLETED / SECTOR RISK-OFF</div>
+          <div class="timeline-title">恒生科技、AI 应用与模型股普跌</div>
+          <p>恒生科技当日 -4.37%，应用、模型、芯片和大型平台共同承压；这是板块风险偏好而非美图单独爆雷，也说明应用尚未脱离科技 Beta 成为独立主线。</p>
+          <p class="reaction-line"><strong>5 日：</strong>4.36 → 3.96 → 3.93；全窗口 <span class="down">-9.9%</span>，T0 后 <span class="down">-0.8%</span>。</p>
         </div>
       </div>
       <h3>未来已确认 / 待定</h3>
@@ -956,7 +1083,7 @@
           <p>检验创意工作流的 AI 变现与捆绑竞争；Canva/OpenAI 未上市，产品发布只能列 TBA。</p>
         </div>
       </div>
-      <p><small>机器可读版本：<a href="./data/event-timeline.csv">event-timeline.csv</a>。</small></p>
+      <p><small>机器可读版本：<a href="./data/event-timeline.csv">event-timeline.csv</a>；结构化事件价格窗：<a href="./data/event-price-reactions.csv">event-price-reactions.csv</a>。</small></p>
     </section>
 
     <section id="sources">
@@ -996,6 +1123,11 @@
         <li><a href="https://blog.google/products-and-platforms/products/gemini/updated-image-editing-model/">Google · Gemini image editing</a></li>
         <li><a href="https://www.canva.com/newsroom/news/canva-create-2026-ai/">Canva Create 2026</a></li>
         <li><a href="https://news.adobe.com/news/2026/06/adobe-unveils-major-expansion">Adobe Creative Agent expansion</a></li>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm">Adobe FY2026Q2 业绩与 AI-first ARR</a></li>
+        <li><a href="https://www.nasdaq.com/docs/NYGBIG-software-selloff_article_final">Nasdaq · 2026 年软件承压与 AI 商品化风险</a></li>
+        <li><a href="https://www.nasdaq.com/videos/nasdaq-100-weekly-nasdaq-100r-index-2q2026-performance-commentary">Nasdaq · 2026Q2 半导体/软件分化</a></li>
+        <li><a href="https://finance.sina.com.cn/wm/2026-06-01/doc-inhzwyqm5155141.shtml">6 月 1 日港股 AI 应用轮动（二级来源）</a></li>
+        <li><a href="https://stock.jrj.com.cn/2026/07/17161357834603.shtml">7 月 17 日港股科技/AI 应用普跌（二级来源）</a></li>
         <li><a href="https://www.sse.com.cn/lawandrules/sselawsrules2025/global/hkexsc/c/c_20251017_10795123.shtml">上交所港股通实施办法</a></li>
         <li><a href="https://www.sse.com.cn/services/hkexsc/disclo/eligible/">沪市港股通当前名单</a></li>
         <li><a href="https://www.szse.cn/szhk/hkbussiness/underlylist/">深市港股通当前名单</a></li>
@@ -1011,6 +1143,9 @@
         <li><a href="https://www.tencent.com/en-us/investors.html">腾讯投资者日历</a></li>
         <li><a href="https://investor.nvidia.com/events-and-presentations/events-and-presentations/event-details/2026/NVIDIA-2nd-Quarter-FY27-Financial-Results/default.aspx">NVIDIA 财报日历（间接映射）</a></li>
         <li><a href="https://www.hsi.com.hk/en-hk/media-room/">恒生指数季度检讨日历</a></li>
+        <li><a href="https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&amp;lang=EN&amp;market=SEHK&amp;stockId=148851">HKEX 美图公告索引与发布时间</a></li>
+        <li><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-07-24,1000,qfq">腾讯行情 · 美图前复权日线</a></li>
+        <li><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2023-01-01,2026-07-24,1000,qfq">腾讯行情 · 恒生科技指数日线</a></li>
         <li><a href="https://www.boc.cn/sourcedb/whpj/enindex.html">中国银行外汇牌价</a></li>
       </ol>
       <details>
@@ -1025,7 +1160,7 @@
   <footer>
     <div class="wrap">
       <p>本报告是基于公开资料的研究快照，不构成投资建议、要约、目标价或收益承诺。第三方流量与商店数据会变化；Q1 经营更新未经审核或审阅；估值对假设高度敏感。</p>
-      <p>配套数据：<a href="./data/financial-history.csv">年度财务</a> · <a href="./data/financial-half-year-series.csv">半年度财务</a> · <a href="./data/quarterly-watch.csv">Q1/Q2 验证</a> · <a href="./data/pe-denominator-matrix.csv">P/E 分母矩阵</a> · <a href="./data/app-public-signals.csv">App/网站信号</a> · <a href="./data/event-timeline.csv">事件时间轴</a> · <a href="./data/small-cap-risk-register.csv">小盘风险登记</a> · <a href="./data/valuation-scenarios.csv">估值情景</a></p>
+      <p>配套数据：<a href="./data/financial-history.csv">年度财务</a> · <a href="./data/financial-half-year-series.csv">半年度财务</a> · <a href="./data/quarterly-watch.csv">Q1/Q2 验证</a> · <a href="./data/pe-denominator-matrix.csv">P/E 分母矩阵</a> · <a href="./data/app-public-signals.csv">App/网站信号</a> · <a href="./data/event-timeline.csv">事件时间轴</a> · <a href="./data/event-price-reactions.csv">事件 5 日价格窗</a> · <a href="./data/small-cap-risk-register.csv">小盘风险登记</a> · <a href="./data/valuation-scenarios.csv">估值情景</a></p>
     </div>
   </footer>
 </body>

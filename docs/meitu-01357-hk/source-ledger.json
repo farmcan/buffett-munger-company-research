@@ -197,7 +197,8 @@
       "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=148851",
       "snapshot_sha256": null,
       "used_for": [
-        "official filing discovery and chronology"
+        "official filing discovery and chronology",
+        "exact release times used to align after-close announcements with the first tradable session"
       ],
       "limitations": "Live index; users should open the exact dated filing when verifying a claim."
     },
@@ -671,9 +672,11 @@
       "publisher": "Tencent",
       "published_at": "2026-07-24",
       "retrieved_at": "2026-07-27",
-      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2025-01-01,2026-07-27,640,qfq",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-07-24,1000,qfq",
+      "benchmark_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2023-01-01,2026-07-24,1000,qfq",
       "snapshot_sha256": {
-        "01357.HK": "9a79b9154c1734502a39e873e40a182ff7d96f39e489b62c0d3e11410679c9e7",
+        "01357.HK": "dd23814f21d1fde7ee59729dcb00d2623f6fd9861ef3bac9a86ec097d7c04675",
+        "HSTECH": "89d8dd50ea933e02302a60dc3da54b2d7ab77a985100139f8b952bb731aef1c8",
         "09988.HK": "5b125d18a9d8bad67b4f2569c31f2f1905ec4bba817f9d6702dd428a0eec3be7",
         "00700.HK": "d2f5cc53682cc32b9a3921f90c9733edb36ad144161a98ead2e2db588ffcdb87",
         "01024.HK": "84318e108a82e88016f4cb4c687d734325977bf11d2c87df7cd918de399fae8f",
@@ -685,9 +688,11 @@
       "used_for": [
         "5/20/60-trading-day and YTD returns",
         "Meitu 52-week range and drawdown",
-        "AI-application rotation breadth"
+        "AI-application rotation breadth",
+        "T-1/T0/T+5 event-reaction windows",
+        "same-date Hang Seng TECH benchmark and abnormal-return calculation"
       ],
-      "limitations": "Vendor market data; adjusted-return calculation is deterministic but not exchange-certified."
+      "limitations": "Vendor qfq market data through 2026-07-24; adjusted-return and event-window calculations are deterministic but not exchange-certified. HSTECH is a risk-sentiment benchmark, not a direct peer portfolio."
     },
     {
       "id": "P02",
@@ -1133,6 +1138,71 @@
       "snapshot_sha256": null,
       "used_for": ["comparison of Meitu reportable net short-position trend"],
       "limitations": "Reportable net short positions are not total market short interest and may include hedges."
+    },
+    {
+      "id": "T01",
+      "tier": "A-",
+      "kind": "official_index_commentary",
+      "title": "Software Selloff and AI Commoditisation Risk — February 2026",
+      "publisher": "Nasdaq Global Indexes",
+      "published_at": "2026-03",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.nasdaq.com/docs/NYGBIG-software-selloff_article_final",
+      "snapshot_sha256": null,
+      "used_for": ["historical US software-versus-hardware regime and AI replacement-risk framing"],
+      "limitations": "Index-provider commentary; sector baskets include many companies that are not direct Meitu comparables."
+    },
+    {
+      "id": "T02",
+      "tier": "A-",
+      "kind": "official_index_commentary",
+      "title": "Nasdaq-100 2Q2026 Performance Commentary",
+      "publisher": "Nasdaq",
+      "published_at": "2026-07-13",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.nasdaq.com/videos/nasdaq-100-weekly-nasdaq-100r-index-2q2026-performance-commentary",
+      "snapshot_sha256": null,
+      "used_for": ["evidence that 2Q2026 AI leadership remained semiconductor-led with widening software divergence"],
+      "limitations": "Nasdaq-100 large-cap commentary, not a pure AI-application index."
+    },
+    {
+      "id": "T03",
+      "tier": "A",
+      "kind": "sec_earnings_release",
+      "title": "Adobe Reports Record Q2 FY2026 Results",
+      "publisher": "Adobe / SEC",
+      "published_at": "2026-06-11",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+      "snapshot_sha256": null,
+      "used_for": ["US creative-workflow monetisation proof", "AI-first ARR", "direct incumbent and bundling-risk mapping"],
+      "limitations": "Adobe is a larger enterprise creative suite with different customer mix and economics; it is not a valuation comparable."
+    },
+    {
+      "id": "T04",
+      "tier": "B-",
+      "kind": "reported_market_catalyst",
+      "title": "Meitu Rose 26% as Reported April App Revenue and Agent Narratives Drove AI-Application Rotation",
+      "publisher": "Sina Finance",
+      "published_at": "2026-06-01",
+      "retrieved_at": "2026-07-27",
+      "url": "https://finance.sina.com.cn/wm/2026-06-01/doc-inhzwyqm5155141.shtml",
+      "snapshot_sha256": null,
+      "used_for": ["June 1 AI-application basket rally and reported app-revenue catalyst"],
+      "limitations": "Secondary report citing UBS and Goldman without the underlying reports; April app-revenue and ARPU claims are reported broker estimates, not company filings."
+    },
+    {
+      "id": "T05",
+      "tier": "B",
+      "kind": "market_wrap",
+      "title": "Hong Kong Technology and AI-Application Selloff — 17 July 2026",
+      "publisher": "JRJ",
+      "published_at": "2026-07-17",
+      "retrieved_at": "2026-07-27",
+      "url": "https://stock.jrj.com.cn/2026/07/17161357834603.shtml",
+      "snapshot_sha256": null,
+      "used_for": ["July 17 broad HK technology/application risk-off breadth"],
+      "limitations": "Secondary market wrap; price calculations use the separately frozen Tencent qfq series."
     }
   ]
 }
