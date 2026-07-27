@@ -1,18 +1,25 @@
 {
   "schema_version": "seed.public-research-publication.v2",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-07-27T16:09:41+08:00",
+  "reviewed_at": "2026-07-27T16:36:24+08:00",
   "artifact_status": "needs_human_review",
   "production_reviewed": false,
   "publication_scope": [
     ".nojekyll",
     "index.html",
+    "publication-manifest.json",
     "listed-company-fundamentals-event-research-methodology.html",
     "listed-company-fundamentals-event-research-methodology.md",
+    "templates/README.md",
+    "templates/company-research-v2-contract.md",
+    "templates/company-research-v2.example.json",
+    "templates/report-v2-template.html",
+    "templates/research-dimensions-and-gates.md",
     "meitu-01357-hk/README.md",
     "meitu-01357-hk/combined-artifact.v2.json",
     "meitu-01357-hk/data/app-public-signals.csv",
     "meitu-01357-hk/data/critical-evidence-anchors.json",
+    "meitu-01357-hk/data/critical-evidence-locators.csv",
     "meitu-01357-hk/data/event-price-reactions.csv",
     "meitu-01357-hk/data/event-timeline.csv",
     "meitu-01357-hk/data/financial-five-year.csv",
@@ -38,7 +45,7 @@
   ],
   "source_repository": "farmcan/seed",
   "source_branch": "agent/buffett-munger-methodology",
-  "source_commit": "d354d3213161bee4edc9848b040de55e3c1b755c",
+  "source_commit": "f0bd60b9494d6a8e5db51da9bde0cab76bf67ca8",
   "review_checks": {
     "contains_local_absolute_paths": false,
     "contains_private_library_paths": false,
@@ -50,10 +57,14 @@
     "publication_validator_passed": true,
     "short_position_series_checked": true,
     "critical_evidence_anchors": 20,
+    "critical_evidence_locators": 31,
     "missing_critical_html_anchors": 0,
+    "coverage_matrix_dimensions": 25,
+    "coverage_matrix_indicators": 50,
+    "gate_results": 9,
     "desktop_html_checked": true,
     "responsive_css_reviewed": true,
-    "mobile_runtime_checked": false
+    "mobile_runtime_checked": true
   },
   "publication_note": "Public, evidence-linked research snapshot. It passed deterministic publication checks and is suitable for public review, but it has no signed human-review.json and therefore remains needs_human_review rather than production_reviewed. Large raw PDFs and API snapshots remain outside the public repository; their source records and SHA-256 values are retained where available."
 }

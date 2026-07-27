@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>上市公司研究方法 V2</title>
+  <title>上市公司研究方法 V2.1</title>
   <style>
     :root{--ink:#17221e;--muted:#607068;--paper:#f4f1ea;--card:#fffdf8;--line:#d8d1c3;--green:#176b50;--amber:#a66f16;--red:#9a403a;--blue:#386a8e}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 8% 0,rgba(23,107,80,.11),transparent 31rem),var(--paper);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans CJK SC",sans-serif}
@@ -18,12 +18,12 @@
 </head>
 <body>
   <header>
-    <div class="eyebrow">Reusable company research · V2.0</div>
+    <div class="eyebrow">Reusable company research · V2.1</div>
     <h1>上市公司基本面 × 行业 × 事件研究方法</h1>
     <p class="lead">把“长期公司质量”和“近期市场事件”拆成两个产品入口，底层共享同一套官方事实、口径桥、证据锚点和发布状态。目标不是给出更肯定的结论，而是让每个结论可复算、可证伪、可更新。</p>
     <div class="meta"><span class="pill">25 个研究维度</span><span class="pill">50 个指标族</span><span class="pill">9 道闸门</span><span class="pill">事实级引用</span><span class="pill">非投资建议</span></div>
   </header>
-  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#pricing">市场定价</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#publication">发布闭环</a></div></nav>
+  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#publication">发布闭环</a><a href="./templates/report-v2-template.html">HTML 模板</a></div></nav>
   <main>
     <section id="views">
       <h2>一个事实底座，两个阅读入口</h2>
@@ -37,15 +37,29 @@
 
     <section id="evidence">
       <h2>事实级证据合同</h2>
-      <p class="dek">“有 80 个来源”不等于关键数字可审计。每个关键事实必须直接绑定原始来源、页码或章节、原文摘录、期间、单位、合并范围、公式和访问日期；读者应能在两次点击内回到原文。</p>
+      <p class="dek">“有 80 个来源”不等于关键数字可审计。每个关键事实必须直接绑定原始来源、页码或章节、原文摘录、期间、单位、合并范围、公式和访问日期；PDF 还应绑定文档哈希、规范化文本哈希、页文本哈希和页内行号，读者应能在两次点击内回到原文。</p>
       <div class="table-wrap"><table><caption>每个关键数字的最小字段</caption><thead><tr><th>字段</th><th>内容</th><th>为什么需要</th></tr></thead><tbody>
         <tr><td><code>evidence_id</code></td><td>稳定、唯一、可从正文深链</td><td>支持增量更新与引用测试</td></tr>
         <tr><td><code>source_url / title</code></td><td>官方原始链接及文件名</td><td>区分主源、二级源和派生数据</td></tr>
         <tr><td><code>page / section / quote</code></td><td>页码、表名、原文短摘</td><td>避免让读者在数百页报告中自行寻找</td></tr>
+        <tr><td><code>line_start / line_end / text_sha256</code></td><td>页内规范化文本行号、全文与页文本哈希</td><td>让行号可重复审计；行号只对绑定哈希有效，不冒充 PDF 视觉行号</td></tr>
         <tr><td><code>period / unit / scope</code></td><td>期间、币种、单位、持续经营/集团/分部</td><td>防止同比、合并范围和币种错配</td></tr>
         <tr><td><code>formula / inputs</code></td><td>派生值公式及每项输入</td><td>PE、ROIC、owner earnings 与稀释可复算</td></tr>
         <tr><td><code>status / limitations</code></td><td>verified、partial、unknown 及限制</td><td>禁止模型把缺失自动补成事实</td></tr>
       </tbody></table></div>
+    </section>
+
+    <section id="shorts">
+      <h2>价格形成与空头定位</h2>
+      <p class="dek">小盘股在整数位附近横盘，不能只用 20 日均线或“空头很强”解释。必须把价格状态、官方净空仓、每日卖空成交、借券条件与公司级供求分开。</p>
+      <div class="table-wrap"><table><caption>五层证据与允许结论</caption><thead><tr><th>层</th><th>最小数据</th><th>回答什么</th><th>禁止误读</th></tr></thead><tbody>
+        <tr><td>价格状态</td><td>20/60/200 日均线、60 日 VWAP、长期回撤和区间成交密度</td><td>当前处于短线均衡、长期弱势或趋势修复</td><td>横盘等于硬底</td></tr>
+        <tr><td>官方净空仓</td><td>报告日净空仓股数、固定股本分母、阈值与滞后</td><td>可申报空头存量及边际方向</td><td>等于全部市场空头或裸空</td></tr>
+        <tr><td>卖空成交流量</td><td>卖空成交额/总成交额的连续序列</td><td>当日做空交易强度</td><td>直接等于净空仓增加</td></tr>
+        <tr><td>借券条件</td><td>可借量、费率、utilisation、recall</td><td>继续加空或维持空仓的难度</td><td>缺数据时猜测 squeeze</td></tr>
+        <tr><td>公司级供求</td><td>回购、创始人交易、可转债、激励、配售、指数/互联互通和解禁</td><td>股票供给、被动资金与强制交易</td><td>把授权当执行、把传闻当事实</td></tr>
+      </tbody></table></div>
+      <div class="callout"><strong>结论纪律：</strong>至少两至三层同向，才写“边际空头增强/减弱”；若空头下降而价格不涨，应优先检查上方供给、基本面等待期和自然卖盘，而不是宣称空头已经消失。</div>
     </section>
 
     <section id="bridges">
@@ -106,9 +120,10 @@
         <tr><td><code>human-review.json</code></td><td>具名复核、时间、范围与未解决问题；不得由模型伪造</td></tr>
       </tbody></table></div>
       <div class="callout"><strong>成熟度边界：</strong>静态长报告可以是优秀的认知包；只有数字桥、原文深链、红队、自动校验、更新日志和具名人工复核闭环后，才是决策级研究底稿。</div>
+      <p><a href="./templates/report-v2-template.html">打开可视化 HTML 报告模板 →</a> · <a href="./templates/README.md">查看模板实现说明 →</a></p>
       <p><a href="./listed-company-fundamentals-event-research-methodology.md">查看完整方法、检查表与巴菲特—芒格原始来源记录 →</a></p>
     </section>
   </main>
-  <footer>V2 methodology · 2026-07-27 · Public sources, explicit uncertainty, no investment advice. <a href="./index.html">返回研究目录</a></footer>
+  <footer>V2.1 methodology · 2026-07-27 · Public sources, explicit uncertainty, no investment advice. <a href="./index.html">返回研究目录</a></footer>
 </body>
 </html>

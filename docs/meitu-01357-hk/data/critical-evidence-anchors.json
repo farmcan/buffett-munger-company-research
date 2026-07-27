@@ -8,12 +8,7 @@
   "research_date": "2026-07-27",
   "source_ledger_path": "../source-ledger.json",
   "status": "needs_human_review",
-  "checksum_gaps": [
-    {
-      "source_id": "R05",
-      "reason": "The existing source ledger records snapshot_sha256 as null. Governance anchors preserve that null rather than inventing a checksum and remain blocked from checksum-bound production use."
-    }
-  ],
+  "checksum_gaps": [],
   "anchors": [
     {
       "id": "MEITU-CRIT-001",
@@ -29,7 +24,18 @@
       "audit_status": "audited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "2024 comparative was restated for discontinued operations; this amount excludes discontinued cosmetic supply-chain revenue."
+      "limitations": "2024 comparative was restated for discontinued operations; this amount excludes discontinued cosmetic supply-chain revenue.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Note 5 · Revenue and Segment Information",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "1a921a5a84c17c8817ea4c8f014890c802bc7d5fa1d7de10699ad23db7e9f30a",
+        "page_line_start": 18,
+        "page_line_end": 22,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-002",
@@ -45,7 +51,18 @@
       "audit_status": "audited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "This is a revenue category, not an IFRS operating segment with separately disclosed segment profit."
+      "limitations": "This is a revenue category, not an IFRS operating segment with separately disclosed segment profit.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Note 5 · Revenue and Segment Information",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "1a921a5a84c17c8817ea4c8f014890c802bc7d5fa1d7de10699ad23db7e9f30a",
+        "page_line_start": 18,
+        "page_line_end": 22,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-003",
@@ -61,7 +78,18 @@
       "audit_status": "audited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "Advertising includes different recognition models, including net-basis agency rebates; it is not a single homogeneous product."
+      "limitations": "Advertising includes different recognition models, including net-basis agency rebates; it is not a single homogeneous product.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Note 5 · Revenue and Segment Information",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "1a921a5a84c17c8817ea4c8f014890c802bc7d5fa1d7de10699ad23db7e9f30a",
+        "page_line_start": 18,
+        "page_line_end": 22,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-004",
@@ -77,7 +105,18 @@
       "audit_status": "audited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "The category contains legacy and recategorised activities and should not be treated as a stable standalone segment."
+      "limitations": "The category contains legacy and recategorised activities and should not be treated as a stable standalone segment.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Note 5 · Revenue and Segment Information",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "1a921a5a84c17c8817ea4c8f014890c802bc7d5fa1d7de10699ad23db7e9f30a",
+        "page_line_start": 18,
+        "page_line_end": 22,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-005",
@@ -93,7 +132,18 @@
       "audit_status": "audited",
       "formula": "2,954,033 + 842,595 + 62,110 = 3,858,738",
       "critical": true,
-      "limitations": "The reconciliation proves revenue completeness for the disclosed categories, not category-level profitability."
+      "limitations": "The reconciliation proves revenue completeness for the disclosed categories, not category-level profitability.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Note 5 · Revenue and Segment Information",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "1a921a5a84c17c8817ea4c8f014890c802bc7d5fa1d7de10699ad23db7e9f30a",
+        "page_line_start": 18,
+        "page_line_end": 24,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-006",
@@ -109,7 +159,18 @@
       "audit_status": "audited",
       "formula": "3,858,738 - 1,019,925 = 2,838,813",
       "critical": true,
-      "limitations": "No audited gross profit by revenue category is disclosed on this statement."
+      "limitations": "No audited gross profit by revenue category is disclosed on this statement.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Income Statement",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "a746331487cfa46c29b05ee6148aecc11f63d57c9b69af09f0e3714d6474de77",
+        "page_line_start": 8,
+        "page_line_end": 11,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-007",
@@ -125,7 +186,18 @@
       "audit_status": "audited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "This excludes the loss attributable to owners from discontinued operations."
+      "limitations": "This excludes the loss attributable to owners from discontinued operations.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Income Statement · attributable profit bridge",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "ca3d0fa28636582187678332ea61ddf2a8847d4f78023f70c5eb65347bc981e5",
+        "page_line_start": 8,
+        "page_line_end": 11,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-008",
@@ -141,7 +213,18 @@
       "audit_status": "audited",
       "formula": "697,563 - 114,663 = 582,900",
       "critical": true,
-      "limitations": "The discontinued-operation loss attributable to owners was RMB114,663 thousand."
+      "limitations": "The discontinued-operation loss attributable to owners was RMB114,663 thousand.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Income Statement · attributable profit bridge",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "ca3d0fa28636582187678332ea61ddf2a8847d4f78023f70c5eb65347bc981e5",
+        "page_line_start": 8,
+        "page_line_end": 11,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-009",
@@ -157,7 +240,18 @@
       "audit_status": "unaudited",
       "formula": "company_defined_non_ifrs_measure",
       "critical": true,
-      "limitations": "The measure is company-defined, includes discontinued operations for comparability, and is not a substitute for audited IFRS profit."
+      "limitations": "The measure is company-defined, includes discontinued operations for comparability, and is not a substitute for audited IFRS profit.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "MD&A · FY2025 vs FY2024 · Non-IFRS measure",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "80ecb906519b1bd508ed5bde834edf7dc8432e99e286aa44789ded6f1fbd0d27",
+        "page_line_start": 35,
+        "page_line_end": 41,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-010",
@@ -173,7 +267,18 @@
       "audit_status": "audited",
       "formula": "1,293,123 + 2,410 - 571 - 37,952 = 1,257,010",
       "critical": true,
-      "limitations": "Consolidated CFO includes continuing and discontinued operations and is not owner earnings."
+      "limitations": "Consolidated CFO includes continuing and discontinued operations and is not owner earnings.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Statement of Cash Flows · operating activities",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "a6489804097ee50bd7939cd482a92357f8253eb7847fcba83b749c0716d3217c",
+        "page_line_start": 7,
+        "page_line_end": 12,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-011",
@@ -189,7 +294,18 @@
       "audit_status": "audited",
       "formula": "24,263 + 1,239 + 22,660 = 48,162",
       "critical": true,
-      "limitations": "The RMB48,162 thousand total is a deterministic sum of disclosed cash-flow lines; it does not separate maintenance from growth investment."
+      "limitations": "The RMB48,162 thousand total is a deterministic sum of disclosed cash-flow lines; it does not separate maintenance from growth investment.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Statement of Cash Flows · investing activities",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "a6489804097ee50bd7939cd482a92357f8253eb7847fcba83b749c0716d3217c",
+        "page_line_start": 13,
+        "page_line_end": 18,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-012",
@@ -205,7 +321,18 @@
       "audit_status": "audited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "This recurring employee SBC is distinct from the separate non-cash expense arising from the Alibaba convertible-bond issuance."
+      "limitations": "This recurring employee SBC is distinct from the separate non-cash expense arising from the Alibaba convertible-bond issuance.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Note 9 · Employee Benefit Expenses",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "1ec3db62325878e38042b760c9b2e14c09e23dd2dcdc92b79bf91fae7c683e59",
+        "page_line_start": 5,
+        "page_line_end": 14,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-013",
@@ -221,7 +348,18 @@
       "audit_status": "audited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "The expense is non-cash but economically linked to the bond terms; any owner-earnings adjustment must explain its treatment."
+      "limitations": "The expense is non-cash but economically linked to the bond terms; any owner-earnings adjustment must explain its treatment.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Income Statement",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "a746331487cfa46c29b05ee6148aecc11f63d57c9b69af09f0e3714d6474de77",
+        "page_line_start": 8,
+        "page_line_end": 18,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-014",
@@ -237,7 +375,18 @@
       "audit_status": "unaudited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "The voluntary update was based on preliminary management accounts and was neither audited nor reviewed by the auditor."
+      "limitations": "The voluntary update was based on preliminary management accounts and was neither audited nor reviewed by the auditor.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Q1 2026 Business Update · Core operating metrics",
+        "text_snapshot_sha256": "5862025093fa8c8698fe5fa1aca7491da845c77e6a958a87db297afe0c7e5f9d",
+        "page_text_sha256": "7a6fae7007f518c98f064f82cc659e1c17f804c2be823fe979d3b0eeb771a073",
+        "page_line_start": 16,
+        "page_line_end": 20,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-015",
@@ -253,7 +402,18 @@
       "audit_status": "unaudited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "No cohort retention, renewal rate or independently reconciled product-level revenue is disclosed in the update."
+      "limitations": "No cohort retention, renewal rate or independently reconciled product-level revenue is disclosed in the update.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Q1 2026 Business Update · Core operating metrics",
+        "text_snapshot_sha256": "5862025093fa8c8698fe5fa1aca7491da845c77e6a958a87db297afe0c7e5f9d",
+        "page_text_sha256": "7a6fae7007f518c98f064f82cc659e1c17f804c2be823fe979d3b0eeb771a073",
+        "page_line_start": 16,
+        "page_line_end": 20,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-016",
@@ -269,7 +429,18 @@
       "audit_status": "unaudited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "This is a voluntary management update, not a complete quarterly income statement or cash-flow statement."
+      "limitations": "This is a voluntary management update, not a complete quarterly income statement or cash-flow statement.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Q1 2026 Business Update · Core operating metrics",
+        "text_snapshot_sha256": "5862025093fa8c8698fe5fa1aca7491da845c77e6a958a87db297afe0c7e5f9d",
+        "page_text_sha256": "7a6fae7007f518c98f064f82cc659e1c17f804c2be823fe979d3b0eeb771a073",
+        "page_line_start": 21,
+        "page_line_end": 32,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-017",
@@ -285,7 +456,18 @@
       "audit_status": "unaudited",
       "formula": "annualised monthly recurring revenue from active subscriptions and usage-based consumption",
       "critical": true,
-      "limitations": "ARR is company-defined and annualized; it excludes non-recurring products and is not IFRS revenue recognized for the quarter."
+      "limitations": "ARR is company-defined and annualized; it excludes non-recurring products and is not IFRS revenue recognized for the quarter.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Q1 2026 Business Update · ARR definition",
+        "text_snapshot_sha256": "5862025093fa8c8698fe5fa1aca7491da845c77e6a958a87db297afe0c7e5f9d",
+        "page_text_sha256": "7a6fae7007f518c98f064f82cc659e1c17f804c2be823fe979d3b0eeb771a073",
+        "page_line_start": 33,
+        "page_line_end": 37,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-018",
@@ -301,7 +483,18 @@
       "audit_status": "audited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "Cash is not the same as distributable excess cash; restricted cash, minimum operating cash and legal-entity access require separate treatment."
+      "limitations": "Cash is not the same as distributable excess cash; restricted cash, minimum operating cash and legal-entity access require separate treatment.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Balance Sheet · Current assets",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "6e6a0eb603f2ea1dc3f2891fa953ee2e077739e411019febf3aad02bda158812",
+        "page_line_start": 21,
+        "page_line_end": 31,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-019",
@@ -317,7 +510,18 @@
       "audit_status": "audited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "This row excludes the separately presented convertible bonds, lease liabilities and convertible redeemable preferred shares."
+      "limitations": "This row excludes the separately presented convertible bonds, lease liabilities and convertible redeemable preferred shares.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Balance Sheet · Current liabilities",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "255af7ea68e9a2fde93b84bb8167acfa5eb5b5d593a015c0996276b1c3d890b0",
+        "page_line_start": 12,
+        "page_line_end": 20,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-020",
@@ -333,7 +537,18 @@
       "audit_status": "audited",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "This is the accounting debt component, not the US$250 million contractual principal or the cash amount due at maturity."
+      "limitations": "This is the accounting debt component, not the US$250 million contractual principal or the cash amount due at maturity.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Balance Sheet · Current liabilities",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "255af7ea68e9a2fde93b84bb8167acfa5eb5b5d593a015c0996276b1c3d890b0",
+        "page_line_start": 12,
+        "page_line_end": 20,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-021",
@@ -349,7 +564,18 @@
       "audit_status": "not_applicable",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "Total issued shares include treasury shares and are not the correct denominator for all per-share calculations."
+      "limitations": "Total issued shares include treasury shares and are not the correct denominator for all per-share calculations.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Next Day Disclosure Return · Section I.A",
+        "text_snapshot_sha256": "8a6cafa8386d9f458ca09f9e113054c528fce26366b3896448475b02610d29eb",
+        "page_text_sha256": "706c6ed4834a8ce04182749353dcc09aa7de5c12fec2441de153143cdc52ab26",
+        "page_line_start": 15,
+        "page_line_end": 40,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-022",
@@ -365,7 +591,18 @@
       "audit_status": "not_applicable",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "Treasury shares may later be cancelled or reissued; buyback headlines do not by themselves prove permanent denominator reduction."
+      "limitations": "Treasury shares may later be cancelled or reissued; buyback headlines do not by themselves prove permanent denominator reduction.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Next Day Disclosure Return · Section I.A",
+        "text_snapshot_sha256": "8a6cafa8386d9f458ca09f9e113054c528fce26366b3896448475b02610d29eb",
+        "page_text_sha256": "706c6ed4834a8ce04182749353dcc09aa7de5c12fec2441de153143cdc52ab26",
+        "page_line_start": 15,
+        "page_line_end": 40,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-023",
@@ -381,7 +618,18 @@
       "audit_status": "not_applicable",
       "formula": "4,586,179,280 - 63,002,500 = 4,523,176,780",
       "critical": true,
-      "limitations": "This is a point-in-time denominator and does not include potential conversion shares, unvested awards or future reissuance."
+      "limitations": "This is a point-in-time denominator and does not include potential conversion shares, unvested awards or future reissuance.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Next Day Disclosure Return · Section I.A",
+        "text_snapshot_sha256": "8a6cafa8386d9f458ca09f9e113054c528fce26366b3896448475b02610d29eb",
+        "page_text_sha256": "706c6ed4834a8ce04182749353dcc09aa7de5c12fec2441de153143cdc52ab26",
+        "page_line_start": 15,
+        "page_line_end": 40,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-024",
@@ -397,7 +645,18 @@
       "audit_status": "not_applicable",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "Contractual principal differs from the IFRS debt-component carrying amount."
+      "limitations": "Contractual principal differs from the IFRS debt-component carrying amount.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Principal Terms of the Convertible Bonds",
+        "text_snapshot_sha256": "6dc209085a675ba0e5a257f87213cd07ea173474d47ffc9405cb10ba4dfd9755",
+        "page_text_sha256": "aa295a3bb559452ed3e6b67fd4fda147d02c1b132342ee0b58f99a062d804ec4",
+        "page_line_start": 22,
+        "page_line_end": 42,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-025",
@@ -413,7 +672,18 @@
       "audit_status": "not_applicable",
       "formula": "directly_reported",
       "critical": true,
-      "limitations": "HK$6 is a conversion price, not an automatic conversion trigger or guaranteed floor for the market price."
+      "limitations": "HK$6 is a conversion price, not an automatic conversion trigger or guaranteed floor for the market price.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Convertible Bonds · Conversion Price and Right",
+        "text_snapshot_sha256": "6dc209085a675ba0e5a257f87213cd07ea173474d47ffc9405cb10ba4dfd9755",
+        "page_text_sha256": "9e0198a88e87610ce6943ae2757556d8ffb4ba844807a79d0396337024fe4acb",
+        "page_line_start": 2,
+        "page_line_end": 17,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-026",
@@ -429,7 +699,18 @@
       "audit_status": "not_applicable",
       "formula": "contractual maximum based on principal and interest through initial maturity",
       "critical": true,
-      "limitations": "The maximum includes interest through the initial maturity date and can change if the conversion price is adjusted."
+      "limitations": "The maximum includes interest through the initial maturity date and can change if the conversion price is adjusted.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Convertible Bonds · Conversion Shares",
+        "text_snapshot_sha256": "6dc209085a675ba0e5a257f87213cd07ea173474d47ffc9405cb10ba4dfd9755",
+        "page_text_sha256": "487ac63108162f4299a80b8639ac3f03059a3dd1adb267cc499cfee2ec40daeb",
+        "page_line_start": 2,
+        "page_line_end": 15,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-027",
@@ -445,7 +726,18 @@
       "audit_status": "not_applicable",
       "formula": "335,513,916 / 4,921,693,196 = 6.82%",
       "critical": true,
-      "limitations": "The pro forma assumes no other share-capital change and no conversion-price adjustment before full conversion."
+      "limitations": "The pro forma assumes no other share-capital change and no conversion-price adjustment before full conversion.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Completion Announcement · Shareholding Structure",
+        "text_snapshot_sha256": "d269ff8bc83feba2dcac437db64bc2b757d6099d433c75906e6c51f81596eddf",
+        "page_text_sha256": "0ba17d65fad6a7a63cb41fec8d7c2f7a3ae312f9726fe24e95e0fc565ddb2451",
+        "page_line_start": 14,
+        "page_line_end": 30,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-028",
@@ -461,13 +753,24 @@
       "audit_status": "not_applicable",
       "formula": "unconverted_case = principal_plus_accrued_interest_cash_redemption; converted_case = shares_issued_under_conversion_formula",
       "critical": true,
-      "limitations": "Conversion is at the bondholder's option and is not automatically caused by the share price moving above HK$6."
+      "limitations": "Conversion is at the bondholder's option and is not automatically caused by the share price moving above HK$6.",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Convertible Bonds · Conversion Right and Redemption at Maturity",
+        "text_snapshot_sha256": "6dc209085a675ba0e5a257f87213cd07ea173474d47ffc9405cb10ba4dfd9755",
+        "page_text_sha256": "9e0198a88e87610ce6943ae2757556d8ffb4ba844807a79d0396337024fe4acb",
+        "page_line_start": 8,
+        "page_line_end": 21,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-029",
       "claim_id": "governance_2026.premature_results_video",
       "source_id": "R05",
-      "document_sha256": null,
+      "document_sha256": "3293a73366f9ab64bdbfa66a670ad2a1aa531c367fbd5cd6e9b3e97133c5bca8",
       "page": 1,
       "source_text": "公司调查称，公关人员在测试草稿宣传视频时，于 2026 年 3 月 25 日收市后在官方抖音意外披露财务信息。",
       "period": "event on 2026-03-25; disclosed 2026-06-18",
@@ -477,13 +780,24 @@
       "audit_status": "not_applicable",
       "formula": "directly_reported_event_summary",
       "critical": true,
-      "limitations": "R05 is an official live citation, but the existing ledger has snapshot_sha256=null; this anchor cannot pass checksum-bound production QA until the ledger stores a verified snapshot."
+      "limitations": "该事实来自公司调查及公告；它证明事件发生和公司对原因的表述，不独立证明内部控制已持续有效。",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Supplemental Information · Previous Trading Halt",
+        "text_snapshot_sha256": "ee20b28b9657cff0fe9f81e8d7bef13c171b41b46692ce2da4d5460f253cb5be",
+        "page_text_sha256": "8f2186af6b4761c6fa0d09ad245f372335d601864b66c85426dfd2ed6f72a47c",
+        "page_line_start": 27,
+        "page_line_end": 36,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-030",
       "claim_id": "governance_2026.trading_halt_and_remediation",
       "source_id": "R05",
-      "document_sha256": null,
+      "document_sha256": "3293a73366f9ab64bdbfa66a670ad2a1aa531c367fbd5cd6e9b3e97133c5bca8",
       "page": 6,
       "source_text": "股份于 3 月 26 日上午九时停牌、3 月 30 日上午九时复牌；公司披露了测试、复核和双人监督等整改。",
       "period": "2026-03-26 to 2026-03-30",
@@ -493,13 +807,24 @@
       "audit_status": "not_applicable",
       "formula": "directly_reported_event_summary",
       "critical": true,
-      "limitations": "The announcement records implemented procedures, but future control effectiveness is not yet proven; R05 also lacks a ledger snapshot checksum."
+      "limitations": "公告记录了已宣布或实施的整改程序，但未来控制有效性仍需后续披露、审计与是否再发生事件验证。",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Remedial Actions · Platform Testing and Uploading Procedures",
+        "text_snapshot_sha256": "ee20b28b9657cff0fe9f81e8d7bef13c171b41b46692ce2da4d5460f253cb5be",
+        "page_text_sha256": "e9d0b95f776347a47c4ab6501bc2cc131cde92c183d6688dc7aad3b4da2c4065",
+        "page_line_start": 2,
+        "page_line_end": 23,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-031",
       "claim_id": "governance_2025.late_treasury_investment_disclosure",
       "source_id": "R05",
-      "document_sha256": null,
+      "document_sha256": "3293a73366f9ab64bdbfa66a670ad2a1aa531c367fbd5cd6e9b3e97133c5bca8",
       "page": 1,
       "source_text": "两笔 BlackRock 流动性基金认购分别为 41,310,000 美元和 23,026,000 美元；合并后第二笔构成须披露交易。",
       "period": "transactions on 2025-01-03 and 2025-01-27; disclosed 2026-06-18",
@@ -509,7 +834,26 @@
       "audit_status": "not_applicable",
       "formula": "41,310,000 + 23,026,000 = 64,336,000",
       "critical": true,
-      "limitations": "The fund risk and the disclosure-control issue are separate questions. R05 lacks a ledger snapshot checksum and remains blocked for checksum-bound production use."
+      "limitations": "基金本身的资产风险与迟延披露这一控制问题应分开评价；本锚点只证明交易金额与迟延披露事实。",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "BlackRock Liquidity Fund Subscriptions",
+        "text_snapshot_sha256": "ee20b28b9657cff0fe9f81e8d7bef13c171b41b46692ce2da4d5460f253cb5be",
+        "page_text_sha256": "8f2186af6b4761c6fa0d09ad245f372335d601864b66c85426dfd2ed6f72a47c",
+        "page_line_start": 15,
+        "page_line_end": 26,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     }
-  ]
+  ],
+  "locator_contract": {
+    "locator_version": "1.0",
+    "line_scope": "page-local normalized native PDF text; line numbers include blank-line positions",
+    "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+    "extraction_library": "pypdf 6.14.2",
+    "full_text_publication": "not_published; only checksums, locators and minimal excerpts are public",
+    "reader_navigation": "use official PDF page plus section/table; line range audits the checksum-bound extracted page text"
+  }
 }

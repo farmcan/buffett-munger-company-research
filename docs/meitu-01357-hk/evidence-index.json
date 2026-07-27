@@ -6,7 +6,7 @@
   "status": "needs_human_review",
   "combined_artifact": {
     "path": "combined-artifact.v2.json",
-    "sha256": "a58e2f1b5f5dc5a477ba675fe28f3f042f0be3d1ec5922a101bc6915f4f1c5d1"
+    "sha256": "8c6b721aaa4719efc3822490b6cc0a5a75a8bc001b995e5c59c039afa3e2a1f6"
   },
   "anchors": [
     {
@@ -25,7 +25,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Note 5 · Revenue and Segment Information",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "1a921a5a84c17c8817ea4c8f014890c802bc7d5fa1d7de10699ad23db7e9f30a",
+        "page_line_start": 18,
+        "page_line_end": 22,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-002",
@@ -43,7 +54,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Note 5 · Revenue and Segment Information",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "1a921a5a84c17c8817ea4c8f014890c802bc7d5fa1d7de10699ad23db7e9f30a",
+        "page_line_start": 18,
+        "page_line_end": 22,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-006",
@@ -61,7 +83,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Income Statement",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "a746331487cfa46c29b05ee6148aecc11f63d57c9b69af09f0e3714d6474de77",
+        "page_line_start": 8,
+        "page_line_end": 11,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-007",
@@ -79,7 +112,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Income Statement · attributable profit bridge",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "ca3d0fa28636582187678332ea61ddf2a8847d4f78023f70c5eb65347bc981e5",
+        "page_line_start": 8,
+        "page_line_end": 11,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-008",
@@ -97,7 +141,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Income Statement · attributable profit bridge",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "ca3d0fa28636582187678332ea61ddf2a8847d4f78023f70c5eb65347bc981e5",
+        "page_line_start": 8,
+        "page_line_end": 11,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-009",
@@ -115,7 +170,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "MD&A · FY2025 vs FY2024 · Non-IFRS measure",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "80ecb906519b1bd508ed5bde834edf7dc8432e99e286aa44789ded6f1fbd0d27",
+        "page_line_start": 35,
+        "page_line_end": 41,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-010",
@@ -133,7 +199,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Statement of Cash Flows · operating activities",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "a6489804097ee50bd7939cd482a92357f8253eb7847fcba83b749c0716d3217c",
+        "page_line_start": 7,
+        "page_line_end": 12,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-011",
@@ -151,7 +228,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Statement of Cash Flows · investing activities",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "a6489804097ee50bd7939cd482a92357f8253eb7847fcba83b749c0716d3217c",
+        "page_line_start": 13,
+        "page_line_end": 18,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-012",
@@ -169,7 +257,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Note 9 · Employee Benefit Expenses",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "1ec3db62325878e38042b760c9b2e14c09e23dd2dcdc92b79bf91fae7c683e59",
+        "page_line_start": 5,
+        "page_line_end": 14,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-014",
@@ -187,7 +286,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Q1 2026 Business Update · Core operating metrics",
+        "text_snapshot_sha256": "5862025093fa8c8698fe5fa1aca7491da845c77e6a958a87db297afe0c7e5f9d",
+        "page_text_sha256": "7a6fae7007f518c98f064f82cc659e1c17f804c2be823fe979d3b0eeb771a073",
+        "page_line_start": 16,
+        "page_line_end": 20,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-016",
@@ -205,7 +315,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Q1 2026 Business Update · Core operating metrics",
+        "text_snapshot_sha256": "5862025093fa8c8698fe5fa1aca7491da845c77e6a958a87db297afe0c7e5f9d",
+        "page_text_sha256": "7a6fae7007f518c98f064f82cc659e1c17f804c2be823fe979d3b0eeb771a073",
+        "page_line_start": 21,
+        "page_line_end": 32,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-017",
@@ -223,7 +344,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Q1 2026 Business Update · ARR definition",
+        "text_snapshot_sha256": "5862025093fa8c8698fe5fa1aca7491da845c77e6a958a87db297afe0c7e5f9d",
+        "page_text_sha256": "7a6fae7007f518c98f064f82cc659e1c17f804c2be823fe979d3b0eeb771a073",
+        "page_line_start": 33,
+        "page_line_end": 37,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-018",
@@ -241,7 +373,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Balance Sheet · Current assets",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "6e6a0eb603f2ea1dc3f2891fa953ee2e077739e411019febf3aad02bda158812",
+        "page_line_start": 21,
+        "page_line_end": 31,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-020",
@@ -259,7 +402,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Consolidated Balance Sheet · Current liabilities",
+        "text_snapshot_sha256": "ca6f34f570dd93d688fe02e2231c3770d7c1c782934bccc5199d238bc3c6733e",
+        "page_text_sha256": "255af7ea68e9a2fde93b84bb8167acfa5eb5b5d593a015c0996276b1c3d890b0",
+        "page_line_start": 12,
+        "page_line_end": 20,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-021",
@@ -277,7 +431,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Next Day Disclosure Return · Section I.A",
+        "text_snapshot_sha256": "8a6cafa8386d9f458ca09f9e113054c528fce26366b3896448475b02610d29eb",
+        "page_text_sha256": "706c6ed4834a8ce04182749353dcc09aa7de5c12fec2441de153143cdc52ab26",
+        "page_line_start": 15,
+        "page_line_end": 40,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-022",
@@ -295,7 +460,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Next Day Disclosure Return · Section I.A",
+        "text_snapshot_sha256": "8a6cafa8386d9f458ca09f9e113054c528fce26366b3896448475b02610d29eb",
+        "page_text_sha256": "706c6ed4834a8ce04182749353dcc09aa7de5c12fec2441de153143cdc52ab26",
+        "page_line_start": 15,
+        "page_line_end": 40,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-024",
@@ -313,7 +489,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Principal Terms of the Convertible Bonds",
+        "text_snapshot_sha256": "6dc209085a675ba0e5a257f87213cd07ea173474d47ffc9405cb10ba4dfd9755",
+        "page_text_sha256": "aa295a3bb559452ed3e6b67fd4fda147d02c1b132342ee0b58f99a062d804ec4",
+        "page_line_start": 22,
+        "page_line_end": 42,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-025",
@@ -331,7 +518,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Convertible Bonds · Conversion Price and Right",
+        "text_snapshot_sha256": "6dc209085a675ba0e5a257f87213cd07ea173474d47ffc9405cb10ba4dfd9755",
+        "page_text_sha256": "9e0198a88e87610ce6943ae2757556d8ffb4ba844807a79d0396337024fe4acb",
+        "page_line_start": 2,
+        "page_line_end": 17,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-026",
@@ -349,7 +547,18 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Convertible Bonds · Conversion Shares",
+        "text_snapshot_sha256": "6dc209085a675ba0e5a257f87213cd07ea173474d47ffc9405cb10ba4dfd9755",
+        "page_text_sha256": "487ac63108162f4299a80b8639ac3f03059a3dd1adb267cc499cfee2ec40daeb",
+        "page_line_start": 2,
+        "page_line_end": 15,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     },
     {
       "id": "MEITU-CRIT-028",
@@ -367,7 +576,26 @@
       "critical": true,
       "price_move_attribution": "not_used_for_causal_price_attribution",
       "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      "disclaimer": "fact_evidence_not_investment_advice",
+      "text_locator": {
+        "locator_type": "pdf_page_and_checksum_bound_text_lines",
+        "section_or_table": "Convertible Bonds · Conversion Right and Redemption at Maturity",
+        "text_snapshot_sha256": "6dc209085a675ba0e5a257f87213cd07ea173474d47ffc9405cb10ba4dfd9755",
+        "page_text_sha256": "9e0198a88e87610ce6943ae2757556d8ffb4ba844807a79d0396337024fe4acb",
+        "page_line_start": 8,
+        "page_line_end": 21,
+        "line_scope": "page_local_normalized_text",
+        "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+        "extraction_library": "pypdf 6.14.2"
+      }
     }
-  ]
+  ],
+  "locator_contract": {
+    "locator_version": "1.0",
+    "line_scope": "page-local normalized native PDF text; line numbers include blank-line positions",
+    "extraction_provider": "seed-pypdf-deterministic-evidence-baseline",
+    "extraction_library": "pypdf 6.14.2",
+    "full_text_publication": "not_published; only checksums, locators and minimal excerpts are public",
+    "reader_navigation": "use official PDF page plus section/table; line range audits the checksum-bound extracted page text"
+  }
 }

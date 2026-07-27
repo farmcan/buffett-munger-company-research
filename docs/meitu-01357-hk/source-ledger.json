@@ -976,7 +976,7 @@
       "published_at": "2026-06-18",
       "retrieved_at": "2026-07-27",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061801536.pdf",
-      "snapshot_sha256": null,
+      "snapshot_sha256": "3293a73366f9ab64bdbfa66a670ad2a1aa531c367fbd5cd6e9b3e97133c5bca8",
       "used_for": ["disclosure-control incident", "remediation", "delayed fund-subscription disclosure"],
       "limitations": "Company investigation and remediation disclosure; future control effectiveness is not yet proven."
     },

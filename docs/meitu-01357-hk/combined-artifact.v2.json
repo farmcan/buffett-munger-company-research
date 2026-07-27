@@ -301,6 +301,27 @@
       "content_sha256": "87f27e999e523ddfc074850b561371783ff14e92891f20c2d100bdd8becec47f"
     },
     {
+      "id": "R05",
+      "tier": "A",
+      "source_type": "exchange_announcement",
+      "title": "Investigation and Remedial Actions for Premature Publicity Video",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061801536.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-06-18",
+      "accessed_at": "2026-07-27",
+      "period": "2026 disclosure-control remediation",
+      "audit_status": "not_applicable",
+      "scope": "listed_issuer_governance_and_disclosure_controls",
+      "covers": [
+        "premature_results_publicity_incident",
+        "investigation",
+        "remedial_actions",
+        "delayed_fund_subscription_disclosure"
+      ],
+      "content_sha256": "3293a73366f9ab64bdbfa66a670ad2a1aa531c367fbd5cd6e9b3e97133c5bca8",
+      "limitations": "公司调查与补救公告能证明事件和已宣布措施，不能证明未来控制已持续有效。"
+    },
+    {
       "id": "P01",
       "tier": "B",
       "source_type": "market_data",
@@ -366,8 +387,19 @@
     "reported_claims": "公司调整后利润、ARR、模型路线与管理层表述均保留为公司口径，不升级为独立验证事实。",
     "interpretations": "Owner earnings、净现金类资产、DCF、护城河与替代风险是研究推导，必须与披露值分列。",
     "assumptions": "维护性投入、正常营运资本、汇率换算与长期增长均为显式假设或待补证输入。",
-    "source_gaps": "未披露的留存、CAC、地区 ARPU、分产品毛利、供应商集中度与完整摊薄股数不得填 0。",
-    "page_level_evidence": "公开 evidence-index 已绑定 20 条关键事实、原文页码与本 combined artifact 的 SHA-256；其余非关键事实仍主要停留在 source-level。"
+    "source_gaps": "未披露的留存、CAC、地区 ARPU、分产品毛利与供应商集中度不得填 0；全摊薄股数只给保守 ceiling，不冒充审计 EPS 分母。",
+    "page_level_evidence": "公开 evidence-index 将 20 条核心事实绑定本 combined artifact；critical-evidence-anchors 进一步把 31 条关键事实绑定至原文页码、表名/章节、页内标准化文本行号、整份文本哈希与页文本哈希。其余长尾事实仍主要停留在 source-level。"
+  },
+  "evidence_locator_contract": {
+    "core_anchor_count": 20,
+    "critical_anchor_count": 31,
+    "core_index": "evidence-index.json",
+    "critical_index": "data/critical-evidence-anchors.json",
+    "public_locator_table": "data/critical-evidence-locators.csv",
+    "line_scope": "page_local_normalized_pdf_text",
+    "extractor": "pypdf 6.14.2 via seed.sources.filing_documents.extract_pdf_evidence",
+    "binding": "document_sha256 + overall_text_sha256 + page_text_sha256 + page_number + line_start + line_end",
+    "private_boundary": "完整 PDF 文本快照保留在私有 library；公开报告只发布短摘、定位元数据、哈希和官方原始链接。"
   },
   "ownership_structure": {
     "controller": "2025 年报与 2026-07-03 公告显示创始人吴欣鸿披露权益约 12.97%；蔡文胜为另一主要股东。控制、VIE 合同安排及少数股东价值转移仍需页码级复核。",
@@ -972,28 +1004,28 @@
     },
     {
       "dimension": "returns_on_capital",
-      "status": "unknown",
-      "summary": "利润和现金流改善可见，但投入资本、商誉、现金、可转债与股权激励没有形成多期 ROIC/增量回报桥。",
+      "status": "applicable",
+      "summary": "FY2021–FY2025 ROIC 筛查代理已完成，并把现金、借款、可转债、租赁、少数股东权益与资本配置分列；当平均经营资本下降时不伪造增量 ROIC。",
       "indicators": [
         {
           "id": "multiperiod_roe_roic_and_incremental_returns",
-          "status": "not_disclosed",
-          "summary": "现有表格未提供可复算的多期 ROIC 与增量投入回报。",
-          "source_refs": ["F01", "F09", "F10"],
-          "source_gaps": ["需要平均投入资本、无形资产、商誉、租赁与超额现金调整。"]
+          "status": "observed",
+          "summary": "ROIC 筛查代理为 FY2021 -7.9%、FY2022 -6.9%、FY2023 14.2%、FY2024 26.8%、FY2025 66.7%；FY2024→FY2025 平均经营资本下降，因此增量 ROIC 明确记为 not_determinable。",
+          "source_refs": ["F01", "F09", "F10", "MT_AR2021", "MT_AR2022"],
+          "source_gaps": ["筛查值不是公司披露指标；仍需商誉、租赁、超额现金和收购口径敏感性。"]
         },
         {
           "id": "leverage_buyback_cycle_and_accounting_decomposition",
-          "status": "not_disclosed",
-          "summary": "回购、可转债、股息和会计口径已识别，但尚未量化对 ROE/ROIC 的机械影响。",
+          "status": "observed",
+          "summary": "五年投入资本代理与回购、库存股、股息、可转债和利润口径并列，避免把净现金融资、分母收缩或一次性会计项误写成经营回报。",
           "source_refs": ["F01", "F04", "F06", "F07"],
-          "source_gaps": ["需要期初期末股本、净债务和投入资本的统一桥。"]
+          "source_gaps": ["尚缺逐项 ROE 分解、无形资产调整 ROIC 与并购项目回报率。"]
         }
       ],
-      "source_refs": ["F01", "F04", "F06", "F07", "F09", "F10"],
-      "positive_evidence": ["核心收入和经营现金流改善。"],
-      "counter_evidence": ["利润增长可能部分来自会计调整、预收和资本结构变化。"],
-      "source_gaps": ["ROIC 与增量回报未完成。"]
+      "source_refs": ["F01", "F04", "F06", "F07", "F09", "F10", "MT_AR2021", "MT_AR2022"],
+      "positive_evidence": ["ROIC 筛查代理从连续负值转正并上升，方向与核心收入和经营现金流改善一致。"],
+      "counter_evidence": ["FY2025 的高筛查值受低资本基数、现金/融资处理及利润正常化影响，不能直接当作可持续增量回报。"],
+      "source_gaps": []
     },
     {
       "dimension": "balance_sheet_survival",
@@ -1147,15 +1179,15 @@
     },
     {
       "dimension": "per_share_economics",
-      "status": "unknown",
-      "summary": "当前股本、库存股与可转债可重算，但未归属激励、期权和库存股未来再发行阻止形成完整全摊薄分母。",
+      "status": "applicable",
+      "summary": "basic、审计 diluted、CB-only 与保守 all-in fully diluted 四层股数已桥接；4,973.396 百万股是包含奖励重叠风险的上限，不冒充审计 EPS 分母。",
       "indicators": [
         {
           "id": "basic_diluted_and_fully_diluted_share_reconciliation",
-          "status": "not_disclosed",
-          "summary": "可重算 CB-only 情景，无法重算同日 all-in fully diluted shares。",
-          "source_refs": ["F01", "F06", "F07"],
-          "source_gaps": ["需要同日未归属奖励、期权、库存股用途和税后转换负债。"]
+          "status": "observed",
+          "summary": "期末已发行 4,586.179、期权 1.352、保守奖励 50.351、CB 最大 335.514 百万股，得到不转换 4,637.882 和 all-in 4,973.396 百万股的保守 ceiling。",
+          "source_refs": ["F01", "F06", "F07", "F14"],
+          "source_gaps": ["奖励可能由已发行受托股或市场购股履约，且 2026-06-26 缺同日奖励余额；需下一期消除重复。"]
         },
         {
           "id": "per_share_growth_distribution_issuance_and_repurchase_outcomes",
@@ -1165,10 +1197,10 @@
           "source_gaps": ["多年 owner earnings/fully diluted share 序列尚未完成。"]
         }
       ],
-      "source_refs": ["F01", "F04", "F06", "F07"],
-      "positive_evidence": ["新授权下已执行回购。"],
+      "source_refs": ["F01", "F04", "F06", "F07", "F14"],
+      "positive_evidence": ["新授权下已执行回购，四层股份桥使回购与潜在摊薄可以在每股层面并列。"],
       "counter_evidence": ["可转债最大新增 335.5 百万股，高于当前库存股规模。"],
-      "source_gaps": ["all-in fully diluted 分母缺失。"]
+      "source_gaps": []
     },
     {
       "dimension": "valuation",
@@ -1702,7 +1734,7 @@
     {
       "gate": "identity_and_source_integrity",
       "result": "provisional",
-      "reason": "证券与主要官方源已校验，但控制、关联方和页码级证据索引仍不完整。"
+      "reason": "证券与主要官方源已校验，31 条关键事实已有页码/表名/行号/哈希；控制、NCI、关联方与长尾事实仍未全部闭环。"
     },
     {
       "gate": "circle_of_competence",
@@ -1712,7 +1744,7 @@
     {
       "gate": "business_economics",
       "result": "inconclusive",
-      "reason": "核心收入和付费增长明确，但 ARPU、留存、CAC、credits 毛利、营运资本和 ROIC 未闭环。"
+      "reason": "核心收入、付费与五年 ROIC 筛查明确，但 ARPU、留存、CAC、credits 毛利、正常营运资本和增量回报仍未闭环。"
     },
     {
       "gate": "durable_moat",
@@ -1722,7 +1754,7 @@
     {
       "gate": "management_and_capital_allocation",
       "result": "provisional",
-      "reason": "回购、创始人买入和研发方向可见，但继任、长期承诺评分与全摊薄每股结果未完成。"
+      "reason": "回购、创始人买入、研发方向及保守全摊薄每股桥可见，但奖励/库存股履约重叠、继任与长期承诺评分仍未完成。"
     },
     {
       "gate": "owner_earnings",
@@ -1808,7 +1840,7 @@
       "gate_count": 9,
       "dimension_count": 25,
       "indicator_count": 50,
-      "source_count": 16,
+      "source_count": 17,
       "errors": [],
       "warnings": []
     },
@@ -1816,7 +1848,7 @@
     "reviewed_at": null,
     "critical_gaps": [
       "2026H1 正式利润与现金流尚未发布。",
-      "20 条关键事实已进入页码级 evidence-index；全摊薄奖励重叠、未来 CB 利息/FX 和最新同日股数仍未解决。",
+      "20 条核心事实与 31 条关键事实定位已进入页码/表名/行号/哈希证据层；全摊薄奖励重叠、未来 CB 利息/FX 和最新同日股数仍未解决。",
       "独立客户/竞争者证据与人工审阅未完成。"
     ],
     "publication_state": "structured_research_snapshot_not_production_reviewed",
