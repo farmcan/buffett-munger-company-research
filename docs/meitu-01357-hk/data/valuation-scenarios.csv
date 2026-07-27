@@ -1,4 +1,4 @@
-scenario,starting_normalized_owner_earnings_rmb_bn,five_year_growth_pct,terminal_growth_pct,discount_rate_pct,net_cash_like_rmb_bn,implied_hkd_per_share,interpretation
-downside,0.70,0,0,13,3.323,2.22,"No growth and higher required return; not a target price"
-base,0.75,10,3,11,3.323,4.13,"Sustained paying conversion and moderate margin discipline; not a target price"
-upside,0.85,18,4,11,3.323,6.53,"Strong productivity/overseas execution; conversion dilution becomes relevant above HK$6; not a target price"
+scenario,capital_structure,starting_normalized_owner_earnings_rmb_bn,five_year_growth_pct,terminal_growth_pct,discount_rate_pct,net_cash_like_rmb_bn,fully_diluted_shares_bn,fx_cny_per_hkd,implied_hkd_per_share,interpretation
+downside,unconverted_principal_redemption,0.940877,0,0,13,2.941366,4.637881880,0.8664,2.53,"No growth; conservative non-CB award ceiling and contractual principal claim; not a target price"
+base,unconverted_principal_redemption,0.957881,10,3,11,2.941366,4.637881880,0.8664,4.83,"Moderate growth; conservative non-CB award ceiling and contractual principal claim; not a target price"
+upside,full_conversion_including_maturity_interest,1.024532,18,4,11,4.698566,4.973395796,0.8664,7.32,"Strong execution; CB debt removed and maximum disclosed conversion shares plus conservative award ceiling included; not a target price"

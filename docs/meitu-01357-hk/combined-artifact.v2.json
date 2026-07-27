@@ -1,0 +1,1736 @@
+{
+  "schema_version": "seed.stock-fundamentals-valuation.v2",
+  "artifact_type": "stock_fundamentals_valuation",
+  "artifact_role": "public_company_research_upgrade",
+  "status": "needs_human_review",
+  "generated_at": "2026-07-27T16:30:00+08:00",
+  "security": {
+    "security_id": "XHKG:01357",
+    "company_name": "Meitu, Inc.",
+    "company_name_zh": "美图公司",
+    "ticker": "01357",
+    "exchange": "HKEX",
+    "listing_type": "ordinary_hk_share",
+    "currency": "HKD",
+    "fiscal_year_end": "12-31",
+    "reporting_standard": "HKFRS"
+  },
+  "as_of": {
+    "research_date": "2026-07-27",
+    "price": 3.93,
+    "price_date": "2026-07-24",
+    "price_source_ref": "P01"
+  },
+  "methodology_refs": [
+    {
+      "id": "berkshire_1996_letter",
+      "title": "1996 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/1996.html",
+      "use": "用可理解性与可预测性约束能力圈，不以短期题材替代经营证据。"
+    },
+    {
+      "id": "berkshire_1986_letter",
+      "title": "1986 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/1986.html",
+      "use": "用 owner earnings 桥接净利润、非现金费用、维护性投入和营运资本需求。"
+    },
+    {
+      "id": "berkshire_2005_letter",
+      "title": "2005 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/2005ltr.pdf",
+      "use": "把长期竞争位置、管理层资本配置与每股结果放在同一框架中复核。"
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "F01",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "Meitu, Inc. Annual Report 2025",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042702560.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-04-27",
+      "accessed_at": "2026-07-27",
+      "period": "FY2025",
+      "audit_status": "audited",
+      "scope": "consolidated_group",
+      "covers": [
+        "financial_statements",
+        "continuing_and_discontinued_operations",
+        "revenue_mix",
+        "operating_kpis",
+        "cash_flow",
+        "adjusted_profit_bridge",
+        "ownership",
+        "governance"
+      ],
+      "content_sha256": "03cbf35ab1961e85e0c45fc31e6b58751a3cb7f4ff8135f0275d06521a1edd0f"
+    },
+    {
+      "id": "F02",
+      "tier": "A",
+      "source_type": "interim_report",
+      "title": "Meitu, Inc. Interim Report 2025",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0925/2025092501275.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-09-25",
+      "accessed_at": "2026-07-27",
+      "period": "2025H1",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "interim_financial_statements",
+        "channel_costs",
+        "compute_costs",
+        "foundation_model_strategy"
+      ],
+      "content_sha256": "6b76a0f90583027c10d5aa8888e580f8344a1c75da93293149cbc36f7cc85e3c"
+    },
+    {
+      "id": "F03",
+      "tier": "A",
+      "source_type": "voluntary_business_update",
+      "title": "First Quarter 2026 Business Update",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0506/2026050600053.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-05-06",
+      "accessed_at": "2026-07-27",
+      "period": "2026Q1",
+      "audit_status": "unaudited",
+      "scope": "selected_operating_kpis",
+      "covers": [
+        "core_revenue",
+        "paying_subscribers",
+        "productivity_mix",
+        "ai_arr",
+        "ai_credit_consumption"
+      ],
+      "content_sha256": "26c2ce17d1e78a2e48408f53babd64be4b3b6e18d72858d31c13259630865bb2",
+      "tier_mapping_note": "Legacy ledger A- is normalized to v2 tier A because this is an official HKEX filing; unaudited status remains explicit."
+    },
+    {
+      "id": "F04",
+      "tier": "A",
+      "source_type": "exchange_announcement",
+      "title": "Share Repurchase Plan of Up to HK$300 Million",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0327/2026032700936.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-03-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026 repurchase authorization",
+      "audit_status": "not_applicable",
+      "scope": "listed_security",
+      "covers": [
+        "repurchase_authorization",
+        "capital_allocation"
+      ],
+      "content_sha256": "e54bf83411239189394fe66d985956511d62ba06922bdc840c3a4fc84295348f"
+    },
+    {
+      "id": "F05",
+      "tier": "A",
+      "source_type": "exchange_announcement",
+      "title": "Purchase of Shares by Founder and Chairman",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0703/2026070302393.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-07-03",
+      "accessed_at": "2026-07-27",
+      "period": "2026-07-03",
+      "audit_status": "not_applicable",
+      "scope": "founder_disclosed_interest",
+      "covers": [
+        "founder_purchase",
+        "beneficial_ownership",
+        "insider_action"
+      ],
+      "content_sha256": "7aecd4910aa515d92e255384c9f51fb766527bd22dd06d1ed76f8529cc3dadae"
+    },
+    {
+      "id": "F06",
+      "tier": "A",
+      "source_type": "next_day_disclosure_return",
+      "title": "Next Day Disclosure Return dated 26 June 2026",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0626/2026062600948.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-06-26",
+      "accessed_at": "2026-07-27",
+      "period": "2026-06-26",
+      "audit_status": "not_applicable",
+      "scope": "issued_shares_and_treasury_shares",
+      "covers": [
+        "share_count",
+        "treasury_shares",
+        "repurchase_execution"
+      ],
+      "content_sha256": "a5fe0c8775671376bb95b6eb399993cebd629b696f41ef91cbb49d09def123a5"
+    },
+    {
+      "id": "F07",
+      "tier": "A",
+      "source_type": "exchange_announcement",
+      "title": "Completion of Issue of Convertible Bonds to Alibaba",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1231/2025123101815.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-12-31",
+      "accessed_at": "2026-07-27",
+      "period": "2025 convertible completion",
+      "audit_status": "not_applicable",
+      "scope": "convertible_bond_and_share_dilution",
+      "covers": [
+        "convertible_principal",
+        "conversion_price",
+        "potential_conversion_shares",
+        "dilution"
+      ],
+      "content_sha256": "10041adb64d4f0ce4382f277b551800b284de887631a91767dd3068d0688d268"
+    },
+    {
+      "id": "F08",
+      "tier": "A",
+      "source_type": "exchange_announcement",
+      "title": "Notice of Board Meeting for 2026 Interim Results",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-07-15",
+      "accessed_at": "2026-07-27",
+      "period": "2026H1 reporting calendar",
+      "audit_status": "not_applicable",
+      "scope": "result_publication_date",
+      "covers": [
+        "event_calendar",
+        "next_evidence_date"
+      ],
+      "content_sha256": "598719d68c51f12783597a0347c2f3a591260fc62037696459cf75b1fae9ff0f"
+    },
+    {
+      "id": "F09",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "Meitu, Inc. Annual Report 2024",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0425/2025042502209.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-04-25",
+      "accessed_at": "2026-07-27",
+      "period": "FY2024",
+      "audit_status": "audited",
+      "scope": "consolidated_group",
+      "covers": [
+        "financial_statements",
+        "historical_operating_kpis",
+        "accounting_presentation"
+      ],
+      "content_sha256": "b3a622bb05b44ead433d3bbbf4ec56051de16354d268d43ebc72cc4a0fd6b4ea"
+    },
+    {
+      "id": "F10",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "Meitu, Inc. Annual Report 2023",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0425/2024042502767.pdf",
+      "published_at_status": "known",
+      "published_at": "2024-04-25",
+      "accessed_at": "2026-07-27",
+      "period": "FY2023",
+      "audit_status": "audited",
+      "scope": "consolidated_group",
+      "covers": [
+        "financial_statements",
+        "historical_operating_kpis"
+      ],
+      "content_sha256": "4d939d5ea43cff5ec86619d34eddeca2e948bda049e5270d40d9a3905f4f74ce"
+    },
+    {
+      "id": "MT_AR2022",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "Meitu, Inc. Annual Report 2022",
+      "url": "https://corp-static.meitu.com/corp-new/20230426/Annual%20Report%20%28E%29.pdf",
+      "published_at_status": "known",
+      "published_at": "2023-04-26",
+      "accessed_at": "2026-07-27",
+      "period": "FY2022",
+      "audit_status": "audited",
+      "scope": "consolidated_group_as_then_reported",
+      "covers": [
+        "financial_statements",
+        "cash_and_debt",
+        "working_capital",
+        "roic_screening_proxy"
+      ],
+      "content_sha256": "d62cc5e9cb1cdcdc10c602df2fe1cf381a70e0309c6856933020707fdc282387"
+    },
+    {
+      "id": "MT_AR2021",
+      "tier": "A",
+      "source_type": "audited_annual_report",
+      "title": "Meitu, Inc. Annual Report 2021",
+      "url": "https://corp-static.meitu.com/corp-new/20220428/Annual%20Report%20%28E%29.pdf",
+      "published_at_status": "known",
+      "published_at": "2022-04-28",
+      "accessed_at": "2026-07-27",
+      "period": "FY2021",
+      "audit_status": "audited",
+      "scope": "consolidated_group_as_then_reported",
+      "covers": [
+        "financial_statements",
+        "cash_and_debt",
+        "working_capital",
+        "roic_screening_proxy"
+      ],
+      "content_sha256": "1d3a94fa168700893d3f10f030c06e929d543de409512cb8ec0529af9ce29878"
+    },
+    {
+      "id": "F14",
+      "tier": "A",
+      "source_type": "convertible_bond_terms",
+      "title": "Subscription of US$250 Million Convertible Bonds by Alibaba",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2025/0520/2025052001407.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-05-20",
+      "accessed_at": "2026-07-27",
+      "period": "2025 convertible bond terms",
+      "audit_status": "not_applicable",
+      "scope": "convertible_bond_contract",
+      "covers": [
+        "conversion_option",
+        "maturity_repayment",
+        "conversion_price_adjustment",
+        "relevant_events",
+        "debt_ranking"
+      ],
+      "content_sha256": "87f27e999e523ddfc074850b561371783ff14e92891f20c2d100bdd8becec47f"
+    },
+    {
+      "id": "P01",
+      "tier": "B",
+      "source_type": "market_data",
+      "title": "Tencent qfq Daily Market Snapshot — 01357.HK",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-07-24,1000,qfq",
+      "published_at_status": "known",
+      "published_at": "2026-07-24",
+      "accessed_at": "2026-07-27",
+      "period": "2023-01-01 to 2026-07-24",
+      "audit_status": "not_applicable",
+      "scope": "01357.HK adjusted_daily_prices",
+      "covers": [
+        "price",
+        "returns",
+        "event_windows",
+        "volatility"
+      ],
+      "content_sha256": "dd23814f21d1fde7ee59729dcb00d2623f6fd9861ef3bac9a86ec097d7c04675",
+      "tier_mapping_note": "Legacy ledger B- is normalized to v2 tier B; vendor data are not exchange-certified."
+    }
+  ],
+  "source_boundaries": {
+    "facts": "财务、股本、可转债与公告日历优先采用带校验和的 HKEX 文件；价格采用带校验和的第三方日线快照。",
+    "reported_claims": "公司调整后利润、ARR、模型路线与管理层表述均保留为公司口径，不升级为独立验证事实。",
+    "interpretations": "Owner earnings、净现金类资产、DCF、护城河与替代风险是研究推导，必须与披露值分列。",
+    "assumptions": "维护性投入、正常营运资本、汇率换算与长期增长均为显式假设或待补证输入。",
+    "source_gaps": "未披露的留存、CAC、地区 ARPU、分产品毛利、供应商集中度与完整摊薄股数不得填 0。",
+    "page_level_evidence": "公开 evidence-index 已绑定 20 条关键事实、原文页码与本 combined artifact 的 SHA-256；其余非关键事实仍主要停留在 source-level。"
+  },
+  "ownership_structure": {
+    "controller": "2025 年报与 2026-07-03 公告显示创始人吴欣鸿披露权益约 12.97%；蔡文胜为另一主要股东。控制、VIE 合同安排及少数股东价值转移仍需页码级复核。",
+    "treasury_share_policy": "库存股不计入当前流通经济权利，但未来再发行可能恢复摊薄。",
+    "fully_diluted_share_bridge": {
+      "as_of": "2025-12-31, with 2026-06-26 basic-share cross-check",
+      "unit": "million shares",
+      "shares_excluding_treasury": 4523.17678,
+      "treasury_shares": 63.0025,
+      "issued_shares_including_treasury": 4586.17928,
+      "known_convertible_if_converted": 335.513916,
+      "issued_if_only_convertible_converts": 4921.693196,
+      "economic_shares_ex_treasury_if_only_convertible_converts": 4858.690696,
+      "official_post_conversion_dilution_pct": 6.82,
+      "economic_dilution_ex_treasury_pct": 6.9054,
+      "fy2025_weighted_average_basic": 4538.255,
+      "fy2025_weighted_average_diluted": 4574.186,
+      "year_end_2025_issued_shares": 4586.17928,
+      "year_end_2025_options": 1.351948,
+      "year_end_2025_outstanding_awards_conservative_addition": 50.350652,
+      "fully_diluted_no_conversion": 4637.88188,
+      "cb_principal_only_conversion_shares": 325.741666,
+      "cb_maximum_conversion_shares_including_maturity_interest": 335.513916,
+      "fully_diluted_principal_only": 4963.623546,
+      "fully_diluted_all_in": 4973.395796,
+      "formula": "4,586.179280 + 1.351948 + 50.350652 + 335.513916 = 4,973.395796 million conservative fully diluted shares.",
+      "source_refs": [
+        "F01",
+        "F06",
+        "F07",
+        "F14"
+      ],
+      "data_artifact": "data/fully-diluted-share-bridge.csv",
+      "limitations": [
+        "4,973.395796 百万股是保守 ceiling，不是审计 EPS 分母；部分奖励可能由已发行受托股或市场购股满足，全部加回可能重复计算。",
+        "2026-06-26 基本股数反映后续库存股，但没有同日奖励余额，不能与 2025-12-31 奖励余额机械拼接。",
+        "转换情景必须同时移除相应可转债负债；未转换情景保留本金和利息偿付。"
+      ]
+    }
+  },
+  "financial_history": {
+    "periods": [
+      {
+        "period": "FY2021",
+        "period_type": "annual",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "consolidated_group_as_then_reported",
+        "revenue": 1666.029,
+        "gross_profit": 1125.087,
+        "gross_margin_pct": 67.531,
+        "parent_net_income": -44.514,
+        "operating_cash_flow": -26.318,
+        "reported_capex": 37.725,
+        "depreciation_and_amortisation": 75.939,
+        "employee_share_based_compensation": 55.502,
+        "cash_and_liquid_financial_resources": 1258.191,
+        "owner_earnings_base": null,
+        "source_refs": [
+          "MT_AR2021",
+          "MT_AR2022"
+        ],
+        "limitations": [
+          "包含后来终止或处置的业务；没有 2025 持续经营口径的追溯重列。",
+          "因此不制造同口径 owner earnings。"
+        ]
+      },
+      {
+        "period": "FY2022",
+        "period_type": "annual",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "consolidated_group_as_then_reported",
+        "revenue": 2085.329,
+        "gross_profit": 1187.272,
+        "gross_margin_pct": 56.935,
+        "parent_net_income": 94.142,
+        "operating_cash_flow": 233.99,
+        "reported_capex": 65.761,
+        "depreciation_and_amortisation": 62.783,
+        "employee_share_based_compensation": 47.324,
+        "cash_and_liquid_financial_resources": 1390.031,
+        "owner_earnings_base": null,
+        "source_refs": [
+          "MT_AR2022"
+        ],
+        "limitations": [
+          "包含后来终止或处置的业务；没有 2025 持续经营口径的追溯重列。",
+          "因此不制造同口径 owner earnings。"
+        ]
+      },
+      {
+        "period": "FY2023",
+        "period_type": "annual",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "reported_total",
+        "revenue": 2695.738,
+        "gross_profit": 1655.876,
+        "gross_margin_pct": 61.4,
+        "parent_net_income": 378.293,
+        "company_adjusted_parent_profit": 368.297,
+        "core_photo_video_design_revenue": 1327.384,
+        "paying_subscribers_m": 9.11,
+        "source_refs": [
+          "F10"
+        ]
+      },
+      {
+        "period": "FY2024",
+        "period_type": "annual",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "reported_total_with_later_discontinued_operation_reclassification",
+        "revenue": 3340.761,
+        "continuing_revenue_restated_in_FY2025": 2996.182,
+        "gross_profit": 2294.211,
+        "gross_margin_pct": 68.7,
+        "parent_net_income": 805.176,
+        "company_adjusted_parent_profit": 586.167,
+        "core_photo_video_design_revenue": 2085.616,
+        "paying_subscribers_m": 12.61,
+        "source_refs": [
+          "F09",
+          "F01"
+        ]
+      },
+      {
+        "period": "FY2025",
+        "period_type": "annual",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "continuing_operations_except_explicit_total_parent_profit",
+        "revenue": 3858.738,
+        "gross_profit": 2838.813,
+        "gross_margin_pct": 73.6,
+        "parent_net_income_total": 582.9,
+        "parent_net_income_continuing": 697.563,
+        "company_adjusted_parent_profit": 965.347,
+        "core_photo_video_design_revenue": 2954.033,
+        "paying_subscribers_m": 16.91,
+        "subscription_rate_pct": 6.1,
+        "operating_cash_flow": 1257.0,
+        "reported_capex_proxy": 48.0,
+        "cfo_less_capex_proxy": 1209.0,
+        "source_refs": [
+          "F01"
+        ]
+      },
+      {
+        "period": "2026Q1",
+        "period_type": "quarterly_business_update",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "selected_unaudited_unreviewed_operating_kpis",
+        "core_photo_video_design_revenue": 852.0,
+        "core_revenue_yoy_pct": 34.3,
+        "paying_subscribers_m_more_than": 17.9,
+        "paying_subscribers_yoy_pct": 30.2,
+        "productivity_paying_subscribers_m": 2.34,
+        "ai_productivity_arr": 580.0,
+        "profit": null,
+        "gross_margin_pct": null,
+        "operating_cash_flow": null,
+        "source_refs": [
+          "F03"
+        ]
+      }
+    ],
+    "comparability_note": "FY2021—FY2023 是当年集团口径；2025 将美业解决方案列为终止经营，只有 FY2024 比较数被重列。跨年总收入与利润必须标记范围断点，不能把 FY2021—FY2024 reported total 与 FY2025 continuing revenue 直接视为同口径。",
+    "data_artifact": "data/financial-five-year.csv"
+  },
+  "returns_on_capital_screen": {
+    "status": "screening_proxy_not_economic_roic",
+    "currency": "CNY",
+    "roic_proxy_pct": [
+      {"period": "FY2021", "value": -7.89, "source_refs": ["MT_AR2021"]},
+      {"period": "FY2022", "value": -6.86, "source_refs": ["MT_AR2022"]},
+      {"period": "FY2023", "value": 14.21, "source_refs": ["F10", "F01"]},
+      {"period": "FY2024", "value": 26.76, "source_refs": ["F09", "F01"]},
+      {"period": "FY2025", "value": 66.74, "source_refs": ["F01"]}
+    ],
+    "incremental_roic": {
+      "status": "not_determinable",
+      "reason": "FY2024 to FY2025 average operating capital declined as contract liabilities grew; mechanical delta NOPAT / delta capital has a negative denominator and is not economically interpretable."
+    },
+    "method": "Core operating profit excludes other income, finance, associates and selected non-operating items; NOPAT applies a 25% screening tax rate when positive; average operating capital includes operating assets less operating liabilities and contract liabilities.",
+    "limitations": [
+      "研发费用没有资本化，会抬高成熟期 ROIC。",
+      "2024—2025 分子为持续经营而资产负债表分母仍是集团口径。",
+      "订阅合同负债显著降低经营资本；这是有价值的 float，也可能在增长放缓时回转。",
+      "这是研究筛查指标，不是公司披露或稳定经济 ROIC。"
+    ],
+    "data_artifact": "data/roic-history.csv"
+  },
+  "segment_data": {
+    "status": "applicable_with_scope",
+    "period": "FY2025",
+    "currency": "CNY",
+    "unit": "million",
+    "segments": [
+      {
+        "name": "core_photo_video_and_design_products",
+        "revenue": 2954.033,
+        "share_of_continuing_revenue_pct": 76.55
+      },
+      {
+        "name": "online_advertising",
+        "revenue": 842.595,
+        "share_of_continuing_revenue_pct": 21.84
+      },
+      {
+        "name": "other",
+        "revenue": 62.11,
+        "share_of_continuing_revenue_pct": 1.61
+      }
+    ],
+    "reconciliation": "2,954.033 + 842.595 + 62.110 = 3,858.738 million CNY continuing revenue.",
+    "source_refs": [
+      "F01"
+    ],
+    "limitations": [
+      "公司没有在本证据包中披露每个 App、网站、地区或用户 cohort 的收入、毛利、留存与 CAC。",
+      "终止经营的美业解决方案不得与持续经营核心业务混作同一增长序列。"
+    ]
+  },
+  "research_dimensions": [
+    {
+      "dimension": "security_and_legal_subject",
+      "status": "applicable",
+      "summary": "证券、发行人、上市地点、价格日期与点时股本已由年报、股本回报和价格快照交叉定位。",
+      "indicators": [
+        {
+          "id": "exact_security_issuer_share_class_and_rights",
+          "status": "observed",
+          "summary": "研究对象为 Meitu, Inc. 在 HKEX 上市的普通股 01357。",
+          "source_refs": ["F01", "F06"],
+          "source_gaps": []
+        },
+        {
+          "id": "dated_price_share_count_currency_and_listing_status",
+          "status": "observed",
+          "summary": "价格锚定 2026-07-24 HKD 3.93；股本锚定 2026-06-26，日期差已保留。",
+          "source_refs": ["F06", "P01"],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": ["F01", "F06", "P01"],
+      "positive_evidence": ["证券身份与价格/股本日期可复核。"],
+      "counter_evidence": ["价格日与最近股本回报相差 28 天，期间交易需在正式冻结前再扫公告。"],
+      "source_gaps": []
+    },
+    {
+      "dimension": "control_and_beneficial_ownership",
+      "status": "unknown",
+      "summary": "主要股东权益与创始人增持可见，但质押、交叉持股、NCI 及关联价值转移未形成完整闭环。",
+      "indicators": [
+        {
+          "id": "controller_voting_pledges_and_cross_holdings",
+          "status": "observed",
+          "summary": "年报与创始人增持公告提供主要权益和近期内部人动作。",
+          "source_refs": ["F01", "F05"],
+          "source_gaps": ["尚未形成质押、交叉持股及 VIE 权利逐项页码索引。"]
+        },
+        {
+          "id": "value_transfers_nci_and_related_party_exposure",
+          "status": "not_disclosed",
+          "summary": "现有 combined 资料不足以量化 NCI、关联交易与少数股东价值转移。",
+          "source_refs": ["F01"],
+          "source_gaps": ["需逐页提取关联方、非控股权益、VIE 服务费与担保。"]
+        }
+      ],
+      "source_refs": ["F01", "F05"],
+      "positive_evidence": ["创始人持股与增持有正式公告。"],
+      "counter_evidence": ["内部人买入不能替代控制权和价值转移审查。"],
+      "source_gaps": ["缺少质押、NCI、VIE 与关联价值转移的完整桥。"]
+    },
+    {
+      "dimension": "business_model",
+      "status": "applicable",
+      "summary": "收入以影像与设计产品的订阅/付费为核心，广告为第二来源；轻实物资本并不等于低经济投入。",
+      "indicators": [
+        {
+          "id": "payer_value_proposition_revenue_and_cash_mechanism",
+          "status": "observed",
+          "summary": "核心产品向休闲和生产力用户提供影像、视频和设计工具，通过订阅及 credits 变现。",
+          "source_refs": ["F01", "F03"],
+          "source_gaps": ["分 App、地区、cohort 的 ARPU 和续费未披露。"]
+        },
+        {
+          "id": "capital_needs_and_business_failure_variables",
+          "status": "observed",
+          "summary": "主要经济投入是研发、推理/API、渠道分成和营销；失败变量包括模型替代、平台费率与付费留存。",
+          "source_refs": ["F01", "F02", "F03"],
+          "source_gaps": ["第三方模型成本、credits 单位毛利及渠道议价能力未单列。"]
+        }
+      ],
+      "source_refs": ["F01", "F02", "F03"],
+      "positive_evidence": ["核心收入、付费人数和生产力付费人数持续增长。"],
+      "counter_evidence": ["核心付费增长仍可能被渠道费、推理成本与模型商品化吸收。"],
+      "source_gaps": []
+    },
+    {
+      "dimension": "revenue_structure",
+      "status": "unknown",
+      "summary": "FY2025 持续经营分部可以对账，但价格、用量、地区和收购范围桥不完整。",
+      "indicators": [
+        {
+          "id": "segment_product_and_geography_reconciliation",
+          "status": "observed",
+          "summary": "核心产品、广告和其他收入可重算至持续经营总收入。",
+          "source_refs": ["F01"],
+          "source_gaps": ["缺少每个 App 和地区的财务分解。"]
+        },
+        {
+          "id": "volume_price_mix_acquisition_and_scope_bridge",
+          "status": "not_disclosed",
+          "summary": "付费人数增长可见，但 ARPU、续费、价格、credits 用量和范围变化无法完整拆分。",
+          "source_refs": ["F01", "F03"],
+          "source_gaps": ["需要同口径付费 cohort、ARPU、地区和产品收入桥。"]
+        }
+      ],
+      "source_refs": ["F01", "F03"],
+      "positive_evidence": ["FY2025 核心收入占持续经营收入约 76.6%。"],
+      "counter_evidence": ["用户增长不自动等于单位经济性改善。"],
+      "source_gaps": ["价格/数量/组合/地区桥缺失。"]
+    },
+    {
+      "dimension": "industry_chain_position",
+      "status": "unknown",
+      "summary": "美图位于模型/算力与应用商店之上、消费者及专业创作者之前，但利润池和替代关系缺少可校验的独立全图。",
+      "indicators": [
+        {
+          "id": "upstream_process_customer_payer_and_substitute_map",
+          "status": "not_disclosed",
+          "summary": "公司披露能说明自身路线，尚不足以完成上游、流程、付费者和替代品全图。",
+          "source_refs": ["F02", "F03"],
+          "source_gaps": ["需加入模型厂商、应用商店、竞争产品与客户的 checksum-bound 证据。"]
+        },
+        {
+          "id": "profit_pool_and_inventory_credit_technology_risk",
+          "status": "not_disclosed",
+          "summary": "渠道分成与推理成本可见，但产业利润池、credit 经济性和技术替代速度不能量化。",
+          "source_refs": ["F01", "F02"],
+          "source_gaps": ["缺少同口径竞争者毛利、推理成本及分成数据。"]
+        }
+      ],
+      "source_refs": ["F01", "F02", "F03"],
+      "positive_evidence": [],
+      "counter_evidence": ["基础模型更强更便宜可能扩大需求，也可能把功能直接包入模型平台。"],
+      "source_gaps": ["缺少独立产业链与利润池证据。"]
+    },
+    {
+      "dimension": "product_and_unit_economics",
+      "status": "unknown",
+      "summary": "付费数、订阅率和部分成本可见，但留存、CAC、ARPU、credits 毛利与增量利润率未形成单位经济性闭环。",
+      "indicators": [
+        {
+          "id": "price_volume_mix_and_incremental_economics",
+          "status": "not_disclosed",
+          "summary": "Q1 付费与核心收入增长不足以重建价格/数量/组合和增量利润。",
+          "source_refs": ["F01", "F03"],
+          "source_gaps": ["需要 ARPU、续费、CAC 回收期、credits 单位成本与增量毛利。"]
+        },
+        {
+          "id": "industry_denominator_scope_and_comparability",
+          "status": "not_disclosed",
+          "summary": "缺少可比公司同口径付费、收入、模型成本与利润分母。",
+          "source_refs": [],
+          "source_gaps": ["需建立 Adobe、Canva、模型平台及中国应用同口径对比。"]
+        }
+      ],
+      "source_refs": ["F01", "F03"],
+      "positive_evidence": ["2026Q1 生产力付费人数同比快于总付费人数。"],
+      "counter_evidence": ["增长可能伴随更高推理和渠道成本。"],
+      "source_gaps": ["关键单位经济性指标未披露。"]
+    },
+    {
+      "dimension": "customers",
+      "status": "unknown",
+      "summary": "消费者、prosumer 与生产力用户的方向可识别，但留存、集中度及外部客户证据不足。",
+      "indicators": [
+        {
+          "id": "customer_channel_end_user_and_payer_separation",
+          "status": "observed",
+          "summary": "核心收入来自付费用户，渠道包括应用商店；广告客户构成另一付款方。",
+          "source_refs": ["F01", "F03"],
+          "source_gaps": ["地区与渠道付款链尚未逐项拆分。"]
+        },
+        {
+          "id": "concentration_retention_receivables_inventory_and_external_evidence",
+          "status": "not_disclosed",
+          "summary": "没有同口径 cohort 留存、客户集中度和独立客户访谈证据。",
+          "source_refs": ["F01"],
+          "source_gaps": ["需要留存、流失、复购、广告客户集中度与外部用户证据。"]
+        }
+      ],
+      "source_refs": ["F01", "F03"],
+      "positive_evidence": ["付费人数与订阅率上升。"],
+      "counter_evidence": ["累计付费人数不能回答续费质量。"],
+      "source_gaps": ["客户留存、集中度与独立验证缺失。"]
+    },
+    {
+      "dimension": "suppliers",
+      "status": "unknown",
+      "summary": "应用商店、云、算力和第三方模型是关键输入，但集中度、替代成本及合同条款未披露到可量化程度。",
+      "indicators": [
+        {
+          "id": "critical_inputs_concentration_related_parties_and_substitution",
+          "status": "not_disclosed",
+          "summary": "关键输入类别可识别，具体供应商集中度和切换成本不可重建。",
+          "source_refs": ["F01", "F02"],
+          "source_gaps": ["需要云、模型、渠道及关联供应商集中度。"]
+        },
+        {
+          "id": "terms_prepayments_availability_and_cost_pass_through",
+          "status": "not_disclosed",
+          "summary": "缺少主要供应合同、预付款、可得性和成本传导条款。",
+          "source_refs": ["F01"],
+          "source_gaps": ["需读取供应商合同与成本敏感性。"]
+        }
+      ],
+      "source_refs": ["F01", "F02"],
+      "positive_evidence": ["公司采用自有、开源与第三方能力的组合路线，理论上具备切换选项。"],
+      "counter_evidence": ["渠道与模型平台仍可能掌握流量、定价和分发权。"],
+      "source_gaps": ["供应商集中度与合同条款缺失。"]
+    },
+    {
+      "dimension": "competition_structure",
+      "status": "unknown",
+      "summary": "替代者包括通用模型、Adobe/Canva 等工作流平台及大量垂直应用，但缺少独立、同口径竞争证据。",
+      "indicators": [
+        {
+          "id": "entry_exit_capacity_price_and_substitution",
+          "status": "not_disclosed",
+          "summary": "模型降价降低应用成本也降低进入壁垒，净效应尚未量化。",
+          "source_refs": ["F02", "F03"],
+          "source_gaps": ["需竞争者价格、功能、用户迁移和淘汰数据。"]
+        },
+        {
+          "id": "competitor_customer_and_regulator_corroboration",
+          "status": "not_disclosed",
+          "summary": "当前 checksum-bound 资料以公司披露为主，独立竞争者、客户和监管证据不完整。",
+          "source_refs": [],
+          "source_gaps": ["需加入竞争者财报、商店历史序列、网站趋势和监管文件。"]
+        }
+      ],
+      "source_refs": ["F02", "F03"],
+      "positive_evidence": [],
+      "counter_evidence": ["功能商品化与平台捆绑可能压缩独立应用价值。"],
+      "source_gaps": ["独立竞争证据不足。"]
+    },
+    {
+      "dimension": "durable_moat",
+      "status": "unknown",
+      "summary": "用户规模、产品矩阵、审美数据和工作流可能形成优势，但持续性尚未由留存、定价权或独立迁移成本证明。",
+      "indicators": [
+        {
+          "id": "mechanism_economic_result_durability_and_direction",
+          "status": "observed",
+          "summary": "付费人数、核心收入和生产力用户增长是机制可能生效的经营结果。",
+          "source_refs": ["F01", "F03"],
+          "source_gaps": ["缺少 cohort 留存、提价后流失和分产品增量回报。"]
+        },
+        {
+          "id": "strongest_falsifying_evidence",
+          "status": "not_disclosed",
+          "summary": "尚无独立证据排除模型平台直接包住编辑/生成工作流的反方路径。",
+          "source_refs": ["F02"],
+          "source_gaps": ["需追踪功能重叠、用户迁移、ARPU、毛利和自然获客。"]
+        }
+      ],
+      "source_refs": ["F01", "F02", "F03"],
+      "positive_evidence": ["付费增长和核心收入增长持续。"],
+      "counter_evidence": ["基础模型进步可能把差异化压缩为营销与分发竞争。"],
+      "source_gaps": ["护城河持续性尚未被单位经济性和独立证据验证。"]
+    },
+    {
+      "dimension": "revenue_quality",
+      "status": "unknown",
+      "summary": "收入与现金流总体增长，但预收、渠道、期末时点和产品范围变化仍需完整桥接。",
+      "indicators": [
+        {
+          "id": "revenue_receivables_contract_assets_returns_and_cash",
+          "status": "observed",
+          "summary": "年报提供收入、经营现金流及资产负债表项目，支持基础现金转换检查。",
+          "source_refs": ["F01"],
+          "source_gaps": ["尚未将合同负债、应收和现金变动逐页复算。"]
+        },
+        {
+          "id": "acquisition_period_end_channel_and_recognition_distortion",
+          "status": "not_disclosed",
+          "summary": "当前档案不能排除订阅预收、渠道结算及期末时点对现金流的暂时抬升。",
+          "source_refs": ["F01"],
+          "source_gaps": ["需季度合同负债、渠道结算、收入口径与并购范围桥。"]
+        }
+      ],
+      "source_refs": ["F01"],
+      "positive_evidence": ["FY2025 经营现金流高于法定利润。"],
+      "counter_evidence": ["订阅预收和营运资本顺风未必可持续。"],
+      "source_gaps": ["现金流时点与确认质量桥不完整。"]
+    },
+    {
+      "dimension": "earnings_quality",
+      "status": "applicable",
+      "summary": "法定总归母、持续经营归母、公司调整后归母及扣除股权激励的研究交叉口径已分列。",
+      "indicators": [
+        {
+          "id": "reported_to_normalized_parent_earnings_bridge",
+          "status": "observed",
+          "summary": "FY2025 总法定归母 582.900、持续经营归母 697.563、公司调整后归母 965.347 百万元人民币可分列。",
+          "source_refs": ["F01"],
+          "source_gaps": ["部分调整项仍需页码级重算。"]
+        },
+        {
+          "id": "tax_attribution_scope_and_adjustment_disagreement",
+          "status": "observed",
+          "summary": "终止经营、股权激励、可转债会计和金融资产波动造成分母差异；研究将股权激励视为股东成本。",
+          "source_refs": ["F01"],
+          "source_gaps": ["税后影响和每项归属需在页码级 evidence index 复核。"]
+        }
+      ],
+      "source_refs": ["F01"],
+      "positive_evidence": ["多个利润分母已明确，不以单一调整口径替代法定利润。"],
+      "counter_evidence": ["公司调整后利润包含终止经营并加回股权激励，不能单独称为真实盈利。"],
+      "source_gaps": []
+    },
+    {
+      "dimension": "cash_conversion",
+      "status": "unknown",
+      "summary": "FY2025 CFO 与粗略 CFO-capex 可重算，但可分配现金、受限现金和正常营运资本仍不明确。",
+      "indicators": [
+        {
+          "id": "profit_operating_cash_and_distributable_cash_bridge",
+          "status": "observed",
+          "summary": "FY2025 CFO 约 1,257、粗略 CFO-capex 约 1,209 百万元人民币，但后者只是上限代理。",
+          "source_refs": ["F01"],
+          "source_gaps": ["维护性投入与正常营运资本未单独披露。"]
+        },
+        {
+          "id": "factoring_payment_restricted_cash_and_sector_scope",
+          "status": "not_disclosed",
+          "summary": "受限现金、支付安排与可分配现金没有形成完整桥。",
+          "source_refs": ["F01"],
+          "source_gaps": ["需逐页检查受限资金、付款服务、租赁及离岸可分配性。"]
+        }
+      ],
+      "source_refs": ["F01"],
+      "positive_evidence": ["经营现金流显著为正。"],
+      "counter_evidence": ["当期现金转换可能受订阅预收和营运资本时点影响。"],
+      "source_gaps": ["可分配现金桥缺失。"]
+    },
+    {
+      "dimension": "working_capital",
+      "status": "unknown",
+      "summary": "报表项目存在，但持续融资属性与暂时现金释放尚未拆开。",
+      "indicators": [
+        {
+          "id": "receivables_inventory_payables_prepayments_and_contract_balances",
+          "status": "observed",
+          "summary": "年报包含应收、应付、预付款和合同相关项目。",
+          "source_refs": ["F01"],
+          "source_gaps": ["尚未形成多期周转天数与合同负债桥。"]
+        },
+        {
+          "id": "sustainable_financing_vs_temporary_cash_release",
+          "status": "not_disclosed",
+          "summary": "无法把订阅预收带来的结构性融资与一次性期末现金释放分开。",
+          "source_refs": ["F01"],
+          "source_gaps": ["需要季度序列和正常化营运资本模型。"]
+        }
+      ],
+      "source_refs": ["F01"],
+      "positive_evidence": ["订阅模式可能带来负营运资本。"],
+      "counter_evidence": ["负营运资本在增速下降时可能反向释放压力。"],
+      "source_gaps": ["缺少季度营运资本与增长归因。"]
+    },
+    {
+      "dimension": "capital_intensity",
+      "status": "unknown",
+      "summary": "实物资本开支低，但研发、推理、渠道和获客是经济资本；维护与增长部分无法可靠拆分。",
+      "indicators": [
+        {
+          "id": "maintenance_vs_growth_investment_range",
+          "status": "not_disclosed",
+          "summary": "公司未单列维护性资本开支、维护性研发和维持留存所需营销。",
+          "source_refs": ["F01", "F02"],
+          "source_gaps": ["需要维护/增长研发、推理、营销与资本开支区间。"]
+        },
+        {
+          "id": "capex_capacity_utilization_and_competitive_requirements",
+          "status": "not_disclosed",
+          "summary": "数字业务不以厂房产能衡量，但算力利用率、推理负载和竞争性投入未量化。",
+          "source_refs": ["F01", "F02"],
+          "source_gaps": ["需算力/API 用量、单位成本和模型升级投入。"]
+        }
+      ],
+      "source_refs": ["F01", "F02"],
+      "positive_evidence": ["实物资本开支相对 CFO 较低。"],
+      "counter_evidence": ["把研发和获客全部当费用可能低估维持竞争位置的经济资本。"],
+      "source_gaps": ["维护性经济投入未披露。"]
+    },
+    {
+      "dimension": "returns_on_capital",
+      "status": "unknown",
+      "summary": "利润和现金流改善可见，但投入资本、商誉、现金、可转债与股权激励没有形成多期 ROIC/增量回报桥。",
+      "indicators": [
+        {
+          "id": "multiperiod_roe_roic_and_incremental_returns",
+          "status": "not_disclosed",
+          "summary": "现有表格未提供可复算的多期 ROIC 与增量投入回报。",
+          "source_refs": ["F01", "F09", "F10"],
+          "source_gaps": ["需要平均投入资本、无形资产、商誉、租赁与超额现金调整。"]
+        },
+        {
+          "id": "leverage_buyback_cycle_and_accounting_decomposition",
+          "status": "not_disclosed",
+          "summary": "回购、可转债、股息和会计口径已识别，但尚未量化对 ROE/ROIC 的机械影响。",
+          "source_refs": ["F01", "F04", "F06", "F07"],
+          "source_gaps": ["需要期初期末股本、净债务和投入资本的统一桥。"]
+        }
+      ],
+      "source_refs": ["F01", "F04", "F06", "F07", "F09", "F10"],
+      "positive_evidence": ["核心收入和经营现金流改善。"],
+      "counter_evidence": ["利润增长可能部分来自会计调整、预收和资本结构变化。"],
+      "source_gaps": ["ROIC 与增量回报未完成。"]
+    },
+    {
+      "dimension": "balance_sheet_survival",
+      "status": "unknown",
+      "summary": "现金与流动金融资源较高，但包含可转债融资；到期偿付、受限资金与压力情景仍需拆分。",
+      "indicators": [
+        {
+          "id": "debt_liquidity_covenants_guarantees_pledges_and_off_balance",
+          "status": "observed",
+          "summary": "年报及可转债条款提供流动资源、债务性质、到期和潜在转换信息。",
+          "source_refs": ["F01", "F07", "F14"],
+          "source_gaps": ["担保、受限资金、租赁及全部表外承诺需页码级复核。"]
+        },
+        {
+          "id": "adverse_scenario_financing_need",
+          "status": "not_disclosed",
+          "summary": "低股价不转换情景下的 2028 偿付与再融资压力尚未形成现金流压力表。",
+          "source_refs": ["F07", "F14"],
+          "source_gaps": ["需要到期表、最低现金、压力 CFO 和资本回报假设。"]
+        }
+      ],
+      "source_refs": ["F01", "F07", "F14"],
+      "positive_evidence": ["FY2025 年末现金与流动金融资源约 4,937 百万元人民币。"],
+      "counter_evidence": ["其中包含 US$250m 可转债募集资金，不能全部视为发行前积累的自由净现金。"],
+      "source_gaps": ["压力融资与完整净现金桥仍需页码级复核。"]
+    },
+    {
+      "dimension": "capital_allocation",
+      "status": "applicable",
+      "summary": "研发、股息、回购、库存股、创始人买入与可转债已进入同一资本配置账本。",
+      "indicators": [
+        {
+          "id": "reinvestment_ma_dividend_buyback_issuance_debt_and_cash_ledger",
+          "status": "observed",
+          "summary": "FY2025 研发、股息、HKD 3 亿回购授权、实际回购及 US$250m 可转债均有正式资料。",
+          "source_refs": ["F01", "F04", "F06", "F07"],
+          "source_gaps": ["历史并购回报与每笔回购成本尚未做多年序列。"]
+        },
+        {
+          "id": "diluted_per_share_outcomes_and_opportunity_cost",
+          "status": "observed",
+          "summary": "回购减少流通股，但可转债、股权激励和库存股再发行可抵消每股效果。",
+          "source_refs": ["F01", "F06", "F07"],
+          "source_gaps": ["未归属激励及库存股未来用途仍缺同日全摊薄数据。"]
+        }
+      ],
+      "source_refs": ["F01", "F04", "F06", "F07"],
+      "positive_evidence": ["回购已有执行，创始人另有现金买入。"],
+      "counter_evidence": ["授权金额不等于执行价值，回购若被更大规模摊薄抵消则不提高每股经济价值。"],
+      "source_gaps": []
+    },
+    {
+      "dimension": "management",
+      "status": "unknown",
+      "summary": "管理层路线与部分结果可以对照，但长期承诺兑现、薪酬、继任和坦诚度没有完整评分卡。",
+      "indicators": [
+        {
+          "id": "dated_commitments_vs_outcomes",
+          "status": "observed",
+          "summary": "订阅化、生产力产品和不从零训练通用基模的路线，可与 FY2025 和 2026Q1 经营结果对照。",
+          "source_refs": ["F01", "F02", "F03"],
+          "source_gaps": ["需建立逐年承诺、日期、目标与结果账本。"]
+        },
+        {
+          "id": "incentives_compensation_succession_insider_actions_and_candor",
+          "status": "not_disclosed",
+          "summary": "创始人买入和股权激励可见，但完整薪酬激励、继任和不利信息披露评分未完成。",
+          "source_refs": ["F01", "F05"],
+          "source_gaps": ["需要薪酬、绩效条件、继任计划和历史不利披露复核。"]
+        }
+      ],
+      "source_refs": ["F01", "F02", "F03", "F05"],
+      "positive_evidence": ["战略路线与付费/生产力增长方向一致。"],
+      "counter_evidence": ["管理层叙事不能替代留存、CAC、地区 ARPU 和分产品毛利。"],
+      "source_gaps": ["长期承诺评分卡与继任资料不完整。"]
+    },
+    {
+      "dimension": "governance_and_related_parties",
+      "status": "unknown",
+      "summary": "年报包含治理和关联方披露，但定价公平、少数股东保护与独立反对意见未形成证据闭环。",
+      "indicators": [
+        {
+          "id": "related_sales_purchases_loans_guarantees_and_asset_transfers",
+          "status": "observed",
+          "summary": "年报是关联交易、贷款、担保及资产转移的主要正式来源。",
+          "source_refs": ["F01"],
+          "source_gaps": ["尚未逐项提取金额、定价与期末余额。"]
+        },
+        {
+          "id": "pricing_minority_fairness_oversight_and_dissent",
+          "status": "not_disclosed",
+          "summary": "现有 combined 资料不能独立评价关联定价、少数股东公平性与董事会异议。",
+          "source_refs": ["F01"],
+          "source_gaps": ["需关联交易条款、独董意见、审计委员会与表决记录。"]
+        }
+      ],
+      "source_refs": ["F01"],
+      "positive_evidence": ["存在正式年度治理披露。"],
+      "counter_evidence": ["形式合规不自动证明交易对少数股东公平。"],
+      "source_gaps": ["关联方金额与公平性测试未完成。"]
+    },
+    {
+      "dimension": "accounting_and_audit",
+      "status": "applicable",
+      "summary": "连续三年审计年报可比，但 2025 终止经营重列和调整后利润需要保留口径冲突。",
+      "indicators": [
+        {
+          "id": "audit_kam_standard_policy_and_restatement",
+          "status": "observed",
+          "summary": "FY2023-FY2025 审计年报提供会计政策、KAM 和 2025 终止经营重列基础。",
+          "source_refs": ["F01", "F09", "F10"],
+          "source_gaps": ["尚未把所有 KAM 页码写入公开 evidence index。"]
+        },
+        {
+          "id": "statement_reproduction_and_conflict_preservation",
+          "status": "observed",
+          "summary": "档案同时保留 reported total、continuing operations、公司 adjusted 与研究 adjusted 口径。",
+          "source_refs": ["F01", "F09", "F10"],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": ["F01", "F09", "F10"],
+      "positive_evidence": ["主要报表来源为审计年报，口径差异未被抹平。"],
+      "counter_evidence": ["2026Q1 仅为未审阅业务更新，不含利润、毛利和现金流。"],
+      "source_gaps": []
+    },
+    {
+      "dimension": "tax_and_legal",
+      "status": "unknown",
+      "summary": "年报提供税务与法律披露，但 AI 内容、隐私、版权、VIE 与平台合规尾部风险未完成独立核验。",
+      "indicators": [
+        {
+          "id": "effective_deferred_and_uncertain_tax",
+          "status": "observed",
+          "summary": "年报包含所得税、递延税项与税务附注。",
+          "source_refs": ["F01"],
+          "source_gaps": ["尚未形成有效税率与不确定税务头寸多年桥。"]
+        },
+        {
+          "id": "litigation_penalties_compliance_and_tail_exposure",
+          "status": "not_disclosed",
+          "summary": "现有 checksum-bound 证据不足以独立排除重大 AI、版权、隐私、VIE 和平台下架风险。",
+          "source_refs": ["F01"],
+          "source_gaps": ["需要监管、诉讼、应用商店与数据合规证据。"]
+        }
+      ],
+      "source_refs": ["F01"],
+      "positive_evidence": ["审计年报提供基础税务和或有事项披露。"],
+      "counter_evidence": ["生成式 AI 法规与版权责任仍快速演化。"],
+      "source_gaps": ["法律和监管尾部风险未独立核验。"]
+    },
+    {
+      "dimension": "per_share_economics",
+      "status": "unknown",
+      "summary": "当前股本、库存股与可转债可重算，但未归属激励、期权和库存股未来再发行阻止形成完整全摊薄分母。",
+      "indicators": [
+        {
+          "id": "basic_diluted_and_fully_diluted_share_reconciliation",
+          "status": "not_disclosed",
+          "summary": "可重算 CB-only 情景，无法重算同日 all-in fully diluted shares。",
+          "source_refs": ["F01", "F06", "F07"],
+          "source_gaps": ["需要同日未归属奖励、期权、库存股用途和税后转换负债。"]
+        },
+        {
+          "id": "per_share_growth_distribution_issuance_and_repurchase_outcomes",
+          "status": "observed",
+          "summary": "回购、库存股、股息和可转债对每股价值的方向性影响可识别。",
+          "source_refs": ["F01", "F04", "F06", "F07"],
+          "source_gaps": ["多年 owner earnings/fully diluted share 序列尚未完成。"]
+        }
+      ],
+      "source_refs": ["F01", "F04", "F06", "F07"],
+      "positive_evidence": ["新授权下已执行回购。"],
+      "counter_evidence": ["可转债最大新增 335.5 百万股，高于当前库存股规模。"],
+      "source_gaps": ["all-in fully diluted 分母缺失。"]
+    },
+    {
+      "dimension": "valuation",
+      "status": "applicable",
+      "summary": "价格、利润分母、净现金类资产和三情景 DCF 已分列，但 owner earnings、FX 与摊薄桥均为 provisional。",
+      "indicators": [
+        {
+          "id": "currency_consistent_value_range_assumptions_and_dates",
+          "status": "observed",
+          "summary": "估值以 HKD 3.93、2026-07-24 为价格锚，CNY 盈利通过显式 0.8664 CNY/HKD 假设换算。",
+          "source_refs": ["F01", "P01"],
+          "source_gaps": ["汇率来源尚未纳入 checksum-bound v2 source_refs。"]
+        },
+        {
+          "id": "reverse_expectations_sensitivities_and_cross_check",
+          "status": "observed",
+          "summary": "法定、持续经营、公司调整及 owner earnings 倍数与下行/基础/上行情景并列。",
+          "source_refs": ["F01", "P01"],
+          "source_gaps": ["缺少 look-ahead-safe 历史估值与市场一致预期。"]
+        }
+      ],
+      "source_refs": ["F01", "P01"],
+      "positive_evidence": ["当前价格接近基础 DCF 情景，结论对增长与折现率高度敏感。"],
+      "counter_evidence": ["上行情景超过初始转股价，必须纳入转换摊薄和负债移除。"],
+      "source_gaps": []
+    },
+    {
+      "dimension": "disconfirming_evidence",
+      "status": "applicable",
+      "summary": "独立 agent red-team 已建立可观察反方路径和 2026H1 复核日，但仍需人工审阅。",
+      "indicators": [
+        {
+          "id": "independent_strongest_counter_thesis",
+          "status": "observed",
+          "summary": "最强反方是模型平台把生成与编辑直接包入通用入口，使美图的差异化、留存和毛利同步下降。",
+          "source_refs": ["F01", "F02", "F03", "F07"],
+          "source_gaps": ["缺少独立竞品用户迁移和 cohort 数据。"]
+        },
+        {
+          "id": "observable_invalidation_next_evidence_and_review_date",
+          "status": "observed",
+          "summary": "下一正式复核点为 2026-08-26 H1；条件包括核心增速、付费、毛利、现金流及全摊薄每股经济性。",
+          "source_refs": ["F03", "F08"],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": ["F01", "F02", "F03", "F07", "F08"],
+      "positive_evidence": ["反方机制、可观察指标与日期已明确。"],
+      "counter_evidence": ["反方研究尚未获得人工签名，也未补齐独立客户/竞争者证据。"],
+      "source_gaps": []
+    }
+  ],
+  "earnings_quality_bridge": {
+    "period": "FY2025",
+    "currency": "CNY",
+    "unit": "million",
+    "reported_parent_net_income_total": 582.9,
+    "reported_parent_net_income_continuing": 697.563,
+    "company_adjusted_parent_earnings": 965.347,
+    "adjustments": [
+      {
+        "label": "share_based_compensation",
+        "operator": "subtract_from_company_adjusted",
+        "amount": 118.496,
+        "tax_basis": "company_reconciliation_basis",
+        "rationale": "股权激励对股东具有经济成本，不因公司调整口径加回而消失。",
+        "source_refs": ["F01"]
+      },
+      {
+        "label": "convertible_bond_share_payment_expense",
+        "operator": "separate_non_recurring_candidate",
+        "amount": 511.8,
+        "tax_basis": "company_reconciliation_basis",
+        "rationale": "一次性会计费用可与经营盈利分开，但对应债务与潜在摊薄必须保留。",
+        "source_refs": ["F01", "F07"]
+      },
+      {
+        "label": "fair_value_movements",
+        "operator": "separate_from_core_operations",
+        "amount": -481.1,
+        "tax_basis": "company_reconciliation_basis",
+        "rationale": "金融资产及优先股公允价值波动不作为核心经营收益。",
+        "source_refs": ["F01"]
+      }
+    ],
+    "research_adjusted_less_sbc": 846.851,
+    "formula": "965.347 - 118.496 = 846.851 million CNY; this is a cross-check, not final owner earnings.",
+    "disagreement": "公司调整后归母包含终止经营且加回股权激励；研究不把该口径单独定义为真实盈利。",
+    "source_refs": ["F01", "F07"]
+  },
+  "capital_allocation": {
+    "status": "reviewed_with_open_per_share_bridge",
+    "period": "FY2023 to 2026-06-26",
+    "uses": [
+      "research_and_product_reinvestment",
+      "dividends",
+      "share_repurchases",
+      "treasury_shares",
+      "share_based_compensation",
+      "convertible_financing"
+    ],
+    "per_share_test": "回购只有在低于保守内在价值、资产负债表安全且全摊薄每股 owner earnings 上升时才创造价值；创始人买入是利益一致信号，不是估值结论。",
+    "source_refs": ["F01", "F04", "F05", "F06", "F07", "F14"]
+  },
+  "balance_sheet_quality": {
+    "status": "scenario_reconciliation",
+    "currency": "CNY",
+    "unit": "million",
+    "net_cash_bridge": {
+      "as_of": "2025-12-31",
+      "cash_and_liquid_financial_resources": 4936.768,
+      "borrowings": 20.0,
+      "lease_liabilities": 31.236,
+      "subsidiary_convertible_redeemable_preferred_shares": 186.966,
+      "alibaba_cb_carrying_value": 1406.692,
+      "alibaba_cb_principal_claim": 1757.2,
+      "reported_carrying_value_net_cash": 3291.874,
+      "unconverted_principal_redemption_net_cash": 2941.366,
+      "full_conversion_net_cash": 4698.566,
+      "formulas": {
+        "reported_carrying_value": "4,936.768 - 20.000 - 31.236 - 186.966 - 1,406.692 = 3,291.874",
+        "unconverted_principal_redemption": "4,936.768 - 20.000 - 31.236 - 186.966 - 1,757.200 = 2,941.366",
+        "full_conversion": "4,936.768 - 20.000 - 31.236 - 186.966 = 4,698.566"
+      },
+      "source_refs": ["F01", "F07", "F14"],
+      "data_artifact": "data/net-cash-bridge.csv",
+      "limitations": [
+        "4,936.768 百万元包含阿里可转债募集资金，不能全部视为发行前积累的自由现金。",
+        "本金偿付情景尚未加入未来票息、违约利息、税务与汇率变动。",
+        "完全转换情景必须与对应转换股数配对，不能移除债务后继续使用旧股数。"
+      ]
+    },
+    "stress_note": "FY2026H1 后需用最新现金流、债务账面值、受限资金和到期表重建，而不是沿用 FY2025 点时值。"
+  },
+  "owner_earnings": {
+    "status": "calculated",
+    "currency": "HKD",
+    "bridge": {
+      "period": "FY2025",
+      "reported_currency": "CNY",
+      "unit": "million",
+      "continuing_parent_profit_cny": 697.563,
+      "less_fvtpl_and_preference_share_fair_value_gains_cny": 481.106,
+      "add_goodwill_and_intangible_impairment_cny": 96.352,
+      "add_associate_and_joint_venture_impairment_cny": 2.125,
+      "add_alibaba_cb_ifrs2_issuance_expense_cny": 511.811,
+      "add_tax_effects_of_normalising_adjustments_cny": 123.075,
+      "less_other_one_off_gains_cny": 8.943,
+      "employee_share_based_compensation_adjustment_cny": 0.0,
+      "normalised_continuing_earnings_cny": 940.877,
+      "depreciation_and_amortisation_cny": 83.875,
+      "maintenance_capex_low_base_high_cny": [83.875, 66.871, 49.867],
+      "normalised_working_capital_benefit_low_base_high_cny": [0.0, 0.0, 49.647],
+      "research_owner_earnings_range_cny": [940.877, 1024.532],
+      "translation_rate_cny_per_hkd": 0.8664,
+      "translation_status": "provisional_non_checksum_bound_fx_input",
+      "maintenance_capex": "not_separately_disclosed",
+      "normal_working_capital_need": "not_separately_disclosed",
+      "source_refs": ["F01", "F07"],
+      "data_artifact": "data/owner-earnings-bridge.csv"
+    },
+    "range": [
+      {
+        "case": "low",
+        "value": 1085.961450,
+        "value_cny_million": 940.877,
+        "value_hkd_million": 1085.961450,
+        "formula": "940.877 + 83.875 - 83.875 + 0 = CNY 940.877m"
+      },
+      {
+        "case": "base",
+        "value": 1105.587488,
+        "value_cny_million": 957.881,
+        "value_hkd_million": 1105.587488,
+        "formula": "940.877 + 83.875 - 66.871 + 0 = CNY 957.881m"
+      },
+      {
+        "case": "high",
+        "value": 1182.516159,
+        "value_cny_million": 1024.532,
+        "value_hkd_million": 1182.516159,
+        "formula": "940.877 + 83.875 - 49.867 + 49.647 = CNY 1,024.532m"
+      }
+    ],
+    "limitations": [
+      "CNY 940.877–1,024.532 百万元是研究区间，不是公司指引或市场一致预期。",
+      "员工股份支付已经在 IFRS 利润中列支，研究不加回；阿里 CB IFRS 2 一次性发行费用只从经营 run-rate 中剔除，债务和稀释影响仍保留。",
+      "公司未单列持续经营维护性资本开支、维护性研发及正常营运资本，低/基础/高情景分别采用显式假设。",
+      "0.8664 CNY/HKD 来自现有报告的中国银行 2026-07-24 换算输入，但该 FX 快照尚未进入 checksum-bound v2 source_refs，故港币区间为 provisional。",
+      "集团 D&A 与营运资本包含后来终止业务，持续经营拆分没有披露。"
+    ]
+  },
+  "pe_matrix": [
+    {
+      "label": "reported_fy",
+      "status": "calculated",
+      "price": 3.93,
+      "currency": "HKD",
+      "price_as_of": "2026-07-24",
+      "eps": 0.1487414634,
+      "eps_period": "FY2025",
+      "eps_type": "reported_total_parent_profit_per_current_share_fx_translated",
+      "formula": "HKD 3.93 / (CNY 582.900m / 4,523.17678m shares / 0.8664 CNY per HKD)",
+      "pe": 26.4216843771,
+      "earnings_yield": 0.0378477006,
+      "source_refs": ["F01", "F06", "P01"],
+      "confidence": "medium",
+      "limitations": ["含终止经营与可转债会计噪音；使用当前点时流通股而非 FY2025 加权平均稀释股。"]
+    },
+    {
+      "label": "reported_ttm",
+      "status": "unavailable",
+      "price": 3.93,
+      "currency": "HKD",
+      "price_as_of": "2026-07-24",
+      "eps": null,
+      "eps_period": "TTM to 2026Q1",
+      "eps_type": "reported_diluted",
+      "pe": null,
+      "reason": "2026Q1 更新没有披露利润、毛利、现金流或 EPS，无法用已披露数据可靠重建 TTM 分母。",
+      "source_refs": ["F01", "F03", "P01"],
+      "confidence": "unavailable",
+      "limitations": ["FY2025 是当前最近的完整利润分母。"]
+    },
+    {
+      "label": "continuing_operations_fy",
+      "status": "calculated",
+      "price": 3.93,
+      "currency": "HKD",
+      "price_as_of": "2026-07-24",
+      "eps": 0.1780005858,
+      "eps_period": "FY2025",
+      "eps_type": "continuing_IFRS_parent_profit_per_current_share_fx_translated",
+      "formula": "HKD 3.93 / (CNY 697.563m / 4,523.17678m shares / 0.8664 CNY per HKD)",
+      "pe": 22.0785790293,
+      "earnings_yield": 0.0452927699,
+      "source_refs": ["F01", "F06", "P01"],
+      "confidence": "medium",
+      "limitations": ["持续经营口径仍含可转债与投资公允价值波动；使用当前点时股数。"]
+    },
+    {
+      "label": "company_adjusted_fy",
+      "status": "calculated",
+      "price": 3.93,
+      "currency": "HKD",
+      "price_as_of": "2026-07-24",
+      "eps": 0.2463323477,
+      "eps_period": "FY2025",
+      "eps_type": "company_adjusted_parent_profit_per_current_share_fx_translated",
+      "formula": "HKD 3.93 / (CNY 965.347m / 4,523.17678m shares / 0.8664 CNY per HKD)",
+      "pe": 15.9540557161,
+      "earnings_yield": 0.0626799867,
+      "source_refs": ["F01", "F06", "P01"],
+      "confidence": "medium",
+      "limitations": ["公司定义口径包含终止经营并加回股权激励，不能单独代表 owner earnings。"]
+    },
+    {
+      "label": "adjusted_less_sbc_fy",
+      "status": "calculated",
+      "price": 3.93,
+      "currency": "HKD",
+      "price_as_of": "2026-07-24",
+      "eps": 0.2160951399,
+      "eps_period": "FY2025",
+      "eps_type": "research_adjusted_less_sbc_per_current_share_fx_translated",
+      "formula": "HKD 3.93 / (CNY 846.851m / 4,523.17678m shares / 0.8664 CNY per HKD)",
+      "pe": 18.1864340048,
+      "earnings_yield": 0.0549860407,
+      "source_refs": ["F01", "F06", "P01"],
+      "confidence": "medium_low",
+      "limitations": ["这是公司调整口径扣回股权激励的交叉检查，仍不是完整维护性投入后的 owner earnings。"]
+    },
+    {
+      "label": "owner_earnings_low_fy",
+      "status": "calculated",
+      "price": 3.93,
+      "currency": "HKD",
+      "price_as_of": "2026-07-24",
+      "earnings_cny_million": 940.877,
+      "eps": 0.2400882173,
+      "eps_period": "FY2025",
+      "eps_type": "research_owner_earnings_low",
+      "formula": "CNY market capitalisation 15,401.200m / CNY owner earnings 940.877m",
+      "pe": 16.3689834059,
+      "earnings_yield": 0.0610911487,
+      "source_refs": ["F01", "F06", "P01"],
+      "confidence": "medium_low",
+      "limitations": ["研究区间，不是 reported/consensus PE；维护性投入取 D&A，不计营运资本 float。"]
+    },
+    {
+      "label": "owner_earnings_base_fy",
+      "status": "calculated",
+      "price": 3.93,
+      "currency": "HKD",
+      "price_as_of": "2026-07-24",
+      "earnings_cny_million": 957.881,
+      "eps": 0.2444272117,
+      "eps_period": "FY2025",
+      "eps_type": "research_owner_earnings_base",
+      "formula": "CNY market capitalisation 15,401.200m / CNY owner earnings 957.881m",
+      "pe": 16.0784063991,
+      "earnings_yield": 0.0621952186,
+      "source_refs": ["F01", "F06", "P01"],
+      "confidence": "medium_low",
+      "limitations": ["研究区间，不是 reported/consensus PE；维护性 capex 取 D&A 与 cash capex 中点。"]
+    },
+    {
+      "label": "owner_earnings_high_fy",
+      "status": "calculated",
+      "price": 3.93,
+      "currency": "HKD",
+      "price_as_of": "2026-07-24",
+      "earnings_cny_million": 1024.532,
+      "eps": 0.2614348756,
+      "eps_period": "FY2025",
+      "eps_type": "research_owner_earnings_high",
+      "formula": "CNY market capitalisation 15,401.200m / CNY owner earnings 1,024.532m",
+      "pe": 15.0324245607,
+      "earnings_yield": 0.0665228683,
+      "source_refs": ["F01", "F06", "P01"],
+      "confidence": "low",
+      "limitations": ["研究区间，不是 reported/consensus PE；只计三年中位营运资本收益的一半，仍可能反转。"]
+    }
+  ],
+  "forward_scenarios": {
+    "currency": "HKD",
+    "price_anchor": 3.93,
+    "scenarios": [
+      {
+        "scenario": "bear",
+        "status": "unavailable",
+        "forecast_eps": null,
+        "implied_pe_at_current_price": null,
+        "reason": "2026Q1 缺利润、毛利和现金流，无法用正式披露重建 bear EPS。",
+        "assumptions": ["H1 将于 2026-08-26 提供下一次正式分母。"],
+        "source_refs": ["F03", "F08"]
+      },
+      {
+        "scenario": "base",
+        "status": "unavailable",
+        "forecast_eps": null,
+        "implied_pe_at_current_price": null,
+        "reason": "核心收入和付费增长不能直接转换为 EPS；缺少毛利、费用率和摊薄股数。",
+        "assumptions": ["H1 后再构建同口径 base EPS。"],
+        "source_refs": ["F03", "F08"]
+      },
+      {
+        "scenario": "upside",
+        "status": "unavailable",
+        "forecast_eps": null,
+        "implied_pe_at_current_price": null,
+        "reason": "生产力 ARR 不是确认收入，且没有续费、毛利和 credits 单位经济性。",
+        "assumptions": ["不得把 ARR 增速机械外推为 EPS 增速。"],
+        "source_refs": ["F03", "F08"]
+      }
+    ]
+  },
+  "intrinsic_value_scenarios": {
+    "currency": "HKD",
+    "scenarios": [
+      {
+        "scenario": "downside",
+        "status": "calculated",
+        "capital_structure": "unconverted_principal_redemption",
+        "discount_rate_pct": 13.0,
+        "terminal_growth_pct": 0.0,
+        "intrinsic_value_per_share": 2.53,
+        "starting_owner_earnings_cny_bn": 0.940877,
+        "five_year_growth_pct": 0.0,
+        "net_cash_like_cny_bn": 2.941366,
+        "fully_diluted_shares_bn": 4.63788188,
+        "formula": "Five-year owner-earnings DCF with 0% growth, 0% terminal growth, 13% discount rate; unconverted principal-redemption net cash; conservative non-CB award ceiling; CNY/HKD 0.8664.",
+        "source_refs": ["F01", "F06", "F14", "P01"],
+        "limitations": ["研究敏感性，不是公司指引；未转换偿付额仍受未来利息与汇率影响。"]
+      },
+      {
+        "scenario": "base",
+        "status": "calculated",
+        "capital_structure": "unconverted_principal_redemption",
+        "discount_rate_pct": 11.0,
+        "terminal_growth_pct": 3.0,
+        "intrinsic_value_per_share": 4.83,
+        "starting_owner_earnings_cny_bn": 0.957881,
+        "five_year_growth_pct": 10.0,
+        "net_cash_like_cny_bn": 2.941366,
+        "fully_diluted_shares_bn": 4.63788188,
+        "formula": "Five-year owner-earnings DCF with 10% growth, 3% terminal growth, 11% discount rate; unconverted principal-redemption net cash; conservative non-CB award ceiling; CNY/HKD 0.8664.",
+        "source_refs": ["F01", "F06", "F14", "P01"],
+        "limitations": ["对维护性投入、留存、毛利、未来 CB 偿付和 FX 高度敏感。"]
+      },
+      {
+        "scenario": "upside",
+        "status": "calculated",
+        "capital_structure": "full_conversion_including_maturity_interest",
+        "discount_rate_pct": 11.0,
+        "terminal_growth_pct": 4.0,
+        "intrinsic_value_per_share": 7.32,
+        "starting_owner_earnings_cny_bn": 1.024532,
+        "five_year_growth_pct": 18.0,
+        "net_cash_like_cny_bn": 4.698566,
+        "fully_diluted_shares_bn": 4.973395796,
+        "formula": "Five-year owner-earnings DCF with 18% growth, 4% terminal growth, 11% discount rate; CB debt removed; maximum disclosed conversion shares including maturity interest plus conservative award ceiling; CNY/HKD 0.8664.",
+        "source_refs": ["F01", "F06", "F07", "P01"],
+        "limitations": ["奖励余额与已发行/受托股份可能重叠，因此 4.973396 billion 是保守股数上限；实际转股价和时点可变化。"]
+      }
+    ],
+    "scenario_policy": "这些数值是资本结构一致的透明敏感性，不是概率加权结论、目标价或交易指令；维护性投入、FX 与奖励重叠仍使结果保持 range_only。"
+  },
+  "historical_valuation": {
+    "status": "unavailable",
+    "metric": "look_ahead_safe_historical_pe",
+    "reason": "现有档案没有按历史日期冻结当时已知 EPS、股本和重列口径，不能用事后 FY2025 信息回填历史 P/E。",
+    "current_cross_checks": {
+      "reported_total_fy_pe": 26.4217,
+      "continuing_ifrs_fy_pe": 22.0786,
+      "company_adjusted_fy_pe": 15.9541,
+      "owner_earnings_range_pe": [15.0313, 16.3677]
+    },
+    "look_ahead_control": "每个历史估值点必须只使用当日已发布的报表、当时股本与当日价格。",
+    "source_refs": ["F01", "F06", "P01"]
+  },
+  "price_move_attribution": {
+    "status": "monitor_summary_only",
+    "as_of": "2026-07-27",
+    "method": "现有 event-price-reactions.csv 对公告记录 T-1/T0/T+1/T+5，并以同日恒生科技指数作基准；因重叠事件和小盘流动性，因果置信度保持条件化。",
+    "current_price_hkd": 3.93,
+    "short_term_focus": [
+      "2026-08-26 H1 正式业绩",
+      "AI 应用板块轮动与海外映射",
+      "模型降价/开源与工作流平台功能发布",
+      "回购、库存股、可转债与全摊薄股数变化"
+    ],
+    "source_refs": ["F03", "F04", "F06", "F08", "P01"]
+  },
+  "moat_evidence": {
+    "positive_evidence": [
+      "FY2025 核心产品收入 2,954.033 百万元人民币，占持续经营收入约 76.6%。",
+      "2026Q1 总付费用户超过 17.9 百万，同比增长 30.2%；生产力付费 2.34 百万，同比增长 52.9%。",
+      "多产品矩阵、审美工作流与用户行为数据可能提高发现需求和跨产品复用效率。"
+    ],
+    "counter_evidence": [
+      "公司没有经独立证据验证的通用前沿基础模型，依赖开源、第三方及合作伙伴能力。",
+      "基础模型能力提升和降价既降低推理成本，也降低进入壁垒，并可能把生成/编辑直接包进平台。",
+      "缺少 cohort 留存、CAC、地区 ARPU、分产品毛利与用户迁移数据，无法证明定价权和切换成本。"
+    ],
+    "missing_tests": [
+      "同口径 12/24 个月付费 cohort 留存、复购与提价后流失。",
+      "分产品和地区的 ARPU、CAC 回收期、credits 单位毛利与自然新增占比。",
+      "模型平台功能发布后，美图各 App 的排名、网站流量、付费与毛利的 4–12 周联动。",
+      "独立客户/创作者访谈与竞品 win-loss 证据。"
+    ]
+  },
+  "red_team": [
+    {
+      "risk": "模型平台直接替代最后一公里应用",
+      "mechanism": "通用模型把生成、编辑、模板和 agent 工作流放进同一入口，用户无需再为独立 App 付费。",
+      "source_refs": ["F02", "F03"],
+      "invalidation_test": "跟踪主要模型/工作流平台发布后的付费净增、续费、ARPU、毛利及自然获客；若核心增速与毛利连续恶化，反方增强。"
+    },
+    {
+      "risk": "增长被渠道费、推理成本和股权激励吸收",
+      "mechanism": "收入和付费上升，但新增毛利流向应用商店、云/模型供应商和员工摊薄。",
+      "source_refs": ["F01", "F02"],
+      "invalidation_test": "H1 及后续两期同时复核核心收入、毛利率、销售成本、SBC 与 fully diluted owner earnings per share。"
+    },
+    {
+      "risk": "可转债在不同股价情景改变风险形态",
+      "mechanism": "高于有效转股价时潜在摊薄增强；未转换到期时本金和利息形成现金偿付或再融资压力。",
+      "source_refs": ["F07", "F14"],
+      "invalidation_test": "每期更新有效转股价、转换股份、债务账面值、到期现金需求与转换后每股价值。"
+    },
+    {
+      "risk": "Q1 经营更新掩盖利润与现金流变化",
+      "mechanism": "Q1 只披露核心收入、付费和 ARR，缺少毛利、费用、利润及 CFO，市场可能对不完整信号过度外推。",
+      "source_refs": ["F03", "F08"],
+      "invalidation_test": "以 2026-08-26 H1 正式财报核对收入、付费、毛利、利润、现金流和股数是否同向改善。"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "identity_and_source_integrity",
+      "result": "provisional",
+      "reason": "证券与主要官方源已校验，但控制、关联方和页码级证据索引仍不完整。"
+    },
+    {
+      "gate": "circle_of_competence",
+      "result": "provisional",
+      "reason": "订阅与广告业务可理解，模型/渠道利润池、客户留存和供应商依赖仍超出当前证据边界。"
+    },
+    {
+      "gate": "business_economics",
+      "result": "inconclusive",
+      "reason": "核心收入和付费增长明确，但 ARPU、留存、CAC、credits 毛利、营运资本和 ROIC 未闭环。"
+    },
+    {
+      "gate": "durable_moat",
+      "result": "inconclusive",
+      "reason": "用户规模与产品矩阵是正面信号，模型平台替代与缺少独立留存证据阻止耐久性结论。"
+    },
+    {
+      "gate": "management_and_capital_allocation",
+      "result": "provisional",
+      "reason": "回购、创始人买入和研发方向可见，但继任、长期承诺评分与全摊薄每股结果未完成。"
+    },
+    {
+      "gate": "owner_earnings",
+      "result": "range_only",
+      "reason": "CNY 940.877–1,024.532 百万元逐项桥可用于敏感性；员工 SBC 保留为成本，但持续经营维护性投入、正常营运资本与 checksum-bound FX 仍缺失。"
+    },
+    {
+      "gate": "survival_and_balance_sheet",
+      "result": "provisional",
+      "reason": "流动资源较高但含可转债融资；负债扣减、受限资金及 2028 低转换情景压力表未完成。"
+    },
+    {
+      "gate": "intrinsic_value_and_margin_of_safety",
+      "result": "range_only",
+      "reason": "HKD 2.53–7.32 的情景跨度大；未转换偿债与完全转换已使用各自净现金和保守股数，但 FX、奖励重叠和长期增长仍为 provisional。"
+    },
+    {
+      "gate": "decision_and_disconfirming_evidence",
+      "result": "provisional",
+      "reason": "独立 agent red-team 已完成，但多项维度仍 unknown，2026H1 与人工审阅未完成。"
+    }
+  ],
+  "source_gaps": [
+    {
+      "gap": "2026Q1 没有利润、毛利、费用和经营现金流。",
+      "resolution": "2026-08-26 H1 后建立 Q1/Q2/H1 同口径利润与现金流桥。"
+    },
+    {
+      "gap": "留存、ARPU、CAC、分产品/地区毛利和 credits 单位经济性未披露。",
+      "resolution": "在后续财报、管理层问答和第三方产品序列中持续采集；未知保持 unknown。"
+    },
+    {
+      "gap": "全摊薄桥已给出期权、全部未归属奖励和 CB 的保守上限，但未解决奖励与已发行受托股/市场购股的重叠，且 2026-06-26 没有同日奖励余额。",
+      "resolution": "用下一份股本回报和财报附注重建同日 basic/diluted/CB/all-in 四层股数并消除重复计算。"
+    },
+    {
+      "gap": "净现金桥已逐项覆盖借款、租赁、附属优先股、CB 账面值/本金和受限现金，但未来票息、FX 与 H1 更新尚未纳入。",
+      "resolution": "2026H1 后按同一结构更新现金、债务、到期利息和转换状态。"
+    },
+    {
+      "gap": "0.8664 CNY/HKD 汇率输入尚未进入 checksum-bound v2 source_refs。",
+      "resolution": "冻结官方 FX 快照并重算 owner earnings、EPS 与 DCF。"
+    },
+    {
+      "gap": "缺少独立竞争者、客户、供应商、App Store 历史排名与网站访问趋势的 checksum-bound 长序列。",
+      "resolution": "将现有公开序列按日期、地区、产品和口径冻结，并与付费/收入财报点做相关而非因果验证。"
+    }
+  ],
+  "invalidation_tests": [
+    {
+      "test": "付费增长未转成经营利润",
+      "trigger": "连续两个报告期核心收入/付费增长而毛利率、经营利润率或 CFO 明显走弱。",
+      "next_evidence": "2026-08-26 H1 及下一份正式财报。"
+    },
+    {
+      "test": "模型平台替代增强",
+      "trigger": "重大模型/工作流平台发布后 4–12 周，美图核心 App/网站趋势、付费净增和 ARPU 同时转弱。",
+      "next_evidence": "按周产品序列与下一次经营更新。"
+    },
+    {
+      "test": "摊薄超过经营增长",
+      "trigger": "fully diluted shares 增速持续高于 normalized owner earnings，导致每股区间下降。",
+      "next_evidence": "下一份股本回报、股权激励附注和可转债公告。"
+    },
+    {
+      "test": "低转换情景变成偿付压力",
+      "trigger": "接近到期时股价低于有效转股价，且净现金、CFO 或再融资条件不足以覆盖本金及利息。",
+      "next_evidence": "每期债务到期表、现金流与转换公告。"
+    },
+    {
+      "test": "披露完整性恶化",
+      "trigger": "再次出现重大延迟、未经批准披露、停牌、审计保留或关联交易补披露。",
+      "next_evidence": "HKEX 公告与下一份审计/中期报告。"
+    }
+  ],
+  "review": {
+    "human_review_required": true,
+    "status": "needs_human_review",
+    "validator_status": "passed",
+    "validator_run": {
+      "validated_at": "2026-07-27",
+      "command": "PYTHONPATH=src python3 skills/research-buffett-munger-company/scripts/validate_company_research.py docs/company-research/meitu-01357-hk/combined-artifact.v2.json",
+      "gate_count": 9,
+      "dimension_count": 25,
+      "indicator_count": 50,
+      "source_count": 14,
+      "errors": [],
+      "warnings": []
+    },
+    "reviewer": null,
+    "reviewed_at": null,
+    "critical_gaps": [
+      "2026H1 正式利润与现金流尚未发布。",
+      "20 条关键事实已进入页码级 evidence-index；全摊薄奖励重叠、未来 CB 利息/FX 和最新同日股数仍未解决。",
+      "独立客户/竞争者证据与人工审阅未完成。"
+    ],
+    "publication_state": "structured_research_snapshot_not_production_reviewed",
+    "reviewed_for_publication": false
+  },
+  "disclaimer": "This is a research-support artifact, not investment advice. 情景、估值和风险条件用于证据审计，不构成收益承诺或证券交易指令。"
+}

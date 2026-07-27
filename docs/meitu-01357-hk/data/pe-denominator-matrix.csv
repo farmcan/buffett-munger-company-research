@@ -3,5 +3,6 @@ price_date,price_hkd,shares_ex_treasury_mn,market_cap_hkd_mn,fx_cny_per_hkd,mark
 2026-07-24,3.93,4523.17678,17775.0,0.8664,15400.0,FY2025_continuing_IFRS_profit_attributable_owners,697.563,22.1,"Best audited continuing-operation statutory denominator"
 2026-07-24,3.93,4523.17678,17775.0,0.8664,15400.0,FY2025_company_adjusted_profit_attributable_owners,965.347,16.0,"Company-defined; adds back share-based compensation and other items"
 2026-07-24,3.93,4523.17678,17775.0,0.8664,15400.0,FY2025_adjusted_less_share_based_compensation,846.851,18.2,"Research cross-check that treats share-based compensation as an owner cost"
-2026-07-24,3.93,4523.17678,17775.0,0.8664,15400.0,normalized_owner_earnings_low,700.000,22.0,"Research range; not company guidance or consensus"
-2026-07-24,3.93,4523.17678,17775.0,0.8664,15400.0,normalized_owner_earnings_high,850.000,18.1,"Research range; not company guidance or consensus"
+2026-07-24,3.93,4523.17678,17775.0,0.8664,15400.0,normalized_owner_earnings_low,940.877,16.4,"Retains employee SBC; removes non-operating items and treats maintenance investment conservatively; not company guidance or consensus"
+2026-07-24,3.93,4523.17678,17775.0,0.8664,15400.0,normalized_owner_earnings_base,957.881,16.1,"Retains employee SBC; maintenance capex midpoint and no working-capital credit; not company guidance or consensus"
+2026-07-24,3.93,4523.17678,17775.0,0.8664,15400.0,normalized_owner_earnings_high,1024.532,15.0,"Retains employee SBC; reported cash capex and partial normalized working-capital benefit; not company guidance or consensus"

@@ -187,6 +187,42 @@
       "limitations": "Historical presentation predates the 2025 discontinued-operation reclassification."
     },
     {
+      "id": "MT_AR2022",
+      "tier": "A",
+      "kind": "audited_annual_report",
+      "title": "Meitu, Inc. Annual Report 2022",
+      "publisher": "Meitu",
+      "published_at": "2023-04-26",
+      "retrieved_at": "2026-07-27",
+      "url": "https://corp-static.meitu.com/corp-new/20230426/Annual%20Report%20%28E%29.pdf",
+      "snapshot_sha256": "d62cc5e9cb1cdcdc10c602df2fe1cf381a70e0309c6856933020707fdc282387",
+      "used_for": [
+        "2022 five-year financial history",
+        "cash and debt bridge",
+        "working-capital history",
+        "ROIC screening proxy"
+      ],
+      "limitations": "Historical group presentation includes businesses later discontinued or disposed; no retrospective 2025 continuing-operations split is available."
+    },
+    {
+      "id": "MT_AR2021",
+      "tier": "A",
+      "kind": "audited_annual_report",
+      "title": "Meitu, Inc. Annual Report 2021",
+      "publisher": "Meitu",
+      "published_at": "2022-04-28",
+      "retrieved_at": "2026-07-27",
+      "url": "https://corp-static.meitu.com/corp-new/20220428/Annual%20Report%20%28E%29.pdf",
+      "snapshot_sha256": "1d3a94fa168700893d3f10f030c06e929d543de409512cb8ec0529af9ce29878",
+      "used_for": [
+        "2021 five-year financial history",
+        "cash and debt bridge",
+        "working-capital history",
+        "ROIC screening proxy"
+      ],
+      "limitations": "Historical group presentation includes businesses later discontinued or disposed; no retrospective 2025 continuing-operations split is available."
+    },
+    {
       "id": "F11",
       "tier": "A",
       "kind": "official_filings_index",
