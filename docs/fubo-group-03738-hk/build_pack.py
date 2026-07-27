@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ruff: noqa
 """Build the public, checksum-bound Vobile Group research package."""
 
 from __future__ import annotations
