@@ -1367,6 +1367,40 @@
         "license segmentation across model variants"
       ],
       "limitations": "Performance claims are vendor-reported; some larger variants use non-commercial licences, and self-hosting still incurs compute and engineering cost."
+    },
+    {
+      "id": "R10",
+      "tier": "A",
+      "kind": "official_short_position_series",
+      "title": "Aggregated Reportable Short Positions of Specified Shares",
+      "publisher": "Hong Kong Securities and Futures Commission",
+      "published_at": "2026-07-17",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.sfc.hk/en/Regulatory-functions/Market/Short-position-reporting/Aggregated-reportable-short-positions-of-specified-shares",
+      "latest_csv_url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/17/Short_Position_Reporting_Aggregated_Data_20260717.csv?rev=76131f683e7240c3ade786261a04ff24",
+      "snapshot_sha256": "22e97934c1fa5fb99b869f691b9df9c76c632c23c567ed4b3668fb9fb56942a1",
+      "used_for": [
+        "2026 weekly Meitu reportable net short-position series",
+        "short-position trend relative to non-treasury issued shares"
+      ],
+      "limitations": "SFC data include only positions meeting the reporting threshold, are published with a lag, and may include hedges. They are not total short interest, borrow utilisation or a statement of investor motive. Exact weekly CSV URLs are retained in price-short-positioning.csv."
+    },
+    {
+      "id": "R11",
+      "tier": "B",
+      "kind": "daily_short_selling_turnover",
+      "title": "Meitu Daily Short-selling Activity",
+      "publisher": "ET Net",
+      "published_at": "2026-07-27",
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_shortsell.php?code=01357",
+      "snapshot_sha256": "edd09f8c2cb6474f508abf0e7ac8860973791c8e0ecb8e8387e124ec994b7f6a",
+      "used_for": [
+        "daily short-selling turnover ratios sourced by ET Net from HKEX market information",
+        "June versus July short-selling turnover intensity",
+        "27 July incomplete half-day short-selling observation and intraday quote"
+      ],
+      "limitations": "Secondary presentation of HKEX-sourced market data. Short-selling turnover is gross trading activity, not the weekly change in reportable net short positions. The 27 July 30.503% observation was marked as half-day data and must not be compared directly with completed sessions."
     }
   ]
 }

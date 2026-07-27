@@ -320,10 +320,49 @@
       ],
       "content_sha256": "dd23814f21d1fde7ee59729dcb00d2623f6fd9861ef3bac9a86ec097d7c04675",
       "tier_mapping_note": "Legacy ledger B- is normalized to v2 tier B; vendor data are not exchange-certified."
+    },
+    {
+      "id": "R10",
+      "tier": "A",
+      "source_type": "official_short_position_series",
+      "title": "Aggregated Reportable Short Positions of Specified Shares",
+      "url": "https://www.sfc.hk/en/Regulatory-functions/Market/Short-position-reporting/Aggregated-reportable-short-positions-of-specified-shares",
+      "published_at_status": "known",
+      "published_at": "2026-07-17",
+      "accessed_at": "2026-07-27",
+      "period": "selected weekly observations from 2026-01-02 to 2026-07-17",
+      "audit_status": "not_applicable",
+      "scope": "reportable_net_short_positions_meeting_SFC_threshold",
+      "covers": [
+        "reportable_short_position_trend",
+        "short_position_as_share_of_non_treasury_issued_shares"
+      ],
+      "content_sha256": "22e97934c1fa5fb99b869f691b9df9c76c632c23c567ed4b3668fb9fb56942a1",
+      "limitations": "The checksum covers the 17 July CSV only. The series is thresholded, lagged and may include hedges; it is not total short interest, borrow utilisation or investor motive."
+    },
+    {
+      "id": "R11",
+      "tier": "B",
+      "source_type": "daily_short_selling_turnover",
+      "title": "Meitu Daily Short-selling Activity",
+      "url": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_shortsell.php?code=01357",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-27",
+      "period": "2026-06-01 to 2026-07-27",
+      "audit_status": "not_applicable",
+      "scope": "secondary_presentation_of_HKEX_sourced_daily_short_turnover",
+      "covers": [
+        "daily_short_selling_turnover_ratio",
+        "June_vs_July_turnover_intensity",
+        "2026-07-27_incomplete_half_day_observation"
+      ],
+      "content_sha256": "edd09f8c2cb6474f508abf0e7ac8860973791c8e0ecb8e8387e124ec994b7f6a",
+      "limitations": "Gross short-selling turnover is not a change in net short positions. The 27 July 30.503% observation was marked as incomplete half-day data."
     }
   ],
   "source_boundaries": {
-    "facts": "财务、股本、可转债与公告日历优先采用带校验和的 HKEX 文件；价格采用带校验和的第三方日线快照。",
+    "facts": "财务、股本、可转债与公告日历优先采用带校验和的 HKEX 文件；价格采用带校验和的第三方日线快照；净空仓趋势优先采用 SFC 周度申报数据。",
     "reported_claims": "公司调整后利润、ARR、模型路线与管理层表述均保留为公司口径，不升级为独立验证事实。",
     "interpretations": "Owner earnings、净现金类资产、DCF、护城河与替代风险是研究推导，必须与披露值分列。",
     "assumptions": "维护性投入、正常营运资本、汇率换算与长期增长均为显式假设或待补证输入。",
@@ -1551,18 +1590,69 @@
     "look_ahead_control": "每个历史估值点必须只使用当日已发布的报表、当时股本与当日价格。",
     "source_refs": ["F01", "F06", "P01"]
   },
+  "market_positioning": {
+    "status": "short_pressure_material_but_easing",
+    "as_of": "2026-07-27",
+    "price_state": {
+      "last_completed_close_hkd": 3.93,
+      "last_completed_close_date": "2026-07-24",
+      "latest_intraday_quote_hkd": 3.94,
+      "latest_intraday_quote_time": "2026-07-27T15:58:00+08:00",
+      "twenty_session_sma_hkd": 4.0145,
+      "sixty_session_sma_hkd": 4.4352,
+      "two_hundred_session_sma_hkd": 6.3038,
+      "sixty_session_typical_price_vwap_hkd": 4.6405,
+      "closes_in_3_80_to_4_20_band": {
+        "count": 15,
+        "sessions": 17,
+        "period": "2026-07-02 to 2026-07-24"
+      },
+      "interpretation": "价格贴近 20 日均值，但仍低于 60/200 日均值和 60 日成交量加权成本代理；这是短线均衡与中期上方供给并存，不是确定性支撑/阻力。"
+    },
+    "reportable_short_position": {
+      "latest_reporting_date": "2026-07-17",
+      "latest_shares_mn": 357.876538,
+      "approx_pct_of_2026_06_26_non_treasury_issued_shares": 7.91,
+      "change_from_2026_06_26_pct": -25.88,
+      "change_from_selected_2026_04_30_peak_pct": -41.89,
+      "change_from_2026_01_02_pct": 22.12,
+      "twenty_session_volume_cover_proxy_days": 5.49,
+      "interpretation": "空头存量仍不小，但从 4 月和 6 月高位明显回落。股价在空头回补期间仍横在 4 港元附近，反证了“近期弱势完全由新增空头主导”。"
+    },
+    "short_selling_turnover": {
+      "june_completed_sessions_weighted_ratio_pct": 11.94,
+      "july_3_to_24_completed_sessions_weighted_ratio_pct": 8.91,
+      "july_27_incomplete_half_day_ratio_pct": 30.503,
+      "interpretation": "7 月已完成时段的卖空成交强度低于 6 月；7 月 27 日半日比率跳升，但不完整单日不能覆盖 SFC 周度净空仓下降趋势。"
+    },
+    "likely_price_formation": [
+      "6 月 1 日 AI 应用叙事脉冲快速回吐，留下 4.4—5.6 港元的历史成交与套牢供给。",
+      "公司在 3.58—3.66 港元回购、创始人在 4.023 港元增持，形成可观察但有限的公司/内部人需求区。",
+      "2026H1 正式业绩要到 8 月 26 日，Q1 增长能否转成利润、现金流和 credits 毛利尚未被正式中报验证。",
+      "短仓回落而成交量收缩，说明当前更像买卖双方等待下一证据，而不是持续的单边逼空或做空。"
+    ],
+    "data_artifact": "data/price-short-positioning.csv",
+    "source_refs": ["F05", "F06", "F08", "P01", "R10", "R11"],
+    "limitations": [
+      "SFC 数据有阈值和发布滞后，且可能包括对冲。",
+      "没有公开、同日、可核验的借券费率、可借券库存或 free-float-adjusted short-interest percentile。",
+      "ET Net 每日卖空成交是二级呈现，不能当成净空仓变动。",
+      "价格区间和均线只描述市场状态，不产生证券操作指令。"
+    ]
+  },
   "price_move_attribution": {
     "status": "monitor_summary_only",
     "as_of": "2026-07-27",
     "method": "现有 event-price-reactions.csv 对公告记录 T-1/T0/T+1/T+5，并以同日恒生科技指数作基准；因重叠事件和小盘流动性，因果置信度保持条件化。",
-    "current_price_hkd": 3.93,
+    "current_price_hkd": 3.94,
+    "current_price_status": "2026-07-27 intraday quote at 15:58; last completed close was HK$3.93 on 2026-07-24",
     "short_term_focus": [
       "2026-08-26 H1 正式业绩",
       "AI 应用板块轮动与海外映射",
       "模型降价/开源与工作流平台功能发布",
       "回购、库存股、可转债与全摊薄股数变化"
     ],
-    "source_refs": ["F03", "F04", "F06", "F08", "P01"]
+    "source_refs": ["F03", "F04", "F06", "F08", "P01", "R10", "R11"]
   },
   "moat_evidence": {
     "positive_evidence": [
@@ -1718,7 +1808,7 @@
       "gate_count": 9,
       "dimension_count": 25,
       "indicator_count": 50,
-      "source_count": 14,
+      "source_count": 16,
       "errors": [],
       "warnings": []
     },

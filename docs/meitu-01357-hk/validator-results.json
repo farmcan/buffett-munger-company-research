@@ -1,6 +1,6 @@
 {
   "schema_version": "seed.public-company-research.v2",
-  "generated_at": "2026-07-27T07:29:58.668266+00:00",
+  "generated_at": "2026-07-27T08:07:57.938408+00:00",
   "directory": "meitu-01357-hk",
   "valid": true,
   "publication_ready": true,
@@ -14,10 +14,10 @@
     "gate_count": 9,
     "dimension_count": 25,
     "indicator_count": 50,
-    "source_count": 14
+    "source_count": 16
   },
   "counts": {
-    "sources": 89,
+    "sources": 91,
     "evidence_anchors": 20,
     "critical_evidence_anchors": 20,
     "html_linked_evidence_anchors": 20,
