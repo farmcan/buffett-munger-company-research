@@ -1,0 +1,11 @@
+period,role,counterparty,relationship,metric,value_pct,denominator,status,source_ref,limitation
+FY2023,direct_customer,not_disclosed,foundry_customer,customer_CR1,15.0,consolidated_revenue,observed,AR2023,"Customer identity and bilateral materiality not disclosed."
+FY2024,direct_customer,not_disclosed,foundry_customer,customer_CR1,8.1,consolidated_revenue,observed,AR2024,"Customer identity and bilateral materiality not disclosed."
+FY2025,direct_customer,not_disclosed,foundry_customer,customer_CR1,8.0,consolidated_revenue,observed,AR2025,"Customer identity and bilateral materiality not disclosed."
+FY2023,direct_customer,not_disclosed,top_five_foundry_customers,customer_CR5,37.1,consolidated_revenue,observed,AR2023,"Individual shares are unavailable; HHI cannot be computed."
+FY2024,direct_customer,not_disclosed,top_five_foundry_customers,customer_CR5,36.0,consolidated_revenue,observed,AR2024,"Individual shares are unavailable; HHI cannot be computed."
+FY2025,direct_customer,not_disclosed,top_five_foundry_customers,customer_CR5,35.8,consolidated_revenue,observed,AR2025,"Individual shares are unavailable; HHI cannot be computed."
+FY2023,raw_material_supplier,not_disclosed,top_five_raw_material_suppliers,supplier_CR5,32.5,raw_material_purchases,observed,AR2023,"Does not cover equipment EDA spares and services."
+FY2024,raw_material_supplier,not_disclosed,top_five_raw_material_suppliers,supplier_CR5,31.5,raw_material_purchases,observed,AR2024,"Does not cover equipment EDA spares and services."
+FY2025,raw_material_supplier,not_disclosed,top_five_raw_material_suppliers,supplier_CR5,25.7,raw_material_purchases,observed,AR2025,"Does not cover equipment EDA spares and services."
+FY2025,critical_technology_supplier,not_disclosed,equipment_EDA_spares_and_services,critical_supplier_concentration,not_disclosed,procurement_or_installed_base,not_disclosed,AR2025,"Industry vendor names must not be treated as confirmed suppliers without issuer or counterparty evidence."

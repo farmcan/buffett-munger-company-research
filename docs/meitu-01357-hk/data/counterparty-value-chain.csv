@@ -1,0 +1,7 @@
+period,role,counterparty,relationship,metric,value,denominator,status,source_ref,limitation
+FY2025,direct_customer,not_disclosed,consumer_prosumer_enterprise_and_advertiser_payers,customer_CR1,not_disclosed,group_or_core_revenue,not_disclosed,F01,"Paying-user count does not disclose revenue concentration."
+FY2025,direct_customer,not_disclosed,consumer_prosumer_enterprise_and_advertiser_payers,customer_CR5,not_disclosed,group_or_core_revenue,not_disclosed,F01,"Payer categories and customer concentration are not disclosed."
+FY2025,distribution_gatekeeper,Apple_and_Google,app_distribution_and_payment,aggregate_channel_revenue_share_fee,617.8,RMB_million,derived_from_reported,F01,"Aggregate channel fee; no company-level split and not customer revenue."
+FY2025,distribution_gatekeeper,Apple_and_Google,app_distribution_and_payment,aggregate_fee_to_core_revenue,20.9,core_business_revenue_pct,derived,F01,"Aggregate ratio does not establish either platform's individual share."
+FY2025,technology_supplier,not_disclosed,cloud_model_api_and_compute,supplier_CR1_CR5,not_disclosed,procurement_or_cost,not_disclosed,F01,"Public model ecosystem references do not prove contractual supplier identity."
+FY2025,ecosystem_partner,"Alibaba_JD_Amazon",commerce_and_workflow_integrations,revenue_contribution,not_disclosed,group_revenue,company_disclosed_relationship,F01,"Integration or partnership does not equal realized customer revenue."

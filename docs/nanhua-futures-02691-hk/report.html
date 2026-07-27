@@ -45,7 +45,7 @@ body.report-parity .review-item b{display:block;font-size:14px}body.report-parit
 </div></header>
 <nav aria-label="报告目录"><div class="wrap">
   <a href="#status-legend">状态</a><a href="#report-doors">双入口</a><a href="#snapshot">快照</a>
-  <a href="#long-term">业务/利润</a><a href="#financials">五年财务</a><a href="#quarterly">Q1/Q2/H1</a>
+  <a href="#long-term">业务/利润</a><a href="#counterparties">客户/上下游</a><a href="#financials">五年财务</a><a href="#quarterly">Q1/Q2/H1</a>
   <a href="#owner-earnings">可分配利润桥</a><a href="#capital-quality">监管资本</a><a href="#capital">股本/回购</a>
   <a href="#market-pricing">估值/长周期</a><a href="#event-monitor">行业/小盘</a><a href="#buffett">巴芒解释</a>
   <a href="#research-contract">25×50×9</a><a href="#methodology">方法</a><a href="#timeline">时间轴</a>
@@ -118,6 +118,21 @@ body.report-parity .review-item b{display:block;font-size:14px}body.report-parit
     <tbody><tr><td>Mainland_China</td><td>630.005</td><td>45.41</td><td>-10.1</td></tr><tr><td>United_States</td><td>113.412</td><td>8.17</td><td>—</td></tr><tr><td>Hong_Kong</td><td>359.135</td><td>25.88</td><td>—</td></tr><tr><td>Singapore</td><td>148.079</td><td>10.67</td><td>—</td></tr><tr><td>United_Kingdom</td><td>136.88</td><td>9.86</td><td>—</td></tr></tbody>
   </table></div>
 
+</section>
+
+<section id="counterparties" class="card"><h2>客户、供应商与基础设施：客户资产规模可见，集中度不可见</h2>
+<p class="section-dek">金融机构不能把“客户权益”当成客户收入占比，也不能把交易所和清算网络笼统写成普通供应商。当前主源可以确认客户资产总量和价值链类别，但没有披露具名客户、CR1/CR5、分层费率、留存或关键技术/清算对手方占比。</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>关系层</th><th>对象/类别</th><th>FY2025 可核数据</th><th>名称/占比状态</th><th>研究含义</th></tr></thead>
+  <tbody>
+    <tr><td>直接客户/付款方</td><td>企业、机构及个人经纪/资管/风险管理客户</td><td>境内客户权益 RMB38.982bn；境外客户净权益 HK$23.306bn</td><td>客户名称、收入 CR1/CR5、客户资产集中度均未披露</td><td>规模支持业务存在，但不能证明客户分散、留存或定价权</td></tr>
+    <tr><td>上游市场基础设施</td><td>交易所、清算机构、结算银行</td><td>未披露单一机构费用、资金或业务依赖占比</td><td><code>not_disclosed</code></td><td>会员/接入关系不是客户；停摆、规则和保证金要求具有高关键性</td></tr>
+    <tr><td>技术与数据</td><td>行情、交易、风控、托管与通信系统</td><td>供应商 CR1/CR5、单一来源、替换时间未披露</td><td><code>not_disclosed</code></td><td>采购金额可能不大，但切换和监管认证时间可能很长</td></tr>
+    <tr><td>利润最终暴露</td><td>美国、香港、新加坡等境外客户与市场活动</td><td>境外金融服务约占集团 PBT 91.9%</td><td>这是分部/地域集中，不是客户集中度</td><td>不能用地域利润占比代替客户名单；仍需客户和清算对手方分层</td></tr>
+  </tbody>
+</table></div>
+<p class="callout"><strong>Gate 结果：</strong><code>customers = unknown</code>、<code>suppliers = unknown</code>。需要正式中报/年报补具名或匿名客户分层、CR1/CR5、费率与留存，以及清算银行/技术供应商集中和替代周期，才能升级能力圈与护城河判断。</p>
+<p class="sub">来源 F01（FY2025 年报）；结构化底表：<a href="data/counterparty-value-chain.csv">counterparty-value-chain.csv</a>。</p>
 </section>
 
 <section id="financials" class="card"><h2>五年财务：利润增长必须穿透利率、投资波动与客户资金</h2>

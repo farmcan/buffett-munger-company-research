@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>上市公司研究方法 V2.3</title>
+  <title>上市公司研究方法 V2.4</title>
   <style>
     :root{--ink:#17221e;--muted:#607068;--paper:#f4f1ea;--card:#fffdf8;--line:#d8d1c3;--green:#176b50;--amber:#a66f16;--red:#9a403a;--blue:#386a8e}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 8% 0,rgba(23,107,80,.11),transparent 31rem),var(--paper);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans CJK SC",sans-serif}
@@ -18,12 +18,12 @@
 </head>
 <body>
   <header>
-    <div class="eyebrow">Reusable company research · V2.3</div>
+    <div class="eyebrow">Reusable company research · V2.4</div>
     <h1>上市公司基本面 × 行业 × 事件研究方法</h1>
     <p class="lead">把“长期公司质量”和“近期市场事件”拆成两个产品入口，底层共享同一套官方事实、口径桥、证据锚点和发布状态。目标不是给出更肯定的结论，而是让每个结论可复算、可证伪、可更新。</p>
     <div class="meta"><span class="pill">25 个研究维度</span><span class="pill">50 个指标族</span><span class="pill">9 道闸门</span><span class="pill">事实级引用</span><span class="pill">非投资建议</span></div>
   </header>
-  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#inflection">增长变量</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#status-legend">状态图例</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#template-contract">统一母版</a><a href="#publication">发布闭环</a><a href="./templates/report-publication-shell-v1.html">HTML 模板</a></div></nav>
+  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#counterparties">客户/上下游</a><a href="#inflection">增长变量</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#status-legend">状态图例</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#template-contract">统一母版</a><a href="#publication">发布闭环</a><a href="./templates/report-publication-shell-v1.html">HTML 模板</a></div></nav>
   <main>
     <section id="views">
       <h2>一个事实底座，两个阅读入口</h2>
@@ -70,6 +70,27 @@
         <article class="card"><h3>Fully diluted share bridge</h3><p>期末已发行 − 库存股 + 期权/RSU + 可转债 if-converted + 配售/供股承诺。上行情景若越过转股价，必须同时改变债务和股数。</p></article>
         <article class="card event"><h3>每股价值双情景</h3><p>未转换偿债情景与完全转换情景并列；分别展示净现金、到期偿付、有效转股价、稀释股数和每股价值，不能混用。</p></article>
       </div>
+    </section>
+
+    <section id="counterparties">
+      <h2>客户、供应商与上下游：谁控制收入、成本和入口</h2>
+      <p class="dek">客户/供应商不是一个名称列表。必须把直接客户、付款方、终端用户、渠道、平台门卫、关键投入和替代者分开，并同时展示名称、占比、分母、期间、趋势和证据状态。未披露名称时保留匿名，不能靠传闻补齐。</p>
+      <div class="formula">customer CR1 / CR5 = 最大 / 前五客户收入 ÷ 同口径收入<br>supplier CR1 / CR5 = 最大 / 前五供应商采购 ÷ 同口径采购<br>HHI = Σ(单一对手方占比²)；只有逐家占比完整时才计算</div>
+      <div class="table-wrap"><table><caption>关系账本的最小字段</caption><thead><tr><th>字段</th><th>必须回答</th><th>最常见误读</th></tr></thead><tbody>
+        <tr><td>对手方与角色</td><td>法定/常用名、ticker；客户、付款方、渠道、供应商、平台、合作方或竞争者</td><td>把平台接入或合作公告自动写成客户</td></tr>
+        <tr><td>占比与分母</td><td>CR1/CR5、应收集中、采购集中；集团/分部/原料/总采购分母</td><td>把采购占比、成本占比和收入占比混用</td></tr>
+        <tr><td>趋势与现金</td><td>至少三年集中度、账期、应收/预付、坏账、合同负债和回款</td><td>单年占比下降就断言议价权改善</td></tr>
+        <tr><td>关键性与替代</td><td>单一来源、双供、认证/切换周期、客户自制、最低采购和取消权</td><td>采购金额小就认为停供影响小</td></tr>
+        <tr><td>双向验证</td><td>公司披露 + 对手方采购/供应链/认证/合同主源；双方重要性</td><td>用行业传闻猜匿名大客户</td></tr>
+      </tbody></table></div>
+      <h3>当前四份报告：已知占比和具名边界</h3>
+      <div class="table-wrap"><table><thead><tr><th>公司</th><th>客户集中度</th><th>供应商/上游集中度</th><th>哪些公司可具名</th><th>当前结论</th></tr></thead><tbody>
+        <tr><td><a href="./meitu-01357-hk/report.html#counterparties">美图</a></td><td>CR1/CR5 未披露；付费用户、广告主与企业付款方未分层具名</td><td>单一/前五未披露；渠道分成合计 6.178 亿元，约为核心收入 20.9%</td><td>Apple/Google 是分发门卫；阿里/京东/Amazon 是公开集成或生态关系，不等于已确认客户/供应商占比</td><td><span class="tag warn">concentration_unknown</span></td></tr>
+        <tr><td><a href="./nanhua-futures-02691-hk/report.html#counterparties">南华期货</a></td><td>客户权益有总量，客户名称、CR1/CR5、留存和分层费率未披露</td><td>交易所、清算银行、行情/技术系统为关键基础设施，集中度与替代成本未量化</td><td>不能把交易所会员/接入关系写成客户；当前无可审计具名占比</td><td><span class="tag warn">identity_and_share_unknown</span></td></tr>
+        <tr><td><a href="./smic-00981-hk/report.html#counterparties">中芯国际</a></td><td>FY2025 最大客户 8.0%，前五 35.8%；名称未披露</td><td>前五原材料供应商占 25.7%；不覆盖关键设备、EDA 和服务集中度</td><td>匿名客户/供应商不能按市场传闻映射；设备与 EDA 厂商只列行业风险，不写成已确认供应商</td><td><span class="tag warn">shares_known_names_unknown</span></td></tr>
+        <tr><td><a href="./fubo-group-03738-hk/report.html#counterparties">阜博集团</a></td><td>FY2025 最大客户 13%，前五 40%；名称未披露</td><td>最大供应商 8%，前五 34%；平台依赖可能不完全进入会计供应商表</td><td>YouTube/Meta 是具名平台工作流与规则方，不等于已确认大客户身份</td><td><span class="tag warn">material_concentration_names_unknown</span></td></tr>
+      </tbody></table></div>
+      <div class="callout"><strong>Gate 纪律：</strong>客户或关键供应商身份未知，不必自动否定公司；但若集中度高、应收/预付恶化、替代时间长，同时又无法双向验证，则 <code>circle_of_competence</code>、<code>business_economics</code> 与 <code>durable_moat</code> 不能写 pass。</div>
     </section>
 
     <section id="inflection">

@@ -1,0 +1,7 @@
+period,role,counterparty,relationship,metric,value,denominator,status,source_ref,limitation
+FY2025,direct_customer,not_disclosed,enterprise_institutional_and_individual_clients,domestic_client_equity,38.982,RMB_billion,observed,F01,"Client assets are not customer revenue concentration."
+FY2025,direct_customer,not_disclosed,overseas_clients,overseas_client_net_equity,23.306,HKD_billion,observed,F01,"Client assets are not customer revenue concentration."
+FY2025,direct_customer,not_disclosed,brokerage_asset_management_and_risk_management,customer_CR1_CR5,not_disclosed,revenue_or_client_assets,not_disclosed,F01,"Names, concentration, retention and tiered fees are not disclosed."
+FY2025,market_infrastructure,not_disclosed,exchanges_clearing_and_settlement_banks,infrastructure_concentration,not_disclosed,fees_funds_or_business_volume,not_disclosed,F01,"Membership or access is not a customer relationship."
+FY2025,technology_supplier,not_disclosed,market_data_trading_risk_custody_and_communications,supplier_CR1_CR5,not_disclosed,procurement_or_cost,not_disclosed,F01,"Criticality and replacement time may be high despite low spend."
+FY2025,geographic_profit_exposure,overseas_financial_services,segment_profit_concentration,PBT_share,91.9,group_PBT_pct,derived,F01,"Segment/geographic concentration is not customer concentration."

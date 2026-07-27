@@ -1,0 +1,8 @@
+period,role,counterparty,relationship,metric,value_pct,denominator,status,source_ref,limitation
+FY2025,direct_customer,not_disclosed,largest_contract_customer,customer_CR1,13.0,consolidated_revenue,observed,F01,"Customer identity and bilateral materiality not disclosed."
+FY2025,direct_customer,not_disclosed,top_five_contract_customers,customer_CR5,40.0,consolidated_revenue,observed,F01,"Individual shares are unavailable; HHI cannot be computed."
+FY2025,supplier,not_disclosed,largest_accounting_supplier,supplier_CR1,8.0,purchases,observed,F01,"Platform and API dependency may not be fully represented."
+FY2025,supplier,not_disclosed,top_five_accounting_suppliers,supplier_CR5,34.0,purchases,observed,F01,"Platform and API dependency may not be fully represented."
+FY2025,platform_gatekeeper,YouTube_and_Meta,platform_workflow_rules_and_potential_substitution,commercial_share,not_disclosed,revenue_or_procurement,company_and_platform_disclosed_relationship,"F01;I01;I02","Platform integration does not establish customer or supplier identity."
+FY2025,direct_customer,not_disclosed,rights_holders_and_agents,net_revenue_retention,128.0,company_defined_cohort,management_metric,F06,"Cohort denominator currency and acquisition scope not fully disclosed."
+FY2025,direct_customer,not_disclosed,rights_holders_and_agents,customer_retention,98.2,company_defined_customer_count,management_metric,F06,"Definition and customer-count denominator not fully disclosed."
