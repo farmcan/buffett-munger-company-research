@@ -1,7 +1,7 @@
 {
   "schema_version": "seed.public-research-publication.v2",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-07-27T16:36:24+08:00",
+  "reviewed_at": "2026-07-27T16:43:50+08:00",
   "artifact_status": "needs_human_review",
   "production_reviewed": false,
   "publication_scope": [
@@ -45,7 +45,7 @@
   ],
   "source_repository": "farmcan/seed",
   "source_branch": "agent/buffett-munger-methodology",
-  "source_commit": "f0bd60b9494d6a8e5db51da9bde0cab76bf67ca8",
+  "source_commit": "204f5caa9b2c537e690bfec8d64ba2a730a2af2e",
   "review_checks": {
     "contains_local_absolute_paths": false,
     "contains_private_library_paths": false,
@@ -58,6 +58,7 @@
     "short_position_series_checked": true,
     "critical_evidence_anchors": 20,
     "critical_evidence_locators": 31,
+    "validated_evidence_locators": 31,
     "missing_critical_html_anchors": 0,
     "coverage_matrix_dimensions": 25,
     "coverage_matrix_indicators": 50,

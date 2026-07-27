@@ -37,6 +37,10 @@ rg -n '\[\[' docs/company-research/<company-slug>/report.html
 
 若仍有占位符，报告不得进入 `production_reviewed`。允许在刻意表达缺失证据时把值替换成 `未披露`、`不适用`、`冲突` 或 `待确认`，但必须同时给出原因、source gap 和下一验证动作，不能保留含糊空白。
 
+公开模板预览把 URL 占位值保存在 `data-template-href="[[...URL]]"`，而把实际
+`href` 指向页面内的模板说明，避免读者点击后得到 404。实现真实报告时必须把已核验 URL
+写入 `href`，并删除对应的 `data-template-href` 与 `aria-disabled="true"`。
+
 ## 给下一位研究者的最短实现路径
 
 这五个文件不是平行版本，而是一套分层交接包：

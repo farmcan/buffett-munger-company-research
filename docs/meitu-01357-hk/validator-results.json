@@ -1,6 +1,6 @@
 {
   "schema_version": "seed.public-company-research.v2",
-  "generated_at": "2026-07-27T08:29:55.381205+00:00",
+  "generated_at": "2026-07-27T08:42:51.252035+00:00",
   "directory": "meitu-01357-hk",
   "valid": true,
   "publication_ready": true,
@@ -21,7 +21,11 @@
     "evidence_anchors": 20,
     "critical_evidence_anchors": 20,
     "html_linked_evidence_anchors": 20,
-    "missing_critical_html_anchors": 0
+    "missing_critical_html_anchors": 0,
+    "evidence_locator_rows": 31,
+    "validated_evidence_locator_rows": 31,
+    "html_linked_evidence_locator_rows": 31,
+    "missing_evidence_locator_html_rows": 0
   },
   "errors": [],
   "warnings": [

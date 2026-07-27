@@ -549,6 +549,10 @@
           <span class="chip" id="stale-status" data-tone="warning">时效：[[CURRENT / STALE]]</span>
         </div>
       </div>
+      <div class="callout" id="template-link-placeholder" data-tone="info">
+        <strong>这是可视化源模板。</strong>
+        页面中的 <span class="mono">[[...]]</span> 需要替换后才可发布；数据下载和官方来源按钮在模板预览中被禁用，避免把占位 URL 变成公开 404。
+      </div>
 
       <div class="entry-grid" aria-label="选择研究入口">
         <a class="entry-card" href="#long-term" data-view-link="long-term">
@@ -608,8 +612,8 @@
           <span class="chip" data-tone="info">报告币种：[[CURRENCY]]</span>
         </div>
         <div class="actions" style="margin-top:1rem">
-          <a class="button primary" href="[[SOURCE_LEDGER_URL]]">来源目录</a>
-          <a class="button" href="[[FINANCIAL_CSV_URL]]" download>下载财务 CSV</a>
+          <a class="button primary" href="#template-link-placeholder" data-template-href="[[SOURCE_LEDGER_URL]]" aria-disabled="true">来源目录</a>
+          <a class="button" href="#template-link-placeholder" data-template-href="[[FINANCIAL_CSV_URL]]" aria-disabled="true">下载财务 CSV</a>
           <a class="button" href="#long-review">查看审核状态</a>
         </div>
       </div>
@@ -1044,7 +1048,7 @@
               <div><dt>section / table</dt><dd>[[SECTION_OR_TABLE]]</dd></div>
               <div><dt>page text lines</dt><dd>[[LINE_START–LINE_END / NOT_AVAILABLE]]</dd></div>
               <div><dt>text snapshot / page SHA-256</dt><dd>[[TEXT_SNAPSHOT_SHA256 / PAGE_TEXT_SHA256]]</dd></div>
-              <div><dt>source URL</dt><dd><a href="[[OFFICIAL_HTTPS_URL]]">[[OFFICIAL_HTTPS_URL]]</a></dd></div>
+              <div><dt>source URL</dt><dd><a href="#template-link-placeholder" data-template-href="[[OFFICIAL_HTTPS_URL]]" aria-disabled="true">[[OFFICIAL_HTTPS_URL]]</a></dd></div>
               <div><dt>period</dt><dd>[[PERIOD]]</dd></div>
               <div><dt>unit / currency</dt><dd>[[UNIT / CURRENCY]]</dd></div>
               <div><dt>scope</dt><dd>[[LEGAL / ACCOUNTING_SCOPE]]</dd></div>
@@ -1062,7 +1066,7 @@
             <dl class="evidence-meta">
               <div><dt>source_id</dt><dd>[[SOURCE_ID]]</dd></div><div><dt>document_sha256</dt><dd>[[64_HEX_SHA256]]</dd></div>
               <div><dt>page / section</dt><dd>[[PAGE_NUMBER / SECTION_OR_TABLE]]</dd></div><div><dt>page text lines</dt><dd>[[LINE_START–LINE_END / PAGE_TEXT_SHA256]]</dd></div>
-              <div><dt>text snapshot SHA-256</dt><dd>[[TEXT_SNAPSHOT_SHA256]]</dd></div><div><dt>source URL</dt><dd><a href="[[OFFICIAL_HTTPS_URL]]">[[OFFICIAL_HTTPS_URL]]</a></dd></div>
+              <div><dt>text snapshot SHA-256</dt><dd>[[TEXT_SNAPSHOT_SHA256]]</dd></div><div><dt>source URL</dt><dd><a href="#template-link-placeholder" data-template-href="[[OFFICIAL_HTTPS_URL]]" aria-disabled="true">[[OFFICIAL_HTTPS_URL]]</a></dd></div>
               <div><dt>period</dt><dd>[[PERIOD]]</dd></div><div><dt>unit / currency</dt><dd>[[UNIT / CURRENCY]]</dd></div>
               <div><dt>scope</dt><dd>[[SCOPE]]</dd></div><div><dt>audit_status</dt><dd>[[AUDIT_STATUS]]</dd></div>
             </dl>
@@ -1078,7 +1082,7 @@
             <dl class="evidence-meta">
               <div><dt>source_id</dt><dd>[[SOURCE_ID]]</dd></div><div><dt>document_sha256</dt><dd>[[64_HEX_SHA256]]</dd></div>
               <div><dt>page / section</dt><dd>[[PAGE_NUMBER / SECTION_OR_TABLE]]</dd></div><div><dt>page text lines</dt><dd>[[LINE_START–LINE_END / PAGE_TEXT_SHA256]]</dd></div>
-              <div><dt>text snapshot SHA-256</dt><dd>[[TEXT_SNAPSHOT_SHA256]]</dd></div><div><dt>source URL</dt><dd><a href="[[OFFICIAL_HTTPS_URL]]">[[OFFICIAL_HTTPS_URL]]</a></dd></div>
+              <div><dt>text snapshot SHA-256</dt><dd>[[TEXT_SNAPSHOT_SHA256]]</dd></div><div><dt>source URL</dt><dd><a href="#template-link-placeholder" data-template-href="[[OFFICIAL_HTTPS_URL]]" aria-disabled="true">[[OFFICIAL_HTTPS_URL]]</a></dd></div>
               <div><dt>period</dt><dd>[[PERIOD]]</dd></div><div><dt>unit / currency</dt><dd>[[UNIT / CURRENCY]]</dd></div>
               <div><dt>scope</dt><dd>[[SCOPE]]</dd></div><div><dt>audit_status</dt><dd>[[AUDIT_STATUS]]</dd></div>
             </dl>
@@ -1103,7 +1107,7 @@
           <span class="chip" data-tone="danger">高优先风险：[[COUNT]]</span>
         </div>
         <div class="actions" style="margin-top:1rem">
-          <a class="button primary" href="[[EVENT_CSV_URL]]" download>下载事件 CSV</a>
+          <a class="button primary" href="#template-link-placeholder" data-template-href="[[EVENT_CSV_URL]]" aria-disabled="true">下载事件 CSV</a>
           <a class="button" href="#event-evidence">查看事件证据</a>
           <a class="button" href="#change-log">查看 change log</a>
         </div>
@@ -1337,7 +1341,7 @@
               <div><dt>status</dt><dd>[[completed / confirmed / TBA]]</dd></div>
               <div><dt>source tier</dt><dd>[[A / A- / B / C]]</dd></div>
               <div><dt>published / accessed</dt><dd>[[PUBLISHED_AT / ACCESSED_AT]]</dd></div>
-              <div><dt>source URL</dt><dd><a href="[[OFFICIAL_HTTPS_URL]]">[[OFFICIAL_HTTPS_URL]]</a></dd></div>
+              <div><dt>source URL</dt><dd><a href="#template-link-placeholder" data-template-href="[[OFFICIAL_HTTPS_URL]]" aria-disabled="true">[[OFFICIAL_HTTPS_URL]]</a></dd></div>
               <div><dt>document_sha256</dt><dd>[[64_HEX_SHA256]]</dd></div>
               <div><dt>page / section</dt><dd>[[PAGE_OR_NOT_APPLICABLE / SECTION_OR_TABLE]]</dd></div>
               <div><dt>page text lines</dt><dd>[[LINE_START–LINE_END / PAGE_TEXT_SHA256 / NOT_AVAILABLE]]</dd></div>
@@ -1356,7 +1360,7 @@
           <div class="evidence-body">
             <dl class="evidence-meta">
               <div><dt>status</dt><dd>[[completed / confirmed / TBA]]</dd></div><div><dt>source tier</dt><dd>[[TIER]]</dd></div>
-              <div><dt>published / accessed</dt><dd>[[DATES]]</dd></div><div><dt>source URL</dt><dd><a href="[[OFFICIAL_HTTPS_URL]]">[[OFFICIAL_HTTPS_URL]]</a></dd></div>
+              <div><dt>published / accessed</dt><dd>[[DATES]]</dd></div><div><dt>source URL</dt><dd><a href="#template-link-placeholder" data-template-href="[[OFFICIAL_HTTPS_URL]]" aria-disabled="true">[[OFFICIAL_HTTPS_URL]]</a></dd></div>
               <div><dt>document_sha256</dt><dd>[[64_HEX_SHA256]]</dd></div><div><dt>page / section</dt><dd>[[PAGE / SECTION_OR_TABLE]]</dd></div>
               <div><dt>page text lines</dt><dd>[[LINE_START–LINE_END / PAGE_TEXT_SHA256]]</dd></div><div><dt>text snapshot SHA-256</dt><dd>[[TEXT_SNAPSHOT_SHA256]]</dd></div>
               <div><dt>scope</dt><dd>[[SECURITY / ISSUER / MARKET]]</dd></div><div><dt>audit status</dt><dd>[[STATUS]]</dd></div>
