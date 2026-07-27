@@ -1,6 +1,6 @@
 # 上市公司基本面 × 行业 × 事件研究方法
 
-版本：2.2（2026-07-27）
+版本：2.3（2026-07-27）
 
 适用对象：A 股、港股、美股及跨市场上市公司
 
@@ -143,6 +143,48 @@ limitations:
 ```
 
 每个估值情景都必须与资本结构一致：未转换情景保留债务并使用当前股数；全转换情景移除相应债务并加入转换股份。若情景价格高于转股价而仍用未摊薄股数，validator 应判失败。
+
+### 2.3.1 增长变量：研究“变好”，而不是追逐最高增速
+
+本节吸收用户转述的 UP「大白不bai说」观点。原始视频 URL、逐字稿和时间戳尚未取得，因此
+归因状态为 `creator_methodology_candidate_needs_source_verification`；以下公式、gate 和
+状态是本项目的研究工程实现，不是投资建议。
+
+```text
+P1 / P0 = (EPS1 / EPS0) × (PE1 / PE0)
+growth_rate_t = metric_t / comparable_metric_t-1 - 1
+growth_acceleration_t = growth_rate_t - growth_rate_t-1
+expectation_gap_t = actual_or_current_guidance_t - prior_market_implied_path_t
+```
+
+真正要找的不是“增速最高”，而是核心变量由差变好、改善扩散到利润/现金/每股价值、实际路径
+好于此前已计入路径，而且当前价格没有要求更强但缺证的增长。至少需要两个连续、同口径的增长率；
+只有一个同比百分比时必须写 `insufficient_evidence`。
+
+| 阶段 | ID | 含义 |
+| --- | --- | --- |
+| 证据不足 | `I0_insufficient` | 无两个可比期间或关键口径冲突 |
+| 恶化 | `I1_deteriorating` | 核心指标下降且恶化扩大 |
+| 恶化收窄 | `I2_deterioration_slowing` | 仍为负增长，但降幅收窄 |
+| 早期拐点 | `I3_early_inflection` | 领先 KPI/收入改善，利润或现金未确认 |
+| 确认加速 | `I4_confirmed_acceleration` | 至少两类经营/财务指标连续改善且质量通过 |
+| 高增长延续 | `I5_high_growth` | 增长仍高但没有明确加速/减速 |
+| 高位减速 | `I6_high_level_deceleration` | 仍增长，但多个核心指标增速回落 |
+
+升级为 `confirmed_inflection_for_research` 前，必须依次通过：
+
+1. `direction`：两个以上同口径期间显示加速度为正；
+2. `breadth`：领先 KPI/收入、利润/EPS、现金/营运资本至少两层同向；
+3. `quality`：排除低基数、并购、汇率、一次性、公允价值、减值转回、资本化和回购抬 EPS；
+4. `expectations_and_valuation`：改善高于此前路径，反向估值不要求更强的未证实增长；
+5. `next_verification`：有具体官方披露窗口、升级阈值和失效条件。
+
+前四项任一未通过，只能写 `watch_early_signal`、`high_growth_not_inflecting`、
+`decelerating_or_deteriorating` 或 `insufficient_evidence`。阶段、公司质量和估值状态必须
+分栏；增速从高到低不是机械卖出规则，从低到高也不是机械买入规则。
+
+全年同比与单季同比只能用于方向筛查，不能替代连续同季度或滚动口径。凡使用“全年 → Q1/Q4”
+判断阶段，阶段标签必须标为 `provisional`，并由下一期同口径数据确认。
 
 ### 2.4 市场定价状态：把“高估/低估”拆成可复核坐标
 

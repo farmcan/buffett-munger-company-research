@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>上市公司研究方法 V2.2</title>
+  <title>上市公司研究方法 V2.3</title>
   <style>
     :root{--ink:#17221e;--muted:#607068;--paper:#f4f1ea;--card:#fffdf8;--line:#d8d1c3;--green:#176b50;--amber:#a66f16;--red:#9a403a;--blue:#386a8e}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 8% 0,rgba(23,107,80,.11),transparent 31rem),var(--paper);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans CJK SC",sans-serif}
     header,main,footer{width:min(1120px,calc(100% - 36px));margin:auto}header{padding:64px 0 34px}.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}h1{max-width:880px;margin:10px 0 16px;font:800 clamp(36px,7vw,66px)/1.08 Georgia,"Songti SC",serif}h2{margin:0 0 10px;font:760 clamp(25px,4vw,37px)/1.2 Georgia,"Songti SC",serif}h3{margin:26px 0 8px}.lead,.dek{max-width:850px;color:var(--muted)}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}.pill{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,253,248,.7);font-size:12px;font-weight:740}
     nav{position:sticky;top:0;z-index:10;border-block:1px solid var(--line);background:rgba(244,241,234,.94);backdrop-filter:blur(12px)}nav div{width:min(1120px,calc(100% - 36px));margin:auto;display:flex;gap:18px;overflow:auto}nav a{padding:13px 0;color:var(--ink);font-size:13px;font-weight:760;text-decoration:none;white-space:nowrap}
-    main{padding:30px 0 70px}section{margin:0 0 22px;padding:30px;border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:0 16px 44px rgba(34,42,37,.06)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{padding:20px;border:1px solid var(--line);border-top:5px solid var(--green);border-radius:15px;background:#fff}.card.event{border-top-color:var(--amber)}.card h3{margin:0 0 7px}.status{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.status div{padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}.status strong{display:block}.status span{color:var(--muted);font-size:12px}
+    main{padding:30px 0 70px}section{scroll-margin-top:72px;margin:0 0 22px;padding:30px;border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:0 16px 44px rgba(34,42,37,.06)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{padding:20px;border:1px solid var(--line);border-top:5px solid var(--green);border-radius:15px;background:#fff}.card.event{border-top-color:var(--amber)}.card h3{margin:0 0 7px}.status{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.status div{padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}.status strong{display:block}.status span{color:var(--muted);font-size:12px}
     .table-wrap{overflow:auto;margin-top:15px;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;min-width:760px;background:#fff}caption{padding:14px;text-align:left;font-weight:800}th,td{padding:11px 13px;border-bottom:1px solid #ece7dd;text-align:left;vertical-align:top}th{background:#f7f4ed;font-size:12px;letter-spacing:.03em}td{font-size:14px}.tag{display:inline-flex;padding:2px 7px;border-radius:999px;background:#e7f2ed;color:var(--green);font-size:11px;font-weight:800}.tag.warn{background:#fff2da;color:#8d5a09}.tag.risk{background:#f9e4e1;color:var(--red)}
     code{overflow-wrap:anywhere;word-break:break-word}.formula{margin:16px 0;padding:18px;border-left:4px solid var(--blue);border-radius:10px;background:#eef5f8;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.callout{margin-top:18px;padding:17px;border:1px solid #e3d3a7;border-radius:12px;background:#fff8e7}.dim-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:15px}.dim{padding:12px;border:1px solid var(--line);border-radius:11px;background:#fff}.dim code{display:block;color:var(--green);font-size:11px}.gate-list{columns:2;column-gap:30px}.gate-list li{break-inside:avoid;margin-bottom:8px}footer{padding:0 0 60px;color:var(--muted);font-size:13px}
     @media(max-width:780px){header{padding-top:40px}.grid,.status,.dim-grid{grid-template-columns:1fr}.gate-list{columns:1}section{padding:22px 17px}}
@@ -18,12 +18,12 @@
 </head>
 <body>
   <header>
-    <div class="eyebrow">Reusable company research · V2.2</div>
+    <div class="eyebrow">Reusable company research · V2.3</div>
     <h1>上市公司基本面 × 行业 × 事件研究方法</h1>
     <p class="lead">把“长期公司质量”和“近期市场事件”拆成两个产品入口，底层共享同一套官方事实、口径桥、证据锚点和发布状态。目标不是给出更肯定的结论，而是让每个结论可复算、可证伪、可更新。</p>
     <div class="meta"><span class="pill">25 个研究维度</span><span class="pill">50 个指标族</span><span class="pill">9 道闸门</span><span class="pill">事实级引用</span><span class="pill">非投资建议</span></div>
   </header>
-  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#status-legend">状态图例</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#template-contract">统一母版</a><a href="#publication">发布闭环</a><a href="./templates/report-publication-shell-v1.html">HTML 模板</a></div></nav>
+  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#inflection">增长变量</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#status-legend">状态图例</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#template-contract">统一母版</a><a href="#publication">发布闭环</a><a href="./templates/report-publication-shell-v1.html">HTML 模板</a></div></nav>
   <main>
     <section id="views">
       <h2>一个事实底座，两个阅读入口</h2>
@@ -70,6 +70,49 @@
         <article class="card"><h3>Fully diluted share bridge</h3><p>期末已发行 − 库存股 + 期权/RSU + 可转债 if-converted + 配售/供股承诺。上行情景若越过转股价，必须同时改变债务和股数。</p></article>
         <article class="card event"><h3>每股价值双情景</h3><p>未转换偿债情景与完全转换情景并列；分别展示净现金、到期偿付、有效转股价、稀释股数和每股价值，不能混用。</p></article>
       </div>
+    </section>
+
+    <section id="inflection">
+      <h2>增长变量：研究的不是最高增速，而是可验证的“变好”</h2>
+      <p class="dek">观点来源于用户转述的 UP「大白不bai说」；原始视频 URL、逐字稿和时间戳尚未取得，因此归因仍待核。研究实现把直觉拆成增长加速度、经营广度、盈利/现金质量、预期差和估值五层，避免把“增速由低到高”机械写成买入。</p>
+      <div class="formula">P1 / P0 = (EPS1 / EPS0) × (PE1 / PE0)<br>growth acceleration = 本期可比增速 − 上期可比增速<br>expectation gap = 实际/最新指引 − 此前已计入路径</div>
+      <div class="table-wrap"><table><caption>七阶段图例：阶段不等于公司质量或价格结论</caption><thead><tr><th>阶段</th><th>ID</th><th>定义</th><th>读者应怎样使用</th></tr></thead><tbody>
+        <tr><td>证据不足</td><td><code>I0_insufficient</code></td><td>没有两个可比期间，或口径冲突</td><td>先补数，不判断加速</td></tr>
+        <tr><td>恶化</td><td><code>I1_deteriorating</code></td><td>核心指标下降且恶化扩大</td><td>寻找生存、现金与反转条件</td></tr>
+        <tr><td>恶化收窄</td><td><code>I2_deterioration_slowing</code></td><td>仍为负增长，但降幅收窄</td><td>只是线索，尚未转正</td></tr>
+        <tr><td>早期拐点</td><td><code>I3_early_inflection</code></td><td>领先 KPI 或收入改善，利润/现金未确认</td><td>等下一份正式财务验证</td></tr>
+        <tr><td>确认加速</td><td><code>I4_confirmed_acceleration</code></td><td>两类以上经营/财务指标连续改善，质量通过</td><td>再检查预期与估值</td></tr>
+        <tr><td>高增长延续</td><td><code>I5_high_growth</code></td><td>增长高且大致稳定</td><td>不是“低位起来”</td></tr>
+        <tr><td>高位减速</td><td><code>I6_high_level_deceleration</code></td><td>仍增长，但多个核心指标速度回落</td><td>检查多少已被估值计入</td></tr>
+      </tbody></table></div>
+      <div class="table-wrap"><table><caption>五道升级 Gate</caption><thead><tr><th>Gate</th><th>通过条件</th><th>常见假拐点</th></tr></thead><tbody>
+        <tr><td>Direction</td><td>至少两个同口径期间加速度为正</td><td>单期同比、全年与单季绝对额拼接</td></tr>
+        <tr><td>Breadth</td><td>KPI/收入、利润/EPS、现金至少两层同向</td><td>只有下载、订单、出货或收入</td></tr>
+        <tr><td>Quality</td><td>剔除低基数、并购、汇率和一次性后仍改善</td><td>公允价值、减值转回、资本化、回购抬 EPS</td></tr>
+        <tr><td>Expectations &amp; valuation</td><td>好于此前路径，反向估值不要求更强增长</td><td>股价已重估；无共识数据却声称超预期</td></tr>
+        <tr><td>Next verification</td><td>具体官方日期/窗口、阈值和失效条件</td><td>只写“继续关注”</td></tr>
+      </tbody></table></div>
+      <div class="callout"><strong>升级规则：</strong>前四项全部通过才写 <code>confirmed_inflection_for_research</code>，且只表示研究优先级。任何一项未通过，只能保留观察、减速或证据不足状态。</div>
+
+      <h3>历史记忆钩子：复核后并非都支持原始直觉</h3>
+      <p class="dek">全年同比与单季同比只用于方向筛查，不能替代连续同季度或滚动口径；因此泡泡玛特、小米及下方四家公司涉及“全年 → Q1/Q4”的阶段标签均为 provisional，需由下一期同口径数据确认。</p>
+      <div class="table-wrap"><table><thead><tr><th>公司</th><th>主源数据</th><th>同口径含义</th><th>来源</th></tr></thead><tbody>
+        <tr><td>NVIDIA</td><td>FY2026 收入 +65%；FY2027 Q1 +85%，前一季 +73%</td><td>最新单季同比是再加速，不能笼统写“这两年一直减速”</td><td><a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/">FY2026</a> · <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx">FY2027 Q1</a></td></tr>
+        <tr><td>泡泡玛特</td><td>FY2024 +106.9%；FY2025 +184.7%；2026Q1 +75%—80%</td><td>高增长仍在，但最新速度显著低于 FY2025</td><td><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2025/0326/2025032600227.pdf">FY2024</a> · <a href="https://www.hkexnews.hk/listedco/listconews/sehk/2026/0325/2026032500285.pdf">FY2025</a> · <a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0512/2026051200579.pdf">2026Q1</a></td></tr>
+        <tr><td>蜜雪集团</td><td>收入增速 22.3%→35.2%；利润增速 39.8%→33.1%</td><td>收入加速而利润减速，是“混合”而非干净拐点</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0326/2025032601256.pdf">FY2024</a> · <a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0324/2026032400179.pdf">FY2025</a></td></tr>
+        <tr><td>小米</td><td>FY2025 收入 +25.0%、调整净利 +43.8%；Q4 分别 +7.3%、-23.7%</td><td>全年高增长与 Q4 高位减速并存</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0324/2026032400608.pdf">FY2025 results</a></td></tr>
+        <tr><td>贵州茅台</td><td>2024/2023 收入约 +15.7%、归母约 +15.4%；2025 分别 -1.21%、-4.53%</td><td>财务增速由高转负；是否已反映仍要另算估值</td><td><a href="https://big5.sse.com.cn/site/cht/www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-04-17/600519_20260417_9QS4.pdf">FY2025 annual report</a></td></tr>
+      </tbody></table></div>
+
+      <h3>当前四份深度报告的同口径示例</h3>
+      <p class="dek">这是已有研究样本，不是全市场扫描。“最接近”也不等于通过，更不构成推荐。</p>
+      <div class="table-wrap"><table><thead><tr><th>公司</th><th>阶段</th><th>正向证据</th><th>阻断项</th><th>研究状态</th></tr></thead><tbody>
+        <tr><td><a href="./meitu-01357-hk/report.html">美图</a></td><td><code>I6_high_level_deceleration</code></td><td>付费、核心收入和 AI ARR 仍高增长</td><td>多项同比速度回落；Q1 无利润、毛利和现金</td><td><span class="tag warn">high_growth_not_inflecting</span></td></tr>
+        <tr><td><a href="./nanhua-futures-02691-hk/report.html">南华期货</a></td><td><code>I3_early_inflection</code></td><td>Q1 手续费、利息和归母改善</td><td>投资收益、减值转回和监管资本下降</td><td><span class="tag warn">watch_early_signal</span></td></tr>
+        <tr><td><a href="./smic-00981-hk/report.html">中芯国际</a></td><td><code>I6_high_level_deceleration</code></td><td>出货/利用率有支撑，Q2 指引待验证</td><td>收入增速连续回落，Q1 经营利润下降，资本强度和估值压力高</td><td><span class="tag risk">decelerating_or_deteriorating</span></td></tr>
+        <tr><td><a href="./fubo-group-03738-hk/report.html">阜博集团</a></td><td><code>I3_early_inflection</code></td><td>Q1 收入约 +21%、MRR 约 +29%、活跃资产增长</td><td>改善幅度小且为约数；无 Q1 利润/现金，全投入现金为负且可转债临近到期</td><td><span class="tag warn">watch_early_signal</span></td></tr>
+      </tbody></table></div>
+      <div class="callout"><strong>当前结论：</strong>只看会计利润加速度，南华最显眼；只看领先经营 KPI，阜博更接近早期信号；只看经营质量，美图相对清晰但不是低位拐点。四项合并后，当前没有一家达到 <code>confirmed_inflection_for_research</code>。</div>
     </section>
 
     <section id="pricing">
@@ -171,6 +214,6 @@
       <p><a href="./listed-company-fundamentals-event-research-methodology.md">查看完整方法、检查表与巴菲特—芒格原始来源记录 →</a></p>
     </section>
   </main>
-  <footer>V2.2 methodology · 2026-07-27 · Public sources, explicit uncertainty, no investment advice. <a href="./index.html">返回研究目录</a></footer>
+  <footer>V2.3 methodology · 2026-07-27 · Public sources, explicit uncertainty, no investment advice. <a href="./index.html">返回研究目录</a></footer>
 </body>
 </html>
