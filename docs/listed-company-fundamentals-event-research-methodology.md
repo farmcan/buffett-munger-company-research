@@ -1,6 +1,6 @@
 # 上市公司基本面 × 行业 × 事件研究方法
 
-版本：2.1（2026-07-27）
+版本：2.2（2026-07-27）
 
 适用对象：A 股、港股、美股及跨市场上市公司
 
@@ -221,7 +221,7 @@ SBC 后 FCF 与留存，不能机械套 PE。
 | publication | `source_partial` / `research_in_progress` / `needs_human_review` / `production_reviewed` | 描述整份报告的来源、制作和审核成熟度，不描述公司质量或股价方向 |
 
 九道 gate 的 ID、顺序和允许结果以
-[`company-research-schema.md`](../../skills/research-buffett-munger-company/references/company-research-schema.md)
+[`company-research-schema.md`](../skills/research-buffett-munger-company/references/company-research-schema.md)
 及 `src/seed/company_research_validation.py` 为唯一可执行规范。报告模板不得另造
 `pass/conditional/fail/NA` 等平行词表。
 
@@ -268,6 +268,36 @@ change_log:
 - 新财报发布后，旧 HTML 自动标 `stale`，但保留历史结论；
 - 事实修正、模型更新和观点变化分开记录；
 - 不得用新数据静默改写事前判断或事件预期。
+
+### 2.8 统一母版也是发布 Gate
+
+研究完整和读者可用是两道不同的门。结构化 artifact 通过 25 维度、50 indicator
+family 与九道 gate，只证明研究合同可执行；如果 HTML 各自发明主题、阅读顺序或状态词表，
+读者仍无法跨公司比较，因此不能发布。
+
+统一母版固定三层：
+
+| 层 | 固定内容 | 允许变化 |
+| --- | --- | --- |
+| Publication shell | 主题、首屏、发布状态、图例、导航、长期/事件双入口、方法、时间轴、证据入口 | 公司名、结论和更新日期 |
+| Research spine | 业务/利润来源、五年财务、最新季度、现金/资本桥、估值、行业事件、25×50×9、失效条件 | 公司事实、状态与证据 |
+| Industry slots | 行业 KPI、有效的现金桥、估值分支和监管/技术风险 | 金融、晶圆代工、软件/SaaS 等分支内容 |
+
+行业差异不能成为独立主题、平行状态体系或删减研究主干的理由。金融机构可以用监管资本、
+母公司现金和可分配利润替代工业 `CFO-capex`；晶圆厂必须补产能、利用率、折旧和维护/增长
+资本开支；软件与 AI 应用必须补留存、单位经济、SBC/R&D、平台依赖和替代风险。它们仍使用
+同一发布壳。
+
+发布前必须同时通过：
+
+1. combined artifact 与 publication validator；
+2. `company-research-publication-v1` template-parity validator；
+3. 桌面与 390px 渲染检查；
+4. 导航锚点、表格局部滚动、图表可读性和证据抽屉人工抽查。
+
+改版时保留所有精确表格、图表、证据 ID、来源和限制；只移动到统一主干，不以视觉简化为由
+删除审计信息。完整契约见
+[`public-report-template-contract.md`](../skills/research-buffett-munger-company/references/public-report-template-contract.md)。
 
 ## 3. 固定的九步研究链
 
@@ -592,7 +622,7 @@ limitations
 ## 10. 方法论来源与工程参考
 
 完整的 claim 映射、访问时间、用途、权利边界、Git commit 与采用/拒绝项记录在
-[`methodology-source-ledger.json`](../../skills/research-buffett-munger-company/references/methodology-source-ledger.json)；
+[`methodology-source-ledger.json`](../skills/research-buffett-munger-company/references/methodology-source-ledger.json)；
 下面保留公开复核所需的原始入口。巴菲特—芒格方法只以官方信件、Berkshire 授权档案或具日期
 的演讲记录为依据；GitHub 项目只用于工作流设计，不是投资方法的权威来源。
 

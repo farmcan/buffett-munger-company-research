@@ -1,11 +1,12 @@
 {
   "schema_version": "seed.public-research-publication.v2",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-07-27T18:32:00+08:00",
+  "reviewed_at": "2026-07-27T19:50:00+08:00",
   "artifact_status": "needs_human_review",
   "production_reviewed": false,
   "publication_scope": [
     ".nojekyll",
+    "company-report-theme.css",
     "fubo-group-03738-hk/README.md",
     "fubo-group-03738-hk/build_pack.py",
     "fubo-group-03738-hk/combined-artifact.v2.json",
@@ -134,12 +135,13 @@
     "templates/README.md",
     "templates/company-research-v2-contract.md",
     "templates/company-research-v2.example.json",
+    "templates/report-publication-shell-v1.html",
     "templates/report-v2-template.html",
     "templates/research-dimensions-and-gates.md"
   ],
   "source_repository": "farmcan/seed",
   "source_branch": "agent/buffett-munger-methodology",
-  "source_commit": "d1f90db223575e68eee03059b6a3e77ddb58d97f",
+  "source_commit": "91d6bba036d9412ff79979e1f896d37e9dbc6d27",
   "review_checks": {
     "contains_local_absolute_paths": false,
     "contains_private_library_paths": false,
@@ -149,6 +151,12 @@
     "third_party_estimates_labeled": true,
     "investment_advice_boundary_present": true,
     "publication_validator_passed": true,
+    "template_contract_version": "company-research-publication-v1",
+    "template_parity_validator_passed": true,
+    "shared_theme_checked": true,
+    "visible_dimension_results": 25,
+    "visible_indicator_results": 50,
+    "visible_gate_results": 9,
     "short_position_series_checked": true,
     "critical_evidence_anchors": 78,
     "critical_evidence_locators": 81,
@@ -168,28 +176,44 @@
         "indicators": 50,
         "gates": 9,
         "critical_evidence": 20,
-        "locators": 31
+        "locators": 31,
+        "sections": 21,
+        "tables": 47,
+        "charts": 8,
+        "evidence_drawers": 25
       },
       "nanhua-futures-02691-hk": {
         "dimensions": 25,
         "indicators": 50,
         "gates": 9,
         "critical_evidence": 22,
-        "locators": 17
+        "locators": 17,
+        "sections": 20,
+        "tables": 26,
+        "charts": 6,
+        "evidence_drawers": 22
       },
       "smic-00981-hk": {
         "dimensions": 25,
         "indicators": 50,
         "gates": 9,
         "critical_evidence": 18,
-        "locators": 15
+        "locators": 15,
+        "sections": 20,
+        "tables": 24,
+        "charts": 4,
+        "evidence_drawers": 8
       },
       "fubo-group-03738-hk": {
         "dimensions": 25,
         "indicators": 50,
         "gates": 9,
         "critical_evidence": 18,
-        "locators": 18
+        "locators": 18,
+        "sections": 20,
+        "tables": 31,
+        "charts": 5,
+        "evidence_drawers": 18
       }
     }
   },

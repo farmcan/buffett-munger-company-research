@@ -19,7 +19,10 @@ and Munger principles.
 The [GitHub Pages research index](https://farmcan.github.io/buffett-munger-company-research/)
 currently publishes evidence-linked reports for Meitu, Nanhua Futures, SMIC, and Vobile Group.
 Each report exposes the 25 dimensions, 50 indicators, nine gates, source ledger, evidence
-locators, valuation boundaries, and invalidation tests directly in HTML.
+locators, valuation boundaries, and invalidation tests directly in HTML. All public company
+reports use one versioned publication shell (`company-research-publication-v1`) and a shared
+visual theme; industry differences are explicit content slots rather than independent page
+designs.
 
 ## What is production-grade here?
 
@@ -72,6 +75,9 @@ skills/research-buffett-munger-company/
     company-research-master-checklist.md
     company-research-schema.md
     hk-stock-connect-research-rollout.md
+    public-report-template-contract.md
+  scripts/
+    validate_report_template_parity.py
   scripts/
     company_research_validation.py
     validate_company_research.py
@@ -149,6 +155,10 @@ python skills/research-buffett-munger-company/scripts/validate_methodology_sourc
 python \
   skills/research-buffett-munger-company/scripts/validate_methodology_implementation_crosswalk.py \
   skills/research-buffett-munger-company/references/methodology-implementation-crosswalk.json
+
+python \
+  skills/research-buffett-munger-company/scripts/validate_report_template_parity.py \
+  docs/<company-slug>/report.html
 ```
 
 Run the test suite:

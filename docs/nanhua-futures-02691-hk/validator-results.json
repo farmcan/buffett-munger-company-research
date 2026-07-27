@@ -1,6 +1,6 @@
 {
   "schema_version": "seed.public-company-research.v2",
-  "generated_at": "2026-07-27T10:26:05.588698+00:00",
+  "generated_at": "2026-07-27T11:44:03.731759+00:00",
   "directory": "nanhua-futures-02691-hk",
   "valid": true,
   "publication_ready": true,
@@ -15,6 +15,45 @@
     "dimension_count": 25,
     "indicator_count": 50,
     "source_count": 22
+  },
+  "template_parity": {
+    "schema_version": "seed.public-report-template-parity.v1",
+    "generated_at": "2026-07-27T11:44:03.730075+00:00",
+    "path": "report.html",
+    "template_version": "company-research-publication-v1",
+    "valid": true,
+    "counts": {
+      "section": 20,
+      "table": 26,
+      "svg": 6,
+      "details": 22
+    },
+    "contract_counts": {
+      "required_dimensions": 25,
+      "visible_dimension_results": 25,
+      "required_indicator_ids": 50,
+      "visible_indicator_ids": 50,
+      "required_gate_ids": 9,
+      "visible_gate_ids": 9
+    },
+    "resolved_reader_jobs": {
+      "status legend": "status-legend",
+      "long-term dossier": "long-term",
+      "near-term event monitor": "event-monitor",
+      "snapshot": "snapshot",
+      "five-year financials": "financials",
+      "latest quarter/interim": "quarterly",
+      "capital/per-share bridge": "capital",
+      "market pricing": "market-pricing",
+      "Buffett–Munger interpretation": "buffett",
+      "methodology": "methodology",
+      "timeline": "timeline",
+      "next validation": "monitor",
+      "evidence/sources": "evidence"
+    },
+    "missing_fragment_targets": [],
+    "errors": [],
+    "warnings": []
   },
   "counts": {
     "sources": 22,

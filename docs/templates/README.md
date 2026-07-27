@@ -2,9 +2,21 @@
 
 本目录提供一个不绑定具体公司、无外部 JavaScript/CSS 依赖的公开研究报告骨架。
 
+公开发布另受统一母版契约约束：
+
+- 固定版本：`company-research-publication-v1`
+- 视觉母版：`../meitu-01357-hk/report.html`
+- 共享主题：`../company-report-theme.css`
+- 可执行契约：`../../skills/research-buffett-munger-company/references/public-report-template-contract.md`
+
+`report-v2-template.html` 继续提供完整占位符和 25×50×9 数据骨架；实现真实公司时，
+必须把其内容放进上述统一发布壳。行业差异只替换 KPI、现金桥和估值分支，不能另建主题、
+状态词表或阅读结构。
+
 ```text
 templates/
 ├── README.md
+├── report-publication-shell-v1.html
 ├── report-v2-template.html
 ├── company-research-v2.example.json
 ├── company-research-v2-contract.md
@@ -26,13 +38,13 @@ templates/
 复制模板到目标公司的公开目录，再替换占位符：
 
 ```text
-docs/company-research/<company-slug>/report.html
+docs/<company-slug>/report.html
 ```
 
 所有待替换内容使用显眼的 `[[UPPER_SNAKE_CASE]]` 或 `[[中文说明]]`。发布前应运行：
 
 ```bash
-rg -n '\[\[' docs/company-research/<company-slug>/report.html
+rg -n '\[\[' docs/<company-slug>/report.html
 ```
 
 若仍有占位符，报告不得进入 `production_reviewed`。允许在刻意表达缺失证据时把值替换成 `未披露`、`不适用`、`冲突` 或 `待确认`，但必须同时给出原因、source gap 和下一验证动作，不能保留含糊空白。
@@ -50,7 +62,8 @@ rg -n '\[\[' docs/company-research/<company-slug>/report.html
 | `company-research-v2.example.json` | 可通过核心 validator 的虚构机读样例 | 公司事实、来源、金额、状态与判断 | schema、25 维度、50 indicator、九 gate 的 ID 和顺序 |
 | `company-research-v2-contract.md` | combined artifact 与发布边界 | 可增加有来源的可选 reader-facing block | 不得让可选块覆盖核心 contract |
 | `research-dimensions-and-gates.md` | 人读 crosswalk 与状态传播规则 | 行业解释和证据示例 | exact dimension/indicator/gate vocabulary |
-| `report-v2-template.html` | 长期底稿和短期监控的静态阅读层 | 公司内容、图表、表格、证据抽屉 | 双入口、精确表格、审核状态和非投资建议边界 |
+| `report-publication-shell-v1.html` | 统一公开母版壳与固定读者主干 | 公司标题、公司内容和行业插槽 | 主题、首屏顺序、稳定锚点、状态词表 |
+| `report-v2-template.html` | 25×50×9 的完整占位符和数据阅读层 | 公司内容、图表、表格、证据抽屉 | 精确表格、审核状态和非投资建议边界 |
 | `README.md` | 实施、QA 与发布说明 | 可补行业分支 | 证据优先、可复算和人工复核边界 |
 
 从零实施时按下面顺序，不要先填漂亮 HTML：
@@ -60,25 +73,29 @@ rg -n '\[\[' docs/company-research/<company-slug>/report.html
 3. 建立五年三表、最新中期、owner earnings、净现金和完全摊薄股本桥；
 4. 生成 source ledger、fact-level evidence index、独立 red-team 和可重算 CSV；
 5. 运行核心 validator，通过后再把同一事实映射到 `report-v2-template.html`；
-6. 运行 publication validator；没有具名人工复核时保持 `needs_human_review`；
-7. 新财报或重大事件出现后写 change log，并把旧快照标为 `stale`，不静默覆盖。
+6. 使用统一母版壳、共享主题和固定读者主干呈现同一事实；
+7. 运行 artifact validator 与 template-parity validator；没有具名人工复核时保持 `needs_human_review`；
+8. 新财报或重大事件出现后写 change log，并把旧快照标为 `stale`，不静默覆盖。
 
 最小命令：
 
 ```bash
-cp docs/company-research/templates/company-research-v2.example.json \
-  docs/company-research/<company-slug>/combined-artifact.v2.json
-cp docs/company-research/templates/report-v2-template.html \
-  docs/company-research/<company-slug>/report.html
+cp docs/templates/company-research-v2.example.json \
+  docs/<company-slug>/combined-artifact.v2.json
+cp docs/templates/report-v2-template.html \
+  docs/<company-slug>/report.html
 
-PYTHONPATH=src python3 \
+# 需要直接从统一读者壳开始时：
+cp docs/templates/report-publication-shell-v1.html \
+  docs/<company-slug>/report.html
+
+python3 \
   skills/research-buffett-munger-company/scripts/validate_company_research.py \
-  docs/company-research/<company-slug>/combined-artifact.v2.json
+  docs/<company-slug>/combined-artifact.v2.json
 
-PYTHONPATH=src python3 \
-  skills/research-buffett-munger-company/scripts/validate_company_research_publication.py \
-  docs/company-research/<company-slug> \
-  --output docs/company-research/<company-slug>/validator-results.json
+python3 \
+  skills/research-buffett-munger-company/scripts/validate_report_template_parity.py \
+  docs/<company-slug>/report.html
 ```
 
 样例中的公司、金额和 URL 均为虚构占位数据；它证明结构可以执行，不证明任何真实公司结论。
@@ -97,6 +114,21 @@ PYTHONPATH=src python3 \
 不能只写在 JSON schema 或开发文档中。
 
 ## 不可改变的结构
+
+### 首屏两问顺序
+
+公司报告的首页在方法说明、公司背景、指标卡和长表格之前，先给出两个问题及短答案：
+
+1. 未来十年每股所有者收益靠什么复利；机制是否可理解、关键变量是否可验证；
+2. 按当前价格，保守/基准/进取路径的长期回报和下行是否提供足够安全边际。
+
+允许把它们写在标题后的 `Executive Summary｜执行摘要` 中，以满足报告阅读层契约；但该
+摘要的前两项必须就是两问本身，不能先放免责声明、方法、状态或 KPI。第三项才说明未来
+十二个月的硬验证点。
+
+不要把“十年是否已经被历史证明”作为通用二元筛选，也不要把研究资料成熟度写成公司好坏。
+读者层另列“可进入估值决策 / 继续跟踪验证 / 暂时排除”；正式 dimension、gate 和 publication
+状态仍按 schema 输出，两者不能互相覆盖。
 
 ### 双入口
 

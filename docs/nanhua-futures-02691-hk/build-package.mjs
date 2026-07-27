@@ -860,7 +860,7 @@ const barChart = (title, labels, values, suffix = "", color = "#21c08b") => {
 };
 const evidenceDrawers = evidence.anchors.map((e) => {
   const locator = locatorById[e.id];
-  return `<details data-evidence-id="${e.id}"><summary>${e.id} · ${e.claim_id}</summary>
+  return `<details class="evidence-drawer" data-evidence-id="${e.id}"><summary>${e.id} · ${e.claim_id}</summary>
   <p>${e.source_text}</p><p class="meta">来源 ${e.source_id} · 页 ${e.page ?? "网页/动态表"}${locator ? ` · 抽取行 ${locator[2]}–${locator[3]} · 行快照SHA ${locator[4]} · 页文本SHA ${locator[5]}` : " · 网页/动态数据无稳定PDF页行，未伪造行号"} · 期间 ${e.period} · 单位 ${e.unit} · 币种 ${e.currency} · 范围 ${e.scope} · 审计 ${e.audit_status}${e.formula ? ` · 公式 ${e.formula}` : ""}</p>
 </details>`;
 }).join("");
@@ -891,37 +891,64 @@ const gateDisplay = combined.gates.map((gate) => {
 const html = `<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>南华期货 02691.HK｜基本面、估值与事件研究</title>
-<style>
-:root{--bg:#07111f;--card:#0e1d2f;--ink:#e9f3f8;--muted:#9db2c3;--line:#20384d;--green:#21c08b;--amber:#f4bf4f;--red:#e56b6f;--blue:#5ba7ff}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#06101d,#0a1727 55%,#0b2028);color:var(--ink);font:15px/1.62 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-a{color:#7bc1ff}main{max-width:1180px;margin:auto;padding:28px}.hero,.card{background:rgba(14,29,47,.94);border:1px solid var(--line);border-radius:18px;padding:24px;margin:18px 0;box-shadow:0 14px 38px #0004}
-h1{font-size:34px;margin:.2em 0}h2{font-size:25px;margin:0 0 12px}h3{margin-top:22px}.sub,.meta{color:var(--muted)}.badge{display:inline-block;padding:5px 10px;border-radius:999px;background:#3d3012;color:#ffd77a;border:1px solid #745d25;margin-right:7px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.kpi{padding:15px;border-radius:13px;background:#0a1727;border:1px solid var(--line)}.kpi b{font-size:25px;display:block}
-.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{padding:7px 11px;border:1px solid var(--line);border-radius:9px;text-decoration:none}.legend span{margin-right:15px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
-.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;margin:13px 0}table{border-collapse:collapse;width:100%;min-width:720px}th,td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child{text-align:left}th{background:#10273b;position:sticky;top:0}.chart{background:#091725;border:1px solid var(--line);border-radius:13px;padding:12px;overflow:auto}.chart svg{min-width:650px;width:100%;height:auto}.chart text{fill:#dceaf2;font-size:13px}.callout{border-left:4px solid var(--amber);padding:10px 14px;background:#251f12;border-radius:8px}.risk{border-left-color:var(--red);background:#27161c}.ok{border-left-color:var(--green);background:#10261f}
-details{border:1px solid var(--line);padding:9px 12px;border-radius:10px;margin:8px 0;background:#091725}summary{cursor:pointer;font-weight:700}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:800px){.two{grid-template-columns:1fr}main{padding:14px}h1{font-size:27px}}
-</style></head><body><main>
-<header class="hero">
-  <span class="badge">needs_human_review</span><span class="badge">研究日 2026-07-27</span>
-  <h1>南华期货（02691.HK）</h1>
-  <p class="sub">金融机构分支的长期底稿 + 小盘/港股通事件监控。A/H同一发行人已核验；美国公司仅作主题对照。</p>
-  <div class="nav"><a href="#long-term">长期底稿</a><a href="#market-pricing">市场定价</a><a href="#event-monitor">近期监控</a><a href="#research-contract">25维度/50指标/9 Gate</a><a href="#evidence">证据抽屉</a></div>
-  <div class="grid">
-    <div class="kpi"><span>收盘价</span><b>HK$6.65</b><small>2026-07-27</small></div>
-    <div class="kpi"><span>TTM PE</span><b>9.88×</b><small>含未经审计Q1</small></div>
-    <div class="kpi"><span>正常化PE</span><b>15.02×</b><small>FY2022-25简单均值</small></div>
-    <div class="kpi"><span>PB</span><b>1.07×</b><small>FY2025、转增后股本</small></div>
-    <div class="kpi"><span>净资本/风险资本</span><b>137%</b><small>2026Q1；最低100%</small></div>
+<link rel="stylesheet" href="../company-report-theme.css">
+<style data-company-report-compat>
+body.report-parity code{overflow-wrap:anywhere;font-size:.9em}body.report-parity main.wrap{padding:18px 0 90px}
+body.report-parity section.card{grid-column:1/-1;padding:34px;border-radius:22px;background:var(--paper)}
+body.report-parity .sub,body.report-parity .meta,body.report-parity small{color:var(--muted)}
+body.report-parity .kpi{grid-column:span 3;padding:18px;border:1px solid var(--line);border-radius:15px;background:#fff}
+body.report-parity .kpi b{display:block;margin-top:4px;font-size:27px;line-height:1.15}
+body.report-parity figure.chart{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:15px;background:#fff;overflow-x:auto}
+body.report-parity figure.chart figcaption{margin-bottom:10px;font-size:17px;font-weight:820}
+body.report-parity figure.chart svg{min-width:650px;width:100%;height:auto}body.report-parity figure.chart text{fill:#5c6861!important}
+body.report-parity .callout.risk{border-left-color:var(--red);background:var(--red-soft)}
+body.report-parity details p{padding:0 15px}body.report-parity .legend span{margin-right:15px}
+body.report-parity .question-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+body.report-parity .question-card{padding:17px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.65)}
+body.report-parity .question-card strong{display:block;margin:5px 0;font-size:17px}body.report-parity .question-card p{margin:0;color:#4d5952;font-size:14px}
+body.report-parity .review-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+body.report-parity .review-item{min-width:0;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}
+body.report-parity .review-item b{display:block;font-size:14px}body.report-parity .review-item small{display:block;margin-top:4px;overflow-wrap:anywhere}
+@media(max-width:900px){body.report-parity .question-grid,body.report-parity .review-strip{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){body.report-parity section.card{padding:24px 18px}body.report-parity .kpi{grid-column:span 12}body.report-parity .question-grid,body.report-parity .review-strip{grid-template-columns:1fr}}
+</style>
+<!-- template-parity: viewport-qa-required -->
+</head><body class="report-parity company-nanhua" data-template="company-research-publication-v1">
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Company Research · 02691.HK</p>
+  <h1>南华期货：增长已经出现，资本安全垫决定可持续性</h1>
+  <p class="dek">长期底稿回答经纪、客户保证金利息、风险管理、资管与境外金融服务如何变成股东可分配利润；近期监控回答正式中报、回购、股本、港股通与期货景气怎样改变证据状态。</p>
+  <div class="meta">
+    <span class="pill"><span class="dot"></span>Artifact：needs_human_review</span>
+    <span class="pill">研究日：2026-07-27</span><span class="pill">价格：HK$6.65</span>
+    <span class="pill">复核不晚于：2026-08-31；若中报更早则提前</span><span class="pill">公开资料 · 非投资建议</span>
   </div>
-  <p class="callout risk"><strong>结论先行：</strong>经营动量存在，但Q1不只是经纪增长；投资收益、减值转回和会计估计都影响利润质量。最大的中期验证点是正式中报中的监管资本恢复与利润重复性。估值只能保留区间，不能由单一TTM PE下结论。</p>
-</header>
+  <div class="question-grid">
+    <article class="question-card"><div class="label">问题一 · 十年复利机制</div><strong>靠客户资产、交易与跨境服务，而不是单一手续费。</strong><p>可理解的链条是客户权益/成交量/费率 → 手续费，客户资金/利率 → 净利息，牌照/清算网络 → 境外金融服务；但留存、份额和增量资本回报仍未证实。</p></article>
+    <article class="question-card"><div class="label">问题二 · 当前价格与安全边际</div><strong>FY、TTM与正常化分母分歧大，只能 range_only。</strong><p>FY PE约12.3×、TTM约9.9×、简单周期正常化约15.0×；P/B–ROE情景约HK$4.15–7.47，HK$6.65位于区间偏上。</p></article>
+    <article class="question-card"><div class="label">问题三 · 十二个月硬验证</div><strong>先看监管资本与利润重复性。</strong><p>正式中报必须解释净资本/风险资本240%→137%、Q1投资/减值贡献、境外利润集中、回购执行与可转债最终条款。</p></article>
+  </div>
+  <div class="verdict">
+    <div class="verdict-main"><div class="label">证据状态结论</div><h2>经营动量向上，但资本缓冲与利润质量尚未闭合。</h2><p>Q1和H1预告支持业务扩张；投资收益、减值转回、会计估计和境外集中使单期增速不可直线外推。最大中期Gate是正式中报中的监管资本恢复。</p></div>
+    <div class="verdict-side"><div class="label">Publication state</div><div class="signal">Needs human review</div><p class="signal-note">机器校验通过；缺少具名人工复核，不能标为 <code>production_reviewed</code>。</p></div>
+  </div>
+</div></header>
+<nav aria-label="报告目录"><div class="wrap">
+  <a href="#status-legend">状态</a><a href="#report-doors">双入口</a><a href="#snapshot">快照</a>
+  <a href="#long-term">业务/利润</a><a href="#financials">五年财务</a><a href="#quarterly">Q1/Q2/H1</a>
+  <a href="#owner-earnings">可分配利润桥</a><a href="#capital-quality">监管资本</a><a href="#capital">股本/回购</a>
+  <a href="#market-pricing">估值/长周期</a><a href="#event-monitor">行业/小盘</a><a href="#buffett">巴芒解释</a>
+  <a href="#research-contract">25×50×9</a><a href="#methodology">方法</a><a href="#timeline">时间轴</a>
+  <a href="#monitor">下一验证</a><a href="#evidence">证据</a><a href="#sources">来源</a>
+</div></nav>
+<main class="wrap">
 
-<section class="card legend"><h2>状态 / 程度图例与精确词汇</h2>
+<section id="status-legend" class="card legend"><h2>状态 / 程度图例与精确词汇</h2>
 <p><span><i class="dot" style="background:var(--green)"></i>已观察 / 通过范围</span><span><i class="dot" style="background:var(--amber)"></i>临时 / 区间 / mixed</span><span><i class="dot" style="background:var(--red)"></i>阻断 / 反证</span><span><i class="dot" style="background:var(--muted)"></i>unknown / 未披露</span></p>
 ${table([["layer","层级"],["term","精确值"],["meaning","含义"]],[
   {layer:"artifact",term:"needs_human_review",meaning:"机器产物已成形，但没有人类审批；不能标为production_reviewed"},
   {layer:"dimension",term:"applicable",meaning:"维度适用且至少一项required indicator为observed"},
-  {layer:"dimension",term:"not_applicable",meaning:"维度不适用；本报告仅用于工业营运资本框架"},
+  {layer:"dimension",term:"not_applicable",meaning:"该维度因金融机构会计结构不适用；本报告仅对工业营运资本维度使用该状态"},
   {layer:"dimension",term:"unknown",meaning:"至少一项required indicator为not_disclosed，证据不足"},
   {layer:"dimension",term:"conflicting",meaning:"同一必要问题的可靠证据相互冲突；本报告当前没有该状态"},
   {layer:"indicator",term:"observed",meaning:"有可解析source_refs支持"},
@@ -934,6 +961,30 @@ ${table([["layer","层级"],["term","精确值"],["meaning","含义"]],[
   {layer:"gate",term:"mixed / inconclusive",meaning:"正反证并存或不足以定论"},
   {layer:"gate",term:"blocked / fail / outside_circle",meaning:"硬阻断；当前九道Gate没有使用，但若触发会阻止后续正向readiness"},
 ])}
+<div class="review-strip">
+  <div class="review-item"><b>Combined artifact</b><small>schema v2 · needs_human_review · SHA ${combinedSha}</small></div>
+  <div class="review-item"><b>Red-team</b><small>机器反方已形成；不是人类独立审批</small></div>
+  <div class="review-item"><b>Validator</b><small>core/publication/template parity 在生成后执行</small></div>
+  <div class="review-item"><b>Human review</b><small>缺失；这就是当前发布状态的硬边界</small></div>
+</div>
+</section>
+
+<section id="report-doors"><h2>同一事实层，两条阅读路径</h2>
+<p class="section-dek">长期公司质量与近期事件弹性不能互相代替。两条路径共享同一财务、股本、来源和证据索引。</p>
+<div class="entry-grid">
+  <article class="entry-card"><div class="label">Long-term dossier</div><h3>长期公司底稿</h3><p>从业务与利润来源进入，依次看五年财务、金融机构可分配利润替代桥、监管资本、完全摊薄股本与估值。</p><div class="entry-links"><a href="#long-term">业务与利润</a><a href="#financials">五年财务</a><a href="#market-pricing">每股价值</a></div></article>
+  <article class="entry-card event"><div class="label">Near-term monitor</div><h3>近期事件监控</h3><p>从正式中报、资本化发行、回购、港股通、监管整改与行业成交景气进入；价格窗口只作描述。</p><div class="entry-links"><a href="#event-monitor">行业/小盘</a><a href="#timeline">事件时间轴</a><a href="#monitor">下一验证</a></div></article>
+</div></section>
+
+<section id="snapshot"><h2>当前快照：价格不是公司质量的替代变量</h2>
+<p class="section-dek">以下指标使用同一研究日；倍数必须与监管资本、利润质量和完全摊薄分母共同阅读。</p>
+<div class="grid">
+  <div class="kpi"><span>收盘价</span><b>HK$6.65</b><small>2026-07-27</small></div>
+  <div class="kpi"><span>FY / TTM PE</span><b>12.3× / 9.9×</b><small>TTM含未经审计Q1</small></div>
+  <div class="kpi"><span>正常化PE / PB</span><b>15.0× / 1.07×</b><small>FY2022-25简单均值；FY2025净资产</small></div>
+  <div class="kpi"><span>净资本/风险资本</span><b class="down">137%</b><small>2026Q1；最低100%</small></div>
+</div>
+<div class="callout amber"><strong>证据边界：</strong>H1只是未经审计盈利预告；正式中报日期未找到。实际H股回购、可转债最终条款、客户留存/费率/份额、母公司上游现金与港股通之外指数资格仍是缺口。</div>
 </section>
 
 <section id="long-term" class="card"><h2>长期底稿：业务、利润来源与护城河候选</h2>
@@ -941,16 +992,28 @@ ${table([["layer","层级"],["term","精确值"],["meaning","含义"]],[
 ${barChart("2025经营收入构成（RMBm）", ["净手续费", "净利息", "投资收益", "交易净额", "其他"], [605.56,572.343,148.07,1.347,60.191])}
 <p class="callout">图的含义：手续费与利息合计约84.9%，是可跟踪的核心；投资与公允价值损益波动较大，不适合与经纪收入使用同一持续性假设。</p>
 ${table([["item","收入项目"],["fy2024_rmb_m","2024 RMBm"],["fy2025_rmb_m","2025 RMBm"],["yoy_pct","同比%"],["fy2025_mix_pct","2025占比%"]],income,"NH-CRIT-003")}
+<h3>净手续费内部：期货经纪仍是主轴</h3>
+${table([["item","手续费来源"],["fy2024_rmb_m","2024 RMBm"],["fy2025_rmb_m","2025 RMBm"],["yoy_pct","同比%"],["share_of_net_fees_pct","净手续费占比%"]],fees)}
+<p>期货经纪占2025净手续费82.62%，资管增长较快但基数小，基金管理同比下降。若行业成交额增长而净手续费未同步，优先检查费率竞争与客户结构，而不是把行业量直接等同公司变现。</p>
 
 <h3>分部利润：优势候选也是集中风险</h3>
 ${table([["segment","分部"],["fy2024_income_rmb_m","2024收入"],["fy2025_income_rmb_m","2025收入"],["fy2024_pbt_rmb_m","2024 PBT"],["fy2025_pbt_rmb_m","2025 PBT"]],segments,"NH-CRIT-004")}
 <p>境外金融服务2025年税前利润RMB501.010m，约占集团PBT 91.9%。跨境牌照、清算资格和客户资产规模是护城河候选；但同一事实也意味着美国、香港、新加坡等地的利率、监管和客户交易活动会集中影响利润。缺少客户留存、费率溢价和份额趋势，不能把牌照数量直接写成已证实的护城河。</p>
+${table([["geography","地域"],["fy2025_income_rmb_m","2025收入RMBm"],["share_pct","占比%"],["yoy_pct","同比%"]],geography)}
 
+</section>
+
+<section id="financials" class="card"><h2>五年财务：利润增长必须穿透利率、投资波动与客户资金</h2>
+<p class="section-dek">2021仅保留可核验归母利润；2022—2025使用HKFRS可比数据。合并CFO受客户保证金流动影响，不能直接当作自由现金。</p>
 <h3>五年财务与ROE</h3>
 ${barChart("归母利润趋势（RMBm）", annual.map(r=>r.period), annual.map(r=>Number(r.parent_profit_rmb_m)||0), "", "#5ba7ff")}
 <p class="callout">图的含义：2022后利润增长明显，但2021经营收入与HKFRS口径未完整重列，故只保留利润；2023-2025的增长仍需拆解利率、交易活跃度、投资波动和境外业务。</p>
 ${table([["period","期间"],["operating_income_rmb_m","经营收入RMBm"],["parent_profit_rmb_m","归母利润RMBm"],["parent_equity_rmb_m","归母权益RMBm"],["client_payables_rmb_m","客户应付款RMBm"],["roe_pct","ROE%"],["cfo_rmb_m","CFO RMBm"]],annual,"NH-CRIT-002")}
 
+</section>
+
+<section id="business-kpis" class="card"><h2>经营KPI：客户资产、AUM与风险管理规模</h2>
+<p class="section-dek">这些是规模信号，不是完整单位经济；客户留存、净费率、集中度和增量资本回报仍未披露。</p>
 <h3>产品和客户指标</h3>
 ${table([["period","期间"],["metric","指标"],["value","值"],["unit","单位"],["scope_note","范围"]],[
   {period:"FY2025",metric:"境内客户权益",value:38.982,unit:"RMBbn",scope_note:"隔离客户资金"},
@@ -962,7 +1025,7 @@ ${table([["period","期间"],["metric","指标"],["value","值"],["unit","单位
 ],"NH-CRIT-005")}
 </section>
 
-<section class="card"><h2>Q1与隐含Q2：增长从哪里来</h2>
+<section id="quarterly" class="card"><h2>Q1与隐含Q2/H1：增长从哪里来</h2>
 ${barChart("2026Q1相对2025Q1的利润来源变动（RMBm）", q1Bridge.map(r=>r.item), q1Bridge.map(r=>r.change_rmb_m), "", "#21c08b")}
 <p class="callout">图的含义：手续费与利息的改善是核心顺风；投资收益增加RMB93.9m和信用减值费用转回带来约RMB30.4m有利变化，公允价值与汇兑则抵消。不能把+138.8%的归母利润同比全部视为经纪业务的重复性增长。</p>
 ${table([["item","项目"],["q1_2025_rmb_m","2025Q1"],["q1_2026_rmb_m","2026Q1"],["change_rmb_m","变动RMBm"],["interpretation","解释"]],q1Bridge,"NH-CRIT-008")}
@@ -970,25 +1033,33 @@ ${table([["metric","指标"],["q1_2025_rmb_m","2025Q1"],["q1_2026_rmb_m","2026Q1
 <p>H1归母利润预告RMB375m–405m，减去Q1后隐含Q2为RMB170.237m–200.237m；相对2025Q2约+17.0%至+37.6%，相对2026Q1约-16.9%至-2.2%。这说明Q2仍可能同比增长，但不等于Q1增速继续加速。正式中报尚未披露。</p>
 </section>
 
-<section class="card"><h2>金融机构 owner earnings：为什么不能用CFO减资本开支</h2>
+<section id="owner-earnings" class="card"><h2>金融机构 owner earnings 替代桥：从归母到法定可分配能力</h2>
 <p data-evidence-id="NH-CRIT-009">Q1合并CFO为RMB5.318bn，主要由客户权益流动驱动。客户保证金由隔离资产对应，不是普通经营现金。因此本报告把owner earnings标为<strong>unavailable</strong>，不机械使用合并CFO-capex。</p>
+${table([["step","桥接项"],["period","期间"],["amount","金额"],["status","状态"],["interpretation","解释"],["source","来源"]],[
+  {step:"法定归母利润",period:"FY2025",amount:"RMB486.264m",status:"audited",interpretation:"起点，不等于可分配现金",source:"F01 p.29"},
+  {step:"合并经营现金流",period:"FY2025 / 2026Q1",amount:"RMB1,782.044m / RMB5,317.832m",status:"not_owner_earnings",interpretation:"受客户权益及保证金流动显著影响",source:"F01 p.48; F02 p.14"},
+  {step:"隔离客户资产/负债",period:"FY2025",amount:"客户应付款RMB57,191.041m",status:"excluded_from_distributable_cash",interpretation:"不是普通公司可支配净现金",source:"F01"},
+  {step:"母公司与受监管子公司上游现金",period:"FY2025",amount:"未披露完整桥",status:"not_disclosed",interpretation:"需要法定实体分红、限制和税务信息",source:"source gap"},
+  {step:"必需监管资本留存",period:"2026Q1",amount:"实际留存金额未披露",status:"not_disclosed",interpretation:"137%资本比率使留存假设成为关键变量",source:"F02 p.3"},
+  {step:"可分配收益",period:"研究日",amount:"unavailable",status:"range_only_sensitivity",interpretation:"只展示40%–70%留存敏感性，不冒充owner earnings",source:"F01; F02; G03"},
+])}
 ${table([["case","敏感性"],["reported_parent_profit_rmb_m","2025归母利润"],["assumed_regulatory_retention_pct","假设资本留存%"],["candidate_distributable_rmb_m","候选可分配RMBm"],["status","状态"]],ownerSensitivity)}
 <p class="callout risk">这张表只是“若监管资本留存为40%–70%”的研究敏感性，不是owner earnings、不是公司股利承诺。缺失的是母公司及受监管子公司的法定可分配现金、上游能力和资本留存桥。</p>
 </section>
 
-<section class="card"><h2>监管资本、客户资金隔离与生存能力</h2>
+<section id="capital-quality" class="card"><h2>监管资本、客户资金隔离与生存能力</h2>
 ${barChart("净资本/风险资本（%）", ["FY2024","FY2025","2026Q1","最低要求"], [166,240,137,100], "%", "#f4bf4f")}
 <p class="callout risk" data-evidence-id="NH-CRIT-010">图的含义：Q1从240%降到137%，仍高于100%最低值，但缓冲由140个百分点缩至37个百分点。该变量会影响扩张、股利、回购和融资选择，是正式中报最重要的核验项。</p>
 ${table([["period","期间"],["net_capital_rmb_m","净资本RMBm"],["net_capital_to_risk_pct","净资本/风险资本%"],["net_capital_to_net_assets_pct","净资本/净资产%"],["current_assets_to_current_liabilities_pct","流动资产/流动负债%"],["liabilities_to_net_assets_pct","负债/净资产%"],["clearing_settlement_rmb_m","结算准备金RMBm"]],riskCapital,"NH-CRIT-006")}
 </section>
 
-<section class="card"><h2>股本、回购、可转债与每股经济性</h2>
+<section id="capital" class="card"><h2>股本、回购、可转债与每股经济性</h2>
 ${table([["scenario","情景"],["shares_m","股份m"],["treatment","处理"],["included_in_base_valuation","基准估值"]],shareBridge,"NH-CRIT-013")}
 <p>4.5送10的资本化发行改变每股分母和股价刻度，不创造企业价值。研究使用公司披露的转增后预期1,038.145m股。拟A股可转债上限RMB1.2bn仍未发行，示例75.901m转股仅作摊薄情景；它不是“股价低于某价自动还钱、高于某价自动转股”的简单二元结构，最终要看发行条款、转股期、转股价调整、赎回和回售条件。</p>
 <p>H股回购授权上限HK$130m、股数上限10%，截至研究日未发现实际成交披露。授权与执行必须分开记录。</p>
 </section>
 
-<section class="card"><h2>治理、会计与CFO信息边界</h2>
+<section id="management" class="card"><h2>治理、会计与CFO信息边界</h2>
 ${table([["date","日期"],["event","事件"],["fact","事实"],["interpretation","研究解释"],["source_id","来源"]],[
   {date:"2026-03-27",event:"会计估计变更",fact:"ECL低风险对手方组合调整；FY2026 PBT影响不超过RMB40m",interpretation:"Q1精确贡献未披露",source_id:"G04"},
   {date:"2026-03-27",event:"拟更换审计师",fact:"拟改聘安永；声明无分歧",interpretation:"持续监控，不自动等同舞弊",source_id:"G01"},
@@ -1004,6 +1075,21 @@ ${table([["label","口径"],["profit_basis_rmb_m","利润基础RMBm"],["eps_hkd"
 ${barChart("P/B-ROE敏感性（HKD/股）", ["下行情景","基准情景","上行情景","研究日价格"], [4.1495,5.3351,7.4691,6.65], "", "#5ba7ff")}
 <p class="callout">图的含义：基于FY2025净资产、转增后股本及11%权益成本，ROE 8%/10%/12%分别对应约HK$4.15/HK$5.34/HK$7.47。研究日价格高于基准情景，仅上行情景形成正差；这只是P/B-ROE敏感性，不是单点估值结论。</p>
 ${table([["scenario","情景"],["sustainable_roe_pct","可持续ROE%"],["terminal_growth_pct","长期增长%"],["discount_rate_pct","权益成本%"],["fair_pb","合理PB"],["intrinsic_value_per_share","HKD/股"]],intrinsic)}
+${table([["scenario","情景"],["scenario_value","情景值HKD"],["current_price","当前价HKD"],["intrinsic_value_gap","当前价/情景值-1"],["reading","含义"]],[
+  {scenario:"downside",scenario_value:4.1495,current_price:6.65,intrinsic_value_gap:"+60.3%",reading:"当前价高于下行情景"},
+  {scenario:"base",scenario_value:5.3351,current_price:6.65,intrinsic_value_gap:"+24.6%",reading:"当前价高于基准情景"},
+  {scenario:"upside",scenario_value:7.4691,current_price:6.65,intrinsic_value_gap:"-11.0%",reading:"当前价低于上行情景"},
+])}
+<h3>长周期市场定价：短上市历史决定了哪些指标不可得</h3>
+${table([["coordinate","坐标"],["value","值"],["status","状态"],["why","解释"],["next_test","下一验证"]],[
+  {coordinate:"H股交易历史",value:"2025-12-22起",status:"observed",why:"截至研究日不足一年",next_test:"持续冻结当时可知EPS/BVPS与股本事件"},
+  {coordinate:"无前视偏差历史PE/PB分位",value:"不可得",status:"unavailable",why:"样本期不足，且2026-06资本化发行改变价格刻度",next_test:"至少积累完整周期并按披露日重建"},
+  {coordinate:"1/3/5年最大回撤",value:"不可得",status:"unavailable",why:"H股没有完整1/3/5年历史",next_test:"达到对应历史长度后补算"},
+  {coordinate:"200日趋势",value:"不可得",status:"unavailable",why:"上市至研究日不足200个完整交易日",next_test:"只在样本满足后启用"},
+  {coordinate:"20日平均成交量",value:"约1.402m股/日",status:"secondary_observed",why:"研究日成交0.373m股，流动性显著低于短期均量",next_test:"继续观察成交深度、价差与南向持股"},
+  {coordinate:"3—5年回报分解",value:"不可得",status:"unavailable",why:"可持续ROE、法定分配、摊薄路径与终值倍数未闭合",next_test:"正式中报、资本桥和股利/转债条款"},
+])}
+<p class="callout amber">短交易历史意味着“历史低位/高位”不能成立。当前只能回答：HK$6.65相对P/B–ROE情景的位置、分母矩阵和流动性状态；不能用上市以来回撤或20日形态证明价值。</p>
 </section>
 
 <section id="event-monitor" class="card"><h2>近期监控：小盘、港股通、事件窗口与行业周期</h2>
@@ -1029,6 +1115,46 @@ ${table([["risk","风险"],["likelihood","可能性"],["impact","影响"],["evid
 <p class="callout risk">小盘特有的次级风险包括：流动性、股本事件的光学错觉、南向资金流、可转债摊薄、回购授权未执行、审计/会计变化与监管整改。近期监控应围绕“正式中报—监管资本—资本动作—南向资格—成交结构”的事件链，而不是只看固定20日价格形态。</p>
 </section>
 
+<section id="buffett"><h2>巴菲特—芒格解释：先问可预测性，再问价格</h2>
+<p class="section-dek">金融机构的资本、客户资金与法定分配约束决定这套框架必须换分支；低PE、回购授权或行业成交活跃都不能替代长期每股经济。</p>
+<div class="grid">
+  <div class="card wide"><div class="k">能力圈</div><div class="v flat">有限范围可理解</div><div class="s">手续费、保证金利息和分部机制可理解；母公司上游现金、客户留存和净费率尚未闭合。</div></div>
+  <div class="card wide"><div class="k">护城河</div><div class="v flat">候选，未证实</div><div class="s">跨境牌照、清算资格与客户资产有价值，但缺少份额、留存、定价溢价和增量资本回报。</div></div>
+  <div class="card wide"><div class="k">资本配置</div><div class="v down">多动作并行</div><div class="s">转增、回购授权、条件性股利与拟可转债同时存在；必须以完全摊薄每股结果和监管资本复核。</div></div>
+  <div class="card wide"><div class="k">Owner earnings</div><div class="v down">Unavailable</div><div class="s">客户资金使合并CFO失真；只能保留监管资本留存敏感性，不能给单点。</div></div>
+  <div class="card wide"><div class="k">生存能力</div><div class="v flat">Provisional</div><div class="s">137%仍高于100%最低值，但资本缓冲显著收窄，监管整改也未闭环。</div></div>
+  <div class="card wide"><div class="k">估值</div><div class="v flat">Range only</div><div class="s">FY、TTM、正常化PE和P/B–ROE情景并列；短H股历史不支持历史分位。</div></div>
+</div>
+<div class="callout amber"><strong>最强反方：</strong>利润增长可能主要是交易景气、投资收益、减值转回和客户资金周期的组合，而不是已证实的费率护城河；若正式中报资本缓冲进一步收窄，资本约束会优先于增速叙事。</div>
+</section>
+
+<section id="methodology"><h2>可复用方法：金融机构公司研究九步链</h2>
+<p class="section-dek">事实、管理层主张、研究推导和缺口分层；行业差异只替换KPI、现金桥和估值分支。</p>
+<div class="method-grid">
+  <div class="method-step"><div class="n">STEP 01</div><strong>证券身份</strong><p>核验A/H同一发行人、股类、币种、价格日、当前港股通双名单。</p></div>
+  <div class="method-step"><div class="n">STEP 02</div><strong>收入与利润池</strong><p>拆手续费、净利息、投资损益、资管、风险管理和境外分部。</p></div>
+  <div class="method-step"><div class="n">STEP 03</div><strong>五年与季度</strong><p>审计年度、未经审计Q1、盈利预告和研究推导绝不混成同一精度。</p></div>
+  <div class="method-step"><div class="n">STEP 04</div><strong>金融机构现金桥</strong><p>剔除隔离客户资金影响，转向监管资本、母公司上游现金和法定分配。</p></div>
+  <div class="method-step"><div class="n">STEP 05</div><strong>每股分母</strong><p>库存股、资本化发行、回购、员工股和可转债逐层处理。</p></div>
+  <div class="method-step"><div class="n">STEP 06</div><strong>估值矩阵</strong><p>reported FY、TTM、normalized PE与P/B–ROE同时展示。</p></div>
+  <div class="method-step"><div class="n">STEP 07</div><strong>行业与映射</strong><p>行业成交到公司利润之间仍需费率、客户权益、利率和资本验证；CME/IBKR仅为thematic_peer。</p></div>
+  <div class="method-step"><div class="n">STEP 08</div><strong>事件窗口</strong><p>统一首次可交易日、T-1/T0/T+5、成交量与重叠事件，不倒推因果。</p></div>
+  <div class="method-step"><div class="n">STEP 09</div><strong>反方与发布</strong><p>先写失效条件；机器通过不等于具名人工审批。</p></div>
+</div></section>
+
+<section id="timeline"><h2>大事件时间轴：已发生、已确认与TBA分开</h2>
+<p class="section-dek">历史事件保留五日窗口；未来事件只记录官方状态与需要确认的证据。</p>
+<div class="timeline">
+  <div class="timeline-item"><div class="timeline-date">2025-12-22 · completed</div><div class="timeline-title">H股上市</div><p>建立独立H股交易历史；上市日收盘HK$9.10，T+5收盘HK$9.91。</p></div>
+  <div class="timeline-item" data-evidence-id="NH-CRIT-020"><div class="timeline-date">2026-01-19 · completed</div><div class="timeline-title">纳入沪港通下港股通</div><p>研究日又用沪深两份当前名单复核为eligible；纳入不是方向保证。</p><p class="reaction-line">T0 -7.16%；T0→T+5 -0.35%；量比2.49。</p></div>
+  <div class="timeline-item"><div class="timeline-date">2026-03-27 / 04-01 · completed</div><div class="timeline-title">年报、会计估计、审计师、关联交易与监管警示</div><p>多个治理与会计事件重叠，五日价格不能拆成单一公告因果。</p></div>
+  <div class="timeline-item" data-evidence-id="NH-CRIT-007"><div class="timeline-date">2026-04-21 · completed</div><div class="timeline-title">2026Q1报告</div><p>收入和利润大增，但投资收益、减值转回与资本比率下降同时出现。</p><p class="reaction-line">T0 -4.90%；T0→T+5 -6.26%；量比2.72。</p></div>
+  <div class="timeline-item"><div class="timeline-date">2026-06-24 / 07-16 · completed</div><div class="timeline-title">H股回购方案与股东会批准</div><p>授权已完成；截至研究日未找到实际成交披露。</p></div>
+  <div class="timeline-item" data-evidence-id="NH-CRIT-011"><div class="timeline-date">2026-07-07 · completed</div><div class="timeline-title">2026H1盈利预告</div><p>隐含Q2同比增长，但环比低于Q1；正式中报仍是下一硬证据。</p><p class="reaction-line">T0 +1.00%；T0→T+5 +1.97%；量比0.47。</p></div>
+  <div class="timeline-item future" data-evidence-id="NH-CRIT-013"><div class="timeline-date">2026-08-11 · confirmed expected</div><div class="timeline-title">资本化H股预计开始交易</div><p>公司公告给出预期日期；最终股本以登记结果为准。</p></div>
+  <div class="timeline-item future"><div class="timeline-date">日期TBA</div><div class="timeline-title">2026H1正式中报</div><p>尚未找到正式发布日；需核对净资本、利润来源、境外分部、母公司现金和股本桥。</p></div>
+</div></section>
+
 <section id="research-contract" class="card"><h2>25维度 × 50 required indicators × 9 Gate</h2>
 <p>下表直接展开全部50个指标，不把状态只藏在JSON。每个维度恰有两项required indicator；维度状态、指标状态、摘要与缺口均可在移动端横向滚动。</p>
 ${table([["dimension","维度"],["dimension_status","维度状态"],["indicator_no","#"],["indicator","required indicator"],["indicator_status","指标状态"],["summary","摘要"],["gap_or_reason","gap / 原因"]],indicatorRows)}
@@ -1036,16 +1162,24 @@ ${table([["dimension","维度"],["dimension_status","维度状态"],["indicator_
 ${table([["gate","Gate"],["result","result"],["reason","reason"],["blocking","blocking"],["next_tests","next tests"]],gateDisplay)}
 </section>
 
-<section class="card"><h2>未来趋势与验证路径</h2>
+<section id="monitor" class="card"><h2>下一证据与失效条件：什么会升级或推翻结论</h2>
 <div class="two">
 <div><h3>可能的正向机制</h3><ul><li>行业成交量和成交额维持增长，带动经纪手续费。</li><li>客户权益继续扩大且利率企稳，提高保证金利息变现。</li><li>跨境牌照与清算网络带来客户资产和产品扩张。</li><li>监管资本恢复后，资本配置约束减轻。</li></ul></div>
 <div><h3>可能的反向机制</h3><ul><li>费率竞争抵消行业成交增长。</li><li>利率下行压缩客户保证金净利息。</li><li>境外业务监管、汇率或投资损益反转。</li><li>可转债与资本需求稀释每股结果。</li></ul></div>
 </div>
 <p>下一次重做的触发点不是任意20日波动，而是正式中报、净资本变化、H股回购实际成交、可转债最终条款、审计师正式任命/审计结论、监管整改结果和沪深两份港股通名单变化。</p>
+${table([["topic","验证主题"],["current_state","当前状态"],["upgrade_test","升级条件"],["downgrade_or_invalidation","降级/失效条件"],["timing","时间"]],[
+  {topic:"监管资本",current_state:"2026Q1净资本/风险资本137%",upgrade_test:"正式中报显示资本缓冲恢复且业务增长不依赖异常融资",downgrade_or_invalidation:"继续逼近100%最低值或为维持当前业务被动补充资本",timing:"正式H1"},
+  {topic:"利润重复性",current_state:"Q1含投资收益和减值转回",upgrade_test:"手续费/利息贡献持续、投资与减值占比下降",downgrade_or_invalidation:"正式H1主要由非重复项目支撑",timing:"正式H1"},
+  {topic:"跨境优势",current_state:"2025境外PBT占集团约91.9%",upgrade_test:"多期客户资产、费率和增量资本回报可复算",downgrade_or_invalidation:"境外利润显著回落且国内未补位",timing:"H1/FY"},
+  {topic:"资本配置",current_state:"回购授权、转增、拟可转债并行",upgrade_test:"回购实际成交且监管资本与每股结果不受损",downgrade_or_invalidation:"可转债摊薄与资本需求超过经营增量",timing:"逐公告"},
+  {topic:"港股通/流动性",current_state:"沪深双名单eligible；H股历史短",upgrade_test:"资格保持且成交深度、南向持股更稳定",downgrade_or_invalidation:"任一官方名单变化或流动性显著恶化",timing:"名单变更/每月"},
+  {topic:"治理与审计",current_state:"内控警示、会计估计变更、拟换审计师",upgrade_test:"整改闭环且新审计报告无新增重大保留",downgrade_or_invalidation:"新增监管措施、重大审计分歧或重述",timing:"监管公告/FY2026"},
+])}
 </section>
 
 <section id="evidence" class="card"><h2>关键证据抽屉</h2><p class="sub">每项包含来源、页码/定位、期间、单位、范围、审计状态和公式；原始链接见下方来源表。</p>${evidenceDrawers}</section>
-<section class="card"><h2>来源与方法</h2>
+<section id="sources" class="card"><h2>来源与方法边界</h2>
 ${table([["id","ID"],["tier","层级"],["title","标题"],["period","期间"],["audit_status","审计"],["url","链接"]],sources.map(s=>({...s,url:`<a href="${s.url}">原始链接</a>`})))}
 <p>方法：先核验证券/发行人/股本/币种；再拆收入与利润、现金与监管资本；随后完成正常化、完全摊薄、估值区间、反方证据和事件窗口。金融机构明确禁用工业CFO-capex模板。</p>
 </section>

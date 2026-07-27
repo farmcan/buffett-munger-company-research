@@ -26,6 +26,10 @@ Munger, their estates, or the cited publishers.
   indicators, stages, or gates.
 - Read `references/hk-stock-connect-research-rollout.md` before designing a Hong Kong Stock
   Connect batch.
+- Read `references/public-report-template-contract.md` before building a public HTML report.
+  Keep the publication shell and reader spine fixed; express industry differences through KPI,
+  accounting, cash-bridge, and valuation slots instead of inventing another theme or status
+  vocabulary.
 
 ## Choose the workflow
 
@@ -184,6 +188,10 @@ python skills/research-buffett-munger-company/scripts/validate_methodology_sourc
 python \
   skills/research-buffett-munger-company/scripts/validate_methodology_implementation_crosswalk.py \
   skills/research-buffett-munger-company/references/methodology-implementation-crosswalk.json
+
+python \
+  skills/research-buffett-munger-company/scripts/validate_report_template_parity.py \
+  path/to/public-report.html
 ```
 
 The validators use only the Python standard library.
@@ -200,6 +208,8 @@ Mark an artifact ready for human review only when:
 - moat evidence contains counter-evidence;
 - red-team and invalidation tests exist;
 - unresolved critical gaps are explicit;
+- public HTML exposes all 25 dimensions, 50 indicators and nine gates through the fixed
+  `company-research-publication-v1` reader contract;
 - no buy/sell, position-size, guaranteed-return, or endorsement language appears.
 
 A failed gate is a valid research outcome. A validator pass is not investment approval.

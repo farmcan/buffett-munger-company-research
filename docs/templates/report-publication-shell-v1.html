@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="[[REPORT_DESCRIPTION]]">
+  <title>[[COMPANY_NAME]]（[[TICKER]]）研究报告｜[[RESEARCH_DATE]]</title>
+  <link rel="stylesheet" href="../company-report-theme.css">
+  <!-- template-parity: viewport-qa-required -->
+</head>
+<body data-template="company-research-publication-v1" data-stale-after="[[STALE_AFTER]]">
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Company Research · [[TICKER]]</p>
+      <h1>[[COMPANY_NAME]]：[[EVIDENCE_BOUND_HEADLINE]]</h1>
+      <p class="dek">[[ONE_SENTENCE_LONG_TERM_AND_EVENT_SCOPE]]</p>
+      <div class="meta">
+        <span class="pill"><span class="dot"></span>Artifact：[[PUBLICATION_STATE]]</span>
+        <span class="pill">快照：[[RESEARCH_DATE]]</span>
+        <span class="pill">价格锚点：[[PRICE_DATE_AND_PRICE]]</span>
+        <span class="pill">更新检查点：[[NEXT_OFFICIAL_EVENT]]</span>
+        <span class="pill">公开资料 · 非投资建议</span>
+      </div>
+      <div class="verdict">
+        <div class="verdict-main">
+          <div class="label">证据状态结论</div>
+          <h2>[[ANSWER_FIRST_CONCLUSION]]</h2>
+          <p>[[MOST_IMPORTANT_SUPPORT_AND_BLOCKING_GAP]]</p>
+        </div>
+        <div class="verdict-side">
+          <div class="label">Publication state</div>
+          <div class="signal">[[PUBLICATION_STATE_LABEL]]</div>
+          <p class="signal-note">[[WHAT_THE_STATE_MEANS_AND_DOES_NOT_MEAN]]</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="报告目录">
+    <div class="wrap">
+      <a href="#status-legend">状态图例</a>
+      <a href="#report-doors">两个入口</a>
+      <a href="#snapshot">核心快照</a>
+      <a href="#long-term">长期底稿</a>
+      <a href="#financials">五年财务</a>
+      <a href="#quarterly">最新季度</a>
+      <a href="#capital">资本与每股</a>
+      <a href="#market-pricing">估值</a>
+      <a href="#event-monitor">事件监控</a>
+      <a href="#buffett">巴芒框架</a>
+      <a href="#research-contract">25×50×9</a>
+      <a href="#methodology">方法论</a>
+      <a href="#timeline">时间轴</a>
+      <a href="#monitor">下一验证</a>
+      <a href="#evidence">证据</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="status-legend">
+      <h2>状态图例：四个层级不能混用</h2>
+      <p class="section-dek"><code>applicable</code> 不等于正面，<code>observed</code> 不等于指标好，<code>provisional</code> 不等于 <code>pass</code>，发布状态也不是投资评级。</p>
+      <div class="status-strip">
+        <div class="status-box"><div class="status-key">Publication</div><div class="status-value">source_partial / research_in_progress / needs_human_review / production_reviewed</div><p>整份报告经过了什么制作和复核。</p></div>
+        <div class="status-box"><div class="status-key">Dimension</div><div class="status-value">applicable / unknown / conflicting / not_applicable</div><p>研究维度是否适用、证据是否足够。</p></div>
+        <div class="status-box"><div class="status-key">Indicator</div><div class="status-value">observed / not_disclosed / conflicting / not_applicable</div><p>指标是否已有可引用证据。</p></div>
+        <div class="status-box"><div class="status-key">Gate</div><div class="status-value">pass / mixed / provisional / range_only / inconclusive / blocked</div><p>一道研究闸门的证据结果。</p></div>
+      </div>
+      <!-- Replace the compact cards with the complete four status tables before publication. -->
+    </section>
+
+    <section id="report-doors">
+      <h2>同一组事实，拆成长期底稿与近期监控</h2>
+      <div class="entry-grid">
+        <article class="entry-card">
+          <div class="label">Long-term company file</div>
+          <h3>长期公司底稿</h3>
+          <p>[[BUSINESS_QUALITY_CAPITAL_AND_PER_SHARE_SCOPE]]</p>
+          <div class="entry-links"><a href="#long-term">业务与护城河</a><a href="#financials">五年财务</a><a href="#market-pricing">估值与每股经济</a></div>
+        </article>
+        <article class="entry-card event">
+          <div class="label">Near-term event monitor</div>
+          <h3>近期事件监控</h3>
+          <p>[[EVENTS_THAT_CHANGE_THE_VALIDATION_ORDER]]</p>
+          <div class="entry-links"><a href="#event-monitor">近期事件</a><a href="#timeline">时间轴</a><a href="#monitor">下一验证点</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="snapshot">
+      <h2>核心快照</h2>
+      <p class="section-dek">[[FOUR_TO_EIGHT_DATED_METRICS_WITH_SCOPE_AND_DIRECTION]]</p>
+      <div class="grid">[[SNAPSHOT_CARDS]]</div>
+    </section>
+
+    <section id="long-term">
+      <h2>业务、收入和利润来源</h2>
+      <p class="section-dek">[[WHO_PAYS_WHY_REVENUE_RECOGNITION_SEGMENTS_PROFIT_POOL_AND_MOAT_COUNTEREVIDENCE]]</p>
+      [[BUSINESS_TABLES_AND_CHARTS]]
+    </section>
+
+    <section id="financials">
+      <h2>五年财务、ROIC 与增量回报</h2>
+      <p class="section-dek">[[FIVE_YEAR_SCOPE_RESTATEMENTS_AND_EARNINGS_QUALITY]]</p>
+      [[FIVE_YEAR_TABLES_AND_ADJACENT_CHARTS]]
+    </section>
+
+    <section id="quarterly">
+      <h2>最新季度 / 中期：实际、指引和派生值分开</h2>
+      <p class="section-dek">[[LATEST_PERIOD_DISCLOSURE_BOUNDARY]]</p>
+      [[QUARTERLY_TABLES_AND_CHARTS]]
+    </section>
+
+    <section id="owner-earnings">
+      <h2>Owner earnings 与现金转换</h2>
+      <p class="section-dek">[[OWNER_EARNINGS_OR_JUSTIFIED_SECTOR_SUBSTITUTE]]</p>
+      [[OWNER_EARNINGS_NET_CASH_TABLES]]
+    </section>
+
+    <section id="capital">
+      <h2>资本结构、完全摊薄股本与每股经济</h2>
+      <p class="section-dek">[[BASIC_UNCONVERTED_FULLY_DILUTED_AND_DEBT_RELIEF_SCENARIOS]]</p>
+      [[CAPITAL_AND_SHARE_BRIDGE_TABLES]]
+    </section>
+
+    <section id="market-pricing">
+      <h2>市场定价状态与估值区间</h2>
+      <p class="section-dek">[[DATED_DENOMINATOR_MATRIX_HISTORICAL_RELATIVE_AND_INTRINSIC_VALUE_COORDINATES]]</p>
+      [[VALUATION_TABLES_AND_CHARTS]]
+    </section>
+
+    <section id="event-monitor">
+      <h2>行业、全球映射与近期事件</h2>
+      <p class="section-dek">[[SECTOR_MECHANISM_GLOBAL_MAPPING_SMALL_CAP_OR_STRUCTURE_RISK]]</p>
+      [[EVENT_TABLES_AND_SCENARIOS]]
+    </section>
+
+    <section id="buffett">
+      <h2>巴菲特—芒格框架</h2>
+      <p class="section-dek">[[CIRCLE_OF_COMPETENCE_MOAT_CAPITAL_INTENSITY_MANAGEMENT_PRICE_DISCIPLINE]]</p>
+      [[BUFFETT_MUNGER_SCORECARD_WITHOUT_WEIGHTED_SCORE]]
+    </section>
+
+    <section id="research-contract">
+      <h2>25 个维度、50 个指标族与九道 Gate</h2>
+      <p class="section-dek">[[VISIBLE_COMPLETION_COUNTS_AND_EXACT_OUTCOMES]]</p>
+      [[ALL_25_DIMENSION_ROWS_WITH_TWO_INDICATORS_EACH]]
+      [[ALL_9_GATE_ROWS_WITH_BLOCKING_REASONS]]
+    </section>
+
+    <section id="methodology">
+      <h2>可复用研究方法</h2>
+      <p class="section-dek">[[FIXED_METHOD_AND_COMPANY_SPECIFIC_INDUSTRY_BRANCH]]</p>
+      [[NINE_METHOD_STEPS]]
+    </section>
+
+    <section id="timeline">
+      <h2>大事件时间轴</h2>
+      <p class="section-dek">[[DATED_EVENTS_T0_T1_T5_BENCHMARK_AND_ATTRIBUTION_BOUNDARY]]</p>
+      [[TIMELINE]]
+    </section>
+
+    <section id="monitor">
+      <h2>下一验证点与失效条件</h2>
+      <p class="section-dek">[[NEXT_OFFICIAL_EVENTS_UPGRADE_DOWNGRADE_AND_INVALIDATION_TESTS]]</p>
+      [[MONITOR_TABLE]]
+    </section>
+
+    <section id="evidence">
+      <h2>证据、原文定位与来源</h2>
+      <p class="section-dek">[[TWO_CLICK_EVIDENCE_POLICY]]</p>
+      [[EVIDENCE_DRAWERS_WITH_PAGE_TABLE_LINE_HASH_AND_FORMULA]]
+      [[SOURCE_LEDGER]]
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">公开资料研究辅助，不构成投资建议。[[SNAPSHOT_AND_STALE_DISCLOSURE]]</div>
+  </footer>
+</body>
+</html>

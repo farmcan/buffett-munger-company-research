@@ -1438,7 +1438,15 @@ a{{color:#82b1ff}}code{{font-size:.9em;word-break:break-all}}.shell{{max-width:1
 </body>
 </html>
 """
-(ROOT / "report.html").write_text(report, encoding="utf-8")
+report_path = ROOT / "report.html"
+existing_report = report_path.read_text(encoding="utf-8") if report_path.exists() else ""
+if 'data-template="company-research-publication-v1"' not in existing_report:
+    report_path.write_text(report, encoding="utf-8")
+else:
+    print(
+        "preserved canonical report.html; build_pack.py refreshed data artifacts only. "
+        "Update the reader-facing report through the fixed publication template."
+    )
 
 
 readme = f"""# 阜博集团（03738.HK）公司研究包
