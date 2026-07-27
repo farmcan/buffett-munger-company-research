@@ -1203,6 +1203,134 @@
       "snapshot_sha256": null,
       "used_for": ["July 17 broad HK technology/application risk-off breadth"],
       "limitations": "Secondary market wrap; price calculations use the separately frozen Tencent qfq series."
+    },
+    {
+      "id": "F15",
+      "tier": "A-",
+      "kind": "official_investor_archive",
+      "title": "Meitu Financial Results and Business Updates",
+      "publisher": "Meitu",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://www.meitu.com/en/investor",
+      "snapshot_sha256": null,
+      "used_for": [
+        "historical 2017-2026 reporting cadence",
+        "distinction between regular Q2/Q4 results and the 2026 Q1 voluntary update"
+      ],
+      "limitations": "Live company archive can change; exact announcement dates and wording should be verified against HKEX filings."
+    },
+    {
+      "id": "T06",
+      "tier": "A",
+      "kind": "official_model_pricing",
+      "title": "OpenAI API Pricing",
+      "publisher": "OpenAI",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "snapshot_sha256": null,
+      "used_for": [
+        "GPT Image 2 and GPT Image 1.5 public image-token prices",
+        "standard versus batch pricing"
+      ],
+      "limitations": "Public list prices are not Meitu contract prices; token usage, resolution, quality and task complexity vary."
+    },
+    {
+      "id": "T07",
+      "tier": "A",
+      "kind": "official_model_pricing",
+      "title": "Gemini Developer API Pricing",
+      "publisher": "Google",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "snapshot_sha256": null,
+      "used_for": [
+        "Gemini 3.1 Flash Lite Image public standard and batch prices"
+      ],
+      "limitations": "Different resolution and quality tiers are not directly comparable; prices can change."
+    },
+    {
+      "id": "T08",
+      "tier": "A",
+      "kind": "official_model_pricing",
+      "title": "Alibaba Cloud Model Studio Pricing",
+      "publisher": "Alibaba Cloud",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://help.aliyun.com/zh/model-studio/model-pricing",
+      "snapshot_sha256": null,
+      "used_for": [
+        "Qwen Image generation and editing public price progression",
+        "Z-Image Turbo public price"
+      ],
+      "limitations": "Promotional free access, free quotas and model tiers should not be treated as permanent unit cost."
+    },
+    {
+      "id": "T09",
+      "tier": "A",
+      "kind": "official_model_pricing",
+      "title": "DeepSeek API Pricing",
+      "publisher": "DeepSeek",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "current DeepSeek text and reasoning API prices",
+        "broad agent-workflow cost trend"
+      ],
+      "limitations": "Text and reasoning prices are not a direct proxy for image inference cost."
+    },
+    {
+      "id": "T10",
+      "tier": "A",
+      "kind": "official_model_release",
+      "title": "DeepSeek-R1 Release",
+      "publisher": "DeepSeek",
+      "published_at": "2025-01-20",
+      "retrieved_at": "2026-07-27",
+      "url": "https://api-docs.deepseek.com/news/news250120/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "historical R1 launch price benchmark"
+      ],
+      "limitations": "Historical launch price is a broad text/reasoning benchmark, not an image-model price series."
+    },
+    {
+      "id": "T11",
+      "tier": "A",
+      "kind": "official_open_model_repository",
+      "title": "Qwen-Image",
+      "publisher": "Qwen / Alibaba",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://github.com/QwenLM/Qwen-Image",
+      "snapshot_sha256": null,
+      "used_for": [
+        "official weight availability",
+        "Apache 2.0 repository license",
+        "generation and editing capability"
+      ],
+      "limitations": "Repository evidence applies only to released artifacts; it does not prove every newer Qwen Image service model is open-weight or identically licensed."
+    },
+    {
+      "id": "T12",
+      "tier": "A",
+      "kind": "official_open_model_repository",
+      "title": "FLUX.2",
+      "publisher": "Black Forest Labs",
+      "published_at": null,
+      "retrieved_at": "2026-07-27",
+      "url": "https://github.com/black-forest-labs/flux2",
+      "snapshot_sha256": null,
+      "used_for": [
+        "FLUX.2 klein 4B Apache 2.0 availability",
+        "vendor-reported consumer-GPU and latency characteristics",
+        "license segmentation across model variants"
+      ],
+      "limitations": "Performance claims are vendor-reported; some larger variants use non-commercial licences, and self-hosting still incurs compute and engineering cost."
     }
   ]
 }

@@ -177,7 +177,7 @@
     <div class="wrap">
       <p class="eyebrow">Company Research · 01357.HK</p>
       <h1>美图：付费飞轮在转，<br>先过小盘风险门槛</h1>
-      <p class="dek">把 Q1/Q2 验证、产品组合、付费客户、App 与网站趋势、真实 P/E、CFO 讲话、可转债、港股通、小盘股风险和全球 AI 应用事件放在同一张证据地图上。</p>
+      <p class="dek">把 Q1/Q2 验证、产品组合、付费客户、App 与网站趋势、模型降价/开源、真实 P/E、CFO 讲话、可转债、港股通、小盘股风险和全球 AI 应用事件放在同一张证据地图上。</p>
       <div class="meta">
         <span class="pill"><span class="dot"></span>研究状态：条件性观察</span>
         <span class="pill">快照：2026-07-27</span>
@@ -206,6 +206,7 @@
       <a href="#users">付费飞轮</a>
       <a href="#apps">App 与网站</a>
       <a href="#model">模型与替代</a>
+      <a href="#model-economics">模型降价趋势</a>
       <a href="#rotation">AI 应用主线</a>
       <a href="#financials">财务质量</a>
       <a href="#cfo">CFO 讲话</a>
@@ -496,6 +497,100 @@
       </div>
     </section>
 
+    <section id="model-economics">
+      <h2>模型降价与能力跃迁：对美图是利好还是利空</h2>
+      <p class="section-dek">答案不是二选一：模型越便宜、越强，对美图的成本和产品供给是利好，对功能壁垒和定价权却是利空。短期偏经营利好，中长期取决于美图能否把上游模型商品化转成自己的用户、工作流和每股现金流，而不是只做一层可替换的界面。</p>
+      <div class="callout amber">
+        <strong>一句话判断：模型降价是“成本确认 + 护城河局部受攻击”，不是无条件利好。</strong><br>
+        若单位模型成本下降、终端价格和留存不变，美图毛利与 credits 经济性改善；若所有竞争者同时降本、模型厂商又把修图/设计直接放进助手，价格下降会更快地传导为同质化、降价和用户流失。最终要比较的不是 API 报价，而是<strong>每项任务的用户付费减去模型、渠道和获客成本后还剩多少</strong>。
+      </div>
+
+      <h3>近期“更强也更便宜”已有官方证据，但不能直接代入美图毛利</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>官方样本</th><th>价格/开放信号</th><th>能力信号</th><th>对美图的含义</th><th>边界</th></tr></thead>
+          <tbody>
+            <tr><td>OpenAI GPT Image</td><td>GPT Image 2 图像输出 $30/百万 token，低于 1.5 的 $32；Batch 再减半</td><td>官方定位为更快、更高质量的生成与编辑</td><td>第三方高质量模型成本缓降，接入价值上升；ChatGPT 入口替代风险也同步上升</td><td>公开零售价不是美图合同价；token/分辨率和任务复杂度会改变单张成本</td></tr>
+            <tr><td>Google Gemini 图像</td><td>3.1 Flash Lite Image 的 1K 图标准价约 $0.0336，Batch 约 $0.0168</td><td>生成、编辑和多模态理解继续合并</td><td>低价实时编辑更易进入消费产品，也更易被 Android/Gemini 原生打包</td><td>不同质量档不可只按单张价格横比</td></tr>
+            <tr><td>阿里百炼 / Qwen Image</td><td>国内 qwen-image 从 0.25 元/张降到 qwen-image-2.0 的 0.20 元；基础编辑从 0.30 元降到 0.20 元</td><td>2.0 支持生成+编辑和更高分辨率；低成本 z-image-turbo 最低 0.10 元/张</td><td>美图可利用本地供应竞争和阿里合作压低成本、加快迭代</td><td>限时免费、免费额度与促销价不是长期单位成本</td></tr>
+            <tr><td>DeepSeek 文本/推理</td><td>R1 早期输出价 $2.19/百万 token；当前 V4 Flash/Pro 分别为 $0.28/$0.87</td><td>更长上下文、思考与工具调用进入低价档</td><td>Agent 编排、提示词理解和工作流成本下降</td><td>这是文本/推理价格，不是美图图像推理成本的直接代理</td></tr>
+            <tr><td>开放权重</td><td>Qwen-Image 已发布 Apache 2.0 权重；FLUX.2 klein 4B 为 Apache 2.0</td><td>FLUX.2 官方称 4B 可在约 8GB 显存消费级 GPU 上亚秒级生成/编辑</td><td>可自托管、议价和定制，降低单一供应商锁定</td><td>开放权重不等于零成本；GPU、工程、审核和许可证仍要逐项计算，且并非所有型号均可商用</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><small>价格截至 2026-07-27，来自 <a href="https://developers.openai.com/api/docs/pricing">OpenAI API Pricing</a>、<a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API Pricing</a>、<a href="https://help.aliyun.com/zh/model-studio/model-pricing">阿里云百炼模型价格</a>和 <a href="https://api-docs.deepseek.com/quick_start/pricing/">DeepSeek Pricing</a>；能力/许可证来自各厂商官方文档。不同模型、质量、分辨率和计费单位不可直接做“同质量降幅”。</small></p>
+
+      <h3>降价与变强的双向传导</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>变化</th><th>利好链</th><th>利空链</th><th>何时净利好</th><th>何时转成替代</th></tr></thead>
+          <tbody>
+            <tr><td>API/推理降价</td><td>单位生成成本下降 → 更多免费试用/credits → 毛利和使用频次提高</td><td>进入门槛下降 → 竞品激增 → 终端价格和付费率承压</td><td>成本降幅大于用户价格降幅，且增量使用带来复购</td><td>同类功能免费化，用户不再为单次生成付费</td></tr>
+            <tr><td>开源/开放权重</td><td>可自托管、微调和多供应商路由，减少锁定与涨价风险</td><td>竞争者也获得相同底座，小团队更容易复制功能</td><td>美图有独有数据、审美偏好、分发和反馈闭环</td><td>产品只是模型加模板，没有用户关系或工作流数据</td></tr>
+            <tr><td>图像质量提升</td><td>可完成从前做不到的商业任务，扩大电商、广告和视频需求</td><td>专业套件/通用助手可直接完成修图、排版和素材生成</td><td>美图把能力嵌入批量生产、审批、发布与效果反馈</td><td>用户在 ChatGPT/Gemini/Adobe 内一步完成任务</td></tr>
+            <tr><td>模型生成+编辑统一</td><td>减少多模型拼接、延迟和失败率，提升体验</td><td>抠图、换背景、修脸等传统按钮被统一指令覆盖</td><td>美图对最终结果、身份一致性和行业规范负责</td><td>单功能订阅失去必要性，切换成本接近零</td></tr>
+            <tr><td>Agent 能力增强</td><td>DesignKit/Kaipai/RoboNeo 可完成更长的端到端任务</td><td>平台 Agent 可跨应用执行，绕过独立 App</td><td>美图掌握任务上下文、商品资产、模板和客户系统集成</td><td>系统入口掌握用户和数据，美图退化成一次模型调用</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>美图真正可利用的优势，以及哪些不算优势</h3>
+      <div class="two">
+        <div>
+          <h3>可能把降价变成利润的资产</h3>
+          <ul class="clean">
+            <li><strong>现成分发：</strong>2025 年 2.76 亿 MAU、1,691 万付费用户，海外 MAU 超 1 亿；模型升级可直接触达存量用户。</li>
+            <li><strong>多产品和场景：</strong>消费修图、视频、电商图、口播、商品视频与 Agent 可共享采购、路由和用户转化。</li>
+            <li><strong>不从零训练通用基模：</strong>减少资本开支和技术押注，可在自有、开源与第三方模型之间切换。</li>
+            <li><strong>审美、本地化与身份一致性：</strong>人像品牌、模板和长期偏好可能提高结果稳定性，但仍缺独立基准验证。</li>
+            <li><strong>工作流机会：</strong>若 DesignKit/Kaipai/Vmake 真正接入商品数据、批量生产、审批和发布，模型会成为可替换供应品。</li>
+            <li><strong>已有付费关系：</strong>订阅与 credits 提供把成本下降转成用量和 ARPU 的渠道，而不是从零教育用户付费。</li>
+          </ul>
+        </div>
+        <div>
+          <h3>不能误当作护城河</h3>
+          <ul class="clean">
+            <li><strong>“接了很多模型”：</strong>竞争者也能接；多模型路由是能力，不天然形成客户锁定。</li>
+            <li><strong>单个爆款特效：</strong>可带来榜单和下载，但容易被复制，必须看 30/90 日留存。</li>
+            <li><strong>自有模型调用占比：</strong>96.3% 是公司口径，不等于质量领先、成本最低或用户愿意付费。</li>
+            <li><strong>公开模型本身：</strong>同一权重对全市场开放，优势只能来自微调数据、产品反馈和执行速度。</li>
+            <li><strong>MAU 本身：</strong>免费用户若不能转付费或自然传播，仍可能被渠道费和营销费吃掉。</li>
+            <li><strong>产品按钮数量：</strong>模型越强，传统按钮越可能合并为一句自然语言指令。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>未来趋势预测：价值会从“生成能力”迁移到“任务结果”</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>时间</th><th>高概率行业变化</th><th>对美图的基础情景</th><th>正面验证</th><th>风险验证</th></tr></thead>
+          <tbody>
+            <tr><td>未来 6—12 个月</td><td>价格档继续细分，Batch/缓存/小模型更便宜；生成与编辑加速统一，开放小模型进入消费级硬件</td><td><span class="tag warn">经营略偏利好、估值高波动</span> 功能发布更快，但板块会反复交易“降本”与“被替代”</td><td>credits 使用增速转成收入，毛利不降，付费/ARPU/留存同步改善</td><td>生成量上升但收入不升；促销和免费额度掩盖付费疲弱</td></tr>
+            <tr><td>未来 1—3 年</td><td>单次生图、抠图、换背景、基础人像编辑逐渐成为平台标配；Agent 接管多步骤创意任务</td><td><span class="tag warn">休闲工具承压，生产力工作流决定上限</span></td><td>生产力收入占比、企业/专业付费和端到端任务留存持续提高</td><td>核心仍靠单功能订阅，平台内置后付费率或 ARPU 下滑</td></tr>
+            <tr><td>未来 3—5 年</td><td>模型层更商品化，入口、专有上下文、合规、分发和结果闭环成为价值中心</td><td><span class="tag info">胜负不由是否拥有前沿基模决定</span>，而由是否拥有用户与行业结果决定</td><td>美图成为跨模型的视觉工作流/结果系统，模型成本占比下降、ROIC 和现金流稳定</td><td>操作系统、通用助手或 Adobe/Canva 吞掉入口，美图仅剩低价流量壳</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>三种可证伪情景</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>情景</th><th>触发条件</th><th>财务表现</th><th>研究分类</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag good">模型红利被美图捕获</span></td><td>多模型路由/自托管让单位成本下降；新能力提高留存和付费；平台没有截走入口</td><td>核心收入与 credits 增长快于算力/API 成本，毛利、现金流和每股 owner earnings 改善</td><td>模型降价成为公司基本面确认</td></tr>
+            <tr><td><span class="tag warn">行业降本、公司中性</span></td><td>成本下降同时带来更多使用和竞争，终端价格也下降</td><td>收入仍增，但单位成本节省被免费额度、推理量和营销吞掉，毛利大致稳定</td><td>更像产品周期，不足以扩大长期估值</td></tr>
+            <tr><td><span class="tag risk">模型直接取代功能层</span></td><td>通用助手/Adobe/Canva 免费或低价覆盖核心任务，美图没有独有工作流和数据</td><td>自然流量、付费率、ARPU/续费下降，CAC 上升；即使 API 更便宜，利润仍恶化</td><td>竞争结构的第一性原理受损</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout blue">
+        <strong>8 月 26 日中报应怎样验证，而不是只听“模型降价利好”</strong><br>
+        重点看：计算/带宽/存储/API 成本占核心收入、第三方 API 与自有推理成本、credits 收入和单位毛利、付费用户净新增、ARPU/续费、生产力收入占比、营销效率和经营现金流。公司若只披露调用量或生成量上升，而不披露收入、成本和留存，模型红利仍未被证明。<strong>5 月 6 日是 Q1 自愿更新；目前没有 8 月 6 日单独披露 Q2 的官方安排，Q2 将包含在 8 月 26 日 H1 中期业绩里。</strong>
+      </div>
+      <p><small>本节为行业研究支持，不是投资建议。未来趋势是基于当前成本曲线、开放权重和平台产品路线的条件化推断；模型报价、许可证和产品能力会继续变化。</small></p>
+    </section>
+
     <section id="rotation">
       <h2>AI 应用行业与资金主线：历史、近期与美国映射</h2>
       <p class="section-dek">小盘应用股通常在事件发生前后快速完成定价。这里不靠单一 20 日涨跌判断“轮动”，而是把历史价格阶段、近期大波动、美国领先信号、应用层盈利证据和未来催化放进同一条可证伪链。</p>
@@ -609,6 +704,22 @@
     <section id="financials">
       <h2>新增财务章节：真营收、利润来源与 Q1/Q2</h2>
       <p class="section-dek">2022—2025 的真实变化是订阅业务取代美业和广告成为主引擎；利润则同时受经营增长、加密资产/金融资产、公允价值、终止经营和可转债会计影响。年度、半年度和季度口径不能混用。</p>
+      <h3>先澄清披露节奏：美图并非固定每季度发布经营更新</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>年份</th><th>Q1</th><th>Q2 / H1</th><th>Q3</th><th>Q4 / 全年</th><th>研究结论</th></tr></thead>
+          <tbody>
+            <tr><td>2023</td><td>无固定经营更新</td><td>中期业绩/中报</td><td>无固定经营更新</td><td>年度业绩/年报</td><td>稳定节奏是半年一次</td></tr>
+            <tr><td>2024</td><td>无固定经营更新</td><td>中期业绩/中报</td><td>无固定经营更新</td><td>年度业绩/年报</td><td>稳定节奏是半年一次</td></tr>
+            <tr><td>2025</td><td>无固定经营更新</td><td>中期业绩/中报</td><td>无固定经营更新</td><td>年度业绩/年报</td><td>期间可另发盈利/业务提示，但不是季度报</td></tr>
+            <tr><td>2026</td><td>5 月 6 日发布 Q1 自愿更新</td><td>8 月 26 日审议并发布 H1 业绩</td><td><span class="tag warn">TBA</span></td><td>尚未到期</td><td>Q1 是新增自愿披露，不能外推为固定季报制度</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout blue">
+        <strong>所以答案是：通常没有完整的季度经营更新。</strong><br>
+        公司投资者资料页从 2017—2025 年稳定列示 Q2 中期业绩和 Q4 年度业绩，没有形成固定 Q1/Q3 更新惯例。2026Q1 公告明确写明是“自愿公告”，并表示 MAU 仍按半年披露。当前官方确认的是 8 月 26 日审议截至 6 月 30 日的中期业绩；没有 8 月 6 日单独 Q2 更新，也没有已确认的 2026Q3 更新。月度证券变动表、回购申报、盈利预告或临时业务公告不等同于季度财务/经营更新。来源：<a href="https://www.meitu.com/en/investor">美图投资者资料页</a>、<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0506/2026050600053.pdf">2026Q1 自愿更新</a>和<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf">中期业绩董事会公告</a>。
+      </div>
       <h3>年度收入来源：核心业务变大，广告停滞，美业退出</h3>
       <div class="table-wrap">
         <table>
@@ -1103,6 +1214,7 @@
         <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1231/2025123101815.pdf">阿里可转债完成公告</a></li>
         <li><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2025/0520/2025052001407.pdf">阿里可转债原始条款</a></li>
         <li><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf">中期业绩董事会日期</a></li>
+        <li><a href="https://www.meitu.com/en/investor">美图投资者资料页 · 历年财务披露节奏</a></li>
         <li><a href="https://www.meitu.com/en/media/421">吴欣鸿 2025 年终演讲</a></li>
         <li><a href="https://podcasts.apple.com/us/podcast/ai-proem-podcast/id1838832643">CFO Gary Ngan 2026-07-14 访谈</a></li>
         <li><a href="https://www.meitu.com/en/media/438">2026 美图影像节</a></li>
@@ -1120,7 +1232,14 @@
         <li><a href="https://www.similarweb.com/website/roboneo.com/">Similarweb · roboneo.com</a></li>
         <li><a href="https://www.similarweb.com/website/designkit.com/">Similarweb · designkit.com</a></li>
         <li><a href="https://openai.com/index/introducing-chatgpt-images-2-0/">OpenAI · ChatGPT Images 2.0</a></li>
+        <li><a href="https://developers.openai.com/api/docs/pricing">OpenAI API Pricing · GPT Image</a></li>
         <li><a href="https://blog.google/products-and-platforms/products/gemini/updated-image-editing-model/">Google · Gemini image editing</a></li>
+        <li><a href="https://ai.google.dev/gemini-api/docs/pricing">Google Gemini API Pricing · Image</a></li>
+        <li><a href="https://help.aliyun.com/zh/model-studio/model-pricing">阿里云百炼 · 图像模型价格</a></li>
+        <li><a href="https://api-docs.deepseek.com/quick_start/pricing/">DeepSeek API Pricing</a></li>
+        <li><a href="https://api-docs.deepseek.com/news/news250120/">DeepSeek-R1 发布与初始价格</a></li>
+        <li><a href="https://github.com/QwenLM/Qwen-Image">Qwen-Image 官方仓库与许可证</a></li>
+        <li><a href="https://github.com/black-forest-labs/flux2">FLUX.2 官方仓库与许可证</a></li>
         <li><a href="https://www.canva.com/newsroom/news/canva-create-2026-ai/">Canva Create 2026</a></li>
         <li><a href="https://news.adobe.com/news/2026/06/adobe-unveils-major-expansion">Adobe Creative Agent expansion</a></li>
         <li><a href="https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm">Adobe FY2026Q2 业绩与 AI-first ARR</a></li>

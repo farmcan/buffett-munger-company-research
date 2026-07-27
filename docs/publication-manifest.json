@@ -1,7 +1,7 @@
 {
   "schema_version": "seed.public-research-publication.v1",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-07-27T12:07:12+08:00",
+  "reviewed_at": "2026-07-27T14:12:00+08:00",
   "publication_scope": [
     "index.html",
     "meitu-01357-hk/README.md",
@@ -19,7 +19,7 @@
     "meitu-01357-hk/data/small-cap-risk-register.csv",
     "meitu-01357-hk/data/valuation-scenarios.csv"
   ],
-  "source_commit": "9c7bb2de21e16d415af3c45fc14e8dac43f3d795",
+  "source_commit": "6cf1839c2079bc413232b4ba25e4fdaa1e4fcfd1",
   "review_checks": {
     "contains_local_absolute_paths": false,
     "contains_private_library_paths": false,
