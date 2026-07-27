@@ -83,6 +83,19 @@ PYTHONPATH=src python3 \
 
 样例中的公司、金额和 URL 均为虚构占位数据；它证明结构可以执行，不证明任何真实公司结论。
 
+## 读者状态图例必须公开展示
+
+报告首屏必须有一张状态图例表，至少分开解释：
+
+- dimension：`applicable / unknown / conflicting / not_applicable`；
+- indicator：`observed / not_disclosed / conflicting / not_applicable`；
+- gate：全部允许结果及其证据成熟度；
+- publication：`source_partial / research_in_progress / needs_human_review / production_reviewed`。
+
+`applicable` 不等于正面，`observed` 不等于指标好，`provisional` 不等于
+`pass`，`production_reviewed` 也不等于公司值得投资。图例必须出现在 HTML 正文，
+不能只写在 JSON schema 或开发文档中。
+
 ## 不可改变的结构
 
 ### 双入口

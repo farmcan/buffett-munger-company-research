@@ -204,6 +204,22 @@ SBC 后 FCF 与留存，不能机械套 PE。
 - 九道 gate 才决定发布状态；维度多不代表证据通过；
 - `not_applicable` 必须给出行业和会计理由，不能用来绕过阻断项。
 
+公开 HTML 必须在首屏附近显示读者状态图例，不能只在 schema 中定义术语：
+
+| 层级 | 状态 | 读者含义 |
+| --- | --- | --- |
+| dimension | `applicable` | 维度适用且已有足够证据形成摘要；不表示结论正面或 gate 通过 |
+| dimension | `unknown` / `conflicting` / `not_applicable` | 分别表示证据不足、证据冲突、结构性不适用；不得用后两者掩盖缺证 |
+| indicator | `observed` | 已观察到可引用证据；不表示数值好或趋势正面 |
+| indicator | `not_disclosed` / `conflicting` / `not_applicable` | 分别表示未披露或不可重建、指标证据冲突、指标结构性不适用 |
+| gate | `pass` / `pass_with_scope` | 充分通过，或只在明确范围内通过 |
+| gate | `mixed_positive` / `mixed` | 正反证据并存，不能简写成 pass |
+| gate | `provisional` | 暂定结论可保留，但关键验证尚未完成 |
+| gate | `range_only` / `inconclusive` | 只能给可辩护区间，或当前无法得出方向结论 |
+| gate | `research_ready` / `research_ready_not_decision_ready` | 只用于最后一道 gate，表示研究流程完成或可读但尚非决策级 |
+| gate | `fail` / `outside_circle` / `blocked` | 已被证据击穿、超出能力圈或前置条件未满足 |
+| publication | `source_partial` / `research_in_progress` / `needs_human_review` / `production_reviewed` | 描述整份报告的来源、制作和审核成熟度，不描述公司质量或股价方向 |
+
 九道 gate 的 ID、顺序和允许结果以
 [`company-research-schema.md`](../../skills/research-buffett-munger-company/references/company-research-schema.md)
 及 `src/seed/company_research_validation.py` 为唯一可执行规范。报告模板不得另造

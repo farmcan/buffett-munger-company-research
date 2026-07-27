@@ -599,6 +599,86 @@
           </article>
         </div>
       </section>
+
+      <section class="section" id="status-legend" aria-labelledby="status-legend-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Reader legend · evidence maturity</p>
+            <h2 id="status-legend-title">状态图例：四个层级不能混用</h2>
+            <p>维度、指标、gate 和整份报告各自使用不同状态词；它们不是星级、股价方向或投资评级。</p>
+          </div>
+        </div>
+        <div class="callout" data-tone="info" style="margin-bottom:1rem">
+          <strong>核心区别：</strong><span class="mono">applicable</span> 表示维度适用且可形成摘要，不代表正面；
+          <span class="mono">observed</span> 表示证据已观察到，不代表数值好；
+          <span class="mono">provisional</span> 表示暂定结论仍待关键验证，不等于 <span class="mono">pass</span>。
+        </div>
+
+        <div class="table-card">
+          <div class="table-wrap">
+            <table>
+              <caption>Dimension status · 25 个研究维度</caption>
+              <thead><tr><th>状态</th><th>证据成熟度</th><th>准确含义</th><th>禁止误读</th></tr></thead>
+              <tbody>
+                <tr><td><span class="chip" data-tone="ok">applicable</span></td><td>可形成摘要</td><td>维度适用，已有足够证据描述事实、正反证据和缺口。</td><td>不等于正面或 gate 通过。</td></tr>
+                <tr><td><span class="chip" data-tone="warning">unknown</span></td><td>证据不足</td><td>维度适用，但关键资料不足以得出可靠结论。</td><td>不得补猜或写成 0。</td></tr>
+                <tr><td><span class="chip" data-tone="danger">conflicting</span></td><td>证据冲突</td><td>来源、期间、范围或正反证据存在未解决矛盾。</td><td>不得静默选择更顺眼的值。</td></tr>
+                <tr><td><span class="chip" data-tone="info">not_applicable</span></td><td>结构性不适用</td><td>在本公司或行业结构下确实不适用，且有明确理由。</td><td>不得用来绕过缺证项。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-wrap">
+            <table>
+              <caption>Indicator status · 50 个指标族</caption>
+              <thead><tr><th>状态</th><th>证据成熟度</th><th>准确含义</th><th>禁止误读</th></tr></thead>
+              <tbody>
+                <tr><td><span class="chip" data-tone="ok">observed</span></td><td>已有可引用证据</td><td>指标有主源、可复算数据或可审计证据。</td><td>不表示指标正面。</td></tr>
+                <tr><td><span class="chip" data-tone="warning">not_disclosed</span></td><td>未披露/不可重建</td><td>公司未披露，或公开资料不足以同口径重建。</td><td>不等于 0 或没有风险。</td></tr>
+                <tr><td><span class="chip" data-tone="danger">conflicting</span></td><td>指标证据冲突</td><td>定义、期间、范围或来源存在未解决冲突。</td><td>必须保留冲突和验证路径。</td></tr>
+                <tr><td><span class="chip" data-tone="info">not_applicable</span></td><td>指标不适用</td><td>该指标不适用于本公司的业务或会计结构。</td><td>必须给出理由。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-wrap">
+            <table>
+              <caption>Gate result · 九道判断闸门</caption>
+              <thead><tr><th>结果</th><th>大致成熟度</th><th>准确含义</th><th>能否视为通过</th></tr></thead>
+              <tbody>
+                <tr><td><span class="chip" data-tone="ok">pass</span></td><td>高</td><td>核心证据充分，关键反方检验后仍成立。</td><td>仅该 gate 通过。</td></tr>
+                <tr><td><span class="chip" data-tone="ok">pass_with_scope</span></td><td>高但有范围</td><td>只在声明的产品、地区、期间或口径内通过。</td><td>限声明范围。</td></tr>
+                <tr><td><span class="chip" data-tone="info">mixed_positive / mixed</span></td><td>中等/混合</td><td>正反证据并存；前者净证据偏正，后者无明确方向。</td><td>否。</td></tr>
+                <tr><td><span class="chip" data-tone="warning">provisional</span></td><td>初步</td><td>暂定结论可保留，但仍缺关键财报、同日数据或人工复核。</td><td>否。</td></tr>
+                <tr><td><span class="chip" data-tone="warning">range_only</span></td><td>仅可给区间</td><td>只能提供可辩护范围，不能给单点结论。</td><td>否。</td></tr>
+                <tr><td><span class="chip" data-tone="info">inconclusive</span></td><td>无法判断</td><td>证据不足、冲突或正反力量接近。</td><td>否。</td></tr>
+                <tr><td><span class="chip" data-tone="ok">research_ready</span><br><span class="chip" data-tone="warning">research_ready_not_decision_ready</span></td><td>研究包层级</td><td>只用于最后一道 gate；表示研究流程完成，或研究可读但还不能用于决策级结论。</td><td>不表示公司质量正面。</td></tr>
+                <tr><td><span class="chip" data-tone="danger">fail</span></td><td>否定</td><td>已有足以击穿该 gate 的证据。</td><td>否，并阻断后续正向结果。</td></tr>
+                <tr><td><span class="chip" data-tone="danger">outside_circle / blocked</span></td><td>无法继续</td><td>业务超出能力圈，或身份/来源等前置条件未满足。</td><td>否。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-wrap">
+            <table>
+              <caption>Publication state · 整份报告</caption>
+              <thead><tr><th>状态</th><th>报告成熟度</th><th>准确含义</th></tr></thead>
+              <tbody>
+                <tr><td><span class="chip" data-tone="info">source_partial</span></td><td>来源不完整</td><td>关键主源或期间仍未覆盖。</td></tr>
+                <tr><td><span class="chip" data-tone="info">research_in_progress</span></td><td>研究进行中</td><td>维度、桥、red-team 或 validator 尚未完成。</td></tr>
+                <tr><td><span class="chip" data-tone="warning">needs_human_review</span></td><td>可公开审阅</td><td>结构化研究和自动校验已完成，但没有具名人工复核。</td></tr>
+                <tr><td><span class="chip" data-tone="ok">production_reviewed</span></td><td>正式复核完成</td><td>通过自动校验和具名人工复核；不代表公司值得投资。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </section>
 
     <section id="long-term" class="view-panel" data-view="long-term" hidden>

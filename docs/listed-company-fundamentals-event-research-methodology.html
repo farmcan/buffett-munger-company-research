@@ -23,7 +23,7 @@
     <p class="lead">把“长期公司质量”和“近期市场事件”拆成两个产品入口，底层共享同一套官方事实、口径桥、证据锚点和发布状态。目标不是给出更肯定的结论，而是让每个结论可复算、可证伪、可更新。</p>
     <div class="meta"><span class="pill">25 个研究维度</span><span class="pill">50 个指标族</span><span class="pill">9 道闸门</span><span class="pill">事实级引用</span><span class="pill">非投资建议</span></div>
   </header>
-  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#publication">发布闭环</a><a href="./templates/report-v2-template.html">HTML 模板</a></div></nav>
+  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#status-legend">状态图例</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#publication">发布闭环</a><a href="./templates/report-v2-template.html">HTML 模板</a></div></nav>
   <main>
     <section id="views">
       <h2>一个事实底座，两个阅读入口</h2>
@@ -83,6 +83,36 @@
       </tbody></table></div>
       <div class="formula">3—5 年年化回报 ≈ 每股 owner earnings 增长 + 分红/净回购贡献 + 估值倍数变化 + 汇率影响 − 稀释影响</div>
       <div class="callout"><strong>核心纪律：</strong>低 PE、低历史分位或大幅回撤只能触发研究，不能完成研究。输入无法复算时，状态必须是 <code>not_determinable</code>。</div>
+    </section>
+
+    <section id="status-legend">
+      <h2>状态图例：先看它属于哪一层</h2>
+      <p class="dek">同一个英文词不能跨层误读。维度状态回答“该研究项是否适用”，指标状态回答“数据是否观察到”，Gate 结果回答“证据能支持到什么程度”，发布状态回答“整份报告完成到哪一步”。</p>
+      <div class="table-wrap"><table><caption>维度与指标状态</caption><thead><tr><th>层</th><th>状态</th><th>准确含义</th><th>不能理解为</th></tr></thead><tbody>
+        <tr><td>维度</td><td><code>applicable</code></td><td>该维度适用于本公司，必须继续检查其证据与指标</td><td>该维度已经通过、表现良好</td></tr>
+        <tr><td>维度</td><td><code>unknown</code></td><td>适用性或结论因证据不足暂不能确定</td><td>没有风险</td></tr>
+        <tr><td>维度</td><td><code>conflicting</code></td><td>可靠证据之间存在冲突，尚未完成调和</td><td>任选一个口径即可</td></tr>
+        <tr><td>维度</td><td><code>not_applicable</code></td><td>经说明后确认该维度不适用</td><td>因为没数据所以跳过</td></tr>
+        <tr><td>指标</td><td><code>observed</code></td><td>已在绑定来源、期间、单位和口径下观察到</td><td>数值优秀或趋势可持续</td></tr>
+        <tr><td>指标</td><td><code>not_disclosed</code></td><td>已检查约定范围但公司未披露</td><td>数值为零</td></tr>
+        <tr><td>指标</td><td><code>conflicting</code></td><td>指标值或定义在来源间冲突</td><td>可以直接计算平均值</td></tr>
+        <tr><td>指标</td><td><code>not_applicable</code></td><td>该指标不适用于此业务或期间</td><td>为了提高覆盖率而删除</td></tr>
+      </tbody></table></div>
+      <div class="table-wrap"><table><caption>Gate 结果等级</caption><thead><tr><th>结果</th><th>含义</th><th>读者动作</th></tr></thead><tbody>
+        <tr><td><code>pass</code></td><td>关键问题在约定范围内已有充分、一致证据</td><td>仍需关注失效条件与时效</td></tr>
+        <tr><td><code>pass_with_scope</code></td><td>仅在明确边界内通过，边界外未验证</td><td>先读 scope，不能外推</td></tr>
+        <tr><td><code>provisional</code></td><td>暂定结果：现有证据支持工作假设，但关键验证尚未完成</td><td>不得当作 pass 或最终结论</td></tr>
+        <tr><td><code>range_only</code></td><td>只能支持区间，无法支持单点值</td><td>保留上下界和敏感性</td></tr>
+        <tr><td><code>inconclusive</code></td><td>现有证据无法判定</td><td>列出缺口，等待新证据</td></tr>
+        <tr><td><code>fail</code></td><td>关键证据否定该 Gate，或触发硬性失败条件</td><td>整体不能升级为决策级</td></tr>
+      </tbody></table></div>
+      <div class="table-wrap"><table><caption>整份报告的发布状态</caption><thead><tr><th>状态</th><th>含义</th></tr></thead><tbody>
+        <tr><td><code>source_partial</code></td><td>主源尚未收齐，事实底座不完整</td></tr>
+        <tr><td><code>research_in_progress</code></td><td>证据桥、维度或模型仍在补齐</td></tr>
+        <tr><td><code>needs_human_review</code></td><td>机器校验已完成或基本完成，但具名人工复核尚未闭环</td></tr>
+        <tr><td><code>production_reviewed</code></td><td>来源、模型、红队、校验和具名人工复核均达到发布要求</td></tr>
+      </tbody></table></div>
+      <div class="callout"><strong>最容易误读的三点：</strong><code>applicable</code> 不等于“正面”，<code>observed</code> 不等于“优秀”，<code>provisional</code> 不等于“通过”。</div>
     </section>
 
     <section id="dimensions">

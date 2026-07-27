@@ -1,7 +1,7 @@
 {
   "schema_version": "seed.public-research-publication.v2",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-07-27T16:43:50+08:00",
+  "reviewed_at": "2026-07-27T17:18:06+08:00",
   "artifact_status": "needs_human_review",
   "production_reviewed": false,
   "publication_scope": [
@@ -45,7 +45,7 @@
   ],
   "source_repository": "farmcan/seed",
   "source_branch": "agent/buffett-munger-methodology",
-  "source_commit": "204f5caa9b2c537e690bfec8d64ba2a730a2af2e",
+  "source_commit": "c2ba44218b99d2cc771a3711621c9e0d76cc3b3b",
   "review_checks": {
     "contains_local_absolute_paths": false,
     "contains_private_library_paths": false,
@@ -65,7 +65,8 @@
     "gate_results": 9,
     "desktop_html_checked": true,
     "responsive_css_reviewed": true,
-    "mobile_runtime_checked": true
+    "mobile_runtime_checked": true,
+    "status_legend_checked": true
   },
   "publication_note": "Public, evidence-linked research snapshot. It passed deterministic publication checks and is suitable for public review, but it has no signed human-review.json and therefore remains needs_human_review rather than production_reviewed. Large raw PDFs and API snapshots remain outside the public repository; their source records and SHA-256 values are retained where available."
 }

@@ -107,6 +107,7 @@
     .tag.warn { color: var(--amber); background: var(--amber-soft); }
     .tag.risk { color: var(--red); background: var(--red-soft); }
     .tag.info { color: var(--blue); background: var(--blue-soft); }
+    .tag.neutral { color: #56625b; background: #ecefe9; }
     .bar-row { display: grid; grid-template-columns: 104px 1fr 86px; align-items: center; gap: 11px; margin: 10px 0; font-size: 13px; }
     .track { height: 12px; border-radius: 999px; background: #eceae2; overflow: hidden; }
     .fill { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #2d8c6b, #85c8a8); }
@@ -233,8 +234,8 @@
         </div>
         <div class="verdict-side">
           <div class="label">Publication state</div>
-          <div class="signal">Provisional</div>
-          <p class="signal-note">已形成公开研究包；尚未完成具名人工复核，因此不是 production_reviewed。</p>
+          <div class="signal">Needs human review</div>
+          <p class="signal-note">精确状态为 <code>needs_human_review</code>；已形成公开研究包，但尚未完成具名人工复核。</p>
         </div>
       </div>
     </div>
@@ -242,6 +243,7 @@
 
   <nav aria-label="报告目录">
     <div class="wrap">
+      <a href="#status-legend">状态图例</a>
       <a href="#long-term">长期底稿入口</a>
       <a href="#event-monitor">事件监控入口</a>
       <a href="#snapshot">核心快照</a>
@@ -267,6 +269,73 @@
   </nav>
 
   <main class="wrap">
+    <section id="status-legend">
+      <p class="eyebrow">Reader legend · evidence maturity</p>
+      <h2>状态图例：四个层级不能混用</h2>
+      <p class="section-dek">维度状态回答“这一研究面是否适用并有足够证据”；指标状态回答“某项事实是否观察到”；gate 结果回答“证据是否足以越过一道判断闸门”；发布状态回答“报告经过了什么审核”。它们都不是星级、涨跌预测或买卖评级。</p>
+      <div class="callout blue">
+        <strong>最容易误读的三个词：</strong><br>
+        <code>applicable</code> 只表示该维度适用且已有足够证据形成摘要，不表示公司在该维度表现良好；<code>observed</code> 只表示证据已观察到，不表示证据是正面的；<code>provisional</code> 表示初步结论可以保留，但关键验证尚未完成，不能视为 <code>pass</code>。
+      </div>
+
+      <h3>1. Dimension status · 25 个研究维度</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>状态</th><th>证据成熟度</th><th>准确含义</th><th>读者边界</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag good">applicable</span></td><td>可形成维度摘要</td><td>该维度适用于公司，且已有足够证据描述事实、正反证据和缺口。</td><td>不等于正面，也不等于对应 gate 已通过。</td></tr>
+            <tr><td><span class="tag warn">unknown</span></td><td>证据不足</td><td>维度适用，但关键资料缺失，无法给出可靠结论。</td><td>不得补猜；必须阻止相关 gate 被写成正向通过。</td></tr>
+            <tr><td><span class="tag risk">conflicting</span></td><td>证据冲突</td><td>主源、期间、口径或正反证据之间存在无法消除的矛盾。</td><td>保留冲突，不能选一个更顺眼的数字覆盖。</td></tr>
+            <tr><td><span class="tag neutral">not_applicable</span></td><td>结构性不适用</td><td>该维度在本公司或行业结构下确实不适用，并有明确理由。</td><td>不能用来绕过本应研究但资料缺失的项目。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>2. Indicator status · 50 个指标族</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>状态</th><th>证据成熟度</th><th>准确含义</th><th>读者边界</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag good">observed</span></td><td>已有可引用证据</td><td>指标已有主源、可复算派生数据或明确可审计证据。</td><td>只代表“看到了”，不代表数值好或趋势正面。</td></tr>
+            <tr><td><span class="tag warn">not_disclosed</span></td><td>未披露/不可重建</td><td>公司没有披露，或公开资料不足以按同口径重建。</td><td>不等于 0，也不等于没有风险。</td></tr>
+            <tr><td><span class="tag risk">conflicting</span></td><td>指标证据冲突</td><td>同一指标存在无法解释的来源、定义、期间或范围冲突。</td><td>必须披露冲突和下一验证路径。</td></tr>
+            <tr><td><span class="tag neutral">not_applicable</span></td><td>指标不适用</td><td>该指标对本公司业务或会计结构不适用。</td><td>必须给出行业或会计理由。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3. Gate result · 九道判断闸门</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>结果</th><th>大致成熟度</th><th>准确含义</th><th>能否视为通过</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag good">pass</span></td><td>高</td><td>核心证据充分，关键反方检验后仍成立。</td><td>是，但只限该 gate。</td></tr>
+            <tr><td><span class="tag good">pass_with_scope</span></td><td>高但有范围</td><td>在明确产品、地区、期间或会计范围内通过。</td><td>仅在声明范围内。</td></tr>
+            <tr><td><span class="tag info">mixed_positive</span> <span class="tag info">mixed</span></td><td>中等/混合</td><td>正反证据同时存在；前者净证据偏正，后者没有明确方向。</td><td>否，不能简写成 pass。</td></tr>
+            <tr><td><span class="tag warn">provisional</span></td><td>初步</td><td>当前证据允许保留暂定结论，但仍缺关键财报、同日数据或人工复核。</td><td>否；下一证据可能升级或推翻。</td></tr>
+            <tr><td><span class="tag warn">range_only</span></td><td>仅可给区间</td><td>输入不确定性较大，只能给可辩护范围，不能给单点结论。</td><td>否；适合敏感性分析。</td></tr>
+            <tr><td><span class="tag neutral">inconclusive</span></td><td>无法判断</td><td>证据不足、冲突或正反力量接近，当前不能得出方向结论。</td><td>否。</td></tr>
+            <tr><td><span class="tag good">research_ready</span> <span class="tag warn">research_ready_not_decision_ready</span></td><td>研究包层级</td><td>只用于最后一道 gate：前者表示研究流程完成；后者表示研究可读但仍不足以支持决策级使用。</td><td>不自动代表公司质量正面。</td></tr>
+            <tr><td><span class="tag risk">fail</span></td><td>否定</td><td>已出现足以击穿该 gate 的证据。</td><td>否，并阻断后续正向结论。</td></tr>
+            <tr><td><span class="tag risk">outside_circle</span> <span class="tag risk">blocked</span></td><td>无法继续</td><td>业务超出能力圈，或证券身份/来源等前置条件未满足。</td><td>否；先解决前置问题。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>4. Publication state · 整份报告</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>状态</th><th>报告成熟度</th><th>准确含义</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag neutral">source_partial</span></td><td>来源不完整</td><td>关键主源或期间尚未覆盖，不能形成完整底稿。</td></tr>
+            <tr><td><span class="tag info">research_in_progress</span></td><td>研究进行中</td><td>来源已开始形成，但维度、桥、red-team 或 validator 尚未完成。</td></tr>
+            <tr><td><span class="tag warn">needs_human_review</span></td><td>可公开审阅</td><td>结构化研究、red-team 和自动校验已完成，但没有具名人工复核；美图当前处于此状态。</td></tr>
+            <tr><td><span class="tag good">production_reviewed</span></td><td>正式复核完成</td><td>通过自动校验并完成具名人工复核；只代表研究流程成熟，不代表公司值得投资。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section id="long-term">
       <p class="eyebrow">Entry A · Long-term dossier</p>
       <h2>长期公司底稿：先判断生意，再讨论价格</h2>
@@ -1575,7 +1644,7 @@
       </div>
       <div class="callout amber">
         <strong>完整不等于通过。</strong><br>
-        25 个维度和 50 个 indicator family 都已逐项作答，但当前只有 9 个维度为 <code>applicable</code>，16 个仍为 <code>unknown</code>；50 个指标中 29 个 <code>observed</code>、21 个 <code>not_disclosed</code>。九道 gate 的实际结果为 5 个 <code>provisional</code>、2 个 <code>range_only</code>、2 个 <code>inconclusive</code>，没有任何一道得到 <code>pass</code>。
+        25 个维度和 50 个 indicator family 都已逐项作答，但当前只有 9 个维度为 <code>applicable</code>，16 个仍为 <code>unknown</code>；50 个指标中 29 个 <code>observed</code>、21 个 <code>not_disclosed</code>。九道 gate 的实际结果为 5 个 <code>provisional</code>、2 个 <code>range_only</code>、2 个 <code>inconclusive</code>，没有任何一道得到 <code>pass</code>。术语含义见<a href="#status-legend">状态图例</a>。
       </div>
       <details class="evidence-drawer" id="research-coverage-matrix">
         <summary>展开：25 维度 × 50 指标完整结果、来源与缺口</summary>
