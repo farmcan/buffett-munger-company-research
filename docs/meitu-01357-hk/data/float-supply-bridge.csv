@@ -1,0 +1,13 @@
+metric,value,unit,as_of,listing_line,status,formula_or_basis,source_refs,limitations
+issued_shares_including_treasury,4586179280,shares,2026-06-26,01357.HK,official_reported,monthly_return,F06,"Not public float"
+treasury_shares,63002500,shares,2026-06-26,01357.HK,official_reported,monthly_return,F06,"May be reissued or cancelled later"
+non_treasury_outstanding,4523176780,shares,2026-06-26,01357.HK,derived,4586179280-63002500,F06,"Per-share denominator starting point; not regulatory public float"
+founder_wu_actual_interest,594796670,shares,2026-07-03,01357.HK,official_disclosure_of_interest,latest disclosed interest,F05,"Disclosure interest may include attributed interests; used as conservative observable block"
+cai_wensheng_actual_interest,454500000,shares,2025-09-15,01357.HK,official_disclosure_of_interest,latest located HKEX DI filing,HKEX_DI_CAI,"Later changes below disclosure thresholds may be absent"
+observable_tradable_float_proxy,3473880110,shares,2026-07-03,01357.HK,derived,4523176780-594796670-454500000,F05|F06|HKEX_DI_CAI,"Research ceiling proxy; not HKEX regulatory public float and does not remove all strategic or inactive holders"
+observable_float_ratio,76.8018,percent_of_non_treasury,2026-07-03,01357.HK,derived,3473880110/4523176780,F05|F06|HKEX_DI_CAI,"Proxy ratio"
+close_price,3.93,HKD_per_share,2026-07-24,01357.HK,secondary_market_data,daily_adjusted_close,P01,"Price source is secondary"
+float_adjusted_market_cap_proxy,13.6523,HKD_bn,2026-07-24,01357.HK,derived,3473880110*3.93/1e9,F05|F06|HKEX_DI_CAI|P01,"Not company total market capitalization"
+adtv20,65228316,shares_per_trading_day,2026-07-24,01357.HK,derived,mean_of_latest_20_complete_trading_day_volume,P01,"Volume source is secondary"
+float_turnover_per_day,1.8777,percent_per_trading_day,2026-07-24,01357.HK,derived,65228316/3473880110,P01,"Capacity proxy"
+float_days_to_trade,53.26,trading_days,2026-07-24,01357.HK,derived,3473880110/65228316,P01,"Not guaranteed exit time"

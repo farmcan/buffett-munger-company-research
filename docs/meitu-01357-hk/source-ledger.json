@@ -1447,6 +1447,34 @@
       "locator": "Eastmoney quote snapshot fields f9 (provider dynamic PE) and f23 (P/B), source pages 0023 and 0051",
       "used_for": ["peer_exclusion", "provider_dynamic_pe", "provider_pb"],
       "limitations": "Provider dynamic PE does not disclose the EPS period and cannot be relabeled reported TTM. Negative earnings are N/M."
+    },
+    {
+      "id": "HKEX_DI_CAI",
+      "tier": "A",
+      "kind": "official_disclosure_of_interests",
+      "title": "Disclosure of Interests filing for Cai Wensheng in Meitu, Inc.",
+      "publisher": "HKEX Disclosure of Interests",
+      "published_at": "2025-09-18",
+      "retrieved_at": "2026-07-28",
+      "url": "https://di.hkex.com.hk/di/NSForm1.aspx?cid=0&cn=1&corpn=Meitu%2C+Inc.&ed=23%2F01%2F2026&fn=IS20250918E00245&lang=EN&sa2=cs&sced=23%2F01%2F2026&scsd=23%2F01%2F2025&sd=23%2F01%2F2025&sid=146166&src=Main&srchCorpName=Meitu%2C+Inc.",
+      "snapshot_sha256": null,
+      "locator": "HKEX DI filing IS20250918E00245; event date 2025-09-15",
+      "used_for": ["observable_tradable_float_proxy", "beneficial_ownership"],
+      "limitations": "Latest filing located in this research pass; later changes below disclosure thresholds may not appear."
+    },
+    {
+      "id": "AWARD_20260701",
+      "tier": "A",
+      "kind": "official_share_award_announcement",
+      "title": "Grant of Share Awards Pursuant to Share Award Scheme",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2026-07-01",
+      "retrieved_at": "2026-07-28",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0701/2026070100103.pdf",
+      "snapshot_sha256": null,
+      "locator": "Grant quantity, vesting schedule and settlement-source decision",
+      "used_for": ["share_supply_calendar", "share_award_overhang"],
+      "limitations": "Grant is not registration, listing or disposal; overlap with trust or treasury holdings must be reconciled before aggregation."
     }
   ]
 }

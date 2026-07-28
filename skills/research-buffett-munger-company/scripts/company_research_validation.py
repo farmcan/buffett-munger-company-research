@@ -98,6 +98,39 @@ METHODOLOGY_REFERENCE_CATALOG = {
         ),
         "tier": "B",
     },
+    "hkex_rule_8_08_public_float": {
+        "title": "HKEX Main Board Listing Rule 8.08",
+        "url": (
+            "https://cn-rules.hkex.com.hk/%E8%A6%8F%E5%89%87%E6%89%8B%E5%86%8A/808"
+        ),
+        "tier": "A",
+    },
+    "hkex_rule_13_32b_public_float": {
+        "title": "HKEX Main Board Listing Rule 13.32B",
+        "url": "https://en-rules.hkex.com.hk/entiresection/7010",
+        "tier": "A",
+    },
+    "msci_gimi_float_method": {
+        "title": "MSCI Global Investable Market Indexes Methodology",
+        "url": (
+            "https://www.msci.com/downloads/web/msci-com/indexes/index-resources/"
+            "market-classification/MSCI_GIMIMethodology_Mar2023.pdf"
+        ),
+        "tier": "A-",
+    },
+    "spdj_index_mathematics_float": {
+        "title": "Index Mathematics Methodology",
+        "url": (
+            "https://www.spglobal.com/spdji/en/methodology/article/"
+            "index-mathematics-methodology/"
+        ),
+        "tier": "A-",
+    },
+    "field_hanka_lockup_expiration": {
+        "title": "The Expiration of IPO Share Lockups",
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=205011",
+        "tier": "A-",
+    },
 }
 
 PRIMARY_METHODOLOGY_TIERS = {"A", "A-"}

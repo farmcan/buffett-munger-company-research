@@ -401,6 +401,7 @@ disconfirming_evidence
 | 历史无前视偏差估值分位 | 在每个历史价格日，只使用当时已公开的 FY/TTM/forward/normalized 分母；记录发布时间、可用日、股本、币种和公司行动，给出同口径历史分位 | `historical_valuation`; dimension `valuation`; indicator `currency_consistent_value_range_assumptions_and_dates` | 用今天才知道的 EPS、后来重述或未来指引回填过去 PE；把不同分母混成一条分位 |
 | 当前价格与内在价值 gap | 同币种比较当前 price anchor 与 bear/base/upside 或 low/base/high 价值区间；展示区间 gap、假设和 sensitivity，而非单点目标价 | `valuation`; `per_share_economics`; gate `intrinsic_value_and_margin_of_safety` | 只挑 base/upside；价值区间不可辩护时仍输出 gap；把 gap 写成买入空间 |
 | 同行估值溢价/折价 | 统一会计准则、周期位置、业务范围、增长、ROIC、杠杆、NCI、稀释和价格日期，再比较 PE/PB/EV/owner earnings 等适用指标 | `industry_chain_position`; `returns_on_capital`; `per_share_economics`; `valuation` | 只按行业标签选同行；把业务/周期/资本结构差异误写成错误定价 |
+| 流通盘稀缺度与新增供给 | 逐交易线桥接 issued、treasury、non-treasury、official public float（如可得）、可观测流通代理和 active supply；计算流通市值、20 日换手/容量、解禁/转股/奖励供给占比与 ADTV 天数 | `security_and_legal_subject`; `control_and_beneficial_ownership`; `capital_allocation`; `per_share_economics`; `price_move_attribution` | 把非库存股本叫流通股；用总市值代替流通市值；A 股解禁直接加到 H 股；把解禁权限写成实际卖出 |
 | 3—5 年股东回报分解 | 用复权价格和现金分配先算总股东回报，再把每股 owner earnings/EPS 增长、分红/回购净影响、估值倍数变化、FX 和稀释列成可复算 bridge | `capital_allocation`; `per_share_economics`; `historical_valuation` | 把公司收入增长当股东回报；忽略增发、可转债、库存股和汇率；把历史分解外推成保证回报 |
 | 长周期回撤、趋势、波动与流动性 | 使用可复核复权序列，记录 3—5 年及更长周期最大回撤、滚动波动、相对基准、成交/价差和重大事件；与 `price_move_attribution` 对照 | `price_move_attribution`; `disconfirming_evidence`; gate `decision_and_disconfirming_evidence` | 用上涨证明护城河、用下跌证明基本面恶化；用技术趋势替代公司事实；忽略停牌、除权和低流动性 |
 

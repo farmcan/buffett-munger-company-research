@@ -1830,6 +1830,28 @@
       "next_evidence": "HKEX 公告与下一份审计/中期报告。"
     }
   ],
+  "float_supply": {
+    "status": "observable_proxy_not_regulatory_public_float",
+    "as_of": "2026-07-24",
+    "listing_line": "01357.HK",
+    "non_treasury_outstanding": 4523176780,
+    "observable_tradable_float_proxy": 3473880110,
+    "observable_float_ratio": 0.7680177625,
+    "dated_price_hkd": 3.93,
+    "float_adjusted_market_cap_proxy_hkd": 13652348832.3,
+    "adtv20_shares": 65228316,
+    "float_turnover_per_day": 0.0187767896,
+    "float_days_to_trade": 53.2572,
+    "largest_known_supply_event": {
+      "event": "Alibaba convertible bond if converted",
+      "shares": 335513916,
+      "share_of_float_proxy": 0.0965818927,
+      "adtv20_days": 5.1437,
+      "state": "if_converted_not_automatic"
+    },
+    "data_artifacts": ["data/float-supply-bridge.csv", "data/share-supply-calendar.csv"],
+    "limitations": ["Proxy subtracts disclosed founder blocks but is not HKEX regulatory public float.", "Active supply may be materially lower than the static proxy."]
+  },
   "review": {
     "human_review_required": true,
     "status": "needs_human_review",

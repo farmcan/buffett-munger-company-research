@@ -2149,6 +2149,25 @@
       "P01"
     ]
   },
+  "float_supply": {
+    "status": "unrestricted_h_share_ceiling_proxy_not_regulatory_public_float",
+    "as_of": "2026-07-27",
+    "listing_line": "02691.HK",
+    "observable_tradable_float_proxy": 107659000,
+    "dated_price_hkd": 6.65,
+    "float_adjusted_market_cap_proxy_hkd": 715932350,
+    "adtv20_shares": 1401977.5,
+    "float_turnover_per_day": 0.0130223901,
+    "float_days_to_trade": 76.7908,
+    "capitalisation_issue": {
+      "expected_listing_date": "2026-08-11",
+      "new_h_shares": 48446550,
+      "post_h_shares": 156105550,
+      "classification": "pro_rata_capitalisation_not_economic_dilution_or_unlock"
+    },
+    "data_artifacts": ["data/float-supply-bridge.csv", "data/share-supply-calendar.csv"],
+    "limitations": ["All current H shares are reported unrestricted, but regulatory public float was not separately audited.", "A-share controller lockups do not directly expand the H-share float."]
+  },
   "review": {
     "human_review_required": true,
     "reviewed_for_publication": false,

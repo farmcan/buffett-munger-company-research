@@ -1,0 +1,4 @@
+event_date,event_state,listing_line,event_type,shares,share_of_float_proxy_pct,adtv20_days,economic_effect,source_refs,limitations
+2026-06-23,registration,688981.SH,smnc_acquisition_new_a_shares,547182073,not_applicable_to_h_float,5.86,"New A shares increased group total shares and are locked for 12 months",SMNC_BOOK,"ADTV days use 20-day A-share ADTV; not H supply"
+2027-06-24,legal_unlock,688981.SH,smnc_counterparty_restricted_shares,547182073,not_applicable_to_h_float,5.86,"Earliest expected tradable date after 12-month lock, subject to official listing notice",SMNC_BOOK,"Equals 27.37% of pre-issue A shares; actual disposal is unknown"
+TBA,actual_disposal,688981.SH,smnc_counterparty_restricted_shares,unknown,not_applicable_to_h_float,unknown,"Would affect A-line supply and may transmit sentiment to H shares",SMNC_BOOK,"A/H shares are not directly fungible; do not add to H float"

@@ -330,6 +330,81 @@
       ],
       "allowed_use": "Supplemental structure for incentive and bias red-team checks.",
       "rights_boundary": "Not an official verbatim transcript; do not use as sole authority or reproduce long text."
+    },
+    {
+      "id": "hkex_rule_8_08_public_float",
+      "tier": "A",
+      "source_kind": "official_exchange_rule",
+      "title": "HKEX Main Board Listing Rule 8.08",
+      "publisher": "Hong Kong Exchanges and Clearing",
+      "url": "https://cn-rules.hkex.com.hk/%E8%A6%8F%E5%89%87%E6%89%8B%E5%86%8A/808",
+      "published_year": 2025,
+      "retrieved_at": "2026-07-28T00:00:00+08:00",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": ["float_supply_definition"],
+      "allowed_use": "Authority for HKEX listing-time public-float requirements.",
+      "rights_boundary": "Link and paraphrase the applicable rule; verify current effective text."
+    },
+    {
+      "id": "hkex_rule_13_32b_public_float",
+      "tier": "A",
+      "source_kind": "official_exchange_rule",
+      "title": "HKEX Main Board Listing Rule 13.32B",
+      "publisher": "Hong Kong Exchanges and Clearing",
+      "url": "https://en-rules.hkex.com.hk/entiresection/7010",
+      "published_year": 2025,
+      "retrieved_at": "2026-07-28T00:00:00+08:00",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": ["float_supply_definition"],
+      "allowed_use": "Authority for continuing HKEX public-float requirements.",
+      "rights_boundary": "Link and paraphrase the applicable rule; verify current effective text."
+    },
+    {
+      "id": "msci_gimi_float_method",
+      "tier": "A-",
+      "source_kind": "index_provider_methodology",
+      "title": "MSCI Global Investable Market Indexes Methodology",
+      "publisher": "MSCI",
+      "url": "https://www.msci.com/downloads/web/msci-com/indexes/index-resources/market-classification/MSCI_GIMIMethodology_Mar2023.pdf",
+      "published_year": 2023,
+      "retrieved_at": "2026-07-28T00:00:00+08:00",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "claim_ids": ["float_supply_definition"],
+      "allowed_use": "Institutional reference for free-float investability factors and float-adjusted market capitalization.",
+      "rights_boundary": "Link and paraphrase; issuer/exchange facts still control company-specific share counts."
+    },
+    {
+      "id": "spdj_index_mathematics_float",
+      "tier": "A-",
+      "source_kind": "index_provider_methodology",
+      "title": "Index Mathematics Methodology",
+      "publisher": "S&P Dow Jones Indices",
+      "url": "https://www.spglobal.com/spdji/en/methodology/article/index-mathematics-methodology/",
+      "published_year": 2026,
+      "retrieved_at": "2026-07-28T00:00:00+08:00",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": ["float_supply_definition"],
+      "allowed_use": "Institutional reference for float-adjusted index share treatment.",
+      "rights_boundary": "Link and paraphrase; do not treat an index factor as exchange regulatory public float."
+    },
+    {
+      "id": "field_hanka_lockup_expiration",
+      "tier": "A-",
+      "source_kind": "academic_primary_research",
+      "title": "The Expiration of IPO Share Lockups",
+      "publisher": "SSRN",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=205011",
+      "published_year": 2001,
+      "retrieved_at": "2026-07-28T00:00:00+08:00",
+      "http_status": 200,
+      "content_type": "text/html",
+      "claim_ids": ["float_supply_definition"],
+      "allowed_use": "Historical mechanism evidence that lockup expiry can change trading supply and volume.",
+      "rights_boundary": "Do not extrapolate sample averages into a forecast for an individual company."
     }
   ],
   "method_claims": [
@@ -620,6 +695,25 @@
         "decision_and_disconfirming_evidence"
       ],
       "status": "secondary_transcript_supported_not_officially_complete"
+    },
+    {
+      "id": "float_supply_definition",
+      "method_role": "core",
+      "statement": "Separate issued, treasury, non-treasury, regulatory public float, observable tradable-float proxy and active supply; model unlock and newly listed shares by listing line and trading-capacity impact.",
+      "source_ids": [
+        "hkex_rule_8_08_public_float",
+        "hkex_rule_13_32b_public_float",
+        "msci_gimi_float_method",
+        "spdj_index_mathematics_float",
+        "field_hanka_lockup_expiration"
+      ],
+      "gate_mappings": [
+        "identity_and_source_integrity",
+        "management_and_capital_allocation",
+        "intrinsic_value_and_margin_of_safety",
+        "decision_and_disconfirming_evidence"
+      ],
+      "status": "institutional_and_primary_supported"
     }
   ],
   "engineering_sources": [
@@ -913,8 +1007,8 @@
     }
   ],
   "audit_summary": {
-    "official_source_count": 17,
-    "core_claim_count": 19,
+    "official_source_count": 22,
+    "core_claim_count": 20,
     "supplemental_claim_count": 2,
     "engineering_source_count": 10,
     "github_method_authority_count": 0,

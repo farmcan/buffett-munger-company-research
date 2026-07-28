@@ -1,0 +1,5 @@
+event_date,event_state,listing_line,event_type,shares,share_of_float_proxy_pct,adtv20_days,economic_effect,source_refs,limitations
+2026-06-30,current_overhang,03738.HK,treasury_shares_possible_reissue,1445000,0.0633,0.06,"Temporary supply withdrawal; reissue would restore supply",F05,"No assumption of reissue"
+2026-09-27,if_converted,03738.HK,remaining_convertible_bond,248381602,10.8769,11.14,"Conversion removes corresponding debt but expands shares",F04|F05,"Current price below HK$5.87; conversion is not automatic"
+various,vesting_or_exercise,03738.HK,outstanding_options,165325000,7.2398,7.42,"Exercise can add shares and cash subject to strike and vesting",F01|F05,"Not all options are vested or in the money; founder 112m options have HK$5 strike"
+2026-09-27,cash_redemption,03738.HK,convertible_not_converted,0,0,0,"No new shares but creates cash repayment/refinancing need",F04|F05,"Supply risk changes into financing and possible future placement risk"

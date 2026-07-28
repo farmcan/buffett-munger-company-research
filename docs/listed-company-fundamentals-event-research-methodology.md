@@ -1,6 +1,6 @@
 # 上市公司基本面 × 行业 × 事件研究方法
 
-版本：2.5（2026-07-27）
+版本：2.6（2026-07-28）
 
 适用对象：A 股、港股、美股及跨市场上市公司
 
@@ -144,7 +144,72 @@ limitations:
 
 每个估值情景都必须与资本结构一致：未转换情景保留债务并使用当前股数；全转换情景移除相应债务并加入转换股份。若情景价格高于转股价而仍用未摊薄股数，validator 应判失败。
 
-### 2.3.1 客户、供应商与上下游：关系名称和占比必须同表
+### 2.3.1 流通盘稀缺度与新增供给：不能用总市值代替
+
+总市值回答公司整体权益规模，不能回答某一交易线实际有多少股票可交易。小盘与跨市场公司必须
+另做“法定股本 → 可观测流通代理 → 活跃成交容量 → 未来新增供给”四层桥：
+
+```text
+issued shares
+- treasury shares
+= non-treasury outstanding shares
+
+non-treasury outstanding shares
+- 已披露控制人/董事实际持股
+- 已披露战略持股
+- 明确仍在锁定或限售的股份
+= observable tradable-float proxy
+```
+
+四个口径不能混写：
+
+| 口径 | 含义 | 使用纪律 |
+| --- | --- | --- |
+| `non_treasury_outstanding` | 已发行减库存股，是每股分母的常见起点 | 不是交易所官方 public float，不能标作“流通股” |
+| `regulatory_public_float` | 交易所规则下公众持股量/比例 | 只有交易所或发行人明确披露并可复核时才填写；否则 `unknown` |
+| `observable_tradable_float_proxy` | 用公开控制/战略/锁定持股从非库存股本扣减的研究代理 | 是上限或近似值，不等于每天真实卖盘；逐项显示扣减和遗漏 |
+| `active_supply` | 某窗口内真正参与交易的股份 | 从成交、换手、借券和持有人行为推断，不能从静态股东表直接得出 |
+
+固定计算：
+
+```text
+float_adjusted_market_cap_proxy
+= dated_price × observable_tradable_float_proxy
+
+float_turnover_per_day
+= 20d_ADTV_shares / observable_tradable_float_proxy
+
+float_days_to_trade
+= observable_tradable_float_proxy / 20d_ADTV_shares
+
+unlock_shock
+= newly_unlocked_shares / pre_event_observable_tradable_float_proxy
+
+new_supply_days
+= newly_unlocked_or_newly_listed_shares / 20d_ADTV_shares
+```
+
+`float_days_to_trade` 只是容量代理，不是保证退出天数；真实冲击还取决于成交额、价差、集中度、
+持有人意愿和市场状态。低流通盘也不是护城河：它会同时放大上涨、下跌、跳空、逼空和融资折价。
+
+供给事件必须区分三个状态：
+
+1. `legal_unlock`：法律/合同上可以出售；
+2. `registration_or_listing`：股份已经登记或上市；
+3. `actual_disposal`：持有人真的减持或股份进入成交。
+
+解禁只代表出售权限，不等于已经卖出。供给日历至少覆盖 IPO 前/基石/控股股东锁定到期、
+A 股限售解禁、配售/供股上市、股份奖励归属、期权行权、可转债转换、库存股再发行或注销，
+并同时列出事件日期、交易线、股份数、占解禁前流通代理比例和相当于多少个 20 日平均成交日。
+指数或港股通调整是需求事件，不应伪装成流通股变化。
+
+A/H、ADR 和多股类必须逐交易线计算。A 股新增或解禁不会直接增加 H 股可交易股数；可以记录
+集团总股本稀释和跨市场情绪传导，但不得用 H 股价格乘全公司 A+H 股数来表示 H 股流通市值。
+
+HKEX 公众持股规则、MSCI/S&P 的 free-float 调整方法和发行人披露优先于行情商的
+`floatShares`。GitHub 项目只可作为数据工程实现参考，不能作为 free float 的方法权威。
+
+### 2.3.2 客户、供应商与上下游：关系名称和占比必须同表
 
 公司“卖给谁”和“向谁采购”不是背景材料，而是收入质量、议价权、现金转换和护城河的共同
 分母。公开报告必须单列关系图和集中度账本，不能只把它埋在 25 维度状态卡中。
@@ -598,8 +663,9 @@ App Store、Google Play、网站访问和搜索热度的定位是“前置雷达
 小盘/高弹性股票额外检查：
 
 - 日均成交、买卖价差、停牌和无涨跌停机制；
+- 非库存股本、监管公众持股、可观测流通代理、流通市值代理和 20 日成交容量；
 - 可卖空、须申报空仓和衍生品；
-- 回购、库存股、股权激励、配售、供股和可转债；
+- 回购、库存股、股权激励、配售、供股、可转债和逐交易线解禁日历；
 - 大股东质押、减持、关联交易和披露控制；
 - 指数、互联互通和被动资金事件；
 - 审计意见、监管调查和诉讼。
@@ -615,6 +681,10 @@ App Store、Google Play、网站访问和搜索热度的定位是“前置雷达
 | 每日卖空流量 | 卖空成交额、总成交额、完整/半日状态、区间加权 | 当日做空交易强度 | 卖空成交不等于净空仓增加 |
 | 借券条件 | 借券费率、可借库存、利用率、召回风险 | 做空拥挤和边际成本 | 缺失时保持 `unknown`，不用成交量替代 |
 | 其他供求 | 回购/增持、配售/解禁、可转债、指数/互联互通、事件套牢区 | 多股力量为何可能互相抵消 | 同时发生不等于已证明因果 |
+
+其中“配售/解禁”必须另算占解禁前可观测流通代理比例与 20 日平均成交量消化天数；低流通股
+的相同绝对供给通常会形成更高冲击。监管 public float、指数 free float、行情商 float shares
+和本报告研究代理必须分栏，不允许择一冒充官方精确值。
 
 净空仓除以近期平均成交量只能写“流动性覆盖代理”，不能冒充标准 days-to-cover。半日卖空比例
 不能与完整交易日直接比较。只有官方净空仓、完整日卖空流量、价格/成交量和借券条件中至少
@@ -759,6 +829,9 @@ limitations
 - [ ] 行业叙事有第一性原理和证伪条件；
 - [ ] 事件反应有 T0 规则、基准和归因边界；
 - [ ] 回购、增发、可转债、指数和互联互通风险已单列；
+- [ ] 已发行、库存、非库存、监管公众持股、流通代理和活跃供给没有混写；
+- [ ] 已按交易线计算流通市值代理、20 日换手/容量和未来解禁/转股/奖励供给天数；
+- [ ] 解禁已区分可出售、登记/上市和实际减持，不把解禁公告写成卖出事实；
 - [ ] PE/EPS 有同一日期、币种和股本口径；
 - [ ] 下一验证点具体到报告窗口或官方日历；
 - [ ] 长期公司底稿和短期事件监控是两个入口，共享同一事实层；
@@ -791,6 +864,14 @@ limitations
 - [2021 Chairman's Letter](https://www.berkshirehathaway.com/letters/2021ltr.pdf)
 - [2022 Chairman's Letter](https://www.berkshirehathaway.com/letters/2022ltr.pdf)
 - [2023 Chairman's Letter](https://www.berkshirehathaway.com/letters/2023ltr.pdf)
+
+### 10.2 流通盘与供给口径原始入口
+
+- [HKEX Rule 8.08：上市时公众持股要求](https://cn-rules.hkex.com.hk/%E8%A6%8F%E5%89%87%E6%89%8B%E5%86%8A/808)
+- [HKEX Rule 13.32B：持续公众持股要求](https://en-rules.hkex.com.hk/entiresection/7010)
+- [MSCI Global Investable Market Indexes Methodology](https://www.msci.com/downloads/web/msci-com/indexes/index-resources/market-classification/MSCI_GIMIMethodology_Mar2023.pdf)
+- [S&P Dow Jones Indices: Index Mathematics Methodology](https://www.spglobal.com/spdji/en/methodology/article/index-mathematics-methodology/)
+- [Field & Hanka: The Expiration of IPO Share Lockups](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=205011)（只作历史机制证据，不外推单一公司收益）
 - [Berkshire Hathaway Annual Meetings archive](https://buffett.cnbc.com/annual-meetings/)
 - [USC Gould 2007 Munger event record](https://gould.usc.edu/news/300-graduate-from-usc-law/)
 - [Munger Archive: 1994 USC worldly-wisdom recording record](https://mungerarchive.com/recordings/usc-1994-worldly-wisdom/)

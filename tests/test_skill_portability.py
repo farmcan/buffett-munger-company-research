@@ -53,7 +53,7 @@ def test_installed_skill_validates_outside_repository(tmp_path: Path) -> None:
         references / "methodology-implementation-crosswalk.json",
     )
 
-    assert ledger_result["official_sources"] == 17
-    assert ledger_result["method_claims"] == 21
+    assert ledger_result["official_sources"] == 22
+    assert ledger_result["method_claims"] == 22
     assert crosswalk_result["dimension_count"] == 25
     assert crosswalk_result["required_indicator_count"] == 50

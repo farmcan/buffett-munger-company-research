@@ -1,0 +1,5 @@
+event_date,event_state,listing_line,event_type,shares,share_of_float_proxy_pct,adtv20_days,economic_effect,source_refs,limitations
+2026-06-22,legal_unlock,603093.SH,controller_rule_10_07_first_six_months_end,0,0,0,"Controller restrictions concern A shares; second six-month control undertaking continues",F01,"Approximate anniversary based on 2025-12-22 H listing; not H-line new supply"
+2026-08-11,registration_or_listing,02691.HK,pro_rata_capitalisation_issue,48446550,45,34.56,"Every existing H share receives 0.45 new share; price and board-lot scale adjust mechanically",F06,"Not economic dilution or a holder unlock; pre-event ADTV days are optical only"
+2026-12-22,legal_unlock,603093.SH,controller_rule_10_07_second_six_months_end,0,0,0,"Control undertaking window ends subject to exact rule and holder compliance",F01,"A-share holder event; does not directly increase H shares"
+TBA,possible_authorisation,02691.HK,h_share_repurchase_or_new_issue,0,0,0,"Monitor executed repurchases and any issuance after Rule 10.08 window",F04|F06,"Authorisation is not execution"

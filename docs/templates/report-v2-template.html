@@ -947,6 +947,46 @@
         </div>
       </section>
 
+      <section class="section" id="float-supply" aria-labelledby="float-supply-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Tradable float · supply calendar</p>
+            <h2 id="float-supply-title">流通盘稀缺度、流通市值与新增供给</h2>
+            <p>[[逐交易线展示；不得把非库存股本、监管 public float、行情商 floatShares 或研究代理混成同一口径。]]</p>
+          </div>
+        </div>
+        <div class="grid-4">
+          <article class="metric"><span class="metric-label">可观测流通代理</span><strong class="metric-value">[[SHARES]]</strong><span class="metric-note">[[PCT_OF_NON_TREASURY]] · [[AS_OF]]</span></article>
+          <article class="metric"><span class="metric-label">流通市值代理</span><strong class="metric-value">[[CURRENCY / VALUE]]</strong><span class="metric-note">[[DATED_PRICE × PROXY]]</span></article>
+          <article class="metric"><span class="metric-label">20 日平均股数换手</span><strong class="metric-value">[[PCT]]</strong><span class="metric-note">ADTV ÷ 流通代理</span></article>
+          <article class="metric"><span class="metric-label">流通盘 / ADTV</span><strong class="metric-value">[[DAYS]]</strong><span class="metric-note">容量代理，不是保证退出天数</span></article>
+        </div>
+        <div class="grid-2" style="margin-top:1rem">
+          <div class="table-card"><div class="table-wrap"><table>
+            <caption>法定股本 → 可观测流通代理（[[LISTING_LINE / AS_OF]]）</caption>
+            <thead><tr><th>项目</th><th class="num">股数</th><th class="num">占非库存股本</th><th>状态/来源</th></tr></thead>
+            <tbody>
+              <tr><td>已发行股份</td><td class="num">[[SHARES]]</td><td class="num">[[PCT]]</td><td>[[EVIDENCE_ID]]</td></tr>
+              <tr><td>－ 库存股</td><td class="num">[[SHARES]]</td><td class="num">[[PCT]]</td><td>[[EVIDENCE_ID]]</td></tr>
+              <tr><td>＝ 非库存股本</td><td class="num">[[SHARES]]</td><td class="num">100%</td><td>不是 official public float</td></tr>
+              <tr><td>－ 控制人/董事实际持股</td><td class="num">[[SHARES]]</td><td class="num">[[PCT]]</td><td>期权另列，不重复扣减</td></tr>
+              <tr><td>－ 战略/明确锁定股份</td><td class="num">[[SHARES]]</td><td class="num">[[PCT]]</td><td>[[EVIDENCE_ID / LIMITATION]]</td></tr>
+              <tr class="formula-row"><td>＝ 可观测流通代理</td><td class="num">[[SHARES]]</td><td class="num">[[PCT]]</td><td>研究代理；regulatory public float = [[VALUE_OR_UNKNOWN]]</td></tr>
+            </tbody>
+          </table></div></div>
+          <div class="table-card"><div class="table-wrap"><table>
+            <caption>未来新增供给与成交容量</caption>
+            <thead><tr><th>日期/状态</th><th>交易线/事件</th><th class="num">股数</th><th class="num">占流通代理</th><th class="num">ADTV 天数</th><th>限制</th></tr></thead>
+            <tbody>
+              <tr><td>[[DATE / legal_unlock]]</td><td>[[LISTING_LINE / EVENT]]</td><td class="num">[[SHARES]]</td><td class="num">[[PCT]]</td><td class="num">[[DAYS]]</td><td>解禁不等于实际出售</td></tr>
+              <tr><td>[[DATE / registration_or_listing]]</td><td>[[PLACEMENT / AWARD / OPTION]]</td><td class="num">[[SHARES]]</td><td class="num">[[PCT]]</td><td class="num">[[DAYS]]</td><td>[[CONDITION / EVIDENCE]]</td></tr>
+              <tr><td>[[DATE / if_converted]]</td><td>[[CONVERTIBLE]]</td><td class="num">[[SHARES]]</td><td class="num">[[PCT]]</td><td class="num">[[DAYS]]</td><td>与现金偿付路径分开</td></tr>
+            </tbody>
+          </table></div></div>
+        </div>
+        <div class="callout"><strong>解释边界：</strong>低流通盘会同时放大上行、下行、跳空、逼空和融资折价；A/H、ADR 与多股类必须逐交易线计算。[[PRIMARY_SOURCE / PRICE_SOURCE / DATA_FILE]]</div>
+      </section>
+
       <section class="section" id="market-pricing" aria-labelledby="market-pricing-title">
         <div class="section-heading">
           <div>

@@ -2015,6 +2015,25 @@
       "next_evidence": "Acquisition contribution and organic growth bridge."
     }
   ],
+  "float_supply": {
+    "status": "observable_proxy_not_regulatory_public_float",
+    "as_of": "2026-07-27",
+    "listing_line": "03738.HK",
+    "non_treasury_outstanding": 2592865836,
+    "observable_tradable_float_proxy": 2283561075,
+    "observable_float_ratio": 0.8807093076,
+    "dated_price_hkd": 2.39,
+    "float_adjusted_market_cap_proxy_hkd": 5457710969.25,
+    "adtv20_shares": 22290158.3,
+    "float_turnover_per_day": 0.0097611195,
+    "float_days_to_trade": 102.4471,
+    "known_supply_overhangs": [
+      {"event": "remaining convertible if converted", "shares": 248381602, "share_of_float_proxy": 0.1087694149, "adtv20_days": 11.1431},
+      {"event": "outstanding options", "shares": 165325000, "share_of_float_proxy": 0.0723978885, "adtv20_days": 7.417}
+    ],
+    "data_artifacts": ["data/float-supply-bridge.csv", "data/share-supply-calendar.csv"],
+    "limitations": ["Options are not all vested or in the money.", "If the convertible is not converted, supply risk becomes repayment/refinancing risk."]
+  },
   "review": {
     "human_review_required": true,
     "status": "needs_human_review",

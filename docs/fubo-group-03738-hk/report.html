@@ -114,6 +114,7 @@
     <a href="#products">产品与KPI</a>
     <a href="#earnings-quality">盈利质量</a>
     <a href="#capital">债务与摊薄</a>
+    <a href="#float-supply">流通与供给</a>
     <a href="#ai-thesis">AI版权</a>
     <a href="#market-pricing">估值</a>
     <a href="#peer-valuation">同行估值</a>
@@ -300,6 +301,27 @@
 <tr><td>基本股 + 已授期权 + 剩余可转债</td><td>3,006.57</td><td>HK$0.0663 / 股</td><td>36.1×</td><td>法律稀释上限代理；未计期权行权款、债务会计与转股后的利息/税影响</td></tr>
 </tbody></table></div>
 <p class="muted">上表不是把三条路径混成一个估值，而是量化“若股数达到保守法律上限、而利润不变”的每股压力。现金赎回路径不增加可转债股数，却会减少现金或增加再融资；转换路径减少债务，却增加股数。两者必须分别建模。</p>
+</section>
+
+<section id="float-supply">
+<h2>流通稀缺度与 9 月供给/融资分叉</h2>
+<p class="section-dek">阜博总市值约 HK$61.96 亿，但可观测流通市值代理约 HK$54.58 亿。这里从 25.929 亿非库存股中只扣除董事实际持股；王扬斌披露权益中的 1.12 亿份期权另列为潜在供给，避免重复扣减。</p>
+<div class="grid">
+<div class="card"><div class="k">可观测流通代理</div><div class="v">22.836 亿股</div><div class="s">占非库存股本约 88.07%；不是 official regulatory public float。</div></div>
+<div class="card"><div class="k">流通市值代理</div><div class="v">HK$54.58 亿</div><div class="s">按 2026-07-27 HK$2.39；不是公司总市值。</div></div>
+<div class="card"><div class="k">20 日股数换手</div><div class="v">0.98% / 日</div><div class="s">ADTV 约 2,229 万股；流通代理约 102.45 个 ADTV。</div></div>
+<div class="card"><div class="k">CB 最大供给</div><div class="v">10.88%</div><div class="s">2.484 亿股，相当于当前流通代理约 11.14 个 ADTV。</div></div>
+</div>
+<div class="table-wrap"><table>
+<thead><tr><th>时间/状态</th><th>事件</th><th>最大股数</th><th>占流通代理</th><th>ADTV 天数</th><th>路径</th></tr></thead>
+<tbody>
+<tr><td>当前 overhang</td><td>库存股潜在再发行</td><td>144.5 万</td><td>0.06%</td><td>0.06</td><td>暂时退出供给；再发行/注销尚未确定</td></tr>
+<tr><td>不同归属/行权期</td><td>已授期权</td><td>1.653 亿</td><td>7.24%</td><td>7.42</td><td>不是全部已归属或价内；王扬斌 1.12 亿份行权价 HK$5，当前价外</td></tr>
+<tr><td>至 2026-09-27</td><td>剩余可转债若转换</td><td>2.484 亿</td><td>10.88%</td><td>11.14</td><td>转股价 HK$5.87、当前价 HK$2.39；转换不是自动发生</td></tr>
+<tr><td>2026-09-27</td><td>若未转股现金赎回</td><td>0</td><td>0%</td><td>0</td><td>不增加当前股数，却可能转成再融资、配售或新工具的后续供给风险</td></tr>
+</tbody></table></div>
+<div class="callout risk"><strong>短期硬闸门：</strong>阜博当前流通容量在四份报告里最慢，静态流通代理约 102 个 ADTV；剩余 CB 若转换相当于约 11 个 ADTV。由于现价低于转股价，更现实的近端风险不是“自动解禁式转股”，而是现金赎回能力和由此引出的再融资条款。两条路径必须并列，不能只说稀释或只说还钱。</div>
+<p class="muted">主源：F01 年报、F05 六月月报、F04 可转债公告；市场数据 P01。下载：<a href="data/float-supply-bridge.csv">流通桥 CSV</a> · <a href="data/share-supply-calendar.csv">供给日历 CSV</a>。</p>
 </section>
 
 <section id="ai-thesis">

@@ -1,0 +1,11 @@
+metric,value,unit,as_of,listing_line,status,formula_or_basis,source_refs,limitations
+h_shares_issued,6013933328,shares,2026-06-23,00981.HK,official_reported,SMNC_listing_book,SMNC_BOOK,"H-line shares only"
+datang_hong_kong_strategic_block,1083042595,shares,2026-06-23,00981.HK,official_reported,SMNC_listing_book,SMNC_BOOK,"Classified as disclosed strategic/major block for proxy"
+xinxin_hong_kong_strategic_block,224989311,shares,2026-06-23,00981.HK,official_reported,SMNC_listing_book,SMNC_BOOK,"Classified as disclosed strategic/major block for proxy"
+observable_h_tradable_float_proxy,4705901422,shares,2026-06-23,00981.HK,derived,6013933328-1083042595-224989311,SMNC_BOOK,"Research ceiling proxy; HKSCC nominee aggregate is not itself official public float"
+observable_h_float_ratio,78.25,percent_of_h_shares,2026-06-23,00981.HK,derived,4705901422/6013933328,SMNC_BOOK,"Proxy ratio"
+close_price,70.65,HKD_per_share,2026-07-27,00981.HK,secondary_market_data,daily_adjusted_close,P_H,"Secondary price source"
+float_adjusted_market_cap_proxy,332.4719,HKD_bn,2026-07-27,00981.HK,derived,4705901422*70.65/1e9,SMNC_BOOK|P_H,"H-line only; not total A+H market capitalization"
+adtv20_h,140786351,shares_per_trading_day,2026-07-27,00981.HK,derived,mean_of_latest_20_complete_trading_day_volume,P_H,"Capacity proxy based on secondary volume"
+float_turnover_per_day_h,2.9917,percent_per_trading_day,2026-07-27,00981.HK,derived,140786351/4705901422,P_H,"Capacity proxy"
+float_days_to_trade_h,33.43,trading_days,2026-07-27,00981.HK,derived,4705901422/140786351,P_H,"Not guaranteed exit time"

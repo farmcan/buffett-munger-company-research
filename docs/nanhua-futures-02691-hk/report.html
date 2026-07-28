@@ -46,7 +46,7 @@ body.report-parity .review-item b{display:block;font-size:14px}body.report-parit
 <nav aria-label="报告目录"><div class="wrap">
   <a href="#status-legend">状态</a><a href="#report-doors">双入口</a><a href="#snapshot">快照</a>
   <a href="#long-term">业务/利润</a><a href="#counterparties">客户/上下游</a><a href="#financials">五年财务</a><a href="#quarterly">Q1/Q2/H1</a>
-  <a href="#owner-earnings">可分配利润桥</a><a href="#capital-quality">监管资本</a><a href="#capital">股本/回购</a>
+  <a href="#owner-earnings">可分配利润桥</a><a href="#capital-quality">监管资本</a><a href="#capital">股本/回购</a><a href="#float-supply">流通/解禁</a>
   <a href="#market-pricing">估值/长周期</a><a href="#peer-valuation">同行估值</a><a href="#event-monitor">行业/小盘</a><a href="#buffett">巴芒解释</a>
   <a href="#research-contract">25×50×9</a><a href="#methodology">方法</a><a href="#timeline">时间轴</a>
   <a href="#monitor">下一验证</a><a href="#evidence">证据</a><a href="#sources">来源</a>
@@ -213,6 +213,26 @@ body.report-parity .review-item b{display:block;font-size:14px}body.report-parit
   </table></div>
 <p>4.5送10的资本化发行改变每股分母和股价刻度，不创造企业价值。研究使用公司披露的转增后预期1,038.145m股。拟A股可转债上限RMB1.2bn仍未发行，示例75.901m转股仅作摊薄情景；它不是“股价低于某价自动还钱、高于某价自动转股”的简单二元结构，最终要看发行条款、转股期、转股价调整、赎回和回售条件。</p>
 <p>H股回购授权上限HK$130m、股数上限10%，截至研究日未发现实际成交披露。授权与执行必须分开记录。</p>
+</section>
+
+<section id="float-supply" class="card"><h2>H 股稀缺度与供给：必须和 A 股、转增光学效应分开</h2>
+<p>总股本 7.177 亿或转增后 10.381 亿不能代表 02691.HK 的实际交易供给。当前 H 股只有 1.07659 亿股；年报将其列为不受交易限制股份，因此可作为 H 线可观测上限代理，但本报告没有把它冒充已审计的监管 public float。</p>
+<div class="grid">
+  <div class="card"><div class="label">H 线流通上限代理</div><div class="metric">1.07659 亿股</div><p>当前全部 H 股；与 A 股控制人持股分开。</p></div>
+  <div class="card"><div class="label">流通市值代理</div><div class="metric">HK$7.159 亿</div><p>以 2026-07-27 HK$6.65 计算，不是 A+H 总市值。</p></div>
+  <div class="card"><div class="label">20 日股数换手</div><div class="metric">1.30% / 日</div><p>ADTV 约 140.2 万股；静态代理约 76.79 个 ADTV。</p></div>
+</div>
+<div class="table-wrap"><table>
+  <thead><tr><th>时间/状态</th><th>交易线/事件</th><th>股份影响</th><th>供给解释</th></tr></thead>
+  <tbody>
+    <tr><td>当前</td><td>02691.HK H 股</td><td>1.07659 亿股</td><td>年报称不受交易限制；仍不能等同 official public float 或 active supply</td></tr>
+    <tr><td>2026-08-11 预期登记/上市</td><td>H 股 4.5 送 10</td><td>新增 4,844.655 万股，H 股变 1.56106 亿</td><td>所有现有股东按比例取得，股价/每手刻度机械调整；不是经济稀释或解禁卖盘</td></tr>
+    <tr><td>约 2026-06-22</td><td>控制人 Rule 10.07 第一段限制结束</td><td>A 股持有人事件</td><td>控制人持有 A 股，不会直接增加 H 股供给；第二个六个月仍约束控制地位</td></tr>
+    <tr><td>约 2026-12-22</td><td>控制人第二段承诺窗口结束</td><td>A 股持有人事件</td><td>可能影响 A 股供给与 A/H 情绪，但不能直接加到 H 股流通盘</td></tr>
+  </tbody>
+</table></div>
+<p class="callout amber"><strong>最重要的读法：</strong>南华 H 股流通市值代理不足 HK$8 亿，远小于集团总权益规模，事件弹性可能较大；但 45% 转增新增股只是同一蛋糕切成更多份，不能用转增前 ADTV 的 34.56 天机械解释成真实新增抛压。真正要监控的是回购执行、新发行、南向资金和持有人集中度。</p>
+<p class="sub">主源 F01、F06；市场数据 P01。下载：<a href="data/float-supply-bridge.csv">流通桥 CSV</a> · <a href="data/share-supply-calendar.csv">供给日历 CSV</a>。</p>
 </section>
 
 <section id="management" class="card"><h2>治理、会计与CFO信息边界</h2>

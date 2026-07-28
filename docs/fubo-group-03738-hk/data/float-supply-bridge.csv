@@ -1,0 +1,12 @@
+metric,value,unit,as_of,listing_line,status,formula_or_basis,source_refs,limitations
+non_treasury_outstanding,2592865836,shares,2026-06-30,03738.HK,official_reported,monthly_return,F05,"Not regulatory public float"
+treasury_shares,1445000,shares,2026-06-30,03738.HK,official_reported,monthly_return,F05,"Could be reissued or cancelled"
+founder_wang_actual_shares,303961920,shares,2025-12-31,03738.HK,official_reported,annual_report_director_interest,F01,"Excludes 112m options to avoid double subtraction"
+other_directors_actual_shares,5342841,shares,2025-12-31,03738.HK,official_reported,sum_of_other_director_actual_shares,F01,"Later changes below disclosure thresholds may be absent"
+observable_tradable_float_proxy,2283561075,shares,2026-06-30,03738.HK,derived,2592865836-303961920-5342841,F01|F05,"Research ceiling proxy; not regulatory public float"
+observable_float_ratio,88.0709,percent_of_non_treasury,2026-06-30,03738.HK,derived,2283561075/2592865836,F01|F05,"Proxy ratio"
+close_price,2.39,HKD_per_share,2026-07-27,03738.HK,secondary_market_data,daily_adjusted_close,M01,"Secondary price source"
+float_adjusted_market_cap_proxy,5.4577,HKD_bn,2026-07-27,03738.HK,derived,2283561075*2.39/1e9,F01|F05|M01,"Not company total market capitalization"
+adtv20,22290158.3,shares_per_trading_day,2026-07-27,03738.HK,derived,mean_of_latest_20_complete_trading_day_volume,M01,"Capacity proxy"
+float_turnover_per_day,0.9761,percent_per_trading_day,2026-07-27,03738.HK,derived,22290158.3/2283561075,M01,"Capacity proxy"
+float_days_to_trade,102.45,trading_days,2026-07-27,03738.HK,derived,2283561075/22290158.3,M01,"Not guaranteed exit time"

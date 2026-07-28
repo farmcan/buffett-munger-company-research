@@ -4,7 +4,7 @@
   "generated_at": "2026-07-26T15:37:17Z",
   "methodology_ledger": {
     "path": "references/methodology-source-ledger.json",
-    "sha256": "5bbfb1a52984dcbce8ead191928ae81f4e22ede4d424459b2cb1d28643126ac4"
+    "sha256": "946923e486bc14b99ae602b4c2659f347a66e7356f1c27ef8d1f7e0db93c2201"
   },
   "company_contract": {
     "schema_version": "seed.stock-fundamentals-valuation.v2",
@@ -611,7 +611,8 @@
       ],
       "method_claim_ids": [
         "per_share_intrinsic_value",
-        "repurchase_per_share_value"
+        "repurchase_per_share_value",
+        "float_supply_definition"
       ],
       "context_claim_ids": [],
       "required_indicator_ids": [
@@ -620,9 +621,10 @@
       ],
       "required_checks": [
         "Reconcile basic, diluted and fully diluted share counts across dates.",
-        "Translate growth, distributions, issuance and repurchases into per-share outcomes."
+        "Translate growth, distributions, issuance and repurchases into per-share outcomes.",
+        "Separate non-treasury shares, regulatory public float, observable tradable-float proxy and active supply by listing line; quantify unlock and new-supply capacity."
       ],
-      "attribution_boundary": "Per-share intrinsic value is primary method; dilution reconciliation is Seed engineering."
+      "attribution_boundary": "Per-share intrinsic value is primary method; float/supply definitions use exchange and index-provider authority, while dilution reconciliation and trading-capacity ratios are Seed engineering."
     },
     {
       "id": "valuation",
@@ -691,8 +693,8 @@
       "red_team": 1,
       "valuation": 1
     },
-    "direct_method_claim_count": 21,
-    "core_method_claim_count": 19,
+    "direct_method_claim_count": 22,
+    "core_method_claim_count": 20,
     "uncovered_core_method_claim_count": 0,
     "covered_gate_count": 9,
     "github_method_authority_count": 0

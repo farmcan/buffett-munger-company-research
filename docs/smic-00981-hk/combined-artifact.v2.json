@@ -2100,6 +2100,28 @@
     ],
     "data_artifact": "data/event-price-reactions.csv"
   },
+  "float_supply": {
+    "status": "listing_line_proxy_with_cross_market_unlock",
+    "as_of": "2026-07-27",
+    "listing_line": "00981.HK",
+    "h_shares_issued": 6013933328,
+    "observable_h_tradable_float_proxy": 4705901422,
+    "observable_h_float_ratio": 0.782499766,
+    "dated_price_hkd": 70.65,
+    "float_adjusted_market_cap_proxy_hkd": 332471935464.3,
+    "adtv20_h_shares": 140786351,
+    "float_turnover_per_day_h": 0.0299169784,
+    "float_days_to_trade_h": 33.4258,
+    "a_share_unlock": {
+      "expected_earliest_tradable_date": "2027-06-24",
+      "shares": 547182073,
+      "share_of_pre_issue_a_shares": 0.2736508909,
+      "adtv20_a_days": 5.8571,
+      "classification": "a_line_supply_and_group_dilution_not_h_float"
+    },
+    "data_artifacts": ["data/float-supply-bridge.csv", "data/share-supply-calendar.csv"],
+    "limitations": ["A and H shares are not directly fungible.", "H proxy subtracts disclosed strategic blocks and is not regulatory public float."]
+  },
   "review": {
     "human_review_required": true,
     "status": "needs_human_review",

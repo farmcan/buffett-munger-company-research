@@ -133,6 +133,11 @@ At minimum produce:
 - a reported-to-adjusted earnings bridge;
 - cash-flow and working-capital diagnostics;
 - a low/base/high owner-earnings range;
+- a per-listing-line float/supply bridge that separates issued, treasury, non-treasury
+  outstanding, regulatory public float, observable tradable-float proxy, and active supply;
+- dated float-adjusted market-cap, 20-day ADTV/turnover capacity, and an unlock/conversion/
+  award/placement supply calendar with `legal_unlock`, `registration_or_listing`, and
+  `actual_disposal` kept distinct;
 - FY, TTM, adjusted, forward, and normalized PE states where meaningful;
 - bear/base/upside operating and EPS scenarios without fake probabilities;
 - intrinsic-value sensitivity with explicit growth, reinvestment, discount, and terminal inputs;
@@ -140,6 +145,11 @@ At minimum produce:
 - red-team claims and observable invalidation tests.
 
 Show formulas. Use `null` for unavailable values. Do not substitute EBITDA for owner earnings.
+Never label non-treasury outstanding shares as public float. For A/H, ADR, dual-class or other
+multi-line securities, compute tradable supply by listing line; a supply event in one line may
+affect group dilution or sentiment without directly expanding another line's float. Treat GitHub
+repositories as engineering references only; official exchange rules, issuer filings, holder
+disclosures and index free-float methodologies control definitions.
 
 Preserve adverse economics:
 

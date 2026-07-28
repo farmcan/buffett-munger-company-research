@@ -1,0 +1,5 @@
+event_date,event_state,listing_line,event_type,shares,share_of_float_proxy_pct,adtv20_days,economic_effect,source_refs,limitations
+2026-06-26,current_overhang,01357.HK,treasury_shares_possible_reissue,63002500,1.8136,0.97,"Temporary withdrawal from economic denominator; reissue would restore supply",F06,"No assumption that reissue will occur"
+2026-07-01,award_granted,01357.HK,share_award,1650343,0.0475,0.03,"First vesting from 2027; settlement source to be decided in December 2026",AWARD_20260701,"Grant is not listing or sale; other awards may overlap with treasury/trust holdings"
+2028-12-01,if_converted,01357.HK,alibaba_convertible_bond,335513916,9.6582,5.14,"Conversion reduces corresponding debt but increases shares",F14|F07,"Approximate maturity window; conversion is holder choice and effective conversion price may adjust"
+TBA,registration_or_listing,01357.HK,new_placement_rights_or_award_shares,0,0,0,"Monitor general mandate and award settlement",F06,"No confirmed new supply amount beyond disclosed instruments"

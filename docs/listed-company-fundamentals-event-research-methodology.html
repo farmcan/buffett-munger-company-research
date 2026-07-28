@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>上市公司研究方法 V2.5</title>
+  <title>上市公司研究方法 V2.6</title>
   <style>
     :root{--ink:#17221e;--muted:#607068;--paper:#f4f1ea;--card:#fffdf8;--line:#d8d1c3;--green:#176b50;--amber:#a66f16;--red:#9a403a;--blue:#386a8e}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 8% 0,rgba(23,107,80,.11),transparent 31rem),var(--paper);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans CJK SC",sans-serif}
@@ -18,12 +18,12 @@
 </head>
 <body>
   <header>
-    <div class="eyebrow">Reusable company research · V2.5</div>
+    <div class="eyebrow">Reusable company research · V2.6</div>
     <h1>上市公司基本面 × 行业 × 事件研究方法</h1>
     <p class="lead">把“长期公司质量”和“近期市场事件”拆成两个产品入口，底层共享同一套官方事实、口径桥、证据锚点和发布状态。目标不是给出更肯定的结论，而是让每个结论可复算、可证伪、可更新。</p>
     <div class="meta"><span class="pill">25 个研究维度</span><span class="pill">50 个指标族</span><span class="pill">9 道闸门</span><span class="pill">事实级引用</span><span class="pill">非投资建议</span></div>
   </header>
-  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#counterparties">客户/上下游</a><a href="#inflection">增长变量</a><a href="#peers">同行估值</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#status-legend">状态图例</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#template-contract">统一母版</a><a href="#publication">发布闭环</a><a href="./templates/report-publication-shell-v1.html">HTML 模板</a></div></nav>
+  <nav><div><a href="#views">双入口</a><a href="#evidence">证据合同</a><a href="#bridges">三座桥</a><a href="#float-supply">流通/解禁</a><a href="#counterparties">客户/上下游</a><a href="#inflection">增长变量</a><a href="#peers">同行估值</a><a href="#pricing">市场定价</a><a href="#shorts">价格与空头</a><a href="#status-legend">状态图例</a><a href="#dimensions">25 维度</a><a href="#gates">九道闸门</a><a href="#template-contract">统一母版</a><a href="#publication">发布闭环</a><a href="./templates/report-publication-shell-v1.html">HTML 模板</a></div></nav>
   <main>
     <section id="views">
       <h2>一个事实底座，两个阅读入口</h2>
@@ -70,6 +70,26 @@
         <article class="card"><h3>Fully diluted share bridge</h3><p>期末已发行 − 库存股 + 期权/RSU + 可转债 if-converted + 配售/供股承诺。上行情景若越过转股价，必须同时改变债务和股数。</p></article>
         <article class="card event"><h3>每股价值双情景</h3><p>未转换偿债情景与完全转换情景并列；分别展示净现金、到期偿付、有效转股价、稀释股数和每股价值，不能混用。</p></article>
       </div>
+    </section>
+
+    <section id="float-supply">
+      <h2>第四张结构表：流通盘稀缺度与新增供给</h2>
+      <p class="dek">总市值回答公司整体权益规模，不回答某一交易线真正可交易多少。小盘、A/H、多股类和带可转债的公司，必须逐交易线把法定股本、公众持股、研究代理、活跃成交与未来供给拆开。</p>
+      <div class="formula">non-treasury outstanding = issued − treasury<br>observable tradable-float proxy = non-treasury outstanding − disclosed controller/director actual shares − strategic blocks − explicit locked shares<br>float-adjusted market-cap proxy = dated price × observable tradable-float proxy<br>new-supply days = newly unlocked/listed shares ÷ 20-day ADTV shares</div>
+      <div class="table-wrap"><table><caption>四种“流通”口径不能混写</caption><thead><tr><th>口径</th><th>回答什么</th><th>研究纪律</th></tr></thead><tbody>
+        <tr><td><code>non_treasury_outstanding</code></td><td>已发行减库存股；每股分母起点</td><td>不是交易所官方 public float，不能简称“流通股”</td></tr>
+        <tr><td><code>regulatory_public_float</code></td><td>交易所规则下公众持股量/比例</td><td>只有官方或发行人明确披露且可复核时填写；否则 unknown</td></tr>
+        <tr><td><code>observable_tradable_float_proxy</code></td><td>扣除公开控制、战略和锁定持股后的研究代理</td><td>逐项展示扣减与遗漏；通常是上限，不等于每天真实卖盘</td></tr>
+        <tr><td><code>active_supply</code></td><td>当前窗口真正参与交易的股份</td><td>结合成交、价差、借券与持有人行为推断，不能由静态股东表直接得到</td></tr>
+      </tbody></table></div>
+      <div class="table-wrap"><table><caption>新增供给日历：事件、状态和冲击必须分开</caption><thead><tr><th>供给事件</th><th>必须保存</th><th>不能误读</th></tr></thead><tbody>
+        <tr><td>IPO 前/基石/控制人锁定到期</td><td>交易线、legal unlock 日期、股数、占解禁前流通代理比例、ADTV 天数</td><td>解禁只代表可以卖，不等于已经卖</td></tr>
+        <tr><td>限售股、配售、供股、股份奖励与期权</td><td>legal unlock、登记/上市、实际出售三个状态</td><td>授权、归属、登记和成交不是同一件事</td></tr>
+        <tr><td>可转债、库存股与回购</td><td>转换/再发行/注销路径、有效价格、最大股份与现金替代路径</td><td>低于转股价不是自动还钱；库存股退出供给不等于永久注销</td></tr>
+        <tr><td>A/H、ADR 与多股类</td><td>逐交易线股数、价格、持有人与锁定状态</td><td>A 股解禁不会直接扩大 H 股流通盘；指数/港股通是需求事件</td></tr>
+      </tbody></table></div>
+      <div class="callout"><strong>解释边界：</strong>低流通盘不是公司质量或护城河。它会同时放大上涨、下跌、跳空、逼空和融资折价；<code>float_days_to_trade</code> 只是成交容量代理，不是保证退出天数。</div>
+      <p class="dek">口径主源：<a href="https://cn-rules.hkex.com.hk/%E8%A6%8F%E5%89%87%E6%89%8B%E5%86%8A/808">HKEX Rule 8.08</a>、<a href="https://en-rules.hkex.com.hk/entiresection/7010">HKEX Rule 13.32B</a>、<a href="https://www.msci.com/downloads/web/msci-com/indexes/index-resources/market-classification/MSCI_GIMIMethodology_Mar2023.pdf">MSCI GIMI methodology</a>、<a href="https://www.spglobal.com/spdji/en/methodology/article/index-mathematics-methodology/">S&amp;P index mathematics</a>。GitHub 仓库只作工程实现参考，不作 free-float 方法权威。</p>
     </section>
 
     <section id="counterparties">
