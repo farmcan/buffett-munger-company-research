@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ruff: noqa: E501
 """Build the public Horizon Robotics Buffett–Munger research package."""
 
 from __future__ import annotations
@@ -8,7 +9,6 @@ import hashlib
 import html
 import json
 from pathlib import Path
-
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]

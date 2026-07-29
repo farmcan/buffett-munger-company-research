@@ -1,6 +1,6 @@
 {
   "schema_version": "seed.public-company-research.v2",
-  "generated_at": "2026-07-29T05:02:12.611835+00:00",
+  "generated_at": "2026-07-29T05:06:59.604952+00:00",
   "directory": "horizon-robotics-09660-hk",
   "valid": true,
   "publication_ready": true,
@@ -18,7 +18,7 @@
   },
   "template_parity": {
     "schema_version": "seed.public-report-template-parity.v1",
-    "generated_at": "2026-07-29T05:02:12.611373+00:00",
+    "generated_at": "2026-07-29T05:06:59.604480+00:00",
     "path": "report.html",
     "template_version": "company-research-publication-v1",
     "valid": true,
