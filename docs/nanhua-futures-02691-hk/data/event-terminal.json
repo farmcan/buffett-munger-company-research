@@ -1,0 +1,689 @@
+{
+  "artifact_type": "earnings_season_timeline",
+  "version": "1.1",
+  "title": "南华期货：事件 Surprise 与市场共振",
+  "subtitle": "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、行业/资本结构传导与下一验证放在一条证据轴。",
+  "as_of": "2026-07-29T18:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "date_range": {
+    "start": "2024-10-01",
+    "end": "2026-08-31"
+  },
+  "scope": {
+    "theme": "期货金融 / 跨境",
+    "markets": [
+      "HKEX / SSE"
+    ],
+    "watchlist": [
+      "02691.HK"
+    ],
+    "user_holdings": []
+  },
+  "not_investment_advice": true,
+  "market_series": null,
+  "scenario_paths": [],
+  "events": [
+    {
+      "event_id": "nanhua-ipo-2025",
+      "date": "2025-12-22",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2025-12-22",
+      "date_status": "completed",
+      "event_type": "listing",
+      "company": "南华期货｜H股上市",
+      "ticker": "02691.HK",
+      "market": "HKEX / SSE",
+      "chain_bucket": "期货金融 / 跨境",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "新上市小盘H股的流通量、港股通资格和A/H价格发现会放大基本面之外的弹性。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2025-12-22T18:00:00+08:00",
+        "metrics": [
+          "02691.HK上市",
+          "上市首日收HK$9.10"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "nanhua-F01"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 待补",
+        "t1": null,
+        "t5": "T−1→T+5 待补",
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "pending",
+        "source_refs": [
+          "nanhua-P01"
+        ],
+        "limitations": "上市首日"
+      },
+      "transmission_paths": [
+        "H股上市 → 新流通供给",
+        "A/H双重上市 → 跨市场价格发现"
+      ],
+      "holdings_impacted": [
+        "研究主体：南华期货（02691.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "actual_reported",
+        "next_check_at": "港股通、成交量与自由流通盘",
+        "thesis_impact": "上市后五个交易日收HK$9.91；没有T−1，不解释为异常收益。",
+        "review_score": null
+      },
+      "post_event_review": "上市后五个交易日收HK$9.91；没有T−1，不解释为异常收益。",
+      "source_refs": [
+        "nanhua-F01",
+        "nanhua-P01"
+      ],
+      "source_gap": "IPO没有常规T−1基线，且早期成交受配售和流通结构影响。"
+    },
+    {
+      "event_id": "nanhua-stock-connect-2026",
+      "date": "2026-01-16",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-01-16",
+      "date_status": "completed",
+      "event_type": "stock_connect",
+      "company": "南华期货｜纳入港股通",
+      "ticker": "02691.HK",
+      "market": "HKEX / SSE",
+      "chain_bucket": "期货金融 / 跨境",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "资格改变潜在投资者范围，但不保证净买入，也不改变公司内在经营。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-01-16T18:00:00+08:00",
+        "metrics": [
+          "上交所公告调整港股通标的",
+          "新增南向资金可交易资格"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "nanhua-F09"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 -7.16%",
+        "t1": null,
+        "t5": "T−1→T+5 -7.49%",
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": "2.49×",
+        "resonance": "negative_resonance",
+        "source_refs": [
+          "nanhua-P01"
+        ],
+        "limitations": "公告后下一完整交易日为T0"
+      },
+      "transmission_paths": [
+        "港股通资格 → 潜在南向资金/流动性",
+        "成交与持仓 → 价格发现"
+      ],
+      "holdings_impacted": [
+        "研究主体：南华期货（02691.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "南向持仓、成交量与A/H溢价",
+        "thesis_impact": "公告后首个完整交易日下跌且放量，证明“纳入”不是机械利好。",
+        "review_score": null
+      },
+      "post_event_review": "公告后首个完整交易日下跌且放量，证明“纳入”不是机械利好。",
+      "source_refs": [
+        "nanhua-F09",
+        "nanhua-P01"
+      ],
+      "source_gap": "公开窗口不能分离配售、短线资金和基本面因素。"
+    },
+    {
+      "event_id": "nanhua-annual-governance-2026",
+      "date": "2026-03-27",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-03-27",
+      "date_status": "completed",
+      "event_type": "earnings_governance",
+      "company": "南华期货｜年报与治理公告包",
+      "ticker": "02691.HK",
+      "market": "HKEX / SSE",
+      "chain_bucket": "期货金融 / 跨境",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "多项公告同日发布时必须作为事件包，不能把价格窗单独归因于利润标题。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-03-27T18:00:00+08:00",
+        "metrics": [
+          "2025年报披露",
+          "同日还有审计、关联交易上限、分红和会计估计等治理事项"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "nanhua-F01"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 +1.66%",
+        "t1": null,
+        "t5": "T−1→T+5 +0.37%",
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": "1.48×",
+        "resonance": "mixed_or_neutral",
+        "source_refs": [
+          "nanhua-P01"
+        ],
+        "limitations": "多项公告同日，无法单独归因"
+      },
+      "transmission_paths": [
+        "年报利润/净资本 → 基本面",
+        "治理与会计估计 → 盈利质量/风险折价"
+      ],
+      "holdings_impacted": [
+        "研究主体：南华期货（02691.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "2026Q1与后续治理披露",
+        "thesis_impact": "首个交易日温和上涨、T+5接近持平；公告包内因素不可分离。",
+        "review_score": null
+      },
+      "post_event_review": "首个交易日温和上涨、T+5接近持平；公告包内因素不可分离。",
+      "source_refs": [
+        "nanhua-F01",
+        "nanhua-P01"
+      ],
+      "source_gap": "同日多项公告，缺少事件隔离条件。"
+    },
+    {
+      "event_id": "nanhua-regulatory-warning-2026",
+      "date": "2026-04-01",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-04-01",
+      "date_status": "completed",
+      "event_type": "regulatory",
+      "company": "南华期货｜证监局警示函",
+      "ticker": "02691.HK",
+      "market": "HKEX / SSE",
+      "chain_bucket": "期货金融 / 跨境",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "金融小盘股的合规风险可能直接影响风险资本、客户信任和估值折价。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-04-01T18:00:00+08:00",
+        "metrics": [
+          "浙江证监局出具警示函",
+          "合规事件进入正式监管证据层"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "nanhua-F11"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 -5.78%",
+        "t1": null,
+        "t5": "T−1→T+5 -2.58%",
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": "0.67×",
+        "resonance": "mixed_or_neutral",
+        "source_refs": [
+          "nanhua-P01"
+        ],
+        "limitations": "相关不代表因果"
+      },
+      "transmission_paths": [
+        "内控/合规 → 监管措施",
+        "监管措施 → 客户/资本/估值风险"
+      ],
+      "holdings_impacted": [
+        "研究主体：南华期货（02691.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "整改、重复违规和监管资本",
+        "thesis_impact": "首个反应日下跌5.8%；相关性与事件性质一致，但仍不证明全部因果。",
+        "review_score": null
+      },
+      "post_event_review": "首个反应日下跌5.8%；相关性与事件性质一致，但仍不证明全部因果。",
+      "source_refs": [
+        "nanhua-F11",
+        "nanhua-P01"
+      ],
+      "source_gap": "无法从公开窗口量化潜在业务流失或后续监管成本。"
+    },
+    {
+      "event_id": "nanhua-q1-2026",
+      "date": "2026-04-21",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-04-21",
+      "date_status": "completed",
+      "event_type": "earnings_release",
+      "company": "南华期货｜2026Q1报告",
+      "ticker": "02691.HK",
+      "market": "HKEX / SSE",
+      "chain_bucket": "期货金融 / 跨境",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "利润高增长必须拆成经纪、利息、风险管理和投资收益，不能直接外推全年。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-04-21T18:00:00+08:00",
+        "metrics": [
+          "营业收入RMB433.1m，同比+60.7%",
+          "归母利润RMB204.8m，同比+138.8%"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "nanhua-F02"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 -4.90%",
+        "t1": null,
+        "t5": "T−1→T+5 -10.86%",
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": "2.72×",
+        "resonance": "negative_resonance",
+        "source_refs": [
+          "nanhua-P01"
+        ],
+        "limitations": "强利润增长未对应正向短窗"
+      },
+      "transmission_paths": [
+        "交易活跃/利率/基差 → 收入结构 → 归母利润",
+        "监管净资本 → 可扩张能力"
+      ],
+      "holdings_impacted": [
+        "研究主体：南华期货（02691.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "2026H1利润与业务分项",
+        "thesis_impact": "强利润增长对应负事件窗，说明预期、流动性和结构质量比同比标题更重要。",
+        "review_score": null
+      },
+      "post_event_review": "强利润增长对应负事件窗，说明预期、流动性和结构质量比同比标题更重要。",
+      "source_refs": [
+        "nanhua-F02",
+        "nanhua-P01"
+      ],
+      "source_gap": "没有冻结Q1共识；H股流动性和A/H价格发现可能放大窗口。"
+    },
+    {
+      "event_id": "nanhua-repurchase-plan",
+      "date": "2026-06-24",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-06-24",
+      "date_status": "completed",
+      "event_type": "capital_allocation",
+      "company": "南华期货｜H股回购计划",
+      "ticker": "02691.HK",
+      "market": "HKEX / SSE",
+      "chain_bucket": "期货金融 / 跨境",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "小盘股回购只有在实际成交、净股数下降且不损害监管资本时才产生每股效果。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-06-24T18:00:00+08:00",
+        "metrics": [
+          "董事会提出H股回购计划",
+          "股东会后获授权",
+          "授权不等于已经成交"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "nanhua-F04",
+          "nanhua-F05"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 +1.78%",
+        "t1": null,
+        "t5": "T−1→T+5 +0.16%",
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": "1.18×",
+        "resonance": "mixed_or_neutral",
+        "source_refs": [
+          "nanhua-P01"
+        ],
+        "limitations": "授权方案不等于实际成交"
+      },
+      "transmission_paths": [
+        "授权 → 实际成交 → 库存/注销 → 流通供给与每股价值",
+        "现金使用 → 监管净资本"
+      ],
+      "holdings_impacted": [
+        "研究主体：南华期货（02691.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "月报与next-day disclosure中的实际回购",
+        "thesis_impact": "T0小幅正、T+5近乎持平；不把授权公告当完成回购。",
+        "review_score": null
+      },
+      "post_event_review": "T0小幅正、T+5近乎持平；不把授权公告当完成回购。",
+      "source_refs": [
+        "nanhua-F04",
+        "nanhua-F05",
+        "nanhua-P01"
+      ],
+      "source_gap": "截至研究日未发现实际回购成交披露。"
+    },
+    {
+      "event_id": "nanhua-h1-profit-alert",
+      "date": "2026-07-07",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-07-07",
+      "date_status": "completed",
+      "event_type": "earnings_preliminary",
+      "company": "南华期货｜2026H1业绩预增",
+      "ticker": "02691.HK",
+      "market": "HKEX / SSE",
+      "chain_bucket": "期货金融 / 跨境",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "Q1高速增长后，Q2隐含利润用于判断增速是否继续向上；预告仍需正式分部和现金验证。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-07-07T18:00:00+08:00",
+        "metrics": [
+          "归母利润预计RMB375m至405m",
+          "上年同期RMB231.3m",
+          "推算Q2归母利润约RMB170.2m至200.2m"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "nanhua-F03"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 +1.00%",
+        "t1": null,
+        "t5": "T−1→T+5 +2.99%",
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": "0.47×",
+        "resonance": "mixed_or_neutral",
+        "source_refs": [
+          "nanhua-P01"
+        ],
+        "limitations": "预告未经审计"
+      },
+      "transmission_paths": [
+        "期货市场活跃/利率 → 经纪、利息、投资收益 → 利润",
+        "正式中报 → 分部/净资本/现金质量"
+      ],
+      "holdings_impacted": [
+        "研究主体：南华期货（02691.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "正式2026中报与分部利润",
+        "thesis_impact": "T0/T+5温和正向；预告未审计且没有冻结共识，不把同比增幅等同surprise。",
+        "review_score": null
+      },
+      "post_event_review": "T0/T+5温和正向；预告未审计且没有冻结共识，不把同比增幅等同surprise。",
+      "source_refs": [
+        "nanhua-F03",
+        "nanhua-P01"
+      ],
+      "source_gap": "正式收入、分部、现金流和风险资本尚未披露。"
+    },
+    {
+      "event_id": "nanhua-capitalisation-shares-2026",
+      "date": "2026-08-11",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-08-11",
+      "date_status": "expected_not_completed",
+      "event_type": "future_validation",
+      "company": "南华期货｜资本化H股预计开始交易",
+      "ticker": "02691.HK",
+      "market": "HKEX / SSE",
+      "chain_bucket": "期货金融 / 跨境",
+      "importance": "high",
+      "impact_score": 5,
+      "why_it_matters": "新增流通供给可能改变小盘股稀缺度、换手和A/H价格发现。",
+      "expectation_snapshot": {
+        "frozen_at": "2026-07-29T18:00:00+08:00",
+        "official_guidance": [],
+        "consensus": [],
+        "previous_actual": [],
+        "source_refs": [
+          "nanhua-F06"
+        ]
+      },
+      "actual_results": null,
+      "surprise": {
+        "direction": "pending",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "pending",
+        "confidence": "pending",
+        "reason": "事件尚未发生，不预填方向。",
+        "source_refs": [
+          "nanhua-F06"
+        ]
+      },
+      "market_reaction": {
+        "intraday": null,
+        "t1": null,
+        "t5": null,
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "pending",
+        "source_refs": []
+      },
+      "transmission_paths": [
+        "官方披露 → 核对口径与前期基线 → 计算实际变化 → 再观察价格与成交量共振"
+      ],
+      "holdings_impacted": [
+        "研究主体：南华期货（02691.HK）"
+      ],
+      "validation": {
+        "status": "expectation_frozen",
+        "next_check_at": "2026-08-11",
+        "thesis_impact": "pending",
+        "review_score": null
+      },
+      "pre_event_questions": [
+        "实际发行股数和总股本是否与通函一致？",
+        "成交量、自由流通盘和A/H溢价如何变化？"
+      ],
+      "post_event_review": null,
+      "source_refs": [
+        "nanhua-F06"
+      ],
+      "source_gap": "未来实际、T+1/T+5/T+20和成交量只能在事件后追加。"
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "nanhua-F01",
+      "title": "南华期货｜Nanhua Futures Co., Ltd. Annual Report 2025",
+      "tier": "primary",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0329/2026032900007.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "nanhua-F02",
+      "title": "南华期货｜Nanhua Futures Co., Ltd. 2026 First Quarterly Report",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0421/2026042100045.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "nanhua-F03",
+      "title": "南华期货｜Estimated Increase in Operating Results for the First Half of 2026",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070701683.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "nanhua-F04",
+      "title": "南华期货｜Voluntary Announcement in Relation to H Share Repurchase Plan",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0624/2026062401186.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "nanhua-F05",
+      "title": "南华期货｜Poll Results of the 2026 First Extraordinary General Meeting",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0716/2026071601063.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "nanhua-F06",
+      "title": "南华期货｜Circular of the 2025 Annual General Meeting",
+      "tier": "primary",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0522/2026052201694.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "nanhua-F09",
+      "title": "南华期货｜关于沪港通下港股通标的调整的通知",
+      "tier": "primary",
+      "url": "https://big5.sse.com.cn/site/cht/www.sse.com.cn/services/hkexsc/disclo/announ/c/c_20260116_10805364.shtml",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "nanhua-F11",
+      "title": "南华期货｜关于对南华期货采取出具警示函措施的决定",
+      "tier": "primary",
+      "url": "https://www.csrc.gov.cn/zhejiang/c103952/c7623963/content.shtml",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "nanhua-P01",
+      "title": "南华期货｜Tencent market data daily adjusted K-line for HK02691",
+      "tier": "market_data",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk02691,day,2025-12-01,2026-07-27,400,qfq",
+      "accessed_at": "2026-07-27"
+    }
+  ],
+  "data_quality": {
+    "missing": [
+      "没有事前冻结共识的历史事件保持 not_comparable。",
+      "缺失的 T+1/T+5/T+20 不按 0 处理。"
+    ],
+    "conflicts": [
+      "同比增长、事件后涨跌和长期基本面不是同一个判断。"
+    ],
+    "manual_review_required": [
+      "未来节点发生后追加官方实际与价格窗口，不改写旧预期。"
+    ]
+  }
+}

@@ -1,16 +1,13 @@
 {
   "schema_version": "seed.public-research-publication.v2",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-07-29T18:45:00+08:00",
+  "reviewed_at": "2026-07-29T19:32:00+08:00",
   "artifact_status": "needs_human_review",
   "production_reviewed": false,
   "publication_scope": [
     ".nojekyll",
     "company-report-theme.css",
-    "company-event-timeline/README.md",
     "company-event-timeline/build_timeline.py",
-    "company-event-timeline/report.html",
-    "company-event-timeline/timeline.json",
     "fubo-group-03738-hk/README.md",
     "fubo-group-03738-hk/build_pack.py",
     "fubo-group-03738-hk/combined-artifact.v2.json",
@@ -19,6 +16,7 @@
     "fubo-group-03738-hk/data/critical-evidence-locators.csv",
     "fubo-group-03738-hk/data/earnings-quality-bridge.csv",
     "fubo-group-03738-hk/data/event-price-reactions.csv",
+    "fubo-group-03738-hk/data/event-terminal.json",
     "fubo-group-03738-hk/data/financial-history.csv",
     "fubo-group-03738-hk/data/fully-diluted-share-bridge.csv",
     "fubo-group-03738-hk/data/gate-results.csv",
@@ -49,6 +47,7 @@
     "horizon-robotics-09660-hk/data/customer-concentration.csv",
     "horizon-robotics-09660-hk/data/cycle-substitution.csv",
     "horizon-robotics-09660-hk/data/dilution-bridge.csv",
+    "horizon-robotics-09660-hk/data/event-terminal.json",
     "horizon-robotics-09660-hk/data/financial-history.csv",
     "horizon-robotics-09660-hk/data/gate-results.csv",
     "horizon-robotics-09660-hk/data/one-year-scenarios.csv",
@@ -69,6 +68,7 @@
     "xpeng-09868-hk/combined-artifact.v2.json",
     "xpeng-09868-hk/data/critical-evidence-locators.csv",
     "xpeng-09868-hk/data/event-price-reactions.csv",
+    "xpeng-09868-hk/data/event-terminal.json",
     "xpeng-09868-hk/data/financial-history.csv",
     "xpeng-09868-hk/data/fully-diluted-share-bridge.csv",
     "xpeng-09868-hk/data/gate-results.csv",
@@ -91,6 +91,7 @@
     "meitu-01357-hk/data/critical-evidence-anchors.json",
     "meitu-01357-hk/data/critical-evidence-locators.csv",
     "meitu-01357-hk/data/event-price-reactions.csv",
+    "meitu-01357-hk/data/event-terminal.json",
     "meitu-01357-hk/data/event-timeline.csv",
     "meitu-01357-hk/data/financial-five-year.csv",
     "meitu-01357-hk/data/financial-half-year-series.csv",
@@ -120,6 +121,7 @@
     "nanhua-futures-02691-hk/data/critical-evidence-locators.csv",
     "nanhua-futures-02691-hk/data/earnings-quality-bridge.csv",
     "nanhua-futures-02691-hk/data/event-price-windows.csv",
+    "nanhua-futures-02691-hk/data/event-terminal.json",
     "nanhua-futures-02691-hk/data/event-timeline.csv",
     "nanhua-futures-02691-hk/data/fee-breakdown.csv",
     "nanhua-futures-02691-hk/data/financial-source-definitions.csv",
@@ -156,6 +158,7 @@
     "smic-00981-hk/data/diluted-shares.csv",
     "smic-00981-hk/data/earnings-bridge.csv",
     "smic-00981-hk/data/event-price-reactions.csv",
+    "smic-00981-hk/data/event-terminal.json",
     "smic-00981-hk/data/event-timeline.csv",
     "smic-00981-hk/data/export-controls.csv",
     "smic-00981-hk/data/foundry-cycle.csv",
@@ -217,16 +220,17 @@
     "published_company_reports": 6,
     "event_timeline": {
       "contract": "seed.earnings-season-timeline.v1.1-compatible",
-      "companies": 6,
+      "embedded_company_reports": 6,
+      "one_company_per_report": true,
       "events": 37,
       "sources": 46,
-      "market_points": 447,
-      "company_swimlanes": 6,
       "future_nodes": 2,
       "now_boundary": true,
       "status_legend": true,
       "event_price_windows": true,
-      "source_links": true
+      "source_links": true,
+      "original_tables_preserved": true,
+      "standalone_cross_company_page": false
     },
     "company_reports": {
       "horizon-robotics-09660-hk": {
@@ -237,7 +241,7 @@
         "locators": 0,
         "sections": 25,
         "tables": 16,
-        "charts": 4,
+        "charts": 5,
         "evidence_drawers": 18
       },
       "xpeng-09868-hk": {
@@ -248,7 +252,7 @@
         "locators": 12,
         "sections": 24,
         "tables": 19,
-        "charts": 3,
+        "charts": 4,
         "evidence_drawers": 12
       },
       "meitu-01357-hk": {
@@ -259,7 +263,7 @@
         "locators": 31,
         "sections": 21,
         "tables": 47,
-        "charts": 8,
+        "charts": 9,
         "evidence_drawers": 25
       },
       "nanhua-futures-02691-hk": {
@@ -270,7 +274,7 @@
         "locators": 17,
         "sections": 20,
         "tables": 26,
-        "charts": 6,
+        "charts": 7,
         "evidence_drawers": 22
       },
       "smic-00981-hk": {
@@ -281,7 +285,7 @@
         "locators": 15,
         "sections": 20,
         "tables": 24,
-        "charts": 4,
+        "charts": 5,
         "evidence_drawers": 8
       },
       "fubo-group-03738-hk": {
@@ -292,7 +296,7 @@
         "locators": 18,
         "sections": 20,
         "tables": 31,
-        "charts": 5,
+        "charts": 6,
         "evidence_drawers": 18
       }
     }

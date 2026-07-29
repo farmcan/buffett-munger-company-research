@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-"""Build the six-company event-surprise timeline and optional standalone HTML."""
+"""Build one embedded event-surprise terminal for each public company report."""
 
 from __future__ import annotations
 
 import argparse
 import csv
-import importlib.util
 import json
+import re
 import urllib.request
-from collections import defaultdict
 from datetime import date
 from html import escape
 from pathlib import Path
@@ -1354,186 +1353,504 @@ def build_report() -> dict[str, Any]:
     }
 
 
-def day_position(value: str) -> float:
-    start = date.fromisoformat(START)
-    end = date.fromisoformat(END)
-    current = date.fromisoformat(value)
-    return (current - start).days / (end - start).days * 100
+COMPONENT_START = "<!-- company-event-terminal:start -->"
+COMPONENT_END = "<!-- company-event-terminal:end -->"
 
-
-def swimlane_html(report: dict[str, Any]) -> str:
-    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for event in report["events"]:
-        for key, company in COMPANIES.items():
-            if event["ticker"] == company["ticker"]:
-                grouped[key].append(event)
-                break
-    rows = []
-    for key, company in COMPANIES.items():
-        dots = []
-        for index, event in enumerate(grouped[key]):
-            completed = event["date_status"] == "completed"
-            size = 8 + int(event.get("impact_score") or 3)
-            dots.append(
-                '<a class="lane-dot {state}" href="#event-{event_id}" '
-                'style="left:{left:.3f}%;top:{top}px;width:{size}px;height:{size}px;'
-                'background:{background};border-color:{color}" '
-                'title="{title}｜{date}｜{status}"></a>'.format(
-                    state="completed" if completed else "future",
-                    event_id=escape(event["event_id"]),
-                    left=day_position(event["date"]),
-                    top=12 + (index % 3) * 15,
-                    size=size,
-                    background=company["color"] if completed else "#fff",
-                    color=company["color"],
-                    title=escape(event["company"]),
-                    date=event["date"],
-                    status="已发生" if completed else "待发生/待确认",
-                )
-            )
-        rows.append(
-            f'<div class="swim-row"><a class="swim-label" '
-            f'href="../{company["slug"]}/report.html">{company["name"]}'
-            f'<small>{company["ticker"]}</small></a>'
-            f'<div class="swim-track">{"".join(dots)}</div></div>'
-        )
-    now_left = day_position(AS_OF[:10])
-    now_offset_px = 166 * (1 - now_left / 100)
-    return f"""
-    <section id="company-swimlanes" class="swimlane-section">
-      <div class="section-head">
-        <h2>公司泳道：先看事件密度，再下钻证据</h2>
-        <p>同一横轴 · 实心已发生 · 空心待发生 · 点大小只表示研究影响力</p>
-      </div>
-      <div class="swim-shell">
-        <div class="swim-axis">
-          <span style="left:0">2024-10</span>
-          <span style="left:{day_position("2025-07-01"):.3f}%">2025-07</span>
-          <span style="left:{day_position("2026-01-01"):.3f}%">2026-01</span>
-          <span class="now-label" style="left:{now_left:.3f}%">NOW · 2026-07-29</span>
-          <span style="left:100%">2026-08</span>
-        </div>
-        <div class="swim-grid"
-          style="--now-left-pct:{now_left:.3f}%;--now-offset:{now_offset_px:.3f}px">
-          {"".join(rows)}
-        </div>
-      </div>
-      <div class="timeline-legend">
-        <div><i class="legend-dot filled"></i><strong>已发生</strong>
-          <span>已经有正式披露；是否有价格复核看事件卡。</span></div>
-        <div><i class="legend-dot hollow"></i><strong>待发生 / 待确认</strong>
-          <span>只冻结问题，不预填实际或方向。</span></div>
-        <div><i class="legend-diamond"></i><strong>不可比</strong>
-          <span>没有事前冻结共识，不代表事件“差”。</span></div>
-        <div><i class="legend-line"></i><strong>NOW</strong>
-          <span>右侧是未来验证区；不能回填成事前知道。</span></div>
-      </div>
-    </section>
-    """
-
-
-SWIMLANE_CSS = """
-  .timeline-topnav{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:24px}
-  .timeline-topnav a{padding:7px 11px;border:1px solid var(--line);border-radius:999px;
-  color:var(--ink);background:#fff;text-decoration:none;font-size:12px;font-weight:750}
-  .timeline-topnav a:hover{border-color:var(--blue);color:var(--blue)}
-  .swimlane-section{margin-top:34px}
-  .swim-shell{overflow-x:auto;border:1px solid var(--line);border-radius:14px;
-  background:#fff;box-shadow:var(--shadow)}
-  .swim-axis,.swim-grid{min-width:930px}
-  .swim-axis{position:relative;height:56px;margin-left:166px;
-  border-bottom:1px solid var(--line);color:var(--muted);font-size:11px}
-  .swim-axis span{position:absolute;bottom:10px;transform:translateX(-50%);
-  white-space:nowrap}
-  .swim-axis span:first-child{transform:none}
-  .swim-axis span:last-child{transform:translateX(-100%)}
-  .swim-axis .now-label{bottom:31px;color:var(--red);font-weight:800}
-  .swim-grid{position:relative}
-  .swim-grid:after{content:"";position:absolute;
-  left:calc(var(--now-left-pct) + var(--now-offset));top:0;bottom:0;
-  border-left:2px solid var(--red);pointer-events:none}
-  .swim-row{display:grid;grid-template-columns:166px minmax(760px,1fr);
-  min-height:66px;border-bottom:1px solid #edf0f2}
-  .swim-row:last-child{border-bottom:0}
-  .swim-label{display:flex;flex-direction:column;justify-content:center;
-  padding:8px 15px;color:var(--ink);font-weight:800;text-decoration:none;
-  background:#fbfaf6}
-  .swim-label small{color:var(--muted);font-weight:600}
-  .swim-track{position:relative;
-  background-image:linear-gradient(to right,rgba(215,221,226,.48) 1px,transparent 1px);
+COMPONENT_CSS = """
+<style>
+  .event-terminal{margin:22px 0 26px;padding:20px;border:1px solid #cad4ce;
+  border-radius:18px;background:linear-gradient(145deg,#fbfdfb,#f7f4eb)}
+  .event-terminal *{box-sizing:border-box}
+  .et-head{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.8fr);
+  gap:18px;align-items:start}
+  .et-kicker{color:var(--green);font-size:11px;font-weight:850;letter-spacing:.12em;
+  text-transform:uppercase}
+  .et-head h3{margin:4px 0 7px;font-size:clamp(21px,2.6vw,30px)}
+  .et-head p{margin:0;color:var(--muted);font-size:13px}
+  .et-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .et-stat{padding:10px 12px;border:1px solid var(--line);border-radius:11px;background:#fff}
+  .et-stat b{display:block;font-size:21px;line-height:1.15}
+  .et-stat span{color:var(--muted);font-size:11px}
+  .et-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;
+  margin:15px 0 12px}
+  .et-legend>div{display:grid;grid-template-columns:18px 1fr;gap:7px;align-items:center;
+  padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .et-legend b{font-size:11px}.et-legend small{grid-column:2;color:var(--muted);
+  font-size:10px;line-height:1.35}
+  .et-shape{display:block;width:12px;height:12px;border:2px solid var(--green);
+  border-radius:50%;background:#fff}
+  .et-shape.filled{background:var(--green)}
+  .et-shape.ring{background:var(--green);box-shadow:0 0 0 3px rgba(23,107,80,.2)}
+  .et-shape.diamond{border:0;border-radius:1px;background:#65716b;transform:rotate(45deg)}
+  .et-axis-shell{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:#fff}
+  .et-axis{position:relative;min-width:780px;height:148px;
+  background-image:linear-gradient(to right,rgba(217,215,206,.5) 1px,transparent 1px);
   background-size:10% 100%}
-  .lane-dot{position:absolute;display:block;border:2px solid;border-radius:50%;
-  transform:translate(-50%,-50%);box-shadow:0 2px 7px rgba(20,32,39,.2);
-  z-index:2}
-  .lane-dot:hover,.lane-dot:focus{z-index:5;
-  outline:3px solid rgba(29,111,165,.22);outline-offset:3px}
-  .lane-dot.future{border-width:3px}
-  .timeline-legend{display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
-  .timeline-legend>div{display:grid;grid-template-columns:20px 1fr;
-  column-gap:8px;align-items:center;padding:10px 12px;
-  border:1px solid var(--line);border-radius:10px;background:#fff}
-  .timeline-legend span{grid-column:2;color:var(--muted);font-size:11px}
-  .legend-dot{width:12px;height:12px;border:2px solid var(--green);border-radius:50%}
-  .legend-dot.filled{background:var(--green)}
-  .legend-dot.hollow{background:#fff}
-  .legend-diamond{width:11px;height:11px;background:#69747c;transform:rotate(45deg)}
-  .legend-line{width:2px;height:18px;background:var(--red);margin-left:5px}
-  @media(max-width:820px){.timeline-legend{grid-template-columns:1fr 1fr}}
-  @media(max-width:520px){.timeline-legend{grid-template-columns:1fr}}
+  .et-axis:before{content:"";position:absolute;left:3%;right:3%;top:76px;
+  border-top:2px solid #d7dcd8}
+  .et-axis-label{position:absolute;top:112px;transform:translateX(-50%);
+  color:var(--muted);font-size:10px;white-space:nowrap}
+  .et-axis-label.start{transform:none}.et-axis-label.end{transform:translateX(-100%)}
+  .et-now{position:absolute;top:0;bottom:0;border-left:2px solid var(--red);z-index:1}
+  .et-now span{position:absolute;top:7px;left:5px;color:var(--red);font-size:10px;
+  font-weight:850;white-space:nowrap}
+  .et-node{position:absolute;z-index:2;width:15px;height:15px;border:3px solid var(--green);
+  border-radius:50%;background:var(--green);transform:translate(-50%,-50%);
+  box-shadow:0 2px 7px rgba(23,34,30,.18)}
+  .et-node.future{background:#fff}.et-node.reviewed{box-shadow:0 0 0 4px rgba(23,107,80,.2)}
+  .et-node.not-comparable{border:0;border-radius:2px;background:#65716b;
+  transform:translate(-50%,-50%) rotate(45deg)}
+  .et-node:hover,.et-node:focus{outline:3px solid rgba(49,95,143,.2);outline-offset:3px}
+  .et-node-date{position:absolute;left:50%;top:18px;transform:translateX(-50%) rotate(-34deg);
+  transform-origin:left top;color:#52605a;font-size:9px;white-space:nowrap}
+  .et-chart{margin:14px 0;padding:14px;border:1px solid var(--line);
+  border-radius:13px;background:#fff}
+  .et-chart-head{display:flex;justify-content:space-between;gap:12px;align-items:start}
+  .et-chart h4{margin:0;font-size:15px}.et-chart p{margin:2px 0 0;color:var(--muted);font-size:11px}
+  .et-chart-legend{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:10px}
+  .et-chart-legend i{display:inline-block;width:10px;height:7px;margin-right:4px;border-radius:2px}
+  .et-reaction-axis{display:grid;grid-template-columns:145px 1fr;margin:12px 0 5px;
+  color:var(--muted);font-size:9px}
+  .et-reaction-axis>div{display:flex;justify-content:space-between}
+  .et-reaction-row{display:grid;grid-template-columns:145px 1fr;gap:10px;align-items:center;
+  margin:6px 0}
+  .et-reaction-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}
+  .et-reaction-plot{position:relative;height:34px;border-radius:7px;background:#f7f6f1}
+  .et-reaction-plot:before{content:"";position:absolute;left:50%;top:0;bottom:0;
+  border-left:1px solid #aeb7b1}
+  .et-bar{position:absolute;height:7px;border-radius:3px;min-width:1px}
+  .et-bar.positive{left:50%}.et-bar.negative{right:50%}
+  .et-bar.t0{top:3px;background:var(--green)}
+  .et-bar.t5{top:13px;background:var(--blue)}
+  .et-bar.t20{top:23px;background:var(--amber)}
+  .et-bar em{position:absolute;top:-4px;font-style:normal;font-size:8px;font-weight:800;
+  white-space:nowrap}
+  .et-bar.positive em{left:calc(100% + 3px)}.et-bar.negative em{right:calc(100% + 3px)}
+  .et-ledger-title{display:flex;justify-content:space-between;gap:12px;align-items:end;
+  margin:17px 0 8px}
+  .et-ledger-title h4{margin:0;font-size:16px}.et-ledger-title span{color:var(--muted);
+  font-size:10px}
+  .et-event{margin:8px 0;border:1px solid var(--line);border-radius:12px;background:#fff;
+  scroll-margin-top:86px}
+  .et-event:target{border-color:var(--blue);box-shadow:0 0 0 3px rgba(49,95,143,.12)}
+  .et-event summary{display:grid;grid-template-columns:92px minmax(0,1fr) auto;
+  gap:10px;align-items:center;padding:12px 13px}
+  .et-event summary::marker{color:var(--green)}
+  .et-event-date{font-size:11px;font-weight:800;color:var(--muted)}
+  .et-event-title{font-size:13px;font-weight:820}
+  .et-badges{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+  .et-badge{padding:2px 7px;border-radius:999px;font-size:9px;font-weight:820;background:#ecefe9;
+  color:#52605a}.et-badge.reviewed{background:var(--green-soft);color:var(--green)}
+  .et-badge.future{background:var(--amber-soft);color:var(--amber)}
+  .et-badge.nocomp{background:#edf0f2;color:#56636b}
+  .et-event-body{padding:0 14px 14px}
+  .et-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .et-evidence{padding:10px 11px;border-radius:9px;background:#f7f6f1}
+  .et-evidence b{display:block;margin-bottom:3px;color:#4e5b55;font-size:10px;
+  letter-spacing:.04em}.et-evidence p,.et-evidence ul{margin:0;color:#46534d;font-size:11px}
+  .et-evidence ul{padding-left:17px}.et-evidence li{margin:2px 0}
+  .et-source-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .et-source-links a{padding:3px 7px;border:1px solid var(--line);border-radius:999px;
+  text-decoration:none;font-size:9px;font-weight:750}
+  .et-preserved-label{margin:24px 0 8px!important;padding-top:18px;border-top:1px solid var(--line);
+  font-size:16px!important}
+  @media(max-width:820px){.et-head{grid-template-columns:1fr}
+  .et-legend{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.event-terminal{padding:14px}.et-legend{grid-template-columns:1fr}
+  .et-reaction-axis,.et-reaction-row{grid-template-columns:92px 1fr}.et-event summary{
+  grid-template-columns:78px 1fr}.et-badges{grid-column:1/-1;justify-content:flex-start}
+  .et-evidence-grid{grid-template-columns:1fr}}
+</style>
 """
 
 
-def render_html(report: dict[str, Any], renderer_path: Path) -> str:
-    spec = importlib.util.spec_from_file_location("seed_timeline_renderer", renderer_path)
-    if spec is None or spec.loader is None:
-        raise RuntimeError(f"Cannot load renderer: {renderer_path}")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    html = module.render_html(
-        report,
-        module.load_echarts(None),
-        module.load_split(None),
-    )
-    html = html.replace("</style>", SWIMLANE_CSS + "\n</style>", 1)
-    lifecycle_hook = """function lifecycle(event) {
-      if (event.surprise && String(event.surprise.method || '').startsWith('not_comparable')) {
-        return 'not_comparable';
-      }"""
-    html = html.replace("function lifecycle(event) {", lifecycle_hook, 1)
-    topnav = """
-      <nav class="timeline-topnav" aria-label="报告导航">
-        <a href="../index.html">← 六家公司首页</a>
-        <a href="./timeline.json">查看 JSON 数据</a>
-        <a href="../listed-company-fundamentals-event-research-methodology.html#event-terminal">
-          事件终端方法
-        </a>
-      </nav>
+def lifecycle(event: dict[str, Any]) -> str:
+    if event.get("date_status") != "completed":
+        return "expectation_frozen"
+    market = event.get("market_reaction") or {}
+    if market.get("resonance") not in (None, "pending"):
+        return "market_reviewed"
+    return "actual_reported"
+
+
+def is_not_comparable(event: dict[str, Any]) -> bool:
+    surprise = event.get("surprise") or {}
+    return str(surprise.get("method") or "").startswith("not_comparable")
+
+
+def event_title(event: dict[str, Any]) -> str:
+    return str(event["company"]).split("｜", 1)[-1]
+
+
+def source_links(
+    event: dict[str, Any],
+    sources: dict[str, dict[str, Any]],
+) -> str:
+    links = []
+    for source_id in dict.fromkeys(event.get("source_refs") or []):
+        source = sources.get(source_id)
+        if not source or not source.get("url"):
+            continue
+        title = str(source.get("title") or source_id).split("｜", 1)[-1]
+        links.append(
+            f'<a href="{escape(str(source["url"]))}" rel="noreferrer">'
+            f'{escape(title)}</a>'
+        )
+    return "".join(links) or "<span>本节点没有新增可点击来源。</span>"
+
+
+def list_html(values: list[str] | None, empty: str) -> str:
+    if not values:
+        return f"<p>{escape(empty)}</p>"
+    return "<ul>" + "".join(f"<li>{escape(str(value))}</li>" for value in values) + "</ul>"
+
+
+def reaction_value(event: dict[str, Any], key: str) -> float | None:
+    text = str((event.get("market_reaction") or {}).get(key) or "")
+    matches = re.findall(r"([+−-]\d+(?:\.\d+)?)%", text)
+    if not matches:
+        return None
+    return float(matches[0].replace("−", "-"))
+
+
+def event_axis(events: list[dict[str, Any]], start: date, end: date) -> str:
+    span = max((end - start).days, 1)
+
+    def position(value: str) -> float:
+        return min(97.0, max(3.0, (date.fromisoformat(value) - start).days / span * 100))
+
+    nodes = []
+    for index, event in enumerate(events):
+        state = lifecycle(event)
+        classes = ["et-node"]
+        if state == "expectation_frozen":
+            classes.append("future")
+        elif state == "market_reviewed":
+            classes.append("reviewed")
+        if is_not_comparable(event):
+            classes.append("not-comparable")
+        top = 48 + (index % 3) * 25
+        title = (
+            f"{event['date']}｜{event_title(event)}｜{state}"
+            + ("｜不可比" if is_not_comparable(event) else "")
+        )
+        nodes.append(
+            f'<a class="{" ".join(classes)}" href="#event-{escape(event["event_id"])}" '
+            f'style="left:{position(event["date"]):.3f}%;top:{top}px" '
+            f'title="{escape(title)}"><span class="et-node-date">{escape(event["date"][5:])}'
+            f"</span></a>"
+        )
+    now = position(AS_OF[:10])
+    return f"""
+      <div class="et-axis-shell" aria-label="公司事件横向时间轴">
+        <div class="et-axis">
+          <span class="et-axis-label start" style="left:3%">{start.isoformat()}</span>
+          <span class="et-axis-label" style="left:{now:.3f}%">{AS_OF[:10]}</span>
+          <span class="et-axis-label end" style="left:97%">{end.isoformat()}</span>
+          <span class="et-now" style="left:{now:.3f}%"><span>NOW</span></span>
+          {"".join(nodes)}
+        </div>
+      </div>
     """
-    html = html.replace('<div class="masthead-inner">', '<div class="masthead-inner">' + topnav, 1)
-    html = html.replace(
-        '<section id="overview">',
-        swimlane_html(report) + '\n<section id="overview">',
-        1,
+
+
+def reaction_chart(events: list[dict[str, Any]]) -> str:
+    rows: list[tuple[dict[str, Any], dict[str, float]]] = []
+    for event in events:
+        values = {
+            key: value
+            for key in ("intraday", "t5", "t20")
+            if (value := reaction_value(event, key)) is not None
+        }
+        if values:
+            rows.append((event, values))
+    max_abs = max(
+        (abs(value) for _, values in rows for value in values.values()),
+        default=10.0,
     )
-    return "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
+    scale = max(10.0, (int(max_abs / 10) + 1) * 10.0)
+    row_html = []
+    class_for = {"intraday": "t0", "t5": "t5", "t20": "t20"}
+    label_for = {"intraday": "T0", "t5": "T+5", "t20": "T+20"}
+    for event, values in rows:
+        bars = []
+        for key, value in values.items():
+            width = min(48.0, abs(value) / scale * 48.0)
+            direction = "positive" if value >= 0 else "negative"
+            bars.append(
+                f'<span class="et-bar {class_for[key]} {direction}" '
+                f'style="width:{width:.3f}%" title="{label_for[key]} {value:+.2f}%">'
+                f"<em>{value:+.1f}%</em></span>"
+            )
+        row_html.append(
+            f'<div class="et-reaction-row"><a class="et-reaction-label" '
+            f'href="#event-{escape(event["event_id"])}" title="{escape(event_title(event))}">'
+            f'{escape(event["date"][2:])} {escape(event_title(event))}</a>'
+            f'<div class="et-reaction-plot">{"".join(bars)}</div></div>'
+        )
+    if not row_html:
+        row_html.append("<p>没有可比较的百分比事件窗；价格水平仍保留在下方事件卡。</p>")
+    return f"""
+      <div class="et-chart" role="img" aria-label="事件后价格窗口柱状图">
+        <div class="et-chart-head">
+          <div><h4>事件后价格窗口</h4>
+          <p>相关性观察，不证明单一公告造成全部涨跌；缺失窗口不画成 0。</p></div>
+          <div class="et-chart-legend"><span><i style="background:var(--green)"></i>T0</span>
+          <span><i style="background:var(--blue)"></i>T+5</span>
+          <span><i style="background:var(--amber)"></i>T+20</span></div>
+        </div>
+        <div class="et-reaction-axis"><span></span><div><span>−{scale:.0f}%</span><span>0</span>
+        <span>+{scale:.0f}%</span></div></div>
+        {"".join(row_html)}
+      </div>
+    """
+
+
+def event_card(
+    event: dict[str, Any],
+    sources: dict[str, dict[str, Any]],
+    *,
+    open_card: bool,
+) -> str:
+    state = lifecycle(event)
+    not_comparable = is_not_comparable(event)
+    expectation = event.get("expectation_snapshot")
+    if state == "expectation_frozen":
+        expectation_html = list_html(
+            event.get("pre_event_questions"),
+            "尚未冻结可比共识；只保留下一步观察问题。",
+        )
+    elif expectation:
+        expectation_html = list_html(
+            expectation.get("consensus") or expectation.get("official_guidance"),
+            "有冻结快照，但未录入可比数值。",
+        )
+    else:
+        expectation_html = (
+            "<p>事件前没有可审计、冻结的可比共识；"
+            "因此不以事后同比增速制造 Surprise。</p>"
+        )
+    actual = event.get("actual_results") or {}
+    actual_html = list_html(
+        actual.get("metrics"),
+        "事件尚未发生，实际值保持为空。",
+    )
+    surprise = event.get("surprise") or {}
+    surprise_text = (
+        "not_comparable｜没有可比基线，不等于负面。"
+        if not_comparable
+        else str(surprise.get("reason") or surprise.get("direction") or "pending")
+    )
+    market = event.get("market_reaction") or {}
+    market_lines = [
+        f"{label}：{market[key]}"
+        for key, label in (
+            ("intraday", "T0/首个反应"),
+            ("t1", "T+1"),
+            ("t5", "T+5"),
+            ("t20", "T+20"),
+            ("benchmark_adjusted", "基准调整"),
+            ("volume_ratio", "量比"),
+        )
+        if market.get(key) not in (None, "")
+    ]
+    market_html = list_html(market_lines, "价格窗口尚未形成或没有可比基线。")
+    transmission_html = list_html(
+        event.get("transmission_paths"),
+        "传导路径待补。",
+    )
+    next_check = (event.get("validation") or {}).get("next_check_at") or "待补"
+    review = event.get("post_event_review") or "未来事件，等待实际披露后追加复盘。"
+    badges = [
+        f'<span class="et-badge {"future" if state == "expectation_frozen" else "reviewed"}">'
+        f"{escape(state)}</span>",
+        f'<span class="et-badge">影响 {escape(str(event.get("impact_score") or "—"))}/5</span>',
+    ]
+    if not_comparable:
+        badges.append('<span class="et-badge nocomp">not_comparable</span>')
+    open_attr = " open" if open_card else ""
+    why_text = escape(str(event.get("why_it_matters") or "待补"))
+    gap_text = escape(str(event.get("source_gap") or "无"))
+    sources_html = source_links(event, sources)
+    return f"""
+      <details class="et-event" id="event-{escape(event["event_id"])}"{open_attr}>
+        <summary><span class="et-event-date">{escape(event["date"])}</span>
+        <span class="et-event-title">{escape(event_title(event))}</span>
+        <span class="et-badges">{"".join(badges)}</span></summary>
+        <div class="et-event-body">
+          <div class="et-evidence-grid">
+            <div class="et-evidence"><b>为什么重要</b><p>{why_text}</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b>{expectation_html}</div>
+            <div class="et-evidence"><b>官方实际</b>{actual_html}</div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>{escape(surprise_text)}</p></div>
+            <div class="et-evidence"><b>市场反应</b>{market_html}</div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b>{transmission_html}</div>
+            <div class="et-evidence"><b>复盘结论</b><p>{escape(str(review))}</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>{escape(str(next_check))}｜{gap_text}</p></div>
+          </div>
+          <div class="et-source-links"><strong>原始来源：</strong>{sources_html}</div>
+        </div>
+      </details>
+    """
+
+
+def company_artifact(report: dict[str, Any], company_key: str) -> dict[str, Any]:
+    company = COMPANIES[company_key]
+    events = [
+        event for event in report["events"] if event["ticker"] == company["ticker"]
+    ]
+    used_refs = {
+        source_id
+        for event in events
+        for source_id in event.get("source_refs") or []
+    }
+    sources = [
+        source for source in report["source_refs"] if source["id"] in used_refs
+    ]
+    return {
+        **report,
+        "title": f"{company['name']}：事件 Surprise 与市场共振",
+        "subtitle": (
+            "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、"
+            "行业/资本结构传导与下一验证放在一条证据轴。"
+        ),
+        "scope": {
+            "theme": company["bucket"],
+            "markets": [company["market"]],
+            "watchlist": [company["ticker"]],
+            "user_holdings": [],
+        },
+        "events": events,
+        "source_refs": sources,
+        "market_series": None,
+        "data_quality": {
+            "missing": [
+                "没有事前冻结共识的历史事件保持 not_comparable。",
+                "缺失的 T+1/T+5/T+20 不按 0 处理。",
+            ],
+            "conflicts": [
+                "同比增长、事件后涨跌和长期基本面不是同一个判断。",
+            ],
+            "manual_review_required": [
+                "未来节点发生后追加官方实际与价格窗口，不改写旧预期。",
+            ],
+        },
+    }
+
+
+def component_html(artifact: dict[str, Any], company_key: str) -> str:
+    company = COMPANIES[company_key]
+    events = artifact["events"]
+    sources = {source["id"]: source for source in artifact["source_refs"]}
+    start = date.fromisoformat(min(event["date"] for event in events))
+    end = max(
+        date.fromisoformat(END),
+        max(date.fromisoformat(event["date"]) for event in events),
+    )
+    reviewed = sum(lifecycle(event) == "market_reviewed" for event in events)
+    nocomp = sum(is_not_comparable(event) for event in events)
+    future = sum(lifecycle(event) == "expectation_frozen" for event in events)
+    latest_completed = max(
+        (
+            event["date"]
+            for event in events
+            if event.get("date_status") == "completed"
+        ),
+        default="",
+    )
+    cards = "".join(
+        event_card(
+            event,
+            sources,
+            open_card=(
+                event["date"] == latest_completed
+                or lifecycle(event) == "expectation_frozen"
+            ),
+        )
+        for event in events
+    )
+    html = f"""
+{COMPONENT_START}
+{COMPONENT_CSS}
+<div class="event-terminal" data-company="{escape(company_key)}"
+  data-contract="seed.earnings-season-timeline.v1.1-compatible">
+  <div class="et-head">
+    <div><div class="et-kicker">Company event validation terminal</div>
+    <h3>{escape(company["name"])}｜事件 Surprise × 市场共振</h3>
+    <p>只放本公司事件。图上点击节点可跳到证据卡；价格反应是相关性观察，不是买卖指令或单因果证明。</p></div>
+    <div class="et-summary">
+      <div class="et-stat"><b>{len(events)}</b><span>公司事件</span></div>
+      <div class="et-stat"><b>{reviewed}</b><span>已复核价格窗</span></div>
+      <div class="et-stat"><b>{nocomp}</b><span>不可比 Surprise</span></div>
+      <div class="et-stat"><b>{future}</b><span>未来验证节点</span></div>
+    </div>
+  </div>
+  <div class="et-legend" aria-label="事件状态图例">
+    <div><i class="et-shape"></i><b>expectation_frozen</b>
+    <small>空心：只冻结问题，不预填实际。</small></div>
+    <div><i class="et-shape filled"></i><b>actual_reported</b>
+    <small>实心：官方实际已披露。</small></div>
+    <div><i class="et-shape ring"></i><b>market_reviewed</b>
+    <small>外圈：至少一个价格窗口已复核。</small></div>
+    <div><i class="et-shape diamond"></i><b>not_comparable</b>
+    <small>菱形：无可靠基线；不等于负面。</small></div>
+  </div>
+  {event_axis(events, start, end)}
+  {reaction_chart(events)}
+  <div class="et-ledger-title"><h4>纵向证据账本</h4>
+  <span>预期 → 实际 → Surprise → 价格 → 传导 → 下一验证</span></div>
+  {cards}
+  <p class="chart-note">研究边界：影响分只用于排序研究注意力，不是收益预测；
+  未来节点保持空心，缺失窗口不画成 0。</p>
+</div>
+<h3 class="et-preserved-label">原报告事件表与更长历史（保留）</h3>
+{COMPONENT_END}
+    """.strip()
+    return "\n".join(line.rstrip() for line in html.splitlines())
+
+
+def inject_component(report_path: Path, component: str) -> None:
+    html = report_path.read_text(encoding="utf-8")
+    block_pattern = re.compile(
+        re.escape(COMPONENT_START) + r".*?" + re.escape(COMPONENT_END),
+        flags=re.DOTALL,
+    )
+    if block_pattern.search(html):
+        updated = block_pattern.sub(component, html, count=1)
+    else:
+        old_callout = re.compile(
+            r'\s*<p class="callout blue"><strong>深度事件终端：</strong>'
+            r'.*?</p>',
+            flags=re.DOTALL,
+        )
+        updated = old_callout.sub("", html, count=1)
+        section_start = updated.find('<section id="timeline"')
+        if section_start == -1:
+            raise RuntimeError(f"Missing #timeline section: {report_path}")
+        heading_end = updated.find("</h2>", section_start)
+        if heading_end == -1:
+            raise RuntimeError(f"Missing #timeline heading: {report_path}")
+        insert_at = heading_end + len("</h2>")
+        updated = updated[:insert_at] + "\n" + component + updated[insert_at:]
+    report_path.write_text(updated, encoding="utf-8")
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--renderer", type=Path, help="Seed render_earnings_timeline.py")
-    args = parser.parse_args()
+    parser.parse_args()
     report = build_report()
-    json_path = HERE / "timeline.json"
-    json_path.write_text(
-        json.dumps(report, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    print(json_path)
-    if args.renderer:
-        html_path = HERE / "report.html"
-        html_path.write_text(render_html(report, args.renderer), encoding="utf-8")
-        print(html_path)
+    for company_key, company in COMPANIES.items():
+        artifact = company_artifact(report, company_key)
+        json_path = DOCS / company["slug"] / "data" / "event-terminal.json"
+        json_path.write_text(
+            json.dumps(artifact, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        report_path = DOCS / company["slug"] / "report.html"
+        inject_component(report_path, component_html(artifact, company_key))
+        print(json_path)
+        print(report_path)
     return 0
 
 

@@ -1,0 +1,526 @@
+{
+  "artifact_type": "earnings_season_timeline",
+  "version": "1.1",
+  "title": "地平线机器人：事件 Surprise 与市场共振",
+  "subtitle": "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、行业/资本结构传导与下一验证放在一条证据轴。",
+  "as_of": "2026-07-29T18:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "date_range": {
+    "start": "2024-10-01",
+    "end": "2026-08-31"
+  },
+  "scope": {
+    "theme": "智能驾驶 / 边缘 AI",
+    "markets": [
+      "HKEX"
+    ],
+    "watchlist": [
+      "09660.HK"
+    ],
+    "user_holdings": []
+  },
+  "not_investment_advice": true,
+  "market_series": null,
+  "scenario_paths": [],
+  "events": [
+    {
+      "event_id": "horizon-ipo-2024",
+      "date": "2024-10-24",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2024-10-24",
+      "date_status": "completed",
+      "event_type": "listing",
+      "company": "地平线机器人｜港交所上市",
+      "ticker": "09660.HK",
+      "market": "HKEX",
+      "chain_bucket": "智能驾驶 / 边缘 AI",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "上市建立价格发现，但短交易历史不支持无前视偏差的长期估值分位。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2024-10-24T18:00:00+08:00",
+        "metrics": [
+          "09660.HK开始交易",
+          "上市后才形成可观察的公开价格与流通历史"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "horizon-H01"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "IPO没有可比T−1收盘",
+        "t1": null,
+        "t5": null,
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "not_comparable",
+        "source_refs": [
+          "horizon-M02"
+        ],
+        "limitations": "上市首日无法使用常规T−1事件窗。"
+      },
+      "transmission_paths": [
+        "公开上市 → 流通供给/定价",
+        "后续融资与奖励 → 完全摊薄每股经济"
+      ],
+      "holdings_impacted": [
+        "研究主体：地平线机器人（09660.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "首份完整年报、自由流通量与后续稀释",
+        "thesis_impact": "上市价格只是起点，长期价值需由收入、现金与稀释后的每股经济验证。",
+        "review_score": null
+      },
+      "post_event_review": "上市价格只是起点，长期价值需由收入、现金与稀释后的每股经济验证。",
+      "source_refs": [
+        "horizon-H01",
+        "horizon-M02"
+      ],
+      "source_gap": "上市前没有同证券连续行情，无法计算常规事件窗。"
+    },
+    {
+      "event_id": "horizon-drobotics-deconsolidation",
+      "date": "2026-03-31",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-03-31",
+      "date_status": "completed",
+      "event_type": "accounting_scope",
+      "company": "地平线机器人｜D-Robotics出表",
+      "ticker": "09660.HK",
+      "market": "HKEX",
+      "chain_bucket": "智能驾驶 / 边缘 AI",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "合并口径改善不等于经济风险消失，必须把报表变化和真实现金/权益风险分开。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-03-31T18:00:00+08:00",
+        "metrics": [
+          "自2026-03-31起终止合并并列作终止经营",
+          "仍为最大单一股东并改用权益法"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "horizon-H01"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "3月31日收HK$6.62；事件与年度结果、回购等重叠",
+        "t1": "4月1日收HK$6.91",
+        "t5": "4月9日收HK$6.99",
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "mixed_or_neutral",
+        "source_refs": [
+          "horizon-M02"
+        ],
+        "limitations": "重叠事件较多，不能把窗口归因于出表。"
+      },
+      "transmission_paths": [
+        "出表 → 收入/亏损口径变化",
+        "权益法与承诺 → 经济风险继续存在"
+      ],
+      "holdings_impacted": [
+        "研究主体：地平线机器人（09660.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "2026H1持续经营与终止经营桥",
+        "thesis_impact": "先重列口径，再比较持续经营；不把一次性公允价值变化当核心盈利。",
+        "review_score": null
+      },
+      "post_event_review": "先重列口径，再比较持续经营；不把一次性公允价值变化当核心盈利。",
+      "source_refs": [
+        "horizon-H01",
+        "horizon-M02"
+      ],
+      "source_gap": "缺少独立的市场共识和事件隔离条件。"
+    },
+    {
+      "event_id": "horizon-h1-update-2026",
+      "date": "2026-07-21",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-07-21",
+      "date_status": "completed",
+      "event_type": "earnings_preliminary",
+      "company": "地平线机器人｜2026H1业绩更新",
+      "ticker": "09660.HK",
+      "market": "HKEX",
+      "chain_bucket": "智能驾驶 / 边缘 AI",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "收入增长与调整亏损扩大并存，是判断规模能否转成经营杠杆的核心矛盾。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-07-21T18:00:00+08:00",
+        "metrics": [
+          "持续经营收入预计RMB1.93bn至2.08bn，同比+24.8%至+34.5%",
+          "调整后净亏损预计RMB1.4bn至1.7bn，亏损扩大"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "horizon-H03"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "7月21日收HK$4.45，较前收HK$4.39约+1.4%",
+        "t1": "7月22日收HK$4.75；与CARIAD事件重叠",
+        "t5": "7月28日收HK$5.00；随后多项资本事件重叠",
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "positive_resonance",
+        "source_refs": [
+          "horizon-M02"
+        ],
+        "limitations": "7月21日至26日形成密集事件簇，无法单独归因。"
+      },
+      "transmission_paths": [
+        "车型定点/SOP → 芯片与许可收入",
+        "研发/营运资本 → 调整亏损与现金"
+      ],
+      "holdings_impacted": [
+        "研究主体：地平线机器人（09660.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "正式中报的毛利、客户、应收、库存与CFO",
+        "thesis_impact": "收入增长得到确认，但亏损绝对额继续扩大；价格上行不能替代现金OE验证。",
+        "review_score": null
+      },
+      "post_event_review": "收入增长得到确认，但亏损绝对额继续扩大；价格上行不能替代现金OE验证。",
+      "source_refs": [
+        "horizon-H03",
+        "horizon-M02"
+      ],
+      "source_gap": "更新未经审计且未获审计委员会复核；没有正式现金流。"
+    },
+    {
+      "event_id": "horizon-cariad-amendment-2026",
+      "date": "2026-07-22",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-07-22",
+      "date_status": "completed",
+      "event_type": "capital_allocation",
+      "company": "地平线机器人｜CARIAD旧贷重组",
+      "ticker": "09660.HK",
+      "market": "HKEX",
+      "chain_bucket": "智能驾驶 / 边缘 AI",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "交易同时改变现金、债务和股本；必须看交割而不是只看名义减少转换权。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-07-22T18:00:00+08:00",
+        "metrics": [
+          "拟发行约1.302bn股新B股抵销US$662.4m本息",
+          "另付约US$398.9m现金",
+          "赎回约716m潜在转换股"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "horizon-H04"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "7月22日收HK$4.75，较前收约+6.7%",
+        "t1": "7月23日收HK$4.57；与新CB定价重叠",
+        "t5": "7月29日收HK$5.28；多事件重叠",
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "positive_resonance",
+        "source_refs": [
+          "horizon-M02"
+        ],
+        "limitations": "与H1更新、新CB和奖励事件重叠。"
+      },
+      "transmission_paths": [
+        "现金支付 → 净现金下降",
+        "新股发行 → 稀释",
+        "旧转换权赎回 → 潜在供给减少"
+      ],
+      "holdings_impacted": [
+        "研究主体：地平线机器人（09660.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "交割完成公告与月报股数",
+        "thesis_impact": "价格窗口偏强，但经济实质是现金和稀释的重排，不是免费消债。",
+        "review_score": null
+      },
+      "post_event_review": "价格窗口偏强，但经济实质是现金和稀释的重排，不是免费消债。",
+      "source_refs": [
+        "horizon-H04",
+        "horizon-M02"
+      ],
+      "source_gap": "截至截止日交割未确认完成。"
+    },
+    {
+      "event_id": "horizon-new-cb-2026",
+      "date": "2026-07-23",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-07-23",
+      "date_status": "completed",
+      "event_type": "financing",
+      "company": "地平线机器人｜US$4.5亿新零息可转债",
+      "ticker": "09660.HK",
+      "market": "HKEX",
+      "chain_bucket": "智能驾驶 / 边缘 AI",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "新融资解决近期支付，同时把一年后现金偿还或转股稀释带入资本结构。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-07-23T18:00:00+08:00",
+        "metrics": [
+          "US$450m零息CB，2027到期",
+          "初始转股价HK$5.55",
+          "全转约635.6m股",
+          "主要用于CARIAD现金支付"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "horizon-H05"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "7月23日收HK$4.57，较前收约-3.8%",
+        "t1": "7月24日收HK$4.42",
+        "t5": null,
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "negative_resonance",
+        "source_refs": [
+          "horizon-M02"
+        ],
+        "limitations": "同一周多个事件，不能把全部波动归因于新CB。"
+      },
+      "transmission_paths": [
+        "融资现金 → CARIAD支付",
+        "股价/转股价 → 转股稀释或到期偿债"
+      ],
+      "holdings_impacted": [
+        "研究主体：地平线机器人（09660.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "发行完成、转换、回购或2027到期现金",
+        "thesis_impact": "融资缓解近期现金需求，但一年期到期与潜在稀释构成新的验证点。",
+        "review_score": null
+      },
+      "post_event_review": "融资缓解近期现金需求，但一年期到期与潜在稀释构成新的验证点。",
+      "source_refs": [
+        "horizon-H05",
+        "horizon-M02"
+      ],
+      "source_gap": "没有债券持有人对冲和最终转换路径数据。"
+    },
+    {
+      "event_id": "horizon-share-awards-2026",
+      "date": "2026-07-26",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-07-26",
+      "date_status": "completed",
+      "event_type": "share_supply",
+      "company": "地平线机器人｜股份奖励",
+      "ticker": "09660.HK",
+      "market": "HKEX",
+      "chain_bucket": "智能驾驶 / 边缘 AI",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "亏损期无业绩目标的股份奖励会影响每股价值和流通供给预期。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-07-26T18:00:00+08:00",
+        "metrics": [
+          "授予约90.6m股B股奖励",
+          "无业绩条件",
+          "进入已知完全摊薄股本桥"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "horizon-H06"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "公告在周末；7月27日收HK$4.62",
+        "t1": "7月28日收HK$5.00",
+        "t5": null,
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "mixed_or_neutral",
+        "source_refs": [
+          "horizon-M02"
+        ],
+        "limitations": "公告后上涨与前述资本事件及市场情绪重叠。"
+      },
+      "transmission_paths": [
+        "SBC → 员工激励",
+        "新增潜在股份 → 充分摊薄每股经济"
+      ],
+      "holdings_impacted": [
+        "研究主体：地平线机器人（09660.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "归属、发行/库存股转出与净股数",
+        "thesis_impact": "价格未表现为简单稀释折价；经济成本仍应进入全摊薄分母。",
+        "review_score": null
+      },
+      "post_event_review": "价格未表现为简单稀释折价；经济成本仍应进入全摊薄分母。",
+      "source_refs": [
+        "horizon-H06",
+        "horizon-M02"
+      ],
+      "source_gap": "最终归属、发行或库存股转出时点待后续披露。"
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "horizon-H01",
+      "title": "地平线机器人｜Horizon Robotics Annual Report 2025",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043001830.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "horizon-H03",
+      "title": "地平线机器人｜Update on Financial Performance for 2026H1",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0721/2026072100145.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "horizon-H04",
+      "title": "地平线机器人｜Amendment to CARIAD Convertible Loan Agreement",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0722/2026072200813.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "horizon-H05",
+      "title": "地平线机器人｜US$450m Zero-Coupon Convertible Bonds due 2027",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0723/2026072300027.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "horizon-H06",
+      "title": "地平线机器人｜Grant of Awards under Post-IPO Share Incentive Plan",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0726/2026072600115.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "horizon-M02",
+      "title": "地平线机器人｜Tencent 09660.HK daily k-line snapshot",
+      "tier": "market_data",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk09660,day,,,640,qfq",
+      "accessed_at": "2026-07-29"
+    }
+  ],
+  "data_quality": {
+    "missing": [
+      "没有事前冻结共识的历史事件保持 not_comparable。",
+      "缺失的 T+1/T+5/T+20 不按 0 处理。"
+    ],
+    "conflicts": [
+      "同比增长、事件后涨跌和长期基本面不是同一个判断。"
+    ],
+    "manual_review_required": [
+      "未来节点发生后追加官方实际与价格窗口，不改写旧预期。"
+    ]
+  }
+}

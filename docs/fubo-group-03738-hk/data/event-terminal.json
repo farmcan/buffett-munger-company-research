@@ -1,0 +1,556 @@
+{
+  "artifact_type": "earnings_season_timeline",
+  "version": "1.1",
+  "title": "阜博集团：事件 Surprise 与市场共振",
+  "subtitle": "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、行业/资本结构传导与下一验证放在一条证据轴。",
+  "as_of": "2026-07-29T18:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "date_range": {
+    "start": "2024-10-01",
+    "end": "2026-08-31"
+  },
+  "scope": {
+    "theme": "内容科技 / AI 版权",
+    "markets": [
+      "HKEX"
+    ],
+    "watchlist": [
+      "03738.HK"
+    ],
+    "user_holdings": []
+  },
+  "not_investment_advice": true,
+  "market_series": null,
+  "scenario_paths": [],
+  "events": [
+    {
+      "event_id": "vobile-h1-2025",
+      "date": "2025-08-28",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2025-08-28",
+      "date_status": "completed",
+      "event_type": "earnings_release",
+      "company": "阜博集团｜2025H1业绩",
+      "ticker": "03738.HK",
+      "market": "HKEX",
+      "chain_bucket": "内容科技 / AI 版权",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "验证订阅和内容变现双引擎是否同时增长，以及利润能否转为现金。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2025-08-28T18:00:00+08:00",
+        "metrics": [
+          "收入HK$1,456.3m",
+          "订阅收入HK$609.9m",
+          "增值服务HK$846.4m",
+          "归母利润HK$102.3m"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "vobile-F02"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 +4.40%",
+        "t1": "-0.47%",
+        "t5": "-14.78%",
+        "t20": null,
+        "benchmark": "HSI",
+        "benchmark_adjusted": "T0超额 +4.08%",
+        "volume_ratio": null,
+        "resonance": "negative_resonance",
+        "source_refs": [
+          "vobile-M01",
+          "vobile-M02"
+        ],
+        "attribution_confidence": "low_to_medium",
+        "limitations": "Window overlaps market/sector/company events; price reaction is association, not proof of causality."
+      },
+      "transmission_paths": [
+        "平台内容量 → 指纹/权利识别 → 订阅与分成收入 → 回款"
+      ],
+      "holdings_impacted": [
+        "研究主体：阜博集团（03738.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "2025全年与2026Q1经营更新",
+        "thesis_impact": "T0上涨但T+5转弱，表明财报后仍需验证现金和可转债供给。",
+        "review_score": null
+      },
+      "post_event_review": "T0上涨但T+5转弱，表明财报后仍需验证现金和可转债供给。",
+      "source_refs": [
+        "vobile-F02",
+        "vobile-M01",
+        "vobile-M02"
+      ],
+      "source_gap": "没有冻结的卖方共识和历史surprise分布。"
+    },
+    {
+      "event_id": "vobile-cb-proposal-2025",
+      "date": "2025-09-23",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2025-09-23",
+      "date_status": "completed",
+      "event_type": "financing",
+      "company": "阜博集团｜HK$16亿零息可转债方案",
+      "ticker": "03738.HK",
+      "market": "HKEX",
+      "chain_bucket": "内容科技 / AI 版权",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "短期限融资会直接影响净债务、流通供给和每股价值，不能只看票息为零。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2025-09-23T18:00:00+08:00",
+        "metrics": [
+          "建议发行HK$1.6bn零息可转债",
+          "2026年到期",
+          "形成偿债、回购或转股三分支"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "vobile-F04"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 +2.55%",
+        "t1": "+4.51%",
+        "t5": "+17.06%",
+        "t20": null,
+        "benchmark": "HSI",
+        "benchmark_adjusted": "T0超额 +3.25%",
+        "volume_ratio": null,
+        "resonance": "positive_resonance",
+        "source_refs": [
+          "vobile-M01",
+          "vobile-M02"
+        ],
+        "attribution_confidence": "low_to_medium",
+        "limitations": "Window overlaps market/sector/company events; price reaction is association, not proof of causality."
+      },
+      "transmission_paths": [
+        "现金融资 → 投资/营运资金",
+        "到期前 → 回购/赎回/转股 → 股本或现金变化"
+      ],
+      "holdings_impacted": [
+        "研究主体：阜博集团（03738.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "月报、回购公告与到期处理",
+        "thesis_impact": "市场短窗正向，但真正关键是资金用途、到期现金和充分摊薄分母。",
+        "review_score": null
+      },
+      "post_event_review": "市场短窗正向，但真正关键是资金用途、到期现金和充分摊薄分母。",
+      "source_refs": [
+        "vobile-F04",
+        "vobile-M01",
+        "vobile-M02"
+      ],
+      "source_gap": "债券持有人对冲与实际借券结构不可得。"
+    },
+    {
+      "event_id": "vobile-cb-completion-2025",
+      "date": "2025-09-29",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2025-09-29",
+      "date_status": "completed",
+      "event_type": "financing",
+      "company": "阜博集团｜可转债发行完成",
+      "ticker": "03738.HK",
+      "market": "HKEX",
+      "chain_bucket": "内容科技 / AI 版权",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "发行完成把融资方案变成真实资本结构，后续回购不等于风险消失。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2025-09-29T18:00:00+08:00",
+        "metrics": [
+          "HK$1.6bn可转债发行完成",
+          "转股或现金偿还风险开始进入存续期"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "vobile-F04",
+          "vobile-H01"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 +7.76%",
+        "t1": "+9.75%",
+        "t5": "+16.43%",
+        "t20": null,
+        "benchmark": "HSI",
+        "benchmark_adjusted": "T0超额 +6.89%",
+        "volume_ratio": null,
+        "resonance": "positive_resonance",
+        "source_refs": [
+          "vobile-M01",
+          "vobile-M02"
+        ],
+        "attribution_confidence": "low_to_medium",
+        "limitations": "Window overlaps market/sector/company events; price reaction is association, not proof of causality."
+      },
+      "transmission_paths": [
+        "债券存续 → 转股价/股价/现金 → 潜在供给或偿债压力"
+      ],
+      "holdings_impacted": [
+        "研究主体：阜博集团（03738.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "2026到期前现金、回购和转换状态",
+        "thesis_impact": "T0与T+5正共振，但资本结构风险需要用月报持续更新。",
+        "review_score": null
+      },
+      "post_event_review": "T0与T+5正共振，但资本结构风险需要用月报持续更新。",
+      "source_refs": [
+        "vobile-F04",
+        "vobile-H01",
+        "vobile-M01",
+        "vobile-M02"
+      ],
+      "source_gap": "公开事件窗不能识别套利盘和方向性资金。"
+    },
+    {
+      "event_id": "vobile-fy2025",
+      "date": "2026-03-27",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-03-27",
+      "date_status": "completed",
+      "event_type": "earnings_release",
+      "company": "阜博集团｜FY2025业绩",
+      "ticker": "03738.HK",
+      "market": "HKEX",
+      "chain_bucket": "内容科技 / AI 版权",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "利润增长需要由现金转化、应收和资本化研发共同验证。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-03-27T18:00:00+08:00",
+        "metrics": [
+          "收入HK$2.872bn",
+          "归母利润HK$199.3m",
+          "全年CFO约HK$69.9m"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "vobile-F01"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 -2.89%",
+        "t1": "-7.35%",
+        "t5": "+3.94%",
+        "t20": null,
+        "benchmark": "HSI",
+        "benchmark_adjusted": "T0超额 -3.27%",
+        "volume_ratio": null,
+        "resonance": "positive_resonance",
+        "source_refs": [
+          "vobile-M01",
+          "vobile-M02"
+        ],
+        "attribution_confidence": "low_to_medium",
+        "limitations": "Window overlaps market/sector/company events; price reaction is association, not proof of causality."
+      },
+      "transmission_paths": [
+        "订阅/变现增长 → 会计利润 → CFO → 扣维持投入后的owner earnings"
+      ],
+      "holdings_impacted": [
+        "研究主体：阜博集团（03738.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "2026Q1经营数据与H1现金流",
+        "thesis_impact": "T0负、T+5正，短窗分歧大；现金质量比单日方向重要。",
+        "review_score": null
+      },
+      "post_event_review": "T0负、T+5正，短窗分歧大；现金质量比单日方向重要。",
+      "source_refs": [
+        "vobile-F01",
+        "vobile-M01",
+        "vobile-M02"
+      ],
+      "source_gap": "未冻结一致预期；T+5仍受市场和融资事件影响。"
+    },
+    {
+      "event_id": "vobile-q1-2026",
+      "date": "2026-05-19",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-05-19",
+      "date_status": "completed",
+      "event_type": "operating_update",
+      "company": "阜博集团｜2026Q1经营数据",
+      "ticker": "03738.HK",
+      "market": "HKEX",
+      "chain_bucket": "内容科技 / AI 版权",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "经营KPI要继续桥接到收入确认、现金和可转债偿债能力。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-05-19T18:00:00+08:00",
+        "metrics": [
+          "公司披露2026Q1未经审计经营数据",
+          "用于跟踪活跃资产、MRR与业务增长"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "vobile-F03"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 +1.06%",
+        "t1": "-3.19%",
+        "t5": "+0.00%",
+        "t20": null,
+        "benchmark": "HSI",
+        "benchmark_adjusted": "T0超额 +1.63%",
+        "volume_ratio": null,
+        "resonance": "mixed_or_neutral",
+        "source_refs": [
+          "vobile-M01",
+          "vobile-M02"
+        ],
+        "attribution_confidence": "low_to_medium",
+        "limitations": "Window overlaps market/sector/company events; price reaction is association, not proof of causality."
+      },
+      "transmission_paths": [
+        "活跃资产/MRR → 订阅收入 → 毛利 → 回款",
+        "内容变现规模 → 平台依赖与分成经济"
+      ],
+      "holdings_impacted": [
+        "研究主体：阜博集团（03738.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "2026H1正式财务结果",
+        "thesis_impact": "T0小幅正、T+5持平，市场没有给出持久方向；等待H1现金和债务处理。",
+        "review_score": null
+      },
+      "post_event_review": "T0小幅正、T+5持平，市场没有给出持久方向；等待H1现金和债务处理。",
+      "source_refs": [
+        "vobile-F03",
+        "vobile-M01",
+        "vobile-M02"
+      ],
+      "source_gap": "经营更新不等于完整季度财报，利润、CFO和应收口径待补。"
+    },
+    {
+      "event_id": "vobile-cb-repurchase-2026",
+      "date": "2026-07-07",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-07-07",
+      "date_status": "completed",
+      "event_type": "capital_allocation",
+      "company": "阜博集团｜月报披露可转债回购",
+      "ticker": "03738.HK",
+      "market": "HKEX",
+      "chain_bucket": "内容科技 / AI 版权",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "回购债券的价值取决于折价、现金成本、剩余本金和到期选择。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-07-07T18:00:00+08:00",
+        "metrics": [
+          "六月月报披露可转债回购变化",
+          "降低部分到期本金但不自动消除剩余偿债/稀释风险"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "vobile-F05"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T0 +3.81%",
+        "t1": "+3.39%",
+        "t5": "-3.39%",
+        "t20": null,
+        "benchmark": "HSI",
+        "benchmark_adjusted": "T0超额 +0.82%",
+        "volume_ratio": null,
+        "resonance": "negative_resonance",
+        "source_refs": [
+          "vobile-M01",
+          "vobile-M02"
+        ],
+        "attribution_confidence": "low_to_medium",
+        "limitations": "Window overlaps market/sector/company events; price reaction is association, not proof of causality."
+      },
+      "transmission_paths": [
+        "现金回购债券 → 净债务/流动性",
+        "剩余债券 → 到期偿还或转股"
+      ],
+      "holdings_impacted": [
+        "研究主体：阜博集团（03738.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "剩余本金、现金余额与到期处理",
+        "thesis_impact": "T0小幅正、T+5转负；资本结构问题仍需定量桥。",
+        "review_score": null
+      },
+      "post_event_review": "T0小幅正、T+5转负；资本结构问题仍需定量桥。",
+      "source_refs": [
+        "vobile-F05",
+        "vobile-M01",
+        "vobile-M02"
+      ],
+      "source_gap": "公开月报不足以观察持有人对冲和实际融资成本。"
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "vobile-F01",
+      "title": "阜博集团｜Vobile Group Annual Report 2025",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043003894.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "vobile-F02",
+      "title": "阜博集团｜Vobile Group Interim Report 2025",
+      "tier": "primary",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2025/0930/2025093003000.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "vobile-F03",
+      "title": "阜博集团｜Unaudited Operating Data for Q1 2026",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0519/2026051900384.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "vobile-F04",
+      "title": "阜博集团｜Proposed HK$1.6bn Zero-Coupon Convertible Bonds due 2026",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0923/2025092300072.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "vobile-F05",
+      "title": "阜博集团｜Monthly Return for June 2026",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070701937.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "vobile-H01",
+      "title": "阜博集团｜HKEX Listed Company Title Search: 03738",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=170283",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "vobile-M01",
+      "title": "阜博集团｜Yahoo Finance 3738.HK chart API snapshot",
+      "tier": "market_data",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/3738.HK?range=5y&interval=1d&events=history",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "vobile-M02",
+      "title": "阜博集团｜Yahoo Finance Hang Seng Index chart API snapshot",
+      "tier": "market_data",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=5y&interval=1d&events=history",
+      "accessed_at": "2026-07-29"
+    }
+  ],
+  "data_quality": {
+    "missing": [
+      "没有事前冻结共识的历史事件保持 not_comparable。",
+      "缺失的 T+1/T+5/T+20 不按 0 处理。"
+    ],
+    "conflicts": [
+      "同比增长、事件后涨跌和长期基本面不是同一个判断。"
+    ],
+    "manual_review_required": [
+      "未来节点发生后追加官方实际与价格窗口，不改写旧预期。"
+    ]
+  }
+}

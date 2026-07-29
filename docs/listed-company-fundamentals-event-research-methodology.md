@@ -686,9 +686,10 @@ App Store、Google Play、网站访问和搜索热度的定位是“前置雷达
 | `market_reviewed` | 实际与至少一个价格窗口已复核 | 实心节点加复核边 |
 | `not_comparable` | 没有可靠可比基线，不能计算 Surprise | 菱形；不等于负面 |
 
-可复用实现见公开的
-[`company-event-timeline`](./company-event-timeline/report.html)，其 JSON 契约与 Seed
-`earnings-season-timeline-analyst` v1.1 兼容。
+可复用实现直接嵌入每家公司报告的 `#timeline` 栏目；例如
+[`南华期货公司时间轴`](./nanhua-futures-02691-hk/report.html#timeline)。每家公司只展示自己的
+事件、价格窗口和来源卡，同时保留原有事件表；对应的 `data/event-terminal.json` 与 Seed
+`earnings-season-timeline-analyst` v1.1 契约兼容。
 
 小盘/高弹性股票额外检查：
 

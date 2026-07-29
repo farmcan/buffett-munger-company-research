@@ -1,0 +1,538 @@
+{
+  "artifact_type": "earnings_season_timeline",
+  "version": "1.1",
+  "title": "中芯国际：事件 Surprise 与市场共振",
+  "subtitle": "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、行业/资本结构传导与下一验证放在一条证据轴。",
+  "as_of": "2026-07-29T18:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "date_range": {
+    "start": "2024-10-01",
+    "end": "2026-08-31"
+  },
+  "scope": {
+    "theme": "晶圆代工 / 半导体",
+    "markets": [
+      "HKEX / STAR"
+    ],
+    "watchlist": [
+      "00981.HK"
+    ],
+    "user_holdings": []
+  },
+  "not_investment_advice": true,
+  "market_series": null,
+  "scenario_paths": [],
+  "events": [
+    {
+      "event_id": "smic-q2-2025",
+      "date": "2025-08-07",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2025-08-07",
+      "date_status": "completed",
+      "event_type": "earnings_release",
+      "company": "中芯国际｜2025Q2业绩",
+      "ticker": "00981.HK",
+      "market": "HKEX / STAR",
+      "chain_bucket": "晶圆代工 / 半导体",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "利用率、ASP、毛利率和资本开支是晶圆代工周期比单一收入增长更早的验证变量。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2025-08-07T18:00:00+08:00",
+        "metrics": [
+          "收入US$2.209bn",
+          "环比-1.7%",
+          "毛利率20.4%",
+          "产能利用率92.5%"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "smic-Q2_2025"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": null,
+        "t1": null,
+        "t5": null,
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "pending",
+        "source_refs": []
+      },
+      "transmission_paths": [
+        "国内晶圆需求 → 利用率/ASP → 毛利率 → 折旧吸收与FCF"
+      ],
+      "holdings_impacted": [
+        "研究主体：中芯国际（00981.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "actual_reported",
+        "next_check_at": "2025Q3实际",
+        "thesis_impact": "经营数据进入上行段，但没有保存事前一致预期，不能追溯打分。",
+        "review_score": null
+      },
+      "post_event_review": "经营数据进入上行段，但没有保存事前一致预期，不能追溯打分。",
+      "source_refs": [
+        "smic-Q2_2025"
+      ],
+      "source_gap": "该公开包没有冻结2025Q2发布前的市场共识。"
+    },
+    {
+      "event_id": "smic-q3-2025",
+      "date": "2025-11-13",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2025-11-13",
+      "date_status": "completed",
+      "event_type": "earnings_release",
+      "company": "中芯国际｜2025Q3业绩",
+      "ticker": "00981.HK",
+      "market": "HKEX / STAR",
+      "chain_bucket": "晶圆代工 / 半导体",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "利用率升至接近满载后，下一变量从数量转向ASP、产品组合和扩产回报。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2025-11-13T18:00:00+08:00",
+        "metrics": [
+          "收入US$2.382bn",
+          "环比+7.8%",
+          "毛利率22.0%",
+          "产能利用率95.8%"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "smic-Q3_2025"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": null,
+        "t1": null,
+        "t5": null,
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "pending",
+        "source_refs": []
+      },
+      "transmission_paths": [
+        "利用率上升 → 折旧吸收改善",
+        "接近满载 → 扩产/瓶颈 → 资本开支与回报压力"
+      ],
+      "holdings_impacted": [
+        "研究主体：中芯国际（00981.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "actual_reported",
+        "next_check_at": "2025Q4实际",
+        "thesis_impact": "基本面继续改善，但事件层未冻结共识，保持不可比状态。",
+        "review_score": null
+      },
+      "post_event_review": "基本面继续改善，但事件层未冻结共识，保持不可比状态。",
+      "source_refs": [
+        "smic-Q3_2025"
+      ],
+      "source_gap": "缺少发布前官方指引和一致预期的结构化快照。"
+    },
+    {
+      "event_id": "smic-q4-2025",
+      "date": "2026-02-10",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-02-10",
+      "date_status": "completed",
+      "event_type": "earnings_release",
+      "company": "中芯国际｜2025Q4业绩",
+      "ticker": "00981.HK",
+      "market": "HKEX / STAR",
+      "chain_bucket": "晶圆代工 / 半导体",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "收入和利用率保持强势但毛利率回落，提示扩产、折旧与产品组合的压力。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-02-10T18:00:00+08:00",
+        "metrics": [
+          "收入US$2.489bn",
+          "环比+4.5%",
+          "毛利率19.2%",
+          "产能利用率95.7%"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "smic-Q4_2025"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": null,
+        "t1": null,
+        "t5": null,
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "pending",
+        "source_refs": []
+      },
+      "transmission_paths": [
+        "高利用率 → 收入韧性",
+        "毛利率回落 → 成本/折旧/组合压力"
+      ],
+      "holdings_impacted": [
+        "研究主体：中芯国际（00981.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "actual_reported",
+        "next_check_at": "2025年报与2026Q1实际",
+        "thesis_impact": "周期景气不能只看收入；毛利率是重要反证。",
+        "review_score": null
+      },
+      "post_event_review": "周期景气不能只看收入；毛利率是重要反证。",
+      "source_refs": [
+        "smic-Q4_2025"
+      ],
+      "source_gap": "缺少该季度可复核事件价格窗与冻结预期。"
+    },
+    {
+      "event_id": "smic-q1-2026",
+      "date": "2026-05-14",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-05-14",
+      "date_status": "completed",
+      "event_type": "earnings_release",
+      "company": "中芯国际｜2026Q1业绩与Q2指引",
+      "ticker": "00981.HK",
+      "market": "HKEX / STAR",
+      "chain_bucket": "晶圆代工 / 半导体",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "Q2指引把下一验证点冻结下来：收入增速能否加快，同时守住毛利率。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-05-14T18:00:00+08:00",
+        "metrics": [
+          "收入US$2.505bn，同比+11.5%",
+          "毛利率20.1%",
+          "产能利用率93.1%",
+          "Q2收入指引环比+14%至+16%",
+          "Q2毛利率指引20%至22%"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "smic-Q1_2026"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "首个反应日 -0.49%",
+        "t1": null,
+        "t5": "+3.78%",
+        "t20": null,
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "T+5超额 +9.83%",
+        "volume_ratio": null,
+        "resonance": "positive_resonance",
+        "source_refs": [
+          "smic-P_H",
+          "shared-hstech"
+        ],
+        "limitations": "SMIC outperformed HSTECH in-window; overlapping market factors prevent causal attribution."
+      },
+      "transmission_paths": [
+        "需求/国产替代 → 利用率与出货 → 收入",
+        "资本开支/折旧/组合 → 毛利率与FCF"
+      ],
+      "holdings_impacted": [
+        "研究主体：中芯国际（00981.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "2026Q2实际对比+14%至+16%与20%至22%",
+        "thesis_impact": "T+5相对HSTECH较强；真正的surprise要等Q2实际与本次官方指引比较。",
+        "review_score": null
+      },
+      "post_event_review": "T+5相对HSTECH较强；真正的surprise要等Q2实际与本次官方指引比较。",
+      "source_refs": [
+        "smic-Q1_2026",
+        "smic-P_H",
+        "shared-hstech"
+      ],
+      "source_gap": "Q1本身的发布前一致预期未冻结。"
+    },
+    {
+      "event_id": "smic-smnc-acquisition",
+      "date": "2026-06-25",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-06-25",
+      "date_status": "completed",
+      "event_type": "capital_allocation",
+      "company": "中芯国际｜收购中芯北方剩余49%",
+      "ticker": "00981.HK",
+      "market": "HKEX / STAR",
+      "chain_bucket": "晶圆代工 / 半导体",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "交易改变归母利润、股本和资本回报口径，必须做法定与备考桥。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-06-25T18:00:00+08:00",
+        "metrics": [
+          "发行547.182m股A股",
+          "非控股权益归属和充分摊薄股数发生变化"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "smic-SMNC_BOOK"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "首个反应日 -6.98%",
+        "t1": null,
+        "t5": "-9.77%",
+        "t20": null,
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "T+5超额 -11.88%",
+        "volume_ratio": null,
+        "resonance": "negative_resonance",
+        "source_refs": [
+          "smic-P_H",
+          "shared-hstech"
+        ],
+        "limitations": "Negative company-relative window is consistent with transaction concern but does not prove causality."
+      },
+      "transmission_paths": [
+        "并表权益变化 → 归母利润",
+        "新股发行 → 稀释",
+        "产能资产 → 折旧/现金回报"
+      ],
+      "holdings_impacted": [
+        "研究主体：中芯国际（00981.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "后续归母EPS、ROIC与资本开支",
+        "thesis_impact": "首日与T+5均弱于HSTECH，和稀释/交易担忧一致但不证明因果。",
+        "review_score": null
+      },
+      "post_event_review": "首日与T+5均弱于HSTECH，和稀释/交易担忧一致但不证明因果。",
+      "source_refs": [
+        "smic-SMNC_BOOK",
+        "smic-P_H",
+        "shared-hstech"
+      ],
+      "source_gap": "事件窗口与半导体板块波动重叠。"
+    },
+    {
+      "event_id": "smic-tsmc-readthrough-2026",
+      "date": "2026-07-16",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-07-16",
+      "date_status": "completed",
+      "event_type": "global_mapping",
+      "company": "中芯国际｜台积电Q2全球映射",
+      "ticker": "00981.HK",
+      "market": "HKEX / STAR",
+      "chain_bucket": "晶圆代工 / 半导体",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "美国/台湾先进制程强势只是一层行业映射，中芯还受节点结构、出口管制与A/H估值影响。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-07-16T18:00:00+08:00",
+        "metrics": [
+          "台积电Q2结果提供先进制程与AI需求读数",
+          "不能机械映射为中芯同节点、同客户或同盈利"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "smic-TSMC_Q2"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "首个反应日 -9.97%",
+        "t1": null,
+        "t5": "-5.92%",
+        "t20": null,
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "T+5超额 -3.11%",
+        "volume_ratio": null,
+        "resonance": "negative_resonance",
+        "source_refs": [
+          "smic-P_H",
+          "shared-hstech"
+        ],
+        "limitations": "A positive TSMC print was not mechanically positive for SMIC; node mix and market factors differ."
+      },
+      "transmission_paths": [
+        "全球AI需求 → 先进制程景气",
+        "节点/设备约束差异 → 中芯经济并不等价"
+      ],
+      "holdings_impacted": [
+        "研究主体：中芯国际（00981.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "中芯Q2实际与官方指引对比",
+        "thesis_impact": "正向同业财报对应中芯负事件窗，说明跨市场映射必须经过节点和估值过滤。",
+        "review_score": null
+      },
+      "post_event_review": "正向同业财报对应中芯负事件窗，说明跨市场映射必须经过节点和估值过滤。",
+      "source_refs": [
+        "smic-TSMC_Q2",
+        "smic-P_H",
+        "shared-hstech"
+      ],
+      "source_gap": "这不是中芯公司事件；窗口仅用于检验主题传导。"
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "smic-Q2_2025",
+      "title": "中芯国际｜Unaudited Results for the Three Months Ended June 30, 2025",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0807/2025080700636.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "smic-Q3_2025",
+      "title": "中芯国际｜Unaudited Results for the Three Months Ended September 30, 2025",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1113/2025111300757.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "smic-Q4_2025",
+      "title": "中芯国际｜Unaudited Results for the Three Months Ended December 31, 2025",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0210/2026021000518.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "smic-Q1_2026",
+      "title": "中芯国际｜Unaudited Results for the Three Months Ended March 31, 2026",
+      "tier": "primary",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0514/2026051400908.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "smic-SMNC_BOOK",
+      "title": "中芯国际｜Listing book for shares issued to acquire the remaining 49% of SMNC",
+      "tier": "primary",
+      "url": "https://star.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-06-25/688981_20260625_WKJL.pdf",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "smic-TSMC_Q2",
+      "title": "中芯国际｜TSMC 2026 Q2 Quarterly Results",
+      "tier": "primary",
+      "url": "https://investor.tsmc.com/english/quarterly-results/2026/q2",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "smic-P_H",
+      "title": "中芯国际｜Tencent qfq Daily Market Snapshot — 00981.HK",
+      "tier": "market_data",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk00981,day,2026-05-01,2026-07-27,100,qfq",
+      "accessed_at": "2026-07-27"
+    },
+    {
+      "id": "shared-hstech",
+      "title": "恒生科技指数日线｜共享风险偏好代理，不是六家公司共同业绩基准",
+      "tier": "market_data",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2026-05-01,2026-07-27,100,qfq",
+      "accessed_at": "2026-07-27"
+    }
+  ],
+  "data_quality": {
+    "missing": [
+      "没有事前冻结共识的历史事件保持 not_comparable。",
+      "缺失的 T+1/T+5/T+20 不按 0 处理。"
+    ],
+    "conflicts": [
+      "同比增长、事件后涨跌和长期基本面不是同一个判断。"
+    ],
+    "manual_review_required": [
+      "未来节点发生后追加官方实际与价格窗口，不改写旧预期。"
+    ]
+  }
+}

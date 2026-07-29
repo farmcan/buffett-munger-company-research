@@ -889,7 +889,289 @@
 
     <section id="timeline">
       <h2>大事件时间轴：已发生与下一检查点</h2>
-      <p class="callout blue"><strong>深度事件终端：</strong><a href="../company-event-timeline/report.html#event-smic-q1-2026">打开六家公司共振时间轴中的中芯节点</a>；包含季度利用率与毛利变化、Q2指引、收购稀释、台积电映射及相对HSTECH事件窗。</p>
+<!-- company-event-terminal:start -->
+
+<style>
+  .event-terminal{margin:22px 0 26px;padding:20px;border:1px solid #cad4ce;
+  border-radius:18px;background:linear-gradient(145deg,#fbfdfb,#f7f4eb)}
+  .event-terminal *{box-sizing:border-box}
+  .et-head{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.8fr);
+  gap:18px;align-items:start}
+  .et-kicker{color:var(--green);font-size:11px;font-weight:850;letter-spacing:.12em;
+  text-transform:uppercase}
+  .et-head h3{margin:4px 0 7px;font-size:clamp(21px,2.6vw,30px)}
+  .et-head p{margin:0;color:var(--muted);font-size:13px}
+  .et-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .et-stat{padding:10px 12px;border:1px solid var(--line);border-radius:11px;background:#fff}
+  .et-stat b{display:block;font-size:21px;line-height:1.15}
+  .et-stat span{color:var(--muted);font-size:11px}
+  .et-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;
+  margin:15px 0 12px}
+  .et-legend>div{display:grid;grid-template-columns:18px 1fr;gap:7px;align-items:center;
+  padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .et-legend b{font-size:11px}.et-legend small{grid-column:2;color:var(--muted);
+  font-size:10px;line-height:1.35}
+  .et-shape{display:block;width:12px;height:12px;border:2px solid var(--green);
+  border-radius:50%;background:#fff}
+  .et-shape.filled{background:var(--green)}
+  .et-shape.ring{background:var(--green);box-shadow:0 0 0 3px rgba(23,107,80,.2)}
+  .et-shape.diamond{border:0;border-radius:1px;background:#65716b;transform:rotate(45deg)}
+  .et-axis-shell{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:#fff}
+  .et-axis{position:relative;min-width:780px;height:148px;
+  background-image:linear-gradient(to right,rgba(217,215,206,.5) 1px,transparent 1px);
+  background-size:10% 100%}
+  .et-axis:before{content:"";position:absolute;left:3%;right:3%;top:76px;
+  border-top:2px solid #d7dcd8}
+  .et-axis-label{position:absolute;top:112px;transform:translateX(-50%);
+  color:var(--muted);font-size:10px;white-space:nowrap}
+  .et-axis-label.start{transform:none}.et-axis-label.end{transform:translateX(-100%)}
+  .et-now{position:absolute;top:0;bottom:0;border-left:2px solid var(--red);z-index:1}
+  .et-now span{position:absolute;top:7px;left:5px;color:var(--red);font-size:10px;
+  font-weight:850;white-space:nowrap}
+  .et-node{position:absolute;z-index:2;width:15px;height:15px;border:3px solid var(--green);
+  border-radius:50%;background:var(--green);transform:translate(-50%,-50%);
+  box-shadow:0 2px 7px rgba(23,34,30,.18)}
+  .et-node.future{background:#fff}.et-node.reviewed{box-shadow:0 0 0 4px rgba(23,107,80,.2)}
+  .et-node.not-comparable{border:0;border-radius:2px;background:#65716b;
+  transform:translate(-50%,-50%) rotate(45deg)}
+  .et-node:hover,.et-node:focus{outline:3px solid rgba(49,95,143,.2);outline-offset:3px}
+  .et-node-date{position:absolute;left:50%;top:18px;transform:translateX(-50%) rotate(-34deg);
+  transform-origin:left top;color:#52605a;font-size:9px;white-space:nowrap}
+  .et-chart{margin:14px 0;padding:14px;border:1px solid var(--line);
+  border-radius:13px;background:#fff}
+  .et-chart-head{display:flex;justify-content:space-between;gap:12px;align-items:start}
+  .et-chart h4{margin:0;font-size:15px}.et-chart p{margin:2px 0 0;color:var(--muted);font-size:11px}
+  .et-chart-legend{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:10px}
+  .et-chart-legend i{display:inline-block;width:10px;height:7px;margin-right:4px;border-radius:2px}
+  .et-reaction-axis{display:grid;grid-template-columns:145px 1fr;margin:12px 0 5px;
+  color:var(--muted);font-size:9px}
+  .et-reaction-axis>div{display:flex;justify-content:space-between}
+  .et-reaction-row{display:grid;grid-template-columns:145px 1fr;gap:10px;align-items:center;
+  margin:6px 0}
+  .et-reaction-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}
+  .et-reaction-plot{position:relative;height:34px;border-radius:7px;background:#f7f6f1}
+  .et-reaction-plot:before{content:"";position:absolute;left:50%;top:0;bottom:0;
+  border-left:1px solid #aeb7b1}
+  .et-bar{position:absolute;height:7px;border-radius:3px;min-width:1px}
+  .et-bar.positive{left:50%}.et-bar.negative{right:50%}
+  .et-bar.t0{top:3px;background:var(--green)}
+  .et-bar.t5{top:13px;background:var(--blue)}
+  .et-bar.t20{top:23px;background:var(--amber)}
+  .et-bar em{position:absolute;top:-4px;font-style:normal;font-size:8px;font-weight:800;
+  white-space:nowrap}
+  .et-bar.positive em{left:calc(100% + 3px)}.et-bar.negative em{right:calc(100% + 3px)}
+  .et-ledger-title{display:flex;justify-content:space-between;gap:12px;align-items:end;
+  margin:17px 0 8px}
+  .et-ledger-title h4{margin:0;font-size:16px}.et-ledger-title span{color:var(--muted);
+  font-size:10px}
+  .et-event{margin:8px 0;border:1px solid var(--line);border-radius:12px;background:#fff;
+  scroll-margin-top:86px}
+  .et-event:target{border-color:var(--blue);box-shadow:0 0 0 3px rgba(49,95,143,.12)}
+  .et-event summary{display:grid;grid-template-columns:92px minmax(0,1fr) auto;
+  gap:10px;align-items:center;padding:12px 13px}
+  .et-event summary::marker{color:var(--green)}
+  .et-event-date{font-size:11px;font-weight:800;color:var(--muted)}
+  .et-event-title{font-size:13px;font-weight:820}
+  .et-badges{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+  .et-badge{padding:2px 7px;border-radius:999px;font-size:9px;font-weight:820;background:#ecefe9;
+  color:#52605a}.et-badge.reviewed{background:var(--green-soft);color:var(--green)}
+  .et-badge.future{background:var(--amber-soft);color:var(--amber)}
+  .et-badge.nocomp{background:#edf0f2;color:#56636b}
+  .et-event-body{padding:0 14px 14px}
+  .et-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .et-evidence{padding:10px 11px;border-radius:9px;background:#f7f6f1}
+  .et-evidence b{display:block;margin-bottom:3px;color:#4e5b55;font-size:10px;
+  letter-spacing:.04em}.et-evidence p,.et-evidence ul{margin:0;color:#46534d;font-size:11px}
+  .et-evidence ul{padding-left:17px}.et-evidence li{margin:2px 0}
+  .et-source-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .et-source-links a{padding:3px 7px;border:1px solid var(--line);border-radius:999px;
+  text-decoration:none;font-size:9px;font-weight:750}
+  .et-preserved-label{margin:24px 0 8px!important;padding-top:18px;border-top:1px solid var(--line);
+  font-size:16px!important}
+  @media(max-width:820px){.et-head{grid-template-columns:1fr}
+  .et-legend{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.event-terminal{padding:14px}.et-legend{grid-template-columns:1fr}
+  .et-reaction-axis,.et-reaction-row{grid-template-columns:92px 1fr}.et-event summary{
+  grid-template-columns:78px 1fr}.et-badges{grid-column:1/-1;justify-content:flex-start}
+  .et-evidence-grid{grid-template-columns:1fr}}
+</style>
+
+<div class="event-terminal" data-company="smic"
+  data-contract="seed.earnings-season-timeline.v1.1-compatible">
+  <div class="et-head">
+    <div><div class="et-kicker">Company event validation terminal</div>
+    <h3>中芯国际｜事件 Surprise × 市场共振</h3>
+    <p>只放本公司事件。图上点击节点可跳到证据卡；价格反应是相关性观察，不是买卖指令或单因果证明。</p></div>
+    <div class="et-summary">
+      <div class="et-stat"><b>6</b><span>公司事件</span></div>
+      <div class="et-stat"><b>3</b><span>已复核价格窗</span></div>
+      <div class="et-stat"><b>6</b><span>不可比 Surprise</span></div>
+      <div class="et-stat"><b>0</b><span>未来验证节点</span></div>
+    </div>
+  </div>
+  <div class="et-legend" aria-label="事件状态图例">
+    <div><i class="et-shape"></i><b>expectation_frozen</b>
+    <small>空心：只冻结问题，不预填实际。</small></div>
+    <div><i class="et-shape filled"></i><b>actual_reported</b>
+    <small>实心：官方实际已披露。</small></div>
+    <div><i class="et-shape ring"></i><b>market_reviewed</b>
+    <small>外圈：至少一个价格窗口已复核。</small></div>
+    <div><i class="et-shape diamond"></i><b>not_comparable</b>
+    <small>菱形：无可靠基线；不等于负面。</small></div>
+  </div>
+
+      <div class="et-axis-shell" aria-label="公司事件横向时间轴">
+        <div class="et-axis">
+          <span class="et-axis-label start" style="left:3%">2025-08-07</span>
+          <span class="et-axis-label" style="left:91.517%">2026-07-29</span>
+          <span class="et-axis-label end" style="left:97%">2026-08-31</span>
+          <span class="et-now" style="left:91.517%"><span>NOW</span></span>
+          <a class="et-node not-comparable" href="#event-smic-q2-2025" style="left:3.000%;top:48px" title="2025-08-07｜2025Q2业绩｜actual_reported｜不可比"><span class="et-node-date">08-07</span></a><a class="et-node not-comparable" href="#event-smic-q3-2025" style="left:25.193%;top:73px" title="2025-11-13｜2025Q3业绩｜actual_reported｜不可比"><span class="et-node-date">11-13</span></a><a class="et-node not-comparable" href="#event-smic-q4-2025" style="left:48.072%;top:98px" title="2026-02-10｜2025Q4业绩｜actual_reported｜不可比"><span class="et-node-date">02-10</span></a><a class="et-node reviewed not-comparable" href="#event-smic-q1-2026" style="left:71.979%;top:48px" title="2026-05-14｜2026Q1业绩与Q2指引｜market_reviewed｜不可比"><span class="et-node-date">05-14</span></a><a class="et-node reviewed not-comparable" href="#event-smic-smnc-acquisition" style="left:82.776%;top:73px" title="2026-06-25｜收购中芯北方剩余49%｜market_reviewed｜不可比"><span class="et-node-date">06-25</span></a><a class="et-node reviewed not-comparable" href="#event-smic-tsmc-readthrough-2026" style="left:88.175%;top:98px" title="2026-07-16｜台积电Q2全球映射｜market_reviewed｜不可比"><span class="et-node-date">07-16</span></a>
+        </div>
+      </div>
+
+
+      <div class="et-chart" role="img" aria-label="事件后价格窗口柱状图">
+        <div class="et-chart-head">
+          <div><h4>事件后价格窗口</h4>
+          <p>相关性观察，不证明单一公告造成全部涨跌；缺失窗口不画成 0。</p></div>
+          <div class="et-chart-legend"><span><i style="background:var(--green)"></i>T0</span>
+          <span><i style="background:var(--blue)"></i>T+5</span>
+          <span><i style="background:var(--amber)"></i>T+20</span></div>
+        </div>
+        <div class="et-reaction-axis"><span></span><div><span>−10%</span><span>0</span>
+        <span>+10%</span></div></div>
+        <div class="et-reaction-row"><a class="et-reaction-label" href="#event-smic-q1-2026" title="2026Q1业绩与Q2指引">26-05-14 2026Q1业绩与Q2指引</a><div class="et-reaction-plot"><span class="et-bar t0 negative" style="width:2.352%" title="T0 -0.49%"><em>-0.5%</em></span><span class="et-bar t5 positive" style="width:18.144%" title="T+5 +3.78%"><em>+3.8%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-smic-smnc-acquisition" title="收购中芯北方剩余49%">26-06-25 收购中芯北方剩余49%</a><div class="et-reaction-plot"><span class="et-bar t0 negative" style="width:33.504%" title="T0 -6.98%"><em>-7.0%</em></span><span class="et-bar t5 negative" style="width:46.896%" title="T+5 -9.77%"><em>-9.8%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-smic-tsmc-readthrough-2026" title="台积电Q2全球映射">26-07-16 台积电Q2全球映射</a><div class="et-reaction-plot"><span class="et-bar t0 negative" style="width:47.856%" title="T0 -9.97%"><em>-10.0%</em></span><span class="et-bar t5 negative" style="width:28.416%" title="T+5 -5.92%"><em>-5.9%</em></span></div></div>
+      </div>
+
+  <div class="et-ledger-title"><h4>纵向证据账本</h4>
+  <span>预期 → 实际 → Surprise → 价格 → 传导 → 下一验证</span></div>
+
+      <details class="et-event" id="event-smic-q2-2025">
+        <summary><span class="et-event-date">2025-08-07</span>
+        <span class="et-event-title">2025Q2业绩</span>
+        <span class="et-badges"><span class="et-badge reviewed">actual_reported</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
+        <div class="et-event-body">
+          <div class="et-evidence-grid">
+            <div class="et-evidence"><b>为什么重要</b><p>利用率、ASP、毛利率和资本开支是晶圆代工周期比单一收入增长更早的验证变量。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
+            <div class="et-evidence"><b>官方实际</b><ul><li>收入US$2.209bn</li><li>环比-1.7%</li><li>毛利率20.4%</li><li>产能利用率92.5%</li></ul></div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
+            <div class="et-evidence"><b>市场反应</b><p>价格窗口尚未形成或没有可比基线。</p></div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>国内晶圆需求 → 利用率/ASP → 毛利率 → 折旧吸收与FCF</li></ul></div>
+            <div class="et-evidence"><b>复盘结论</b><p>经营数据进入上行段，但没有保存事前一致预期，不能追溯打分。</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>2025Q3实际｜该公开包没有冻结2025Q2发布前的市场共识。</p></div>
+          </div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0807/2025080700636.pdf" rel="noreferrer">Unaudited Results for the Three Months Ended June 30, 2025</a></div>
+        </div>
+      </details>
+
+      <details class="et-event" id="event-smic-q3-2025">
+        <summary><span class="et-event-date">2025-11-13</span>
+        <span class="et-event-title">2025Q3业绩</span>
+        <span class="et-badges"><span class="et-badge reviewed">actual_reported</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
+        <div class="et-event-body">
+          <div class="et-evidence-grid">
+            <div class="et-evidence"><b>为什么重要</b><p>利用率升至接近满载后，下一变量从数量转向ASP、产品组合和扩产回报。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
+            <div class="et-evidence"><b>官方实际</b><ul><li>收入US$2.382bn</li><li>环比+7.8%</li><li>毛利率22.0%</li><li>产能利用率95.8%</li></ul></div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
+            <div class="et-evidence"><b>市场反应</b><p>价格窗口尚未形成或没有可比基线。</p></div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>利用率上升 → 折旧吸收改善</li><li>接近满载 → 扩产/瓶颈 → 资本开支与回报压力</li></ul></div>
+            <div class="et-evidence"><b>复盘结论</b><p>基本面继续改善，但事件层未冻结共识，保持不可比状态。</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>2025Q4实际｜缺少发布前官方指引和一致预期的结构化快照。</p></div>
+          </div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1113/2025111300757.pdf" rel="noreferrer">Unaudited Results for the Three Months Ended September 30, 2025</a></div>
+        </div>
+      </details>
+
+      <details class="et-event" id="event-smic-q4-2025">
+        <summary><span class="et-event-date">2026-02-10</span>
+        <span class="et-event-title">2025Q4业绩</span>
+        <span class="et-badges"><span class="et-badge reviewed">actual_reported</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
+        <div class="et-event-body">
+          <div class="et-evidence-grid">
+            <div class="et-evidence"><b>为什么重要</b><p>收入和利用率保持强势但毛利率回落，提示扩产、折旧与产品组合的压力。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
+            <div class="et-evidence"><b>官方实际</b><ul><li>收入US$2.489bn</li><li>环比+4.5%</li><li>毛利率19.2%</li><li>产能利用率95.7%</li></ul></div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
+            <div class="et-evidence"><b>市场反应</b><p>价格窗口尚未形成或没有可比基线。</p></div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>高利用率 → 收入韧性</li><li>毛利率回落 → 成本/折旧/组合压力</li></ul></div>
+            <div class="et-evidence"><b>复盘结论</b><p>周期景气不能只看收入；毛利率是重要反证。</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>2025年报与2026Q1实际｜缺少该季度可复核事件价格窗与冻结预期。</p></div>
+          </div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0210/2026021000518.pdf" rel="noreferrer">Unaudited Results for the Three Months Ended December 31, 2025</a></div>
+        </div>
+      </details>
+
+      <details class="et-event" id="event-smic-q1-2026">
+        <summary><span class="et-event-date">2026-05-14</span>
+        <span class="et-event-title">2026Q1业绩与Q2指引</span>
+        <span class="et-badges"><span class="et-badge reviewed">market_reviewed</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
+        <div class="et-event-body">
+          <div class="et-evidence-grid">
+            <div class="et-evidence"><b>为什么重要</b><p>Q2指引把下一验证点冻结下来：收入增速能否加快，同时守住毛利率。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
+            <div class="et-evidence"><b>官方实际</b><ul><li>收入US$2.505bn，同比+11.5%</li><li>毛利率20.1%</li><li>产能利用率93.1%</li><li>Q2收入指引环比+14%至+16%</li><li>Q2毛利率指引20%至22%</li></ul></div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
+            <div class="et-evidence"><b>市场反应</b><ul><li>T0/首个反应：首个反应日 -0.49%</li><li>T+5：+3.78%</li><li>基准调整：T+5超额 +9.83%</li></ul></div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>需求/国产替代 → 利用率与出货 → 收入</li><li>资本开支/折旧/组合 → 毛利率与FCF</li></ul></div>
+            <div class="et-evidence"><b>复盘结论</b><p>T+5相对HSTECH较强；真正的surprise要等Q2实际与本次官方指引比较。</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>2026Q2实际对比+14%至+16%与20%至22%｜Q1本身的发布前一致预期未冻结。</p></div>
+          </div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2026/0514/2026051400908.pdf" rel="noreferrer">Unaudited Results for the Three Months Ended March 31, 2026</a><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk00981,day,2026-05-01,2026-07-27,100,qfq" rel="noreferrer">Tencent qfq Daily Market Snapshot — 00981.HK</a><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2026-05-01,2026-07-27,100,qfq" rel="noreferrer">共享风险偏好代理，不是六家公司共同业绩基准</a></div>
+        </div>
+      </details>
+
+      <details class="et-event" id="event-smic-smnc-acquisition">
+        <summary><span class="et-event-date">2026-06-25</span>
+        <span class="et-event-title">收购中芯北方剩余49%</span>
+        <span class="et-badges"><span class="et-badge reviewed">market_reviewed</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
+        <div class="et-event-body">
+          <div class="et-evidence-grid">
+            <div class="et-evidence"><b>为什么重要</b><p>交易改变归母利润、股本和资本回报口径，必须做法定与备考桥。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
+            <div class="et-evidence"><b>官方实际</b><ul><li>发行547.182m股A股</li><li>非控股权益归属和充分摊薄股数发生变化</li></ul></div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
+            <div class="et-evidence"><b>市场反应</b><ul><li>T0/首个反应：首个反应日 -6.98%</li><li>T+5：-9.77%</li><li>基准调整：T+5超额 -11.88%</li></ul></div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>并表权益变化 → 归母利润</li><li>新股发行 → 稀释</li><li>产能资产 → 折旧/现金回报</li></ul></div>
+            <div class="et-evidence"><b>复盘结论</b><p>首日与T+5均弱于HSTECH，和稀释/交易担忧一致但不证明因果。</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>后续归母EPS、ROIC与资本开支｜事件窗口与半导体板块波动重叠。</p></div>
+          </div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://star.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-06-25/688981_20260625_WKJL.pdf" rel="noreferrer">Listing book for shares issued to acquire the remaining 49% of SMNC</a><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk00981,day,2026-05-01,2026-07-27,100,qfq" rel="noreferrer">Tencent qfq Daily Market Snapshot — 00981.HK</a><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2026-05-01,2026-07-27,100,qfq" rel="noreferrer">共享风险偏好代理，不是六家公司共同业绩基准</a></div>
+        </div>
+      </details>
+
+      <details class="et-event" id="event-smic-tsmc-readthrough-2026" open>
+        <summary><span class="et-event-date">2026-07-16</span>
+        <span class="et-event-title">台积电Q2全球映射</span>
+        <span class="et-badges"><span class="et-badge reviewed">market_reviewed</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
+        <div class="et-event-body">
+          <div class="et-evidence-grid">
+            <div class="et-evidence"><b>为什么重要</b><p>美国/台湾先进制程强势只是一层行业映射，中芯还受节点结构、出口管制与A/H估值影响。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
+            <div class="et-evidence"><b>官方实际</b><ul><li>台积电Q2结果提供先进制程与AI需求读数</li><li>不能机械映射为中芯同节点、同客户或同盈利</li></ul></div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
+            <div class="et-evidence"><b>市场反应</b><ul><li>T0/首个反应：首个反应日 -9.97%</li><li>T+5：-5.92%</li><li>基准调整：T+5超额 -3.11%</li></ul></div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>全球AI需求 → 先进制程景气</li><li>节点/设备约束差异 → 中芯经济并不等价</li></ul></div>
+            <div class="et-evidence"><b>复盘结论</b><p>正向同业财报对应中芯负事件窗，说明跨市场映射必须经过节点和估值过滤。</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>中芯Q2实际与官方指引对比｜这不是中芯公司事件；窗口仅用于检验主题传导。</p></div>
+          </div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://investor.tsmc.com/english/quarterly-results/2026/q2" rel="noreferrer">TSMC 2026 Q2 Quarterly Results</a><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk00981,day,2026-05-01,2026-07-27,100,qfq" rel="noreferrer">Tencent qfq Daily Market Snapshot — 00981.HK</a><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2026-05-01,2026-07-27,100,qfq" rel="noreferrer">共享风险偏好代理，不是六家公司共同业绩基准</a></div>
+        </div>
+      </details>
+
+  <p class="chart-note">研究边界：影响分只用于排序研究注意力，不是收益预测；
+  未来节点保持空心，缺失窗口不画成 0。</p>
+</div>
+<h3 class="et-preserved-label">原报告事件表与更长历史（保留）</h3>
+<!-- company-event-terminal:end -->
       <p class="section-dek">completed、official peer 与 TBA 分开；历史事件反应见事件监控表。</p>
       <div class="timeline">
         <div class="timeline-item"><div class="timeline-date">2024-12-02 · completed</div><div class="timeline-title">美国先进半导体管制强化</div><p>设备、软件与 HBM 控制框架收紧，形成结构性设备/服务与良率风险。</p></div>

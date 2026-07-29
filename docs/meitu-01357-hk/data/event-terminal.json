@@ -1,0 +1,545 @@
+{
+  "artifact_type": "earnings_season_timeline",
+  "version": "1.1",
+  "title": "美图公司：事件 Surprise 与市场共振",
+  "subtitle": "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、行业/资本结构传导与下一验证放在一条证据轴。",
+  "as_of": "2026-07-29T18:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "date_range": {
+    "start": "2024-10-01",
+    "end": "2026-08-31"
+  },
+  "scope": {
+    "theme": "AI 应用 / 创意软件",
+    "markets": [
+      "HKEX"
+    ],
+    "watchlist": [
+      "01357.HK"
+    ],
+    "user_holdings": []
+  },
+  "not_investment_advice": true,
+  "market_series": null,
+  "scenario_paths": [],
+  "events": [
+    {
+      "event_id": "meitu-deepseek-cost-shock-2025",
+      "date": "2025-01-27",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2025-01-27",
+      "date_status": "completed",
+      "event_type": "industry_model",
+      "company": "美图公司｜DeepSeek与开源模型成本冲击",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "chain_bucket": "AI 应用 / 创意软件",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "模型降价既可能降低推理成本，也可能强化模型厂商直接包住应用的替代风险。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2025-01-27T18:00:00+08:00",
+        "metrics": [
+          "低成本/开源模型冲击扩散至中国AI应用叙事",
+          "这是行业事件，不是美图单一公告"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "meitu-T10"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T−1 HK$3.13 → T0 HK$3.64",
+        "t1": null,
+        "t5": "T−1→T+5 +45.05%；T0→T+5 +24.73%",
+        "t20": null,
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "同窗 HSTECH +8.63%；超额 +36.42%",
+        "volume_ratio": null,
+        "resonance": "positive_resonance",
+        "source_refs": [
+          "meitu-P01"
+        ],
+        "attribution_confidence": "low",
+        "limitations": "Broad industry narrative with multiple concurrent catalysts; not a Meitu-specific disclosure"
+      },
+      "transmission_paths": [
+        "模型成本下降 → AI功能毛利/试用增加",
+        "模型能力上升 → 原生平台替代独立应用"
+      ],
+      "holdings_impacted": [
+        "研究主体：美图公司（01357.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "付费转化、毛利和模型厂商直接产品边界",
+        "thesis_impact": "T−1到T+5上涨45.1%，但属于宽行业叙事，不能作为单一公司因果证明。",
+        "review_score": null
+      },
+      "post_event_review": "T−1到T+5上涨45.1%，但属于宽行业叙事，不能作为单一公司因果证明。",
+      "source_refs": [
+        "meitu-T10",
+        "meitu-P01"
+      ],
+      "source_gap": "多个AI催化剂同时发生，缺少可隔离的公司特定信息。"
+    },
+    {
+      "event_id": "meitu-alibaba-cb-2025",
+      "date": "2025-05-21",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2025-05-21",
+      "date_status": "completed",
+      "event_type": "capital_strategy",
+      "company": "美图公司｜阿里可转债与战略合作",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "chain_bucket": "AI 应用 / 创意软件",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "资本、分发和模型合作可同时改变小盘AI应用公司的估值叙事，但债务与稀释必须分别建模。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2025-05-21T18:00:00+08:00",
+        "metrics": [
+          "阿里认购US$250m可转债",
+          "初始转股价HK$6.00",
+          "同时披露战略合作"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "meitu-F14"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T−1 HK$5.90 → T0 HK$7.02",
+        "t1": null,
+        "t5": "T−1→T+5 +7.80%；T0→T+5 -9.40%",
+        "t20": null,
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "同窗 HSTECH -2.65%；超额 +10.45%",
+        "volume_ratio": null,
+        "resonance": "positive_resonance",
+        "source_refs": [
+          "meitu-P01"
+        ],
+        "attribution_confidence": "medium",
+        "limitations": "Company-specific disclosure; five-session follow-through retraced part of the first-day jump"
+      },
+      "transmission_paths": [
+        "平台合作 → 分发/模型调用 → 付费转化与推理成本",
+        "可转债 → 现金缓冲或转股稀释"
+      ],
+      "holdings_impacted": [
+        "研究主体：美图公司（01357.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "中报核对商业贡献、净现金和全摊薄股数",
+        "thesis_impact": "首日重估明显，五日回吐；合作标题不能代替收入和每股现金验证。",
+        "review_score": null
+      },
+      "post_event_review": "首日重估明显，五日回吐；合作标题不能代替收入和每股现金验证。",
+      "source_refs": [
+        "meitu-F14",
+        "meitu-P01"
+      ],
+      "source_gap": "合作收入、模型调用成本和渠道转化未单独披露。"
+    },
+    {
+      "event_id": "meitu-q1-2026",
+      "date": "2026-05-06",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-05-06",
+      "date_status": "completed",
+      "event_type": "operating_update",
+      "company": "美图公司｜2026Q1经营更新",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "chain_bucket": "AI 应用 / 创意软件",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "付费人数、生产力占比和ARR比新品演示更接近AI应用商业化主线，但未披露利润和现金。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-05-06T18:00:00+08:00",
+        "metrics": [
+          "核心影像与设计收入RMB852m，同比+34.3%",
+          "付费用户超过17.9m，同比+30.2%",
+          "生产力付费用户2.34m，同比+52.9%",
+          "AI生产力ARR RMB580m，同比+56.2%"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "meitu-F03"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T−1 HK$4.19 → T0 HK$4.66",
+        "t1": null,
+        "t5": "T−1→T+5 +20.29%；T0→T+5 +8.15%",
+        "t20": null,
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "同窗 HSTECH +3.33%；超额 +16.96%",
+        "volume_ratio": null,
+        "resonance": "positive_resonance",
+        "source_refs": [
+          "meitu-P01"
+        ],
+        "attribution_confidence": "medium",
+        "limitations": "Company-specific operating update; still cannot exclude concurrent AI-application sentiment"
+      },
+      "transmission_paths": [
+        "模型能力/推理成本 → 产品体验 → 付费转化/ARPU → 毛利与现金"
+      ],
+      "holdings_impacted": [
+        "研究主体：美图公司（01357.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "2026H1：Q2增量、毛利、现金和净股数",
+        "thesis_impact": "T−1到T+5上涨20.3%，是六家公司中较清晰的经营KPI正共振之一；仍需中报财务闭环。",
+        "review_score": null
+      },
+      "post_event_review": "T−1到T+5上涨20.3%，是六家公司中较清晰的经营KPI正共振之一；仍需中报财务闭环。",
+      "source_refs": [
+        "meitu-F03",
+        "meitu-P01"
+      ],
+      "source_gap": "Q1更新未经审阅，未披露利润、毛利率、CFO和分产品留存。"
+    },
+    {
+      "event_id": "meitu-imaging-governance-cluster",
+      "date": "2026-06-18",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-06-18",
+      "date_status": "completed",
+      "event_type": "product_governance_cluster",
+      "company": "美图公司｜影像节与披露治理事件簇",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "chain_bucket": "AI 应用 / 创意软件",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "产品发布与治理负面在相邻交易日重叠，必须作为事件簇而不是强行单因果归因。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-06-18T18:00:00+08:00",
+        "metrics": [
+          "6月17日影像节提出apps-to-agents路线",
+          "6月18日披露早前业绩视频误发调查与整改",
+          "同时披露两项理财认购迟报"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "meitu-M02",
+          "meitu-R05"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T−1 HK$4.38 → T0 HK$4.10",
+        "t1": null,
+        "t5": "T−1→T+5 -13.70%；T0→T+5 -7.80%",
+        "t20": null,
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "同窗 HSTECH -4.59%；超额 -9.11%",
+        "volume_ratio": null,
+        "resonance": "negative_resonance",
+        "source_refs": [
+          "meitu-P01"
+        ],
+        "attribution_confidence": "low",
+        "limitations": "Window overlaps the Imaging Festival selloff and company repurchases; attribution is not separable"
+      },
+      "transmission_paths": [
+        "产品路线 → 付费/留存验证",
+        "披露控制缺陷 → 风险折价与事件跳空"
+      ],
+      "holdings_impacted": [
+        "研究主体：美图公司（01357.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "无重复迟报；中报验证agent收入与成本",
+        "thesis_impact": "T−1到T+5下跌13.7%；产品叙事未抵消治理与风险偏好压力。",
+        "review_score": null
+      },
+      "post_event_review": "T−1到T+5下跌13.7%；产品叙事未抵消治理与风险偏好压力。",
+      "source_refs": [
+        "meitu-M02",
+        "meitu-R05",
+        "meitu-P01"
+      ],
+      "source_gap": "相邻事件与公司回购重叠，不能分离每个因素的价格贡献。"
+    },
+    {
+      "event_id": "meitu-founder-purchase-2026",
+      "date": "2026-07-03",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-07-03",
+      "date_status": "completed",
+      "event_type": "insider_action",
+      "company": "美图公司｜创始人增持160万股",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "chain_bucket": "AI 应用 / 创意软件",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "增持是利益一致性信号，不是估值底或未来业绩的充分证据。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2026-07-03T18:00:00+08:00",
+        "metrics": [
+          "创始人兼董事长以均价约HK$4.023购入1.6m股"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "meitu-F05"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "T−1 HK$4.00 → T0 HK$4.11",
+        "t1": null,
+        "t5": "T−1→T+5 -1.25%；T0→T+5 -3.89%",
+        "t20": null,
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "同窗 HSTECH +3.94%；超额 -5.19%",
+        "volume_ratio": null,
+        "resonance": "mixed_or_neutral",
+        "source_refs": [
+          "meitu-P01"
+        ],
+        "attribution_confidence": "medium_low",
+        "limitations": "The initial rise did not persist through T+5; insider alignment is not proof of valuation support"
+      },
+      "transmission_paths": [
+        "内部人买入 → 信号/流通供给",
+        "每股价值仍取决于经营、稀释和现金"
+      ],
+      "holdings_impacted": [
+        "研究主体：美图公司（01357.HK）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "后续增持、净股数与中报每股经济",
+        "thesis_impact": "初始上涨未延续至T+5；小额增持不能压过基本面与行业情绪。",
+        "review_score": null
+      },
+      "post_event_review": "初始上涨未延续至T+5；小额增持不能压过基本面与行业情绪。",
+      "source_refs": [
+        "meitu-F05",
+        "meitu-P01"
+      ],
+      "source_gap": "无法从单次交易推断管理层私有信息或未来收益。"
+    },
+    {
+      "event_id": "meitu-h1-results-2026",
+      "date": "2026-08-26",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-08-26",
+      "date_status": "confirmed",
+      "event_type": "future_validation",
+      "company": "美图公司｜2026H1正式业绩",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "chain_bucket": "AI 应用 / 创意软件",
+      "importance": "high",
+      "impact_score": 5,
+      "why_it_matters": "这是把Q1经营KPI桥接到Q2收入、利润、现金、推理成本和净股数的主要决策节点。",
+      "expectation_snapshot": {
+        "frozen_at": "2026-07-29T18:00:00+08:00",
+        "official_guidance": [],
+        "consensus": [],
+        "previous_actual": [],
+        "source_refs": [
+          "meitu-F08",
+          "meitu-F03"
+        ]
+      },
+      "actual_results": null,
+      "surprise": {
+        "direction": "pending",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "pending",
+        "confidence": "pending",
+        "reason": "事件尚未发生，不预填方向。",
+        "source_refs": [
+          "meitu-F08",
+          "meitu-F03"
+        ]
+      },
+      "market_reaction": {
+        "intraday": null,
+        "t1": null,
+        "t5": null,
+        "t20": null,
+        "benchmark": null,
+        "benchmark_adjusted": null,
+        "volume_ratio": null,
+        "resonance": "pending",
+        "source_refs": []
+      },
+      "transmission_paths": [
+        "官方披露 → 核对口径与前期基线 → 计算实际变化 → 再观察价格与成交量共振"
+      ],
+      "holdings_impacted": [
+        "研究主体：美图公司（01357.HK）"
+      ],
+      "validation": {
+        "status": "expectation_frozen",
+        "next_check_at": "2026-08-26",
+        "thesis_impact": "pending",
+        "review_score": null
+      },
+      "pre_event_questions": [
+        "Q2核心收入和付费用户相对Q1是否继续加速？",
+        "生产力收入占比、ARR和AI credits是否转成确认收入？",
+        "毛利率、CFO、SBC、回购和可转债后的每股owner earnings如何？"
+      ],
+      "post_event_review": null,
+      "source_refs": [
+        "meitu-F08",
+        "meitu-F03"
+      ],
+      "source_gap": "未来实际、T+1/T+5/T+20和成交量只能在事件后追加。"
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "meitu-F03",
+      "title": "美图公司｜First Quarter 2026 Business Update",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0506/2026050600053.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "meitu-F05",
+      "title": "美图公司｜Purchase of Shares by Founder and Chairman",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0703/2026070302393.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "meitu-F08",
+      "title": "美图公司｜Notice of Board Meeting for 2026 Interim Results",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "meitu-F14",
+      "title": "美图公司｜Subscription of US$250 Million Convertible Bonds by Alibaba",
+      "tier": "primary",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2025/0520/2025052001407.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "meitu-M02",
+      "title": "美图公司｜2026 Meitu Multimedia Festival",
+      "tier": "company_claim",
+      "url": "https://www.meitu.com/en/media/438",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "meitu-P01",
+      "title": "美图公司｜Tencent qfq Daily Market Snapshots",
+      "tier": "market_data",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-07-24,1000,qfq",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "meitu-R05",
+      "title": "美图公司｜Investigation and Remedial Actions for Premature Publicity Video",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061801536.pdf",
+      "accessed_at": "2026-07-29"
+    },
+    {
+      "id": "meitu-T10",
+      "title": "美图公司｜DeepSeek-R1 Release",
+      "tier": "primary",
+      "url": "https://api-docs.deepseek.com/news/news250120/",
+      "accessed_at": "2026-07-29"
+    }
+  ],
+  "data_quality": {
+    "missing": [
+      "没有事前冻结共识的历史事件保持 not_comparable。",
+      "缺失的 T+1/T+5/T+20 不按 0 处理。"
+    ],
+    "conflicts": [
+      "同比增长、事件后涨跌和长期基本面不是同一个判断。"
+    ],
+    "manual_review_required": [
+      "未来节点发生后追加官方实际与价格窗口，不改写旧预期。"
+    ]
+  }
+}

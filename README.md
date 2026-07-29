@@ -23,10 +23,9 @@ Each report exposes the 25 dimensions, 50 indicators, nine gates, source ledger,
 locators, valuation boundaries, and invalidation tests directly in HTML. All public company
 reports use one versioned publication shell (`company-research-publication-v1`) and a shared
 visual theme; industry differences are explicit content slots rather than independent page
-designs. A separate
-[event-surprise and market-resonance terminal](https://farmcan.github.io/buffett-munger-company-research/company-event-timeline/report.html)
-places 37 events on a shared timeline with company swimlanes, a `NOW` boundary, T0/T+5/T+20
-reaction windows, future nodes, and source-linked evidence cards.
+designs. Each report embeds its own event-surprise and market-resonance terminal inside the
+company timeline section, with a `NOW` boundary, T0/T+5/T+20 reaction windows, future nodes,
+and source-linked evidence cards; no cross-company page is required to read it.
 
 ## What is production-grade here?
 
