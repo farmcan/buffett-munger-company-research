@@ -1,0 +1,4 @@
+case,rmb_m,formula,meaning
+reported_fcf_upper_bound,4911.429,"8,258.529 CFO − 3,347.100 total capex",报表上限；未拆维持/增长资本开支
+after_sbc_economic_cost,4347.1,"4,911.429 − 564.329 SBC",SBC作为经济成本；股数桥仍另看稀释
+after_2025_working_capital_tailwind,-3070.9,"4,347.100 − approx. 7,418 net WC benefit",剔除应付/应计释放后保守压力测试

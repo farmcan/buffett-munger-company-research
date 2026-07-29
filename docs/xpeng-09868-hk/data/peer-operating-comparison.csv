@@ -1,0 +1,6 @@
+company,role,deliveries,delivery_yoy_pct,revenue_rmb_bn,vehicle_or_group_margin_pct,net_income_rmb_bn,comparison
+小鹏汽车,subject,429445,125.9,76.72,12.8,-1.14,研究主体；vehicle margin
+理想汽车,eligible_direct_peer,406343,-18.8,112.3,17.9,1.1,产品/动力结构不同；官方FY2025披露
+蔚来,eligible_direct_peer,326028,46.9,87.49,14.6,,换电与品牌结构不同；全年仍亏
+零跑汽车,eligible_direct_peer,596555,103.1,64.73,14.5,0.54,此处为集团毛利率，非vehicle margin
+比亚迪 / Tesla,adjacent_excluded,,,,,,规模、垂直整合、地域与业务成熟度差异过大，不进直接中位数

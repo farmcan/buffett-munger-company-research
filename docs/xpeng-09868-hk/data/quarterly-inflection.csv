@@ -1,0 +1,7 @@
+period,deliveries,revenue_rmb_bn,gross_margin_pct,vehicle_margin_pct,net_income_rmb_bn,status
+2025Q1,94008,15.811,15.6,10.5,-0.664,actual
+2025Q2,103181,18.27,17.3,14.3,-0.48,actual
+2025Q3,116007,20.38,20.1,13.1,-0.38,actual
+2025Q4,116249,22.25,21.3,13.0,0.383,actual
+2026Q1,62682,13.034,20.6,12.1,-1.784,actual
+2026Q2,103295,20.2,,,,delivery_actual_revenue_guide_midpoint

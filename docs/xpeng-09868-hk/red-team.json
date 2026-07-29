@@ -1,0 +1,60 @@
+{
+  "schema_version": "seed.company-research-red-team.v1",
+  "company": "XPeng Inc.",
+  "security_id": "XHKG:09868",
+  "reviewed_at": "2026-07-29T13:20:00+08:00",
+  "status": "needs_human_review",
+  "counter_thesis": "Q2交付环比修复可能只是车型和基数效应；价格战、成本、研发与营运资本可能继续阻断每股owner earnings。",
+  "strongest_disconfirming_evidence": [
+    {
+      "risk": "false_growth_inflection",
+      "mechanism": "Q2 QoQ recovery is mistaken for a new YoY acceleration cycle.",
+      "source_refs": [
+        "F03",
+        "F04",
+        "I01"
+      ],
+      "invalidation_test": "Require Q3 YoY deliveries/revenue plus stable vehicle margin and cash."
+    },
+    {
+      "risk": "working_capital_fcf",
+      "mechanism": "Supplier financing makes 2025 FCF look structurally positive.",
+      "source_refs": [
+        "F01"
+      ],
+      "invalidation_test": "Reconcile CFO without AP/accrual tailwind and track inventory/payables days."
+    },
+    {
+      "risk": "software_commoditization",
+      "mechanism": "Cheaper and stronger models reduce ADAS software premium.",
+      "source_refs": [
+        "F01",
+        "F03"
+      ],
+      "invalidation_test": "Track software/service margin, take-rate and independently evidenced safety/experience advantage."
+    },
+    {
+      "risk": "dilution_and_control",
+      "mechanism": "RSUs, contingent shares and founder voting control separate enterprise growth from minority per-share value.",
+      "source_refs": [
+        "F01",
+        "F05",
+        "F06"
+      ],
+      "invalidation_test": "Reconcile fully diluted shares and per-share cash outcome each quarter."
+    }
+  ],
+  "next_review": {
+    "event": "2026Q2 financial results and 2026Q3 deliveries",
+    "minimum_checks": [
+      "revenue",
+      "vehicle margin",
+      "net loss",
+      "CFO",
+      "inventory",
+      "cash",
+      "fully diluted shares"
+    ]
+  },
+  "disclaimer": "Independent evidence red-team; not investment advice or named human approval."
+}

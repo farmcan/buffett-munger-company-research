@@ -1,0 +1,193 @@
+{
+  "schema_version": "seed.company-research-source-ledger.v1",
+  "company": "XPeng Inc.",
+  "security_id": "XHKG:09868",
+  "as_of": "2026-07-29",
+  "sources": [
+    {
+      "id": "F01",
+      "tier": "A",
+      "kind": "sec_filing",
+      "title": "XPeng Inc. 2025 Form 20-F",
+      "published_at": "2026-04-16",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526157849/d36361d20f.htm",
+      "snapshot_sha256": "67830eaad667ed28361941559c87db8e82d3c8251dcf350680c3ddb82bbdfc4f",
+      "used_for": [
+        "financial_statements",
+        "business",
+        "revenue_mix",
+        "cash_flow",
+        "working_capital",
+        "share_capital",
+        "governance",
+        "customers",
+        "suppliers"
+      ],
+      "limitations": "Primary record used within stated period, audit status and scope."
+    },
+    {
+      "id": "F02",
+      "tier": "A",
+      "kind": "sec_xbrl",
+      "title": "SEC Companyfacts — XPeng Inc.",
+      "published_at": "2026-04-16",
+      "retrieved_at": "2026-07-29",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001810997.json",
+      "snapshot_sha256": "ed50d828d7069636d4de76e3428f53dda39ea85510b200373227dcdefff361f8",
+      "used_for": [
+        "five_year_financials",
+        "cash_flow",
+        "research_expense"
+      ],
+      "limitations": "Primary record used within stated period, audit status and scope."
+    },
+    {
+      "id": "F03",
+      "tier": "A",
+      "kind": "sec_filing",
+      "title": "XPeng Q1 2026 unaudited financial results",
+      "published_at": "2026-05-28",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526243143/d139430d6k.htm",
+      "snapshot_sha256": "2a118814890dc969b0858f129a22bb272f27d00af769d7ce7630ae671e682f8d",
+      "used_for": [
+        "quarterly_financials",
+        "deliveries",
+        "margin",
+        "cash",
+        "inventory",
+        "guidance",
+        "management_comments"
+      ],
+      "limitations": "Primary record used within stated period, audit status and scope."
+    },
+    {
+      "id": "F04",
+      "tier": "A",
+      "kind": "sec_filing",
+      "title": "XPeng Q2 2026 vehicle delivery results",
+      "published_at": "2026-07-02",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526293394/d114872d6k.htm",
+      "snapshot_sha256": "cb189cb10e5fdfd896efb517cbfaff93c74229be1462d358dcca232c27691ab0",
+      "used_for": [
+        "deliveries",
+        "products",
+        "q2_guidance_check"
+      ],
+      "limitations": "Primary record used within stated period, audit status and scope."
+    },
+    {
+      "id": "F05",
+      "tier": "A",
+      "kind": "hkex_monthly_return",
+      "title": "XPeng Monthly Return for June 2026",
+      "published_at": "2026-07-07",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070701078.pdf",
+      "snapshot_sha256": "059e348df0ed5c5cc0d90cb2c751b049a323e6a7dd399feddec828f0b318dfb7",
+      "used_for": [
+        "issued_shares",
+        "public_float_compliance",
+        "share_awards"
+      ],
+      "limitations": "Primary record used within stated period, audit status and scope."
+    },
+    {
+      "id": "F06",
+      "tier": "A",
+      "kind": "hkex_announcement",
+      "title": "XPeng April 2026 grant of restricted share units",
+      "published_at": "2026-04-17",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0417/2026041701171.pdf",
+      "snapshot_sha256": "703fb4fd83d4817bde71cf7711dd2c8347339e2b46ad7bb4824811abd5eb904f",
+      "used_for": [
+        "share_awards",
+        "vesting",
+        "dilution",
+        "performance_conditions"
+      ],
+      "limitations": "Primary record used within stated period, audit status and scope."
+    },
+    {
+      "id": "F07",
+      "tier": "A",
+      "kind": "regulatory_dataset",
+      "title": "SFC reportable short positions — 17 July 2026",
+      "published_at": "2026-07-24",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/17/Short_Position_Reporting_Aggregated_Data_20260717.csv?rev=76131f683e7240c3ade786261a04ff24",
+      "snapshot_sha256": "22e97934c1fa5fb99b869f691b9df9c76c632c23c567ed4b3668fb9fb56942a1",
+      "used_for": [
+        "short_position"
+      ],
+      "limitations": "Primary record used within stated period, audit status and scope."
+    },
+    {
+      "id": "M01",
+      "tier": "C",
+      "kind": "market_data_snapshot",
+      "title": "Tencent adjusted daily price history — 09868.HK",
+      "published_at": "2026-07-28",
+      "retrieved_at": "2026-07-29",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk09868,day,,,900,qfq",
+      "snapshot_sha256": "efc0d4cb85d4824d9ccb56c5b53c731c4a45db471d847d2d2990e1645b89149a",
+      "used_for": [
+        "price",
+        "turnover",
+        "moving_averages",
+        "event_windows"
+      ],
+      "limitations": "Used within stated period, audit status and scope; market data remains a third-party snapshot."
+    },
+    {
+      "id": "I01",
+      "tier": "A",
+      "kind": "official_media_release",
+      "title": "2026H1 China automobile industry statistics",
+      "published_at": "2026-07-09",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www.xinhuanet.com/20260709/adab526fe8c64da19b27e907fa78393b/c.html",
+      "snapshot_sha256": "aa3d92eb103e5f7913d84672479e920f71da6fe28c9e82d7ffba711d58b6dcff",
+      "used_for": [
+        "industry_cycle",
+        "new_energy_vehicle_sales",
+        "exports"
+      ],
+      "limitations": "Primary record used within stated period, audit status and scope."
+    },
+    {
+      "id": "P01",
+      "tier": "A",
+      "kind": "hkex_filing",
+      "title": "Leapmotor 2025 annual results",
+      "published_at": "2026-03-16",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0316/2026031601214.pdf",
+      "snapshot_sha256": "3e3fab5063459d042afb1626b5a051fa7055a91316de6e6d142965df85145145",
+      "used_for": [
+        "peer_revenue",
+        "peer_deliveries",
+        "peer_margin",
+        "peer_cash_flow"
+      ],
+      "limitations": "Primary record used within stated period, audit status and scope."
+    },
+    {
+      "id": "M02",
+      "tier": "A",
+      "kind": "official_fx_release",
+      "title": "CFETS central parity rates — 27 July 2026",
+      "published_at": "2026-07-27",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www.news.cn/20260727/b508c39dd33148ac9a604a5528bc8b94/c.html",
+      "snapshot_sha256": "e68ad920eccfd31c00428c910a06806e9466c7d957dd24222227b6a7d06f3d82",
+      "used_for": [
+        "hkd_cny_fx"
+      ],
+      "limitations": "Primary record used within stated period, audit status and scope."
+    }
+  ]
+}

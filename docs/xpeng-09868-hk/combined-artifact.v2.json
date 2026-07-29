@@ -1,0 +1,1849 @@
+{
+  "schema_version": "seed.stock-fundamentals-valuation.v2",
+  "artifact_type": "stock_fundamentals_valuation",
+  "artifact_role": "public_company_research",
+  "status": "needs_human_review",
+  "generated_at": "2026-07-29T13:20:00+08:00",
+  "security": {
+    "security_id": "XHKG:09868",
+    "company_name": "XPeng Inc.",
+    "company_name_zh": "小鹏汽车有限公司",
+    "ticker": "09868",
+    "exchange": "HKEX",
+    "listing_type": "ordinary_hk_share_with_us_ads",
+    "currency": "HKD",
+    "fiscal_year_end": "12-31",
+    "reporting_standard": "US GAAP"
+  },
+  "as_of": {
+    "research_date": "2026-07-29",
+    "price": 49.56,
+    "price_date": "2026-07-28",
+    "price_source_ref": "M01"
+  },
+  "methodology_refs": [
+    {
+      "id": "berkshire_1996_letter",
+      "title": "1996 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/1996.html",
+      "use": "Circle-of-competence and predictability gate."
+    },
+    {
+      "id": "berkshire_1986_letter",
+      "title": "1986 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/1986.html",
+      "use": "Owner earnings bridge and maintenance-capex discipline."
+    },
+    {
+      "id": "berkshire_owner_manual",
+      "title": "Berkshire Hathaway Owner's Manual",
+      "url": "https://www.berkshirehathaway.com/ownman.pdf",
+      "use": "Per-share economics and long-term owner orientation."
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "F01",
+      "tier": "A",
+      "source_type": "sec_filing",
+      "title": "XPeng Inc. 2025 Form 20-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526157849/d36361d20f.htm",
+      "published_at_status": "known",
+      "published_at": "2026-04-16",
+      "accessed_at": "2026-07-29",
+      "period": "FY2025",
+      "audit_status": "audited",
+      "scope": "consolidated_group",
+      "covers": [
+        "financial_statements",
+        "business",
+        "revenue_mix",
+        "cash_flow",
+        "working_capital",
+        "share_capital",
+        "governance",
+        "customers",
+        "suppliers"
+      ],
+      "content_sha256": "67830eaad667ed28361941559c87db8e82d3c8251dcf350680c3ddb82bbdfc4f"
+    },
+    {
+      "id": "F02",
+      "tier": "A",
+      "source_type": "sec_xbrl",
+      "title": "SEC Companyfacts — XPeng Inc.",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001810997.json",
+      "published_at_status": "known",
+      "published_at": "2026-04-16",
+      "accessed_at": "2026-07-29",
+      "period": "FY2021-FY2025",
+      "audit_status": "audited",
+      "scope": "consolidated_group_xbrl_facts",
+      "covers": [
+        "five_year_financials",
+        "cash_flow",
+        "research_expense"
+      ],
+      "content_sha256": "ed50d828d7069636d4de76e3428f53dda39ea85510b200373227dcdefff361f8"
+    },
+    {
+      "id": "F03",
+      "tier": "A",
+      "source_type": "sec_filing",
+      "title": "XPeng Q1 2026 unaudited financial results",
+      "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526243143/d139430d6k.htm",
+      "published_at_status": "known",
+      "published_at": "2026-05-28",
+      "accessed_at": "2026-07-29",
+      "period": "2026Q1",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "quarterly_financials",
+        "deliveries",
+        "margin",
+        "cash",
+        "inventory",
+        "guidance",
+        "management_comments"
+      ],
+      "content_sha256": "2a118814890dc969b0858f129a22bb272f27d00af769d7ce7630ae671e682f8d"
+    },
+    {
+      "id": "F04",
+      "tier": "A",
+      "source_type": "sec_filing",
+      "title": "XPeng Q2 2026 vehicle delivery results",
+      "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526293394/d114872d6k.htm",
+      "published_at_status": "known",
+      "published_at": "2026-07-02",
+      "accessed_at": "2026-07-29",
+      "period": "2026Q2",
+      "audit_status": "unaudited",
+      "scope": "company_operating_kpi",
+      "covers": [
+        "deliveries",
+        "products",
+        "q2_guidance_check"
+      ],
+      "content_sha256": "cb189cb10e5fdfd896efb517cbfaff93c74229be1462d358dcca232c27691ab0"
+    },
+    {
+      "id": "F05",
+      "tier": "A",
+      "source_type": "hkex_monthly_return",
+      "title": "XPeng Monthly Return for June 2026",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070701078.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-07-07",
+      "accessed_at": "2026-07-29",
+      "period": "2026-06-30",
+      "audit_status": "not_applicable",
+      "scope": "listed_security",
+      "covers": [
+        "issued_shares",
+        "public_float_compliance",
+        "share_awards"
+      ],
+      "content_sha256": "059e348df0ed5c5cc0d90cb2c751b049a323e6a7dd399feddec828f0b318dfb7"
+    },
+    {
+      "id": "F06",
+      "tier": "A",
+      "source_type": "hkex_announcement",
+      "title": "XPeng April 2026 grant of restricted share units",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0417/2026041701171.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-04-17",
+      "accessed_at": "2026-07-29",
+      "period": "2026-04-17",
+      "audit_status": "not_applicable",
+      "scope": "listed_security",
+      "covers": [
+        "share_awards",
+        "vesting",
+        "dilution",
+        "performance_conditions"
+      ],
+      "content_sha256": "703fb4fd83d4817bde71cf7711dd2c8347339e2b46ad7bb4824811abd5eb904f"
+    },
+    {
+      "id": "F07",
+      "tier": "A",
+      "source_type": "regulatory_dataset",
+      "title": "SFC reportable short positions — 17 July 2026",
+      "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/17/Short_Position_Reporting_Aggregated_Data_20260717.csv?rev=76131f683e7240c3ade786261a04ff24",
+      "published_at_status": "known",
+      "published_at": "2026-07-24",
+      "accessed_at": "2026-07-29",
+      "period": "2026-07-17",
+      "audit_status": "not_applicable",
+      "scope": "reportable_short_positions",
+      "covers": [
+        "short_position"
+      ],
+      "content_sha256": "22e97934c1fa5fb99b869f691b9df9c76c632c23c567ed4b3668fb9fb56942a1"
+    },
+    {
+      "id": "M01",
+      "tier": "C",
+      "source_type": "market_data_snapshot",
+      "title": "Tencent adjusted daily price history — 09868.HK",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk09868,day,,,900,qfq",
+      "published_at_status": "known",
+      "published_at": "2026-07-28",
+      "accessed_at": "2026-07-29",
+      "period": "through_2026-07-28",
+      "audit_status": "not_applicable",
+      "scope": "listed_security",
+      "covers": [
+        "price",
+        "turnover",
+        "moving_averages",
+        "event_windows"
+      ],
+      "content_sha256": "efc0d4cb85d4824d9ccb56c5b53c731c4a45db471d847d2d2990e1645b89149a"
+    },
+    {
+      "id": "I01",
+      "tier": "A",
+      "source_type": "official_media_release",
+      "title": "2026H1 China automobile industry statistics",
+      "url": "https://www.xinhuanet.com/20260709/adab526fe8c64da19b27e907fa78393b/c.html",
+      "published_at_status": "known",
+      "published_at": "2026-07-09",
+      "accessed_at": "2026-07-29",
+      "period": "2026H1",
+      "audit_status": "not_applicable",
+      "scope": "china_auto_industry",
+      "covers": [
+        "industry_cycle",
+        "new_energy_vehicle_sales",
+        "exports"
+      ],
+      "content_sha256": "aa3d92eb103e5f7913d84672479e920f71da6fe28c9e82d7ffba711d58b6dcff"
+    },
+    {
+      "id": "P01",
+      "tier": "A",
+      "source_type": "hkex_filing",
+      "title": "Leapmotor 2025 annual results",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0316/2026031601214.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-03-16",
+      "accessed_at": "2026-07-29",
+      "period": "FY2025",
+      "audit_status": "audited",
+      "scope": "peer_consolidated_group",
+      "covers": [
+        "peer_revenue",
+        "peer_deliveries",
+        "peer_margin",
+        "peer_cash_flow"
+      ],
+      "content_sha256": "3e3fab5063459d042afb1626b5a051fa7055a91316de6e6d142965df85145145"
+    },
+    {
+      "id": "M02",
+      "tier": "A",
+      "source_type": "official_fx_release",
+      "title": "CFETS central parity rates — 27 July 2026",
+      "url": "https://www.news.cn/20260727/b508c39dd33148ac9a604a5528bc8b94/c.html",
+      "published_at_status": "known",
+      "published_at": "2026-07-27",
+      "accessed_at": "2026-07-29",
+      "period": "2026-07-27",
+      "audit_status": "not_applicable",
+      "scope": "foreign_exchange",
+      "covers": [
+        "hkd_cny_fx"
+      ],
+      "content_sha256": "e68ad920eccfd31c00428c910a06806e9466c7d957dd24222227b6a7d06f3d82"
+    }
+  ],
+  "source_boundaries": {
+    "facts": "SEC/HKEX/SFC filings and official industry records take precedence.",
+    "reported_claims": "Robotaxi, humanoid, model launches and commercial targets remain management claims until outcomes are disclosed.",
+    "interpretations": "Cycle bottom, moat, model commoditization, proxy float and event attribution are research interpretations.",
+    "assumptions": "FX has one-day mismatch; fully diluted shares include known RSUs and maximum DiDi contingent shares as scenarios.",
+    "source_gaps": "Do not fill maintenance capex, regulatory public float, Q2 margin/cash flow or historical point-in-time PE with zero.",
+    "page_level_evidence": "Checksum-bound evidence-index.json and critical-evidence-locators.csv retain page/line locators."
+  },
+  "ownership_structure": {
+    "controller": "He Xiaopeng; 18.8% economic interest and 69.3% voting power at 2026-03-31.",
+    "voting_rights": "Class B has ten votes per share; Class A has one vote.",
+    "us_mapping": "NYSE:XPEV is a same_company_listing; one ADS represents two Class A ordinary shares.",
+    "fully_diluted_share_bridge": {
+      "as_of": "2026-06-30",
+      "unit": "shares",
+      "issued_excluding_treasury": 1916096781,
+      "unissued_or_unvested_rsus": 63496420,
+      "didi_contingent_max": 28331126,
+      "known_fully_diluted_scenario": 2007924327,
+      "incremental_pct_vs_current": 4.792,
+      "formula": "1916096781 + 63496420 + 28331126 = 2007924327",
+      "source_refs": [
+        "F01",
+        "F05",
+        "F06"
+      ]
+    }
+  },
+  "financial_history": {
+    "periods": [
+      {
+        "period": "FY2021",
+        "period_type": "annual",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "consolidated_group",
+        "revenue": 20988.131,
+        "gross_profit": 2622.555,
+        "operating_profit": -6579.405,
+        "parent_net_income": -4863.096,
+        "cfo": -1094.591,
+        "capex": 2299.698,
+        "free_cash_flow": -3394.289,
+        "deliveries": 98155,
+        "source_refs": [
+          "F01",
+          "F02"
+        ]
+      },
+      {
+        "period": "FY2022",
+        "period_type": "annual",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "consolidated_group",
+        "revenue": 26855.119,
+        "gross_profit": 3088.391,
+        "operating_profit": -8705.523,
+        "parent_net_income": -9138.972,
+        "cfo": -8232.376,
+        "capex": 4275.838,
+        "free_cash_flow": -12508.214,
+        "deliveries": 120757,
+        "source_refs": [
+          "F01",
+          "F02"
+        ]
+      },
+      {
+        "period": "FY2023",
+        "period_type": "annual",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "consolidated_group",
+        "revenue": 30676.067,
+        "gross_profit": 451.155,
+        "operating_profit": -10889.434,
+        "parent_net_income": -10375.775,
+        "cfo": 956.164,
+        "capex": 2096.326,
+        "free_cash_flow": -1140.162,
+        "deliveries": 141601,
+        "source_refs": [
+          "F01",
+          "F02"
+        ]
+      },
+      {
+        "period": "FY2024",
+        "period_type": "annual",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "consolidated_group",
+        "revenue": 40866.309,
+        "gross_profit": 5845.768,
+        "operating_profit": -6658.138,
+        "parent_net_income": -5790.264,
+        "cfo": -2012.343,
+        "capex": 2226.111,
+        "free_cash_flow": -4238.454,
+        "deliveries": 190068,
+        "source_refs": [
+          "F01",
+          "F02"
+        ]
+      },
+      {
+        "period": "FY2025",
+        "period_type": "annual",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "consolidated_group",
+        "revenue": 76719.742,
+        "gross_profit": 14472.919,
+        "operating_profit": -2771.402,
+        "parent_net_income": -1139.46,
+        "cfo": 8258.529,
+        "capex": 3347.1,
+        "free_cash_flow": 4911.429,
+        "deliveries": 429445,
+        "source_refs": [
+          "F01",
+          "F02"
+        ]
+      },
+      {
+        "period": "2026Q1",
+        "period_type": "quarter",
+        "currency": "CNY",
+        "unit": "million",
+        "scope": "consolidated_group",
+        "revenue": 13033.781,
+        "gross_profit": 2684.959,
+        "operating_profit": -1874.474,
+        "parent_net_income": -1784.1,
+        "deliveries": 62682,
+        "source_refs": [
+          "F03"
+        ]
+      }
+    ]
+  },
+  "segment_data": {
+    "status": "applicable",
+    "segments": [
+      {
+        "line": "汽车销售",
+        "fy2024_rmb_m": 35829.402,
+        "fy2025_rmb_m": 68378.92,
+        "fy2025_share_pct": 89.1,
+        "yoy_pct": 90.8,
+        "economics": "量×ASP；2025 vehicle margin 12.8%"
+      },
+      {
+        "line": "服务及其他",
+        "fy2024_rmb_m": 5036.907,
+        "fy2025_rmb_m": 8340.822,
+        "fy2025_share_pct": 10.9,
+        "yoy_pct": 65.6,
+        "economics": "技术研发/平台软件、配件、积分、充电及售后"
+      }
+    ],
+    "source_refs": [
+      "F01"
+    ]
+  },
+  "research_dimensions": [
+    {
+      "dimension": "security_and_legal_subject",
+      "status": "applicable",
+      "summary": "09868.HK为港股普通股；XPEV为同一发行人ADS，每ADS代表两股A类普通股。",
+      "indicators": [
+        {
+          "id": "exact_security_issuer_share_class_and_rights",
+          "status": "observed",
+          "summary": "exact_security_issuer_share_class_and_rights 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "dated_price_share_count_currency_and_listing_status",
+          "status": "observed",
+          "summary": "dated_price_share_count_currency_and_listing_status 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "09868.HK为港股普通股；XPEV为同一发行人ADS，每ADS代表两股A类普通股。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "control_and_beneficial_ownership",
+      "status": "applicable",
+      "summary": "何小鹏约18.8%经济权益、69.3%投票权；B类每股十票，控制权与经济权分离。",
+      "indicators": [
+        {
+          "id": "controller_voting_pledges_and_cross_holdings",
+          "status": "observed",
+          "summary": "controller_voting_pledges_and_cross_holdings 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "value_transfers_nci_and_related_party_exposure",
+          "status": "observed",
+          "summary": "value_transfers_nci_and_related_party_exposure 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "何小鹏约18.8%经济权益、69.3%投票权；B类每股十票，控制权与经济权分离。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "business_model",
+      "status": "applicable",
+      "summary": "89.1%收入来自整车；服务含技术研发/软件、配件、积分、充电、售后与金融相关服务。",
+      "indicators": [
+        {
+          "id": "payer_value_proposition_revenue_and_cash_mechanism",
+          "status": "observed",
+          "summary": "payer_value_proposition_revenue_and_cash_mechanism 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "capital_needs_and_business_failure_variables",
+          "status": "observed",
+          "summary": "capital_needs_and_business_failure_variables 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "89.1%收入来自整车；服务含技术研发/软件、配件、积分、充电、售后与金融相关服务。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "revenue_structure",
+      "status": "applicable",
+      "summary": "2025汽车收入683.79亿元、服务83.41亿元；大众技术合作提高服务质量但带来客户依赖。",
+      "indicators": [
+        {
+          "id": "segment_product_and_geography_reconciliation",
+          "status": "observed",
+          "summary": "segment_product_and_geography_reconciliation 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "volume_price_mix_acquisition_and_scope_bridge",
+          "status": "observed",
+          "summary": "volume_price_mix_acquisition_and_scope_bridge 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "2025汽车收入683.79亿元、服务83.41亿元；大众技术合作提高服务质量但带来客户依赖。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "industry_chain_position",
+      "status": "applicable",
+      "summary": "上游电池/芯片/内存，中游研发制造，下游直营/授权门店和充电网络；盈利池受价格战与供应链成本夹击。",
+      "indicators": [
+        {
+          "id": "upstream_process_customer_payer_and_substitute_map",
+          "status": "observed",
+          "summary": "upstream_process_customer_payer_and_substitute_map 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "profit_pool_and_inventory_credit_technology_risk",
+          "status": "observed",
+          "summary": "profit_pool_and_inventory_credit_technology_risk 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "上游电池/芯片/内存，中游研发制造，下游直营/授权门店和充电网络；盈利池受价格战与供应链成本夹击。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "product_and_unit_economics",
+      "status": "applicable",
+      "summary": "交付增长已验证，vehicle margin仍约12%–14%；车型组合和电池/内存成本决定增量经济。",
+      "indicators": [
+        {
+          "id": "price_volume_mix_and_incremental_economics",
+          "status": "observed",
+          "summary": "price_volume_mix_and_incremental_economics 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "industry_denominator_scope_and_comparability",
+          "status": "observed",
+          "summary": "industry_denominator_scope_and_comparability 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "交付增长已验证，vehicle margin仍约12%–14%；车型组合和电池/内存成本决定增量经济。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "customers",
+      "status": "applicable",
+      "summary": "整车面向消费者；技术合作收入主要依赖大众，飞行汽车关联方不是自动并表核心业务。",
+      "indicators": [
+        {
+          "id": "customer_channel_end_user_and_payer_separation",
+          "status": "observed",
+          "summary": "customer_channel_end_user_and_payer_separation 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "concentration_retention_receivables_inventory_and_external_evidence",
+          "status": "observed",
+          "summary": "concentration_retention_receivables_inventory_and_external_evidence 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "整车面向消费者；技术合作收入主要依赖大众，飞行汽车关联方不是自动并表核心业务。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "suppliers",
+      "status": "applicable",
+      "summary": "电池合格供应商数量有限；内存与电池涨价已压低2026Q1环比毛利，供应集中度未完整披露。",
+      "indicators": [
+        {
+          "id": "critical_inputs_concentration_related_parties_and_substitution",
+          "status": "observed",
+          "summary": "critical_inputs_concentration_related_parties_and_substitution 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "terms_prepayments_availability_and_cost_pass_through",
+          "status": "observed",
+          "summary": "terms_prepayments_availability_and_cost_pass_through 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "电池合格供应商数量有限；内存与电池涨价已压低2026Q1环比毛利，供应集中度未完整披露。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "competition_structure",
+      "status": "applicable",
+      "summary": "理想、蔚来、零跑等直接竞争；比亚迪/Tesla因规模和整合差异作为邻近参照而非直接中位数。",
+      "indicators": [
+        {
+          "id": "entry_exit_capacity_price_and_substitution",
+          "status": "observed",
+          "summary": "entry_exit_capacity_price_and_substitution 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "competitor_customer_and_regulator_corroboration",
+          "status": "observed",
+          "summary": "competitor_customer_and_regulator_corroboration 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "理想、蔚来、零跑等直接竞争；比亚迪/Tesla因规模和整合差异作为邻近参照而非直接中位数。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "durable_moat",
+      "status": "applicable",
+      "summary": "候选护城河是整车集成、安全验证、数据、制造、渠道、充电和VW验证，不是单一基础模型规模。",
+      "indicators": [
+        {
+          "id": "mechanism_economic_result_durability_and_direction",
+          "status": "observed",
+          "summary": "mechanism_economic_result_durability_and_direction 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "strongest_falsifying_evidence",
+          "status": "observed",
+          "summary": "strongest_falsifying_evidence 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "候选护城河是整车集成、安全验证、数据、制造、渠道、充电和VW验证，不是单一基础模型规模。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "revenue_quality",
+      "status": "applicable",
+      "summary": "2025服务收入含阶段性技术研发/平台软件里程碑；递延收入余额须结合履约期阅读。",
+      "indicators": [
+        {
+          "id": "revenue_receivables_contract_assets_returns_and_cash",
+          "status": "observed",
+          "summary": "revenue_receivables_contract_assets_returns_and_cash 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "acquisition_period_end_channel_and_recognition_distortion",
+          "status": "observed",
+          "summary": "acquisition_period_end_channel_and_recognition_distortion 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "2025服务收入含阶段性技术研发/平台软件里程碑；递延收入余额须结合履约期阅读。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "earnings_quality",
+      "status": "applicable",
+      "summary": "Q4首次季度盈利未在2026Q1延续；TTM净亏约22.60亿元，PE无经济意义。",
+      "indicators": [
+        {
+          "id": "reported_to_normalized_parent_earnings_bridge",
+          "status": "observed",
+          "summary": "reported_to_normalized_parent_earnings_bridge 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "tax_attribution_scope_and_adjustment_disagreement",
+          "status": "observed",
+          "summary": "tax_attribution_scope_and_adjustment_disagreement 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "Q4首次季度盈利未在2026Q1延续；TTM净亏约22.60亿元，PE无经济意义。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "cash_conversion",
+      "status": "applicable",
+      "summary": "2025 CFO转正但应付/应计释放贡献巨大；报表FCF不能直接视为可分配owner earnings。",
+      "indicators": [
+        {
+          "id": "profit_operating_cash_and_distributable_cash_bridge",
+          "status": "observed",
+          "summary": "profit_operating_cash_and_distributable_cash_bridge 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "factoring_payment_restricted_cash_and_sector_scope",
+          "status": "observed",
+          "summary": "factoring_payment_restricted_cash_and_sector_scope 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "2025 CFO转正但应付/应计释放贡献巨大；报表FCF不能直接视为可分配owner earnings。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "working_capital",
+      "status": "applicable",
+      "summary": "2025净营运资本顺风约74.18亿元；2026Q1库存较年末增加约29.11亿元且现金类资产下降。",
+      "indicators": [
+        {
+          "id": "receivables_inventory_payables_prepayments_and_contract_balances",
+          "status": "observed",
+          "summary": "receivables_inventory_payables_prepayments_and_contract_balances 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "sustainable_financing_vs_temporary_cash_release",
+          "status": "observed",
+          "summary": "sustainable_financing_vs_temporary_cash_release 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "2025净营运资本顺风约74.18亿元；2026Q1库存较年末增加约29.11亿元且现金类资产下降。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "capital_intensity",
+      "status": "applicable",
+      "summary": "2025总资本开支约33.47亿元；维持与增长资本开支未拆，机器人/新工厂会提高资金需求。",
+      "indicators": [
+        {
+          "id": "maintenance_vs_growth_investment_range",
+          "status": "observed",
+          "summary": "maintenance_vs_growth_investment_range 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "capex_capacity_utilization_and_competitive_requirements",
+          "status": "observed",
+          "summary": "capex_capacity_utilization_and_competitive_requirements 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "2025总资本开支约33.47亿元；维持与增长资本开支未拆，机器人/新工厂会提高资金需求。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "returns_on_capital",
+      "status": "applicable",
+      "summary": "连续亏损使ROIC和增量ROIC尚不能稳定计算；不能用2025单年FCF顺风替代回报率。",
+      "indicators": [
+        {
+          "id": "multiperiod_roe_roic_and_incremental_returns",
+          "status": "observed",
+          "summary": "multiperiod_roe_roic_and_incremental_returns 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "leverage_buyback_cycle_and_accounting_decomposition",
+          "status": "observed",
+          "summary": "leverage_buyback_cycle_and_accounting_decomposition 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "连续亏损使ROIC和增量ROIC尚不能稳定计算；不能用2025单年FCF顺风替代回报率。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "balance_sheet_survival",
+      "status": "applicable",
+      "summary": "2026Q1现金类资产约420.87亿元；扣借款和融资租赁后净金融现金约207.99亿元。",
+      "indicators": [
+        {
+          "id": "debt_liquidity_covenants_guarantees_pledges_and_off_balance",
+          "status": "observed",
+          "summary": "debt_liquidity_covenants_guarantees_pledges_and_off_balance 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "adverse_scenario_financing_need",
+          "status": "observed",
+          "summary": "adverse_scenario_financing_need 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "2026Q1现金类资产约420.87亿元；扣借款和融资租赁后净金融现金约207.99亿元。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "capital_allocation",
+      "status": "applicable",
+      "summary": "研发、车型、工厂、充电和新业务并行；要用充分摊薄后每股现金回报检验，而非只看规模。",
+      "indicators": [
+        {
+          "id": "reinvestment_ma_dividend_buyback_issuance_debt_and_cash_ledger",
+          "status": "observed",
+          "summary": "reinvestment_ma_dividend_buyback_issuance_debt_and_cash_ledger 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "diluted_per_share_outcomes_and_opportunity_cost",
+          "status": "observed",
+          "summary": "diluted_per_share_outcomes_and_opportunity_cost 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "研发、车型、工厂、充电和新业务并行；要用充分摊薄后每股现金回报检验，而非只看规模。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "management",
+      "status": "applicable",
+      "summary": "何小鹏强调四款新车、Robotaxi与人形机器人；均是管理层目标，需与交付、毛利和现金结果对表。",
+      "indicators": [
+        {
+          "id": "dated_commitments_vs_outcomes",
+          "status": "observed",
+          "summary": "dated_commitments_vs_outcomes 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "incentives_compensation_succession_insider_actions_and_candor",
+          "status": "observed",
+          "summary": "incentives_compensation_succession_insider_actions_and_candor 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "何小鹏强调四款新车、Robotaxi与人形机器人；均是管理层目标，需与交付、毛利和现金结果对表。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "governance_and_related_parties",
+      "status": "applicable",
+      "summary": "创始人超级投票权、拟授28.51m RSU；汇天飞行汽车为关联方，不把主题收入自动归入小鹏核心。",
+      "indicators": [
+        {
+          "id": "related_sales_purchases_loans_guarantees_and_asset_transfers",
+          "status": "observed",
+          "summary": "related_sales_purchases_loans_guarantees_and_asset_transfers 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "pricing_minority_fairness_oversight_and_dissent",
+          "status": "observed",
+          "summary": "pricing_minority_fairness_oversight_and_dissent 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "创始人超级投票权、拟授28.51m RSU；汇天飞行汽车为关联方，不把主题收入自动归入小鹏核心。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "accounting_and_audit",
+      "status": "applicable",
+      "summary": "FY2025已审计，2026Q1未经审计，2026Q2截至截止日只有交付实际与收入指引。",
+      "indicators": [
+        {
+          "id": "audit_kam_standard_policy_and_restatement",
+          "status": "observed",
+          "summary": "audit_kam_standard_policy_and_restatement 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "statement_reproduction_and_conflict_preservation",
+          "status": "observed",
+          "summary": "statement_reproduction_and_conflict_preservation 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "FY2025已审计，2026Q1未经审计，2026Q2截至截止日只有交付实际与收入指引。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "tax_and_legal",
+      "status": "applicable",
+      "summary": "自动驾驶安全、数据、出口监管与产品责任是尾部风险；精确诉讼/罚款暴露仍需逐案更新。",
+      "indicators": [
+        {
+          "id": "effective_deferred_and_uncertain_tax",
+          "status": "observed",
+          "summary": "effective_deferred_and_uncertain_tax 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "litigation_penalties_compliance_and_tail_exposure",
+          "status": "observed",
+          "summary": "litigation_penalties_compliance_and_tail_exposure 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "自动驾驶安全、数据、出口监管与产品责任是尾部风险；精确诉讼/罚款暴露仍需逐案更新。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "per_share_economics",
+      "status": "applicable",
+      "summary": "已发行19.161亿股；已知RSU和DiDi最高或有股份使情景股数增加约4.79%。",
+      "indicators": [
+        {
+          "id": "basic_diluted_and_fully_diluted_share_reconciliation",
+          "status": "observed",
+          "summary": "basic_diluted_and_fully_diluted_share_reconciliation 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "per_share_growth_distribution_issuance_and_repurchase_outcomes",
+          "status": "observed",
+          "summary": "per_share_growth_distribution_issuance_and_repurchase_outcomes 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "已发行19.161亿股；已知RSU和DiDi最高或有股份使情景股数增加约4.79%。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "valuation",
+      "status": "applicable",
+      "summary": "基础市值约949.5亿港元；TTM亏损，EV/TTM销售约0.83倍仅作预期温度计，不是内在价值。",
+      "indicators": [
+        {
+          "id": "currency_consistent_value_range_assumptions_and_dates",
+          "status": "observed",
+          "summary": "currency_consistent_value_range_assumptions_and_dates 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "reverse_expectations_sensitivities_and_cross_check",
+          "status": "observed",
+          "summary": "reverse_expectations_sensitivities_and_cross_check 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "基础市值约949.5亿港元；TTM亏损，EV/TTM销售约0.83倍仅作预期温度计，不是内在价值。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "disconfirming_evidence",
+      "status": "applicable",
+      "summary": "最强反证是H1交付落后行业、Q1亏损扩大、现金下降库存上升及模型商品化削弱软件溢价。",
+      "indicators": [
+        {
+          "id": "independent_strongest_counter_thesis",
+          "status": "observed",
+          "summary": "independent_strongest_counter_thesis 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "observable_invalidation_next_evidence_and_review_date",
+          "status": "observed",
+          "summary": "observable_invalidation_next_evidence_and_review_date 已按主源和显式边界覆盖。",
+          "source_refs": [
+            "F01",
+            "F03"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "M01",
+        "I01"
+      ],
+      "positive_evidence": [
+        "最强反证是H1交付落后行业、Q1亏损扩大、现金下降库存上升及模型商品化削弱软件溢价。"
+      ],
+      "counter_evidence": [
+        "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
+      ],
+      "source_gaps": []
+    }
+  ],
+  "earnings_quality_bridge": {
+    "period": "TTM_to_2026Q1",
+    "currency": "CNY",
+    "unit": "million",
+    "fy2025_parent_loss": -1139.46,
+    "less_q1_2025_loss": 664.046,
+    "add_q1_2026_loss": -1784.1,
+    "ttm_parent_loss": -2259.514,
+    "formula": "-1,139.460 - (-664.046) + (-1,784.100) = -2,259.514",
+    "disagreement": "Q4 first quarterly profit did not persist; neither adjusted loss nor reported FCF is a substitute for normalized owner earnings.",
+    "source_refs": [
+      "F01",
+      "F03"
+    ]
+  },
+  "capital_allocation": {
+    "status": "reviewed_with_dilution",
+    "period": "FY2025-2026Q1",
+    "uses": [
+      "R&D",
+      "vehicle programs",
+      "factories",
+      "charging network",
+      "Robotaxi and humanoid development"
+    ],
+    "per_share_test": "Track normalized cash owner earnings per known fully diluted share, not deliveries or total revenue alone.",
+    "source_refs": [
+      "F01",
+      "F03",
+      "F05",
+      "F06"
+    ]
+  },
+  "balance_sheet_quality": {
+    "status": "liquid_but_cash_burn_resumed",
+    "currency": "HKD",
+    "unit": "million",
+    "net_cash_bridge": {
+      "q1_cash_time_deposits_investments_rmb_m": 42087.0,
+      "borrowings_subtracted_rmb_m": 16559.1,
+      "finance_lease_liabilities_subtracted_rmb_m": 4728.8,
+      "net_financial_cash_rmb_m": 20799.1,
+      "net_financial_cash_hkd_m": 24017.2,
+      "formula": "(42,087.0 - 16,559.1 - 4,728.8) / 0.86601",
+      "source_refs": [
+        "F03",
+        "M02"
+      ]
+    },
+    "stress_note": "Cash position fell about RMB5.57bn from 2025 year-end while inventory rose about RMB2.91bn."
+  },
+  "owner_earnings": {
+    "status": "calculated",
+    "currency": "HKD",
+    "range": [
+      {
+        "case": "normalized_stress_low",
+        "value": -3546.0,
+        "formula": "(-3,070.9 RMBm) / 0.86601"
+      },
+      {
+        "case": "reported_fcf_after_sbc_high",
+        "value": 5019.7,
+        "formula": "4,347.1 RMBm / 0.86601"
+      }
+    ],
+    "limitations": [
+      "Wide range crosses zero; no defensible DCF or true PE follows.",
+      "Maintenance versus growth capex is not disclosed.",
+      "Working-capital normalization is a stress test, not a forecast.",
+      "SBC is shown as economic cost and dilution is separately shown in the share bridge."
+    ],
+    "source_refs": [
+      "F01"
+    ]
+  },
+  "pe_matrix": [
+    {
+      "label": "reported_fy",
+      "status": "not_meaningful",
+      "price": 49.56,
+      "currency": "HKD",
+      "price_as_of": "2026-07-28",
+      "eps": -0.687,
+      "eps_period": "FY2025",
+      "eps_type": "reported_basic_loss_per_share_proxy",
+      "formula": null,
+      "pe": null,
+      "confidence": "high",
+      "reason": "FY2025 attributable earnings are negative.",
+      "source_refs": [
+        "F01",
+        "M01"
+      ]
+    },
+    {
+      "label": "reported_ttm",
+      "status": "not_meaningful",
+      "price": 49.56,
+      "currency": "HKD",
+      "price_as_of": "2026-07-28",
+      "eps": -1.176,
+      "eps_period": "TTM to 2026Q1",
+      "eps_type": "research_ttm_loss_per_current_share_proxy",
+      "formula": null,
+      "pe": null,
+      "confidence": "medium",
+      "reason": "TTM attributable loss is approximately RMB2.26bn.",
+      "source_refs": [
+        "F01",
+        "F03",
+        "M01"
+      ]
+    },
+    {
+      "label": "normalized_owner_earnings",
+      "status": "unavailable",
+      "price": 49.56,
+      "currency": "HKD",
+      "price_as_of": "2026-07-28",
+      "eps": null,
+      "eps_period": "FY2025 normalized range",
+      "eps_type": "fully_diluted_owner_earnings",
+      "formula": null,
+      "pe": null,
+      "confidence": "low",
+      "reason": "Owner-earnings range crosses zero after working-capital normalization.",
+      "source_refs": [
+        "F01",
+        "F05",
+        "M01"
+      ]
+    }
+  ],
+  "forward_scenarios": {
+    "currency": "HKD",
+    "price_anchor": 49.56,
+    "scenarios": [
+      {
+        "scenario": "bear",
+        "status": "loss_case",
+        "forecast_eps": -1.5,
+        "implied_pe_at_current_price": null,
+        "reason": "Q2 recovery fails to become Q3 YoY growth; price competition and R&D keep losses high."
+      },
+      {
+        "scenario": "base",
+        "status": "unavailable",
+        "forecast_eps": null,
+        "implied_pe_at_current_price": null,
+        "reason": "Revenue/margin/cash conditions are defined, but no auditable EPS forecast is available."
+      },
+      {
+        "scenario": "upside",
+        "status": "unavailable",
+        "forecast_eps": null,
+        "implied_pe_at_current_price": null,
+        "reason": "Sustained quarterly profit needs evidence beyond Q4 2025."
+      }
+    ]
+  },
+  "intrinsic_value_scenarios": {
+    "currency": "HKD",
+    "scenarios": [
+      {
+        "scenario": "conservative",
+        "status": "unavailable",
+        "discount_rate_pct": null,
+        "terminal_growth_pct": null,
+        "intrinsic_value_per_share": null,
+        "reason": "Normalized owner earnings are not stably positive."
+      },
+      {
+        "scenario": "base",
+        "status": "unavailable",
+        "discount_rate_pct": null,
+        "terminal_growth_pct": null,
+        "intrinsic_value_per_share": null,
+        "reason": "Normalized owner earnings are not stably positive."
+      },
+      {
+        "scenario": "high",
+        "status": "unavailable",
+        "discount_rate_pct": null,
+        "terminal_growth_pct": null,
+        "intrinsic_value_per_share": null,
+        "reason": "Normalized owner earnings are not stably positive."
+      }
+    ]
+  },
+  "moat_evidence": {
+    "positive_evidence": [
+      "Vehicle integration, safety validation, manufacturing, data, channel, charging and Volkswagen cooperation."
+    ],
+    "counter_evidence": [
+      "Price competition, lower-cost models, supplier cost inflation and base-model commoditization can erode differentiation."
+    ],
+    "missing_tests": [
+      "Model-level gross margin, repeat-purchase/retention, warranty cost, safety record, software monetization and international unit economics."
+    ]
+  },
+  "red_team": [
+    {
+      "risk": "false_growth_inflection",
+      "mechanism": "Q2 QoQ recovery is mistaken for a new YoY acceleration cycle.",
+      "source_refs": [
+        "F03",
+        "F04",
+        "I01"
+      ],
+      "invalidation_test": "Require Q3 YoY deliveries/revenue plus stable vehicle margin and cash."
+    },
+    {
+      "risk": "working_capital_fcf",
+      "mechanism": "Supplier financing makes 2025 FCF look structurally positive.",
+      "source_refs": [
+        "F01"
+      ],
+      "invalidation_test": "Reconcile CFO without AP/accrual tailwind and track inventory/payables days."
+    },
+    {
+      "risk": "software_commoditization",
+      "mechanism": "Cheaper and stronger models reduce ADAS software premium.",
+      "source_refs": [
+        "F01",
+        "F03"
+      ],
+      "invalidation_test": "Track software/service margin, take-rate and independently evidenced safety/experience advantage."
+    },
+    {
+      "risk": "dilution_and_control",
+      "mechanism": "RSUs, contingent shares and founder voting control separate enterprise growth from minority per-share value.",
+      "source_refs": [
+        "F01",
+        "F05",
+        "F06"
+      ],
+      "invalidation_test": "Reconcile fully diluted shares and per-share cash outcome each quarter."
+    }
+  ],
+  "gates": [
+    {
+      "gate": "identity_and_source_integrity",
+      "result": "pass_with_scope",
+      "reason": "09868.HK普通股、XPEV ADS一比二及同一发行人关系已由20-F核对；价格为第三方复权快照。"
+    },
+    {
+      "gate": "circle_of_competence",
+      "result": "pass_with_scope",
+      "reason": "汽车销售、软件服务与现金链可解释；自动驾驶安全、模型能力与单车经济仍需工程证据。"
+    },
+    {
+      "gate": "business_economics",
+      "result": "mixed",
+      "reason": "2025收入和毛利改善，但2026Q1收入回落、亏损扩大；Q2仅确认交付，财务质量待披露。"
+    },
+    {
+      "gate": "durable_moat",
+      "result": "provisional",
+      "reason": "整车集成、制造、渠道、充电与大众合作形成验证资产；软件差异化仍可能被模型商品化。"
+    },
+    {
+      "gate": "management_and_capital_allocation",
+      "result": "mixed",
+      "reason": "研发投入换来产品/平台合作，但RSU、双层投票与未稳定的每股现金回报限制结论。"
+    },
+    {
+      "gate": "owner_earnings",
+      "result": "range_only",
+      "reason": "2025报表FCF为正，但主要营运资本顺风约74亿元；正常化owner earnings尚未稳定。"
+    },
+    {
+      "gate": "survival_and_balance_sheet",
+      "result": "pass_with_scope",
+      "reason": "Q1现金类资产约421亿元、净金融现金约208亿元，但单季现金下降且库存上升。"
+    },
+    {
+      "gate": "intrinsic_value_and_margin_of_safety",
+      "result": "blocked",
+      "reason": "TTM仍亏且正常化owner earnings跨越正负，不能审计式地产出DCF或PE安全边际。"
+    },
+    {
+      "gate": "decision_and_disconfirming_evidence",
+      "result": "provisional",
+      "reason": "研究可用但非决策级：等Q2财务、Q3同比增长、现金/库存与vehicle margin共同验证。"
+    }
+  ],
+  "historical_valuation": {
+    "status": "unavailable",
+    "metric": "point_in_time_ttm_pe",
+    "current_price_hkd": 49.56,
+    "price_high_900_sessions_hkd": 110.8,
+    "price_low_900_sessions_hkd": 25.5,
+    "drawdown_from_high_pct": -55.27,
+    "reason": "Negative and volatile earnings make historical PE percentiles invalid; price range is not value.",
+    "look_ahead_control": "No current earnings denominator is backfilled into historical dates.",
+    "source_refs": [
+      "M01"
+    ]
+  },
+  "price_move_attribution": {
+    "status": "not_causal",
+    "as_of": "2026-07-28",
+    "rule": "Event windows show T0/T+5/T+20 and HSTECH excess return; overlapping macro/product events prevent causal proof.",
+    "source_refs": [
+      "M01"
+    ]
+  },
+  "source_gaps": [
+    {
+      "gap": "2026Q2 revenue, vehicle margin, net loss and cash flow are not released.",
+      "resolution": "Update after Q2 results expected in August 2026; date TBA."
+    },
+    {
+      "gap": "Maintenance versus growth capex is not disclosed.",
+      "resolution": "Use a range and do not publish a false DCF point estimate."
+    },
+    {
+      "gap": "Exact regulatory public float and borrow fee/utilization are unavailable.",
+      "resolution": "Keep listed-A proxy, SFC reportable short and turnover separately labelled."
+    },
+    {
+      "gap": "Peer market caps and accounting scopes are not normalized to one valuation date.",
+      "resolution": "Use operating comparison; do not present a false peer-multiple target."
+    }
+  ],
+  "invalidation_tests": [
+    {
+      "test": "Growth variable turns down",
+      "trigger": "Q3 deliveries/revenue fail to grow YoY after Q2 recovery.",
+      "next_evidence": "Monthly deliveries and Q3 results."
+    },
+    {
+      "test": "Margin fails",
+      "trigger": "Vehicle margin falls below roughly 12% while price competition persists.",
+      "next_evidence": "Q2/Q3 financial results."
+    },
+    {
+      "test": "Cash quality fails",
+      "trigger": "Inventory and cash burn worsen while CFO depends on longer supplier terms.",
+      "next_evidence": "Quarterly balance sheet and cash-flow bridge."
+    },
+    {
+      "test": "Per-share economics fail",
+      "trigger": "Known fully diluted shares grow faster than normalized owner earnings.",
+      "next_evidence": "Monthly returns, incentive grants and annual report."
+    },
+    {
+      "test": "Moat fails",
+      "trigger": "Model parity lowers software monetization without offsetting manufacturing/channel advantages.",
+      "next_evidence": "Service revenue mix, take-rate, warranty/safety and customer evidence."
+    }
+  ],
+  "review": {
+    "human_review_required": true,
+    "status": "needs_human_review",
+    "reviewer": null,
+    "reviewed_at": null,
+    "publication_state": "provisional_public_research_support",
+    "reviewed_for_publication": false,
+    "critical_gaps": [
+      "Q2 2026 financial results",
+      "normalized owner earnings",
+      "named human sign-off"
+    ]
+  },
+  "disclaimer": "Public evidence-linked research support only; not investment advice, a target price, or named human approval."
+}
