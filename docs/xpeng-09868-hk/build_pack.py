@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ruff: noqa: E501
 """Build the public XPeng 09868.HK evidence-linked research package."""
 
 from __future__ import annotations
@@ -10,7 +11,6 @@ import html
 import json
 import sys
 from pathlib import Path
-
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
