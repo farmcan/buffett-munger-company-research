@@ -228,6 +228,21 @@
       <div class="callout"><strong>最容易误读的三点：</strong><code>applicable</code> 不等于“正面”，<code>observed</code> 不等于“优秀”，<code>provisional</code> 不等于“通过”。</div>
     </section>
 
+    <section id="event-terminal">
+      <h2>事件终端：时间轴不是公告清单</h2>
+      <p class="dek">当多个公司、财报、产品、融资和治理事件重叠时，公开 HTML 必须让读者同时看到时间、预期差、价格共振、传导路径和下一验证，而不是只列日期。</p>
+      <div class="table-wrap"><table><caption>事件终端的状态图例</caption><thead><tr><th>状态</th><th>含义</th><th>显示</th></tr></thead><tbody>
+        <tr><td><code>scheduled</code></td><td>日期或窗口待发生，尚未冻结可比预期</td><td>空心节点</td></tr>
+        <tr><td><code>expectation_frozen</code></td><td>事前问题或官方指引已冻结，只能追加实际</td><td>加粗空心节点</td></tr>
+        <tr><td><code>actual_reported</code></td><td>官方实际已披露，市场窗口尚未完整复核</td><td>实心节点</td></tr>
+        <tr><td><code>market_reviewed</code></td><td>实际与至少一个T0/T+5/T+20价格窗口已复核</td><td>实心节点加复核边</td></tr>
+        <tr><td><code>not_comparable</code></td><td>没有事前冻结共识，不能计算Surprise；不等于负面</td><td>菱形</td></tr>
+      </tbody></table></div>
+      <div class="formula">共享日期轴 + 公司泳道 + NOW → 冻结预期 → 官方实际 → Surprise → T0/T+5/T+20 → 行业/资本结构传导 → 下一验证</div>
+      <p>相邻公告必须标为事件簇；未来节点不预填实际和方向；共同指数只能作风险偏好背景，不能冒充所有公司的共同业绩基准。每个事件卡绑定主源和行情源。</p>
+      <div class="callout"><strong>公开实现：</strong><a href="./company-event-timeline/report.html">六家公司事件 Surprise × 市场共振时间轴</a>复用 Seed <code>earnings-season-timeline-analyst</code> v1.1 数据契约，包含六条泳道、37个事件、NOW分界和纵向证据账本。</div>
+    </section>
+
     <section id="dimensions">
       <h2>25 个固定研究维度</h2>
       <p class="dek">行业指标可以换，研究骨架不换。每个维度映射到 50 个指标族；缺证项保持 unknown，并通过闸门传播。</p>

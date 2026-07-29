@@ -1,0 +1,1541 @@
+#!/usr/bin/env python3
+"""Build the six-company event-surprise timeline and optional standalone HTML."""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import importlib.util
+import json
+import urllib.request
+from collections import defaultdict
+from datetime import date
+from html import escape
+from pathlib import Path
+from typing import Any
+
+HERE = Path(__file__).resolve().parent
+DOCS = HERE.parent
+AS_OF = "2026-07-29T18:00:00+08:00"
+START = "2024-10-01"
+END = "2026-08-31"
+
+COMPANIES = {
+    "horizon": {
+        "name": "地平线机器人",
+        "ticker": "09660.HK",
+        "slug": "horizon-robotics-09660-hk",
+        "market": "HKEX",
+        "bucket": "智能驾驶 / 边缘 AI",
+        "color": "#c14f3c",
+    },
+    "meitu": {
+        "name": "美图公司",
+        "ticker": "01357.HK",
+        "slug": "meitu-01357-hk",
+        "market": "HKEX",
+        "bucket": "AI 应用 / 创意软件",
+        "color": "#176b50",
+    },
+    "nanhua": {
+        "name": "南华期货",
+        "ticker": "02691.HK",
+        "slug": "nanhua-futures-02691-hk",
+        "market": "HKEX / SSE",
+        "bucket": "期货金融 / 跨境",
+        "color": "#a66f16",
+    },
+    "smic": {
+        "name": "中芯国际",
+        "ticker": "00981.HK",
+        "slug": "smic-00981-hk",
+        "market": "HKEX / STAR",
+        "bucket": "晶圆代工 / 半导体",
+        "color": "#386a8e",
+    },
+    "vobile": {
+        "name": "阜博集团",
+        "ticker": "03738.HK",
+        "slug": "fubo-group-03738-hk",
+        "market": "HKEX",
+        "bucket": "内容科技 / AI 版权",
+        "color": "#8b5a91",
+    },
+    "xpeng": {
+        "name": "小鹏汽车",
+        "ticker": "09868.HK / XPEV",
+        "slug": "xpeng-09868-hk",
+        "market": "HKEX / NYSE",
+        "bucket": "智能电动车 / 物理 AI",
+        "color": "#215f59",
+    },
+}
+
+
+def read_csv(path: Path) -> list[dict[str, str]]:
+    with path.open(encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def find_row(rows: list[dict[str, str]], event_date: str) -> dict[str, str] | None:
+    for row in rows:
+        date_value = (
+            row.get("event_date")
+            or row.get("announcement_date")
+            or row.get("date")
+            or row.get("disclosure_date")
+        )
+        if date_value == event_date:
+            return row
+    return None
+
+
+def number(value: str | None) -> float | None:
+    if value in (None, ""):
+        return None
+    return float(value)
+
+
+def fmt_pct(value: str | None) -> str:
+    parsed = number(value)
+    return "待补" if parsed is None else f"{parsed:+.2f}%"
+
+
+def resonance(value: float | None) -> str:
+    if value is None:
+        return "pending"
+    if value >= 3:
+        return "positive_resonance"
+    if value <= -3:
+        return "negative_resonance"
+    return "mixed_or_neutral"
+
+
+def load_reactions() -> dict[str, list[dict[str, str]]]:
+    return {
+        "meitu": read_csv(DOCS / "meitu-01357-hk/data/event-price-reactions.csv"),
+        "nanhua": read_csv(DOCS / "nanhua-futures-02691-hk/data/event-price-windows.csv"),
+        "smic": read_csv(DOCS / "smic-00981-hk/data/event-price-reactions.csv"),
+        "vobile": read_csv(DOCS / "fubo-group-03738-hk/data/event-price-reactions.csv"),
+        "xpeng": read_csv(DOCS / "xpeng-09868-hk/data/event-price-reactions.csv"),
+    }
+
+
+def reaction_for(
+    company: str,
+    event_date: str,
+    reactions: dict[str, list[dict[str, str]]],
+) -> dict[str, Any]:
+    rows = reactions.get(company, [])
+    if company == "nanhua":
+        nanhua_event_names = {
+            "2025-12-22": "IPO",
+            "2026-01-16": "Stock Connect inclusion",
+            "2026-03-27": "Annual results and governance package",
+            "2026-04-01": "Regulatory warning",
+            "2026-04-21": "2026Q1 report",
+            "2026-06-24": "H-share repurchase plan",
+            "2026-07-07": "2026H1 profit alert",
+            "2026-07-16": "EGM repurchase approval",
+        }
+        event_name = nanhua_event_names.get(event_date)
+        row = next((item for item in rows if item.get("event") == event_name), None)
+    else:
+        row = find_row(rows, event_date)
+    if not row:
+        return {
+            "intraday": None,
+            "t1": None,
+            "t5": None,
+            "t20": None,
+            "benchmark": None,
+            "benchmark_adjusted": None,
+            "volume_ratio": None,
+            "resonance": "pending",
+            "source_refs": [],
+        }
+    if company == "meitu":
+        window = number(row.get("t_minus_1_to_t_plus_5_pct"))
+        return {
+            "intraday": (
+                f"T−1 HK${row['t_minus_1_close_hkd']} → "
+                f"T0 HK${row['t0_close_hkd']}"
+            ),
+            "t1": None,
+            "t5": (
+                f"T−1→T+5 {fmt_pct(row.get('t_minus_1_to_t_plus_5_pct'))}；"
+                f"T0→T+5 {fmt_pct(row.get('t0_to_t_plus_5_pct'))}"
+            ),
+            "t20": None,
+            "benchmark": "HSTECH",
+            "benchmark_adjusted": (
+                f"同窗 HSTECH {fmt_pct(row.get('hstech_same_window_pct'))}；"
+                f"超额 {fmt_pct(row.get('abnormal_vs_hstech_pct'))}"
+            ),
+            "volume_ratio": None,
+            "resonance": resonance(window),
+            "source_refs": ["meitu-P01"],
+            "attribution_confidence": row.get("attribution_confidence"),
+            "limitations": row.get("overlap_note"),
+        }
+    if company == "nanhua":
+        window = number(row.get("tminus1_to_t5_pct"))
+        return {
+            "intraday": f"T0 {fmt_pct(row.get('t0_return_pct'))}",
+            "t1": None,
+            "t5": f"T−1→T+5 {fmt_pct(row.get('tminus1_to_t5_pct'))}",
+            "t20": None,
+            "benchmark": None,
+            "benchmark_adjusted": None,
+            "volume_ratio": (
+                f"{float(row['volume_ratio']):.2f}×"
+                if row.get("volume_ratio")
+                else None
+            ),
+            "resonance": resonance(window),
+            "source_refs": ["nanhua-P01"],
+            "limitations": row.get("adjustment_note"),
+        }
+    if company == "smic":
+        window = number(row.get("t_plus_5_pct"))
+        return {
+            "intraday": f"首个反应日 {fmt_pct(row.get('first_reaction_pct'))}",
+            "t1": None,
+            "t5": fmt_pct(row.get("t_plus_5_pct")),
+            "t20": None,
+            "benchmark": "HSTECH",
+            "benchmark_adjusted": f"T+5超额 {fmt_pct(row.get('t_plus_5_excess_pct'))}",
+            "volume_ratio": None,
+            "resonance": resonance(window),
+            "source_refs": ["smic-P_H", "shared-hstech"],
+            "limitations": row.get("interpretation"),
+        }
+    if company == "vobile":
+        window = number(row.get("t5_return_pct"))
+        return {
+            "intraday": f"T0 {fmt_pct(row.get('t0_return_pct'))}",
+            "t1": fmt_pct(row.get("t1_return_pct")),
+            "t5": fmt_pct(row.get("t5_return_pct")),
+            "t20": None,
+            "benchmark": "HSI",
+            "benchmark_adjusted": f"T0超额 {fmt_pct(row.get('t0_excess_vs_hsi_pct'))}",
+            "volume_ratio": None,
+            "resonance": resonance(window),
+            "source_refs": ["vobile-M01", "vobile-M02"],
+            "attribution_confidence": row.get("causal_confidence"),
+            "limitations": row.get("limitations"),
+        }
+    window = number(row.get("t5_pct"))
+    return {
+        "intraday": f"T0 {fmt_pct(row.get('t0_pct'))}",
+        "t1": None,
+        "t5": fmt_pct(row.get("t5_pct")),
+        "t20": fmt_pct(row.get("t20_pct")),
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": f"T+5超额 {fmt_pct(row.get('t5_excess_hstech_pct'))}",
+        "volume_ratio": None,
+        "resonance": resonance(window),
+        "source_refs": ["xpeng-M01", "shared-hstech"],
+        "attribution_confidence": row.get("causal_confidence"),
+        "limitations": "事件窗口是相关性观察，不证明单一公告造成全部涨跌。",
+    }
+
+
+def source_refs() -> list[dict[str, Any]]:
+    selected = {
+        "horizon": ["H01", "H03", "H04", "H05", "H06", "M02"],
+        "meitu": [
+            "F01",
+            "F03",
+            "F04",
+            "F05",
+            "F08",
+            "F14",
+            "M02",
+            "P01",
+            "R05",
+            "T10",
+        ],
+        "nanhua": ["F01", "F02", "F03", "F04", "F05", "F06", "F09", "F11", "P01"],
+        "smic": [
+            "Q2_2025",
+            "Q3_2025",
+            "Q4_2025",
+            "Q1_2026",
+            "SMNC_BOOK",
+            "TSMC_Q2",
+            "P_H",
+            "P_HSTECH",
+        ],
+        "vobile": ["F01", "F02", "F03", "F04", "F05", "H01", "M01", "M02"],
+        "xpeng": ["F01", "F03", "F04", "M01"],
+    }
+    refs: list[dict[str, Any]] = []
+    market_ids = {
+        "horizon": {"M02"},
+        "meitu": {"P01"},
+        "nanhua": {"P01"},
+        "smic": {"P_H", "P_HSTECH"},
+        "vobile": {"M01", "M02"},
+        "xpeng": {"M01"},
+    }
+    for key, ids in selected.items():
+        company = COMPANIES[key]
+        ledger_path = DOCS / company["slug"] / "source-ledger.json"
+        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+        by_id = {
+            (item.get("id") or item.get("source_id")): item
+            for item in ledger.get("sources", [])
+        }
+        for source_id in ids:
+            item = by_id[source_id]
+            kind = str(item.get("kind") or "").lower()
+            if source_id in market_ids[key] or "market" in kind:
+                tier = "market_data"
+            elif "management" in kind:
+                tier = "company_claim"
+            else:
+                tier = "primary"
+            refs.append(
+                {
+                    "id": f"{key}-{source_id}",
+                    "title": (
+                        f"{company['name']}｜"
+                        f"{item.get('title') or item.get('name') or source_id}"
+                    ),
+                    "tier": tier,
+                    "url": item.get("url") or item.get("original_url"),
+                    "accessed_at": (
+                        item.get("accessed_at")
+                        or item.get("accessed_date")
+                        or "2026-07-29"
+                    ),
+                }
+            )
+    hstech = next(ref for ref in refs if ref["id"] == "smic-P_HSTECH")
+    refs.append(
+        {
+            **hstech,
+            "id": "shared-hstech",
+            "title": "恒生科技指数日线｜共享风险偏好代理，不是六家公司共同业绩基准",
+        }
+    )
+    return refs
+
+
+def no_baseline(reason: str) -> dict[str, Any]:
+    return {
+        "direction": "not_comparable",
+        "raw": None,
+        "percent": None,
+        "score": None,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": reason,
+        "source_refs": [],
+    }
+
+
+def completed_event(
+    company_key: str,
+    event_id: str,
+    event_date: str,
+    title: str,
+    event_type: str,
+    source_ids: list[str],
+    actual_metrics: list[str],
+    why: str,
+    transmission: list[str],
+    next_check: str,
+    reactions: dict[str, list[dict[str, str]]],
+    *,
+    importance: str = "high",
+    impact: int = 4,
+    expectation: Any = None,
+    surprise: dict[str, Any] | None = None,
+    review: str,
+    source_gap: str,
+    reaction_date: str | None = None,
+    manual_reaction: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    company = COMPANIES[company_key]
+    prefixed = [f"{company_key}-{source_id}" for source_id in source_ids]
+    market = manual_reaction or reaction_for(
+        company_key, reaction_date or event_date, reactions
+    )
+    validation_status = (
+        "market_reviewed"
+        if market.get("resonance") != "pending"
+        else "actual_reported"
+    )
+    return {
+        "event_id": event_id,
+        "date": event_date,
+        "time": None,
+        "event_timezone": "Asia/Shanghai",
+        "beijing_time": event_date,
+        "date_status": "completed",
+        "event_type": event_type,
+        "company": f"{company['name']}｜{title}",
+        "ticker": company["ticker"],
+        "market": company["market"],
+        "chain_bucket": company["bucket"],
+        "importance": importance,
+        "impact_score": impact,
+        "why_it_matters": why,
+        "expectation_snapshot": expectation,
+        "expectation_baseline": (
+            None
+            if expectation
+            else "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。"
+        ),
+        "actual_results": {
+            "reported_at": f"{event_date}T18:00:00+08:00",
+            "metrics": actual_metrics,
+            "definition_changes": [],
+            "source_refs": prefixed,
+        },
+        "surprise": surprise or no_baseline(
+            "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。"
+        ),
+        "market_reaction": market,
+        "transmission_paths": transmission,
+        "holdings_impacted": [
+            f"研究主体：{company['name']}（{company['ticker']}）",
+            "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。",
+        ],
+        "validation": {
+            "status": validation_status,
+            "next_check_at": next_check,
+            "thesis_impact": review,
+            "review_score": None,
+        },
+        "post_event_review": review,
+        "source_refs": prefixed + market.get("source_refs", []),
+        "source_gap": source_gap,
+    }
+
+
+def scheduled_event(
+    company_key: str,
+    event_id: str,
+    event_date: str,
+    title: str,
+    source_ids: list[str],
+    why: str,
+    questions: list[str],
+    *,
+    date_status: str = "confirmed",
+) -> dict[str, Any]:
+    company = COMPANIES[company_key]
+    prefixed = [f"{company_key}-{source_id}" for source_id in source_ids]
+    return {
+        "event_id": event_id,
+        "date": event_date,
+        "time": None,
+        "event_timezone": "Asia/Shanghai",
+        "beijing_time": event_date,
+        "date_status": date_status,
+        "event_type": "future_validation",
+        "company": f"{company['name']}｜{title}",
+        "ticker": company["ticker"],
+        "market": company["market"],
+        "chain_bucket": company["bucket"],
+        "importance": "high",
+        "impact_score": 5,
+        "why_it_matters": why,
+        "expectation_snapshot": {
+            "frozen_at": AS_OF,
+            "official_guidance": [],
+            "consensus": [],
+            "previous_actual": [],
+            "source_refs": prefixed,
+        },
+        "actual_results": None,
+        "surprise": {
+            "direction": "pending",
+            "raw": None,
+            "percent": None,
+            "score": None,
+            "method": "pending",
+            "confidence": "pending",
+            "reason": "事件尚未发生，不预填方向。",
+            "source_refs": prefixed,
+        },
+        "market_reaction": {
+            "intraday": None,
+            "t1": None,
+            "t5": None,
+            "t20": None,
+            "benchmark": None,
+            "benchmark_adjusted": None,
+            "volume_ratio": None,
+            "resonance": "pending",
+            "source_refs": [],
+        },
+        "transmission_paths": [
+            "官方披露 → 核对口径与前期基线 → 计算实际变化 → 再观察价格与成交量共振"
+        ],
+        "holdings_impacted": [f"研究主体：{company['name']}（{company['ticker']}）"],
+        "validation": {
+            "status": "expectation_frozen",
+            "next_check_at": event_date,
+            "thesis_impact": "pending",
+            "review_score": None,
+        },
+        "pre_event_questions": questions,
+        "post_event_review": None,
+        "source_refs": prefixed,
+        "source_gap": "未来实际、T+1/T+5/T+20和成交量只能在事件后追加。",
+    }
+
+
+def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, Any]]:
+    events: list[dict[str, Any]] = []
+    add = events.append
+
+    add(
+        completed_event(
+            "horizon",
+            "horizon-ipo-2024",
+            "2024-10-24",
+            "港交所上市",
+            "listing",
+            ["H01"],
+            ["09660.HK开始交易", "上市后才形成可观察的公开价格与流通历史"],
+            "上市建立价格发现，但短交易历史不支持无前视偏差的长期估值分位。",
+            ["公开上市 → 流通供给/定价", "后续融资与奖励 → 完全摊薄每股经济"],
+            "首份完整年报、自由流通量与后续稀释",
+            reactions,
+            manual_reaction={
+                "intraday": "IPO没有可比T−1收盘",
+                "t1": None,
+                "t5": None,
+                "t20": None,
+                "benchmark": None,
+                "benchmark_adjusted": None,
+                "volume_ratio": None,
+                "resonance": "not_comparable",
+                "source_refs": ["horizon-M02"],
+                "limitations": "上市首日无法使用常规T−1事件窗。",
+            },
+            review="上市价格只是起点，长期价值需由收入、现金与稀释后的每股经济验证。",
+            source_gap="上市前没有同证券连续行情，无法计算常规事件窗。",
+        )
+    )
+    add(
+        completed_event(
+            "meitu",
+            "meitu-deepseek-cost-shock-2025",
+            "2025-01-27",
+            "DeepSeek与开源模型成本冲击",
+            "industry_model",
+            ["T10"],
+            ["低成本/开源模型冲击扩散至中国AI应用叙事", "这是行业事件，不是美图单一公告"],
+            "模型降价既可能降低推理成本，也可能强化模型厂商直接包住应用的替代风险。",
+            ["模型成本下降 → AI功能毛利/试用增加", "模型能力上升 → 原生平台替代独立应用"],
+            "付费转化、毛利和模型厂商直接产品边界",
+            reactions,
+            review="T−1到T+5上涨45.1%，但属于宽行业叙事，不能作为单一公司因果证明。",
+            source_gap="多个AI催化剂同时发生，缺少可隔离的公司特定信息。",
+        )
+    )
+    add(
+        completed_event(
+            "meitu",
+            "meitu-alibaba-cb-2025",
+            "2025-05-21",
+            "阿里可转债与战略合作",
+            "capital_strategy",
+            ["F14"],
+            ["阿里认购US$250m可转债", "初始转股价HK$6.00", "同时披露战略合作"],
+            "资本、分发和模型合作可同时改变小盘AI应用公司的估值叙事，但债务与稀释必须分别建模。",
+            ["平台合作 → 分发/模型调用 → 付费转化与推理成本", "可转债 → 现金缓冲或转股稀释"],
+            "中报核对商业贡献、净现金和全摊薄股数",
+            reactions,
+            review="首日重估明显，五日回吐；合作标题不能代替收入和每股现金验证。",
+            source_gap="合作收入、模型调用成本和渠道转化未单独披露。",
+        )
+    )
+    add(
+        completed_event(
+            "vobile",
+            "vobile-h1-2025",
+            "2025-08-28",
+            "2025H1业绩",
+            "earnings_release",
+            ["F02"],
+            ["收入HK$1,456.3m", "订阅收入HK$609.9m", "增值服务HK$846.4m", "归母利润HK$102.3m"],
+            "验证订阅和内容变现双引擎是否同时增长，以及利润能否转为现金。",
+            ["平台内容量 → 指纹/权利识别 → 订阅与分成收入 → 回款"],
+            "2025全年与2026Q1经营更新",
+            reactions,
+            review="T0上涨但T+5转弱，表明财报后仍需验证现金和可转债供给。",
+            source_gap="没有冻结的卖方共识和历史surprise分布。",
+        )
+    )
+    add(
+        completed_event(
+            "smic",
+            "smic-q2-2025",
+            "2025-08-07",
+            "2025Q2业绩",
+            "earnings_release",
+            ["Q2_2025"],
+            ["收入US$2.209bn", "环比-1.7%", "毛利率20.4%", "产能利用率92.5%"],
+            "利用率、ASP、毛利率和资本开支是晶圆代工周期比单一收入增长更早的验证变量。",
+            ["国内晶圆需求 → 利用率/ASP → 毛利率 → 折旧吸收与FCF"],
+            "2025Q3实际",
+            reactions,
+            review="经营数据进入上行段，但没有保存事前一致预期，不能追溯打分。",
+            source_gap="该公开包没有冻结2025Q2发布前的市场共识。",
+        )
+    )
+    add(
+        completed_event(
+            "xpeng",
+            "xpeng-q2-2025",
+            "2025-08-19",
+            "2025Q2业绩",
+            "earnings_release",
+            ["F01"],
+            [
+                "交付103,181辆",
+                "收入RMB18.27bn",
+                "毛利率17.3%",
+                "vehicle margin 14.3%",
+                "净亏损RMB0.48bn",
+            ],
+            "这是产品周期、毛利修复和亏损收窄能否同步的历史参照点。",
+            ["车型换代 → 交付/ASP → vehicle margin → 费用杠杆 → CFO"],
+            "2025Q3实际",
+            reactions,
+            review="T+5强、T+20回吐，说明业绩拐点与行情持续性必须分开判断。",
+            source_gap="历史官方指引未在本包中形成可审计冻结快照。",
+        )
+    )
+    add(
+        completed_event(
+            "vobile",
+            "vobile-cb-proposal-2025",
+            "2025-09-23",
+            "HK$16亿零息可转债方案",
+            "financing",
+            ["F04"],
+            ["建议发行HK$1.6bn零息可转债", "2026年到期", "形成偿债、回购或转股三分支"],
+            "短期限融资会直接影响净债务、流通供给和每股价值，不能只看票息为零。",
+            ["现金融资 → 投资/营运资金", "到期前 → 回购/赎回/转股 → 股本或现金变化"],
+            "月报、回购公告与到期处理",
+            reactions,
+            review="市场短窗正向，但真正关键是资金用途、到期现金和充分摊薄分母。",
+            source_gap="债券持有人对冲与实际借券结构不可得。",
+        )
+    )
+    add(
+        completed_event(
+            "vobile",
+            "vobile-cb-completion-2025",
+            "2025-09-29",
+            "可转债发行完成",
+            "financing",
+            ["F04", "H01"],
+            ["HK$1.6bn可转债发行完成", "转股或现金偿还风险开始进入存续期"],
+            "发行完成把融资方案变成真实资本结构，后续回购不等于风险消失。",
+            ["债券存续 → 转股价/股价/现金 → 潜在供给或偿债压力"],
+            "2026到期前现金、回购和转换状态",
+            reactions,
+            reaction_date="2025-09-29",
+            review="T0与T+5正共振，但资本结构风险需要用月报持续更新。",
+            source_gap="公开事件窗不能识别套利盘和方向性资金。",
+        )
+    )
+    add(
+        completed_event(
+            "smic",
+            "smic-q3-2025",
+            "2025-11-13",
+            "2025Q3业绩",
+            "earnings_release",
+            ["Q3_2025"],
+            ["收入US$2.382bn", "环比+7.8%", "毛利率22.0%", "产能利用率95.8%"],
+            "利用率升至接近满载后，下一变量从数量转向ASP、产品组合和扩产回报。",
+            ["利用率上升 → 折旧吸收改善", "接近满载 → 扩产/瓶颈 → 资本开支与回报压力"],
+            "2025Q4实际",
+            reactions,
+            review="基本面继续改善，但事件层未冻结共识，保持不可比状态。",
+            source_gap="缺少发布前官方指引和一致预期的结构化快照。",
+        )
+    )
+    add(
+        completed_event(
+            "xpeng",
+            "xpeng-q3-2025",
+            "2025-11-17",
+            "2025Q3业绩",
+            "earnings_release",
+            ["F01"],
+            [
+                "交付116,007辆",
+                "收入RMB20.38bn",
+                "毛利率20.1%",
+                "vehicle margin 13.1%",
+                "净亏损RMB0.38bn",
+            ],
+            "收入和毛利继续改善，但事件后股价可以因估值、指引和产品预期转弱。",
+            ["交付增长 → 毛利/亏损", "指引与产品预期 → 估值再定价"],
+            "2025Q4实际与首次季度盈利持续性",
+            reactions,
+            review="T+5和T+20均弱，典型说明“业绩仍增”不等于增速预期继续上修。",
+            source_gap="没有逐项保存发布前市场预期，无法定位哪一个分项触发重估。",
+        )
+    )
+    add(
+        completed_event(
+            "smic",
+            "smic-q4-2025",
+            "2026-02-10",
+            "2025Q4业绩",
+            "earnings_release",
+            ["Q4_2025"],
+            ["收入US$2.489bn", "环比+4.5%", "毛利率19.2%", "产能利用率95.7%"],
+            "收入和利用率保持强势但毛利率回落，提示扩产、折旧与产品组合的压力。",
+            ["高利用率 → 收入韧性", "毛利率回落 → 成本/折旧/组合压力"],
+            "2025年报与2026Q1实际",
+            reactions,
+            review="周期景气不能只看收入；毛利率是重要反证。",
+            source_gap="缺少该季度可复核事件价格窗与冻结预期。",
+        )
+    )
+    add(
+        completed_event(
+            "horizon",
+            "horizon-drobotics-deconsolidation",
+            "2026-03-31",
+            "D-Robotics出表",
+            "accounting_scope",
+            ["H01"],
+            ["自2026-03-31起终止合并并列作终止经营", "仍为最大单一股东并改用权益法"],
+            "合并口径改善不等于经济风险消失，必须把报表变化和真实现金/权益风险分开。",
+            ["出表 → 收入/亏损口径变化", "权益法与承诺 → 经济风险继续存在"],
+            "2026H1持续经营与终止经营桥",
+            reactions,
+            manual_reaction={
+                "intraday": "3月31日收HK$6.62；事件与年度结果、回购等重叠",
+                "t1": "4月1日收HK$6.91",
+                "t5": "4月9日收HK$6.99",
+                "t20": None,
+                "benchmark": None,
+                "benchmark_adjusted": None,
+                "volume_ratio": None,
+                "resonance": "mixed_or_neutral",
+                "source_refs": ["horizon-M02"],
+                "limitations": "重叠事件较多，不能把窗口归因于出表。",
+            },
+            review="先重列口径，再比较持续经营；不把一次性公允价值变化当核心盈利。",
+            source_gap="缺少独立的市场共识和事件隔离条件。",
+        )
+    )
+    add(
+        completed_event(
+            "xpeng",
+            "xpeng-fy2025",
+            "2026-03-20",
+            "FY2025与Q4首次季度盈利",
+            "earnings_release",
+            ["F01"],
+            [
+                "FY2025交付429,445辆",
+                "收入RMB76.72bn",
+                "毛利率18.87%",
+                "FY净亏损RMB1.14bn",
+                "Q4净利润RMB0.383bn",
+            ],
+            "规模和毛利显著改善，但单季盈利必须接受下一季度持续性检验。",
+            ["规模放量 → 毛利改善 → 单季盈利", "下一季回落 → 变量从高向低风险"],
+            "2026Q1实际",
+            reactions,
+            review="事件后窗口走弱，随后Q1亏损扩大，说明首次盈利不能直接年化。",
+            source_gap="没有冻结发布前盈利与指引共识。",
+        )
+    )
+    add(
+        completed_event(
+            "nanhua",
+            "nanhua-ipo-2025",
+            "2025-12-22",
+            "H股上市",
+            "listing",
+            ["F01"],
+            ["02691.HK上市", "上市首日收HK$9.10"],
+            "新上市小盘H股的流通量、港股通资格和A/H价格发现会放大基本面之外的弹性。",
+            ["H股上市 → 新流通供给", "A/H双重上市 → 跨市场价格发现"],
+            "港股通、成交量与自由流通盘",
+            reactions,
+            review="上市后五个交易日收HK$9.91；没有T−1，不解释为异常收益。",
+            source_gap="IPO没有常规T−1基线，且早期成交受配售和流通结构影响。",
+        )
+    )
+    add(
+        completed_event(
+            "nanhua",
+            "nanhua-stock-connect-2026",
+            "2026-01-16",
+            "纳入港股通",
+            "stock_connect",
+            ["F09"],
+            ["上交所公告调整港股通标的", "新增南向资金可交易资格"],
+            "资格改变潜在投资者范围，但不保证净买入，也不改变公司内在经营。",
+            ["港股通资格 → 潜在南向资金/流动性", "成交与持仓 → 价格发现"],
+            "南向持仓、成交量与A/H溢价",
+            reactions,
+            review="公告后首个完整交易日下跌且放量，证明“纳入”不是机械利好。",
+            source_gap="公开窗口不能分离配售、短线资金和基本面因素。",
+        )
+    )
+    add(
+        completed_event(
+            "vobile",
+            "vobile-fy2025",
+            "2026-03-27",
+            "FY2025业绩",
+            "earnings_release",
+            ["F01"],
+            ["收入HK$2.872bn", "归母利润HK$199.3m", "全年CFO约HK$69.9m"],
+            "利润增长需要由现金转化、应收和资本化研发共同验证。",
+            ["订阅/变现增长 → 会计利润 → CFO → 扣维持投入后的owner earnings"],
+            "2026Q1经营数据与H1现金流",
+            reactions,
+            review="T0负、T+5正，短窗分歧大；现金质量比单日方向重要。",
+            source_gap="未冻结一致预期；T+5仍受市场和融资事件影响。",
+        )
+    )
+    add(
+        completed_event(
+            "nanhua",
+            "nanhua-annual-governance-2026",
+            "2026-03-27",
+            "年报与治理公告包",
+            "earnings_governance",
+            ["F01"],
+            ["2025年报披露", "同日还有审计、关联交易上限、分红和会计估计等治理事项"],
+            "多项公告同日发布时必须作为事件包，不能把价格窗单独归因于利润标题。",
+            ["年报利润/净资本 → 基本面", "治理与会计估计 → 盈利质量/风险折价"],
+            "2026Q1与后续治理披露",
+            reactions,
+            review="首个交易日温和上涨、T+5接近持平；公告包内因素不可分离。",
+            source_gap="同日多项公告，缺少事件隔离条件。",
+        )
+    )
+    add(
+        completed_event(
+            "nanhua",
+            "nanhua-regulatory-warning-2026",
+            "2026-04-01",
+            "证监局警示函",
+            "regulatory",
+            ["F11"],
+            ["浙江证监局出具警示函", "合规事件进入正式监管证据层"],
+            "金融小盘股的合规风险可能直接影响风险资本、客户信任和估值折价。",
+            ["内控/合规 → 监管措施", "监管措施 → 客户/资本/估值风险"],
+            "整改、重复违规和监管资本",
+            reactions,
+            review="首个反应日下跌5.8%；相关性与事件性质一致，但仍不证明全部因果。",
+            source_gap="无法从公开窗口量化潜在业务流失或后续监管成本。",
+        )
+    )
+    add(
+        completed_event(
+            "nanhua",
+            "nanhua-q1-2026",
+            "2026-04-21",
+            "2026Q1报告",
+            "earnings_release",
+            ["F02"],
+            ["营业收入RMB433.1m，同比+60.7%", "归母利润RMB204.8m，同比+138.8%"],
+            "利润高增长必须拆成经纪、利息、风险管理和投资收益，不能直接外推全年。",
+            ["交易活跃/利率/基差 → 收入结构 → 归母利润", "监管净资本 → 可扩张能力"],
+            "2026H1利润与业务分项",
+            reactions,
+            review="强利润增长对应负事件窗，说明预期、流动性和结构质量比同比标题更重要。",
+            source_gap="没有冻结Q1共识；H股流动性和A/H价格发现可能放大窗口。",
+        )
+    )
+    add(
+        completed_event(
+            "meitu",
+            "meitu-q1-2026",
+            "2026-05-06",
+            "2026Q1经营更新",
+            "operating_update",
+            ["F03"],
+            [
+                "核心影像与设计收入RMB852m，同比+34.3%",
+                "付费用户超过17.9m，同比+30.2%",
+                "生产力付费用户2.34m，同比+52.9%",
+                "AI生产力ARR RMB580m，同比+56.2%",
+            ],
+            "付费人数、生产力占比和ARR比新品演示更接近AI应用商业化主线，但未披露利润和现金。",
+            ["模型能力/推理成本 → 产品体验 → 付费转化/ARPU → 毛利与现金"],
+            "2026H1：Q2增量、毛利、现金和净股数",
+            reactions,
+            review="T−1到T+5上涨20.3%，是六家公司中较清晰的经营KPI正共振之一；仍需中报财务闭环。",
+            source_gap="Q1更新未经审阅，未披露利润、毛利率、CFO和分产品留存。",
+        )
+    )
+    add(
+        completed_event(
+            "smic",
+            "smic-q1-2026",
+            "2026-05-14",
+            "2026Q1业绩与Q2指引",
+            "earnings_release",
+            ["Q1_2026"],
+            [
+                "收入US$2.505bn，同比+11.5%",
+                "毛利率20.1%",
+                "产能利用率93.1%",
+                "Q2收入指引环比+14%至+16%",
+                "Q2毛利率指引20%至22%",
+            ],
+            "Q2指引把下一验证点冻结下来：收入增速能否加快，同时守住毛利率。",
+            ["需求/国产替代 → 利用率与出货 → 收入", "资本开支/折旧/组合 → 毛利率与FCF"],
+            "2026Q2实际对比+14%至+16%与20%至22%",
+            reactions,
+            review="T+5相对HSTECH较强；真正的surprise要等Q2实际与本次官方指引比较。",
+            source_gap="Q1本身的发布前一致预期未冻结。",
+        )
+    )
+    add(
+        completed_event(
+            "vobile",
+            "vobile-q1-2026",
+            "2026-05-19",
+            "2026Q1经营数据",
+            "operating_update",
+            ["F03"],
+            ["公司披露2026Q1未经审计经营数据", "用于跟踪活跃资产、MRR与业务增长"],
+            "经营KPI要继续桥接到收入确认、现金和可转债偿债能力。",
+            ["活跃资产/MRR → 订阅收入 → 毛利 → 回款", "内容变现规模 → 平台依赖与分成经济"],
+            "2026H1正式财务结果",
+            reactions,
+            review="T0小幅正、T+5持平，市场没有给出持久方向；等待H1现金和债务处理。",
+            source_gap="经营更新不等于完整季度财报，利润、CFO和应收口径待补。",
+        )
+    )
+    add(
+        completed_event(
+            "xpeng",
+            "xpeng-q1-2026",
+            "2026-05-28",
+            "2026Q1业绩与Q2指引",
+            "earnings_release",
+            ["F03"],
+            [
+                "交付62,682辆，同比-33.3%",
+                "收入RMB13.03bn，同比-17.6%",
+                "vehicle margin 12.1%",
+                "净亏损RMB1.78bn",
+                "Q2交付指引100,000至106,000辆",
+                "Q2收入指引RMB19.6bn至20.8bn",
+            ],
+            "Q1可能是公司产品周期低点，但只有Q2/Q3同比、毛利和现金同步改善才构成增长变量上行。",
+            ["新品/改款 → Q2交付修复", "ASP/车型组合 → vehicle margin", "库存/应付 → CFO质量"],
+            "Q2财务实际与Q3交付同比",
+            reactions,
+            review="T0/T+5正共振，但T+20显著回落；短线修复不等于盈利底确认。",
+            source_gap="Q2财务尚未披露；Q1现金下降和库存上升需要后续解释。",
+        )
+    )
+    add(
+        completed_event(
+            "meitu",
+            "meitu-imaging-governance-cluster",
+            "2026-06-18",
+            "影像节与披露治理事件簇",
+            "product_governance_cluster",
+            ["M02", "R05"],
+            [
+                "6月17日影像节提出apps-to-agents路线",
+                "6月18日披露早前业绩视频误发调查与整改",
+                "同时披露两项理财认购迟报",
+            ],
+            "产品发布与治理负面在相邻交易日重叠，必须作为事件簇而不是强行单因果归因。",
+            ["产品路线 → 付费/留存验证", "披露控制缺陷 → 风险折价与事件跳空"],
+            "无重复迟报；中报验证agent收入与成本",
+            reactions,
+            reaction_date="2026-06-18",
+            review="T−1到T+5下跌13.7%；产品叙事未抵消治理与风险偏好压力。",
+            source_gap="相邻事件与公司回购重叠，不能分离每个因素的价格贡献。",
+        )
+    )
+    add(
+        completed_event(
+            "nanhua",
+            "nanhua-repurchase-plan",
+            "2026-06-24",
+            "H股回购计划",
+            "capital_allocation",
+            ["F04", "F05"],
+            ["董事会提出H股回购计划", "股东会后获授权", "授权不等于已经成交"],
+            "小盘股回购只有在实际成交、净股数下降且不损害监管资本时才产生每股效果。",
+            ["授权 → 实际成交 → 库存/注销 → 流通供给与每股价值", "现金使用 → 监管净资本"],
+            "月报与next-day disclosure中的实际回购",
+            reactions,
+            review="T0小幅正、T+5近乎持平；不把授权公告当完成回购。",
+            source_gap="截至研究日未发现实际回购成交披露。",
+        )
+    )
+    add(
+        completed_event(
+            "smic",
+            "smic-smnc-acquisition",
+            "2026-06-25",
+            "收购中芯北方剩余49%",
+            "capital_allocation",
+            ["SMNC_BOOK"],
+            ["发行547.182m股A股", "非控股权益归属和充分摊薄股数发生变化"],
+            "交易改变归母利润、股本和资本回报口径，必须做法定与备考桥。",
+            ["并表权益变化 → 归母利润", "新股发行 → 稀释", "产能资产 → 折旧/现金回报"],
+            "后续归母EPS、ROIC与资本开支",
+            reactions,
+            reaction_date="2026-06-25",
+            review="首日与T+5均弱于HSTECH，和稀释/交易担忧一致但不证明因果。",
+            source_gap="事件窗口与半导体板块波动重叠。",
+        )
+    )
+    add(
+        completed_event(
+            "xpeng",
+            "xpeng-q2-delivery-2026",
+            "2026-07-02",
+            "2026Q2交付",
+            "operating_update",
+            ["F04"],
+            ["Q2交付103,295辆", "环比+64.8%", "同比+0.1%", "位于公司100,000至106,000辆指引中部"],
+            "交付从Q1低点修复，但同比几乎持平；Q3同比和Q2财务决定变量是否真正由低向高。",
+            ["车型上新 → 交付修复", "收入/ASP/vehicle margin → 财务确认", "Q3同比 → 趋势确认"],
+            "Q2财务与Q3月度交付",
+            reactions,
+            expectation={
+                "frozen_at": "2026-05-28T19:00:00+08:00",
+                "official_guidance": ["Q2交付100,000至106,000辆"],
+                "consensus": [],
+                "previous_actual": ["2026Q1交付62,682辆"],
+                "source_refs": ["xpeng-F03"],
+            },
+            surprise={
+                "direction": "neutral",
+                "raw": "实际103,295辆，较指引中点103,000辆高295辆",
+                "percent": "较指引中点+0.3%，位于官方区间内",
+                "score": 0,
+                "method": "actual_vs_frozen_official_guidance",
+                "confidence": "high",
+                "reason": "实际交付位于指引中部，属于符合指引，不是超预期突破。",
+                "source_refs": ["xpeng-F03", "xpeng-F04"],
+            },
+            review="T0正但T+5相对HSTECH偏弱；市场等待收入、毛利、亏损与现金。",
+            source_gap="交付不提供ASP、利润和现金信息。",
+        )
+    )
+    add(
+        completed_event(
+            "meitu",
+            "meitu-founder-purchase-2026",
+            "2026-07-03",
+            "创始人增持160万股",
+            "insider_action",
+            ["F05"],
+            ["创始人兼董事长以均价约HK$4.023购入1.6m股"],
+            "增持是利益一致性信号，不是估值底或未来业绩的充分证据。",
+            ["内部人买入 → 信号/流通供给", "每股价值仍取决于经营、稀释和现金"],
+            "后续增持、净股数与中报每股经济",
+            reactions,
+            review="初始上涨未延续至T+5；小额增持不能压过基本面与行业情绪。",
+            source_gap="无法从单次交易推断管理层私有信息或未来收益。",
+        )
+    )
+    add(
+        completed_event(
+            "nanhua",
+            "nanhua-h1-profit-alert",
+            "2026-07-07",
+            "2026H1业绩预增",
+            "earnings_preliminary",
+            ["F03"],
+            ["归母利润预计RMB375m至405m", "上年同期RMB231.3m", "推算Q2归母利润约RMB170.2m至200.2m"],
+            "Q1高速增长后，Q2隐含利润用于判断增速是否继续向上；预告仍需正式分部和现金验证。",
+            ["期货市场活跃/利率 → 经纪、利息、投资收益 → 利润", "正式中报 → 分部/净资本/现金质量"],
+            "正式2026中报与分部利润",
+            reactions,
+            review="T0/T+5温和正向；预告未审计且没有冻结共识，不把同比增幅等同surprise。",
+            source_gap="正式收入、分部、现金流和风险资本尚未披露。",
+        )
+    )
+    add(
+        completed_event(
+            "vobile",
+            "vobile-cb-repurchase-2026",
+            "2026-07-07",
+            "月报披露可转债回购",
+            "capital_allocation",
+            ["F05"],
+            ["六月月报披露可转债回购变化", "降低部分到期本金但不自动消除剩余偿债/稀释风险"],
+            "回购债券的价值取决于折价、现金成本、剩余本金和到期选择。",
+            ["现金回购债券 → 净债务/流动性", "剩余债券 → 到期偿还或转股"],
+            "剩余本金、现金余额与到期处理",
+            reactions,
+            review="T0小幅正、T+5转负；资本结构问题仍需定量桥。",
+            source_gap="公开月报不足以观察持有人对冲和实际融资成本。",
+        )
+    )
+    add(
+        completed_event(
+            "smic",
+            "smic-tsmc-readthrough-2026",
+            "2026-07-16",
+            "台积电Q2全球映射",
+            "global_mapping",
+            ["TSMC_Q2"],
+            ["台积电Q2结果提供先进制程与AI需求读数", "不能机械映射为中芯同节点、同客户或同盈利"],
+            "美国/台湾先进制程强势只是一层行业映射，中芯还受节点结构、出口管制与A/H估值影响。",
+            ["全球AI需求 → 先进制程景气", "节点/设备约束差异 → 中芯经济并不等价"],
+            "中芯Q2实际与官方指引对比",
+            reactions,
+            review="正向同业财报对应中芯负事件窗，说明跨市场映射必须经过节点和估值过滤。",
+            source_gap="这不是中芯公司事件；窗口仅用于检验主题传导。",
+        )
+    )
+    add(
+        completed_event(
+            "horizon",
+            "horizon-h1-update-2026",
+            "2026-07-21",
+            "2026H1业绩更新",
+            "earnings_preliminary",
+            ["H03"],
+            [
+                "持续经营收入预计RMB1.93bn至2.08bn，同比+24.8%至+34.5%",
+                "调整后净亏损预计RMB1.4bn至1.7bn，亏损扩大",
+            ],
+            "收入增长与调整亏损扩大并存，是判断规模能否转成经营杠杆的核心矛盾。",
+            ["车型定点/SOP → 芯片与许可收入", "研发/营运资本 → 调整亏损与现金"],
+            "正式中报的毛利、客户、应收、库存与CFO",
+            reactions,
+            manual_reaction={
+                "intraday": "7月21日收HK$4.45，较前收HK$4.39约+1.4%",
+                "t1": "7月22日收HK$4.75；与CARIAD事件重叠",
+                "t5": "7月28日收HK$5.00；随后多项资本事件重叠",
+                "t20": None,
+                "benchmark": None,
+                "benchmark_adjusted": None,
+                "volume_ratio": None,
+                "resonance": "positive_resonance",
+                "source_refs": ["horizon-M02"],
+                "limitations": "7月21日至26日形成密集事件簇，无法单独归因。",
+            },
+            review="收入增长得到确认，但亏损绝对额继续扩大；价格上行不能替代现金OE验证。",
+            source_gap="更新未经审计且未获审计委员会复核；没有正式现金流。",
+        )
+    )
+    add(
+        completed_event(
+            "horizon",
+            "horizon-cariad-amendment-2026",
+            "2026-07-22",
+            "CARIAD旧贷重组",
+            "capital_allocation",
+            ["H04"],
+            [
+                "拟发行约1.302bn股新B股抵销US$662.4m本息",
+                "另付约US$398.9m现金",
+                "赎回约716m潜在转换股",
+            ],
+            "交易同时改变现金、债务和股本；必须看交割而不是只看名义减少转换权。",
+            ["现金支付 → 净现金下降", "新股发行 → 稀释", "旧转换权赎回 → 潜在供给减少"],
+            "交割完成公告与月报股数",
+            reactions,
+            manual_reaction={
+                "intraday": "7月22日收HK$4.75，较前收约+6.7%",
+                "t1": "7月23日收HK$4.57；与新CB定价重叠",
+                "t5": "7月29日收HK$5.28；多事件重叠",
+                "t20": None,
+                "benchmark": None,
+                "benchmark_adjusted": None,
+                "volume_ratio": None,
+                "resonance": "positive_resonance",
+                "source_refs": ["horizon-M02"],
+                "limitations": "与H1更新、新CB和奖励事件重叠。",
+            },
+            review="价格窗口偏强，但经济实质是现金和稀释的重排，不是免费消债。",
+            source_gap="截至截止日交割未确认完成。",
+        )
+    )
+    add(
+        completed_event(
+            "horizon",
+            "horizon-new-cb-2026",
+            "2026-07-23",
+            "US$4.5亿新零息可转债",
+            "financing",
+            ["H05"],
+            [
+                "US$450m零息CB，2027到期",
+                "初始转股价HK$5.55",
+                "全转约635.6m股",
+                "主要用于CARIAD现金支付",
+            ],
+            "新融资解决近期支付，同时把一年后现金偿还或转股稀释带入资本结构。",
+            ["融资现金 → CARIAD支付", "股价/转股价 → 转股稀释或到期偿债"],
+            "发行完成、转换、回购或2027到期现金",
+            reactions,
+            manual_reaction={
+                "intraday": "7月23日收HK$4.57，较前收约-3.8%",
+                "t1": "7月24日收HK$4.42",
+                "t5": None,
+                "t20": None,
+                "benchmark": None,
+                "benchmark_adjusted": None,
+                "volume_ratio": None,
+                "resonance": "negative_resonance",
+                "source_refs": ["horizon-M02"],
+                "limitations": "同一周多个事件，不能把全部波动归因于新CB。",
+            },
+            review="融资缓解近期现金需求，但一年期到期与潜在稀释构成新的验证点。",
+            source_gap="没有债券持有人对冲和最终转换路径数据。",
+        )
+    )
+    add(
+        completed_event(
+            "horizon",
+            "horizon-share-awards-2026",
+            "2026-07-26",
+            "股份奖励",
+            "share_supply",
+            ["H06"],
+            ["授予约90.6m股B股奖励", "无业绩条件", "进入已知完全摊薄股本桥"],
+            "亏损期无业绩目标的股份奖励会影响每股价值和流通供给预期。",
+            ["SBC → 员工激励", "新增潜在股份 → 充分摊薄每股经济"],
+            "归属、发行/库存股转出与净股数",
+            reactions,
+            manual_reaction={
+                "intraday": "公告在周末；7月27日收HK$4.62",
+                "t1": "7月28日收HK$5.00",
+                "t5": None,
+                "t20": None,
+                "benchmark": None,
+                "benchmark_adjusted": None,
+                "volume_ratio": None,
+                "resonance": "mixed_or_neutral",
+                "source_refs": ["horizon-M02"],
+                "limitations": "公告后上涨与前述资本事件及市场情绪重叠。",
+            },
+            review="价格未表现为简单稀释折价；经济成本仍应进入全摊薄分母。",
+            source_gap="最终归属、发行或库存股转出时点待后续披露。",
+        )
+    )
+    add(
+        scheduled_event(
+            "nanhua",
+            "nanhua-capitalisation-shares-2026",
+            "2026-08-11",
+            "资本化H股预计开始交易",
+            ["F06"],
+            "新增流通供给可能改变小盘股稀缺度、换手和A/H价格发现。",
+            ["实际发行股数和总股本是否与通函一致？", "成交量、自由流通盘和A/H溢价如何变化？"],
+            date_status="expected_not_completed",
+        )
+    )
+    add(
+        scheduled_event(
+            "meitu",
+            "meitu-h1-results-2026",
+            "2026-08-26",
+            "2026H1正式业绩",
+            ["F08", "F03"],
+            "这是把Q1经营KPI桥接到Q2收入、利润、现金、推理成本和净股数的主要决策节点。",
+            [
+                "Q2核心收入和付费用户相对Q1是否继续加速？",
+                "生产力收入占比、ARR和AI credits是否转成确认收入？",
+                "毛利率、CFO、SBC、回购和可转债后的每股owner earnings如何？",
+            ],
+        )
+    )
+    return sorted(events, key=lambda item: (item["date"], item["event_id"]))
+
+
+def fetch_hstech() -> dict[str, Any]:
+    url = (
+        "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?"
+        "param=hkHSTECH,day,2024-10-01,2026-07-29,650,qfq"
+    )
+    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(request, timeout=20) as response:
+        payload = json.load(response)
+    rows = payload["data"]["hkHSTECH"]["day"]
+    points = []
+    for row in rows:
+        if row[0] < START or row[0] > AS_OF[:10]:
+            continue
+        points.append(
+            {
+                "date": row[0],
+                "value": float(row[2]),
+                "volume": float(row[5]),
+            }
+        )
+    return {
+        "label": "HSTECH风险偏好代理｜不是六家公司共同业绩基准",
+        "ticker": "HSTECH",
+        "listing": "HKEX index",
+        "kind": "line",
+        "timezone": "Asia/Shanghai",
+        "adjustment_policy": "Tencent qfq daily close; frozen through 2026-07-29",
+        "price_timestamp": "2026-07-29 close",
+        "source_ref": "shared-hstech",
+        "points": points,
+    }
+
+
+def build_report() -> dict[str, Any]:
+    reactions = load_reactions()
+    try:
+        market_series = fetch_hstech()
+    except (OSError, KeyError, ValueError, json.JSONDecodeError):
+        market_series = {
+            "label": "HSTECH风险偏好代理｜抓取失败，保留事件账本",
+            "ticker": "HSTECH",
+            "kind": "line",
+            "points": [],
+            "source_ref": "shared-hstech",
+        }
+    events = build_events(reactions)
+    return {
+        "artifact_type": "earnings_season_timeline",
+        "version": "1.1",
+        "title": "六家公司：事件 Surprise 与市场共振时间轴",
+        "subtitle": (
+            "复用 Seed AI 硬件事件终端：把公司披露、资本结构、行业映射、"
+            "T0/T+5/T+20与下一验证放到同一条证据轴。"
+        ),
+        "as_of": AS_OF,
+        "timezone": "Asia/Shanghai",
+        "date_range": {"start": START, "end": END},
+        "scope": {
+            "theme": (
+                "company fundamentals × capital structure × industry transmission "
+                "× small-cap event elasticity"
+            ),
+            "markets": ["HK", "A-share", "US mapping"],
+            "watchlist": [company["ticker"] for company in COMPANIES.values()],
+            "user_holdings": [],
+        },
+        "not_investment_advice": True,
+        "market_series": market_series,
+        "scenario_paths": [],
+        "events": events,
+        "source_refs": source_refs(),
+        "data_quality": {
+            "missing": [
+                "多数历史事件没有在发生前冻结卖方一致预期，因此不做事后surprise打分。",
+                "地平线7月21日至26日、美图6月17日至18日属于事件簇，无法隔离单一因素。",
+                "六家公司业务不同，HSTECH只作风险偏好背景，不是共同业绩基准。",
+                "尚未发生的正式结果、T+1/T+5/T+20和成交量必须事件后追加。",
+            ],
+            "conflicts": [
+                "同比高增长可以对应负价格窗，说明预期、估值、流动性和利润质量不能被同比标题替代。",
+                "行业映射可能与公司价格反向；台积电强不等于中芯同节点、同客户、同盈利。",
+            ],
+            "manual_review_required": [
+                "2026-08-11复核南华资本化H股实际上市和流通供给。",
+                "2026-08-26回填美图H1实际、Q2增量和事件后市场反应。",
+                "各公司下一份正式财报后冻结新基线，不改写本页历史预期。",
+            ],
+        },
+    }
+
+
+def day_position(value: str) -> float:
+    start = date.fromisoformat(START)
+    end = date.fromisoformat(END)
+    current = date.fromisoformat(value)
+    return (current - start).days / (end - start).days * 100
+
+
+def swimlane_html(report: dict[str, Any]) -> str:
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for event in report["events"]:
+        for key, company in COMPANIES.items():
+            if event["ticker"] == company["ticker"]:
+                grouped[key].append(event)
+                break
+    rows = []
+    for key, company in COMPANIES.items():
+        dots = []
+        for index, event in enumerate(grouped[key]):
+            completed = event["date_status"] == "completed"
+            size = 8 + int(event.get("impact_score") or 3)
+            dots.append(
+                '<a class="lane-dot {state}" href="#event-{event_id}" '
+                'style="left:{left:.3f}%;top:{top}px;width:{size}px;height:{size}px;'
+                'background:{background};border-color:{color}" '
+                'title="{title}｜{date}｜{status}"></a>'.format(
+                    state="completed" if completed else "future",
+                    event_id=escape(event["event_id"]),
+                    left=day_position(event["date"]),
+                    top=12 + (index % 3) * 15,
+                    size=size,
+                    background=company["color"] if completed else "#fff",
+                    color=company["color"],
+                    title=escape(event["company"]),
+                    date=event["date"],
+                    status="已发生" if completed else "待发生/待确认",
+                )
+            )
+        rows.append(
+            f'<div class="swim-row"><a class="swim-label" '
+            f'href="../{company["slug"]}/report.html">{company["name"]}'
+            f'<small>{company["ticker"]}</small></a>'
+            f'<div class="swim-track">{"".join(dots)}</div></div>'
+        )
+    now_left = day_position(AS_OF[:10])
+    now_offset_px = 166 * (1 - now_left / 100)
+    return f"""
+    <section id="company-swimlanes" class="swimlane-section">
+      <div class="section-head">
+        <h2>公司泳道：先看事件密度，再下钻证据</h2>
+        <p>同一横轴 · 实心已发生 · 空心待发生 · 点大小只表示研究影响力</p>
+      </div>
+      <div class="swim-shell">
+        <div class="swim-axis">
+          <span style="left:0">2024-10</span>
+          <span style="left:{day_position("2025-07-01"):.3f}%">2025-07</span>
+          <span style="left:{day_position("2026-01-01"):.3f}%">2026-01</span>
+          <span class="now-label" style="left:{now_left:.3f}%">NOW · 2026-07-29</span>
+          <span style="left:100%">2026-08</span>
+        </div>
+        <div class="swim-grid"
+          style="--now-left-pct:{now_left:.3f}%;--now-offset:{now_offset_px:.3f}px">
+          {"".join(rows)}
+        </div>
+      </div>
+      <div class="timeline-legend">
+        <div><i class="legend-dot filled"></i><strong>已发生</strong>
+          <span>已经有正式披露；是否有价格复核看事件卡。</span></div>
+        <div><i class="legend-dot hollow"></i><strong>待发生 / 待确认</strong>
+          <span>只冻结问题，不预填实际或方向。</span></div>
+        <div><i class="legend-diamond"></i><strong>不可比</strong>
+          <span>没有事前冻结共识，不代表事件“差”。</span></div>
+        <div><i class="legend-line"></i><strong>NOW</strong>
+          <span>右侧是未来验证区；不能回填成事前知道。</span></div>
+      </div>
+    </section>
+    """
+
+
+SWIMLANE_CSS = """
+  .timeline-topnav{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:24px}
+  .timeline-topnav a{padding:7px 11px;border:1px solid var(--line);border-radius:999px;
+  color:var(--ink);background:#fff;text-decoration:none;font-size:12px;font-weight:750}
+  .timeline-topnav a:hover{border-color:var(--blue);color:var(--blue)}
+  .swimlane-section{margin-top:34px}
+  .swim-shell{overflow-x:auto;border:1px solid var(--line);border-radius:14px;
+  background:#fff;box-shadow:var(--shadow)}
+  .swim-axis,.swim-grid{min-width:930px}
+  .swim-axis{position:relative;height:56px;margin-left:166px;
+  border-bottom:1px solid var(--line);color:var(--muted);font-size:11px}
+  .swim-axis span{position:absolute;bottom:10px;transform:translateX(-50%);
+  white-space:nowrap}
+  .swim-axis span:first-child{transform:none}
+  .swim-axis span:last-child{transform:translateX(-100%)}
+  .swim-axis .now-label{bottom:31px;color:var(--red);font-weight:800}
+  .swim-grid{position:relative}
+  .swim-grid:after{content:"";position:absolute;
+  left:calc(var(--now-left-pct) + var(--now-offset));top:0;bottom:0;
+  border-left:2px solid var(--red);pointer-events:none}
+  .swim-row{display:grid;grid-template-columns:166px minmax(760px,1fr);
+  min-height:66px;border-bottom:1px solid #edf0f2}
+  .swim-row:last-child{border-bottom:0}
+  .swim-label{display:flex;flex-direction:column;justify-content:center;
+  padding:8px 15px;color:var(--ink);font-weight:800;text-decoration:none;
+  background:#fbfaf6}
+  .swim-label small{color:var(--muted);font-weight:600}
+  .swim-track{position:relative;
+  background-image:linear-gradient(to right,rgba(215,221,226,.48) 1px,transparent 1px);
+  background-size:10% 100%}
+  .lane-dot{position:absolute;display:block;border:2px solid;border-radius:50%;
+  transform:translate(-50%,-50%);box-shadow:0 2px 7px rgba(20,32,39,.2);
+  z-index:2}
+  .lane-dot:hover,.lane-dot:focus{z-index:5;
+  outline:3px solid rgba(29,111,165,.22);outline-offset:3px}
+  .lane-dot.future{border-width:3px}
+  .timeline-legend{display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+  .timeline-legend>div{display:grid;grid-template-columns:20px 1fr;
+  column-gap:8px;align-items:center;padding:10px 12px;
+  border:1px solid var(--line);border-radius:10px;background:#fff}
+  .timeline-legend span{grid-column:2;color:var(--muted);font-size:11px}
+  .legend-dot{width:12px;height:12px;border:2px solid var(--green);border-radius:50%}
+  .legend-dot.filled{background:var(--green)}
+  .legend-dot.hollow{background:#fff}
+  .legend-diamond{width:11px;height:11px;background:#69747c;transform:rotate(45deg)}
+  .legend-line{width:2px;height:18px;background:var(--red);margin-left:5px}
+  @media(max-width:820px){.timeline-legend{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.timeline-legend{grid-template-columns:1fr}}
+"""
+
+
+def render_html(report: dict[str, Any], renderer_path: Path) -> str:
+    spec = importlib.util.spec_from_file_location("seed_timeline_renderer", renderer_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Cannot load renderer: {renderer_path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    html = module.render_html(
+        report,
+        module.load_echarts(None),
+        module.load_split(None),
+    )
+    html = html.replace("</style>", SWIMLANE_CSS + "\n</style>", 1)
+    lifecycle_hook = """function lifecycle(event) {
+      if (event.surprise && String(event.surprise.method || '').startsWith('not_comparable')) {
+        return 'not_comparable';
+      }"""
+    html = html.replace("function lifecycle(event) {", lifecycle_hook, 1)
+    topnav = """
+      <nav class="timeline-topnav" aria-label="报告导航">
+        <a href="../index.html">← 六家公司首页</a>
+        <a href="./timeline.json">查看 JSON 数据</a>
+        <a href="../listed-company-fundamentals-event-research-methodology.html#event-terminal">
+          事件终端方法
+        </a>
+      </nav>
+    """
+    html = html.replace('<div class="masthead-inner">', '<div class="masthead-inner">' + topnav, 1)
+    html = html.replace(
+        '<section id="overview">',
+        swimlane_html(report) + '\n<section id="overview">',
+        1,
+    )
+    return "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--renderer", type=Path, help="Seed render_earnings_timeline.py")
+    args = parser.parse_args()
+    report = build_report()
+    json_path = HERE / "timeline.json"
+    json_path.write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(json_path)
+    if args.renderer:
+        html_path = HERE / "report.html"
+        html_path.write_text(render_html(report, args.renderer), encoding="utf-8")
+        print(html_path)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

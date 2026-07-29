@@ -17,12 +17,16 @@ and Munger principles.
 ## Public research reports
 
 The [GitHub Pages research index](https://farmcan.github.io/buffett-munger-company-research/)
-currently publishes evidence-linked reports for Meitu, Nanhua Futures, SMIC, and Vobile Group.
+currently publishes six evidence-linked reports for Horizon Robotics, XPeng, Meitu, Nanhua
+Futures, SMIC, and Vobile Group.
 Each report exposes the 25 dimensions, 50 indicators, nine gates, source ledger, evidence
 locators, valuation boundaries, and invalidation tests directly in HTML. All public company
 reports use one versioned publication shell (`company-research-publication-v1`) and a shared
 visual theme; industry differences are explicit content slots rather than independent page
-designs.
+designs. A separate
+[event-surprise and market-resonance terminal](https://farmcan.github.io/buffett-munger-company-research/company-event-timeline/report.html)
+places 37 events on a shared timeline with company swimlanes, a `NOW` boundary, T0/T+5/T+20
+reaction windows, future nodes, and source-linked evidence cards.
 
 ## What is production-grade here?
 

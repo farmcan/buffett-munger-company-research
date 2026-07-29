@@ -1,12 +1,16 @@
 {
   "schema_version": "seed.public-research-publication.v2",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-07-29T13:25:00+08:00",
+  "reviewed_at": "2026-07-29T18:45:00+08:00",
   "artifact_status": "needs_human_review",
   "production_reviewed": false,
   "publication_scope": [
     ".nojekyll",
     "company-report-theme.css",
+    "company-event-timeline/README.md",
+    "company-event-timeline/build_timeline.py",
+    "company-event-timeline/report.html",
+    "company-event-timeline/timeline.json",
     "fubo-group-03738-hk/README.md",
     "fubo-group-03738-hk/build_pack.py",
     "fubo-group-03738-hk/combined-artifact.v2.json",
@@ -211,6 +215,19 @@
     "mobile_runtime_checked": true,
     "status_legend_checked": true,
     "published_company_reports": 6,
+    "event_timeline": {
+      "contract": "seed.earnings-season-timeline.v1.1-compatible",
+      "companies": 6,
+      "events": 37,
+      "sources": 46,
+      "market_points": 447,
+      "company_swimlanes": 6,
+      "future_nodes": 2,
+      "now_boundary": true,
+      "status_legend": true,
+      "event_price_windows": true,
+      "source_links": true
+    },
     "company_reports": {
       "horizon-robotics-09660-hk": {
         "dimensions": 25,

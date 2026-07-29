@@ -14,10 +14,15 @@
 ## 公开公司报告
 
 [GitHub Pages 研究首页](https://farmcan.github.io/buffett-munger-company-research/)
-现已公开美图公司、南华期货、中芯国际与阜博集团四份可追溯报告。每份 HTML 都直接展示
+现已公开地平线机器人、小鹏汽车、美图公司、南华期货、中芯国际与阜博集团六份可追溯报告。每份 HTML 都直接展示
 25 个维度、50 个指标、九道 gate、来源账本、页码/行号证据定位、估值边界与失效条件。
-四份报告统一使用 `company-research-publication-v1` 发布母版和共享视觉主题；行业差异只进入
+六份报告统一使用 `company-research-publication-v1` 发布母版和共享视觉主题；行业差异只进入
 KPI、会计桥、现金桥和估值插槽，不再各自发明页面结构。
+
+另有一份
+[事件 Surprise × 市场共振终端](https://farmcan.github.io/buffett-munger-company-research/company-event-timeline/report.html)，
+把六家公司 37 个事件放到共享日期轴，展示公司泳道、`NOW` 分界、T0/T+5/T+20、
+未来空心节点和原始来源证据卡。
 
 ## 为什么它不是普通的“价值投资提示词”
 
