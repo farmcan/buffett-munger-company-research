@@ -14,6 +14,7 @@ VALIDATOR = (
     / "validate_report_template_parity.py"
 )
 REPORTS = (
+    "horizon-robotics-09660-hk",
     "meitu-01357-hk",
     "nanhua-futures-02691-hk",
     "smic-00981-hk",

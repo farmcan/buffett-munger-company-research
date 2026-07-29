@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "title": "地平线机器人（09660.HK）巴菲特—芒格两问研究",
+  "surface": "report",
+  "description": "公开主源支持的业务、现金所有者收益、稀释、同业与反向估值报告。",
+  "generatedAt": "2026-07-29T12:20:00+08:00",
+  "blocks": [
+    {
+      "id": "intro",
+      "type": "markdown",
+      "body": "# 地平线机器人（09660.HK）巴菲特—芒格两问研究\n业务增长机制可理解，但每股 owner earnings 与当前价格安全边际尚未被证明。"
+    },
+    {
+      "id": "financial-heading",
+      "type": "markdown",
+      "body": "## 五年财务\n收入快速增长，经营亏损并未同步收敛。"
+    },
+    {
+      "id": "financial-chart",
+      "type": "chart",
+      "chartId": "financial-trend"
+    },
+    {
+      "id": "oe-heading",
+      "type": "markdown",
+      "body": "## 现金所有者收益\n两套代理在2023—2025年均为负。"
+    },
+    {
+      "id": "oe-chart",
+      "type": "chart",
+      "chartId": "owner-earnings"
+    },
+    {
+      "id": "valuation-heading",
+      "type": "markdown",
+      "body": "## 估值校准\nPE无意义；P/S只能校准市场预期。"
+    },
+    {
+      "id": "peer-table-block",
+      "type": "table",
+      "tableId": "peer-table"
+    }
+  ],
+  "charts": [
+    {
+      "id": "financial-trend",
+      "title": "FY2021—FY2025收入、毛利与经营损益",
+      "type": "bar",
+      "dataset": "financial_tidy",
+      "encodings": {
+        "x": {
+          "field": "period"
+        },
+        "y": {
+          "field": "value"
+        },
+        "color": {
+          "field": "series"
+        }
+      },
+      "options": {
+        "grouping": "grouped"
+      }
+    },
+    {
+      "id": "owner-earnings",
+      "title": "FY2023—FY2025现金所有者收益代理",
+      "type": "bar",
+      "dataset": "owner_earnings_tidy",
+      "encodings": {
+        "x": {
+          "field": "period"
+        },
+        "y": {
+          "field": "value"
+        },
+        "color": {
+          "field": "series"
+        }
+      },
+      "options": {
+        "grouping": "grouped"
+      }
+    }
+  ],
+  "tables": [
+    {
+      "id": "peer-table",
+      "title": "同业P/S资格与校准",
+      "dataset": "peer_valuation",
+      "columns": [
+        {
+          "field": "company",
+          "label": "公司"
+        },
+        {
+          "field": "qualification",
+          "label": "资格"
+        },
+        {
+          "field": "ps",
+          "label": "P/S",
+          "format": "number"
+        },
+        {
+          "field": "profitability",
+          "label": "盈利/现金"
+        }
+      ],
+      "defaultSort": {
+        "field": "ps",
+        "direction": "asc"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "H01",
+      "label": "Horizon Robotics Annual Report 2025",
+      "href": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043001830.pdf"
+    },
+    {
+      "id": "H03",
+      "label": "Update on Financial Performance for 2026H1",
+      "href": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0721/2026072100145.pdf"
+    },
+    {
+      "id": "H04",
+      "label": "Amendment to CARIAD Convertible Loan Agreement",
+      "href": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0722/2026072200813.pdf"
+    },
+    {
+      "id": "H05",
+      "label": "US$450m Zero-Coupon Convertible Bonds due 2027",
+      "href": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0723/2026072300027.pdf"
+    },
+    {
+      "id": "H06",
+      "label": "Grant of Awards under Post-IPO Share Incentive Plan",
+      "href": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0726/2026072600115.pdf"
+    },
+    {
+      "id": "H07",
+      "label": "Monthly Return for June 2026",
+      "href": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070700556.pdf"
+    },
+    {
+      "id": "H08",
+      "label": "Horizon Robotics Prospectus — Business",
+      "href": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/1016/11405812/2024101600041.pdf"
+    },
+    {
+      "id": "M01",
+      "label": "Tencent 09660.HK quote snapshot",
+      "href": "https://qt.gtimg.cn/q=r_hk09660"
+    },
+    {
+      "id": "M03",
+      "label": "CFETS-authorized RMB midpoint for 2026-07-28",
+      "href": "https://www.news.cn/20260728/b7ed4efa8ff94386901232d6bfca1df4/c.html"
+    },
+    {
+      "id": "P01",
+      "label": "Black Sesame International Annual Report 2025",
+      "href": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042701016.pdf"
+    },
+    {
+      "id": "P02",
+      "label": "Mobileye Global Inc. 2025 Form 10-K",
+      "href": "https://www.sec.gov/Archives/edgar/data/1910139/000110465926014300/mbly-20251227x10k.htm"
+    },
+    {
+      "id": "P03",
+      "label": "Ambarella Inc. FY2026 Form 10-K",
+      "href": "https://www.sec.gov/Archives/edgar/data/1280263/000119312526119321/amba-20260131.htm"
+    }
+  ]
+}

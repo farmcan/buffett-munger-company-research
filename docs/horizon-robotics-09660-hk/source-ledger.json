@@ -1,0 +1,270 @@
+{
+  "schema_version": "seed.company-research-source-ledger.v1",
+  "company": "Horizon Robotics",
+  "security_id": "XHKG:09660",
+  "as_of": "2026-07-29",
+  "sources": [
+    {
+      "id": "H01",
+      "tier": "A",
+      "kind": "exchange_filing",
+      "title": "Horizon Robotics Annual Report 2025",
+      "publisher": "HKEX / issuer",
+      "published_at": "2026-04-30",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043001830.pdf",
+      "snapshot_sha256": "0667e8c87a9c468ee661ddf9c42df733f860ac27c598894a7e17076e54dbaba2",
+      "used_for": [
+        "financial_statements",
+        "revenue",
+        "cash_flow",
+        "operating_kpis",
+        "customers",
+        "suppliers",
+        "share_capital",
+        "governance"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    },
+    {
+      "id": "H02",
+      "tier": "A",
+      "kind": "exchange_filing",
+      "title": "Horizon Robotics Annual Report 2024",
+      "publisher": "HKEX / issuer",
+      "published_at": "2025-04-21",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0421/2025042100203.pdf",
+      "snapshot_sha256": "bf7ae5c187555a7f07ada9a416c74c631cdf76034d3eb3b4a611e0f754b2a69d",
+      "used_for": [
+        "financial_statements",
+        "cash_flow",
+        "historical_comparatives"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    },
+    {
+      "id": "H03",
+      "tier": "A",
+      "kind": "exchange_announcement",
+      "title": "Update on Financial Performance for 2026H1",
+      "publisher": "HKEX / issuer",
+      "published_at": "2026-07-21",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0721/2026072100145.pdf",
+      "snapshot_sha256": "90c28ab22371807a57f500b4e80f1f961a88f177f72e148cde903884ed49ede5",
+      "used_for": [
+        "revenue",
+        "gross_profit",
+        "adjusted_loss",
+        "scope_change"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    },
+    {
+      "id": "H04",
+      "tier": "A",
+      "kind": "exchange_announcement",
+      "title": "Amendment to CARIAD Convertible Loan Agreement",
+      "publisher": "HKEX / issuer",
+      "published_at": "2026-07-22",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0722/2026072200813.pdf",
+      "snapshot_sha256": "9299edf67c5c79cf2a84434ce2dd99fb19e7fb861b0d85b2d0b61e6f1490ecfe",
+      "used_for": [
+        "convertible_loan",
+        "cash_payment",
+        "dilution",
+        "lock_up"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    },
+    {
+      "id": "H05",
+      "tier": "A",
+      "kind": "exchange_announcement",
+      "title": "US$450m Zero-Coupon Convertible Bonds due 2027",
+      "publisher": "HKEX / issuer",
+      "published_at": "2026-07-23",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0723/2026072300027.pdf",
+      "snapshot_sha256": "0f535ba2e7cfd76a58f00c4879a63254b20ecab583a61f88c2125486dc9d16eb",
+      "used_for": [
+        "convertible_bond",
+        "conversion_price",
+        "dilution",
+        "use_of_proceeds"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    },
+    {
+      "id": "H06",
+      "tier": "A",
+      "kind": "exchange_announcement",
+      "title": "Grant of Awards under Post-IPO Share Incentive Plan",
+      "publisher": "HKEX / issuer",
+      "published_at": "2026-07-26",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0726/2026072600115.pdf",
+      "snapshot_sha256": "b4474eb3648482f6d3e706b234dfdd03028bdfdae62f20952bbaaa468051438f",
+      "used_for": [
+        "share_awards",
+        "vesting",
+        "dilution",
+        "governance"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    },
+    {
+      "id": "H07",
+      "tier": "A",
+      "kind": "monthly_return",
+      "title": "Monthly Return for June 2026",
+      "publisher": "HKEX / issuer",
+      "published_at": "2026-07-07",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070700556.pdf",
+      "snapshot_sha256": "abf43ab7dce878f14dd39a36456f28f5a8a520da6ebc8b9246e6ea1bb330f1b6",
+      "used_for": [
+        "issued_shares",
+        "treasury_shares",
+        "awards",
+        "convertible_loan"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    },
+    {
+      "id": "H08",
+      "tier": "A",
+      "kind": "prospectus_section",
+      "title": "Horizon Robotics Prospectus — Business",
+      "publisher": "HKEX / issuer",
+      "published_at": "2024-10-16",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/1016/11405812/2024101600041.pdf",
+      "snapshot_sha256": "fb5db62c903ef286c5b2fbaa30d41d18cc06d96456b011ae06b45003b588c860",
+      "used_for": [
+        "design_win_conversion",
+        "customer_validation_cycle",
+        "supply_chain",
+        "revenue_recognition"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    },
+    {
+      "id": "M01",
+      "tier": "C",
+      "kind": "market_data_snapshot",
+      "title": "Tencent 09660.HK quote snapshot",
+      "publisher": "Tencent",
+      "published_at": "2026-07-29",
+      "retrieved_at": "2026-07-29",
+      "url": "https://qt.gtimg.cn/q=r_hk09660",
+      "snapshot_sha256": "57e0ae1a74e9549c1baf9d568504a7bda92d2d0e195db6dbf006f98b371d7c26",
+      "used_for": [
+        "price",
+        "share_count",
+        "market_cap",
+        "volume"
+      ],
+      "limitations": "Intraday third-party market snapshot; not an HKEX official close."
+    },
+    {
+      "id": "M02",
+      "tier": "C",
+      "kind": "market_data_snapshot",
+      "title": "Tencent 09660.HK daily k-line snapshot",
+      "publisher": "Tencent",
+      "published_at": "2026-07-28",
+      "retrieved_at": "2026-07-29",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk09660,day,,,640,qfq",
+      "snapshot_sha256": "946aca087665b805068bec6775dfed837fd4c1d67668b01b039a45481b7bdf1e",
+      "used_for": [
+        "price_history"
+      ],
+      "limitations": "Third-party daily market snapshot; corporate-action completeness not independently certified."
+    },
+    {
+      "id": "M03",
+      "tier": "B",
+      "kind": "official_rate_republication",
+      "title": "CFETS-authorized RMB midpoint for 2026-07-28",
+      "publisher": "Xinhua / CFETS",
+      "published_at": "2026-07-28",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www.news.cn/20260728/b7ed4efa8ff94386901232d6bfca1df4/c.html",
+      "snapshot_sha256": "8f7c99f440b784b57551ba069dced369f8501e35faa22a10e25dc5fbc5e4ebe2",
+      "used_for": [
+        "fx"
+      ],
+      "limitations": "One-day timing mismatch versus the 2026-07-29 intraday price."
+    },
+    {
+      "id": "P01",
+      "tier": "A",
+      "kind": "exchange_filing",
+      "title": "Black Sesame International Annual Report 2025",
+      "publisher": "HKEX / peer issuer",
+      "published_at": "2026-04-27",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042701016.pdf",
+      "snapshot_sha256": "ea8319cbb3bacf837fe92595d48e27dfddcb7a6e56170073ff50e69765bc9be4",
+      "used_for": [
+        "peer_revenue",
+        "peer_business",
+        "peer_loss"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    },
+    {
+      "id": "M04",
+      "tier": "C",
+      "kind": "market_data_snapshot",
+      "title": "Tencent 02533.HK quote snapshot",
+      "publisher": "Tencent",
+      "published_at": "2026-07-29",
+      "retrieved_at": "2026-07-29",
+      "url": "https://qt.gtimg.cn/q=r_hk02533",
+      "snapshot_sha256": "a5e563f1e90b152cf40aca497ced9a4c0696fd0f95d60b5b8dc2fc502e9f1c5d",
+      "used_for": [
+        "peer_price",
+        "peer_market_cap"
+      ],
+      "limitations": "Intraday third-party market snapshot; not an HKEX official close."
+    },
+    {
+      "id": "P02",
+      "tier": "A",
+      "kind": "sec_10k",
+      "title": "Mobileye Global Inc. 2025 Form 10-K",
+      "publisher": "SEC / issuer",
+      "published_at": "2026-02-12",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1910139/000110465926014300/mbly-20251227x10k.htm",
+      "snapshot_sha256": "fd30bf23b6d500166c51d2e465cc12fa3c00da2780d6a82290024d7d72405738",
+      "used_for": [
+        "peer_revenue",
+        "peer_cash_flow",
+        "peer_business"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    },
+    {
+      "id": "P03",
+      "tier": "A",
+      "kind": "sec_10k",
+      "title": "Ambarella Inc. FY2026 Form 10-K",
+      "publisher": "SEC / issuer",
+      "published_at": "2026-03-23",
+      "retrieved_at": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1280263/000119312526119321/amba-20260131.htm",
+      "snapshot_sha256": "aaf36816a758ddf734ca21dfa7cb8a3e33ac8e7661124d0395701da05e9fb82d",
+      "used_for": [
+        "peer_revenue",
+        "peer_business",
+        "peer_loss"
+      ],
+      "limitations": "Primary filing or exchange announcement used within its stated period, scope and assurance."
+    }
+  ]
+}

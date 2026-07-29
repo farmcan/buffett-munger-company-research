@@ -1,0 +1,152 @@
+{
+  "schema_version": "seed.company-research-red-team.v1",
+  "company": "Horizon Robotics",
+  "security_id": "XHKG:09660",
+  "reviewer_or_agent": "independent Codex research subagent",
+  "reviewed_at": "2026-07-29T11:30:00+08:00",
+  "status": "needs_human_review",
+  "counter_thesis": "地平线可能已证明产品商业化，却尚未证明收入增长可穿过研发、营运资本、关联结构和稀释，转成充分摊薄后的每股owner earnings。",
+  "strongest_disconfirming_evidence": [
+    {
+      "claim_challenged": "收入高增长自然带来经营杠杆。",
+      "evidence": "FY2025收入+57.7%，调整后经营亏损+58.7%；2026H1调整后净亏损预告仍扩大。",
+      "source_refs": [
+        "H01",
+        "H03"
+      ]
+    },
+    {
+      "claim_challenged": "定点数量可视为订单。",
+      "evidence": "招股书明确design-win不保证销售订单，合同后到SOP仍需8–36个月。",
+      "source_refs": [
+        "H08"
+      ]
+    },
+    {
+      "claim_challenged": "现金多就不存在每股资本成本。",
+      "evidence": "CARIAD、新CB和已授予奖励形成14.39%的已知潜在股数增幅。",
+      "source_refs": [
+        "H04",
+        "H05",
+        "H06",
+        "H07"
+      ]
+    },
+    {
+      "claim_challenged": "高毛利许可足以证明护城河。",
+      "evidence": "客户集中、关联销售、OEM自研与多平台替代仍存在，且非关联许可留存未披露。",
+      "source_refs": [
+        "H01",
+        "H08",
+        "P01",
+        "P02",
+        "P03"
+      ]
+    }
+  ],
+  "failure_modes": [
+    {
+      "name": "conversion_gap",
+      "mechanism": "定点未按期转SOP、出货和回款。",
+      "observable_signals": [
+        "SOP车型数",
+        "实际出货",
+        "取消率",
+        "应收增速"
+      ]
+    },
+    {
+      "name": "margin_and_cash_failure",
+      "mechanism": "低毛利硬件、价格竞争和研发投入吞噬许可利润。",
+      "observable_signals": [
+        "产品毛利率",
+        "调整经营亏损",
+        "OCF/收入",
+        "现金OE"
+      ]
+    },
+    {
+      "name": "platform_substitution",
+      "mechanism": "下一代车型改用华为、Mobileye、Qualcomm、NVIDIA、黑芝麻或OEM自研。",
+      "observable_signals": [
+        "续标率",
+        "客户下一代平台",
+        "同车型第二供应源"
+      ]
+    },
+    {
+      "name": "per_share_dilution",
+      "mechanism": "融资与激励增长快于经济收益。",
+      "observable_signals": [
+        "全摊薄股本",
+        "SBC",
+        "新配售/债券",
+        "每股现金OE"
+      ]
+    }
+  ],
+  "invalidation_conditions": [
+    {
+      "condition": "连续两个半年度同口径毛利增速高于经营费用增速，调整经营亏损绝对额下降。",
+      "effect_on_counter_thesis": "削弱增长无经营杠杆的反方。"
+    },
+    {
+      "condition": "TTM核心OCF与扣维持投入后的充分摊薄每股OE转正。",
+      "effect_on_counter_thesis": "削弱现金复利尚未成立的反方。"
+    },
+    {
+      "condition": "定点转SOP、出货、非关联许可收入与回款同步增长。",
+      "effect_on_counter_thesis": "削弱定点质量和关联依赖反方。"
+    }
+  ],
+  "unresolved_issues": [
+    {
+      "gap": "No customer-level design-win → contract → SOP → shipment → revenue → cash ledger."
+    },
+    {
+      "gap": "No audited 2026H1 full financial statements or continuing-operations cash flow at cut-off."
+    },
+    {
+      "gap": "No maintenance/growth R&D and capex split."
+    },
+    {
+      "gap": "No completed pro-forma balance sheet after D-Robotics deconsolidation and July financing."
+    },
+    {
+      "gap": "No named human approval; machine fact pack remains reconciliation_pending."
+    }
+  ],
+  "next_review": {
+    "event": "2026H1 full interim results and July transaction completion notices",
+    "minimum_checks": [
+      "continuing revenue mix",
+      "adjusted operating loss",
+      "CFO",
+      "receivables",
+      "inventory",
+      "CARIAD closing",
+      "CB issuance",
+      "fully diluted shares"
+    ],
+    "source_refs": [
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "H07"
+    ]
+  },
+  "source_refs": [
+    "H01",
+    "H03",
+    "H04",
+    "H05",
+    "H06",
+    "H07",
+    "H08",
+    "P01",
+    "P02",
+    "P03"
+  ],
+  "disclaimer": "Independent evidence red-team; not investment advice or named human approval."
+}

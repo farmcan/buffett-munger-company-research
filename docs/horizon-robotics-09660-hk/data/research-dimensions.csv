@@ -1,0 +1,51 @@
+dimension,dimension_status,indicator,indicator_status,summary,source_refs,source_gaps
+security_and_legal_subject,applicable,exact_security_issuer_share_class_and_rights,observed,09660.HK是开曼注册WVR发行人；B股一票，A股十票。价格、股本、币种按日期绑定。,H01/H07/M01,
+security_and_legal_subject,applicable,dated_price_share_count_currency_and_listing_status,observed,09660.HK是开曼注册WVR发行人；B股一票，A股十票。价格、股本、币种按日期绑定。,H01/H07/M01,
+control_and_beneficial_ownership,applicable,controller_voting_pledges_and_cross_holdings,observed,俞凯为最终控制人兼董事长/CEO；WVR与关联结构提高资本配置及少数股东监督要求。,H01/H04/H06,未建立逐年投票权与所有受益安排变化的完整图。
+control_and_beneficial_ownership,applicable,value_transfers_nci_and_related_party_exposure,observed,俞凯为最终控制人兼董事长/CEO；WVR与关联结构提高资本配置及少数股东监督要求。,H01/H04/H06,未建立逐年投票权与所有受益安排变化的完整图。
+business_model,applicable,payer_value_proposition_revenue_and_cash_mechanism,observed,硬件出货叠加BPU、算法、基础模型和工具链许可；收入需经过定点、合同、验证、SOP、出货与回款。,H01/H08,
+business_model,applicable,capital_needs_and_business_failure_variables,observed,硬件出货叠加BPU、算法、基础模型和工具链许可；收入需经过定点、合同、验证、SOP、出货与回款。,H01/H08,
+revenue_structure,applicable,segment_product_and_geography_reconciliation,observed,2025产品43.2%、许可服务51.4%、非汽车5.4%；D-Robotics 2026年出表后持续经营口径发生变化。,H01/H03,尚无审计的2026H1完整分部与现金流。
+revenue_structure,applicable,volume_price_mix_acquisition_and_scope_bridge,observed,2025产品43.2%、许可服务51.4%、非汽车5.4%；D-Robotics 2026年出表后持续经营口径发生变化。,H01/H03,尚无审计的2026H1完整分部与现金流。
+industry_chain_position,applicable,upstream_process_customer_payer_and_substitute_map,observed,无晶圆厂Tier 2/生态赋能者；95%以上出货经生态伙伴，利润池在芯片、软件许可、Tier 1与OEM间分配。,H01/H08,
+industry_chain_position,applicable,profit_pool_and_inventory_credit_technology_risk,observed,无晶圆厂Tier 2/生态赋能者；95%以上出货经生态伙伴，利润池在芯片、软件许可、Tier 1与OEM间分配。,H01/H08,
+product_and_unit_economics,applicable,price_volume_mix_and_incremental_economics,observed,出货401万套、NOA占45%、单车价值量+75%；产品毛利降至34.5%，剔除低加价域控为42.5%。,H01,
+product_and_unit_economics,applicable,industry_denominator_scope_and_comparability,observed,出货401万套、NOA占45%、单车价值量+75%；产品毛利降至34.5%，剔除低加价域控为42.5%。,H01,
+customers,applicable,customer_channel_end_user_and_payer_separation,observed,前五客户占60.4%；CARIZON销售占比约18.11%与客户A相符，但客户身份仅为推断。,H01,缺逐客户SOP、车型销量、取消率与回款。
+customers,applicable,concentration_retention_receivables_inventory_and_external_evidence,observed,前五客户占60.4%；CARIZON销售占比约18.11%与客户A相符，但客户身份仅为推断。,H01,缺逐客户SOP、车型销量、取消率与回款。
+suppliers,applicable,critical_inputs_concentration_related_parties_and_substitution,observed,招股书披露单一晶圆制造来源、预付款及约5–7个月制造封测周期；2025年报未明确证明已多元化。,H01/H08,2025供应商集中表无法单独识别晶圆代工。
+suppliers,applicable,terms_prepayments_availability_and_cost_pass_through,observed,招股书披露单一晶圆制造来源、预付款及约5–7个月制造封测周期；2025年报未明确证明已多元化。,H01/H08,2025供应商集中表无法单独识别晶圆代工。
+competition_structure,applicable,entry_exit_capacity_price_and_substitution,observed,RFQ前替代性高；SOP后验证成本使替代性下降；下一代平台重新竞争。Mobileye、黑芝麻、Qualcomm、NVIDIA、华为和OEM自研构成不同层替代。,H01/H08/P01/P02/P03,
+competition_structure,applicable,competitor_customer_and_regulator_corroboration,observed,RFQ前替代性高；SOP后验证成本使替代性下降；下一代平台重新竞争。Mobileye、黑芝麻、Qualcomm、NVIDIA、华为和OEM自研构成不同层替代。,H01/H08/P01/P02/P03,
+durable_moat,applicable,mechanism_economic_result_durability_and_direction,observed,可观察护城河是量产工程、软硬件协同、工具链与生态，而非不可替代的单颗芯片。,H01/H08/P01/P02,缺平台续标率、定点转SOP率与非关联客户留存。
+durable_moat,applicable,strongest_falsifying_evidence,observed,可观察护城河是量产工程、软硬件协同、工具链与生态，而非不可替代的单颗芯片。,H01/H08/P01/P02,缺平台续标率、定点转SOP率与非关联客户留存。
+revenue_quality,applicable,revenue_receivables_contract_assets_returns_and_cash,observed,审计收入增长57.7%，但应收约+151%、库存+82.6%，现金转换显著落后。,H01,
+revenue_quality,applicable,acquisition_period_end_channel_and_recognition_distortion,observed,审计收入增长57.7%，但应收约+151%、库存+82.6%，现金转换显著落后。,H01,
+earnings_quality,applicable,reported_to_normalized_parent_earnings_bridge,observed,2024盈利和2026H1预告盈利受金融负债公允价值影响；调整后净亏损仍扩大，PE没有经济解释力。,H01/H03,
+earnings_quality,applicable,tax_attribution_scope_and_adjustment_disagreement,observed,2024盈利和2026H1预告盈利受金融负债公允价值影响；调整后净亏损仍扩大，PE没有经济解释力。,H01/H03,
+cash_conversion,applicable,profit_operating_cash_and_distributable_cash_bridge,observed,2025 OCF为-21.06亿元；OCF减固定及无形投入为-28.07亿元，核心现金OE仍为负。,H01/H02,
+cash_conversion,applicable,factoring_payment_restricted_cash_and_sector_scope,observed,2025 OCF为-21.06亿元；OCF减固定及无形投入为-28.07亿元，核心现金OE仍为负。,H01/H02,
+working_capital,applicable,receivables_inventory_payables_prepayments_and_contract_balances,observed,应收与库存增速快于收入；合同负债2.66亿元、未履约交易价10.12亿元不是完整硬件订单簿。,H01,
+working_capital,applicable,sustainable_financing_vs_temporary_cash_release,observed,应收与库存增速快于收入；合同负债2.66亿元、未履约交易价10.12亿元不是完整硬件订单簿。,H01,
+capital_intensity,applicable,maintenance_vs_growth_investment_range,observed,公司不自建晶圆厂，但研发、云服务、流片、IP/EDA、预付款、库存和客户验证形成真实资本周期。,H01/H08,
+capital_intensity,applicable,capex_capacity_utilization_and_competitive_requirements,observed,公司不自建晶圆厂，但研发、云服务、流片、IP/EDA、预付款、库存和客户验证形成真实资本周期。,H01/H08,
+returns_on_capital,applicable,multiperiod_roe_roic_and_incremental_returns,observed,持续亏损、快速扩股及经营范围变化使ROIC暂不可作为正面质量证据。,H01/H03/H04/H05,维持/增长研发与正常营运资本尚未拆分。
+returns_on_capital,applicable,leverage_buyback_cycle_and_accounting_decomposition,observed,持续亏损、快速扩股及经营范围变化使ROIC暂不可作为正面质量证据。,H01/H03/H04/H05,维持/增长研发与正常营运资本尚未拆分。
+balance_sheet_survival,applicable,debt_liquidity_covenants_guarantees_pledges_and_off_balance,observed,2025年末现金及定存208.25亿元，但旧CARIAD负债、3.989亿美元现金支付及新CB必须同时纳入。,H01/H04/H05,
+balance_sheet_survival,applicable,adverse_scenario_financing_need,observed,2025年末现金及定存208.25亿元，但旧CARIAD负债、3.989亿美元现金支付及新CB必须同时纳入。,H01/H04/H05,
+capital_allocation,applicable,reinvestment_ma_dividend_buyback_issuance_debt_and_cash_ledger,observed,2025配售、CARIAD重组、新CB及股份奖励把验证时间换成稀释/再融资成本；应以全摊薄每股OE衡量。,H01/H04/H05/H06/H07,
+capital_allocation,applicable,diluted_per_share_outcomes_and_opportunity_cost,observed,2025配售、CARIAD重组、新CB及股份奖励把验证时间换成稀释/再融资成本；应以全摊薄每股OE衡量。,H01/H04/H05/H06/H07,
+management,applicable,dated_commitments_vs_outcomes,observed,管理层已兑现HSD首款量产及出货，但定点、合作意向与未来车型仍须按SOP和回款复核。,H01/H03/H08,缺完整承诺—兑现逐年台账。
+management,applicable,incentives_compensation_succession_insider_actions_and_candor,observed,管理层已兑现HSD首款量产及出货，但定点、合作意向与未来车型仍须按SOP和回款复核。,H01/H03/H08,缺完整承诺—兑现逐年台账。
+governance_and_related_parties,applicable,related_sales_purchases_loans_guarantees_and_asset_transfers,observed,WVR、创始人兼任董事长/CEO、CARIZON关联收入、创始人贷款及无业绩目标奖励均需持续监督。,H01/H04/H06,
+governance_and_related_parties,applicable,pricing_minority_fairness_oversight_and_dissent,observed,WVR、创始人兼任董事长/CEO、CARIZON关联收入、创始人贷款及无业绩目标奖励均需持续监督。,H01/H04/H06,
+accounting_and_audit,applicable,audit_kam_standard_policy_and_restatement,observed,FY2025获无保留审计意见；机器事实包仍有法定身份、股本规范化及比较期解析QA缺口。,H01/H02,公开包为needs_human_review，非具名人工签字。
+accounting_and_audit,applicable,statement_reproduction_and_conflict_preservation,observed,FY2025获无保留审计意见；机器事实包仍有法定身份、股本规范化及比较期解析QA缺口。,H01/H02,公开包为needs_human_review，非具名人工签字。
+tax_and_legal,applicable,effective_deferred_and_uncertain_tax,observed,安全、数据、出口管制、功能安全和产品责任是主要尾部风险；本报告不提供法律判断。,H01/H08,未完成逐法域诉讼、制裁与数据合规清单。
+tax_and_legal,applicable,litigation_penalties_compliance_and_tail_exposure,observed,安全、数据、出口管制、功能安全和产品责任是主要尾部风险；本报告不提供法律判断。,H01/H08,未完成逐法域诉讼、制裁与数据合规清单。
+per_share_economics,applicable,basic_diluted_and_fully_diluted_share_reconciliation,observed,最新已发行145.72亿股；CARIAD、新CB与已授予奖励全计为166.68亿股，潜在增幅14.39%。,H04/H05/H06/H07/M01,
+per_share_economics,applicable,per_share_growth_distribution_issuance_and_repurchase_outcomes,observed,最新已发行145.72亿股；CARIAD、新CB与已授予奖励全计为166.68亿股，潜在增幅14.39%。,H04/H05/H06/H07/M01,
+valuation,applicable,currency_consistent_value_range_assumptions_and_dates,observed,亏损期不使用PE；HK$5.20对应当前P/S约17.47倍、已知全摊薄约19.98倍，远高于三家校准中位约7.62倍。,H01/H04/H05/H06/H07/M01/M03/P01/P02/P03/M04,P/S只能校准预期，不能代替owner earnings价值。
+valuation,applicable,reverse_expectations_sensitivities_and_cross_check,observed,亏损期不使用PE；HK$5.20对应当前P/S约17.47倍、已知全摊薄约19.98倍，远高于三家校准中位约7.62倍。,H01/H04/H05/H06/H07/M01/M03/P01/P02/P03/M04,P/S只能校准预期，不能代替owner earnings价值。
+disconfirming_evidence,applicable,independent_strongest_counter_thesis,observed,最强反证是收入增长尚未转化为经营杠杆、现金OE或稳定每股分母；OEM自研和平台竞争会在下一代车型重新开启。,H01/H03/H08/P01/P02/P03,
+disconfirming_evidence,applicable,observable_invalidation_next_evidence_and_review_date,observed,最强反证是收入增长尚未转化为经营杠杆、现金OE或稳定每股分母；OEM自研和平台竞争会在下一代车型重新开启。,H01/H03/H08/P01/P02/P03,

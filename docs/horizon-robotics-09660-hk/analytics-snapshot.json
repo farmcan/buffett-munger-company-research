@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "status": "ready",
+  "generatedAt": "2026-07-29T12:20:00+08:00",
+  "datasets": {
+    "financial_tidy": [
+      {
+        "period": "FY2021",
+        "series": "收入",
+        "value": 466.72
+      },
+      {
+        "period": "FY2021",
+        "series": "毛利",
+        "value": 330.986
+      },
+      {
+        "period": "FY2021",
+        "series": "经营损益",
+        "value": -1335.333
+      },
+      {
+        "period": "FY2022",
+        "series": "收入",
+        "value": 905.676
+      },
+      {
+        "period": "FY2022",
+        "series": "毛利",
+        "value": 627.713
+      },
+      {
+        "period": "FY2022",
+        "series": "经营损益",
+        "value": -2132.016
+      },
+      {
+        "period": "FY2023",
+        "series": "收入",
+        "value": 1551.607
+      },
+      {
+        "period": "FY2023",
+        "series": "毛利",
+        "value": 1094.31
+      },
+      {
+        "period": "FY2023",
+        "series": "经营损益",
+        "value": -2030.522
+      },
+      {
+        "period": "FY2024",
+        "series": "收入",
+        "value": 2383.554
+      },
+      {
+        "period": "FY2024",
+        "series": "毛利",
+        "value": 1841.354
+      },
+      {
+        "period": "FY2024",
+        "series": "经营损益",
+        "value": -2144.24
+      },
+      {
+        "period": "FY2025",
+        "series": "收入",
+        "value": 3758.268
+      },
+      {
+        "period": "FY2025",
+        "series": "毛利",
+        "value": 2425.68
+      },
+      {
+        "period": "FY2025",
+        "series": "经营损益",
+        "value": -3338.791
+      }
+    ],
+    "owner_earnings_tidy": [
+      {
+        "period": "FY2023",
+        "series": "现金OE代理",
+        "value": -2198.48
+      },
+      {
+        "period": "FY2023",
+        "series": "严格核心OE",
+        "value": -2426.093
+      },
+      {
+        "period": "FY2024",
+        "series": "现金OE代理",
+        "value": -894.314
+      },
+      {
+        "period": "FY2024",
+        "series": "严格核心OE",
+        "value": -1342.184
+      },
+      {
+        "period": "FY2025",
+        "series": "现金OE代理",
+        "value": -2807.291
+      },
+      {
+        "period": "FY2025",
+        "series": "严格核心OE",
+        "value": -3291.03
+      }
+    ],
+    "peer_valuation": [
+      {
+        "company": "Mobileye",
+        "qualification": "直接全球ADAS芯片/系统；更成熟且现金为正",
+        "ps": 3.46,
+        "profitability": "2025 OCF US$602m"
+      },
+      {
+        "company": "Ambarella",
+        "qualification": "邻近边缘AI SoC；汽车仅部分收入",
+        "ps": 7.61,
+        "profitability": "FY2026仍经营亏损"
+      },
+      {
+        "company": "黑芝麻智能",
+        "qualification": "中国汽车智能SoC最直接同业",
+        "ps": 8.46,
+        "profitability": "2025仍亏损"
+      },
+      {
+        "company": "地平线机器人（当前股本）",
+        "qualification": "主标的；未计已知潜在股份",
+        "ps": 17.47,
+        "profitability": "2025现金OE为负"
+      },
+      {
+        "company": "地平线机器人（已知全摊薄）",
+        "qualification": "CARIAD+新CB全转+已授予奖励",
+        "ps": 19.98,
+        "profitability": "备考，不是法定已发行股本"
+      }
+    ]
+  }
+}
