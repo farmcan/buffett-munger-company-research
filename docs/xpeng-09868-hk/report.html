@@ -282,6 +282,12 @@
   color:#52605a}.et-badge.reviewed{background:var(--green-soft);color:var(--green)}
   .et-badge.future{background:var(--amber-soft);color:var(--amber)}
   .et-badge.nocomp{background:#edf0f2;color:#56636b}
+  .et-badge.date-estimated{background:#fff3d8;color:#8b5d00}
+  .et-badge.date-tba{background:#f2eafb;color:#67448a}
+  .et-date-legend{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:-4px 0 12px;
+  color:var(--muted);font-size:10px}
+  .et-date-legend span{padding:4px 7px;border:1px solid var(--line);border-radius:999px;
+  background:#fff}
   .et-event-body{padding:0 14px 14px}
   .et-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .et-evidence{padding:10px 11px;border-radius:9px;background:#f7f6f1}
@@ -308,10 +314,10 @@
     <h3>小鹏汽车｜事件 Surprise × 市场共振</h3>
     <p>只放本公司事件。图上点击节点可跳到证据卡；价格反应是相关性观察，不是买卖指令或单因果证明。</p></div>
     <div class="et-summary">
-      <div class="et-stat"><b>5</b><span>公司事件</span></div>
+      <div class="et-stat"><b>8</b><span>公司事件</span></div>
       <div class="et-stat"><b>5</b><span>已复核价格窗</span></div>
       <div class="et-stat"><b>4</b><span>不可比 Surprise</span></div>
-      <div class="et-stat"><b>0</b><span>未来验证节点</span></div>
+      <div class="et-stat"><b>3</b><span>未来验证节点</span></div>
     </div>
   </div>
   <div class="et-legend" aria-label="事件状态图例">
@@ -324,14 +330,18 @@
     <div><i class="et-shape diamond"></i><b>not_comparable</b>
     <small>菱形：无可靠基线；不等于负面。</small></div>
   </div>
+  <div class="et-date-legend" aria-label="未来事件日期口径">
+    <b>日期口径：</b><span>已确认日期＝公司已公告</span>
+    <span>预计窗口＝研究锚点，非官宣</span><span>TBA＝官方尚未公布日期</span>
+  </div>
 
       <div class="et-axis-shell" aria-label="公司事件横向时间轴">
         <div class="et-axis">
           <span class="et-axis-label start" style="left:3%">2025-08-19</span>
-          <span class="et-axis-label" style="left:91.247%">2026-07-29</span>
-          <span class="et-axis-label end" style="left:97%">2026-08-31</span>
-          <span class="et-now" style="left:91.247%"><span>NOW</span></span>
-          <a class="et-node reviewed not-comparable" href="#event-xpeng-q2-2025" style="left:3.000%;top:48px" title="2025-08-19｜2025Q2业绩｜market_reviewed｜不可比"><span class="et-node-date">08-19</span></a><a class="et-node reviewed not-comparable" href="#event-xpeng-q3-2025" style="left:23.873%;top:73px" title="2025-11-17｜2025Q3业绩｜market_reviewed｜不可比"><span class="et-node-date">11-17</span></a><a class="et-node reviewed not-comparable" href="#event-xpeng-fy2025" style="left:56.499%;top:98px" title="2026-03-20｜FY2025与Q4首次季度盈利｜market_reviewed｜不可比"><span class="et-node-date">03-20</span></a><a class="et-node reviewed not-comparable" href="#event-xpeng-q1-2026" style="left:74.801%;top:48px" title="2026-05-28｜2026Q1业绩与Q2指引｜market_reviewed｜不可比"><span class="et-node-date">05-28</span></a><a class="et-node reviewed" href="#event-xpeng-q2-delivery-2026" style="left:84.085%;top:73px" title="2026-07-02｜2026Q2交付｜market_reviewed"><span class="et-node-date">07-02</span></a>
+          <span class="et-axis-label" style="left:81.754%">2026-07-30</span>
+          <span class="et-axis-label end" style="left:97%">2026-10-15</span>
+          <span class="et-now" style="left:81.754%"><span>NOW</span></span>
+          <a class="et-node reviewed not-comparable" href="#event-xpeng-q2-2025" style="left:3.000%;top:48px" title="2025-08-19｜2025Q2业绩｜market_reviewed｜不可比"><span class="et-node-date">08-19</span></a><a class="et-node reviewed not-comparable" href="#event-xpeng-q3-2025" style="left:21.327%;top:73px" title="2025-11-17｜2025Q3业绩｜market_reviewed｜不可比"><span class="et-node-date">11-17</span></a><a class="et-node reviewed not-comparable" href="#event-xpeng-fy2025" style="left:50.474%;top:98px" title="2026-03-20｜FY2025与Q4首次季度盈利｜market_reviewed｜不可比"><span class="et-node-date">03-20</span></a><a class="et-node reviewed not-comparable" href="#event-xpeng-q1-2026" style="left:66.825%;top:48px" title="2026-05-28｜2026Q1业绩与Q2指引｜market_reviewed｜不可比"><span class="et-node-date">05-28</span></a><a class="et-node reviewed" href="#event-xpeng-q2-delivery-2026" style="left:75.118%;top:73px" title="2026-07-02｜2026Q2交付｜market_reviewed"><span class="et-node-date">07-02</span></a><a class="et-node future" href="#event-xpeng-july-delivery-2026" style="left:82.701%;top:98px" title="预计2026年8月上旬｜非官宣｜2026年7月交付更新（预计窗口）｜expectation_frozen"><span class="et-node-date">预计08-03</span></a><a class="et-node future" href="#event-xpeng-q2-results-2026" style="left:89.336%;top:48px" title="TBA｜研究复核窗：2026年8月下旬｜2026Q2完整财务结果｜expectation_frozen"><span class="et-node-date">TBA</span></a><a class="et-node future" href="#event-xpeng-q3-delivery-2026" style="left:97.000%;top:73px" title="预计2026年10月上旬｜非官宣｜2026Q3交付与同比增速验证（预计窗口）｜expectation_frozen"><span class="et-node-date">预计10-09</span></a>
         </div>
       </div>
 
@@ -449,6 +459,66 @@
             <p>Q2财务与Q3月度交付｜交付不提供ASP、利润和现金信息。</p></div>
           </div>
           <div class="et-source-links"><strong>原始来源：</strong><a href="https://www.sec.gov/Archives/edgar/data/1810997/000119312526293394/d114872d6k.htm" rel="noreferrer">XPeng Q2 2026 vehicle delivery results</a><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk09868,day,,,900,qfq" rel="noreferrer">Tencent adjusted daily price history — 09868.HK</a><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2026-05-01,2026-07-27,100,qfq" rel="noreferrer">共享风险偏好代理，不是六家公司共同业绩基准</a></div>
+        </div>
+      </details>
+
+      <details class="et-event" id="event-xpeng-july-delivery-2026" open>
+        <summary><span class="et-event-date">预计2026年8月上旬｜非官宣</span>
+        <span class="et-event-title">2026年7月交付更新（预计窗口）</span>
+        <span class="et-badges"><span class="et-badge future">expectation_frozen</span><span class="et-badge">影响 5/5</span><span class="et-badge date-estimated">预计窗口｜非官宣</span></span></summary>
+        <div class="et-event-body">
+          <div class="et-evidence-grid">
+            <div class="et-evidence"><b>为什么重要</b><p>月度交付是Q2环比修复能否延续的最早高频验证，但单月销量不能替代收入、毛利和现金。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><ul><li>上一期实际：2026年6月交付40,126辆</li><li>上一期实际：2026Q2交付103,295辆，同比+0.1%、环比+64.8%</li><li>待回答：7月交付能否维持6月40,126辆附近，还是新品切换造成短期回落？</li><li>待回答：车型结构、订单积压和促销是否支持后续ASP与vehicle margin？</li><li>待回答：单月变化是正常排产波动，还是Q3同比增速转弱的先行信号？</li></ul></div>
+            <div class="et-evidence"><b>官方实际</b><p>事件尚未发生，实际值保持为空。</p></div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>事件尚未发生，不预填方向。</p></div>
+            <div class="et-evidence"><b>市场反应</b><p>价格窗口尚未形成或没有可比基线。</p></div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>月度订单/排产 → 交付与车型结构 → Q3收入节奏</li><li>促销/新品切换 → ASP与vehicle margin → 现金消耗</li></ul></div>
+            <div class="et-evidence"><b>复盘结论</b><p>未来事件，等待实际披露后追加复盘。</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>2026-08-03｜2026-08-03只是按月度披露惯例设置的研究锚点，不是公司确认日期；实际公告日、财务结果和事件后价格窗口待披露。</p></div>
+          </div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www.sec.gov/Archives/edgar/data/1810997/000119312526293394/d114872d6k.htm" rel="noreferrer">XPeng Q2 2026 vehicle delivery results</a></div>
+        </div>
+      </details>
+
+      <details class="et-event" id="event-xpeng-q2-results-2026" open>
+        <summary><span class="et-event-date">TBA｜研究复核窗：2026年8月下旬</span>
+        <span class="et-event-title">2026Q2完整财务结果</span>
+        <span class="et-badges"><span class="et-badge future">expectation_frozen</span><span class="et-badge">影响 5/5</span><span class="et-badge date-tba">日期TBA｜官方未公布</span></span></summary>
+        <div class="et-event-body">
+          <div class="et-evidence-grid">
+            <div class="et-evidence"><b>为什么重要</b><p>这是把Q2交付修复桥接到收入、ASP、vehicle margin、亏损、库存和现金的关键节点，也是判断增长变量是否真正由低向高的主验证。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><ul><li>官方指引：2026Q2交付指引100,000至106,000辆；实际已披露103,295辆</li><li>官方指引：2026Q2收入指引RMB19.6bn至20.8bn</li><li>上一期实际：2026Q1收入RMB13.03bn，gross margin 20.6%，vehicle margin 12.1%</li><li>上一期实际：2026Q1净亏损RMB1.78bn，现金类资产约RMB42.09bn</li><li>待回答：收入落在RMB19.6bn至20.8bn指引的什么位置，交付符合指引后ASP是否仍承压？</li><li>待回答：gross margin与vehicle margin相对Q1的20.6%和12.1%是改善还是回落？</li><li>待回答：净亏损、经营现金流、库存和现金能否扭转Q1恶化？</li><li>待回答：Q3交付及收入指引是否支持同比重新加速，而不只是环比反弹？</li></ul></div>
+            <div class="et-evidence"><b>官方实际</b><p>事件尚未发生，实际值保持为空。</p></div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>事件尚未发生，不预填方向。</p></div>
+            <div class="et-evidence"><b>市场反应</b><p>价格窗口尚未形成或没有可比基线。</p></div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>交付 × ASP → 汽车收入 → vehicle margin</li><li>服务收入/大众合作 → 集团毛利 → 亏损收窄</li><li>库存/应付/资本开支 → CFO与现金安全垫</li><li>Q3官方指引 → 同比增速预期 → 估值与风险偏好</li></ul></div>
+            <div class="et-evidence"><b>复盘结论</b><p>未来事件，等待实际披露后追加复盘。</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>官方IR或HKEX发布业绩日期后立即更新；最迟在2026-08-31复核｜截至2026-07-30，小鹏IR活动页未列Upcoming Event，Q2业绩日期仍为TBA；8月下旬只是研究复核窗，不是公司官宣。</p></div>
+          </div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www.sec.gov/Archives/edgar/data/1810997/000119312526243143/d139430d6k.htm" rel="noreferrer">XPeng Q1 2026 unaudited financial results</a><a href="https://www.sec.gov/Archives/edgar/data/1810997/000119312526293394/d114872d6k.htm" rel="noreferrer">XPeng Q2 2026 vehicle delivery results</a><a href="https://ir.xiaopeng.com/news-events/events-presentations" rel="noreferrer">Events and Presentations（截至2026-07-30未列Upcoming Event）</a></div>
+        </div>
+      </details>
+
+      <details class="et-event" id="event-xpeng-q3-delivery-2026" open>
+        <summary><span class="et-event-date">预计2026年10月上旬｜非官宣</span>
+        <span class="et-event-title">2026Q3交付与同比增速验证（预计窗口）</span>
+        <span class="et-badges"><span class="et-badge future">expectation_frozen</span><span class="et-badge">影响 5/5</span><span class="et-badge date-estimated">预计窗口｜非官宣</span></span></summary>
+        <div class="et-event-body">
+          <div class="et-evidence-grid">
+            <div class="et-evidence"><b>为什么重要</b><p>Q2交付同比仅+0.1%；只有Q3交付重新超过上年同期并与收入、毛利和现金一致，才能把环比修复升级为增长变量上行。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><ul><li>上一期实际：2025Q3交付116,007辆</li><li>上一期实际：2026Q2交付103,295辆，同比+0.1%</li><li>待回答：Q3交付能否超过2025Q3的116,007辆并形成同比正增长？</li><li>待回答：Q2业绩给出的Q3官方指引是否兑现，月度交付是否依赖单次新品脉冲？</li><li>待回答：销量增长能否伴随vehicle margin稳定和现金消耗收窄？</li></ul></div>
+            <div class="et-evidence"><b>官方实际</b><p>事件尚未发生，实际值保持为空。</p></div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>事件尚未发生，不预填方向。</p></div>
+            <div class="et-evidence"><b>市场反应</b><p>价格窗口尚未形成或没有可比基线。</p></div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>Q3交付同比 → 增速拐点确认/否定</li><li>车型结构与促销 → ASP/vehicle margin → 每股经济</li><li>行业价格战与同业上新 → 订单份额 → 风险偏好弹性</li></ul></div>
+            <div class="et-evidence"><b>复盘结论</b><p>未来事件，等待实际披露后追加复盘。</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>2026-10-09｜2026-10-09只是季度结束后的研究复核锚点，不是公司确认日期；Q3官方指引需在Q2完整业绩披露后冻结。</p></div>
+          </div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www.sec.gov/Archives/edgar/data/1810997/000119312526243143/d139430d6k.htm" rel="noreferrer">XPeng Q1 2026 unaudited financial results</a><a href="https://www.sec.gov/Archives/edgar/data/1810997/000119312526293394/d114872d6k.htm" rel="noreferrer">XPeng Q2 2026 vehicle delivery results</a></div>
         </div>
       </details>
 

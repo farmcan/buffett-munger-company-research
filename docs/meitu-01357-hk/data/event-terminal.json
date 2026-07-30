@@ -3,11 +3,11 @@
   "version": "1.1",
   "title": "美图公司：事件 Surprise 与市场共振",
   "subtitle": "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、行业/资本结构传导与下一验证放在一条证据轴。",
-  "as_of": "2026-07-29T18:00:00+08:00",
+  "as_of": "2026-07-30T18:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "date_range": {
     "start": "2024-10-01",
-    "end": "2026-08-31"
+    "end": "2026-10-15"
   },
   "scope": {
     "theme": "AI 应用 / 创意软件",
@@ -400,6 +400,7 @@
     {
       "event_id": "meitu-h1-results-2026",
       "date": "2026-08-26",
+      "timeline_anchor_date": "2026-08-26",
       "time": null,
       "event_timezone": "Asia/Shanghai",
       "beijing_time": "2026-08-26",
@@ -413,7 +414,7 @@
       "impact_score": 5,
       "why_it_matters": "这是把Q1经营KPI桥接到Q2收入、利润、现金、推理成本和净股数的主要决策节点。",
       "expectation_snapshot": {
-        "frozen_at": "2026-07-29T18:00:00+08:00",
+        "frozen_at": "2026-07-30T18:00:00+08:00",
         "official_guidance": [],
         "consensus": [],
         "previous_actual": [],

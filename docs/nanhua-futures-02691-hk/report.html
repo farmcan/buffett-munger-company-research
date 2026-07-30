@@ -445,6 +445,12 @@ body.report-parity .review-item b{display:block;font-size:14px}body.report-parit
   color:#52605a}.et-badge.reviewed{background:var(--green-soft);color:var(--green)}
   .et-badge.future{background:var(--amber-soft);color:var(--amber)}
   .et-badge.nocomp{background:#edf0f2;color:#56636b}
+  .et-badge.date-estimated{background:#fff3d8;color:#8b5d00}
+  .et-badge.date-tba{background:#f2eafb;color:#67448a}
+  .et-date-legend{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:-4px 0 12px;
+  color:var(--muted);font-size:10px}
+  .et-date-legend span{padding:4px 7px;border:1px solid var(--line);border-radius:999px;
+  background:#fff}
   .et-event-body{padding:0 14px 14px}
   .et-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .et-evidence{padding:10px 11px;border-radius:9px;background:#f7f6f1}
@@ -487,14 +493,18 @@ body.report-parity .review-item b{display:block;font-size:14px}body.report-parit
     <div><i class="et-shape diamond"></i><b>not_comparable</b>
     <small>菱形：无可靠基线；不等于负面。</small></div>
   </div>
+  <div class="et-date-legend" aria-label="未来事件日期口径">
+    <b>日期口径：</b><span>已确认日期＝公司已公告</span>
+    <span>预计窗口＝研究锚点，非官宣</span><span>TBA＝官方尚未公布日期</span>
+  </div>
 
       <div class="et-axis-shell" aria-label="公司事件横向时间轴">
         <div class="et-axis">
           <span class="et-axis-label start" style="left:3%">2025-12-22</span>
-          <span class="et-axis-label" style="left:86.905%">2026-07-29</span>
-          <span class="et-axis-label end" style="left:97%">2026-08-31</span>
-          <span class="et-now" style="left:86.905%"><span>NOW</span></span>
-          <a class="et-node not-comparable" href="#event-nanhua-ipo-2025" style="left:3.000%;top:48px" title="2025-12-22｜H股上市｜actual_reported｜不可比"><span class="et-node-date">12-22</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-stock-connect-2026" style="left:9.921%;top:73px" title="2026-01-16｜纳入港股通｜market_reviewed｜不可比"><span class="et-node-date">01-16</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-annual-governance-2026" style="left:37.698%;top:98px" title="2026-03-27｜年报与治理公告包｜market_reviewed｜不可比"><span class="et-node-date">03-27</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-regulatory-warning-2026" style="left:39.683%;top:48px" title="2026-04-01｜证监局警示函｜market_reviewed｜不可比"><span class="et-node-date">04-01</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-q1-2026" style="left:47.619%;top:73px" title="2026-04-21｜2026Q1报告｜market_reviewed｜不可比"><span class="et-node-date">04-21</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-repurchase-plan" style="left:73.016%;top:98px" title="2026-06-24｜H股回购计划｜market_reviewed｜不可比"><span class="et-node-date">06-24</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-h1-profit-alert" style="left:78.175%;top:48px" title="2026-07-07｜2026H1业绩预增｜market_reviewed｜不可比"><span class="et-node-date">07-07</span></a><a class="et-node future" href="#event-nanhua-capitalisation-shares-2026" style="left:92.063%;top:73px" title="2026-08-11｜资本化H股预计开始交易｜expectation_frozen"><span class="et-node-date">08-11</span></a>
+          <span class="et-axis-label" style="left:74.074%">2026-07-30</span>
+          <span class="et-axis-label end" style="left:97%">2026-10-15</span>
+          <span class="et-now" style="left:74.074%"><span>NOW</span></span>
+          <a class="et-node not-comparable" href="#event-nanhua-ipo-2025" style="left:3.000%;top:48px" title="2025-12-22｜H股上市｜actual_reported｜不可比"><span class="et-node-date">12-22</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-stock-connect-2026" style="left:8.418%;top:73px" title="2026-01-16｜纳入港股通｜market_reviewed｜不可比"><span class="et-node-date">01-16</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-annual-governance-2026" style="left:31.987%;top:98px" title="2026-03-27｜年报与治理公告包｜market_reviewed｜不可比"><span class="et-node-date">03-27</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-regulatory-warning-2026" style="left:33.670%;top:48px" title="2026-04-01｜证监局警示函｜market_reviewed｜不可比"><span class="et-node-date">04-01</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-q1-2026" style="left:40.404%;top:73px" title="2026-04-21｜2026Q1报告｜market_reviewed｜不可比"><span class="et-node-date">04-21</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-repurchase-plan" style="left:61.953%;top:98px" title="2026-06-24｜H股回购计划｜market_reviewed｜不可比"><span class="et-node-date">06-24</span></a><a class="et-node reviewed not-comparable" href="#event-nanhua-h1-profit-alert" style="left:66.330%;top:48px" title="2026-07-07｜2026H1业绩预增｜market_reviewed｜不可比"><span class="et-node-date">07-07</span></a><a class="et-node future" href="#event-nanhua-capitalisation-shares-2026" style="left:78.114%;top:73px" title="2026-08-11｜资本化H股预计开始交易｜expectation_frozen"><span class="et-node-date">预计08-11</span></a>
         </div>
       </div>
 
@@ -658,11 +668,11 @@ body.report-parity .review-item b{display:block;font-size:14px}body.report-parit
       <details class="et-event" id="event-nanhua-capitalisation-shares-2026" open>
         <summary><span class="et-event-date">2026-08-11</span>
         <span class="et-event-title">资本化H股预计开始交易</span>
-        <span class="et-badges"><span class="et-badge future">expectation_frozen</span><span class="et-badge">影响 5/5</span></span></summary>
+        <span class="et-badges"><span class="et-badge future">expectation_frozen</span><span class="et-badge">影响 5/5</span><span class="et-badge date-estimated">公司预计｜待发生</span></span></summary>
         <div class="et-event-body">
           <div class="et-evidence-grid">
             <div class="et-evidence"><b>为什么重要</b><p>新增流通供给可能改变小盘股稀缺度、换手和A/H价格发现。</p></div>
-            <div class="et-evidence"><b>冻结预期 / 事前问题</b><ul><li>实际发行股数和总股本是否与通函一致？</li><li>成交量、自由流通盘和A/H溢价如何变化？</li></ul></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><ul><li>待回答：实际发行股数和总股本是否与通函一致？</li><li>待回答：成交量、自由流通盘和A/H溢价如何变化？</li></ul></div>
             <div class="et-evidence"><b>官方实际</b><p>事件尚未发生，实际值保持为空。</p></div>
             <div class="et-evidence"><b>Surprise 状态</b><p>事件尚未发生，不预填方向。</p></div>
             <div class="et-evidence"><b>市场反应</b><p>价格窗口尚未形成或没有可比基线。</p></div>

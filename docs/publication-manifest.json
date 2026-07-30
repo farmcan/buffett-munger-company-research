@@ -1,7 +1,7 @@
 {
   "schema_version": "seed.public-research-publication.v2",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-07-29T19:32:00+08:00",
+  "reviewed_at": "2026-07-30T11:20:00+08:00",
   "artifact_status": "needs_human_review",
   "production_reviewed": false,
   "publication_scope": [
@@ -222,9 +222,9 @@
       "contract": "seed.earnings-season-timeline.v1.1-compatible",
       "embedded_company_reports": 6,
       "one_company_per_report": true,
-      "events": 37,
-      "sources": 46,
-      "future_nodes": 2,
+      "events": 40,
+      "sources": 47,
+      "future_nodes": 5,
       "now_boundary": true,
       "status_legend": true,
       "event_price_windows": true,

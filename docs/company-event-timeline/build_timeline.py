@@ -15,9 +15,9 @@ from typing import Any
 
 HERE = Path(__file__).resolve().parent
 DOCS = HERE.parent
-AS_OF = "2026-07-29T18:00:00+08:00"
+AS_OF = "2026-07-30T18:00:00+08:00"
 START = "2024-10-01"
-END = "2026-08-31"
+END = "2026-10-15"
 
 COMPANIES = {
     "horizon": {
@@ -319,6 +319,15 @@ def source_refs() -> list[dict[str, Any]]:
             "title": "恒生科技指数日线｜共享风险偏好代理，不是六家公司共同业绩基准",
         }
     )
+    refs.append(
+        {
+            "id": "xpeng-IR01",
+            "title": "小鹏汽车｜Events and Presentations（截至2026-07-30未列Upcoming Event）",
+            "tier": "primary",
+            "url": "https://ir.xiaopeng.com/news-events/events-presentations",
+            "accessed_at": "2026-07-30",
+        }
+    )
     return refs
 
 
@@ -418,22 +427,33 @@ def completed_event(
 def scheduled_event(
     company_key: str,
     event_id: str,
-    event_date: str,
+    event_date: str | None,
     title: str,
     source_ids: list[str],
     why: str,
     questions: list[str],
     *,
     date_status: str = "confirmed",
+    timeline_anchor_date: str | None = None,
+    beijing_time: str | None = None,
+    official_guidance: list[str] | None = None,
+    previous_actual: list[str] | None = None,
+    transmission_paths: list[str] | None = None,
+    next_check_at: str | None = None,
+    source_gap: str | None = None,
 ) -> dict[str, Any]:
     company = COMPANIES[company_key]
     prefixed = [f"{company_key}-{source_id}" for source_id in source_ids]
+    axis_anchor = timeline_anchor_date or event_date
+    if axis_anchor is None:
+        raise ValueError(f"{event_id} requires a timeline anchor")
     return {
         "event_id": event_id,
         "date": event_date,
+        "timeline_anchor_date": axis_anchor,
         "time": None,
         "event_timezone": "Asia/Shanghai",
-        "beijing_time": event_date,
+        "beijing_time": beijing_time or event_date or "TBA",
         "date_status": date_status,
         "event_type": "future_validation",
         "company": f"{company['name']}｜{title}",
@@ -445,9 +465,9 @@ def scheduled_event(
         "why_it_matters": why,
         "expectation_snapshot": {
             "frozen_at": AS_OF,
-            "official_guidance": [],
+            "official_guidance": official_guidance or [],
             "consensus": [],
-            "previous_actual": [],
+            "previous_actual": previous_actual or [],
             "source_refs": prefixed,
         },
         "actual_results": None,
@@ -472,20 +492,22 @@ def scheduled_event(
             "resonance": "pending",
             "source_refs": [],
         },
-        "transmission_paths": [
+        "transmission_paths": transmission_paths
+        or [
             "官方披露 → 核对口径与前期基线 → 计算实际变化 → 再观察价格与成交量共振"
         ],
         "holdings_impacted": [f"研究主体：{company['name']}（{company['ticker']}）"],
         "validation": {
             "status": "expectation_frozen",
-            "next_check_at": event_date,
+            "next_check_at": next_check_at or axis_anchor,
             "thesis_impact": "pending",
             "review_score": None,
         },
         "pre_event_questions": questions,
         "post_event_review": None,
         "source_refs": prefixed,
-        "source_gap": "未来实际、T+1/T+5/T+20和成交量只能在事件后追加。",
+        "source_gap": source_gap
+        or "未来实际、T+1/T+5/T+20和成交量只能在事件后追加。",
     }
 
 
@@ -1037,6 +1059,106 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
         )
     )
     add(
+        scheduled_event(
+            "xpeng",
+            "xpeng-july-delivery-2026",
+            "2026-08-03",
+            "2026年7月交付更新（预计窗口）",
+            ["F04"],
+            "月度交付是Q2环比修复能否延续的最早高频验证，但单月销量不能替代收入、毛利和现金。",
+            [
+                "7月交付能否维持6月40,126辆附近，还是新品切换造成短期回落？",
+                "车型结构、订单积压和促销是否支持后续ASP与vehicle margin？",
+                "单月变化是正常排产波动，还是Q3同比增速转弱的先行信号？",
+            ],
+            date_status="estimated",
+            beijing_time="预计2026年8月上旬｜非官宣",
+            previous_actual=[
+                "2026年6月交付40,126辆",
+                "2026Q2交付103,295辆，同比+0.1%、环比+64.8%",
+            ],
+            transmission_paths=[
+                "月度订单/排产 → 交付与车型结构 → Q3收入节奏",
+                "促销/新品切换 → ASP与vehicle margin → 现金消耗",
+            ],
+            source_gap=(
+                "2026-08-03只是按月度披露惯例设置的研究锚点，不是公司确认日期；"
+                "实际公告日、财务结果和事件后价格窗口待披露。"
+            ),
+        )
+    )
+    add(
+        scheduled_event(
+            "xpeng",
+            "xpeng-q2-results-2026",
+            None,
+            "2026Q2完整财务结果",
+            ["F03", "F04", "IR01"],
+            (
+                "这是把Q2交付修复桥接到收入、ASP、vehicle margin、亏损、库存和现金的"
+                "关键节点，也是判断增长变量是否真正由低向高的主验证。"
+            ),
+            [
+                "收入落在RMB19.6bn至20.8bn指引的什么位置，交付符合指引后ASP是否仍承压？",
+                "gross margin与vehicle margin相对Q1的20.6%和12.1%是改善还是回落？",
+                "净亏损、经营现金流、库存和现金能否扭转Q1恶化？",
+                "Q3交付及收入指引是否支持同比重新加速，而不只是环比反弹？",
+            ],
+            date_status="tba",
+            timeline_anchor_date="2026-08-31",
+            beijing_time="TBA｜研究复核窗：2026年8月下旬",
+            official_guidance=[
+                "2026Q2交付指引100,000至106,000辆；实际已披露103,295辆",
+                "2026Q2收入指引RMB19.6bn至20.8bn",
+            ],
+            previous_actual=[
+                "2026Q1收入RMB13.03bn，gross margin 20.6%，vehicle margin 12.1%",
+                "2026Q1净亏损RMB1.78bn，现金类资产约RMB42.09bn",
+            ],
+            transmission_paths=[
+                "交付 × ASP → 汽车收入 → vehicle margin",
+                "服务收入/大众合作 → 集团毛利 → 亏损收窄",
+                "库存/应付/资本开支 → CFO与现金安全垫",
+                "Q3官方指引 → 同比增速预期 → 估值与风险偏好",
+            ],
+            next_check_at="官方IR或HKEX发布业绩日期后立即更新；最迟在2026-08-31复核",
+            source_gap=(
+                "截至2026-07-30，小鹏IR活动页未列Upcoming Event，Q2业绩日期仍为TBA；"
+                "8月下旬只是研究复核窗，不是公司官宣。"
+            ),
+        )
+    )
+    add(
+        scheduled_event(
+            "xpeng",
+            "xpeng-q3-delivery-2026",
+            "2026-10-09",
+            "2026Q3交付与同比增速验证（预计窗口）",
+            ["F03", "F04"],
+            "Q2交付同比仅+0.1%；只有Q3交付重新超过上年同期并与收入、毛利和现金一致，才能把环比修复升级为增长变量上行。",
+            [
+                "Q3交付能否超过2025Q3的116,007辆并形成同比正增长？",
+                "Q2业绩给出的Q3官方指引是否兑现，月度交付是否依赖单次新品脉冲？",
+                "销量增长能否伴随vehicle margin稳定和现金消耗收窄？",
+            ],
+            date_status="estimated",
+            beijing_time="预计2026年10月上旬｜非官宣",
+            previous_actual=[
+                "2025Q3交付116,007辆",
+                "2026Q2交付103,295辆，同比+0.1%",
+            ],
+            transmission_paths=[
+                "Q3交付同比 → 增速拐点确认/否定",
+                "车型结构与促销 → ASP/vehicle margin → 每股经济",
+                "行业价格战与同业上新 → 订单份额 → 风险偏好弹性",
+            ],
+            source_gap=(
+                "2026-10-09只是季度结束后的研究复核锚点，不是公司确认日期；"
+                "Q3官方指引需在Q2完整业绩披露后冻结。"
+            ),
+        )
+    )
+    add(
         completed_event(
             "meitu",
             "meitu-founder-purchase-2026",
@@ -1259,7 +1381,7 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
             ],
         )
     )
-    return sorted(events, key=lambda item: (item["date"], item["event_id"]))
+    return sorted(events, key=lambda item: (axis_date(item), item["event_id"]))
 
 
 def fetch_hstech() -> dict[str, Any]:
@@ -1345,6 +1467,9 @@ def build_report() -> dict[str, Any]:
                 "行业映射可能与公司价格反向；台积电强不等于中芯同节点、同客户、同盈利。",
             ],
             "manual_review_required": [
+                "2026年8月上旬复核小鹏7月交付；官方公布Q2业绩日期后把TBA替换为确认日期。",
+                "小鹏Q2完整业绩后回填收入、vehicle margin、亏损、现金/库存及Q3官方指引。",
+                "2026年10月上旬用Q3交付同比检验小鹏是否从环比修复升级为增速上行。",
                 "2026-08-11复核南华资本化H股实际上市和流通供给。",
                 "2026-08-26回填美图H1实际、Q2增量和事件后市场反应。",
                 "各公司下一份正式财报后冻结新基线，不改写本页历史预期。",
@@ -1443,6 +1568,12 @@ COMPONENT_CSS = """
   color:#52605a}.et-badge.reviewed{background:var(--green-soft);color:var(--green)}
   .et-badge.future{background:var(--amber-soft);color:var(--amber)}
   .et-badge.nocomp{background:#edf0f2;color:#56636b}
+  .et-badge.date-estimated{background:#fff3d8;color:#8b5d00}
+  .et-badge.date-tba{background:#f2eafb;color:#67448a}
+  .et-date-legend{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:-4px 0 12px;
+  color:var(--muted);font-size:10px}
+  .et-date-legend span{padding:4px 7px;border:1px solid var(--line);border-radius:999px;
+  background:#fff}
   .et-event-body{padding:0 14px 14px}
   .et-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .et-evidence{padding:10px 11px;border-radius:9px;background:#f7f6f1}
@@ -1480,6 +1611,26 @@ def is_not_comparable(event: dict[str, Any]) -> bool:
 
 def event_title(event: dict[str, Any]) -> str:
     return str(event["company"]).split("｜", 1)[-1]
+
+
+def axis_date(event: dict[str, Any]) -> str:
+    value = event.get("timeline_anchor_date") or event.get("date")
+    if not value:
+        raise ValueError(f"Event {event.get('event_id')} has no axis date")
+    return str(value)
+
+
+def display_date(event: dict[str, Any]) -> str:
+    return str(event.get("beijing_time") or event.get("date") or "TBA")
+
+
+def axis_node_label(event: dict[str, Any]) -> str:
+    status = str(event.get("date_status") or "")
+    if status == "tba":
+        return "TBA"
+    anchor = axis_date(event)
+    prefix = "预计" if status in {"estimated", "expected_not_completed"} else ""
+    return f"{prefix}{anchor[5:]}"
 
 
 def source_links(
@@ -1531,13 +1682,13 @@ def event_axis(events: list[dict[str, Any]], start: date, end: date) -> str:
             classes.append("not-comparable")
         top = 48 + (index % 3) * 25
         title = (
-            f"{event['date']}｜{event_title(event)}｜{state}"
+            f"{display_date(event)}｜{event_title(event)}｜{state}"
             + ("｜不可比" if is_not_comparable(event) else "")
         )
         nodes.append(
             f'<a class="{" ".join(classes)}" href="#event-{escape(event["event_id"])}" '
-            f'style="left:{position(event["date"]):.3f}%;top:{top}px" '
-            f'title="{escape(title)}"><span class="et-node-date">{escape(event["date"][5:])}'
+            f'style="left:{position(axis_date(event)):.3f}%;top:{top}px" '
+            f'title="{escape(title)}"><span class="et-node-date">{escape(axis_node_label(event))}'
             f"</span></a>"
         )
     now = position(AS_OF[:10])
@@ -1616,8 +1767,21 @@ def event_card(
     not_comparable = is_not_comparable(event)
     expectation = event.get("expectation_snapshot")
     if state == "expectation_frozen":
+        future_baseline = []
+        if expectation:
+            future_baseline.extend(
+                f"官方指引：{value}"
+                for value in expectation.get("official_guidance") or []
+            )
+            future_baseline.extend(
+                f"上一期实际：{value}"
+                for value in expectation.get("previous_actual") or []
+            )
+        future_baseline.extend(
+            f"待回答：{value}" for value in event.get("pre_event_questions") or []
+        )
         expectation_html = list_html(
-            event.get("pre_event_questions"),
+            future_baseline,
             "尚未冻结可比共识；只保留下一步观察问题。",
         )
     elif expectation:
@@ -1668,13 +1832,25 @@ def event_card(
     ]
     if not_comparable:
         badges.append('<span class="et-badge nocomp">not_comparable</span>')
+    date_status = str(event.get("date_status") or "")
+    date_status_labels = {
+        "confirmed": ("已确认日期", ""),
+        "expected_not_completed": ("公司预计｜待发生", "date-estimated"),
+        "estimated": ("预计窗口｜非官宣", "date-estimated"),
+        "tba": ("日期TBA｜官方未公布", "date-tba"),
+    }
+    if date_status in date_status_labels:
+        label, css_class = date_status_labels[date_status]
+        badges.append(
+            f'<span class="et-badge {css_class}">{escape(label)}</span>'
+        )
     open_attr = " open" if open_card else ""
     why_text = escape(str(event.get("why_it_matters") or "待补"))
     gap_text = escape(str(event.get("source_gap") or "无"))
     sources_html = source_links(event, sources)
     return f"""
       <details class="et-event" id="event-{escape(event["event_id"])}"{open_attr}>
-        <summary><span class="et-event-date">{escape(event["date"])}</span>
+        <summary><span class="et-event-date">{escape(display_date(event))}</span>
         <span class="et-event-title">{escape(event_title(event))}</span>
         <span class="et-badges">{"".join(badges)}</span></summary>
         <div class="et-event-body">
@@ -1743,17 +1919,17 @@ def component_html(artifact: dict[str, Any], company_key: str) -> str:
     company = COMPANIES[company_key]
     events = artifact["events"]
     sources = {source["id"]: source for source in artifact["source_refs"]}
-    start = date.fromisoformat(min(event["date"] for event in events))
+    start = date.fromisoformat(min(axis_date(event) for event in events))
     end = max(
         date.fromisoformat(END),
-        max(date.fromisoformat(event["date"]) for event in events),
+        max(date.fromisoformat(axis_date(event)) for event in events),
     )
     reviewed = sum(lifecycle(event) == "market_reviewed" for event in events)
     nocomp = sum(is_not_comparable(event) for event in events)
     future = sum(lifecycle(event) == "expectation_frozen" for event in events)
     latest_completed = max(
         (
-            event["date"]
+            axis_date(event)
             for event in events
             if event.get("date_status") == "completed"
         ),
@@ -1764,7 +1940,7 @@ def component_html(artifact: dict[str, Any], company_key: str) -> str:
             event,
             sources,
             open_card=(
-                event["date"] == latest_completed
+                axis_date(event) == latest_completed
                 or lifecycle(event) == "expectation_frozen"
             ),
         )
@@ -1795,6 +1971,10 @@ def component_html(artifact: dict[str, Any], company_key: str) -> str:
     <small>外圈：至少一个价格窗口已复核。</small></div>
     <div><i class="et-shape diamond"></i><b>not_comparable</b>
     <small>菱形：无可靠基线；不等于负面。</small></div>
+  </div>
+  <div class="et-date-legend" aria-label="未来事件日期口径">
+    <b>日期口径：</b><span>已确认日期＝公司已公告</span>
+    <span>预计窗口＝研究锚点，非官宣</span><span>TBA＝官方尚未公布日期</span>
   </div>
   {event_axis(events, start, end)}
   {reaction_chart(events)}

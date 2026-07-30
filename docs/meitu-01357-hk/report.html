@@ -1938,6 +1938,12 @@
   color:#52605a}.et-badge.reviewed{background:var(--green-soft);color:var(--green)}
   .et-badge.future{background:var(--amber-soft);color:var(--amber)}
   .et-badge.nocomp{background:#edf0f2;color:#56636b}
+  .et-badge.date-estimated{background:#fff3d8;color:#8b5d00}
+  .et-badge.date-tba{background:#f2eafb;color:#67448a}
+  .et-date-legend{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:-4px 0 12px;
+  color:var(--muted);font-size:10px}
+  .et-date-legend span{padding:4px 7px;border:1px solid var(--line);border-radius:999px;
+  background:#fff}
   .et-event-body{padding:0 14px 14px}
   .et-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .et-evidence{padding:10px 11px;border-radius:9px;background:#f7f6f1}
@@ -1980,14 +1986,18 @@
     <div><i class="et-shape diamond"></i><b>not_comparable</b>
     <small>菱形：无可靠基线；不等于负面。</small></div>
   </div>
+  <div class="et-date-legend" aria-label="未来事件日期口径">
+    <b>日期口径：</b><span>已确认日期＝公司已公告</span>
+    <span>预计窗口＝研究锚点，非官宣</span><span>TBA＝官方尚未公布日期</span>
+  </div>
 
       <div class="et-axis-shell" aria-label="公司事件横向时间轴">
         <div class="et-axis">
           <span class="et-axis-label start" style="left:3%">2025-01-27</span>
-          <span class="et-axis-label" style="left:94.320%">2026-07-29</span>
-          <span class="et-axis-label end" style="left:97%">2026-08-31</span>
-          <span class="et-now" style="left:94.320%"><span>NOW</span></span>
-          <a class="et-node reviewed not-comparable" href="#event-meitu-deepseek-cost-shock-2025" style="left:3.000%;top:48px" title="2025-01-27｜DeepSeek与开源模型成本冲击｜market_reviewed｜不可比"><span class="et-node-date">01-27</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-alibaba-cb-2025" style="left:19.621%;top:73px" title="2025-05-21｜阿里可转债与战略合作｜market_reviewed｜不可比"><span class="et-node-date">05-21</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-q1-2026" style="left:79.862%;top:98px" title="2026-05-06｜2026Q1经营更新｜market_reviewed｜不可比"><span class="et-node-date">05-06</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-imaging-governance-cluster" style="left:87.263%;top:48px" title="2026-06-18｜影像节与披露治理事件簇｜market_reviewed｜不可比"><span class="et-node-date">06-18</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-founder-purchase-2026" style="left:89.845%;top:73px" title="2026-07-03｜创始人增持160万股｜market_reviewed｜不可比"><span class="et-node-date">07-03</span></a><a class="et-node future" href="#event-meitu-h1-results-2026" style="left:97.000%;top:98px" title="2026-08-26｜2026H1正式业绩｜expectation_frozen"><span class="et-node-date">08-26</span></a>
+          <span class="et-axis-label" style="left:87.700%">2026-07-30</span>
+          <span class="et-axis-label end" style="left:97%">2026-10-15</span>
+          <span class="et-now" style="left:87.700%"><span>NOW</span></span>
+          <a class="et-node reviewed not-comparable" href="#event-meitu-deepseek-cost-shock-2025" style="left:3.000%;top:48px" title="2025-01-27｜DeepSeek与开源模型成本冲击｜market_reviewed｜不可比"><span class="et-node-date">01-27</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-alibaba-cb-2025" style="left:18.211%;top:73px" title="2025-05-21｜阿里可转债与战略合作｜market_reviewed｜不可比"><span class="et-node-date">05-21</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-q1-2026" style="left:74.121%;top:98px" title="2026-05-06｜2026Q1经营更新｜market_reviewed｜不可比"><span class="et-node-date">05-06</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-imaging-governance-cluster" style="left:80.990%;top:48px" title="2026-06-18｜影像节与披露治理事件簇｜market_reviewed｜不可比"><span class="et-node-date">06-18</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-founder-purchase-2026" style="left:83.387%;top:73px" title="2026-07-03｜创始人增持160万股｜market_reviewed｜不可比"><span class="et-node-date">07-03</span></a><a class="et-node future" href="#event-meitu-h1-results-2026" style="left:92.013%;top:98px" title="2026-08-26｜2026H1正式业绩｜expectation_frozen"><span class="et-node-date">08-26</span></a>
         </div>
       </div>
 
@@ -2111,11 +2121,11 @@
       <details class="et-event" id="event-meitu-h1-results-2026" open>
         <summary><span class="et-event-date">2026-08-26</span>
         <span class="et-event-title">2026H1正式业绩</span>
-        <span class="et-badges"><span class="et-badge future">expectation_frozen</span><span class="et-badge">影响 5/5</span></span></summary>
+        <span class="et-badges"><span class="et-badge future">expectation_frozen</span><span class="et-badge">影响 5/5</span><span class="et-badge ">已确认日期</span></span></summary>
         <div class="et-event-body">
           <div class="et-evidence-grid">
             <div class="et-evidence"><b>为什么重要</b><p>这是把Q1经营KPI桥接到Q2收入、利润、现金、推理成本和净股数的主要决策节点。</p></div>
-            <div class="et-evidence"><b>冻结预期 / 事前问题</b><ul><li>Q2核心收入和付费用户相对Q1是否继续加速？</li><li>生产力收入占比、ARR和AI credits是否转成确认收入？</li><li>毛利率、CFO、SBC、回购和可转债后的每股owner earnings如何？</li></ul></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><ul><li>待回答：Q2核心收入和付费用户相对Q1是否继续加速？</li><li>待回答：生产力收入占比、ARR和AI credits是否转成确认收入？</li><li>待回答：毛利率、CFO、SBC、回购和可转债后的每股owner earnings如何？</li></ul></div>
             <div class="et-evidence"><b>官方实际</b><p>事件尚未发生，实际值保持为空。</p></div>
             <div class="et-evidence"><b>Surprise 状态</b><p>事件尚未发生，不预填方向。</p></div>
             <div class="et-evidence"><b>市场反应</b><p>价格窗口尚未形成或没有可比基线。</p></div>
