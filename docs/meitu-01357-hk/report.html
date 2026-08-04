@@ -60,6 +60,10 @@
       border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.55);
       color: #48534d; font-size: 13px; font-weight: 650;
     }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 15px; }
+    .diagram-jump { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: var(--green); color: #fff; font-size: 13px; font-weight: 820; text-decoration: none; box-shadow: 0 8px 18px rgba(45,140,107,.16); }
+    .diagram-jump:hover { background: #247759; color: #fff; }
+    .hero-actions small { color: var(--muted); }
     .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
     .verdict {
       margin: 34px 0 22px;
@@ -138,7 +142,7 @@
     .line-amber { fill: none; stroke: var(--amber); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
     .point { fill: var(--paper); stroke: var(--green); stroke-width: 3; }
     .chart text { fill: #5c6861; font-size: 11px; font-family: inherit; }
-    .capture-chart { background: linear-gradient(145deg, #fff, #fbfaf5); }
+    .capture-chart { scroll-margin-top: 78px; background: linear-gradient(145deg, #fff, #fbfaf5); }
     .capture-legend { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
     .capture-legend span { padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 780; }
     .capture-legend .industry { color: var(--green); background: var(--green-soft); }
@@ -258,6 +262,10 @@
         <span class="pill" id="stale-status">更新检查点：2026-08-26 中报</span>
         <span class="pill">公开资料 · 非投资建议</span>
       </div>
+      <div class="hero-actions">
+        <a class="diagram-jump" href="#value-capture-diagrams">直接看两张图 →</a>
+        <small>行业需求如何变成收入，以及收入如何变成每股利润</small>
+      </div>
       <div class="verdict">
         <div class="verdict-main">
           <div class="label">证据状态结论</div>
@@ -277,7 +285,7 @@
     <div class="wrap">
       <a href="#executive-summary">两个问题</a>
       <a href="#h1-update">H1 新证据</a>
-      <a href="#value-capture">核心命题</a>
+      <a href="#value-capture-diagrams">核心图解</a>
       <a href="#status-legend">状态图例</a>
       <a href="#long-term">长期底稿入口</a>
       <a href="#event-monitor">事件监控入口</a>
@@ -401,7 +409,7 @@
         “使用 AI 的人变多”只直接改善第一项；只有工作流份额、付费、留存和单位经济同时成立，行业增量才会成为美图的每股价值。
       </div>
 
-      <div class="chart full capture-chart" role="group" aria-labelledby="capture-revenue-title">
+      <div class="chart full capture-chart" id="value-capture-diagrams" role="group" aria-labelledby="capture-revenue-title">
         <div class="chart-head">
           <div>
             <div class="chart-title" id="capture-revenue-title">图 1 · 行业需求必须经过四道美图自己的价值捕获变量</div>
@@ -2830,6 +2838,16 @@
         node.style.borderColor = "#a84941";
         node.style.color = "#8b302a";
       }
+    })();
+    (() => {
+      const scrollToHash = () => {
+        if (!location.hash) return;
+        const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (target) requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+      };
+      window.addEventListener("load", scrollToHash, { once: true });
+      window.addEventListener("hashchange", scrollToHash);
+      scrollToHash();
     })();
   </script>
 </body>

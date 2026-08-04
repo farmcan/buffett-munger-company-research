@@ -1,7 +1,7 @@
 {
   "schema_version": "seed.public-research-publication.v2",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-08-04T11:32:08+08:00",
+  "reviewed_at": "2026-08-04T11:37:01+08:00",
   "artifact_status": "needs_human_review",
   "production_reviewed": false,
   "publication_scope": [
@@ -195,7 +195,7 @@
   ],
   "source_repository": "farmcan/seed",
   "source_branch": "main",
-  "source_commit": "d110ebe3086647f76a526232c77bb94fe4ba79ca",
+  "source_commit": "b0d97752303e143d486c4faab960f444717e9a84",
   "review_checks": {
     "contains_local_absolute_paths": false,
     "contains_private_library_paths": false,
