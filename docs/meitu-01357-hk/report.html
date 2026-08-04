@@ -138,6 +138,28 @@
     .line-amber { fill: none; stroke: var(--amber); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
     .point { fill: var(--paper); stroke: var(--green); stroke-width: 3; }
     .chart text { fill: #5c6861; font-size: 11px; font-family: inherit; }
+    .capture-chart { background: linear-gradient(145deg, #fff, #fbfaf5); }
+    .capture-legend { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+    .capture-legend span { padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 780; }
+    .capture-legend .industry { color: var(--green); background: var(--green-soft); }
+    .capture-legend .company { color: var(--blue); background: var(--blue-soft); }
+    .capture-legend .money { color: var(--amber); background: var(--amber-soft); }
+    .capture-equation, .capture-profit-flow { display: flex; align-items: stretch; gap: 7px; }
+    .capture-node { flex: 1 1 0; min-width: 0; padding: 13px 10px; border: 1px solid var(--line); border-radius: 12px; background: #fff; text-align: center; }
+    .capture-node.industry { border-color: #9acbb6; background: var(--green-soft); }
+    .capture-node.company { border-color: #a9bfd8; background: var(--blue-soft); }
+    .capture-node.money { border-color: #e0c38e; background: var(--amber-soft); }
+    .capture-node.costs { flex: 2.35 1 0; border-color: #ddb0ab; background: var(--red-soft); }
+    .capture-node.result { border-color: var(--green); background: var(--green); color: #fff; }
+    .capture-node.final { border-color: #7e9bb8; background: #eaf1f7; }
+    .capture-node strong { display: block; color: var(--ink); font-size: 14px; line-height: 1.3; }
+    .capture-node.result strong { color: #fff; }
+    .capture-node small { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; line-height: 1.4; }
+    .capture-node.result small { color: #e7f3ed; }
+    .capture-op { flex: 0 0 23px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 21px; font-weight: 850; }
+    .capture-cost-list { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+    .capture-cost-list span { padding: 6px 5px; border: 1px solid #e3bbb7; border-radius: 8px; background: #fff9f8; color: #7d3c37; font-size: 11px; font-weight: 760; }
+    .capture-insight { margin: 11px 0 0; padding: 9px 11px; border-left: 4px solid var(--green); border-radius: 8px; background: var(--green-soft); color: #2c4f41; font-size: 13px; line-height: 1.55; }
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .entry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
     .entry-card { padding: 22px; border: 1px solid var(--line); border-top: 5px solid var(--green); border-radius: 16px; background: #fff; }
@@ -201,6 +223,10 @@
       .chart.full { padding: 14px 10px; }
       .chart-head { display: block; }
       .legend { justify-content: flex-start; margin-top: 8px; }
+      .capture-legend { justify-content: flex-start; margin-top: 8px; }
+      .capture-equation, .capture-profit-flow { flex-direction: column; }
+      .capture-op { flex-basis: auto; min-height: 20px; }
+      .capture-cost-list { grid-template-columns: 1fr; }
       .method-grid { grid-template-columns: 1fr; }
       .scorecard { grid-template-columns: 1fr; }
       .scorecard .head { display: none; }
@@ -373,6 +399,60 @@
         <code>收入 = AI 创作总需求 × 美图工作流份额 × 付费转化 × ARPU × 留存</code><br>
         <code>贡献利润 = 收入 − 模型/推理成本 − 渠道抽成 − 获客成本 − 持续研发与交付成本</code><br>
         “使用 AI 的人变多”只直接改善第一项；只有工作流份额、付费、留存和单位经济同时成立，行业增量才会成为美图的每股价值。
+      </div>
+
+      <div class="chart full capture-chart" role="group" aria-labelledby="capture-revenue-title">
+        <div class="chart-head">
+          <div>
+            <div class="chart-title" id="capture-revenue-title">图 1 · 行业需求必须经过四道美图自己的价值捕获变量</div>
+            <div class="chart-subtitle">这是一张乘法链：任何一项偏低，最终收入都会被压缩。</div>
+          </div>
+          <div class="capture-legend" aria-label="颜色图例">
+            <span class="industry">行业给的增量</span>
+            <span class="company">美图要赢得的份额</span>
+            <span class="money">货币化与持续性</span>
+          </div>
+        </div>
+        <div class="capture-equation" role="img" aria-label="AI 创作总需求乘以美图工作流份额、付费转化、ARPU 和留存，得到美图收入">
+          <div class="capture-node industry"><strong>AI 创作总需求</strong><small>模型更强、更便宜，直接把行业水池做大</small></div>
+          <div class="capture-op" aria-hidden="true">×</div>
+          <div class="capture-node company"><strong>美图工作流份额</strong><small>用户是否仍在美图完成完整任务</small></div>
+          <div class="capture-op" aria-hidden="true">×</div>
+          <div class="capture-node money"><strong>付费转化</strong><small>免费使用能否变成真实付款</small></div>
+          <div class="capture-op" aria-hidden="true">×</div>
+          <div class="capture-node money"><strong>ARPU</strong><small>每位付费用户能贡献多少收入</small></div>
+          <div class="capture-op" aria-hidden="true">×</div>
+          <div class="capture-node money"><strong>留存</strong><small>付款是否会在下一期重复发生</small></div>
+          <div class="capture-op" aria-hidden="true">＝</div>
+          <div class="capture-node result"><strong>美图收入</strong><small>五项共同作用后的结果</small></div>
+        </div>
+        <p class="capture-insight"><strong>一眼读法：</strong>“使用 AI 的人变多”只让最左侧绿色方框变大；右侧四格如果下降，行业爆发也未必转化为美图收入。</p>
+      </div>
+
+      <div class="chart full capture-chart" role="group" aria-labelledby="capture-profit-title">
+        <div class="chart-head">
+          <div>
+            <div class="chart-title" id="capture-profit-title">图 2 · 收入还不是股东赚到的钱</div>
+            <div class="chart-subtitle">收入穿过成本池后才形成贡献利润；再考虑完全摊薄股数，才进入每股价值判断。</div>
+          </div>
+        </div>
+        <div class="capture-profit-flow" role="img" aria-label="美图收入减去模型推理、渠道抽成、获客销售和持续研发交付成本，得到贡献利润，再除以完全摊薄股数，得到每股贡献利润">
+          <div class="capture-node result"><strong>美图收入</strong><small>来自图 1 的最终结果</small></div>
+          <div class="capture-op" aria-hidden="true">−</div>
+          <div class="capture-node costs">
+            <strong>持续成本池</strong>
+            <div class="capture-cost-list">
+              <span>模型 / 推理</span><span>渠道抽成</span><span>获客 / 销售</span><span>研发 / 交付</span>
+            </div>
+          </div>
+          <div class="capture-op" aria-hidden="true">＝</div>
+          <div class="capture-node money"><strong>贡献利润</strong><small>业务增长真正留下的部分</small></div>
+          <div class="capture-op" aria-hidden="true">÷</div>
+          <div class="capture-node final"><strong>完全摊薄股数</strong><small>含奖励、期权及潜在转股</small></div>
+          <div class="capture-op" aria-hidden="true">＝</div>
+          <div class="capture-node final"><strong>每股贡献利润</strong><small>再结合资本配置与估值讨论每股价值</small></div>
+        </div>
+        <p class="chart-note">示意图不代表各成本的实际比例；美图尚未披露模型、credits、获客和产品级贡献利润的完整拆分。</p>
       </div>
 
       <div class="table-wrap">

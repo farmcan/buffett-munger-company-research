@@ -1,6 +1,6 @@
 {
   "schema_version": "seed.public-company-research.v2",
-  "generated_at": "2026-08-04T03:21:19.095618+00:00",
+  "generated_at": "2026-08-04T03:29:54.533322+00:00",
   "directory": "meitu-01357-hk",
   "valid": true,
   "publication_ready": true,
@@ -18,7 +18,7 @@
   },
   "template_parity": {
     "schema_version": "seed.public-report-template-parity.v1",
-    "generated_at": "2026-08-04T03:21:19.090737+00:00",
+    "generated_at": "2026-08-04T03:29:54.528529+00:00",
     "path": "report.html",
     "template_version": "company-research-publication-v1",
     "valid": true,
