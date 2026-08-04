@@ -1314,6 +1314,101 @@
       "limitations": "Based on unaudited and unreviewed management accounts. Core revenue is rounded, adjusted profit excludes SBC and investment fair-value items, and gross margin, cash flow, balance sheet and exact statutory bridge remain undisclosed until the formal interim results."
     },
     {
+      "id": "AI01",
+      "tier": "A-",
+      "kind": "vendor_model_release",
+      "title": "Introducing Claude Sonnet 5",
+      "publisher": "Anthropic",
+      "published_at": "2026-06-30",
+      "retrieved_at": "2026-08-04",
+      "url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "snapshot_sha256": null,
+      "used_for": [
+        "evidence that Claude development remains active",
+        "frontier-model capability and introductory price competition"
+      ],
+      "limitations": "Vendor-authored capability and benchmark claims do not establish independent market share or a durable lead."
+    },
+    {
+      "id": "AI02",
+      "tier": "A-",
+      "kind": "vendor_product_commercialization",
+      "title": "Claude Code and New Admin Controls for Business Plans",
+      "publisher": "Anthropic",
+      "published_at": null,
+      "retrieved_at": "2026-08-04",
+      "url": "https://www.anthropic.com/news/claude-code-on-team-and-enterprise",
+      "snapshot_sha256": null,
+      "used_for": [
+        "foundation-model vendor moving into coding workflows and enterprise seats"
+      ],
+      "limitations": "Product availability does not establish adoption, retention, market share or profitability."
+    },
+    {
+      "id": "AI03",
+      "tier": "A-",
+      "kind": "vendor_model_release_and_pricing",
+      "title": "Previewing GPT-5.6 Sol",
+      "publisher": "OpenAI",
+      "published_at": "2026-07-09",
+      "retrieved_at": "2026-08-04",
+      "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "frontier-model price and performance competition",
+        "multi-tier model supply"
+      ],
+      "limitations": "Vendor-authored benchmark and price claims do not prove equivalent task quality or permanent prices."
+    },
+    {
+      "id": "AI04",
+      "tier": "A-",
+      "kind": "vendor_developer_product_announcement",
+      "title": "Google I/O 2026 Developer Highlights",
+      "publisher": "Google",
+      "published_at": null,
+      "retrieved_at": "2026-08-04",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-developer-highlights/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "Gemini capability competition",
+        "Antigravity and managed-agent application-layer integration"
+      ],
+      "limitations": "Vendor-authored product descriptions do not establish independent adoption or economic returns."
+    },
+    {
+      "id": "AI05",
+      "tier": "A-",
+      "kind": "vendor_open_source_product_announcement",
+      "title": "Announcing Qwen Code",
+      "publisher": "Qwen / Alibaba",
+      "published_at": "2026-01-30",
+      "retrieved_at": "2026-08-04",
+      "url": "https://qwenlm.github.io/qwen-code-docs/en/blog/quickstart/thinks-like-a-programmer/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "open-source and free-access Chinese model application competition",
+        "protocol compatibility and developer distribution"
+      ],
+      "limitations": "Free quotas and product claims may change and do not establish long-term unit economics."
+    },
+    {
+      "id": "AI06",
+      "tier": "A-",
+      "kind": "vendor_release_log",
+      "title": "Qwen Code Feature Updates",
+      "publisher": "Qwen / Alibaba",
+      "published_at": "2026-07-31",
+      "retrieved_at": "2026-08-04",
+      "url": "https://qwenlm.github.io/qwen-code-docs/en/blog/updates/",
+      "snapshot_sha256": null,
+      "used_for": [
+        "2026 weekly product-release cadence",
+        "evidence for a conditional Chinese model and agent iteration flywheel"
+      ],
+      "limitations": "Release cadence is not model-quality CAGR and cannot prove that acceleration will persist for years."
+    },
+    {
       "id": "T06",
       "tier": "A",
       "kind": "official_model_pricing",

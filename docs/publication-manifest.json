@@ -1,7 +1,7 @@
 {
   "schema_version": "seed.public-research-publication.v2",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-08-04T10:52:00+08:00",
+  "reviewed_at": "2026-08-04T11:21:41+08:00",
   "artifact_status": "needs_human_review",
   "production_reviewed": false,
   "publication_scope": [
@@ -194,8 +194,8 @@
     "templates/research-dimensions-and-gates.md"
   ],
   "source_repository": "farmcan/seed",
-  "source_branch": "agent/buffett-munger-methodology",
-  "source_commit": "91d6bba036d9412ff79979e1f896d37e9dbc6d27",
+  "source_branch": "main",
+  "source_commit": "0042677658da690aa640c56f8784e8d14afaeeb3",
   "review_checks": {
     "contains_local_absolute_paths": false,
     "contains_private_library_paths": false,
@@ -267,8 +267,8 @@
         "gates": 9,
         "critical_evidence": 20,
         "locators": 31,
-        "sections": 25,
-        "tables": 54,
+        "sections": 26,
+        "tables": 57,
         "charts": 8,
         "evidence_drawers": 33
       },

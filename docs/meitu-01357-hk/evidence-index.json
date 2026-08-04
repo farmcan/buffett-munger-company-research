@@ -6,7 +6,7 @@
   "status": "needs_human_review",
   "combined_artifact": {
     "path": "combined-artifact.v2.json",
-    "sha256": "8c6b721aaa4719efc3822490b6cc0a5a75a8bc001b995e5c59c039afa3e2a1f6"
+    "sha256": "8f549cea778dda1a123a69150091ec72ac2e9f4daa7202814ce011a0555c7c3c"
   },
   "anchors": [
     {
