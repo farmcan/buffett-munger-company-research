@@ -847,13 +847,13 @@
     {
       "dimension": "product_and_unit_economics",
       "status": "unknown",
-      "summary": "付费数、订阅率和部分成本可见，但留存、CAC、ARPU、credits 毛利与增量利润率未形成单位经济性闭环。",
+      "summary": "付费数、订阅率、H1 ARPPU 方向、ARR 和部分成本可见，但留存、CAC、绝对 ARPPU、credits 毛利与增量利润率未形成单位经济性闭环。",
       "indicators": [
         {
           "id": "price_volume_mix_and_incremental_economics",
-          "status": "not_disclosed",
-          "summary": "Q1 付费与核心收入增长不足以重建价格/数量/组合和增量利润。",
-          "source_refs": ["F01", "F03"],
+          "status": "observed",
+          "summary": "H1 披露 ARPPU 上升、credits 用量和分组收入，但仍不足以重建留存、获客和单位毛利。",
+          "source_refs": ["F01", "F03", "F16"],
           "source_gaps": ["需要 ARPU、续费、CAC 回收期、credits 单位成本与增量毛利。"]
         },
         {
@@ -864,8 +864,8 @@
           "source_gaps": ["需建立 Adobe、Canva、模型平台及中国应用同口径对比。"]
         }
       ],
-      "source_refs": ["F01", "F03"],
-      "positive_evidence": ["2026Q1 生产力付费人数同比快于总付费人数。"],
+      "source_refs": ["F01", "F03", "F16"],
+      "positive_evidence": ["2026H1 生产力付费人数同比增长 29.8%，AI 生产力 ARR 同比增长 47.8%，公司称 ARPPU 上升。"],
       "counter_evidence": ["增长可能伴随更高推理和渠道成本。"],
       "source_gaps": ["关键单位经济性指标未披露。"]
     },
@@ -1177,8 +1177,8 @@
         {
           "id": "dated_commitments_vs_outcomes",
           "status": "observed",
-          "summary": "订阅化、生产力产品和不从零训练通用基模的路线，可与 FY2025 和 2026Q1 经营结果对照。",
-          "source_refs": ["F01", "F02", "F03"],
+          "summary": "订阅化、生产力产品和不从零训练通用基模的路线，可与 FY2025、2026Q1 和 2026H1 初步经营结果对照。",
+          "source_refs": ["F01", "F02", "F03", "F16"],
           "source_gaps": ["需建立逐年承诺、日期、目标与结果账本。"]
         },
         {
@@ -1189,7 +1189,7 @@
           "source_gaps": ["需要薪酬、绩效条件、继任计划和历史不利披露复核。"]
         }
       ],
-      "source_refs": ["F01", "F02", "F03", "F05"],
+      "source_refs": ["F01", "F02", "F03", "F05", "F16"],
       "positive_evidence": ["战略路线与付费/生产力增长方向一致。"],
       "counter_evidence": ["管理层叙事不能替代留存、CAC、地区 ARPU 和分产品毛利。"],
       "source_gaps": ["长期承诺评分卡与继任资料不完整。"]
@@ -1241,7 +1241,7 @@
       ],
       "source_refs": ["F01", "F09", "F10"],
       "positive_evidence": ["主要报表来源为审计年报，口径差异未被抹平。"],
-      "counter_evidence": ["2026Q1 仅为未审阅业务更新，不含利润、毛利和现金流。"],
+      "counter_evidence": ["2026H1 初步管理账虽给出利润增速方向，仍未经审核或审阅，且不含正式毛利、费用、现金流与稀释 EPS 桥。"],
       "source_gaps": []
     },
     {
@@ -1509,7 +1509,7 @@
       "currency": "HKD",
       "price_as_of": "2026-08-03",
       "eps": null,
-      "eps_period": "TTM to 2026Q1",
+      "eps_period": "TTM to 2026H1 unavailable",
       "eps_type": "reported_diluted",
       "pe": null,
       "reason": "2026H1 预告只给利润增速范围，没有正式报表、持续经营桥或稀释 EPS，无法可靠重建 TTM 分母。",
