@@ -5,8 +5,8 @@
     "name_en": "Meitu, Inc.",
     "ticker": "01357.HK"
   },
-  "research_snapshot_at": "2026-07-27T10:06:00+08:00",
-  "market_data_cutoff": "2026-07-24",
+  "research_snapshot_at": "2026-08-04T10:18:00+08:00",
+  "market_data_cutoff": "2026-08-03",
   "policy": {
     "facts": "Audited filings and exchange announcements take precedence.",
     "management_claims": "Speeches, press releases and company rankings are labeled as management claims unless independently corroborated.",
@@ -746,6 +746,43 @@
       "limitations": "Valuation uses CNY 86.64 per HKD 100 as the selected 24 July middle-rate snapshot."
     },
     {
+      "id": "P03",
+      "tier": "B-",
+      "kind": "market_data",
+      "title": "Tencent qfq Daily Market Snapshot through 3 August 2026",
+      "publisher": "Tencent",
+      "published_at": "2026-08-03",
+      "retrieved_at": "2026-08-04",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-08-04,1000,qfq",
+      "benchmark_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2023-01-01,2026-08-04,1000,qfq",
+      "snapshot_sha256": {
+        "01357.HK": "accbada4fecae5bfce2499a5695cbf8f527a5c1b053d15a65f1e6c72e2f53ae6",
+        "HSTECH": "16fe8a77dc813c3e8c413544e44344983498ef01bf92d3244319209fcece00f1"
+      },
+      "used_for": [
+        "3 August 2026 completed close and valuation anchor",
+        "H1 preliminary-update event reaction",
+        "20/60/200-session market state",
+        "52-week drawdown and 60-session volatility"
+      ],
+      "limitations": "Vendor qfq data are not exchange-certified. The 4 August bar was incomplete at the 10:18 retrieval time and is excluded from completed-session calculations."
+    },
+    {
+      "id": "P04",
+      "tier": "A-",
+      "kind": "official_fx_quote",
+      "title": "Bank of China Foreign Exchange Rates — 4 August 2026 10:15:36",
+      "publisher": "Bank of China",
+      "published_at": "2026-08-04",
+      "retrieved_at": "2026-08-04",
+      "url": "https://www.bankofchina.com/sourcedb/whpj/",
+      "snapshot_sha256": "a47231bbd2757283e08941ba246a28e5bc964f2920ddaceb29052e920792b1b8",
+      "used_for": [
+        "CNY 86.60 per HKD 100 middle-rate conversion for the updated valuation"
+      ],
+      "limitations": "The selected FX snapshot is one business day after the 3 August price anchor; the difference from the prior 0.8664 input is immaterial but the dates are disclosed separately."
+    },
+    {
       "id": "B01",
       "tier": "A",
       "kind": "methodology_primary",
@@ -934,11 +971,11 @@
       "kind": "stock_connect_eligible_list",
       "title": "SSE Southbound Eligible Securities",
       "publisher": "Shanghai Stock Exchange",
-      "published_at": "2026-07-27",
-      "retrieved_at": "2026-07-27",
+      "published_at": "2026-08-04",
+      "retrieved_at": "2026-08-04",
       "url": "https://www.sse.com.cn/services/hkexsc/disclo/eligible/",
       "snapshot_sha256": null,
-      "used_for": ["current Shanghai Southbound eligibility of Meitu"],
+      "used_for": ["current Shanghai Southbound eligibility of Meitu; exact official query match 01357 / MEITU / 美图公司; UPDATE_DATE 2026-08-04; TRADE_FLAG 1"],
       "limitations": "Live list; eligibility can change."
     },
     {
@@ -947,11 +984,11 @@
       "kind": "stock_connect_eligible_list",
       "title": "SZSE Southbound Eligible Securities",
       "publisher": "Shenzhen Stock Exchange",
-      "published_at": "2026-07-27",
-      "retrieved_at": "2026-07-27",
+      "published_at": "2026-08-04",
+      "retrieved_at": "2026-08-04",
       "url": "https://www.szse.cn/szhk/hkbussiness/underlylist/",
       "snapshot_sha256": null,
-      "used_for": ["current Shenzhen Southbound eligibility of Meitu"],
+      "used_for": ["current Shenzhen Southbound eligibility of Meitu; exact official query match 01357 / MEITU / 美图公司; list_as_of 2026-08-04"],
       "limitations": "Live list; eligibility can change."
     },
     {
@@ -1257,6 +1294,26 @@
       "limitations": "Live company archive can change; exact announcement dates and wording should be verified against HKEX filings."
     },
     {
+      "id": "F16",
+      "tier": "A-",
+      "kind": "voluntary_business_and_financial_performance_update",
+      "title": "Business and Financial Performance Update for the Six Months Ended June 30, 2026",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2026-07-30",
+      "retrieved_at": "2026-08-04",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf",
+      "snapshot_sha256": "e9c590ec0e950cc14a279c84a4cccfc72b0a5c11e14f1ad8593ff4d54ec6c5d3",
+      "used_for": [
+        "June 2026 MAU and paying-subscriber counts",
+        "productivity and leisure payer growth",
+        "AI productivity ARR and credits consumption",
+        "H1 core revenue and business mix",
+        "preliminary adjusted and IFRS profit growth",
+        "management explanation of ARPU, international growth and operating leverage"
+      ],
+      "limitations": "Based on unaudited and unreviewed management accounts. Core revenue is rounded, adjusted profit excludes SBC and investment fair-value items, and gross margin, cash flow, balance sheet and exact statutory bridge remain undisclosed until the formal interim results."
+    },
+    {
       "id": "T06",
       "tier": "A",
       "kind": "official_model_pricing",
@@ -1401,6 +1458,22 @@
         "27 July incomplete half-day short-selling observation and intraday quote"
       ],
       "limitations": "Secondary presentation of HKEX-sourced market data. Short-selling turnover is gross trading activity, not the weekly change in reportable net short positions. The 27 July 30.503% observation was marked as half-day data and must not be compared directly with completed sessions."
+    },
+    {
+      "id": "R12",
+      "tier": "A",
+      "kind": "official_short_position_snapshot",
+      "title": "Reportable Short Position Aggregated Data — 24 July 2026",
+      "publisher": "Hong Kong Securities and Futures Commission",
+      "published_at": "2026-07-24",
+      "retrieved_at": "2026-08-04",
+      "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/24/Short_Position_Reporting_Aggregated_Data_20260724.csv",
+      "snapshot_sha256": "92109739c714d3e69497b1eaf5b8190d260cfef6c6e7b8f6713134fe3f1b045b",
+      "used_for": [
+        "latest available Meitu reportable net short position of 347,837,738 shares",
+        "7.69% proxy versus 26 June non-treasury issued shares"
+      ],
+      "limitations": "Thresholded and lagged reportable net short positions may include hedges. They are not total short interest, free-float short interest, borrow utilisation or investor motive."
     },
     {
       "id": "PEER_ADBE_FY2025",

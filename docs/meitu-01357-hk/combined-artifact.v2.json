@@ -3,7 +3,7 @@
   "artifact_type": "stock_fundamentals_valuation",
   "artifact_role": "public_company_research_upgrade",
   "status": "needs_human_review",
-  "generated_at": "2026-07-27T16:30:00+08:00",
+  "generated_at": "2026-08-04T10:18:00+08:00",
   "security": {
     "security_id": "XHKG:01357",
     "company_name": "Meitu, Inc.",
@@ -16,10 +16,19 @@
     "reporting_standard": "HKFRS"
   },
   "as_of": {
-    "research_date": "2026-07-27",
-    "price": 3.93,
-    "price_date": "2026-07-24",
-    "price_source_ref": "P01"
+    "research_date": "2026-08-04",
+    "price": 4.77,
+    "price_date": "2026-08-03",
+    "price_source_ref": "P03"
+  },
+  "decision_summary": {
+    "question_1": "未来十年，完全摊薄后的 owner earnings per share 能否持续复合增长？",
+    "answer_1": "机制已经可描述但尚未被十年级证据证明：付费用户、ARPU、国际化、生产力应用和经营杠杆必须共同跑赢模型/渠道成本、SBC 与可转债稀释。2026H1 预告增强了未来一年的证据，却没有披露留存、单位经济性、毛利或现金流。",
+    "question_2": "在 2026-08-03 收盘 HK$4.77 的价格下，预期股东回报与安全边际是否足够？",
+    "answer_2": "按保留 SBC 的 FY2026 盈利能力代理，前瞻倍数约 17.2–21.0 倍；更新后的资本结构一致 DCF 为 HK$2.48 / 5.04 / 7.31。基础值只比现价高约 5.7%，不足以覆盖未审阅中报、留存、AI 成本、竞争和稀释误差。",
+    "routing": "verification_watchlist",
+    "routing_reason": "经营改善不是排除项，但当前证据和价格组合尚未越过长期护城河、owner earnings 与安全边际闸门。",
+    "next_hard_gate": "2026-08-26 formal interim results"
   },
   "methodology_refs": [
     {
@@ -203,6 +212,31 @@
       "content_sha256": "598719d68c51f12783597a0347c2f3a591260fc62037696459cf75b1fae9ff0f"
     },
     {
+      "id": "F16",
+      "tier": "A",
+      "source_type": "voluntary_business_and_financial_performance_update",
+      "title": "Business and Financial Performance Update for the Six Months Ended June 30, 2026",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-07-30",
+      "accessed_at": "2026-08-04",
+      "period": "2026H1",
+      "audit_status": "unaudited",
+      "scope": "selected_operating_kpis_and_preliminary_management_accounts",
+      "covers": [
+        "mau",
+        "paying_subscribers",
+        "productivity_and_leisure_mix",
+        "ai_arr",
+        "ai_credit_consumption",
+        "core_revenue",
+        "preliminary_adjusted_profit_growth",
+        "preliminary_ifrs_profit_growth"
+      ],
+      "content_sha256": "e9c590ec0e950cc14a279c84a4cccfc72b0a5c11e14f1ad8593ff4d54ec6c5d3",
+      "limitations": "Official HKEX filing but based on unaudited and unreviewed management accounts; formal gross margin, expenses, SBC, cash flow, balance sheet and statutory bridge remain pending."
+    },
+    {
       "id": "F09",
       "tier": "A",
       "source_type": "audited_annual_report",
@@ -343,6 +377,45 @@
       "tier_mapping_note": "Legacy ledger B- is normalized to v2 tier B; vendor data are not exchange-certified."
     },
     {
+      "id": "P03",
+      "tier": "B",
+      "source_type": "market_data",
+      "title": "Tencent qfq Daily Market Snapshot — 01357.HK through 3 August 2026",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-08-04,1000,qfq",
+      "published_at_status": "known",
+      "published_at": "2026-08-03",
+      "accessed_at": "2026-08-04",
+      "period": "2023-01-01 to 2026-08-03 completed sessions",
+      "audit_status": "not_applicable",
+      "scope": "01357.HK adjusted_daily_prices",
+      "covers": [
+        "price",
+        "returns",
+        "event_windows",
+        "volatility"
+      ],
+      "content_sha256": "accbada4fecae5bfce2499a5695cbf8f527a5c1b053d15a65f1e6c72e2f53ae6",
+      "limitations": "Vendor data are not exchange-certified; incomplete 4 August bar excluded from completed-session calculations."
+    },
+    {
+      "id": "P04",
+      "tier": "A",
+      "source_type": "official_fx_quote",
+      "title": "Bank of China HKD/CNY Quote — 4 August 2026 10:15:36",
+      "url": "https://www.bankofchina.com/sourcedb/whpj/",
+      "published_at_status": "known",
+      "published_at": "2026-08-04",
+      "accessed_at": "2026-08-04",
+      "period": "2026-08-04 10:15:36 Asia/Shanghai",
+      "audit_status": "not_applicable",
+      "scope": "HKD_CNY_bank_quote",
+      "covers": [
+        "fx_conversion"
+      ],
+      "content_sha256": "a47231bbd2757283e08941ba246a28e5bc964f2920ddaceb29052e920792b1b8",
+      "limitations": "Selected 0.8660 middle-rate snapshot is one business day after the 3 August price anchor; dates are disclosed separately."
+    },
+    {
       "id": "R10",
       "tier": "A",
       "source_type": "official_short_position_series",
@@ -380,6 +453,25 @@
       ],
       "content_sha256": "edd09f8c2cb6474f508abf0e7ac8860973791c8e0ecb8e8387e124ec994b7f6a",
       "limitations": "Gross short-selling turnover is not a change in net short positions. The 27 July 30.503% observation was marked as incomplete half-day data."
+    },
+    {
+      "id": "R12",
+      "tier": "A",
+      "source_type": "official_short_position_snapshot",
+      "title": "Reportable Short Position Aggregated Data — 24 July 2026",
+      "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/24/Short_Position_Reporting_Aggregated_Data_20260724.csv",
+      "published_at_status": "known",
+      "published_at": "2026-07-24",
+      "accessed_at": "2026-08-04",
+      "period": "2026-07-24",
+      "audit_status": "not_applicable",
+      "scope": "reportable_net_short_positions_meeting_SFC_threshold",
+      "covers": [
+        "latest_reportable_short_position",
+        "short_position_as_share_of_non_treasury_issued_shares"
+      ],
+      "content_sha256": "92109739c714d3e69497b1eaf5b8190d260cfef6c6e7b8f6713134fe3f1b045b",
+      "limitations": "Thresholded and lagged positions may include hedges and are not total or free-float short interest."
     }
   ],
   "source_boundaries": {
@@ -642,14 +734,14 @@
         {
           "id": "dated_price_share_count_currency_and_listing_status",
           "status": "observed",
-          "summary": "价格锚定 2026-07-24 HKD 3.93；股本锚定 2026-06-26，日期差已保留。",
-          "source_refs": ["F06", "P01"],
+          "summary": "价格锚定 2026-08-03 HKD 4.77；股本锚定 2026-06-26，日期差已保留。",
+          "source_refs": ["F06", "P03"],
           "source_gaps": []
         }
       ],
-      "source_refs": ["F01", "F06", "P01"],
+      "source_refs": ["F01", "F06", "P03"],
       "positive_evidence": ["证券身份与价格/股本日期可复核。"],
-      "counter_evidence": ["价格日与最近股本回报相差 28 天，期间交易需在正式冻结前再扫公告。"],
+      "counter_evidence": ["价格日与最近股本回报相差 38 天；截至 8 月 4 日 HKEX 索引未见更新月报，期间仍需继续扫公告。"],
       "source_gaps": []
     },
     {
@@ -1205,25 +1297,25 @@
     {
       "dimension": "valuation",
       "status": "applicable",
-      "summary": "价格、利润分母、净现金类资产和三情景 DCF 已分列，但 owner earnings、FX 与摊薄桥均为 provisional。",
+      "summary": "价格、FY2025 多利润分母、FY2026 条件化盈利代理、净现金类资产、十年反推和三情景 DCF 已分列；H1 正式现金流、SBC 与摊薄桥仍为 provisional。",
       "indicators": [
         {
           "id": "currency_consistent_value_range_assumptions_and_dates",
           "status": "observed",
-          "summary": "估值以 HKD 3.93、2026-07-24 为价格锚，CNY 盈利通过显式 0.8664 CNY/HKD 假设换算。",
-          "source_refs": ["F01", "P01"],
-          "source_gaps": ["汇率来源尚未纳入 checksum-bound v2 source_refs。"]
+          "summary": "估值以 HKD 4.77、2026-08-03 为价格锚，CNY 盈利通过 checksum-bound 的 0.8660 CNY/HKD 快照换算。",
+          "source_refs": ["F01", "F16", "P03", "P04"],
+          "source_gaps": []
         },
         {
           "id": "reverse_expectations_sensitivities_and_cross_check",
           "status": "observed",
-          "summary": "法定、持续经营、公司调整及 owner earnings 倍数与下行/基础/上行情景并列。",
-          "source_refs": ["F01", "P01"],
+          "summary": "FY2025 法定、持续经营、公司调整及 owner earnings 倍数，FY2026 条件化代理、十年反推与下行/基础/上行情景并列。",
+          "source_refs": ["F01", "F16", "P03", "P04"],
           "source_gaps": ["缺少 look-ahead-safe 历史估值与市场一致预期。"]
         }
       ],
-      "source_refs": ["F01", "P01"],
-      "positive_evidence": ["当前价格接近基础 DCF 情景，结论对增长与折现率高度敏感。"],
+      "source_refs": ["F01", "F16", "P03", "P04"],
+      "positive_evidence": ["当前价格接近基础 DCF 情景；基础价值差约 5.7%，不足以构成明确安全边际。"],
       "counter_evidence": ["上行情景超过初始转股价，必须纳入转换摊薄和负债移除。"],
       "source_gaps": []
     },
@@ -1355,33 +1447,33 @@
       "maintenance_capex_low_base_high_cny": [83.875, 66.871, 49.867],
       "normalised_working_capital_benefit_low_base_high_cny": [0.0, 0.0, 49.647],
       "research_owner_earnings_range_cny": [940.877, 1024.532],
-      "translation_rate_cny_per_hkd": 0.8664,
-      "translation_status": "provisional_non_checksum_bound_fx_input",
+      "translation_rate_cny_per_hkd": 0.8660,
+      "translation_status": "checksum_bound_official_bank_quote",
       "maintenance_capex": "not_separately_disclosed",
       "normal_working_capital_need": "not_separately_disclosed",
-      "source_refs": ["F01", "F07"],
+      "source_refs": ["F01", "F07", "P04"],
       "data_artifact": "data/owner-earnings-bridge.csv"
     },
     "range": [
       {
         "case": "low",
-        "value": 1085.961450,
+        "value": 1086.463048,
         "value_cny_million": 940.877,
-        "value_hkd_million": 1085.961450,
+        "value_hkd_million": 1086.463048,
         "formula": "940.877 + 83.875 - 83.875 + 0 = CNY 940.877m"
       },
       {
         "case": "base",
-        "value": 1105.587488,
+        "value": 1106.098152,
         "value_cny_million": 957.881,
-        "value_hkd_million": 1105.587488,
+        "value_hkd_million": 1106.098152,
         "formula": "940.877 + 83.875 - 66.871 + 0 = CNY 957.881m"
       },
       {
         "case": "high",
-        "value": 1182.516159,
+        "value": 1183.062356,
         "value_cny_million": 1024.532,
-        "value_hkd_million": 1182.516159,
+        "value_hkd_million": 1183.062356,
         "formula": "940.877 + 83.875 - 49.867 + 49.647 = CNY 1,024.532m"
       }
     ],
@@ -1389,7 +1481,7 @@
       "CNY 940.877–1,024.532 百万元是研究区间，不是公司指引或市场一致预期。",
       "员工股份支付已经在 IFRS 利润中列支，研究不加回；阿里 CB IFRS 2 一次性发行费用只从经营 run-rate 中剔除，债务和稀释影响仍保留。",
       "公司未单列持续经营维护性资本开支、维护性研发及正常营运资本，低/基础/高情景分别采用显式假设。",
-      "0.8664 CNY/HKD 来自现有报告的中国银行 2026-07-24 换算输入，但该 FX 快照尚未进入 checksum-bound v2 source_refs，故港币区间为 provisional。",
+      "0.8660 CNY/HKD 来自中国银行 2026-08-04 10:15:36 快照，已进入 checksum-bound v2 source_refs；其日期比价格锚点晚一个工作日。",
       "集团 D&A 与营运资本包含后来终止业务，持续经营拆分没有披露。"
     ]
   },
@@ -1397,166 +1489,183 @@
     {
       "label": "reported_fy",
       "status": "calculated",
-      "price": 3.93,
+      "price": 4.77,
       "currency": "HKD",
-      "price_as_of": "2026-07-24",
-      "eps": 0.1487414634,
+      "price_as_of": "2026-08-03",
+      "eps": 0.1488101662,
       "eps_period": "FY2025",
       "eps_type": "reported_total_parent_profit_per_current_share_fx_translated",
-      "formula": "HKD 3.93 / (CNY 582.900m / 4,523.17678m shares / 0.8664 CNY per HKD)",
-      "pe": 26.4216843771,
-      "earnings_yield": 0.0378477006,
-      "source_refs": ["F01", "F06", "P01"],
+      "formula": "HKD 4.77 / (CNY 582.900m / 4,523.17678m shares / 0.8660 CNY per HKD)",
+      "pe": 32.0542616338,
+      "earnings_yield": 0.0311970998,
+      "source_refs": ["F01", "F06", "P03", "P04"],
       "confidence": "medium",
       "limitations": ["含终止经营与可转债会计噪音；使用当前点时流通股而非 FY2025 加权平均稀释股。"]
     },
     {
       "label": "reported_ttm",
       "status": "unavailable",
-      "price": 3.93,
+      "price": 4.77,
       "currency": "HKD",
-      "price_as_of": "2026-07-24",
+      "price_as_of": "2026-08-03",
       "eps": null,
       "eps_period": "TTM to 2026Q1",
       "eps_type": "reported_diluted",
       "pe": null,
-      "reason": "2026Q1 更新没有披露利润、毛利、现金流或 EPS，无法用已披露数据可靠重建 TTM 分母。",
-      "source_refs": ["F01", "F03", "P01"],
+      "reason": "2026H1 预告只给利润增速范围，没有正式报表、持续经营桥或稀释 EPS，无法可靠重建 TTM 分母。",
+      "source_refs": ["F01", "F03", "F16", "P03"],
       "confidence": "unavailable",
       "limitations": ["FY2025 是当前最近的完整利润分母。"]
     },
     {
       "label": "continuing_operations_fy",
       "status": "calculated",
-      "price": 3.93,
+      "price": 4.77,
       "currency": "HKD",
-      "price_as_of": "2026-07-24",
-      "eps": 0.1780005858,
+      "price_as_of": "2026-08-03",
+      "eps": 0.1780828031,
       "eps_period": "FY2025",
       "eps_type": "continuing_IFRS_parent_profit_per_current_share_fx_translated",
-      "formula": "HKD 3.93 / (CNY 697.563m / 4,523.17678m shares / 0.8664 CNY per HKD)",
-      "pe": 22.0785790293,
-      "earnings_yield": 0.0452927699,
-      "source_refs": ["F01", "F06", "P01"],
+      "formula": "HKD 4.77 / (CNY 697.563m / 4,523.17678m shares / 0.8660 CNY per HKD)",
+      "pe": 26.7852926637,
+      "earnings_yield": 0.0373339210,
+      "source_refs": ["F01", "F06", "P03", "P04"],
       "confidence": "medium",
       "limitations": ["持续经营口径仍含可转债与投资公允价值波动；使用当前点时股数。"]
     },
     {
       "label": "company_adjusted_fy",
       "status": "calculated",
-      "price": 3.93,
+      "price": 4.77,
       "currency": "HKD",
-      "price_as_of": "2026-07-24",
-      "eps": 0.2463323477,
+      "price_as_of": "2026-08-03",
+      "eps": 0.2464461271,
       "eps_period": "FY2025",
       "eps_type": "company_adjusted_parent_profit_per_current_share_fx_translated",
-      "formula": "HKD 3.93 / (CNY 965.347m / 4,523.17678m shares / 0.8664 CNY per HKD)",
-      "pe": 15.9540557161,
-      "earnings_yield": 0.0626799867,
-      "source_refs": ["F01", "F06", "P01"],
+      "formula": "HKD 4.77 / (CNY 965.347m / 4,523.17678m shares / 0.8660 CNY per HKD)",
+      "pe": 19.3551428723,
+      "earnings_yield": 0.0516658547,
+      "source_refs": ["F01", "F06", "P03", "P04"],
       "confidence": "medium",
       "limitations": ["公司定义口径包含终止经营并加回股权激励，不能单独代表 owner earnings。"]
     },
     {
       "label": "adjusted_less_sbc_fy",
       "status": "calculated",
-      "price": 3.93,
+      "price": 4.77,
       "currency": "HKD",
-      "price_as_of": "2026-07-24",
-      "eps": 0.2160951399,
+      "price_as_of": "2026-08-03",
+      "eps": 0.2161949529,
       "eps_period": "FY2025",
       "eps_type": "research_adjusted_less_sbc_per_current_share_fx_translated",
-      "formula": "HKD 3.93 / (CNY 846.851m / 4,523.17678m shares / 0.8664 CNY per HKD)",
-      "pe": 18.1864340048,
-      "earnings_yield": 0.0549860407,
-      "source_refs": ["F01", "F06", "P01"],
+      "formula": "HKD 4.77 / (CNY 846.851m / 4,523.17678m shares / 0.8660 CNY per HKD)",
+      "pe": 22.0634197827,
+      "earnings_yield": 0.0453238895,
+      "source_refs": ["F01", "F06", "P03", "P04"],
       "confidence": "medium_low",
       "limitations": ["这是公司调整口径扣回股权激励的交叉检查，仍不是完整维护性投入后的 owner earnings。"]
     },
     {
       "label": "owner_earnings_low_fy",
       "status": "calculated",
-      "price": 3.93,
+      "price": 4.77,
       "currency": "HKD",
-      "price_as_of": "2026-07-24",
+      "price_as_of": "2026-08-03",
       "earnings_cny_million": 940.877,
-      "eps": 0.2400882173,
+      "eps": 0.2401991126,
       "eps_period": "FY2025",
       "eps_type": "research_owner_earnings_low",
-      "formula": "CNY market capitalisation 15,401.200m / CNY owner earnings 940.877m",
-      "pe": 16.3689834059,
-      "earnings_yield": 0.0610911487,
-      "source_refs": ["F01", "F06", "P01"],
+      "formula": "CNY market capitalisation 18,684.429m / CNY owner earnings 940.877m",
+      "pe": 19.8585246598,
+      "earnings_yield": 0.0503562081,
+      "source_refs": ["F01", "F06", "P03", "P04"],
       "confidence": "medium_low",
       "limitations": ["研究区间，不是 reported/consensus PE；维护性投入取 D&A，不计营运资本 float。"]
     },
     {
       "label": "owner_earnings_base_fy",
       "status": "calculated",
-      "price": 3.93,
+      "price": 4.77,
       "currency": "HKD",
-      "price_as_of": "2026-07-24",
+      "price_as_of": "2026-08-03",
       "earnings_cny_million": 957.881,
-      "eps": 0.2444272117,
+      "eps": 0.2445401111,
       "eps_period": "FY2025",
       "eps_type": "research_owner_earnings_base",
-      "formula": "CNY market capitalisation 15,401.200m / CNY owner earnings 957.881m",
-      "pe": 16.0784063991,
-      "earnings_yield": 0.0621952186,
-      "source_refs": ["F01", "F06", "P01"],
+      "formula": "CNY market capitalisation 18,684.429m / CNY owner earnings 957.881m",
+      "pe": 19.5060024224,
+      "earnings_yield": 0.0512662707,
+      "source_refs": ["F01", "F06", "P03", "P04"],
       "confidence": "medium_low",
       "limitations": ["研究区间，不是 reported/consensus PE；维护性 capex 取 D&A 与 cash capex 中点。"]
     },
     {
       "label": "owner_earnings_high_fy",
       "status": "calculated",
-      "price": 3.93,
+      "price": 4.77,
       "currency": "HKD",
-      "price_as_of": "2026-07-24",
+      "price_as_of": "2026-08-03",
       "earnings_cny_million": 1024.532,
-      "eps": 0.2614348756,
+      "eps": 0.2615556307,
       "eps_period": "FY2025",
       "eps_type": "research_owner_earnings_high",
-      "formula": "CNY market capitalisation 15,401.200m / CNY owner earnings 1,024.532m",
-      "pe": 15.0324245607,
-      "earnings_yield": 0.0665228683,
-      "source_refs": ["F01", "F06", "P01"],
+      "formula": "CNY market capitalisation 18,684.429m / CNY owner earnings 1,024.532m",
+      "pe": 18.2370380880,
+      "earnings_yield": 0.0548334656,
+      "source_refs": ["F01", "F06", "P03", "P04"],
       "confidence": "low",
       "limitations": ["研究区间，不是 reported/consensus PE；只计三年中位营运资本收益的一半，仍可能反转。"]
     }
   ],
   "forward_scenarios": {
     "currency": "HKD",
-    "price_anchor": 3.93,
+    "price_anchor": 4.77,
     "scenarios": [
       {
         "scenario": "bear",
-        "status": "unavailable",
-        "forecast_eps": null,
-        "implied_pe_at_current_price": null,
-        "reason": "2026Q1 缺利润、毛利和现金流，无法用正式披露重建 bear EPS。",
-        "assumptions": ["H1 将于 2026-08-26 提供下一次正式分母。"],
-        "source_refs": ["F03", "F08"]
+        "status": "calculated_pe",
+        "forecast_eps": 0.227524,
+        "implied_pe_at_current_price": 20.9648,
+        "earnings_denominator": "FY2026 adjusted-profit proxy less assumed employee SBC",
+        "capital_structure": "unconverted_conservative_awards_ceiling",
+        "assumptions": [
+          "H1 调整后归母取公司 36%–40% 预告的低端，即人民币 6.357 亿元。",
+          "H2 调整后归母比 2025H2 下降 10%，全年 SBC 经济成本取人民币 1.70 亿元。",
+          "D&A 约等于维护性投入，不给营运资本正向信用；2026-08-26 后必须用正式现金流重建。"
+        ],
+        "source_refs": ["F01", "F02", "F03", "F06", "F08", "F16", "P03", "P04"]
       },
       {
         "scenario": "base",
-        "status": "unavailable",
-        "forecast_eps": null,
-        "implied_pe_at_current_price": null,
-        "reason": "核心收入和付费增长不能直接转换为 EPS；缺少毛利、费用率和摊薄股数。",
-        "assumptions": ["H1 后再构建同口径 base EPS。"],
-        "source_refs": ["F03", "F08"]
+        "status": "calculated_pe",
+        "forecast_eps": 0.272023,
+        "implied_pe_at_current_price": 17.5353,
+        "earnings_denominator": "FY2026 adjusted-profit proxy less assumed employee SBC",
+        "capital_structure": "unconverted_conservative_awards_ceiling",
+        "assumptions": [
+          "H1 调整后归母取公司区间中点人民币 6.451 亿元。",
+          "H2 调整后归母比 2025H2 增长 20%，全年 SBC 经济成本取人民币 1.50 亿元。",
+          "这是一年盈利能力区间，不是公司指引、市场一致预期或完整 owner earnings。"
+        ],
+        "source_refs": ["F01", "F02", "F03", "F06", "F08", "F16", "P03", "P04"]
       },
       {
         "scenario": "upside",
-        "status": "unavailable",
-        "forecast_eps": null,
-        "implied_pe_at_current_price": null,
-        "reason": "生产力 ARR 不是确认收入，且没有续费、毛利和 credits 单位经济性。",
-        "assumptions": ["不得把 ARR 增速机械外推为 EPS 增速。"],
-        "source_refs": ["F03", "F08"]
+        "status": "calculated_pe",
+        "forecast_eps": 0.277827,
+        "implied_pe_at_current_price": 17.1690,
+        "earnings_denominator": "FY2026 adjusted-profit proxy less assumed employee SBC",
+        "capital_structure": "full_conversion_including_maturity_interest",
+        "assumptions": [
+          "H1 调整后归母取公司区间高端人民币 6.544 亿元。",
+          "H2 调整后归母比 2025H2 增长 35%，全年 SBC 经济成本取人民币 1.30 亿元。",
+          "采用含到期利息的最大 CB 转换股份和奖励保守上限；不把 ARR 增速机械外推为利润增速。"
+        ],
+        "source_refs": ["F01", "F02", "F03", "F06", "F07", "F08", "F16", "P03", "P04"]
       }
-    ]
+    ],
+    "status_note": "H1 预告首次允许构建 range-only 的一年盈利能力代理；正式毛利、SBC、CFO、净现金与同日摊薄股数未披露，因此不能升级为完整 owner earnings。",
+    "data_artifact": "data/forward-economic-earnings-scenarios.csv"
   },
   "intrinsic_value_scenarios": {
     "currency": "HKD",
@@ -1567,13 +1676,13 @@
         "capital_structure": "unconverted_principal_redemption",
         "discount_rate_pct": 13.0,
         "terminal_growth_pct": 0.0,
-        "intrinsic_value_per_share": 2.53,
-        "starting_owner_earnings_cny_bn": 0.940877,
+        "intrinsic_value_per_share": 2.48,
+        "starting_owner_earnings_cny_bn": 0.91383,
         "five_year_growth_pct": 0.0,
         "net_cash_like_cny_bn": 2.941366,
         "fully_diluted_shares_bn": 4.63788188,
-        "formula": "Five-year owner-earnings DCF with 0% growth, 0% terminal growth, 13% discount rate; unconverted principal-redemption net cash; conservative non-CB award ceiling; CNY/HKD 0.8664.",
-        "source_refs": ["F01", "F06", "F14", "P01"],
+        "formula": "Five-year DCF starting from the FY2026 bear economic-earnings proxy with 0% growth, 0% terminal growth and 13% discount rate; unconverted principal-redemption net cash; conservative non-CB award ceiling; CNY/HKD 0.8660.",
+        "source_refs": ["F01", "F06", "F14", "F16", "P03", "P04"],
         "limitations": ["研究敏感性，不是公司指引；未转换偿付额仍受未来利息与汇率影响。"]
       },
       {
@@ -1582,13 +1691,13 @@
         "capital_structure": "unconverted_principal_redemption",
         "discount_rate_pct": 11.0,
         "terminal_growth_pct": 3.0,
-        "intrinsic_value_per_share": 4.83,
-        "starting_owner_earnings_cny_bn": 0.957881,
-        "five_year_growth_pct": 10.0,
+        "intrinsic_value_per_share": 5.04,
+        "starting_owner_earnings_cny_bn": 1.092554,
+        "five_year_growth_pct": 8.0,
         "net_cash_like_cny_bn": 2.941366,
         "fully_diluted_shares_bn": 4.63788188,
-        "formula": "Five-year owner-earnings DCF with 10% growth, 3% terminal growth, 11% discount rate; unconverted principal-redemption net cash; conservative non-CB award ceiling; CNY/HKD 0.8664.",
-        "source_refs": ["F01", "F06", "F14", "P01"],
+        "formula": "Five-year DCF starting from the FY2026 base economic-earnings proxy with 8% growth, 3% terminal growth and 11% discount rate; unconverted principal-redemption net cash; conservative non-CB award ceiling; CNY/HKD 0.8660.",
+        "source_refs": ["F01", "F06", "F14", "F16", "P03", "P04"],
         "limitations": ["对维护性投入、留存、毛利、未来 CB 偿付和 FX 高度敏感。"]
       },
       {
@@ -1597,59 +1706,61 @@
         "capital_structure": "full_conversion_including_maturity_interest",
         "discount_rate_pct": 11.0,
         "terminal_growth_pct": 4.0,
-        "intrinsic_value_per_share": 7.32,
-        "starting_owner_earnings_cny_bn": 1.024532,
-        "five_year_growth_pct": 18.0,
+        "intrinsic_value_per_share": 7.31,
+        "starting_owner_earnings_cny_bn": 1.19659,
+        "five_year_growth_pct": 14.0,
         "net_cash_like_cny_bn": 4.698566,
         "fully_diluted_shares_bn": 4.973395796,
-        "formula": "Five-year owner-earnings DCF with 18% growth, 4% terminal growth, 11% discount rate; CB debt removed; maximum disclosed conversion shares including maturity interest plus conservative award ceiling; CNY/HKD 0.8664.",
-        "source_refs": ["F01", "F06", "F07", "P01"],
+        "formula": "Five-year DCF starting from the FY2026 upside economic-earnings proxy with 14% growth, 4% terminal growth and 11% discount rate; CB debt removed; maximum disclosed conversion shares including maturity interest plus conservative award ceiling; CNY/HKD 0.8660.",
+        "source_refs": ["F01", "F06", "F07", "F16", "P03", "P04"],
         "limitations": ["奖励余额与已发行/受托股份可能重叠，因此 4.973396 billion 是保守股数上限；实际转股价和时点可变化。"]
       }
     ],
-    "scenario_policy": "这些数值是资本结构一致的透明敏感性，不是概率加权结论、目标价或交易指令；维护性投入、FX 与奖励重叠仍使结果保持 range_only。"
+    "scenario_policy": "这些数值把 H1 预告转换成资本结构一致的透明敏感性，不是概率加权结论、目标价或交易指令；正式中报、维护性投入、FX 与奖励重叠仍使结果保持 range_only。"
   },
   "historical_valuation": {
     "status": "unavailable",
     "metric": "look_ahead_safe_historical_pe",
     "reason": "现有档案没有按历史日期冻结当时已知 EPS、股本和重列口径，不能用事后 FY2025 信息回填历史 P/E。",
     "current_cross_checks": {
-      "reported_total_fy_pe": 26.4217,
-      "continuing_ifrs_fy_pe": 22.0786,
-      "company_adjusted_fy_pe": 15.9541,
-      "owner_earnings_range_pe": [15.0313, 16.3677]
+      "reported_total_fy_pe": 32.0543,
+      "continuing_ifrs_fy_pe": 26.7853,
+      "company_adjusted_fy_pe": 19.3551,
+      "owner_earnings_range_pe": [18.2370, 19.8585]
     },
     "look_ahead_control": "每个历史估值点必须只使用当日已发布的报表、当时股本与当日价格。",
-    "source_refs": ["F01", "F06", "P01"]
+    "source_refs": ["F01", "F06", "P03", "P04"]
   },
   "market_positioning": {
-    "status": "short_pressure_material_but_easing",
-    "as_of": "2026-07-27",
+    "status": "post_h1_update_repricing_with_short_pressure_easing",
+    "as_of": "2026-08-04",
     "price_state": {
-      "last_completed_close_hkd": 3.93,
-      "last_completed_close_date": "2026-07-24",
-      "latest_intraday_quote_hkd": 3.94,
-      "latest_intraday_quote_time": "2026-07-27T15:58:00+08:00",
-      "twenty_session_sma_hkd": 4.0145,
-      "sixty_session_sma_hkd": 4.4352,
-      "two_hundred_session_sma_hkd": 6.3038,
-      "sixty_session_typical_price_vwap_hkd": 4.6405,
-      "closes_in_3_80_to_4_20_band": {
-        "count": 15,
-        "sessions": 17,
-        "period": "2026-07-02 to 2026-07-24"
+      "last_completed_close_hkd": 4.77,
+      "last_completed_close_date": "2026-08-03",
+      "latest_intraday_quote_hkd": 4.86,
+      "latest_intraday_quote_time": "2026-08-04T10:17:49+08:00",
+      "twenty_session_sma_hkd": 4.1655,
+      "sixty_session_sma_hkd": 4.4447,
+      "two_hundred_session_sma_hkd": 6.1646,
+      "sixty_session_typical_price_vwap_hkd": 4.6347,
+      "post_update_reaction": {
+        "announcement_released_after_close": "2026-07-30T17:48:00+08:00",
+        "first_full_session_return_pct": 10.28,
+        "t_minus_1_to_2026_08_03_pct": 11.45,
+        "hstech_same_partial_window_pct": 1.50,
+        "abnormal_partial_window_pct": 9.95
       },
-      "interpretation": "价格贴近 20 日均值，但仍低于 60/200 日均值和 60 日成交量加权成本代理；这是短线均衡与中期上方供给并存，不是确定性支撑/阻力。"
+      "interpretation": "价格已升至 20/60 日均值和 60 日成交量加权成本代理之上，但仍低于 200 日均值；这是 H1 经营预告后的预期重估，不是长期护城河或安全边际已经被证明。"
     },
     "reportable_short_position": {
-      "latest_reporting_date": "2026-07-17",
-      "latest_shares_mn": 357.876538,
-      "approx_pct_of_2026_06_26_non_treasury_issued_shares": 7.91,
-      "change_from_2026_06_26_pct": -25.88,
-      "change_from_selected_2026_04_30_peak_pct": -41.89,
-      "change_from_2026_01_02_pct": 22.12,
-      "twenty_session_volume_cover_proxy_days": 5.49,
-      "interpretation": "空头存量仍不小，但从 4 月和 6 月高位明显回落。股价在空头回补期间仍横在 4 港元附近，反证了“近期弱势完全由新增空头主导”。"
+      "latest_reporting_date": "2026-07-24",
+      "latest_shares_mn": 347.837738,
+      "approx_pct_of_2026_06_26_non_treasury_issued_shares": 7.69,
+      "change_from_2026_06_26_pct": -27.96,
+      "change_from_selected_2026_04_30_peak_pct": -43.52,
+      "change_from_2026_07_17_pct": -2.81,
+      "twenty_session_volume_cover_proxy_days": 4.57,
+      "interpretation": "空头存量仍大，但到 7 月 24 日继续边际下降；7 月 30 日预告后的上涨可能同时包含盈利预期上修和部分空头回补，公开数据不能拆分两者。"
     },
     "short_selling_turnover": {
       "june_completed_sessions_weighted_ratio_pct": 11.94,
@@ -1658,13 +1769,13 @@
       "interpretation": "7 月已完成时段的卖空成交强度低于 6 月；7 月 27 日半日比率跳升，但不完整单日不能覆盖 SFC 周度净空仓下降趋势。"
     },
     "likely_price_formation": [
-      "6 月 1 日 AI 应用叙事脉冲快速回吐，留下 4.4—5.6 港元的历史成交与套牢供给。",
-      "公司在 3.58—3.66 港元回购、创始人在 4.023 港元增持，形成可观察但有限的公司/内部人需求区。",
-      "2026H1 正式业绩要到 8 月 26 日，Q1 增长能否转成利润、现金流和 credits 毛利尚未被正式中报验证。",
-      "短仓回落而成交量收缩，说明当前更像买卖双方等待下一证据，而不是持续的单边逼空或做空。"
+      "7 月 30 日预告首次把付费、ARPU 和核心收入增长连接到 36%–40% 的调整后利润增长与至少 35% 的 IFRS 利润增长。",
+      "首个反应日上涨 10.3%，到 8 月 3 日相对公告前收盘上涨 11.4%；但 7 月 29 日已提前上涨 13.1%，不能把全段涨幅单因果归于公告。",
+      "公司回购与创始人增持形成有限需求，SFC 须申报净空仓下降可能放大反应；两者都不能替代正式中报。",
+      "当前价格已接近更新后的基础 DCF，市场从等待证据转向部分预付经营改善；8 月 26 日必须验证毛利、CFO、SBC、现金与净股数。"
     ],
     "data_artifact": "data/price-short-positioning.csv",
-    "source_refs": ["F05", "F06", "F08", "P01", "R10", "R11"],
+    "source_refs": ["F05", "F06", "F08", "F16", "P03", "R10", "R11", "R12"],
     "limitations": [
       "SFC 数据有阈值和发布滞后，且可能包括对冲。",
       "没有公开、同日、可核验的借券费率、可借券库存或 free-float-adjusted short-interest percentile。",
@@ -1674,22 +1785,23 @@
   },
   "price_move_attribution": {
     "status": "monitor_summary_only",
-    "as_of": "2026-07-27",
+    "as_of": "2026-08-04",
     "method": "现有 event-price-reactions.csv 对公告记录 T-1/T0/T+1/T+5，并以同日恒生科技指数作基准；因重叠事件和小盘流动性，因果置信度保持条件化。",
-    "current_price_hkd": 3.94,
-    "current_price_status": "2026-07-27 intraday quote at 15:58; last completed close was HK$3.93 on 2026-07-24",
+    "current_price_hkd": 4.77,
+    "current_price_status": "Valuation anchor is the 2026-08-03 completed close; 2026-08-04 intraday HK$4.86 at 10:17 is shown only as an incomplete quote.",
     "short_term_focus": [
       "2026-08-26 H1 正式业绩",
       "AI 应用板块轮动与海外映射",
       "模型降价/开源与工作流平台功能发布",
       "回购、库存股、可转债与全摊薄股数变化"
     ],
-    "source_refs": ["F03", "F04", "F06", "F08", "P01", "R10", "R11"]
+    "source_refs": ["F03", "F04", "F06", "F08", "F16", "P03", "R10", "R11", "R12"]
   },
   "moat_evidence": {
     "positive_evidence": [
       "FY2025 核心产品收入 2,954.033 百万元人民币，占持续经营收入约 76.6%。",
-      "2026Q1 总付费用户超过 17.9 百万，同比增长 30.2%；生产力付费 2.34 百万，同比增长 52.9%。",
+      "2026H1 总付费用户超过 18.44 百万，生产力付费 2.35 百万同比增长 29.8%；AI 生产力 ARR 约 6.20 亿元，同比增长 47.8%。",
+      "2026H1 核心业务收入同比增长 30.9%，调整后归母预计增长 36%–40%，初步显示经营杠杆；该预告未经审阅。",
       "多产品矩阵、审美工作流与用户行为数据可能提高发现需求和跨产品复用效率。"
     ],
     "counter_evidence": [
@@ -1708,7 +1820,7 @@
     {
       "risk": "模型平台直接替代最后一公里应用",
       "mechanism": "通用模型把生成、编辑、模板和 agent 工作流放进同一入口，用户无需再为独立 App 付费。",
-      "source_refs": ["F02", "F03"],
+      "source_refs": ["F02", "F03", "F16"],
       "invalidation_test": "跟踪主要模型/工作流平台发布后的付费净增、续费、ARPU、毛利及自然获客；若核心增速与毛利连续恶化，反方增强。"
     },
     {
@@ -1724,10 +1836,10 @@
       "invalidation_test": "每期更新有效转股价、转换股份、债务账面值、到期现金需求与转换后每股价值。"
     },
     {
-      "risk": "Q1 经营更新掩盖利润与现金流变化",
-      "mechanism": "Q1 只披露核心收入、付费和 ARR，缺少毛利、费用、利润及 CFO，市场可能对不完整信号过度外推。",
-      "source_refs": ["F03", "F08"],
-      "invalidation_test": "以 2026-08-26 H1 正式财报核对收入、付费、毛利、利润、现金流和股数是否同向改善。"
+      "risk": "H1 预告把调整后利润增长误当成 owner earnings 已兑现",
+      "mechanism": "预告给出利润增长区间和经营杠杆，但公司调整口径剔除 SBC 与投资公允价值，且没有毛利、CFO、净现金或同日摊薄股数；市场可能对不完整桥过度外推。",
+      "source_refs": ["F03", "F08", "F16"],
+      "invalidation_test": "以 2026-08-26 H1 正式财报把收入、毛利、费用、SBC、CFO、现金和完全摊薄股数桥接为每股 owner earnings。"
     }
   ],
   "gates": [
@@ -1744,7 +1856,7 @@
     {
       "gate": "business_economics",
       "result": "inconclusive",
-      "reason": "核心收入、付费与五年 ROIC 筛查明确，但 ARPU、留存、CAC、credits 毛利、正常营运资本和增量回报仍未闭环。"
+      "reason": "H1 核心收入、付费、ARR、ARPU 方向和利润杠杆均偏正，但 ARPU 金额、留存、CAC、credits 毛利、现金流和增量回报仍未闭环。"
     },
     {
       "gate": "durable_moat",
@@ -1759,7 +1871,7 @@
     {
       "gate": "owner_earnings",
       "result": "range_only",
-      "reason": "CNY 940.877–1,024.532 百万元逐项桥可用于敏感性；员工 SBC 保留为成本，但持续经营维护性投入、正常营运资本与 checksum-bound FX 仍缺失。"
+      "reason": "FY2025 CNY 940.877–1,024.532 百万元逐项桥和 FY2026 CNY 913.830–1,196.590 百万元盈利能力代理可用于敏感性；SBC 保留为成本且 FX 已冻结，但 H1 正式 CFO、维护性投入和正常营运资本仍缺失。"
     },
     {
       "gate": "survival_and_balance_sheet",
@@ -1769,22 +1881,22 @@
     {
       "gate": "intrinsic_value_and_margin_of_safety",
       "result": "range_only",
-      "reason": "HKD 2.53–7.32 的情景跨度大；未转换偿债与完全转换已使用各自净现金和保守股数，但 FX、奖励重叠和长期增长仍为 provisional。"
+      "reason": "更新后的 HKD 2.48–7.31 情景跨度大，基础值 HKD5.04 只比 8 月 3 日收盘高约 5.7%；未转换偿债与完全转换已配对各自净现金和保守股数，但正式中报、奖励重叠和长期增长仍为 provisional。"
     },
     {
       "gate": "decision_and_disconfirming_evidence",
       "result": "provisional",
-      "reason": "独立 agent red-team 已完成，但多项维度仍 unknown，2026H1 与人工审阅未完成。"
+      "reason": "路由为 verification_watchlist：H1 预告增强一年盈利证据，但十年每股复合能力、正式 owner earnings、安全边际和人工审阅仍未完成。"
     }
   ],
   "source_gaps": [
     {
-      "gap": "2026Q1 没有利润、毛利、费用和经营现金流。",
-      "resolution": "2026-08-26 H1 后建立 Q1/Q2/H1 同口径利润与现金流桥。"
+      "gap": "2026H1 预告给出利润增速范围，但没有正式毛利、费用、SBC、经营现金流、资产负债表或稀释 EPS。",
+      "resolution": "2026-08-26 用正式中报建立收入 → 毛利 → IFRS/调整后利润 → SBC → CFO → owner earnings → fully diluted per-share 桥。"
     },
     {
-      "gap": "留存、ARPU、CAC、分产品/地区毛利和 credits 单位经济性未披露。",
-      "resolution": "在后续财报、管理层问答和第三方产品序列中持续采集；未知保持 unknown。"
+      "gap": "公司确认 H1 ARPU 上升，但没有披露 ARPU 金额、留存、CAC、分产品/地区毛利和 credits 单位经济性。",
+      "resolution": "在正式中报、管理层问答和第三方产品序列中持续采集；未披露项保持 unknown。"
     },
     {
       "gap": "全摊薄桥已给出期权、全部未归属奖励和 CB 的保守上限，但未解决奖励与已发行受托股/市场购股的重叠，且 2026-06-26 没有同日奖励余额。",
@@ -1795,8 +1907,8 @@
       "resolution": "2026H1 后按同一结构更新现金、债务、到期利息和转换状态。"
     },
     {
-      "gap": "0.8664 CNY/HKD 汇率输入尚未进入 checksum-bound v2 source_refs。",
-      "resolution": "冻结官方 FX 快照并重算 owner earnings、EPS 与 DCF。"
+      "gap": "价格锚点为 8 月 3 日收盘，0.8660 CNY/HKD 官方银行快照为 8 月 4 日 10:15，存在一个工作日日期差。",
+      "resolution": "当前差异对结果不重大；正式中报重估时冻结价格、FX、股数和报表同一批次输入。"
     },
     {
       "gap": "缺少独立竞争者、客户、供应商、App Store 历史排名与网站访问趋势的 checksum-bound 长序列。",
@@ -1832,21 +1944,21 @@
   ],
   "float_supply": {
     "status": "observable_proxy_not_regulatory_public_float",
-    "as_of": "2026-07-24",
+    "as_of": "2026-08-03",
     "listing_line": "01357.HK",
     "non_treasury_outstanding": 4523176780,
     "observable_tradable_float_proxy": 3473880110,
     "observable_float_ratio": 0.7680177625,
-    "dated_price_hkd": 3.93,
-    "float_adjusted_market_cap_proxy_hkd": 13652348832.3,
-    "adtv20_shares": 65228316,
-    "float_turnover_per_day": 0.0187767896,
-    "float_days_to_trade": 53.2572,
+    "dated_price_hkd": 4.77,
+    "float_adjusted_market_cap_proxy_hkd": 16570408124.7,
+    "adtv20_shares": 76118094.85,
+    "float_turnover_per_day": 0.0219115492,
+    "float_days_to_trade": 45.6380,
     "largest_known_supply_event": {
       "event": "Alibaba convertible bond if converted",
       "shares": 335513916,
       "share_of_float_proxy": 0.0965818927,
-      "adtv20_days": 5.1437,
+      "adtv20_days": 4.4078,
       "state": "if_converted_not_automatic"
     },
     "data_artifacts": ["data/float-supply-bridge.csv", "data/share-supply-calendar.csv"],
@@ -1857,20 +1969,20 @@
     "status": "needs_human_review",
     "validator_status": "passed",
     "validator_run": {
-      "validated_at": "2026-07-27",
-      "command": "PYTHONPATH=src python3 skills/research-buffett-munger-company/scripts/validate_company_research.py docs/company-research/meitu-01357-hk/combined-artifact.v2.json",
+      "validated_at": "2026-08-04",
+      "command": "python3 skills/research-buffett-munger-company/scripts/validate_company_research.py docs/meitu-01357-hk/combined-artifact.v2.json",
       "gate_count": 9,
       "dimension_count": 25,
       "indicator_count": 50,
-      "source_count": 17,
+      "source_count": 21,
       "errors": [],
       "warnings": []
     },
     "reviewer": null,
     "reviewed_at": null,
     "critical_gaps": [
-      "2026H1 正式利润与现金流尚未发布。",
-      "20 条核心事实与 31 条关键事实定位已进入页码/表名/行号/哈希证据层；全摊薄奖励重叠、未来 CB 利息/FX 和最新同日股数仍未解决。",
+      "2026H1 预告已经发布，但正式毛利、SBC、CFO、净现金和稀释 EPS 尚未发布。",
+      "20 条 FY2025/Q1 核心事实与 31 条关键事实定位已进入页码/表名/行号/哈希证据层；新 H1 预告已绑定官方 PDF 哈希，但全摊薄奖励重叠、未来 CB 利息和最新同日股数仍未解决。",
       "独立客户/竞争者证据与人工审阅未完成。"
     ],
     "publication_state": "structured_research_snapshot_not_production_reviewed",

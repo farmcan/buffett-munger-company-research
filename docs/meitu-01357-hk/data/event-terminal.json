@@ -3,7 +3,7 @@
   "version": "1.1",
   "title": "美图公司：事件 Surprise 与市场共振",
   "subtitle": "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、行业/资本结构传导与下一验证放在一条证据轴。",
-  "as_of": "2026-07-30T18:00:00+08:00",
+  "as_of": "2026-08-04T10:18:00+08:00",
   "timezone": "Asia/Shanghai",
   "date_range": {
     "start": "2024-10-01",
@@ -398,6 +398,83 @@
       "source_gap": "无法从单次交易推断管理层私有信息或未来收益。"
     },
     {
+      "event_id": "meitu-h1-preliminary-2026",
+      "date": "2026-07-30",
+      "time": "17:48:00",
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-07-30T17:48:00+08:00",
+      "date_status": "completed",
+      "event_type": "business_and_financial_update",
+      "company": "美图公司｜2026H1初步业务及财务更新",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "chain_bucket": "AI 应用 / 创意软件",
+      "importance": "high",
+      "impact_score": 5,
+      "why_it_matters": "首次把用户、ARR 和收入增长连接到 H1 调整后及 IFRS 归母利润方向。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；只与 Q1 已知增速和 FY2025/H1 基数对照，不制造精确 surprise。",
+      "actual_results": {
+        "reported_at": "2026-07-30T17:48:00+08:00",
+        "metrics": [
+          "核心业务收入约人民币18亿元，同比+30.9%",
+          "调整后归母利润同比+36%至+40%；IFRS归母利润至少+35%",
+          "付费用户超过1,844万；AI生产力ARR约人民币6.2亿元",
+          "AI credits在Q1和Q2均环比消耗增长超过46%"
+        ],
+        "definition_changes": [
+          "公告基于未经审核和未经审阅的管理账，正式报表仍待2026-08-26"
+        ],
+        "source_refs": [
+          "meitu-F16"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "缺少事前冻结的可比共识；增长本身不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "公告7月30日盘后；7月31日首个完整交易日+10.28%",
+        "t1": "T−1 7月30日收盘至8月3日+11.45%（部分窗口）",
+        "t5": null,
+        "t20": null,
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "同部分窗口HSTECH +1.50%；超额约+9.95pct",
+        "volume_ratio": null,
+        "resonance": "positive_resonance_partial_window",
+        "source_refs": [
+          "meitu-P03"
+        ],
+        "attribution_confidence": "medium",
+        "limitations": "T+5尚未形成；7月29日股价已先涨13.1%，公告不能解释全部窗口收益。"
+      },
+      "transmission_paths": [
+        "ARPU/credits → 收入 → 毛利与费用杠杆",
+        "调整利润 → 扣SBC/CFO/摊薄 → 每股owner earnings"
+      ],
+      "holdings_impacted": [
+        "研究主体：美图公司（01357.HK）"
+      ],
+      "validation": {
+        "status": "market_reviewed_partial",
+        "next_check_at": "2026-08-26",
+        "thesis_impact": "利润方向是实质新证据，但部分价格窗口、公告前上涨和未披露现金质量限制结论。",
+        "review_score": null
+      },
+      "post_event_review": "H1预告把未来一年盈利增长从猜测升级为有官方区间支持的假设，但没有证明十年护城河或现价安全边际。",
+      "source_refs": [
+        "meitu-F16",
+        "meitu-P03"
+      ],
+      "source_gap": "正式毛利率、渠道/模型成本、SBC、CFO、递延收入、净现金和同日完全摊薄股数待8月26日。"
+    },
+    {
       "event_id": "meitu-h1-results-2026",
       "date": "2026-08-26",
       "timeline_anchor_date": "2026-08-26",
@@ -412,7 +489,7 @@
       "chain_bucket": "AI 应用 / 创意软件",
       "importance": "high",
       "impact_score": 5,
-      "why_it_matters": "这是把Q1经营KPI桥接到Q2收入、利润、现金、推理成本和净股数的主要决策节点。",
+      "why_it_matters": "这是把H1初步收入和利润增长桥接到毛利、现金、推理成本、SBC和净股数的主要决策节点。",
       "expectation_snapshot": {
         "frozen_at": "2026-07-30T18:00:00+08:00",
         "official_guidance": [],
@@ -420,7 +497,8 @@
         "previous_actual": [],
         "source_refs": [
           "meitu-F08",
-          "meitu-F03"
+          "meitu-F03",
+          "meitu-F16"
         ]
       },
       "actual_results": null,
@@ -461,19 +539,34 @@
         "review_score": null
       },
       "pre_event_questions": [
-        "Q2核心收入和付费用户相对Q1是否继续加速？",
-        "生产力收入占比、ARR和AI credits是否转成确认收入？",
+        "核心收入约+30.9%、调整后归母+36%至+40%能否由正式报表复核？",
+        "生产力收入占比、ARR和AI credits是否转成高质量确认收入与毛利？",
         "毛利率、CFO、SBC、回购和可转债后的每股owner earnings如何？"
       ],
       "post_event_review": null,
       "source_refs": [
         "meitu-F08",
-        "meitu-F03"
+        "meitu-F03",
+        "meitu-F16"
       ],
       "source_gap": "未来实际、T+1/T+5/T+20和成交量只能在事件后追加。"
     }
   ],
   "source_refs": [
+    {
+      "id": "meitu-F16",
+      "title": "美图公司｜2026H1 Preliminary Business and Financial Update",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf",
+      "accessed_at": "2026-08-04"
+    },
+    {
+      "id": "meitu-P03",
+      "title": "美图公司｜Tencent qfq Daily Market Snapshot through 2026-08-04",
+      "tier": "market_data",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-08-04,1000,qfq",
+      "accessed_at": "2026-08-04"
+    },
     {
       "id": "meitu-F03",
       "title": "美图公司｜First Quarter 2026 Business Update",
