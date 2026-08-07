@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>美图公司（01357.HK）研究报告｜2026-08-04</title>
+  <title>美图公司（01357.HK）研究报告｜2026-08-07</title>
   <style>
     :root {
       --bg: #f4f1ea;
@@ -207,6 +207,33 @@
     .reaction-line { margin-top: 8px !important; padding: 8px 10px; border-radius: 9px; background: #f3f3ed; font-variant-numeric: tabular-nums; }
     .event-study table { min-width: 1080px; }
     .event-study td:nth-child(n+3):nth-child(-n+8) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .earnings-axis-shell { width: 100%; overflow-x: auto; margin: 14px 0 20px; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
+    .earnings-axis { position: relative; display: flex; gap: 0; min-width: 1370px; padding: 22px 26px 20px; }
+    .earnings-axis::before { content: ""; position: absolute; left: 38px; right: 38px; top: 57px; height: 2px; background: #cfd5d1; }
+    .earnings-node { position: relative; flex: 1 0 128px; min-width: 0; padding: 55px 9px 0; }
+    .earnings-node::before { content: ""; position: absolute; z-index: 2; top: 28px; left: 50%; width: 13px; height: 13px; transform: translateX(-50%); border: 3px solid #fff; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 2px var(--green); }
+    .earnings-node.future::before { background: #fff; box-shadow: 0 0 0 2px var(--amber); }
+    .earnings-node.focus::before { background: var(--blue); box-shadow: 0 0 0 2px var(--blue); }
+    .earnings-node.now::after { content: "NOW"; position: absolute; top: -13px; left: 50%; height: 78px; padding-left: 5px; transform: translateX(-1px); border-left: 2px dashed var(--red); color: var(--red); font-size: 9px; font-weight: 850; letter-spacing: .08em; }
+    .earnings-node time { display: block; color: var(--muted); font-size: 11px; font-weight: 820; font-variant-numeric: tabular-nums; }
+    .earnings-node strong { display: block; margin-top: 3px; font-size: 13px; line-height: 1.35; }
+    .earnings-node small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; line-height: 1.4; }
+    .reaction-bars { margin: 14px 0 20px; padding: 18px; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
+    .reaction-scale, .reaction-row { display: grid; grid-template-columns: 110px minmax(260px, 1fr) 66px; gap: 10px; align-items: center; }
+    .reaction-scale { margin-bottom: 7px; color: var(--muted); font-size: 10px; }
+    .reaction-scale-axis { display: flex; justify-content: space-between; }
+    .reaction-row { margin: 9px 0; font-size: 12px; }
+    .reaction-name { font-weight: 780; }
+    .reaction-track { position: relative; height: 14px; overflow: hidden; border-radius: 4px; background: repeating-linear-gradient(to right, #f3f3ed 0, #f3f3ed calc(25% - 1px), #e0e2dc calc(25% - 1px), #e0e2dc 25%); }
+    .reaction-fill { display: block; height: 100%; margin-left: auto; border: 1px solid #75827b; border-radius: 4px 0 0 4px; background: #a9b2ad; }
+    .reaction-fill.focus { border-color: var(--blue); background: var(--blue); }
+    .reaction-fill.meitu { border: 2px solid var(--blue); background: #fff; }
+    .reaction-fill.benchmark { border-color: #9da7a1; background: #d9ddd9; }
+    .reaction-value { text-align: right; font-weight: 820; font-variant-numeric: tabular-nums; }
+    .earnings-bridge { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+    .earnings-bridge > div { padding: 15px; border: 1px solid var(--line); border-radius: 13px; background: #fff; }
+    .earnings-bridge strong { display: block; margin-bottom: 5px; }
+    .earnings-bridge p { margin: 0; color: var(--muted); font-size: 13px; }
     details { margin-top: 13px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
     summary { cursor: pointer; padding: 13px 15px; font-weight: 750; }
     details > div { padding: 0 15px 15px; color: #455049; }
@@ -238,6 +265,8 @@
       .scorecard > div:nth-child(3n+1) { padding-top: 14px; font-weight: 800; border-top: 1px solid var(--line); }
       .scorecard > div:nth-child(3n) { padding-bottom: 14px; }
       .status-strip, .evidence-grid { grid-template-columns: 1fr; }
+      .earnings-bridge { grid-template-columns: 1fr; }
+      .reaction-scale, .reaction-row { grid-template-columns: 90px minmax(190px, 1fr) 58px; }
     }
     @media print {
       body { background: white; color: black; }
@@ -257,7 +286,8 @@
       <p class="dek">报告只追问两个问题：十年后完全摊薄的每股 owner earnings 能否持续增长；以及在 HK$4.77 的价格下，预期回报和安全边际是否足以承受留存、AI 成本、竞争与稀释误差。</p>
       <div class="meta">
         <span class="pill"><span class="dot"></span>Artifact：needs_human_review</span>
-        <span class="pill">快照：2026-08-04</span>
+        <span class="pill">基本面快照：2026-08-04</span>
+        <span class="pill">财报事件章：2026-08-07 11:46</span>
         <span class="pill">价格锚点：2026-08-03 收盘 · HK$4.77</span>
         <span class="pill" id="stale-status">更新检查点：2026-08-26 中报</span>
         <span class="pill">公开资料 · 非投资建议</span>
@@ -297,6 +327,7 @@
       <a href="#model">模型与替代</a>
       <a href="#model-economics">模型降价趋势</a>
       <a href="#rotation">AI 应用主线</a>
+      <a href="#ai-earnings-timeline">AI 应用财报轴</a>
       <a href="#financials">财务质量</a>
       <a href="#cfo">CFO 讲话</a>
       <a href="#capital">回购与治理</a>
@@ -318,7 +349,7 @@
     <section id="executive-summary">
       <p class="eyebrow">Executive Summary · answer first</p>
       <h2>先回答最终的两个问题</h2>
-      <p class="section-dek">结论来自截至 2026-08-04 的公开资料。公司质量、研究完备度、估值口径和价格判断分开表达；情景不是收益承诺或交易指令。</p>
+      <p class="section-dek">主体基本面与估值结论来自截至 2026-08-04 的公开资料；AI 应用财报事件章更新至 2026-08-07 11:46。公司质量、研究完备度、估值口径和价格判断分开表达；情景不是收益承诺或交易指令。</p>
       <div class="entry-grid">
         <article class="entry-card">
           <div class="label">问题一 · 生意</div>
@@ -1128,8 +1159,8 @@
       <h2>AI 应用行业与资金主线：历史、近期与美国映射</h2>
       <p class="section-dek">小盘应用股通常在事件发生前后快速完成定价。这里不靠单一 20 日涨跌判断“轮动”，而是把历史价格阶段、近期大波动、美国领先信号、应用层盈利证据和未来催化放进同一条可证伪链。</p>
       <div class="callout amber">
-        <strong>截至 2026-08-04：应用层有经营兑现样本，但“AI 主线已从硬件切到应用”仍未确认。</strong><br>
-        港股在 6 月 1 日出现过一次广泛的 AI 应用/SaaS 拉升，美图单日 +26.2%；7 月 30 日盘后 H1 初步公告后，首个完整交易日上涨 10.3%，截至 8 月 3 日相对公告前收盘上涨 11.4%，显著跑赢同期恒生科技。但 7 月 29 日股价已先涨 13.1%，归因并不干净；美国官方市场回顾仍显示半导体与软件分化。更准确的状态是“美图先交出经营预告，行业主线仍待多家公司财报与现金利润确认”。
+        <strong>截至 2026-08-07 11:46：应用层需求得到更多验证，但价格在重估利润捕获，“AI 主线已从硬件切到应用”仍未确认。</strong><br>
+        美图 7 月 30 日盘后 H1 初步公告后首日上涨 10.3%；随后 Figma Q2 收入 +48%、NDR 136% 且上调全年收入指引，却在财报后首日下跌 14.7%，AppLovin、Datadog、HubSpot 同日约跌 19%。美图 8 月 6 日下跌 3.47%，8 月 7 日盘中一度再跌 3.81%，11:46 回到前收附近。更准确的状态是“需求和付费证据变强，但软件估值、增速持续性、毛利/现金利润与 SBC 同时被重新定价”。
       </div>
       <h3>应用层的第一性原理链条</h3>
       <div class="table-wrap">
@@ -1193,8 +1224,8 @@
           <thead><tr><th>确认层</th><th>需要看到</th><th>当前结果</th><th>状态</th></tr></thead>
           <tbody>
             <tr><td>美国市场领导权</td><td>软件/应用相对半导体连续走强，而非单日反弹</td><td><a href="https://www.nasdaq.com/videos/nasdaq-100-weekly-nasdaq-100r-index-2q2026-performance-commentary">Nasdaq 2Q 回顾</a>仍称反弹由半导体突出表现驱动，软件分化扩大</td><td><span class="tag risk">未通过</span></td></tr>
-            <tr><td>应用财报广度</td><td>至少两至三家应用/创意软件上修收入、ARR 和指引</td><td><a href="https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm">Adobe Q2</a>收入 66.2 亿美元、+13%，AI-first ARR 超 5 亿美元且同比增至三倍，并上调全年目标；目前仍是单个强样本</td><td><span class="tag warn">部分通过</span></td></tr>
-            <tr><td>板块价格广度</td><td>应用股在硬件调整时能独立走强，并保持五日以上</td><td>6/1 港股应用股集体拉升，但美图 T0 后五日 -12.5%；7/17 又与科技股共跌</td><td><span class="tag risk">未通过</span></td></tr>
+            <tr><td>应用财报广度</td><td>至少两至三家应用/创意软件上修收入、ARR 和指引</td><td><a href="https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm">Adobe Q2</a>与<a href="https://www.sec.gov/Archives/edgar/data/1579878/000162828026053331/q226pressrelease.htm">Figma Q2</a>都验证需求和 AI 变现；Figma 财报后价格大跌，说明需求广度和股价广度分离</td><td><span class="tag warn">经营通过 / 价格未过</span></td></tr>
+            <tr><td>板块价格广度</td><td>应用股在硬件调整时能独立走强，并保持五日以上</td><td>8/6 FIG −14.7%、APP/DDOG/HUBS 约 −19%，IGV −1.85%；应用财报股相对大盘显著承压</td><td><span class="tag risk">未通过</span></td></tr>
             <tr><td>中国平台确认</td><td>腾讯/阿里披露应用参与度、商业化、分发或推理降本</td><td>腾讯 8/12 尚未披露；阿里合作的收入贡献未量化</td><td><span class="tag warn">待事件</span></td></tr>
             <tr><td>美图利润转换</td><td>付费、生产力收入、毛利、现金流同时成立</td><td>H1 预告已通过收入与调整利润；毛利、现金流、SBC、留存及每股桥仍未知</td><td><span class="tag warn">部分通过</span></td></tr>
             <tr><td>替代风险</td><td>应用获得分发和降本，但平台不直接吞掉工作流</td><td>Adobe 已证明 incumbent 也能把 AI 变成 ARR；这既验证需求，也提高美图竞争门槛</td><td><span class="tag warn">双刃剑</span></td></tr>
@@ -1206,9 +1237,9 @@
         <table>
           <thead><tr><th>层级</th><th>美国/全球映射</th><th>关系类型</th><th>传导到美图的方式</th><th>近期验证</th></tr></thead>
           <tbody>
-            <tr><td>创意工作流</td><td>Adobe、Figma；Canva（未上市）</td><td><strong>直接竞争/需求读穿</strong></td><td>定价、Agent 工作流、企业席位与模型打包决定生产力业务上限</td><td>Adobe Q2 已验证 AI 需求；Figma 8/5、Adobe 9/10</td></tr>
+            <tr><td>创意工作流</td><td>Adobe、Figma；Canva（未上市）</td><td><strong>直接竞争/需求读穿</strong></td><td>定价、Agent 工作流、企业席位与模型打包决定生产力业务上限</td><td>Adobe/Figma 已验证 AI 需求；Figma 同时暴露利润捕获与估值压力；下一节点 Adobe 9/10</td></tr>
             <tr><td>消费创意/社交</td><td>Meta、Snap</td><td><strong>相邻应用 + 平台替代</strong></td><td>创意工具参与度、广告需求和消费者付费；平台也可内置编辑能力</td><td>Meta 7/29；Snap 8/3</td></tr>
-            <tr><td>应用获客/变现</td><td>AppLovin、Unity</td><td><strong>CAC/广告代理</strong></td><td>反映应用买量效率、广告变现和风险偏好，不是美图估值可比</td><td>AppLovin 8/5；关注 CAC、广告转化与指引</td></tr>
+            <tr><td>应用获客/变现</td><td>AppLovin、Unity</td><td><strong>CAC/广告代理</strong></td><td>反映应用买量效率、广告变现和风险偏好，不是美图估值可比</td><td>AppLovin 8/6 财报后收跌约 19.7%；只作 CAC/风险偏好代理</td></tr>
             <tr><td>模型/入口/云</td><td>Microsoft、Alphabet、Amazon、Apple、OpenAI（未上市）</td><td><strong>供应商 + 分发者 + 潜在替代者</strong></td><td>决定 API/推理成本、系统入口、电商/办公分发，也可能把创意任务直接包进助手</td><td>Microsoft 7/29；Apple/Amazon 7/30；Alphabet 产品更新持续</td></tr>
             <tr><td>广义企业 AI 软件</td><td>Palantir、Snowflake、Datadog</td><td><strong>风险偏好/商业化广度</strong></td><td>验证企业是否愿意为 AI 软件付费，但客户、产品和毛利结构与美图差异大</td><td>只能做板块广度，不作直接可比估值</td></tr>
             <tr><td>硬件对照组</td><td>NVIDIA、SOX/半导体</td><td><strong>间接成本与拥挤度</strong></td><td>硬件回落可能释放注意力；也可能代表整个 AI 风险偏好下降</td><td>NVIDIA 8/26；硬件弱不自动等于应用强</td></tr>
@@ -1222,7 +1253,7 @@
         <table>
           <thead><tr><th>情景</th><th>可观察触发</th><th>行业含义</th><th>对美图的验证</th></tr></thead>
           <tbody>
-            <tr><td><span class="tag good">主线切换确认</span></td><td>美国平台强调应用收入/分发/推理效率；Figma/AppLovin 等出现财报广度；腾讯确认中国应用变现</td><td>从硬件独占主线转成“硬件 + 应用盈利”双主线</td><td>中报同时守住付费、生产力收入、≥约 73% 毛利和现金流</td></tr>
+            <tr><td><span class="tag good">主线切换确认</span></td><td>后续软件财报不再 good-news-sold；至少 2—3 家收入、指引、利润率与 T+5 同向；腾讯确认中国应用变现</td><td>从硬件独占主线转成“硬件 + 应用盈利”双主线</td><td>中报同时守住付费、生产力收入、≥约 73% 毛利和现金流</td></tr>
             <tr><td><span class="tag warn">战术性轮动</span></td><td>硬件继续调整，应用股反弹但财报只个别强、五日广度不持续</td><td>更多是拥挤度/空头回补，弹性大但持续性低</td><td>美图可随板块脉冲，但不能提高长期盈利假设</td></tr>
             <tr><td><span class="tag risk">应用再定价向下</span></td><td>平台直接打包创意 Agent；软件席位/ARPU 承压；美图 Q2 增长靠营销且毛利/现金流恶化</td><td>“模型降本利好应用”被“平台吞工作流”反转</td><td>小盘、高波动、可转债/治理风险会放大下行</td></tr>
           </tbody>
@@ -1230,8 +1261,141 @@
       </div>
       <div class="callout amber">
         <strong>结论：近期“会不会有机会”——有条件、有事件密度，但不是高置信主线。</strong><br>
-        截至 8/4，Adobe 提供了一个强应用商业化样本，但尚不足以证明板块广度；下一步确认顺序是：8/5 Figma/AppLovin 等扩展财报广度 → 8/12 腾讯确认本地应用商业化 → 8/26 美图正式 H1 报表证明收入能转成毛利、现金流和每股价值。任一层只有价格、没有财务，均按战术性轮动处理；本章节是研究支持，不构成投资建议。
+        截至 8/7，Adobe 与 Figma 已证明应用需求和 AI 付费可以增长，但 Figma 及同日软件财报股的大跌表明“经营广度”尚未转成“价格广度”。下一步确认顺序是：8/10—8/12 新一批软件/中国平台财报检验是否止跌 → 8/26 美图正式 H1 报表证明收入能转成毛利、现金流和每股价值 → 9/10 Adobe 再验创意工作流。任一层只有价格、没有财务，均按战术性轮动处理；本章节是研究支持，不构成投资建议。
       </div>
+    </section>
+
+    <section id="ai-earnings-timeline">
+      <p class="eyebrow">Earnings timeline · cross-market read-through</p>
+      <h2>AI 应用财报时间轴：Figma 是最新锚点，但更准确的因果单位是“软件财报簇”</h2>
+      <p class="section-dek">本章独立记录 2026 年 5 月至 9 月的已披露与未来节点，并把财务实际、价格反应和美图映射分开。跨公司只按 <code>thematic_peer</code>、<code>same_supply_chain</code> 或 demand read-through 使用，不把 Figma、Adobe、腾讯和美图写成同一经济暴露。</p>
+
+      <div class="callout blue">
+        <strong>截至 2026-08-07 11:46 的结论：</strong><br>
+        Figma 财报是美图 8 月 6 日走弱的<strong>高相关时间锚</strong>，但“Figma 一家公司导致美图下跌”证据不足；更有解释力的是 <strong>Figma + AppLovin + Datadog + HubSpot 的软件财报簇重估</strong>。Figma 的收入、NDR 和 AI credits 很强，却伴随增速指引回落、毛利/自由现金流率下降及高 SBC，市场卖的是“利润捕获与估值”，不是“AI 没人用”。美图 8 月 7 日盘中一度跌 3.81%，11:46 已回到前收附近，说明第二轮外部卖压暂被部分吸收；但当天尚未收盘，不能把盘中修复写成趋势反转。
+      </div>
+
+      <div class="grid" aria-label="AI 应用财报章关键快照">
+        <div class="card">
+          <div class="k">Figma Q2 收入</div>
+          <div class="v">+48%</div>
+          <div class="s">US$370.1m；较上一季公司 Q2 指引中点高约 6.0%</div>
+        </div>
+        <div class="card">
+          <div class="k">FIG 财报后首日</div>
+          <div class="v down">−14.7%</div>
+          <div class="s">收入和全年指引偏强，价格仍显著负共振</div>
+        </div>
+        <div class="card">
+          <div class="k">美图 8 月 6 日</div>
+          <div class="v down">−3.47%</div>
+          <div class="s">同期 HSTECH −2.28%；相对约 −1.19pct</div>
+        </div>
+        <div class="card">
+          <div class="k">美图 8 月 7 日 11:46</div>
+          <div class="v">HK$4.735</div>
+          <div class="s">+0.11%；盘中低点 HK$4.55，未完成交易日</div>
+        </div>
+      </div>
+
+      <h3>横向事件轴：过去的基线、现在的共振、未来的验证</h3>
+      <p><strong>读法：</strong>实心点表示已发生，空心点表示官方确认的未来事件；红色虚线是本章行情快照。Figma Q1 被保留，是为了冻结 Q2 的公司指引基线；美图自己的中报是最终验证点，而不是靠美国同行替代。</p>
+      <div class="earnings-axis-shell" role="img" aria-label="2026年5月至9月美图与AI应用财报横向时间轴">
+        <div class="earnings-axis">
+          <article class="earnings-node"><time>05-06</time><strong>美图 Q1</strong><small>付费、核心收入、生产力 ARR</small></article>
+          <article class="earnings-node"><time>05-14</time><strong>Figma Q1</strong><small>冻结 Q2 指引 US$348m–350m</small></article>
+          <article class="earnings-node"><time>06-11</time><strong>Adobe Q2</strong><small>收入 +13%；AI-first ARR &gt;US$500m</small></article>
+          <article class="earnings-node"><time>07-30</time><strong>美图 H1 预告</strong><small>核心收入 +30.9%；调整利润 +36%–40%</small></article>
+          <article class="earnings-node focus"><time>08-05 / 北京 08-06</time><strong>Figma Q2</strong><small>需求强，股价次日 −14.7%</small></article>
+          <article class="earnings-node now"><time>08-07 11:46</time><strong>当前快照</strong><small>美图下探后回到前收附近</small></article>
+          <article class="earnings-node future"><time>08-10</time><strong>monday.com</strong><small>企业工作流与销售效率</small></article>
+          <article class="earnings-node future"><time>08-12</time><strong>腾讯 Q2</strong><small>中国平台、分发与推理效率</small></article>
+          <article class="earnings-node future focus"><time>08-26</time><strong>美图 H1</strong><small>毛利、CFO、SBC、每股桥</small></article>
+          <article class="earnings-node future"><time>09-10</time><strong>Adobe Q3</strong><small>AI ARR、捆绑、利润率</small></article>
+        </div>
+      </div>
+
+      <h3>8 月 6 日价格共振：单名跌幅远大于软件指数</h3>
+      <p><strong>这个图支持“财报簇重估”，不支持把所有跌幅都归给 Figma。</strong>FIG、APP、DDOG 和 HUBS 同日跌约 15%—20%，远大于 IGV 与 QQQ；美图在 Figma 结果已公开、但 Figma 自身尚未完成美股交易的 8 月 6 日先跌 3.47%。这说明市场对应用/软件的增长质量和利润捕获更敏感，但各公司财报内容不同，不能把横截面跌幅当成同一财务 surprise。</p>
+      <div class="reaction-bars" role="img" aria-label="2026年8月6日美国软件财报股、指数与美图价格反应比较">
+        <div class="reaction-scale"><span></span><div class="reaction-scale-axis"><span>−20%</span><span>−10%</span><span>0%</span></div><span></span></div>
+        <div class="reaction-row"><span class="reaction-name">AppLovin</span><div class="reaction-track"><span class="reaction-fill" style="width:98.4%"></span></div><span class="reaction-value">−19.7%</span></div>
+        <div class="reaction-row"><span class="reaction-name">Datadog</span><div class="reaction-track"><span class="reaction-fill" style="width:95.4%"></span></div><span class="reaction-value">−19.1%</span></div>
+        <div class="reaction-row"><span class="reaction-name">HubSpot</span><div class="reaction-track"><span class="reaction-fill" style="width:95.2%"></span></div><span class="reaction-value">−19.0%</span></div>
+        <div class="reaction-row"><span class="reaction-name">Figma</span><div class="reaction-track"><span class="reaction-fill focus" style="width:73.4%"></span></div><span class="reaction-value">−14.7%</span></div>
+        <div class="reaction-row"><span class="reaction-name">美图 8/6</span><div class="reaction-track"><span class="reaction-fill meitu" style="width:17.4%"></span></div><span class="reaction-value">−3.47%</span></div>
+        <div class="reaction-row"><span class="reaction-name">IGV</span><div class="reaction-track"><span class="reaction-fill benchmark" style="width:9.2%"></span></div><span class="reaction-value">−1.85%</span></div>
+        <div class="reaction-row"><span class="reaction-name">QQQ</span><div class="reaction-track"><span class="reaction-fill benchmark" style="width:1.9%"></span></div><span class="reaction-value">−0.39%</span></div>
+        <p class="chart-note">FIG、APP、DDOG、HUBS、IGV、QQQ 为 2026-08-06 美股完整收盘；美图为 8 月 6 日港股完整收盘。不同交易时区和公司事件不支持机械横比，只用于观察风险偏好广度。</p>
+      </div>
+
+      <h3>Figma 给了两组相反但同时成立的证据</h3>
+      <div class="two">
+        <div class="callout blue">
+          <strong>需求与商业化得到验证</strong>
+          <ul class="clean">
+            <li>收入 US$370.1m、同比 +48%，连续第三季加速。</li>
+            <li>NDR 136%；&gt;US$10k ARR 客户中超过 80% 每周使用 AI credits。</li>
+            <li>截至 7 月 31 日，超过一半的 &gt;US$10k ARR 客户每周使用 Figma agent。</li>
+            <li>FY2026 收入指引中点上调 US$40m，说明 AI 不是只有演示、没有付费。</li>
+          </ul>
+        </div>
+        <div class="callout amber">
+          <strong>利润捕获和估值承受压力</strong>
+          <ul class="clean">
+            <li>Q3 指引中点同比 +36%，低于 Q2 的 +48%，市场开始交易减速。</li>
+            <li>GAAP 毛利率 84%，上年约 89%；FCF margin 14%，上年 24%。</li>
+            <li>Q2 SBC US$147.6m，上年 US$7.3m；GAAP 经营亏损 US$117.3m。</li>
+            <li>公告没有把毛利下降全部拆成 AI 推理成本，不能擅自把原因单归给模型费用。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout amber"><strong>对美图的真正映射：</strong>Figma 证明“AI 应用有人用、有人付费”，同时提醒“收入增长不等于每股价值增长”。美图需要在 8 月 26 日用毛利、CFO、SBC、渠道/模型成本和完全摊薄股份回答同一个利润捕获问题。</div>
+
+      <h3>“是 Figma 导致的”可以支持到什么程度</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>检验</th><th>观察到的证据</th><th>支持度</th><th>结论边界</th></tr></thead>
+          <tbody>
+            <tr><td>时间顺序</td><td>Figma 8 月 5 日美股盘后披露，北京 8 月 6 日 05:00 电话会；美图 8 月 6 日开盘后走弱</td><td><span class="tag good">强</span></td><td>结果在港股开盘前可交易，顺序吻合</td></tr>
+            <tr><td>业务相似度</td><td>两者都在创意/设计工作流和 AI credits 变现，但客户、地区、产品组合与会计口径不同</td><td><span class="tag warn">中</span></td><td>只能标 <code>thematic_peer</code>，不能直接套估值</td></tr>
+            <tr><td>板块广度</td><td>FIG、APP、DDOG、HUBS 同日均大跌，IGV/QQQ 跌幅明显更小</td><td><span class="tag good">强</span></td><td>更像财报簇/拥挤度重估，不是 Figma 单名噪声</td></tr>
+            <tr><td>美图自身新利空</td><td>8 月 5 日最新官方披露为月报表，股本与库存股没有变动；未发现同期新的经营利空公告</td><td><span class="tag info">偏弱反证</span></td><td>没有新公告不等于没有未知信息，只降低公司明牌利空解释</td></tr>
+            <tr><td>后续价格确认</td><td>8 月 7 日美图盘中低见 HK$4.55，11:46 回到 HK$4.735；交易日未结束</td><td><span class="tag warn">混合</span></td><td>有传导，也有承接；需等收盘和 T+5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>归因结论：</strong><span class="tag warn">medium confidence</span> “Figma 是最直接的创意软件锚”成立；“Figma 单独导致美图下跌”不成立。当前最稳妥表述是：<strong>Figma 的 good-news-sold，加上同日多只软件财报股大跌，触发了应用层利润捕获与估值风险的跨市场重估；美图因小盘、高波动和创意应用标签受到相邻传导。</strong></p>
+
+      <h3>接下来哪些财报真正有用</h3>
+      <p>未来节点不是越多越好。排序原则是：美图自身正式数据 &gt; 中国平台/消费应用 &gt; 直接创意工作流 &gt; 广义企业 SaaS。只有多家公司同时出现收入、指引、利润率和财报后持续性，才算“应用主线广度”。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>北京时间</th><th>节点</th><th>状态</th><th>主要观察</th><th>对美图的关系</th></tr></thead>
+          <tbody>
+            <tr><td>08-10 20:30</td><td>monday.com Q2</td><td><span class="tag good">confirmed</span></td><td>ARR/NRR、AI 付费、销售效率、利润率和指引</td><td><code>thematic_peer</code> · 企业工作流</td></tr>
+            <tr><td>08-11 19:00</td><td>腾讯音乐 Q2</td><td><span class="tag good">confirmed</span></td><td>中国消费订阅、ARPU、内容成本与 AI 参与度</td><td><code>thematic_peer</code> · 消费付费</td></tr>
+            <tr><td>08-12 20:00</td><td>腾讯 Q2</td><td><span class="tag good">confirmed</span></td><td>AI 应用收入、广告工具、云推理效率、应用分发</td><td><code>same_supply_chain</code></td></tr>
+            <tr><td>08-25—09-03</td><td>美国 SaaS 第二观察簇</td><td><span class="tag warn">reported_secondary</span></td><td>INTU/ZM/CRWD/ADSK/WDAY/PANW/CRM/SNOW 等能否形成盈利与价格广度</td><td><code>thematic_peer</code> · 风险偏好；日期待公司 IR 确认</td></tr>
+            <tr><td>08-26</td><td><strong>美图 H1</strong></td><td><span class="tag good">confirmed</span></td><td><strong>毛利、CFO、SBC、模型/渠道成本、合同负债、净现金、完全摊薄股数</strong></td><td><code>same_company_listing</code> · 最高权重</td></tr>
+            <tr><td>09-10 / 北京 09-11</td><td>Adobe Q3</td><td><span class="tag good">confirmed</span></td><td>AI-first ARR、Creative Cloud 净新增、捆绑定价与利润率</td><td><code>thematic_peer</code> · 直接创意工作流</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="earnings-bridge" aria-label="跨公司财报到美图的验证链">
+        <div><strong>1 · 美国财报只回答广度</strong><p>Figma/Adobe 看创意工作流，monday/SaaS 簇看软件席位、AI 付费与利润率；不能替代美图报表。</p></div>
+        <div><strong>2 · 腾讯回答本地传导</strong><p>模型/云成本、流量与广告工具、分发入口决定中国应用的获客与利润池边界。</p></div>
+        <div><strong>3 · 美图 H1 才能闭环</strong><p>付费和 ARR 必须落到毛利、现金流、SBC 与完全摊薄每股 owner earnings。</p></div>
+      </div>
+
+      <details>
+        <summary>时间轴方法与数据边界</summary>
+        <div>
+          <p>沿用 Seed 财报季时间轴方法：官方 IR/SEC/HKEX 才标 <code>confirmed</code>；二级财报日历标 <code>reported_secondary</code>；过去事件先冻结事前公司指引，再追加实际和市场反应。缺失的 T+1/T+5 不按 0，8 月 7 日盘中值带 11:46 时间戳。跨市场反应同时受时差、宏观和各家公司财报影响，章节只记录共振与归因置信度，不输出买卖指令。</p>
+        </div>
+      </details>
+      <p><small>机器可读记录：<a href="./data/ai-application-earnings-timeline.json">ai-application-earnings-timeline.json</a>。主源：<a href="https://www.sec.gov/Archives/edgar/data/1579878/000162828026035087/q126pressrelease.htm">Figma Q1</a>、<a href="https://www.sec.gov/Archives/edgar/data/1579878/000162828026053331/q226pressrelease.htm">Figma Q2</a>、<a href="https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm">Adobe Q2</a>、<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf">美图 H1 初步更新</a>、<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf">美图 H1 日期</a>。行情为 8 月 6 日美股完整收盘及<a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2026-07-24,2026-08-08,30,qfq">腾讯美图/HSTECH 快照</a>；市场数据是二级行情，不是交易所认证数据。</small></p>
     </section>
 
     <section id="financials">
@@ -2580,10 +2744,15 @@
           <div class="timeline-title">Microsoft、Meta、Apple、Amazon 财报</div>
           <p>本次美图更新没有补抓四家公司实际结果，保持 source gap；后续只提炼 Agent/应用收入、分发、推理效率和平台直接打包创意功能的可验证 read-through。</p>
         </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026-08-05—08-06 · COMPLETED / CROSS-MARKET READ-THROUGH</div>
+          <div class="timeline-title">Figma Q2 与美国软件财报簇重估</div>
+          <p>Figma 收入 +48%、NDR 136% 并上调全年收入指引，但 FIG 次日 −14.7%，APP/DDOG/HUBS 约跌 19%；美图 8 月 6 日 −3.47%。需求强与价格弱同时成立，完整拆解见<a href="#ai-earnings-timeline">独立财报时间轴章节</a>。</p>
+        </div>
         <div class="timeline-item future">
-          <div class="timeline-date">2026-08-03—08-05 · CONFIRMED</div>
-          <div class="timeline-title">Snap、AppLovin、Figma 财报</div>
-          <p>分别映射广告需求/CAC 与创意 SaaS 付费，不是美图直接可比；需与美图营销效率和生产力 KPI 交叉确认。</p>
+          <div class="timeline-date">2026-08-10—08-11 · CONFIRMED</div>
+          <div class="timeline-title">monday.com、腾讯音乐 Q2</div>
+          <p>分别映射企业工作流与中国消费订阅；观察 AI 付费、ARPU、销售效率、利润率和指引，不作直接估值可比。</p>
         </div>
         <div class="timeline-item future">
           <div class="timeline-date">2026-08-12 · CONFIRMED</div>
@@ -2794,6 +2963,8 @@
         <li><a href="https://www.canva.com/newsroom/news/canva-create-2026-ai/">Canva Create 2026</a></li>
         <li><a href="https://news.adobe.com/news/2026/06/adobe-unveils-major-expansion">Adobe Creative Agent expansion</a></li>
         <li><a href="https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm">Adobe FY2026Q2 业绩与 AI-first ARR</a></li>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/1579878/000162828026035087/q126pressrelease.htm">Figma 2026Q1 业绩与 Q2/FY 指引基线</a></li>
+        <li><a href="https://www.sec.gov/Archives/edgar/data/1579878/000162828026053331/q226pressrelease.htm">Figma 2026Q2 业绩、AI credits、利润率与 SBC</a></li>
         <li><a href="https://www.nasdaq.com/docs/NYGBIG-software-selloff_article_final">Nasdaq · 2026 年软件承压与 AI 商品化风险</a></li>
         <li><a href="https://www.nasdaq.com/videos/nasdaq-100-weekly-nasdaq-100r-index-2q2026-performance-commentary">Nasdaq · 2026Q2 半导体/软件分化</a></li>
         <li><a href="https://finance.sina.com.cn/wm/2026-06-01/doc-inhzwyqm5155141.shtml">6 月 1 日港股 AI 应用轮动（二级来源）</a></li>
@@ -2810,6 +2981,8 @@
         <li><a href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-to-Webcast-Second-Quarter-2026-Financial-Results-Conference-Call/default.aspx">Amazon 财报日历</a></li>
         <li><a href="https://investors.applovin.com/news/news-details/2026/AppLovin-to-Announce-Second-Quarter-2026-Results/default.aspx">AppLovin 财报日历</a></li>
         <li><a href="https://investor.figma.com/news-events/news/news-details/2026/Figma-to-Announce-Second-Quarter-2026-Financial-Results-on-August-5-2026/default.aspx">Figma 财报日历</a></li>
+        <li><a href="https://ir.monday.com/news-and-events/news-releases/news-details/2026/monday-com-to-Announce-Second-Quarter-2026-Financial-Results-on-Monday-August-10-2026/default.aspx">monday.com Q2 财报日历</a></li>
+        <li><a href="https://ir.tencentmusic.com/2026-07-14-Tencent-Music-Entertainment-Group-to-Report-Second-Quarter-2026-Financial-Results-on-August-11,-2026">腾讯音乐 Q2 财报日历</a></li>
         <li><a href="https://www.tencent.com/en-us/investors.html">腾讯投资者日历</a></li>
         <li><a href="https://investor.nvidia.com/events-and-presentations/events-and-presentations/event-details/2026/NVIDIA-2nd-Quarter-FY27-Financial-Results/default.aspx">NVIDIA 财报日历（间接映射）</a></li>
         <li><a href="https://www.hsi.com.hk/en-hk/media-room/">恒生指数季度检讨日历</a></li>
@@ -2830,7 +3003,7 @@
   <footer>
     <div class="wrap">
       <p>本报告是基于公开资料的研究快照，不构成投资建议、要约、目标价或收益承诺。第三方流量与商店数据会变化；2026H1 初步更新基于未经审核和未经审阅的管理账；估值对假设高度敏感。</p>
-      <p>配套数据：<a href="./data/financial-five-year.csv">五年财务主干</a> · <a href="./data/owner-earnings-bridge.csv">Owner earnings 桥</a> · <a href="./data/net-cash-bridge.csv">净现金桥</a> · <a href="./data/fully-diluted-share-bridge.csv">完全摊薄股份桥</a> · <a href="./data/roic-history.csv">ROIC 筛查</a> · <a href="./data/market-pricing-state.csv">市场定价状态</a> · <a href="./data/peer-valuation-comparison.csv">同行估值矩阵</a> · <a href="./data/financial-half-year-series.csv">半年度财务</a> · <a href="./data/quarterly-watch.csv">H1 验证</a> · <a href="./data/pe-denominator-matrix.csv">P/E 分母矩阵</a> · <a href="./data/forward-economic-earnings-scenarios.csv">FY2026 前瞻代理</a> · <a href="./data/ten-year-owner-economics-scenarios.csv">十年每股 OE 情景</a> · <a href="./data/app-public-signals.csv">App/网站信号</a> · <a href="./data/event-timeline.csv">事件时间轴</a> · <a href="./data/event-price-reactions.csv">事件价格窗</a> · <a href="./data/small-cap-risk-register.csv">小盘风险登记</a> · <a href="./data/valuation-scenarios.csv">估值情景</a></p>
+      <p>配套数据：<a href="./data/financial-five-year.csv">五年财务主干</a> · <a href="./data/owner-earnings-bridge.csv">Owner earnings 桥</a> · <a href="./data/net-cash-bridge.csv">净现金桥</a> · <a href="./data/fully-diluted-share-bridge.csv">完全摊薄股份桥</a> · <a href="./data/roic-history.csv">ROIC 筛查</a> · <a href="./data/market-pricing-state.csv">市场定价状态</a> · <a href="./data/peer-valuation-comparison.csv">同行估值矩阵</a> · <a href="./data/financial-half-year-series.csv">半年度财务</a> · <a href="./data/quarterly-watch.csv">H1 验证</a> · <a href="./data/pe-denominator-matrix.csv">P/E 分母矩阵</a> · <a href="./data/forward-economic-earnings-scenarios.csv">FY2026 前瞻代理</a> · <a href="./data/ten-year-owner-economics-scenarios.csv">十年每股 OE 情景</a> · <a href="./data/app-public-signals.csv">App/网站信号</a> · <a href="./data/event-timeline.csv">公司事件时间轴</a> · <a href="./data/ai-application-earnings-timeline.json">AI 应用财报时间轴</a> · <a href="./data/event-price-reactions.csv">事件价格窗</a> · <a href="./data/small-cap-risk-register.csv">小盘风险登记</a> · <a href="./data/valuation-scenarios.csv">估值情景</a></p>
     </div>
   </footer>
   <script>

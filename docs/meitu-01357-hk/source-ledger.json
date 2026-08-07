@@ -5,8 +5,8 @@
     "name_en": "Meitu, Inc.",
     "ticker": "01357.HK"
   },
-  "research_snapshot_at": "2026-08-04T10:18:00+08:00",
-  "market_data_cutoff": "2026-08-03",
+  "research_snapshot_at": "2026-08-07T11:46:00+08:00",
+  "market_data_cutoff": "2026-08-07T11:46:00+08:00",
   "policy": {
     "facts": "Audited filings and exchange announcements take precedence.",
     "management_claims": "Speeches, press releases and company rankings are labeled as management claims unless independently corroborated.",
@@ -1643,6 +1643,107 @@
       "locator": "Grant quantity, vesting schedule and settlement-source decision",
       "used_for": ["share_supply_calendar", "share_award_overhang"],
       "limitations": "Grant is not registration, listing or disposal; overlap with trust or treasury holdings must be reconciled before aggregation."
+    },
+    {
+      "id": "F17",
+      "tier": "A",
+      "kind": "official_monthly_return",
+      "title": "Monthly Return of Equity Issuer for July 2026",
+      "publisher": "Meitu / HKEX",
+      "published_at": "2026-08-05",
+      "retrieved_at": "2026-08-07",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0805/2026080501298.pdf",
+      "snapshot_sha256": "81437b32837f382e5f7e8a51e9cdbe8704034a2da587cb7ce04b91053e428487",
+      "locator": "Issued shares and treasury shares at 31 July 2026",
+      "used_for": ["checking for disclosed share-count changes during the Figma read-through window"],
+      "limitations": "A monthly return is not an operating update and cannot prove that no undisclosed information exists."
+    },
+    {
+      "id": "PEER_FIG_Q1_2026",
+      "tier": "A",
+      "kind": "sec_8k_earnings_release",
+      "title": "Figma First Quarter 2026 Financial Results",
+      "publisher": "SEC / Figma",
+      "published_at": "2026-05-14",
+      "retrieved_at": "2026-08-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/1579878/000162828026035087/q126pressrelease.htm",
+      "snapshot_sha256": "bc0995bdb3ee9e4150751dc1727ad48d89e17e41cd2fd5a77dddebc47013cdc7",
+      "locator": "Q2 and FY2026 outlook in the Q1 press release",
+      "used_for": ["freezing Figma Q2 company-guidance baseline before comparing the Q2 actual"],
+      "limitations": "Company guidance is not a sell-side consensus estimate."
+    },
+    {
+      "id": "PEER_FIG_Q2_2026",
+      "tier": "A",
+      "kind": "sec_8k_earnings_release",
+      "title": "Figma Second Quarter 2026 Financial Results",
+      "publisher": "SEC / Figma",
+      "published_at": "2026-08-05",
+      "retrieved_at": "2026-08-07",
+      "url": "https://www.sec.gov/Archives/edgar/data/1579878/000162828026053331/q226pressrelease.htm",
+      "snapshot_sha256": "ac4e894ec66ad06ab3c4918f1547f280239a61de97078da3338ee4a372b5b275",
+      "locator": "Second Quarter 2026 Financial Highlights, Recent Business & Product Highlights, Outlook and GAAP/non-GAAP reconciliations",
+      "used_for": ["Figma revenue, NDR, AI-credit adoption, guidance, gross margin, free-cash-flow margin and SBC read-through"],
+      "limitations": "Figma is a thematic creative-workflow peer, not an economic equivalent to Meitu. The release does not isolate AI inference cost as the sole cause of gross-margin movement."
+    },
+    {
+      "id": "P06",
+      "tier": "B-",
+      "kind": "market_data",
+      "title": "Meitu and HSTECH daily/intraday snapshots through 7 August 2026 11:46 HKT",
+      "publisher": "Tencent",
+      "published_at": "2026-08-07",
+      "retrieved_at": "2026-08-07",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2026-07-24,2026-08-08,30,qfq",
+      "benchmark_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2026-07-24,2026-08-08,30,qfq",
+      "snapshot_sha256": {
+        "01357.HK": "89f4ce9d4adca0a4ade7960648744e1e809a586334d27c42f0403741bb79a0ab",
+        "HSTECH": "bf6be37a69b40c2ffd7b472db709909c04ed9d1451effe176d7420073da45232"
+      },
+      "used_for": ["6 August completed Meitu/HSTECH returns", "7 August 11:46 Meitu/HSTECH intraday read-through"],
+      "limitations": "Vendor data are not exchange-certified. The 7 August session was incomplete at retrieval and is not used as a completed close or T+1/T+5 result."
+    },
+    {
+      "id": "P07",
+      "tier": "B-",
+      "kind": "market_data_aggregator",
+      "title": "6 August 2026 completed US software and benchmark closes",
+      "publisher": "Public market-data aggregation",
+      "published_at": "2026-08-06",
+      "retrieved_at": "2026-08-07",
+      "url": "https://finance.yahoo.com/quote/FIG/history/",
+      "component_urls": {
+        "FIG": "https://finance.yahoo.com/quote/FIG/history/",
+        "APP": "https://finance.yahoo.com/quote/APP/history/",
+        "DDOG": "https://finance.yahoo.com/quote/DDOG/history/",
+        "HUBS": "https://finance.yahoo.com/quote/HUBS/history/",
+        "IGV": "https://finance.yahoo.com/quote/IGV/history/",
+        "QQQ": "https://finance.yahoo.com/quote/QQQ/history/"
+      },
+      "snapshot_sha256": null,
+      "used_for": ["Figma good-news-sold classification", "software earnings-cluster price breadth versus IGV and QQQ"],
+      "limitations": "Secondary market data, not exchange-certified. Different companies reported different financial outcomes; the same-session returns are a breadth signal, not one common surprise."
+    },
+    {
+      "id": "CAL_AI_APPS_20260807",
+      "tier": "A/B",
+      "kind": "earnings_calendar_bundle",
+      "title": "Confirmed and secondary AI-application earnings calendar after 7 August 2026",
+      "publisher": "monday.com / Tencent Music / Tencent / Meitu / Adobe / Nasdaq",
+      "published_at": null,
+      "retrieved_at": "2026-08-07",
+      "url": "https://ir.monday.com/news-and-events/news-releases/news-details/2026/monday-com-to-Announce-Second-Quarter-2026-Financial-Results-on-Monday-August-10-2026/default.aspx",
+      "component_urls": {
+        "monday.com": "https://ir.monday.com/news-and-events/news-releases/news-details/2026/monday-com-to-Announce-Second-Quarter-2026-Financial-Results-on-Monday-August-10-2026/default.aspx",
+        "Tencent Music": "https://ir.tencentmusic.com/2026-07-14-Tencent-Music-Entertainment-Group-to-Report-Second-Quarter-2026-Financial-Results-on-August-11,-2026",
+        "Tencent": "https://www.tencent.com.cn/en-us/investors/",
+        "Meitu": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf",
+        "Adobe": "https://www.adobe.com/investor-relations.html",
+        "Nasdaq secondary calendar": "https://www.nasdaq.com/market-activity/earnings"
+      },
+      "snapshot_sha256": null,
+      "used_for": ["future AI-application earnings timeline and Beijing-time conversion"],
+      "limitations": "Company IR/HKEX dates are confirmed. The 25 August to 3 September SaaS cluster remains reported_secondary until each company IR date is checked."
     }
   ]
 }

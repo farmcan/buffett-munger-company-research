@@ -4,6 +4,8 @@
 
 行情锚点：2026-08-03 完整收盘，HK$4.77
 
+AI 应用财报事件章：更新至 2026-08-07 11:46（8 月 7 日为盘中快照）
+
 研究边界：公开资料、非投资建议
 
 ## 先回答两个问题
@@ -33,6 +35,14 @@
 - 公司调整后归母利润预计同比 +36%—40%，IFRS 归母至少 +35%。按 2025H1 基数机械推导，调整后归母约 6.36—6.54 亿元。
 - 反方细节：生产力付费用户从 Q1 约 234 万到 6 月约 235 万，两次都是约数，几乎没有可识别的环比净增；生产力 ARR 同期约增长 6.9%，公司也确认 ARPU 上升。因此 Q2 更像用量/货币化改善，而非用户净增加速。
 - 公告基于未经审核和未经审阅的管理账；毛利率、渠道/模型成本、SBC、CFO、合同负债、净现金与同日摊薄股数仍待 8 月 26 日正式中报。
+
+## AI 应用财报时间轴与 Figma 读穿
+
+- [独立章节](./report.html#ai-earnings-timeline)把美图、Figma、Adobe、monday.com、腾讯音乐、腾讯和下一批美国 SaaS 节点放在同一条北京时间轴；机器可读记录见 [ai-application-earnings-timeline.json](./data/ai-application-earnings-timeline.json)。
+- Figma Q2 收入 US$370.1m、同比 +48%，NDR 136%，FY2026 收入指引上调 US$40m；但 Q3 指引中点同比 +36%，GAAP 毛利率 84%（上年约 89%）、FCF margin 14%（上年 24%），Q2 SBC US$147.6m。
+- FIG 在 8 月 6 日收跌 14.7%，APP/DDOG/HUBS 同日约跌 19%，而 IGV/QQQ 分别约跌 1.85%/0.39%。因此更稳妥的因果单位是“软件财报簇重估”，不是 Figma 单名。
+- 美图 8 月 6 日收跌 3.47%，同期 HSTECH 跌 2.28%；8 月 7 日 11:46 报 HK$4.735、较前收 +0.11%，盘中低见 HK$4.55。盘中修复不能当成完整收盘或趋势反转。
+- 跨公司映射只标 <code>thematic_peer</code> / <code>same_supply_chain</code>：美国财报回答需求和风险偏好广度，8 月 26 日美图 H1 才能用毛利、CFO、SBC、模型/渠道成本和完全摊薄股份闭环。
 
 ## 估值与市场状态
 
@@ -70,6 +80,7 @@ meitu-01357-hk/
 └── data/
     ├── app-public-signals.csv
     ├── critical-evidence-anchors.json
+    ├── ai-application-earnings-timeline.json
     ├── event-price-reactions.csv
     ├── event-timeline.csv
     ├── financial-five-year.csv

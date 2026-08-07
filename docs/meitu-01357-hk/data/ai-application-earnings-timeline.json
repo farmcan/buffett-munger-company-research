@@ -1,0 +1,501 @@
+{
+  "artifact_type": "earnings_season_timeline",
+  "version": "1.1",
+  "title": "美图与 AI 应用：财报节点、价格共振与下一验证",
+  "subtitle": "把美图公司披露、创意软件财报、美国软件价格反应和下一批验证节点放在同一条北京时间轴；跨公司关系只作 thematic_peer / demand_read_through，不视为经济等价。",
+  "as_of": "2026-08-07T11:46:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "date_range": {
+    "start": "2026-05-06",
+    "end": "2026-09-10"
+  },
+  "scope": {
+    "theme": "AI 应用 / 创意软件 / 企业工作流",
+    "markets": ["HKEX", "NYSE", "NASDAQ"],
+    "watchlist": ["01357.HK", "FIG", "ADBE", "MNDY", "0700.HK", "TME"],
+    "user_holdings": []
+  },
+  "not_investment_advice": true,
+  "method": {
+    "date_policy": "官方 IR、SEC 或 HKEX 为 confirmed；Nasdaq 财报日历只作 reported_secondary；北京时间显式换算。",
+    "market_policy": "完成事件记录 T0/T+1/T+5；未完成交易日只写带时间戳的 intraday，不把缺失值当作 0。",
+    "causality_policy": "时间顺序、主题映射、板块广度和公司自身公告共同决定归因置信度；价格共振不是单因果证明。"
+  },
+  "events": [
+    {
+      "event_id": "meitu-q1-2026",
+      "date": "2026-05-06",
+      "time": "07:45",
+      "event_timezone": "Asia/Hong_Kong",
+      "beijing_time": "2026-05-06 07:45",
+      "date_status": "completed",
+      "source_tier": "primary",
+      "event_type": "company_operating_update",
+      "company": "美图公司",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "relationship_to_meitu": "same_company_listing",
+      "impact_score": 5,
+      "why_it_matters": "付费、核心收入和生产力 ARR 同时高增，是近期最清晰的公司经营催化。",
+      "expectation_baseline": "没有事前冻结的一致预期，不做 surprise 分数。",
+      "actual_results": [
+        "核心影像与设计收入 RMB852m，同比 +34.3%",
+        "付费用户超过 17.9m，同比 +30.2%",
+        "AI 生产力 ARR RMB580m，同比 +56.2%"
+      ],
+      "market_reaction": {
+        "intraday": "T−1 HK$4.19 → T0 HK$4.66",
+        "t5": "T−1→T+5 +20.3%；T0→T+5 +8.2%",
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "+17.0pct",
+        "resonance": "positive_resonance",
+        "attribution_confidence": "medium"
+      },
+      "transmission_paths": ["公司 KPI → 盈利预期 → 美图自身估值"],
+      "next_check": "正式中报的毛利、现金流、SBC 和每股利润桥",
+      "source_refs": ["MEITU_Q1_2026", "MEITU_MARKET_20260807"]
+    },
+    {
+      "event_id": "figma-q1-2026-baseline",
+      "date": "2026-05-14",
+      "time": "17:00",
+      "event_timezone": "America/New_York",
+      "beijing_time": "2026-05-15 05:00",
+      "date_status": "completed",
+      "source_tier": "primary",
+      "event_type": "us_creative_saas_earnings",
+      "company": "Figma",
+      "ticker": "FIG",
+      "market": "NYSE",
+      "relationship_to_meitu": "thematic_peer",
+      "impact_score": 4,
+      "why_it_matters": "冻结 Q2 事前公司指引，避免在 Q2 披露后用事后叙事替代基线。",
+      "expectation_baseline": "Q2 revenue guidance US$348m–350m；FY2026 revenue US$1.422bn–1.428bn。",
+      "actual_results": ["Q1 收入增长连续第二季加速", "公司首次给出上述 Q2/FY2026 基线"],
+      "market_reaction": null,
+      "transmission_paths": ["企业设计工作流需求 → 席位与 AI credits → 创意 SaaS 估值"],
+      "next_check": "Q2 实际相对公司指引，以及毛利/现金利润是否同步",
+      "source_refs": ["FIGMA_Q1_2026"]
+    },
+    {
+      "event_id": "adobe-q2-fy2026",
+      "date": "2026-06-11",
+      "time": null,
+      "event_timezone": "America/New_York",
+      "beijing_time": "2026-06-12（美股盘后换算，具体时刻未冻结）",
+      "date_status": "completed",
+      "source_tier": "primary",
+      "event_type": "us_creative_saas_earnings",
+      "company": "Adobe",
+      "ticker": "ADBE",
+      "market": "NASDAQ",
+      "relationship_to_meitu": "thematic_peer",
+      "impact_score": 4,
+      "why_it_matters": "成熟创意软件证明 AI 能带动 ARR，同时也说明 incumbent 可直接把 AI 打包进工作流。",
+      "expectation_baseline": "本时间轴未冻结卖方一致预期，不做精确 surprise。",
+      "actual_results": [
+        "Q2 revenue US$6.62bn，同比 +13%",
+        "AI-first ARR 同比增至三倍并超过 US$500m",
+        "公司上调 FY2026 收入与 non-GAAP EPS 目标"
+      ],
+      "market_reaction": null,
+      "transmission_paths": ["AI 需求验证 → 应用层收入", "incumbent 捆绑 → 独立应用竞争门槛"],
+      "next_check": "9 月 10 日 Q3 的 AI 定价、创意 ARR 与利润率",
+      "source_refs": ["ADOBE_Q2_FY2026"]
+    },
+    {
+      "event_id": "meitu-h1-preliminary-2026",
+      "date": "2026-07-30",
+      "time": "17:48",
+      "event_timezone": "Asia/Hong_Kong",
+      "beijing_time": "2026-07-30 17:48",
+      "date_status": "completed",
+      "source_tier": "primary",
+      "event_type": "company_performance_update",
+      "company": "美图公司",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "relationship_to_meitu": "same_company_listing",
+      "impact_score": 5,
+      "why_it_matters": "首次把付费、ARR 和核心收入增长连接到初步利润增长。",
+      "expectation_baseline": "没有事前冻结的一致预期；只与 Q1 增速及历史基数对照。",
+      "actual_results": [
+        "H1 核心业务收入约 RMB1.8bn，同比 +30.9%",
+        "调整后归母利润同比 +36%–40%；IFRS 归母至少 +35%",
+        "付费用户超过 18.44m；AI 生产力 ARR 约 RMB620m"
+      ],
+      "market_reaction": {
+        "intraday": "7 月 31 日首个完整交易日 +10.3%",
+        "t1": "T−1 7 月 30 日至 8 月 3 日 +11.4%",
+        "t5": null,
+        "partial_window": "T−1 7 月 30 日至 T+4 8 月 6 日 +10.5%；T+5 交易日尚未完成；公告前 7 月 29 日已先涨",
+        "benchmark": "HSTECH",
+        "resonance": "positive_resonance",
+        "attribution_confidence": "medium"
+      },
+      "transmission_paths": ["经营预告 → 美图自身盈利预期", "正式报表质量缺口 → 8 月 26 日再定价"],
+      "next_check": "毛利、SBC、CFO、净现金、合同负债与完全摊薄股份",
+      "source_refs": ["MEITU_H1_PRELIM_2026", "MEITU_MARKET_20260807"]
+    },
+    {
+      "event_id": "figma-q2-2026",
+      "date": "2026-08-05",
+      "time": "17:00",
+      "event_timezone": "America/New_York",
+      "beijing_time": "2026-08-06 05:00",
+      "date_status": "completed",
+      "source_tier": "primary",
+      "event_type": "us_creative_saas_earnings",
+      "company": "Figma",
+      "ticker": "FIG",
+      "market": "NYSE",
+      "relationship_to_meitu": "thematic_peer",
+      "impact_score": 5,
+      "why_it_matters": "这是最接近美图生产力/设计工作流的上市 demand read-through，但客户结构和会计口径不同。",
+      "expectation_baseline": "Q1 公司指引：Q2 revenue US$348m–350m；FY2026 revenue US$1.422bn–1.428bn。",
+      "actual_results": [
+        "Q2 revenue US$370.1m，同比 +48%，较公司指引中点高约 6.0%",
+        "NDR 136%；超过 80% 的 >US$10k ARR 客户每周消耗 AI credits",
+        "FY2026 revenue guidance 上调 US$40m 至 US$1.463bn–1.467bn",
+        "Q3 中点对应同比 +36%，低于 Q2 的 +48%",
+        "GAAP gross margin 84%（上年约 89%）；FCF margin 14%（上年 24%）",
+        "Q2 SBC US$147.6m（上年 US$7.3m）"
+      ],
+      "surprise": {
+        "direction": "good_news_sold",
+        "method": "actual_vs_prior_company_guidance_plus_market_reaction",
+        "confidence": "high",
+        "reason": "收入和全年指引明显偏强，但股价次日下跌 14.7%；市场在重估增速持续性、利润捕获与股权成本。"
+      },
+      "market_reaction": {
+        "t1": "8 月 6 日 US$28.095 → US$23.97，-14.7%",
+        "benchmark": "IGV -1.85%；QQQ -0.39%",
+        "benchmark_adjusted": "相对 IGV 约 -12.8pct；相对 QQQ 约 -14.3pct",
+        "resonance": "negative_price_resonance_despite_positive_fundamentals",
+        "attribution_confidence": "high"
+      },
+      "transmission_paths": [
+        "AI credits 采用 → 需求与变现得到验证",
+        "增速放缓/毛利与 FCF 压力/SBC → 应用利润池折价",
+        "创意 SaaS 估值重估 → 美图 thematic_peer 风险偏好"
+      ],
+      "next_check": "Q3 revenue growth、gross margin、FCF margin、AI credits 毛利与 SBC",
+      "source_refs": ["FIGMA_Q1_2026", "FIGMA_Q2_2026", "US_SOFTWARE_MARKET_20260806"]
+    },
+    {
+      "event_id": "us-software-earnings-cluster-20260806",
+      "date": "2026-08-06",
+      "time": "16:00",
+      "event_timezone": "America/New_York",
+      "beijing_time": "2026-08-07 04:00（美股收盘）",
+      "date_status": "completed",
+      "source_tier": "market_data",
+      "event_type": "software_earnings_cluster_repricing",
+      "company": "美国软件财报簇",
+      "ticker": "FIG / APP / DDOG / HUBS / IGV / QQQ",
+      "market": "NYSE / NASDAQ",
+      "relationship_to_meitu": "thematic_peer",
+      "impact_score": 5,
+      "why_it_matters": "多只财报股同日大跌，说明这不是 Figma 单名噪声，而是增长、预期与利润捕获被同时重估。",
+      "expectation_baseline": "只比较完成收盘，不把不同公司的财务结果混成一个 surprise。",
+      "actual_results": [
+        "FIG -14.7%",
+        "APP -19.7%",
+        "DDOG -19.1%",
+        "HUBS -19.0%",
+        "IGV -1.85%；QQQ -0.39%"
+      ],
+      "market_reaction": {
+        "t1": "2026-08-06 美股完整收盘",
+        "benchmark": "IGV / QQQ",
+        "resonance": "cluster_negative_resonance",
+        "attribution_confidence": "high_for_cluster_low_for_single_name_causality"
+      },
+      "transmission_paths": ["财报预期重置 → 软件估值压缩", "创意/应用风险偏好 → 港股 AI 应用 beta"],
+      "next_check": "8 月 10 日以后新一批软件财报能否止跌并出现盈利广度",
+      "source_refs": ["US_SOFTWARE_MARKET_20260806"]
+    },
+    {
+      "event_id": "meitu-figma-readthrough-20260806-07",
+      "date": "2026-08-07",
+      "time": "11:46",
+      "event_timezone": "Asia/Hong_Kong",
+      "beijing_time": "2026-08-07 11:46",
+      "date_status": "completed_partial_window",
+      "source_tier": "market_data",
+      "event_type": "cross_market_readthrough",
+      "company": "美图公司",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "relationship_to_meitu": "same_company_listing",
+      "impact_score": 4,
+      "why_it_matters": "检验 Figma/美国软件估值重置是否继续向美图传导。",
+      "expectation_baseline": "8 月 5 日美图收盘 HK$4.90；Figma 结果在 8 月 6 日港股开盘前已公开。",
+      "actual_results": [
+        "8 月 6 日美图收盘 HK$4.73，-3.47%；HSTECH -2.28%，相对约 -1.19pct",
+        "8 月 7 日 11:46 美图 HK$4.735，+0.11%；盘中低点 HK$4.55（相对前收 -3.81%）",
+        "同一时点 HSTECH +0.25%；8 月 7 日仍是未完成交易日"
+      ],
+      "market_reaction": {
+        "intraday": "8 月 7 日低开下探后回到前收附近",
+        "t1": null,
+        "t5": null,
+        "benchmark": "HSTECH",
+        "resonance": "initial_negative_then_intraday_absorption",
+        "attribution_confidence": "medium"
+      },
+      "transmission_paths": ["Figma 结果/美股软件共振 → 港股 AI 应用风险偏好", "美图 H1 预告支撑 → 卖压部分吸收"],
+      "next_check": "8 月 7 日完整收盘、成交量，随后 T+5；是否有新的美图官方公告",
+      "source_refs": ["MEITU_MARKET_20260807", "US_SOFTWARE_MARKET_20260806", "MEITU_MONTHLY_RETURN_20260805"],
+      "source_gap": "盘中数据不能替代收盘；未取得逐笔资金来源，不能把全部波动归给 Figma。"
+    },
+    {
+      "event_id": "monday-q2-2026",
+      "date": "2026-08-10",
+      "time": "08:30",
+      "event_timezone": "America/New_York",
+      "beijing_time": "2026-08-10 20:30",
+      "date_status": "confirmed",
+      "source_tier": "primary",
+      "event_type": "us_workflow_saas_earnings",
+      "company": "monday.com",
+      "ticker": "MNDY",
+      "market": "NASDAQ",
+      "relationship_to_meitu": "thematic_peer",
+      "impact_score": 3,
+      "why_it_matters": "验证企业工作流席位、AI 产品与利润率能否共同成立。",
+      "expectation_baseline": "待事件前补一致预期；当前只冻结官方日期和观察问题。",
+      "actual_results": null,
+      "market_reaction": null,
+      "transmission_paths": ["企业软件需求 → AI 工作流定价 → 软件风险偏好"],
+      "next_check": "ARR/NRR、AI 付费、销售效率、利润率和指引",
+      "source_refs": ["MNDY_Q2_2026_CALENDAR"]
+    },
+    {
+      "event_id": "tme-q2-2026",
+      "date": "2026-08-11",
+      "time": "19:00",
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2026-08-11 19:00",
+      "date_status": "confirmed",
+      "source_tier": "primary",
+      "event_type": "china_consumer_application_earnings",
+      "company": "腾讯音乐",
+      "ticker": "TME / 01698.HK",
+      "market": "NYSE / HKEX",
+      "relationship_to_meitu": "thematic_peer",
+      "impact_score": 3,
+      "why_it_matters": "提供中国消费应用付费、ARPU 与内容成本的相邻读穿。",
+      "expectation_baseline": "待事件前补一致预期；当前只冻结官方日期和观察问题。",
+      "actual_results": null,
+      "market_reaction": null,
+      "transmission_paths": ["中国消费订阅 → 付费意愿/ARPU → 应用估值"],
+      "next_check": "付费用户、ARPU、内容成本、AI 产品参与度",
+      "source_refs": ["TME_Q2_2026_CALENDAR"]
+    },
+    {
+      "event_id": "tencent-q2-2026",
+      "date": "2026-08-12",
+      "time": "20:00",
+      "event_timezone": "Asia/Hong_Kong",
+      "beijing_time": "2026-08-12 20:00",
+      "date_status": "confirmed",
+      "source_tier": "primary",
+      "event_type": "china_platform_earnings",
+      "company": "腾讯控股",
+      "ticker": "0700.HK",
+      "market": "HKEX",
+      "relationship_to_meitu": "same_supply_chain",
+      "impact_score": 4,
+      "why_it_matters": "最近的中国平台/分发/模型成本读穿，比美国企业 SaaS 更接近美图本地生态。",
+      "expectation_baseline": "待事件前补一致预期；当前只冻结官方日期和观察问题。",
+      "actual_results": null,
+      "market_reaction": null,
+      "transmission_paths": ["模型与云成本 → 应用单位经济", "流量与广告/小程序分发 → 获客与变现"],
+      "next_check": "AI 应用收入、广告工具、云推理效率、应用分发与 capex",
+      "source_refs": ["TENCENT_Q2_2026_CALENDAR"]
+    },
+    {
+      "event_id": "meitu-h1-results-2026",
+      "date": "2026-08-26",
+      "time": null,
+      "event_timezone": "Asia/Hong_Kong",
+      "beijing_time": "2026-08-26（具体披露时间待定）",
+      "date_status": "confirmed",
+      "source_tier": "primary",
+      "event_type": "company_earnings",
+      "company": "美图公司",
+      "ticker": "01357.HK",
+      "market": "HKEX",
+      "relationship_to_meitu": "same_company_listing",
+      "impact_score": 5,
+      "why_it_matters": "跨公司读穿最终必须回到美图自己的毛利、现金流与每股经济性。",
+      "expectation_baseline": "核心收入约 +30.9%；调整后归母 +36%–40%；IFRS 归母至少 +35%。",
+      "actual_results": null,
+      "market_reaction": null,
+      "transmission_paths": ["正式报表 → 经营质量 → owner earnings/股 → 估值"],
+      "next_check": "毛利、CFO、SBC、模型/渠道成本、合同负债、净现金、完全摊薄股数",
+      "source_refs": ["MEITU_H1_CALENDAR_2026", "MEITU_H1_PRELIM_2026"]
+    },
+    {
+      "event_id": "us-saas-cluster-20260825-0903",
+      "date": "2026-08-25",
+      "time": null,
+      "event_timezone": "America/New_York",
+      "beijing_time": "2026-08-26 至 2026-09-04（多数为美股盘后，日期待逐家公司确认）",
+      "date_status": "reported_secondary",
+      "source_tier": "secondary_calendar",
+      "event_type": "us_software_earnings_cluster",
+      "company": "美国 SaaS 第二观察簇",
+      "ticker": "INTU / ZM / BOX / CRWD / OKTA / ADSK / WDAY / PANW / MDB / ZS / CRM / SNOW / GTLB / DOCU / PATH / ASAN",
+      "market": "NASDAQ / NYSE",
+      "relationship_to_meitu": "thematic_peer",
+      "impact_score": 3,
+      "why_it_matters": "检验 8 月 6 日大跌是短期拥挤释放，还是软件估值与利润捕获的持续性重定价。",
+      "expectation_baseline": "日期来自 Nasdaq 日历，尚未逐一用公司 IR 确认，不能写成 confirmed。",
+      "actual_results": null,
+      "market_reaction": null,
+      "transmission_paths": ["多家公司指引/利润率广度 → 软件风险偏好 → AI 应用 beta"],
+      "next_check": "至少 2–3 家出现收入、指引、利润率同向改善，且财报后 T+5 不快速回吐",
+      "source_refs": ["NASDAQ_EARNINGS_CALENDAR_20260825_0903"],
+      "source_gap": "逐家公司官方日期与事件前一致预期尚未冻结。"
+    },
+    {
+      "event_id": "adobe-q3-fy2026",
+      "date": "2026-09-10",
+      "time": null,
+      "event_timezone": "America/New_York",
+      "beijing_time": "2026-09-11（美股盘后，具体时刻待确认）",
+      "date_status": "confirmed",
+      "source_tier": "primary",
+      "event_type": "us_creative_saas_earnings",
+      "company": "Adobe",
+      "ticker": "ADBE",
+      "market": "NASDAQ",
+      "relationship_to_meitu": "thematic_peer",
+      "impact_score": 4,
+      "why_it_matters": "最直接检验成熟创意工作流能否把 AI 使用转成 ARR，同时维持利润率与席位价值。",
+      "expectation_baseline": "待事件前冻结公司指引与市场一致预期。",
+      "actual_results": null,
+      "market_reaction": null,
+      "transmission_paths": ["创意 AI 收入/捆绑 → 行业需求与竞争强度 → 美图生产力业务上限"],
+      "next_check": "AI-first ARR、Creative Cloud 净新增、价格/席位、毛利与经营利润",
+      "source_refs": ["ADOBE_Q3_FY2026_CALENDAR"]
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "MEITU_Q1_2026",
+      "title": "Meitu First Quarter 2026 Business Update",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0506/2026050600053.pdf",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "MEITU_H1_PRELIM_2026",
+      "title": "Meitu H1 2026 Preliminary Business and Financial Performance Update",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "MEITU_H1_CALENDAR_2026",
+      "title": "Meitu Notice of Board Meeting for 2026 Interim Results",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "MEITU_MONTHLY_RETURN_20260805",
+      "title": "Meitu Monthly Return for July 2026",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0805/2026080501298.pdf",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "MEITU_MARKET_20260807",
+      "title": "Tencent Meitu and HSTECH market snapshots through 2026-08-07 11:46 HKT",
+      "tier": "market_data",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2026-07-24,2026-08-08,30,qfq",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "FIGMA_Q1_2026",
+      "title": "Figma Announces First Quarter 2026 Financial Results",
+      "tier": "primary",
+      "url": "https://www.sec.gov/Archives/edgar/data/1579878/000162828026035087/q126pressrelease.htm",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "FIGMA_Q2_2026",
+      "title": "Figma Announces Second Quarter 2026 Financial Results",
+      "tier": "primary",
+      "url": "https://www.sec.gov/Archives/edgar/data/1579878/000162828026053331/q226pressrelease.htm",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "ADOBE_Q2_FY2026",
+      "title": "Adobe Reports Record Q2 FY2026 Results",
+      "tier": "primary",
+      "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "US_SOFTWARE_MARKET_20260806",
+      "title": "Completed 6 August 2026 US software and benchmark closes",
+      "tier": "market_data",
+      "url": "https://finance.yahoo.com/quote/FIG/history/",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "MNDY_Q2_2026_CALENDAR",
+      "title": "monday.com Q2 2026 Results Calendar",
+      "tier": "primary",
+      "url": "https://ir.monday.com/news-and-events/news-releases/news-details/2026/monday-com-to-Announce-Second-Quarter-2026-Financial-Results-on-Monday-August-10-2026/default.aspx",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "TME_Q2_2026_CALENDAR",
+      "title": "Tencent Music Q2 2026 Results Calendar",
+      "tier": "primary",
+      "url": "https://ir.tencentmusic.com/2026-07-14-Tencent-Music-Entertainment-Group-to-Report-Second-Quarter-2026-Financial-Results-on-August-11,-2026",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "TENCENT_Q2_2026_CALENDAR",
+      "title": "Tencent 2026 Second Quarter Results Calendar",
+      "tier": "primary",
+      "url": "https://www.tencent.com.cn/en-us/investors/",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "NASDAQ_EARNINGS_CALENDAR_20260825_0903",
+      "title": "Nasdaq Earnings Calendar, 25 August to 3 September 2026",
+      "tier": "reported_secondary",
+      "url": "https://www.nasdaq.com/market-activity/earnings",
+      "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "ADOBE_Q3_FY2026_CALENDAR",
+      "title": "Adobe Investor Relations Calendar",
+      "tier": "primary",
+      "url": "https://www.adobe.com/investor-relations.html",
+      "accessed_at": "2026-08-07"
+    }
+  ],
+  "data_quality": {
+    "missing": [
+      "Figma 以公司上一季收入指引为可审计基线；未取得事前冻结的卖方一致预期。",
+      "8 月 7 日美图为盘中快照，收盘、成交量和 T+5 尚未形成。",
+      "8 月 25 日至 9 月 3 日的美国 SaaS 簇只由二级日历汇总，需逐家公司 IR 确认。"
+    ],
+    "conflicts": [
+      "Figma 的需求/收入证据偏强，但股价和利润捕获证据偏弱；两者必须同时保留。",
+      "美图与 Figma 是 thematic_peer，不是同一客户结构、同一利润率或同一估值口径。"
+    ],
+    "manual_review_required": [
+      "每个未来节点发生后追加官方实际、T+1/T+5 和基准超额，不改写事件前基线。",
+      "8 月 26 日用美图正式 H1 重建毛利、现金流、SBC 和完全摊薄每股桥。"
+    ]
+  }
+}
