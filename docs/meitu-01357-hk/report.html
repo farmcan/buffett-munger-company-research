@@ -2333,7 +2333,7 @@
   .et-stat{padding:10px 12px;border:1px solid var(--line);border-radius:11px;background:#fff}
   .et-stat b{display:block;font-size:21px;line-height:1.15}
   .et-stat span{color:var(--muted);font-size:11px}
-  .et-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;
+  .et-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;
   margin:15px 0 12px}
   .et-legend>div{display:grid;grid-template-columns:18px 1fr;gap:7px;align-items:center;
   padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:#fff}
@@ -2411,6 +2411,9 @@
   color:var(--muted);font-size:10px}
   .et-date-legend span{padding:4px 7px;border:1px solid var(--line);border-radius:999px;
   background:#fff}
+  .et-diagnosis{margin:12px 0;padding:13px 15px;border-left:4px solid var(--blue);
+  border-radius:10px;background:#eef4f8;color:#344a56;font-size:12px;line-height:1.65}
+  .et-diagnosis strong{color:#203943}.et-diagnosis a{font-weight:800;color:var(--blue)}
   .et-event-body{padding:0 14px 14px}
   .et-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .et-evidence{padding:10px 11px;border-radius:9px;background:#f7f6f1}
@@ -2450,6 +2453,8 @@
     <small>实心：官方实际已披露。</small></div>
     <div><i class="et-shape ring"></i><b>market_reviewed</b>
     <small>外圈：至少一个价格窗口已复核。</small></div>
+    <div><i class="et-shape ring"></i><b>market_reviewed_partial</b>
+    <small>部分窗口：T+5/T+20尚未形成，不能当完整复盘。</small></div>
     <div><i class="et-shape diamond"></i><b>not_comparable</b>
     <small>菱形：无可靠基线；不等于负面。</small></div>
   </div>
@@ -2458,13 +2463,14 @@
     <span>预计窗口＝研究锚点，非官宣</span><span>TBA＝官方尚未公布日期</span>
   </div>
 
+
       <div class="et-axis-shell" aria-label="公司事件横向时间轴">
         <div class="et-axis">
           <span class="et-axis-label start" style="left:3%">2025-01-27</span>
-          <span class="et-axis-label" style="left:88.700%">2026-08-04</span>
+          <span class="et-axis-label" style="left:88.498%">2026-08-04</span>
           <span class="et-axis-label end" style="left:97%">2026-10-15</span>
-          <span class="et-now" style="left:88.700%"><span>NOW</span></span>
-          <a class="et-node reviewed not-comparable" href="#event-meitu-deepseek-cost-shock-2025" style="left:3.000%;top:48px" title="2025-01-27｜DeepSeek与开源模型成本冲击｜market_reviewed｜不可比"><span class="et-node-date">01-27</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-alibaba-cb-2025" style="left:18.211%;top:73px" title="2025-05-21｜阿里可转债与战略合作｜market_reviewed｜不可比"><span class="et-node-date">05-21</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-q1-2026" style="left:74.121%;top:98px" title="2026-05-06｜2026Q1经营更新｜market_reviewed｜不可比"><span class="et-node-date">05-06</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-imaging-governance-cluster" style="left:80.990%;top:48px" title="2026-06-18｜影像节与披露治理事件簇｜market_reviewed｜不可比"><span class="et-node-date">06-18</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-founder-purchase-2026" style="left:83.387%;top:73px" title="2026-07-03｜创始人增持160万股｜market_reviewed｜不可比"><span class="et-node-date">07-03</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-h1-preliminary-2026" style="left:87.700%;top:48px" title="2026-07-30｜2026H1初步更新｜market_reviewed｜部分窗口"><span class="et-node-date">07-30</span></a><a class="et-node future" href="#event-meitu-h1-results-2026" style="left:92.013%;top:98px" title="2026-08-26｜2026H1正式业绩｜expectation_frozen"><span class="et-node-date">08-26</span></a>
+          <span class="et-now" style="left:88.498%"><span>NOW</span></span>
+          <a class="et-node reviewed not-comparable" href="#event-meitu-deepseek-cost-shock-2025" style="left:3.000%;top:48px" title="2025-01-27｜DeepSeek与开源模型成本冲击｜market_reviewed｜不可比"><span class="et-node-date">01-27</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-alibaba-cb-2025" style="left:18.211%;top:73px" title="2025-05-21｜阿里可转债与战略合作｜market_reviewed｜不可比"><span class="et-node-date">05-21</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-q1-2026" style="left:74.121%;top:98px" title="2026-05-06｜2026Q1经营更新｜market_reviewed｜不可比"><span class="et-node-date">05-06</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-imaging-governance-cluster" style="left:80.990%;top:48px" title="2026-06-18｜影像节与披露治理事件簇｜market_reviewed｜不可比"><span class="et-node-date">06-18</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-founder-purchase-2026" style="left:83.387%;top:73px" title="2026-07-03｜创始人增持160万股｜market_reviewed｜不可比"><span class="et-node-date">07-03</span></a><a class="et-node reviewed not-comparable" href="#event-meitu-h1-preliminary-2026" style="left:87.700%;top:98px" title="2026-07-30｜2026H1初步业务及财务更新｜market_reviewed_partial｜不可比"><span class="et-node-date">07-30</span></a><a class="et-node future" href="#event-meitu-h1-results-2026" style="left:92.013%;top:48px" title="2026-08-26｜2026H1正式业绩｜expectation_frozen"><span class="et-node-date">08-26</span></a>
         </div>
       </div>
 
@@ -2479,7 +2485,7 @@
         </div>
         <div class="et-reaction-axis"><span></span><div><span>−50%</span><span>0</span>
         <span>+50%</span></div></div>
-        <div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-deepseek-cost-shock-2025" title="DeepSeek与开源模型成本冲击">25-01-27 DeepSeek与开源模型成本冲击</a><div class="et-reaction-plot"><span class="et-bar t5 positive" style="width:43.248%" title="T+5 +45.05%"><em>+45.0%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-alibaba-cb-2025" title="阿里可转债与战略合作">25-05-21 阿里可转债与战略合作</a><div class="et-reaction-plot"><span class="et-bar t5 positive" style="width:7.488%" title="T+5 +7.80%"><em>+7.8%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-q1-2026" title="2026Q1经营更新">26-05-06 2026Q1经营更新</a><div class="et-reaction-plot"><span class="et-bar t5 positive" style="width:19.478%" title="T+5 +20.29%"><em>+20.3%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-imaging-governance-cluster" title="影像节与披露治理事件簇">26-06-18 影像节与披露治理事件簇</a><div class="et-reaction-plot"><span class="et-bar t5 negative" style="width:13.152%" title="T+5 -13.70%"><em>-13.7%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-founder-purchase-2026" title="创始人增持160万股">26-07-03 创始人增持160万股</a><div class="et-reaction-plot"><span class="et-bar t5 negative" style="width:1.200%" title="T+5 -1.25%"><em>-1.2%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-h1-preliminary-2026" title="2026H1初步更新">26-07-30 H1初步更新</a><div class="et-reaction-plot"><span class="et-bar t5 positive" style="width:10.992%" title="截至8月3日部分窗口 +11.45%"><em>+11.4%*</em></span></div></div>
+        <div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-deepseek-cost-shock-2025" title="DeepSeek与开源模型成本冲击">25-01-27 DeepSeek与开源模型成本冲击</a><div class="et-reaction-plot"><span class="et-bar t5 positive" style="width:43.248%" title="T+5 +45.05%"><em>+45.0%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-alibaba-cb-2025" title="阿里可转债与战略合作">25-05-21 阿里可转债与战略合作</a><div class="et-reaction-plot"><span class="et-bar t5 positive" style="width:7.488%" title="T+5 +7.80%"><em>+7.8%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-q1-2026" title="2026Q1经营更新">26-05-06 2026Q1经营更新</a><div class="et-reaction-plot"><span class="et-bar t5 positive" style="width:19.478%" title="T+5 +20.29%"><em>+20.3%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-imaging-governance-cluster" title="影像节与披露治理事件簇">26-06-18 影像节与披露治理事件簇</a><div class="et-reaction-plot"><span class="et-bar t5 negative" style="width:13.152%" title="T+5 -13.70%"><em>-13.7%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-founder-purchase-2026" title="创始人增持160万股">26-07-03 创始人增持160万股</a><div class="et-reaction-plot"><span class="et-bar t5 negative" style="width:1.200%" title="T+5 -1.25%"><em>-1.2%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-meitu-h1-preliminary-2026" title="2026H1初步业务及财务更新">26-07-30 2026H1初步业务及财务更新</a><div class="et-reaction-plot"><span class="et-bar t5 positive" style="width:10.992%" title="截至8月3日部分窗口 +11.45%"><em>+11.4%*</em></span></div></div>
       </div>
 
   <div class="et-ledger-title"><h4>纵向证据账本</h4>
@@ -2565,7 +2571,7 @@
         </div>
       </details>
 
-      <details class="et-event" id="event-meitu-founder-purchase-2026" open>
+      <details class="et-event" id="event-meitu-founder-purchase-2026">
         <summary><span class="et-event-date">2026-07-03</span>
         <span class="et-event-title">创始人增持160万股</span>
         <span class="et-badges"><span class="et-badge reviewed">market_reviewed</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
@@ -2587,20 +2593,21 @@
 
       <details class="et-event" id="event-meitu-h1-preliminary-2026" open>
         <summary><span class="et-event-date">2026-07-30</span>
-        <span class="et-event-title">2026H1 初步业务及财务更新</span>
+        <span class="et-event-title">2026H1初步业务及财务更新</span>
         <span class="et-badges"><span class="et-badge reviewed">market_reviewed_partial</span><span class="et-badge">影响 5/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
         <div class="et-event-body">
           <div class="et-evidence-grid">
-            <div class="et-evidence"><b>为什么重要</b><p>首次把用户、ARR 和收入增长连接到 H1 调整后及 IFRS 归母利润方向。</p></div>
-            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计的一致预期快照，因此不制造精确 Surprise；只与 Q1 已知增速和 FY2025/H1 基数对照。</p></div>
-            <div class="et-evidence"><b>官方实际</b><ul><li>核心收入约 RMB1.8bn，同比 +30.9%</li><li>调整后归母同比 +36%—40%；IFRS 归母至少 +35%</li><li>付费用户超过 18.44m；AI 生产力 ARR 约 RMB620m</li><li>AI credits 连续两季环比消耗增长超过 46%</li></ul></div>
-            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜缺少冻结的可比共识；“好于/差于预期”保持未知。</p></div>
-            <div class="et-evidence"><b>市场反应</b><ul><li>公告 7/30 盘后；7/31 首个完整交易日 +10.28%</li><li>公告前收盘至 8/3 +11.45%；同期 HSTECH +1.50%，超额约 +9.95pct</li><li>7/29 已先涨 13.1%，事件归因不干净；T+5 尚未形成</li></ul></div>
-            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>ARPU/credits → 收入 → 毛利与费用杠杆</li><li>调整利润 → 扣 SBC/CFO/摊薄 → 每股 owner earnings</li></ul></div>
-            <div class="et-evidence"><b>复盘结论</b><p>利润方向是实质新证据，价格也正共振；但部分窗口与公告前上涨使归因置信度仅中等。</p></div>
-            <div class="et-evidence"><b>下一验证与缺口</b><p>8 月 26 日核对毛利、现金流、SBC、递延收入、模型/渠道成本和完全摊薄股数。</p></div>
+            <div class="et-evidence"><b>为什么重要</b><p>首次把用户、ARR和收入增长连接到H1调整后及IFRS归母利润方向。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
+            <div class="et-evidence"><b>官方实际</b><ul><li>核心业务收入约人民币18亿元，同比+30.9%</li><li>调整后归母利润同比+36%至+40%；IFRS归母利润至少+35%</li><li>付费用户超过1,844万；AI生产力ARR约人民币6.2亿元</li><li>AI credits在Q1和Q2均环比消耗增长超过46%</li></ul></div>
+            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
+            <div class="et-evidence"><b>市场反应</b><ul><li>T0/首个反应：公告7月30日盘后；7月31日首个完整交易日+10.28%</li><li>T+1：T−1 7月30日收盘至8月3日+11.45%（部分窗口）</li><li>基准调整：同部分窗口HSTECH +1.50%；超额约+9.95pct</li></ul></div>
+            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>ARPU/credits → 收入 → 毛利与费用杠杆</li><li>调整利润 → 扣SBC/CFO/摊薄 → 每股owner earnings</li></ul></div>
+            <div class="et-evidence"><b>复盘结论</b><p>H1预告把未来一年盈利增长从猜测升级为有官方区间支持的假设，但没有证明十年护城河或现价安全边际。</p></div>
+            <div class="et-evidence"><b>下一验证与缺口</b>
+            <p>2026-08-26正式中报｜正式毛利率、渠道/模型成本、SBC、CFO、递延收入、净现金和同日完全摊薄股数待8月26日。</p></div>
           </div>
-          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf" rel="noreferrer">2026H1 Preliminary Business and Financial Update</a><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-08-04,1000,qfq" rel="noreferrer">Tencent qfq Daily Market Snapshot</a></div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf" rel="noreferrer">Business and Financial Performance Update for the Six Months Ended June 30, 2026</a><a href="https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-08-04,1000,qfq" rel="noreferrer">Tencent qfq Daily Market Snapshot through 3 August 2026</a></div>
         </div>
       </details>
 
@@ -2610,8 +2617,8 @@
         <span class="et-badges"><span class="et-badge future">expectation_frozen</span><span class="et-badge">影响 5/5</span><span class="et-badge ">已确认日期</span></span></summary>
         <div class="et-event-body">
           <div class="et-evidence-grid">
-            <div class="et-evidence"><b>为什么重要</b><p>这是把 H1 初步收入和利润增长桥接到毛利、现金、推理成本、SBC 和净股数的主要决策节点。</p></div>
-            <div class="et-evidence"><b>冻结预期 / 事前问题</b><ul><li>待回答：核心收入约 +30.9%、调整后归母 +36%—40% 能否由正式报表复核？</li><li>待回答：生产力 ARR 和 AI credits 是否转成高质量确认收入与毛利？</li><li>待回答：CFO、SBC、回购和可转债后的每股 owner earnings 如何？</li></ul></div>
+            <div class="et-evidence"><b>为什么重要</b><p>这是把H1初步收入和利润增长桥接到毛利、现金、推理成本、SBC和净股数的主要决策节点。</p></div>
+            <div class="et-evidence"><b>冻结预期 / 事前问题</b><ul><li>待回答：核心收入约+30.9%、调整后归母+36%至+40%能否由正式报表复核？</li><li>待回答：生产力收入占比、ARR和AI credits是否转成高质量确认收入与毛利？</li><li>待回答：毛利率、CFO、SBC、回购和可转债后的每股owner earnings如何？</li></ul></div>
             <div class="et-evidence"><b>官方实际</b><p>事件尚未发生，实际值保持为空。</p></div>
             <div class="et-evidence"><b>Surprise 状态</b><p>事件尚未发生，不预填方向。</p></div>
             <div class="et-evidence"><b>市场反应</b><p>价格窗口尚未形成或没有可比基线。</p></div>
@@ -2620,13 +2627,25 @@
             <div class="et-evidence"><b>下一验证与缺口</b>
             <p>2026-08-26｜未来实际、T+1/T+5/T+20和成交量只能在事件后追加。</p></div>
           </div>
-          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf" rel="noreferrer">Notice of Board Meeting for 2026 Interim Results</a><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0506/2026050600053.pdf" rel="noreferrer">First Quarter 2026 Business Update</a></div>
+          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0715/2026071500702.pdf" rel="noreferrer">Notice of Board Meeting for 2026 Interim Results</a><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0506/2026050600053.pdf" rel="noreferrer">First Quarter 2026 Business Update</a><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf" rel="noreferrer">Business and Financial Performance Update for the Six Months Ended June 30, 2026</a></div>
         </div>
       </details>
 
   <p class="chart-note">研究边界：影响分只用于排序研究注意力，不是收益预测；
   未来节点保持空心，缺失窗口不画成 0。</p>
 </div>
+<script>
+(() => {
+  const openTarget = () => {
+    const id = location.hash.slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (target && target.matches('details.et-event')) target.open = true;
+  };
+  openTarget();
+  window.addEventListener('hashchange', openTarget);
+})();
+</script>
 <h3 class="et-preserved-label">原报告事件表与更长历史（保留）</h3>
 <!-- company-event-terminal:end -->
       <p class="section-dek">沿用 Seed 时间轴方法：区分 completed / confirmed / TBA，记录事实、市场反应、传导机制和下一验证。历史事件统一对应五个交易日价格窗口；颜色表示证据状态，不表示买卖方向。</p>

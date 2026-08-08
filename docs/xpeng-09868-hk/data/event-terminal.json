@@ -3,7 +3,7 @@
   "version": "1.1",
   "title": "小鹏汽车：事件 Surprise 与市场共振",
   "subtitle": "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、行业/资本结构传导与下一验证放在一条证据轴。",
-  "as_of": "2026-07-30T18:00:00+08:00",
+  "as_of": "2026-08-08T12:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "date_range": {
     "start": "2024-10-01",
@@ -37,9 +37,24 @@
       "chain_bucket": "智能电动车 / 物理 AI",
       "importance": "high",
       "impact_score": 4,
-      "why_it_matters": "这是产品周期、毛利修复和亏损收窄能否同步的历史参照点。",
-      "expectation_snapshot": null,
-      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "why_it_matters": "这是产品周期、毛利修复和亏损收窄同步改善的历史参照点，但发布后五日涨幅被后续增持事件显著污染。",
+      "expectation_snapshot": {
+        "frozen_at": "2025-05-21T20:00:00+08:00",
+        "official_guidance": [
+          "Q2交付102,000至108,000辆",
+          "Q2收入RMB17.5bn至18.7bn"
+        ],
+        "consensus": [],
+        "previous_actual": [
+          "2025Q1收入RMB15.81bn",
+          "2025Q1 vehicle margin 10.5%",
+          "2025Q1净亏损RMB0.66bn"
+        ],
+        "source_refs": [
+          "xpeng-F08"
+        ]
+      },
+      "expectation_baseline": null,
       "actual_results": {
         "reported_at": "2025-08-19T18:00:00+08:00",
         "metrics": [
@@ -47,11 +62,96 @@
           "收入RMB18.27bn",
           "毛利率17.3%",
           "vehicle margin 14.3%",
-          "净亏损RMB0.48bn"
+          "净亏损RMB0.48bn",
+          "现金类资产RMB47.57bn"
         ],
         "definition_changes": [],
         "source_refs": [
-          "xpeng-F01"
+          "xpeng-F08",
+          "xpeng-F09"
+        ]
+      },
+      "surprise": {
+        "direction": "neutral_on_guided_metrics",
+        "raw": "交付103,181辆、收入RMB18.27bn，均在官方指引区间内",
+        "percent": "交付较指引中点-1.7%；收入较指引中点+0.9%",
+        "score": 0,
+        "method": "actual_vs_frozen_official_guidance",
+        "confidence": "high",
+        "reason": "交付和收入都只是符合官方指引；vehicle margin环比+3.8个百分点、亏损环比收窄28.1%是质量亮点，但没有冻结共识，不能量化成市场surprise。",
+        "source_refs": [
+          "xpeng-F08",
+          "xpeng-F09"
+        ]
+      },
+      "market_reaction": {
+        "intraday": "T0 -1.85%",
+        "t1": "T−1→T+1 +2.48%",
+        "t5": "T−1→T+5 +19.94%（含8月21日创始人增持事件）",
+        "t20": "+6.11%",
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "T+5超额 +16.30%，不可归因于财报单一事件",
+        "volume_ratio": null,
+        "resonance": "positive_resonance",
+        "source_refs": [
+          "xpeng-M01",
+          "xpeng-M03",
+          "xpeng-F10"
+        ],
+        "attribution_confidence": "low",
+        "limitations": "财报后窗口与创始人增持及新P7发布预期重叠。"
+      },
+      "transmission_paths": [
+        "车型换代 → 交付/ASP → vehicle margin → 费用杠杆 → CFO"
+      ],
+      "holdings_impacted": [
+        "研究主体：小鹏汽车（09868.HK / XPEV）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "2025Q3实际",
+        "thesis_impact": "财报当日跌1.85%；窗口内最大单日上涨发生在增持披露后的8月22日。因此原T+5 +19.94%只能定义为事件簇结果，不能写成Q2财报大超预期。",
+        "review_score": null
+      },
+      "post_event_review": "财报当日跌1.85%；窗口内最大单日上涨发生在增持披露后的8月22日。因此原T+5 +19.94%只能定义为事件簇结果，不能写成Q2财报大超预期。",
+      "source_refs": [
+        "xpeng-F08",
+        "xpeng-F09",
+        "xpeng-M01",
+        "xpeng-M03",
+        "xpeng-F10"
+      ],
+      "source_gap": "没有冻结卖方一致预期；毛利与亏损改善只能作为结果亮点，不能事后制造surprise分数。"
+    },
+    {
+      "event_id": "xpeng-founder-purchase-2025",
+      "date": "2025-08-21",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2025-08-21",
+      "date_status": "completed",
+      "event_type": "insider_action",
+      "company": "小鹏汽车｜何小鹏增持3.1m股",
+      "ticker": "09868.HK / XPEV",
+      "market": "HKEX / NYSE",
+      "chain_bucket": "智能电动车 / 物理 AI",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "这是2025Q2财报窗口内最清晰的新增催化；它能验证真金白银投入，但不能替代后续经营结果。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2025-08-21T18:00:00+08:00",
+        "metrics": [
+          "何小鹏通过全资实体在8月20日至21日买入3.1m股A类普通股",
+          "平均价HK$80.49",
+          "成交金额约HK$249.5m",
+          "增持后披露经济权益约18.9%"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "xpeng-F10"
         ]
       },
       "surprise": {
@@ -65,23 +165,24 @@
         "source_refs": []
       },
       "market_reaction": {
-        "intraday": "T0 -1.85%",
-        "t1": null,
-        "t5": "+19.94%",
-        "t20": "+6.11%",
+        "intraday": "首个反应日8月22日 +13.60%（HK$80.90→HK$91.90）",
+        "t1": "T−1→T+1 +13.10%",
+        "t5": "T−1→T+5 +3.71%",
+        "t20": "+4.02%",
         "benchmark": "HSTECH",
-        "benchmark_adjusted": "T+5超额 +16.30%",
-        "volume_ratio": null,
+        "benchmark_adjusted": "T+5 HSTECH +3.20%；超额仅+0.51%",
+        "volume_ratio": "首个反应日约3.92×此前20日均量",
         "resonance": "positive_resonance",
         "source_refs": [
           "xpeng-M01",
-          "shared-hstech"
+          "xpeng-M03"
         ],
         "attribution_confidence": "medium",
-        "limitations": "事件窗口是相关性观察，不证明单一公告造成全部涨跌。"
+        "limitations": "T0冲击清晰，但T+5已回吐大部分超额，且新P7发布预期重叠。"
       },
       "transmission_paths": [
-        "车型换代 → 交付/ASP → vehicle margin → 费用杠杆 → CFO"
+        "内部人现金买入 → 信心信号与流通需求 → 短线重估",
+        "后续经营兑现/不兑现 → 信号持续或衰减"
       ],
       "holdings_impacted": [
         "研究主体：小鹏汽车（09868.HK / XPEV）",
@@ -89,17 +190,93 @@
       ],
       "validation": {
         "status": "market_reviewed",
-        "next_check_at": "2025Q3实际",
-        "thesis_impact": "T+5强、T+20回吐，说明业绩拐点与行情持续性必须分开判断。",
+        "next_check_at": "后续交付、毛利、现金与是否继续增持",
+        "thesis_impact": "短线最强冲击更接近创始人增持，而不是8月19日财报；但五日后相对HSTECH只剩约0.5个百分点超额，说明信心交易并未形成持续趋势。",
         "review_score": null
       },
-      "post_event_review": "T+5强、T+20回吐，说明业绩拐点与行情持续性必须分开判断。",
+      "post_event_review": "短线最强冲击更接近创始人增持，而不是8月19日财报；但五日后相对HSTECH只剩约0.5个百分点超额，说明信心交易并未形成持续趋势。",
       "source_refs": [
-        "xpeng-F01",
+        "xpeng-F10",
         "xpeng-M01",
-        "shared-hstech"
+        "xpeng-M03"
       ],
-      "source_gap": "历史官方指引未在本包中形成可审计冻结快照。"
+      "source_gap": "无法识别全部买盘来源，也不能由一次增持推断未来业绩或后续继续买入。"
+    },
+    {
+      "event_id": "xpeng-next-p7-launch-2025",
+      "date": "2025-08-27",
+      "time": null,
+      "event_timezone": "Asia/Shanghai",
+      "beijing_time": "2025-08-27",
+      "date_status": "completed",
+      "event_type": "product_launch",
+      "company": "小鹏汽车｜全新P7发布",
+      "ticker": "09868.HK / XPEV",
+      "market": "HKEX / NYSE",
+      "chain_bucket": "智能电动车 / 物理 AI",
+      "importance": "high",
+      "impact_score": 4,
+      "why_it_matters": "它是财报后产品周期叙事的下一兑现点，也构成增持后价格窗口的重叠事件。",
+      "expectation_snapshot": null,
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。",
+      "actual_results": {
+        "reported_at": "2025-08-27T18:00:00+08:00",
+        "metrics": [
+          "8月27日正式发布全新P7",
+          "8月28日开始全国交付"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "xpeng-F11"
+        ]
+      },
+      "surprise": {
+        "direction": "not_comparable",
+        "raw": null,
+        "percent": null,
+        "score": null,
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "有实际披露，但没有在事件发生前冻结的可比共识或官方指引。同比增长不等于预期差。",
+        "source_refs": []
+      },
+      "market_reaction": {
+        "intraday": "同日收盘T0 -1.75%",
+        "t1": "T−1→T+1 -9.82%",
+        "t5": "T−1→T+5 -16.14%",
+        "t20": "-11.52%",
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "T+5 HSTECH -1.70%；超额 -14.44%",
+        "volume_ratio": "T0约0.94×此前20日均量",
+        "resonance": "negative_resonance",
+        "source_refs": [
+          "xpeng-M01",
+          "xpeng-M03"
+        ],
+        "attribution_confidence": "low",
+        "limitations": "发布会具体时点未冻结，且财报、增持和大盘风险偏好仍在同一窗口。"
+      },
+      "transmission_paths": [
+        "新品发布/价格 → 订单 → 交付与车型结构 → ASP/vehicle margin",
+        "预期提前交易 → 发布日兑现 → 价格回吐风险"
+      ],
+      "holdings_impacted": [
+        "研究主体：小鹏汽车（09868.HK / XPEV）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+      ],
+      "validation": {
+        "status": "market_reviewed",
+        "next_check_at": "P7订单、9月量产爬坡与车型毛利",
+        "thesis_impact": "新P7发布后五日显著回吐，符合‘预期先交易、落地后再验证订单与毛利’的模式；它进一步证明财报T+5不能被当作单一事件收益。",
+        "review_score": null
+      },
+      "post_event_review": "新P7发布后五日显著回吐，符合‘预期先交易、落地后再验证订单与毛利’的模式；它进一步证明财报T+5不能被当作单一事件收益。",
+      "source_refs": [
+        "xpeng-F11",
+        "xpeng-M01",
+        "xpeng-M03"
+      ],
+      "source_gap": "没有冻结发布前订单共识、车型毛利和发布会精确市场时点。"
     },
     {
       "event_id": "xpeng-q3-2025",
@@ -153,7 +330,7 @@
         "resonance": "negative_resonance",
         "source_refs": [
           "xpeng-M01",
-          "shared-hstech"
+          "xpeng-M03"
         ],
         "attribution_confidence": "medium",
         "limitations": "事件窗口是相关性观察，不证明单一公告造成全部涨跌。"
@@ -176,7 +353,7 @@
       "source_refs": [
         "xpeng-F01",
         "xpeng-M01",
-        "shared-hstech"
+        "xpeng-M03"
       ],
       "source_gap": "没有逐项保存发布前市场预期，无法定位哪一个分项触发重估。"
     },
@@ -232,7 +409,7 @@
         "resonance": "negative_resonance",
         "source_refs": [
           "xpeng-M01",
-          "shared-hstech"
+          "xpeng-M03"
         ],
         "attribution_confidence": "low",
         "limitations": "事件窗口是相关性观察，不证明单一公告造成全部涨跌。"
@@ -255,7 +432,7 @@
       "source_refs": [
         "xpeng-F01",
         "xpeng-M01",
-        "shared-hstech"
+        "xpeng-M03"
       ],
       "source_gap": "没有冻结发布前盈利与指引共识。"
     },
@@ -312,7 +489,7 @@
         "resonance": "positive_resonance",
         "source_refs": [
           "xpeng-M01",
-          "shared-hstech"
+          "xpeng-M03"
         ],
         "attribution_confidence": "medium",
         "limitations": "事件窗口是相关性观察，不证明单一公告造成全部涨跌。"
@@ -336,7 +513,7 @@
       "source_refs": [
         "xpeng-F03",
         "xpeng-M01",
-        "shared-hstech"
+        "xpeng-M03"
       ],
       "source_gap": "Q2财务尚未披露；Q1现金下降和库存上升需要后续解释。"
     },
@@ -406,7 +583,7 @@
         "resonance": "mixed_or_neutral",
         "source_refs": [
           "xpeng-M01",
-          "shared-hstech"
+          "xpeng-M03"
         ],
         "attribution_confidence": "low",
         "limitations": "事件窗口是相关性观察，不证明单一公告造成全部涨跌。"
@@ -430,94 +607,115 @@
       "source_refs": [
         "xpeng-F04",
         "xpeng-M01",
-        "shared-hstech"
+        "xpeng-M03"
       ],
       "source_gap": "交付不提供ASP、利润和现金信息。"
     },
     {
       "event_id": "xpeng-july-delivery-2026",
-      "date": "2026-08-03",
-      "timeline_anchor_date": "2026-08-03",
+      "date": "2026-08-01",
       "time": null,
       "event_timezone": "Asia/Shanghai",
-      "beijing_time": "预计2026年8月上旬｜非官宣",
-      "date_status": "estimated",
-      "event_type": "future_validation",
-      "company": "小鹏汽车｜2026年7月交付更新（预计窗口）",
+      "beijing_time": "2026-08-01",
+      "date_status": "completed",
+      "event_type": "operating_update",
+      "company": "小鹏汽车｜2026年7月交付",
       "ticker": "09868.HK / XPEV",
       "market": "HKEX / NYSE",
       "chain_bucket": "智能电动车 / 物理 AI",
       "importance": "high",
-      "impact_score": 5,
-      "why_it_matters": "月度交付是Q2环比修复能否延续的最早高频验证，但单月销量不能替代收入、毛利和现金。",
+      "impact_score": 4,
+      "why_it_matters": "7月是Q2低点修复能否继续加速的第一笔Q3数据；结果同比略增、环比回落，尚不足以确认新一轮上行。",
       "expectation_snapshot": {
         "frozen_at": "2026-07-30T18:00:00+08:00",
         "official_guidance": [],
         "consensus": [],
         "previous_actual": [
           "2026年6月交付40,126辆",
-          "2026Q2交付103,295辆，同比+0.1%、环比+64.8%"
+          "2025年7月交付36,717辆",
+          "事前问题：能否维持6月约40,126辆的运行率"
         ],
         "source_refs": [
-          "xpeng-F04"
+          "xpeng-F04",
+          "xpeng-F09"
         ]
       },
-      "actual_results": null,
+      "expectation_baseline": null,
+      "actual_results": {
+        "reported_at": "2026-08-01T18:00:00+08:00",
+        "metrics": [
+          "7月交付38,027辆",
+          "同比+4%",
+          "较6月40,126辆环比-5.2%",
+          "累计交付超过1.2m辆"
+        ],
+        "definition_changes": [],
+        "source_refs": [
+          "xpeng-F04",
+          "xpeng-F09",
+          "xpeng-F12",
+          "xpeng-F14"
+        ]
+      },
       "surprise": {
-        "direction": "pending",
+        "direction": "not_comparable",
         "raw": null,
         "percent": null,
         "score": null,
-        "method": "pending",
-        "confidence": "pending",
-        "reason": "事件尚未发生，不预填方向。",
-        "source_refs": [
-          "xpeng-F04"
-        ]
+        "method": "not_comparable_without_frozen_expectation",
+        "confidence": "high",
+        "reason": "没有公司单月指引或冻结一致预期；同比+4%、环比-5.2%是实际变化，不等于正式miss。",
+        "source_refs": []
       },
       "market_reaction": {
-        "intraday": null,
-        "t1": null,
+        "intraday": "首个反应日8月3日 -3.08%（HK$50.60→HK$49.04）",
+        "t1": "T−1→T+1 -7.11%",
         "t5": null,
         "t20": null,
-        "benchmark": null,
-        "benchmark_adjusted": null,
-        "volume_ratio": null,
-        "resonance": "pending",
-        "source_refs": []
+        "benchmark": "HSTECH",
+        "benchmark_adjusted": "截至8月7日T+4：小鹏-7.83%、HSTECH+0.60%，超额-8.43%",
+        "volume_ratio": "首个反应日0.82×此前20日均量；8月4日约1.64×",
+        "resonance": "negative_resonance",
+        "source_refs": [
+          "xpeng-M01",
+          "xpeng-M03"
+        ],
+        "attribution_confidence": "low",
+        "limitations": "只有四个完整交易日；8月4日同时公布Q2董事会日期，且无冻结单月共识。"
       },
       "transmission_paths": [
         "月度订单/排产 → 交付与车型结构 → Q3收入节奏",
         "促销/新品切换 → ASP与vehicle margin → 现金消耗"
       ],
       "holdings_impacted": [
-        "研究主体：小鹏汽车（09868.HK / XPEV）"
+        "研究主体：小鹏汽车（09868.HK / XPEV）",
+        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
       ],
       "validation": {
-        "status": "expectation_frozen",
-        "next_check_at": "2026-08-03",
-        "thesis_impact": "pending",
+        "status": "market_reviewed",
+        "next_check_at": "8月24日Q2财务与8—9月交付",
+        "thesis_impact": "7月交付说明销量从Q1低点恢复，但没有在6月基础上继续抬升；截至8月7日价格显著跑输HSTECH，但样本只有T+4，不能把跌幅全归因于交付。",
         "review_score": null
       },
-      "pre_event_questions": [
-        "7月交付能否维持6月40,126辆附近，还是新品切换造成短期回落？",
-        "车型结构、订单积压和促销是否支持后续ASP与vehicle margin？",
-        "单月变化是正常排产波动，还是Q3同比增速转弱的先行信号？"
-      ],
-      "post_event_review": null,
+      "post_event_review": "7月交付说明销量从Q1低点恢复，但没有在6月基础上继续抬升；截至8月7日价格显著跑输HSTECH，但样本只有T+4，不能把跌幅全归因于交付。",
       "source_refs": [
-        "xpeng-F04"
+        "xpeng-F04",
+        "xpeng-F09",
+        "xpeng-F12",
+        "xpeng-F14",
+        "xpeng-M01",
+        "xpeng-M03"
       ],
-      "source_gap": "2026-08-03只是按月度披露惯例设置的研究锚点，不是公司确认日期；实际公告日、财务结果和事件后价格窗口待披露。"
+      "source_gap": "未披露车型结构、订单积压、促销、ASP和单车毛利；T+5/T+20仍待形成。"
     },
     {
       "event_id": "xpeng-q2-results-2026",
-      "date": null,
-      "timeline_anchor_date": "2026-08-31",
+      "date": "2026-08-24",
+      "timeline_anchor_date": "2026-08-24",
       "time": null,
       "event_timezone": "Asia/Shanghai",
-      "beijing_time": "TBA｜研究复核窗：2026年8月下旬",
-      "date_status": "tba",
+      "beijing_time": "2026-08-24 20:00｜公司已公告",
+      "date_status": "confirmed",
       "event_type": "future_validation",
       "company": "小鹏汽车｜2026Q2完整财务结果",
       "ticker": "09868.HK / XPEV",
@@ -527,7 +725,7 @@
       "impact_score": 5,
       "why_it_matters": "这是把Q2交付修复桥接到收入、ASP、vehicle margin、亏损、库存和现金的关键节点，也是判断增长变量是否真正由低向高的主验证。",
       "expectation_snapshot": {
-        "frozen_at": "2026-07-30T18:00:00+08:00",
+        "frozen_at": "2026-08-08T12:00:00+08:00",
         "official_guidance": [
           "2026Q2交付指引100,000至106,000辆；实际已披露103,295辆",
           "2026Q2收入指引RMB19.6bn至20.8bn"
@@ -535,12 +733,14 @@
         "consensus": [],
         "previous_actual": [
           "2026Q1收入RMB13.03bn，gross margin 20.6%，vehicle margin 12.1%",
-          "2026Q1净亏损RMB1.78bn，现金类资产约RMB42.09bn"
+          "2026Q1净亏损RMB1.78bn，现金类资产约RMB42.09bn",
+          "2026年7月交付38,027辆，同比+4%、环比-5.2%"
         ],
         "source_refs": [
           "xpeng-F03",
           "xpeng-F04",
-          "xpeng-IR01"
+          "xpeng-F12",
+          "xpeng-F13"
         ]
       },
       "actual_results": null,
@@ -555,7 +755,8 @@
         "source_refs": [
           "xpeng-F03",
           "xpeng-F04",
-          "xpeng-IR01"
+          "xpeng-F12",
+          "xpeng-F13"
         ]
       },
       "market_reaction": {
@@ -580,7 +781,7 @@
       ],
       "validation": {
         "status": "expectation_frozen",
-        "next_check_at": "官方IR或HKEX发布业绩日期后立即更新；最迟在2026-08-31复核",
+        "next_check_at": "2026-08-24 20:00结果与电话会后立即回填",
         "thesis_impact": "pending",
         "review_score": null
       },
@@ -594,9 +795,10 @@
       "source_refs": [
         "xpeng-F03",
         "xpeng-F04",
-        "xpeng-IR01"
+        "xpeng-F12",
+        "xpeng-F13"
       ],
-      "source_gap": "截至2026-07-30，小鹏IR活动页未列Upcoming Event，Q2业绩日期仍为TBA；8月下旬只是研究复核窗，不是公司官宣。"
+      "source_gap": "发布日期已确认；市场一致预期、Q2实际财务和Q3官方指引仍待披露，不得在8月24日前预填结果。"
     },
     {
       "event_id": "xpeng-q3-delivery-2026",
@@ -613,18 +815,21 @@
       "chain_bucket": "智能电动车 / 物理 AI",
       "importance": "high",
       "impact_score": 5,
-      "why_it_matters": "Q2交付同比仅+0.1%；只有Q3交付重新超过上年同期并与收入、毛利和现金一致，才能把环比修复升级为增长变量上行。",
+      "why_it_matters": "Q2交付同比仅+0.1%、7月同比+4%且环比回落；只有Q3交付重新超过上年同期并与收入、毛利和现金一致，才能把环比修复升级为增长变量上行。",
       "expectation_snapshot": {
-        "frozen_at": "2026-07-30T18:00:00+08:00",
+        "frozen_at": "2026-08-08T12:00:00+08:00",
         "official_guidance": [],
         "consensus": [],
         "previous_actual": [
           "2025Q3交付116,007辆",
-          "2026Q2交付103,295辆，同比+0.1%"
+          "2026Q2交付103,295辆，同比+0.1%",
+          "2026年7月交付38,027辆，同比+4%、环比-5.2%"
         ],
         "source_refs": [
+          "xpeng-F01",
           "xpeng-F03",
-          "xpeng-F04"
+          "xpeng-F04",
+          "xpeng-F12"
         ]
       },
       "actual_results": null,
@@ -637,8 +842,10 @@
         "confidence": "pending",
         "reason": "事件尚未发生，不预填方向。",
         "source_refs": [
+          "xpeng-F01",
           "xpeng-F03",
-          "xpeng-F04"
+          "xpeng-F04",
+          "xpeng-F12"
         ]
       },
       "market_reaction": {
@@ -668,13 +875,16 @@
       },
       "pre_event_questions": [
         "Q3交付能否超过2025Q3的116,007辆并形成同比正增长？",
+        "已有7月38,027辆；8—9月月均至少38,991辆才刚好超过上年Q3，至少44,791辆才达到Q3同比+10%。",
         "Q2业绩给出的Q3官方指引是否兑现，月度交付是否依赖单次新品脉冲？",
         "销量增长能否伴随vehicle margin稳定和现金消耗收窄？"
       ],
       "post_event_review": null,
       "source_refs": [
+        "xpeng-F01",
         "xpeng-F03",
-        "xpeng-F04"
+        "xpeng-F04",
+        "xpeng-F12"
       ],
       "source_gap": "2026-10-09只是季度结束后的研究复核锚点，不是公司确认日期；Q3官方指引需在Q2完整业绩披露后冻结。"
     }
@@ -685,42 +895,84 @@
       "title": "小鹏汽车｜XPeng Inc. 2025 Form 20-F",
       "tier": "primary",
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526157849/d36361d20f.htm",
-      "accessed_at": "2026-07-29"
+      "accessed_at": "2026-08-08"
     },
     {
       "id": "xpeng-F03",
       "title": "小鹏汽车｜XPeng Q1 2026 unaudited financial results",
       "tier": "primary",
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526243143/d139430d6k.htm",
-      "accessed_at": "2026-07-29"
+      "accessed_at": "2026-08-08"
     },
     {
       "id": "xpeng-F04",
       "title": "小鹏汽车｜XPeng Q2 2026 vehicle delivery results",
       "tier": "primary",
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526293394/d114872d6k.htm",
-      "accessed_at": "2026-07-29"
+      "accessed_at": "2026-08-08"
+    },
+    {
+      "id": "xpeng-F08",
+      "title": "小鹏汽车｜XPeng Q1 2025 unaudited financial results and Q2 guidance",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0521/2025052100660.pdf",
+      "accessed_at": "2026-08-08"
+    },
+    {
+      "id": "xpeng-F09",
+      "title": "小鹏汽车｜XPeng Q2 2025 unaudited financial results",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0819/2025081900612.pdf",
+      "accessed_at": "2026-08-08"
+    },
+    {
+      "id": "xpeng-F10",
+      "title": "小鹏汽车｜XPeng controlling shareholder shareholding increase",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0821/2025082101163.pdf",
+      "accessed_at": "2026-08-08"
+    },
+    {
+      "id": "xpeng-F11",
+      "title": "小鹏汽车｜XPeng August 2025 delivery results and New P7 launch",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0901/2025090100103.pdf",
+      "accessed_at": "2026-08-08"
+    },
+    {
+      "id": "xpeng-F12",
+      "title": "小鹏汽车｜XPeng July 2026 vehicle delivery results",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0803/2026080303094.pdf",
+      "accessed_at": "2026-08-08"
+    },
+    {
+      "id": "xpeng-F13",
+      "title": "小鹏汽车｜XPeng notice of board meeting for Q2 2026 results",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0804/2026080401150.pdf",
+      "accessed_at": "2026-08-08"
+    },
+    {
+      "id": "xpeng-F14",
+      "title": "小鹏汽车｜XPeng July 2026 delivery release dated August 1",
+      "tier": "primary",
+      "url": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-july-2026-302840496.html",
+      "accessed_at": "2026-08-08"
     },
     {
       "id": "xpeng-M01",
       "title": "小鹏汽车｜Tencent adjusted daily price history — 09868.HK",
       "tier": "market_data",
       "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk09868,day,,,900,qfq",
-      "accessed_at": "2026-07-29"
+      "accessed_at": "2026-08-08"
     },
     {
-      "id": "shared-hstech",
-      "title": "恒生科技指数日线｜共享风险偏好代理，不是六家公司共同业绩基准",
+      "id": "xpeng-M03",
+      "title": "小鹏汽车｜Tencent adjusted daily price history — HSTECH",
       "tier": "market_data",
-      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2026-05-01,2026-07-27,100,qfq",
-      "accessed_at": "2026-07-27"
-    },
-    {
-      "id": "xpeng-IR01",
-      "title": "小鹏汽车｜Events and Presentations（截至2026-07-30未列Upcoming Event）",
-      "tier": "primary",
-      "url": "https://ir.xiaopeng.com/news-events/events-presentations",
-      "accessed_at": "2026-07-30"
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,,,900,qfq",
+      "accessed_at": "2026-08-08"
     }
   ],
   "data_quality": {

@@ -234,7 +234,7 @@ def reaction_for(
         "benchmark_adjusted": f"T+5超额 {fmt_pct(row.get('t5_excess_hstech_pct'))}",
         "volume_ratio": None,
         "resonance": resonance(window),
-        "source_refs": ["xpeng-M01", "shared-hstech"],
+        "source_refs": ["xpeng-M01", "xpeng-M03"],
         "attribution_confidence": row.get("causal_confidence"),
         "limitations": "事件窗口是相关性观察，不证明单一公告造成全部涨跌。",
     }
@@ -250,8 +250,10 @@ def source_refs() -> list[dict[str, Any]]:
             "F05",
             "F08",
             "F14",
+            "F16",
             "M02",
             "P01",
+            "P03",
             "R05",
             "T10",
         ],
@@ -267,16 +269,29 @@ def source_refs() -> list[dict[str, Any]]:
             "P_HSTECH",
         ],
         "vobile": ["F01", "F02", "F03", "F04", "F05", "H01", "M01", "M02"],
-        "xpeng": ["F01", "F03", "F04", "M01"],
+        "xpeng": [
+            "F01",
+            "F03",
+            "F04",
+            "F08",
+            "F09",
+            "F10",
+            "F11",
+            "F12",
+            "F13",
+            "F14",
+            "M01",
+            "M03",
+        ],
     }
     refs: list[dict[str, Any]] = []
     market_ids = {
         "horizon": {"M02"},
-        "meitu": {"P01"},
+        "meitu": {"P01", "P03"},
         "nanhua": {"P01"},
         "smic": {"P_H", "P_HSTECH"},
         "vobile": {"M01", "M02"},
-        "xpeng": {"M01"},
+        "xpeng": {"M01", "M03"},
     }
     for key, ids in selected.items():
         company = COMPANIES[key]
@@ -307,6 +322,12 @@ def source_refs() -> list[dict[str, Any]]:
                     "accessed_at": (
                         item.get("accessed_at")
                         or item.get("accessed_date")
+                        or (
+                            item.get("retrieved_at")
+                            if key == "xpeng"
+                            or (key == "meitu" and source_id in {"F16", "P03"})
+                            else None
+                        )
                         or "2026-07-29"
                     ),
                 }
@@ -317,15 +338,6 @@ def source_refs() -> list[dict[str, Any]]:
             **hstech,
             "id": "shared-hstech",
             "title": "恒生科技指数日线｜共享风险偏好代理，不是六家公司共同业绩基准",
-        }
-    )
-    refs.append(
-        {
-            "id": "xpeng-IR01",
-            "title": "小鹏汽车｜Events and Presentations（截至2026-07-30未列Upcoming Event）",
-            "tier": "primary",
-            "url": "https://ir.xiaopeng.com/news-events/events-presentations",
-            "accessed_at": "2026-07-30",
         }
     )
     return refs
@@ -365,13 +377,19 @@ def completed_event(
     source_gap: str,
     reaction_date: str | None = None,
     manual_reaction: dict[str, Any] | None = None,
+    reported_at: str | None = None,
+    event_time: str | None = None,
+    beijing_time: str | None = None,
+    definition_changes: list[str] | None = None,
+    expectation_baseline: str | None = None,
+    validation_status: str | None = None,
 ) -> dict[str, Any]:
     company = COMPANIES[company_key]
     prefixed = [f"{company_key}-{source_id}" for source_id in source_ids]
     market = manual_reaction or reaction_for(
         company_key, reaction_date or event_date, reactions
     )
-    validation_status = (
+    resolved_validation_status = validation_status or (
         "market_reviewed"
         if market.get("resonance") != "pending"
         else "actual_reported"
@@ -379,9 +397,9 @@ def completed_event(
     return {
         "event_id": event_id,
         "date": event_date,
-        "time": None,
+        "time": event_time,
         "event_timezone": "Asia/Shanghai",
-        "beijing_time": event_date,
+        "beijing_time": beijing_time or event_date,
         "date_status": "completed",
         "event_type": event_type,
         "company": f"{company['name']}｜{title}",
@@ -392,15 +410,15 @@ def completed_event(
         "impact_score": impact,
         "why_it_matters": why,
         "expectation_snapshot": expectation,
-        "expectation_baseline": (
+        "expectation_baseline": expectation_baseline or (
             None
             if expectation
             else "没有可审计、事前冻结的一致预期；不做事后 surprise 打分。"
         ),
         "actual_results": {
-            "reported_at": f"{event_date}T18:00:00+08:00",
+            "reported_at": reported_at or f"{event_date}T18:00:00+08:00",
             "metrics": actual_metrics,
-            "definition_changes": [],
+            "definition_changes": definition_changes or [],
             "source_refs": prefixed,
         },
         "surprise": surprise or no_baseline(
@@ -413,7 +431,7 @@ def completed_event(
             "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。",
         ],
         "validation": {
-            "status": validation_status,
+            "status": resolved_validation_status,
             "next_check_at": next_check,
             "thesis_impact": review,
             "review_score": None,
@@ -441,6 +459,7 @@ def scheduled_event(
     transmission_paths: list[str] | None = None,
     next_check_at: str | None = None,
     source_gap: str | None = None,
+    frozen_at: str | None = None,
 ) -> dict[str, Any]:
     company = COMPANIES[company_key]
     prefixed = [f"{company_key}-{source_id}" for source_id in source_ids]
@@ -464,7 +483,7 @@ def scheduled_event(
         "impact_score": 5,
         "why_it_matters": why,
         "expectation_snapshot": {
-            "frozen_at": AS_OF,
+            "frozen_at": frozen_at or AS_OF,
             "official_guidance": official_guidance or [],
             "consensus": [],
             "previous_actual": previous_actual or [],
@@ -619,20 +638,141 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
             "2025-08-19",
             "2025Q2业绩",
             "earnings_release",
-            ["F01"],
+            ["F08", "F09"],
             [
                 "交付103,181辆",
                 "收入RMB18.27bn",
                 "毛利率17.3%",
                 "vehicle margin 14.3%",
                 "净亏损RMB0.48bn",
+                "现金类资产RMB47.57bn",
             ],
-            "这是产品周期、毛利修复和亏损收窄能否同步的历史参照点。",
+            "这是产品周期、毛利修复和亏损收窄同步改善的历史参照点，但发布后五日涨幅被后续增持事件显著污染。",
             ["车型换代 → 交付/ASP → vehicle margin → 费用杠杆 → CFO"],
             "2025Q3实际",
             reactions,
-            review="T+5强、T+20回吐，说明业绩拐点与行情持续性必须分开判断。",
-            source_gap="历史官方指引未在本包中形成可审计冻结快照。",
+            expectation={
+                "frozen_at": "2025-05-21T20:00:00+08:00",
+                "official_guidance": [
+                    "Q2交付102,000至108,000辆",
+                    "Q2收入RMB17.5bn至18.7bn",
+                ],
+                "consensus": [],
+                "previous_actual": [
+                    "2025Q1收入RMB15.81bn",
+                    "2025Q1 vehicle margin 10.5%",
+                    "2025Q1净亏损RMB0.66bn",
+                ],
+                "source_refs": ["xpeng-F08"],
+            },
+            surprise={
+                "direction": "neutral_on_guided_metrics",
+                "raw": "交付103,181辆、收入RMB18.27bn，均在官方指引区间内",
+                "percent": "交付较指引中点-1.7%；收入较指引中点+0.9%",
+                "score": 0,
+                "method": "actual_vs_frozen_official_guidance",
+                "confidence": "high",
+                "reason": (
+                    "交付和收入都只是符合官方指引；vehicle margin环比+3.8个百分点、"
+                    "亏损环比收窄28.1%是质量亮点，但没有冻结共识，不能量化成市场surprise。"
+                ),
+                "source_refs": ["xpeng-F08", "xpeng-F09"],
+            },
+            manual_reaction={
+                "intraday": "T0 -1.85%",
+                "t1": "T−1→T+1 +2.48%",
+                "t5": "T−1→T+5 +19.94%（含8月21日创始人增持事件）",
+                "t20": "+6.11%",
+                "benchmark": "HSTECH",
+                "benchmark_adjusted": "T+5超额 +16.30%，不可归因于财报单一事件",
+                "volume_ratio": None,
+                "resonance": "positive_resonance",
+                "source_refs": ["xpeng-M01", "xpeng-M03", "xpeng-F10"],
+                "attribution_confidence": "low",
+                "limitations": "财报后窗口与创始人增持及新P7发布预期重叠。",
+            },
+            review=(
+                "财报当日跌1.85%；窗口内最大单日上涨发生在增持披露后的8月22日。"
+                "因此原T+5 +19.94%只能定义为事件簇结果，不能写成Q2财报大超预期。"
+            ),
+            source_gap="没有冻结卖方一致预期；毛利与亏损改善只能作为结果亮点，不能事后制造surprise分数。",
+        )
+    )
+    add(
+        completed_event(
+            "xpeng",
+            "xpeng-founder-purchase-2025",
+            "2025-08-21",
+            "何小鹏增持3.1m股",
+            "insider_action",
+            ["F10"],
+            [
+                "何小鹏通过全资实体在8月20日至21日买入3.1m股A类普通股",
+                "平均价HK$80.49",
+                "成交金额约HK$249.5m",
+                "增持后披露经济权益约18.9%",
+            ],
+            "这是2025Q2财报窗口内最清晰的新增催化；它能验证真金白银投入，但不能替代后续经营结果。",
+            [
+                "内部人现金买入 → 信心信号与流通需求 → 短线重估",
+                "后续经营兑现/不兑现 → 信号持续或衰减",
+            ],
+            "后续交付、毛利、现金与是否继续增持",
+            reactions,
+            manual_reaction={
+                "intraday": "首个反应日8月22日 +13.60%（HK$80.90→HK$91.90）",
+                "t1": "T−1→T+1 +13.10%",
+                "t5": "T−1→T+5 +3.71%",
+                "t20": "+4.02%",
+                "benchmark": "HSTECH",
+                "benchmark_adjusted": "T+5 HSTECH +3.20%；超额仅+0.51%",
+                "volume_ratio": "首个反应日约3.92×此前20日均量",
+                "resonance": "positive_resonance",
+                "source_refs": ["xpeng-M01", "xpeng-M03"],
+                "attribution_confidence": "medium",
+                "limitations": "T0冲击清晰，但T+5已回吐大部分超额，且新P7发布预期重叠。",
+            },
+            review=(
+                "短线最强冲击更接近创始人增持，而不是8月19日财报；"
+                "但五日后相对HSTECH只剩约0.5个百分点超额，说明信心交易并未形成持续趋势。"
+            ),
+            source_gap="无法识别全部买盘来源，也不能由一次增持推断未来业绩或后续继续买入。",
+        )
+    )
+    add(
+        completed_event(
+            "xpeng",
+            "xpeng-next-p7-launch-2025",
+            "2025-08-27",
+            "全新P7发布",
+            "product_launch",
+            ["F11"],
+            ["8月27日正式发布全新P7", "8月28日开始全国交付"],
+            "它是财报后产品周期叙事的下一兑现点，也构成增持后价格窗口的重叠事件。",
+            [
+                "新品发布/价格 → 订单 → 交付与车型结构 → ASP/vehicle margin",
+                "预期提前交易 → 发布日兑现 → 价格回吐风险",
+            ],
+            "P7订单、9月量产爬坡与车型毛利",
+            reactions,
+            manual_reaction={
+                "intraday": "同日收盘T0 -1.75%",
+                "t1": "T−1→T+1 -9.82%",
+                "t5": "T−1→T+5 -16.14%",
+                "t20": "-11.52%",
+                "benchmark": "HSTECH",
+                "benchmark_adjusted": "T+5 HSTECH -1.70%；超额 -14.44%",
+                "volume_ratio": "T0约0.94×此前20日均量",
+                "resonance": "negative_resonance",
+                "source_refs": ["xpeng-M01", "xpeng-M03"],
+                "attribution_confidence": "low",
+                "limitations": "发布会具体时点未冻结，且财报、增持和大盘风险偏好仍在同一窗口。",
+            },
+            review=(
+                "新P7发布后五日显著回吐，符合‘预期先交易、落地后再验证订单与毛利’的模式；"
+                "它进一步证明财报T+5不能被当作单一事件收益。"
+            ),
+            source_gap="没有冻结发布前订单共识、车型毛利和发布会精确市场时点。",
         )
     )
     add(
@@ -1059,41 +1199,67 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
         )
     )
     add(
-        scheduled_event(
+        completed_event(
             "xpeng",
             "xpeng-july-delivery-2026",
-            "2026-08-03",
-            "2026年7月交付更新（预计窗口）",
-            ["F04"],
-            "月度交付是Q2环比修复能否延续的最早高频验证，但单月销量不能替代收入、毛利和现金。",
+            "2026-08-01",
+            "2026年7月交付",
+            "operating_update",
+            ["F04", "F09", "F12", "F14"],
             [
-                "7月交付能否维持6月40,126辆附近，还是新品切换造成短期回落？",
-                "车型结构、订单积压和促销是否支持后续ASP与vehicle margin？",
-                "单月变化是正常排产波动，还是Q3同比增速转弱的先行信号？",
+                "7月交付38,027辆",
+                "同比+4%",
+                "较6月40,126辆环比-5.2%",
+                "累计交付超过1.2m辆",
             ],
-            date_status="estimated",
-            beijing_time="预计2026年8月上旬｜非官宣",
-            previous_actual=[
-                "2026年6月交付40,126辆",
-                "2026Q2交付103,295辆，同比+0.1%、环比+64.8%",
-            ],
-            transmission_paths=[
+            "7月是Q2低点修复能否继续加速的第一笔Q3数据；结果同比略增、环比回落，尚不足以确认新一轮上行。",
+            [
                 "月度订单/排产 → 交付与车型结构 → Q3收入节奏",
                 "促销/新品切换 → ASP与vehicle margin → 现金消耗",
             ],
-            source_gap=(
-                "2026-08-03只是按月度披露惯例设置的研究锚点，不是公司确认日期；"
-                "实际公告日、财务结果和事件后价格窗口待披露。"
+            "8月24日Q2财务与8—9月交付",
+            reactions,
+            expectation={
+                "frozen_at": "2026-07-30T18:00:00+08:00",
+                "official_guidance": [],
+                "consensus": [],
+                "previous_actual": [
+                    "2026年6月交付40,126辆",
+                    "2025年7月交付36,717辆",
+                    "事前问题：能否维持6月约40,126辆的运行率",
+                ],
+                "source_refs": ["xpeng-F04", "xpeng-F09"],
+            },
+            surprise=no_baseline(
+                "没有公司单月指引或冻结一致预期；同比+4%、环比-5.2%是实际变化，不等于正式miss。"
             ),
+            manual_reaction={
+                "intraday": "首个反应日8月3日 -3.08%（HK$50.60→HK$49.04）",
+                "t1": "T−1→T+1 -7.11%",
+                "t5": None,
+                "t20": None,
+                "benchmark": "HSTECH",
+                "benchmark_adjusted": "截至8月7日T+4：小鹏-7.83%、HSTECH+0.60%，超额-8.43%",
+                "volume_ratio": "首个反应日0.82×此前20日均量；8月4日约1.64×",
+                "resonance": "negative_resonance",
+                "source_refs": ["xpeng-M01", "xpeng-M03"],
+                "attribution_confidence": "low",
+                "limitations": "只有四个完整交易日；8月4日同时公布Q2董事会日期，且无冻结单月共识。",
+            },
+            review=(
+                "7月交付说明销量从Q1低点恢复，但没有在6月基础上继续抬升；"
+                "截至8月7日价格显著跑输HSTECH，但样本只有T+4，不能把跌幅全归因于交付。"
+            ),
+            source_gap="未披露车型结构、订单积压、促销、ASP和单车毛利；T+5/T+20仍待形成。",
         )
     )
     add(
         scheduled_event(
             "xpeng",
             "xpeng-q2-results-2026",
-            None,
+            "2026-08-24",
             "2026Q2完整财务结果",
-            ["F03", "F04", "IR01"],
+            ["F03", "F04", "F12", "F13"],
             (
                 "这是把Q2交付修复桥接到收入、ASP、vehicle margin、亏损、库存和现金的"
                 "关键节点，也是判断增长变量是否真正由低向高的主验证。"
@@ -1104,16 +1270,11 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
                 "净亏损、经营现金流、库存和现金能否扭转Q1恶化？",
                 "Q3交付及收入指引是否支持同比重新加速，而不只是环比反弹？",
             ],
-            date_status="tba",
-            timeline_anchor_date="2026-08-31",
-            beijing_time="TBA｜研究复核窗：2026年8月下旬",
+            date_status="confirmed",
+            beijing_time="2026-08-24 20:00｜公司已公告",
             official_guidance=[
                 "2026Q2交付指引100,000至106,000辆；实际已披露103,295辆",
                 "2026Q2收入指引RMB19.6bn至20.8bn",
-            ],
-            previous_actual=[
-                "2026Q1收入RMB13.03bn，gross margin 20.6%，vehicle margin 12.1%",
-                "2026Q1净亏损RMB1.78bn，现金类资产约RMB42.09bn",
             ],
             transmission_paths=[
                 "交付 × ASP → 汽车收入 → vehicle margin",
@@ -1121,11 +1282,17 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
                 "库存/应付/资本开支 → CFO与现金安全垫",
                 "Q3官方指引 → 同比增速预期 → 估值与风险偏好",
             ],
-            next_check_at="官方IR或HKEX发布业绩日期后立即更新；最迟在2026-08-31复核",
+            previous_actual=[
+                "2026Q1收入RMB13.03bn，gross margin 20.6%，vehicle margin 12.1%",
+                "2026Q1净亏损RMB1.78bn，现金类资产约RMB42.09bn",
+                "2026年7月交付38,027辆，同比+4%、环比-5.2%",
+            ],
+            next_check_at="2026-08-24 20:00结果与电话会后立即回填",
             source_gap=(
-                "截至2026-07-30，小鹏IR活动页未列Upcoming Event，Q2业绩日期仍为TBA；"
-                "8月下旬只是研究复核窗，不是公司官宣。"
+                "发布日期已确认；市场一致预期、Q2实际财务和Q3官方指引仍待披露，"
+                "不得在8月24日前预填结果。"
             ),
+            frozen_at="2026-08-08T12:00:00+08:00",
         )
     )
     add(
@@ -1134,10 +1301,11 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
             "xpeng-q3-delivery-2026",
             "2026-10-09",
             "2026Q3交付与同比增速验证（预计窗口）",
-            ["F03", "F04"],
-            "Q2交付同比仅+0.1%；只有Q3交付重新超过上年同期并与收入、毛利和现金一致，才能把环比修复升级为增长变量上行。",
+            ["F01", "F03", "F04", "F12"],
+            "Q2交付同比仅+0.1%、7月同比+4%且环比回落；只有Q3交付重新超过上年同期并与收入、毛利和现金一致，才能把环比修复升级为增长变量上行。",
             [
                 "Q3交付能否超过2025Q3的116,007辆并形成同比正增长？",
+                "已有7月38,027辆；8—9月月均至少38,991辆才刚好超过上年Q3，至少44,791辆才达到Q3同比+10%。",
                 "Q2业绩给出的Q3官方指引是否兑现，月度交付是否依赖单次新品脉冲？",
                 "销量增长能否伴随vehicle margin稳定和现金消耗收窄？",
             ],
@@ -1146,6 +1314,7 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
             previous_actual=[
                 "2025Q3交付116,007辆",
                 "2026Q2交付103,295辆，同比+0.1%",
+                "2026年7月交付38,027辆，同比+4%、环比-5.2%",
             ],
             transmission_paths=[
                 "Q3交付同比 → 增速拐点确认/否定",
@@ -1156,6 +1325,7 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
                 "2026-10-09只是季度结束后的研究复核锚点，不是公司确认日期；"
                 "Q3官方指引需在Q2完整业绩披露后冻结。"
             ),
+            frozen_at="2026-08-08T12:00:00+08:00",
         )
     )
     add(
@@ -1173,6 +1343,67 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
             reactions,
             review="初始上涨未延续至T+5；小额增持不能压过基本面与行业情绪。",
             source_gap="无法从单次交易推断管理层私有信息或未来收益。",
+        )
+    )
+    add(
+        completed_event(
+            "meitu",
+            "meitu-h1-preliminary-2026",
+            "2026-07-30",
+            "2026H1初步业务及财务更新",
+            "business_and_financial_update",
+            ["F16"],
+            [
+                "核心业务收入约人民币18亿元，同比+30.9%",
+                "调整后归母利润同比+36%至+40%；IFRS归母利润至少+35%",
+                "付费用户超过1,844万；AI生产力ARR约人民币6.2亿元",
+                "AI credits在Q1和Q2均环比消耗增长超过46%",
+            ],
+            "首次把用户、ARR和收入增长连接到H1调整后及IFRS归母利润方向。",
+            [
+                "ARPU/credits → 收入 → 毛利与费用杠杆",
+                "调整利润 → 扣SBC/CFO/摊薄 → 每股owner earnings",
+            ],
+            "2026-08-26正式中报",
+            reactions,
+            impact=5,
+            expectation_baseline=(
+                "没有可审计、事前冻结的一致预期；只与Q1已知增速和FY2025/H1基数对照，"
+                "不制造精确surprise。"
+            ),
+            surprise=no_baseline("缺少事前冻结的可比共识；增长本身不等于预期差。"),
+            manual_reaction={
+                "intraday": "公告7月30日盘后；7月31日首个完整交易日+10.28%",
+                "t1": "T−1 7月30日收盘至8月3日+11.45%（部分窗口）",
+                "t5": None,
+                "t20": None,
+                "benchmark": "HSTECH",
+                "benchmark_adjusted": "同部分窗口HSTECH +1.50%；超额约+9.95pct",
+                "volume_ratio": None,
+                "resonance": "positive_resonance_partial_window",
+                "chart_value_pct": 11.45,
+                "chart_window": "partial",
+                "chart_title": "截至8月3日部分窗口 +11.45%",
+                "chart_label": "+11.4%*",
+                "source_refs": ["meitu-P03"],
+                "attribution_confidence": "medium",
+                "limitations": "T+5尚未形成；7月29日股价已先涨13.1%，公告不能解释全部窗口收益。",
+            },
+            reported_at="2026-07-30T17:48:00+08:00",
+            event_time="17:48:00",
+            beijing_time="2026-07-30T17:48:00+08:00",
+            definition_changes=[
+                "公告基于未经审核和未经审阅的管理账，正式报表仍待2026-08-26"
+            ],
+            validation_status="market_reviewed_partial",
+            review=(
+                "H1预告把未来一年盈利增长从猜测升级为有官方区间支持的假设，"
+                "但没有证明十年护城河或现价安全边际。"
+            ),
+            source_gap=(
+                "正式毛利率、渠道/模型成本、SBC、CFO、递延收入、净现金和同日"
+                "完全摊薄股数待8月26日。"
+            ),
         )
     )
     add(
@@ -1372,11 +1603,11 @@ def build_events(reactions: dict[str, list[dict[str, str]]]) -> list[dict[str, A
             "meitu-h1-results-2026",
             "2026-08-26",
             "2026H1正式业绩",
-            ["F08", "F03"],
-            "这是把Q1经营KPI桥接到Q2收入、利润、现金、推理成本和净股数的主要决策节点。",
+            ["F08", "F03", "F16"],
+            "这是把H1初步收入和利润增长桥接到毛利、现金、推理成本、SBC和净股数的主要决策节点。",
             [
-                "Q2核心收入和付费用户相对Q1是否继续加速？",
-                "生产力收入占比、ARR和AI credits是否转成确认收入？",
+                "核心收入约+30.9%、调整后归母+36%至+40%能否由正式报表复核？",
+                "生产力收入占比、ARR和AI credits是否转成高质量确认收入与毛利？",
                 "毛利率、CFO、SBC、回购和可转债后的每股owner earnings如何？",
             ],
         )
@@ -1496,7 +1727,7 @@ COMPONENT_CSS = """
   .et-stat{padding:10px 12px;border:1px solid var(--line);border-radius:11px;background:#fff}
   .et-stat b{display:block;font-size:21px;line-height:1.15}
   .et-stat span{color:var(--muted);font-size:11px}
-  .et-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;
+  .et-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;
   margin:15px 0 12px}
   .et-legend>div{display:grid;grid-template-columns:18px 1fr;gap:7px;align-items:center;
   padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:#fff}
@@ -1574,6 +1805,9 @@ COMPONENT_CSS = """
   color:var(--muted);font-size:10px}
   .et-date-legend span{padding:4px 7px;border:1px solid var(--line);border-radius:999px;
   background:#fff}
+  .et-diagnosis{margin:12px 0;padding:13px 15px;border-left:4px solid var(--blue);
+  border-radius:10px;background:#eef4f8;color:#344a56;font-size:12px;line-height:1.65}
+  .et-diagnosis strong{color:#203943}.et-diagnosis a{font-weight:800;color:var(--blue)}
   .et-event-body{padding:0 14px 14px}
   .et-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .et-evidence{padding:10px 11px;border-radius:9px;background:#f7f6f1}
@@ -1598,6 +1832,9 @@ COMPONENT_CSS = """
 def lifecycle(event: dict[str, Any]) -> str:
     if event.get("date_status") != "completed":
         return "expectation_frozen"
+    validation_status = str((event.get("validation") or {}).get("status") or "")
+    if validation_status == "market_reviewed_partial":
+        return validation_status
     market = event.get("market_reaction") or {}
     if market.get("resonance") not in (None, "pending"):
         return "market_reviewed"
@@ -1621,6 +1858,8 @@ def axis_date(event: dict[str, Any]) -> str:
 
 
 def display_date(event: dict[str, Any]) -> str:
+    if event.get("date_status") == "completed" and event.get("date"):
+        return str(event["date"])
     return str(event.get("beijing_time") or event.get("date") or "TBA")
 
 
@@ -1664,7 +1903,9 @@ def reaction_value(event: dict[str, Any], key: str) -> float | None:
     return float(matches[0].replace("−", "-"))
 
 
-def event_axis(events: list[dict[str, Any]], start: date, end: date) -> str:
+def event_axis(
+    events: list[dict[str, Any]], start: date, end: date, as_of_date: str
+) -> str:
     span = max((end - start).days, 1)
 
     def position(value: str) -> float:
@@ -1676,7 +1917,7 @@ def event_axis(events: list[dict[str, Any]], start: date, end: date) -> str:
         classes = ["et-node"]
         if state == "expectation_frozen":
             classes.append("future")
-        elif state == "market_reviewed":
+        elif state.startswith("market_reviewed"):
             classes.append("reviewed")
         if is_not_comparable(event):
             classes.append("not-comparable")
@@ -1691,12 +1932,12 @@ def event_axis(events: list[dict[str, Any]], start: date, end: date) -> str:
             f'title="{escape(title)}"><span class="et-node-date">{escape(axis_node_label(event))}'
             f"</span></a>"
         )
-    now = position(AS_OF[:10])
+    now = position(as_of_date)
     return f"""
       <div class="et-axis-shell" aria-label="公司事件横向时间轴">
         <div class="et-axis">
           <span class="et-axis-label start" style="left:3%">{start.isoformat()}</span>
-          <span class="et-axis-label" style="left:{now:.3f}%">{AS_OF[:10]}</span>
+          <span class="et-axis-label" style="left:{now:.3f}%">{as_of_date}</span>
           <span class="et-axis-label end" style="left:97%">{end.isoformat()}</span>
           <span class="et-now" style="left:{now:.3f}%"><span>NOW</span></span>
           {"".join(nodes)}
@@ -1708,11 +1949,15 @@ def event_axis(events: list[dict[str, Any]], start: date, end: date) -> str:
 def reaction_chart(events: list[dict[str, Any]]) -> str:
     rows: list[tuple[dict[str, Any], dict[str, float]]] = []
     for event in events:
-        values = {
-            key: value
-            for key in ("intraday", "t5", "t20")
-            if (value := reaction_value(event, key)) is not None
-        }
+        market = event.get("market_reaction") or {}
+        if market.get("chart_value_pct") is not None:
+            values = {"partial": float(market["chart_value_pct"])}
+        else:
+            values = {
+                key: value
+                for key in ("intraday", "t5", "t20")
+                if (value := reaction_value(event, key)) is not None
+            }
         if values:
             rows.append((event, values))
     max_abs = max(
@@ -1721,17 +1966,28 @@ def reaction_chart(events: list[dict[str, Any]]) -> str:
     )
     scale = max(10.0, (int(max_abs / 10) + 1) * 10.0)
     row_html = []
-    class_for = {"intraday": "t0", "t5": "t5", "t20": "t20"}
-    label_for = {"intraday": "T0", "t5": "T+5", "t20": "T+20"}
+    class_for = {"intraday": "t0", "t5": "t5", "t20": "t20", "partial": "t5"}
+    label_for = {"intraday": "T0", "t5": "T+5", "t20": "T+20", "partial": "部分窗口"}
     for event, values in rows:
         bars = []
+        market = event.get("market_reaction") or {}
         for key, value in values.items():
             width = min(48.0, abs(value) / scale * 48.0)
             direction = "positive" if value >= 0 else "negative"
+            title = (
+                str(market.get("chart_title"))
+                if key == "partial"
+                else f"{label_for[key]} {value:+.2f}%"
+            )
+            label = (
+                str(market.get("chart_label"))
+                if key == "partial"
+                else f"{value:+.1f}%"
+            )
             bars.append(
                 f'<span class="et-bar {class_for[key]} {direction}" '
-                f'style="width:{width:.3f}%" title="{label_for[key]} {value:+.2f}%">'
-                f"<em>{value:+.1f}%</em></span>"
+                f'style="width:{width:.3f}%" title="{escape(title)}">'
+                f"<em>{escape(label)}</em></span>"
             )
         row_html.append(
             f'<div class="et-reaction-row"><a class="et-reaction-label" '
@@ -1886,6 +2142,15 @@ def company_artifact(report: dict[str, Any], company_key: str) -> dict[str, Any]
     ]
     return {
         **report,
+        "as_of": (
+            "2026-08-08T12:00:00+08:00"
+            if company_key == "xpeng"
+            else (
+                "2026-08-04T10:18:00+08:00"
+                if company_key == "meitu"
+                else report["as_of"]
+            )
+        ),
         "title": f"{company['name']}：事件 Surprise 与市场共振",
         "subtitle": (
             "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、"
@@ -1924,7 +2189,12 @@ def component_html(artifact: dict[str, Any], company_key: str) -> str:
         date.fromisoformat(END),
         max(date.fromisoformat(axis_date(event)) for event in events),
     )
-    reviewed = sum(lifecycle(event) == "market_reviewed" for event in events)
+    reviewed = sum(lifecycle(event).startswith("market_reviewed") for event in events)
+    reviewed_label = (
+        "已复核/部分价格窗"
+        if any(lifecycle(event) == "market_reviewed_partial" for event in events)
+        else "已复核价格窗"
+    )
     nocomp = sum(is_not_comparable(event) for event in events)
     future = sum(lifecycle(event) == "expectation_frozen" for event in events)
     latest_completed = max(
@@ -1946,6 +2216,17 @@ def component_html(artifact: dict[str, Any], company_key: str) -> str:
         )
         for event in events
     )
+    cluster_note = ""
+    if company_key == "xpeng":
+        cluster_note = """
+  <div class="et-diagnosis"><strong>先读结论：</strong>2025Q2的T+5 +19.94%不是
+  单一财报反应。财报当日为-1.85%；<a href="#event-xpeng-founder-purchase-2025">创始人增持</a>
+  披露后的首个交易日涨13.60%、量比约3.92×，而
+  <a href="#event-xpeng-next-p7-launch-2025">新P7发布</a>后T+5又跌16.14%。
+  2026年7月交付38,027辆，同比+4%但环比-5.2%；截至8月7日四个交易日跑输HSTECH约8.43个百分点。
+  当前更像“低点修复、尚未重新加速”；下一硬验证是8月24日Q2财务与Q3指引。</div>
+        """
+    as_of_date = str(artifact["as_of"])[:10]
     html = f"""
 {COMPONENT_START}
 {COMPONENT_CSS}
@@ -1957,7 +2238,7 @@ def component_html(artifact: dict[str, Any], company_key: str) -> str:
     <p>只放本公司事件。图上点击节点可跳到证据卡；价格反应是相关性观察，不是买卖指令或单因果证明。</p></div>
     <div class="et-summary">
       <div class="et-stat"><b>{len(events)}</b><span>公司事件</span></div>
-      <div class="et-stat"><b>{reviewed}</b><span>已复核价格窗</span></div>
+      <div class="et-stat"><b>{reviewed}</b><span>{reviewed_label}</span></div>
       <div class="et-stat"><b>{nocomp}</b><span>不可比 Surprise</span></div>
       <div class="et-stat"><b>{future}</b><span>未来验证节点</span></div>
     </div>
@@ -1969,6 +2250,8 @@ def component_html(artifact: dict[str, Any], company_key: str) -> str:
     <small>实心：官方实际已披露。</small></div>
     <div><i class="et-shape ring"></i><b>market_reviewed</b>
     <small>外圈：至少一个价格窗口已复核。</small></div>
+    <div><i class="et-shape ring"></i><b>market_reviewed_partial</b>
+    <small>部分窗口：T+5/T+20尚未形成，不能当完整复盘。</small></div>
     <div><i class="et-shape diamond"></i><b>not_comparable</b>
     <small>菱形：无可靠基线；不等于负面。</small></div>
   </div>
@@ -1976,7 +2259,8 @@ def component_html(artifact: dict[str, Any], company_key: str) -> str:
     <b>日期口径：</b><span>已确认日期＝公司已公告</span>
     <span>预计窗口＝研究锚点，非官宣</span><span>TBA＝官方尚未公布日期</span>
   </div>
-  {event_axis(events, start, end)}
+  {cluster_note}
+  {event_axis(events, start, end, as_of_date)}
   {reaction_chart(events)}
   <div class="et-ledger-title"><h4>纵向证据账本</h4>
   <span>预期 → 实际 → Surprise → 价格 → 传导 → 下一验证</span></div>
@@ -1984,6 +2268,18 @@ def component_html(artifact: dict[str, Any], company_key: str) -> str:
   <p class="chart-note">研究边界：影响分只用于排序研究注意力，不是收益预测；
   未来节点保持空心，缺失窗口不画成 0。</p>
 </div>
+<script>
+(() => {{
+  const openTarget = () => {{
+    const id = location.hash.slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (target && target.matches('details.et-event')) target.open = true;
+  }};
+  openTarget();
+  window.addEventListener('hashchange', openTarget);
+}})();
+</script>
 <h3 class="et-preserved-label">原报告事件表与更长历史（保留）</h3>
 {COMPONENT_END}
     """.strip()
@@ -2018,9 +2314,16 @@ def inject_component(report_path: Path, component: str) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.parse_args()
+    parser.add_argument(
+        "--company",
+        choices=sorted(COMPANIES),
+        help="只重建指定公司的事件 artifact 与嵌入式 HTML；默认重建全部公司。",
+    )
+    args = parser.parse_args()
     report = build_report()
-    for company_key, company in COMPANIES.items():
+    company_keys = [args.company] if args.company else list(COMPANIES)
+    for company_key in company_keys:
+        company = COMPANIES[company_key]
         artifact = company_artifact(report, company_key)
         json_path = DOCS / company["slug"] / "data" / "event-terminal.json"
         json_path.write_text(

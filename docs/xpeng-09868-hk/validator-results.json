@@ -1,6 +1,6 @@
 {
   "schema_version": "seed.company-research-validator-results.v1",
-  "generated_at": "2026-07-29T13:20:00+08:00",
+  "generated_at": "2026-08-08T12:00:00+08:00",
   "directory": "xpeng-09868-hk",
   "artifact_status": "needs_human_review",
   "valid": true,
@@ -14,19 +14,19 @@
     "gate_count": 9,
     "dimension_count": 25,
     "indicator_count": 50,
-    "source_count": 11
+    "source_count": 19
   },
   "template_parity": {
     "schema_version": "seed.public-report-template-parity.v1",
-    "generated_at": "2026-07-29T05:19:40.209589+00:00",
+    "generated_at": "2026-08-08T12:14:38.538621+00:00",
     "path": "report.html",
     "template_version": "company-research-publication-v1",
     "valid": true,
     "counts": {
       "section": 24,
-      "table": 19,
+      "table": 20,
       "svg": 3,
-      "details": 12
+      "details": 19
     },
     "contract_counts": {
       "required_dimensions": 25,
@@ -56,11 +56,11 @@
     "warnings": []
   },
   "counts": {
-    "sources": 11,
+    "sources": 19,
     "dimensions": 25,
     "indicators": 50,
     "gates": 9,
-    "evidence_anchors": 12
+    "evidence_anchors": 19
   },
   "errors": [],
   "warnings": []

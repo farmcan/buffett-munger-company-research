@@ -3,7 +3,7 @@
   "artifact_type": "stock_fundamentals_valuation",
   "artifact_role": "public_company_research",
   "status": "needs_human_review",
-  "generated_at": "2026-07-29T13:20:00+08:00",
+  "generated_at": "2026-08-08T12:00:00+08:00",
   "security": {
     "security_id": "XHKG:09868",
     "company_name": "XPeng Inc.",
@@ -16,9 +16,9 @@
     "reporting_standard": "US GAAP"
   },
   "as_of": {
-    "research_date": "2026-07-29",
-    "price": 49.56,
-    "price_date": "2026-07-28",
+    "research_date": "2026-08-08",
+    "price": 46.64,
+    "price_date": "2026-08-07",
     "price_source_ref": "M01"
   },
   "methodology_refs": [
@@ -50,7 +50,7 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526157849/d36361d20f.htm",
       "published_at_status": "known",
       "published_at": "2026-04-16",
-      "accessed_at": "2026-07-29",
+      "accessed_at": "2026-08-08",
       "period": "FY2025",
       "audit_status": "audited",
       "scope": "consolidated_group",
@@ -75,7 +75,7 @@
       "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001810997.json",
       "published_at_status": "known",
       "published_at": "2026-04-16",
-      "accessed_at": "2026-07-29",
+      "accessed_at": "2026-08-08",
       "period": "FY2021-FY2025",
       "audit_status": "audited",
       "scope": "consolidated_group_xbrl_facts",
@@ -94,7 +94,7 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526243143/d139430d6k.htm",
       "published_at_status": "known",
       "published_at": "2026-05-28",
-      "accessed_at": "2026-07-29",
+      "accessed_at": "2026-08-08",
       "period": "2026Q1",
       "audit_status": "unaudited",
       "scope": "consolidated_group",
@@ -117,7 +117,7 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526293394/d114872d6k.htm",
       "published_at_status": "known",
       "published_at": "2026-07-02",
-      "accessed_at": "2026-07-29",
+      "accessed_at": "2026-08-08",
       "period": "2026Q2",
       "audit_status": "unaudited",
       "scope": "company_operating_kpi",
@@ -136,7 +136,7 @@
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070701078.pdf",
       "published_at_status": "known",
       "published_at": "2026-07-07",
-      "accessed_at": "2026-07-29",
+      "accessed_at": "2026-08-08",
       "period": "2026-06-30",
       "audit_status": "not_applicable",
       "scope": "listed_security",
@@ -155,7 +155,7 @@
       "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0417/2026041701171.pdf",
       "published_at_status": "known",
       "published_at": "2026-04-17",
-      "accessed_at": "2026-07-29",
+      "accessed_at": "2026-08-08",
       "period": "2026-04-17",
       "audit_status": "not_applicable",
       "scope": "listed_security",
@@ -175,7 +175,7 @@
       "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/17/Short_Position_Reporting_Aggregated_Data_20260717.csv?rev=76131f683e7240c3ade786261a04ff24",
       "published_at_status": "known",
       "published_at": "2026-07-24",
-      "accessed_at": "2026-07-29",
+      "accessed_at": "2026-08-08",
       "period": "2026-07-17",
       "audit_status": "not_applicable",
       "scope": "reportable_short_positions",
@@ -185,15 +185,152 @@
       "content_sha256": "22e97934c1fa5fb99b869f691b9df9c76c632c23c567ed4b3668fb9fb56942a1"
     },
     {
+      "id": "F08",
+      "tier": "A",
+      "source_type": "hkex_announcement",
+      "title": "XPeng Q1 2025 unaudited financial results and Q2 guidance",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0521/2025052100660.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-05-21",
+      "accessed_at": "2026-08-08",
+      "period": "2025Q1_and_2025Q2_guidance",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "historical_guidance",
+        "deliveries",
+        "revenue",
+        "margin"
+      ],
+      "content_sha256": "916c9be66a2a75d47b7968651a33429ee57d37f2636b8ceb23540325b1ba4646"
+    },
+    {
+      "id": "F09",
+      "tier": "A",
+      "source_type": "hkex_announcement",
+      "title": "XPeng Q2 2025 unaudited financial results",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0819/2025081900612.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-08-19",
+      "accessed_at": "2026-08-08",
+      "period": "2025Q2",
+      "audit_status": "unaudited",
+      "scope": "consolidated_group",
+      "covers": [
+        "historical_results",
+        "deliveries",
+        "revenue",
+        "margin",
+        "cash",
+        "guidance"
+      ],
+      "content_sha256": "fcdb9db5d0a59149657e09eb094439f23144563dd4e9eebdd96467da1392323e"
+    },
+    {
+      "id": "F10",
+      "tier": "A",
+      "source_type": "hkex_announcement",
+      "title": "XPeng controlling shareholder shareholding increase",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0821/2025082101163.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-08-21",
+      "accessed_at": "2026-08-08",
+      "period": "2025-08-20_to_2025-08-21",
+      "audit_status": "not_applicable",
+      "scope": "controlling_shareholder_transaction",
+      "covers": [
+        "insider_action",
+        "shareholding",
+        "event_attribution"
+      ],
+      "content_sha256": "96dd421e3f115ffda12d0e81405e01a2d55274be4e497823d81276e22ba309df"
+    },
+    {
+      "id": "F11",
+      "tier": "A",
+      "source_type": "hkex_announcement",
+      "title": "XPeng August 2025 delivery results and New P7 launch",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0901/2025090100103.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-09-01",
+      "accessed_at": "2026-08-08",
+      "period": "2025-08",
+      "audit_status": "not_applicable",
+      "scope": "company_operating_kpi",
+      "covers": [
+        "deliveries",
+        "new_p7_launch",
+        "event_attribution"
+      ],
+      "content_sha256": "249a8bdff2c08a568c4a7feed873b5ffdc3e4610cac58a61d8906f0863a10d54"
+    },
+    {
+      "id": "F12",
+      "tier": "A",
+      "source_type": "hkex_announcement",
+      "title": "XPeng July 2026 vehicle delivery results",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0803/2026080303094.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-08-03",
+      "accessed_at": "2026-08-08",
+      "period": "2026-07",
+      "audit_status": "not_applicable",
+      "scope": "company_operating_kpi",
+      "covers": [
+        "deliveries",
+        "products",
+        "q3_growth_check"
+      ],
+      "content_sha256": "22eaa67ac177213417162023835df8cb2ef8a7c4e117987843e773eff9d6e91f"
+    },
+    {
+      "id": "F13",
+      "tier": "A",
+      "source_type": "hkex_announcement",
+      "title": "XPeng notice of board meeting for Q2 2026 results",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0804/2026080401150.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-08-04",
+      "accessed_at": "2026-08-08",
+      "period": "2026Q2_results_date",
+      "audit_status": "not_applicable",
+      "scope": "listed_security",
+      "covers": [
+        "earnings_date",
+        "board_meeting",
+        "conference_call"
+      ],
+      "content_sha256": "7a85eb7b17d8f7b2cdd828499563f75e1e73ad7309f6fb047ddf3db62278cc75"
+    },
+    {
+      "id": "F14",
+      "tier": "A",
+      "source_type": "issuer_distributed_press_release",
+      "title": "XPeng July 2026 delivery release dated August 1",
+      "url": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-july-2026-302840496.html",
+      "published_at_status": "known",
+      "published_at": "2026-08-01",
+      "accessed_at": "2026-08-08",
+      "period": "2026-07",
+      "audit_status": "not_applicable",
+      "scope": "company_operating_kpi",
+      "covers": [
+        "delivery_release_date",
+        "deliveries",
+        "products"
+      ],
+      "content_sha256": "3979bb9b51692e46c297760c7e7754d5c7a332ce9f7bf9baac4233e7176f1f2d"
+    },
+    {
       "id": "M01",
       "tier": "C",
       "source_type": "market_data_snapshot",
       "title": "Tencent adjusted daily price history — 09868.HK",
       "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk09868,day,,,900,qfq",
       "published_at_status": "known",
-      "published_at": "2026-07-28",
-      "accessed_at": "2026-07-29",
-      "period": "through_2026-07-28",
+      "published_at": "2026-08-07",
+      "accessed_at": "2026-08-08",
+      "period": "through_2026-08-07",
       "audit_status": "not_applicable",
       "scope": "listed_security",
       "covers": [
@@ -202,7 +339,7 @@
         "moving_averages",
         "event_windows"
       ],
-      "content_sha256": "efc0d4cb85d4824d9ccb56c5b53c731c4a45db471d847d2d2990e1645b89149a"
+      "content_sha256": "fc53dfbda7b8cdf7139a040afa8f7f96582286026ef8d98e04323bd411cbbf08"
     },
     {
       "id": "I01",
@@ -212,7 +349,7 @@
       "url": "https://www.xinhuanet.com/20260709/adab526fe8c64da19b27e907fa78393b/c.html",
       "published_at_status": "known",
       "published_at": "2026-07-09",
-      "accessed_at": "2026-07-29",
+      "accessed_at": "2026-08-08",
       "period": "2026H1",
       "audit_status": "not_applicable",
       "scope": "china_auto_industry",
@@ -231,7 +368,7 @@
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0316/2026031601214.pdf",
       "published_at_status": "known",
       "published_at": "2026-03-16",
-      "accessed_at": "2026-07-29",
+      "accessed_at": "2026-08-08",
       "period": "FY2025",
       "audit_status": "audited",
       "scope": "peer_consolidated_group",
@@ -251,7 +388,7 @@
       "url": "https://www.news.cn/20260727/b508c39dd33148ac9a604a5528bc8b94/c.html",
       "published_at_status": "known",
       "published_at": "2026-07-27",
-      "accessed_at": "2026-07-29",
+      "accessed_at": "2026-08-08",
       "period": "2026-07-27",
       "audit_status": "not_applicable",
       "scope": "foreign_exchange",
@@ -259,6 +396,25 @@
         "hkd_cny_fx"
       ],
       "content_sha256": "e68ad920eccfd31c00428c910a06806e9466c7d957dd24222227b6a7d06f3d82"
+    },
+    {
+      "id": "M03",
+      "tier": "C",
+      "source_type": "market_data_snapshot",
+      "title": "Tencent adjusted daily price history — HSTECH",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,,,900,qfq",
+      "published_at_status": "known",
+      "published_at": "2026-08-07",
+      "accessed_at": "2026-08-08",
+      "period": "through_2026-08-07",
+      "audit_status": "not_applicable",
+      "scope": "market_benchmark",
+      "covers": [
+        "benchmark_event_windows",
+        "relative_returns",
+        "risk_appetite_proxy"
+      ],
+      "content_sha256": "0601ca0f17d877f8335fced6324298eeb5bf51a120f5894883f41891dd9623c2"
     }
   ],
   "source_boundaries": {
@@ -1397,7 +1553,7 @@
     {
       "dimension": "valuation",
       "status": "applicable",
-      "summary": "基础市值约949.5亿港元；TTM亏损，EV/TTM销售约0.83倍仅作预期温度计，不是内在价值。",
+      "summary": "基础市值约893.7亿港元；TTM亏损，EV/TTM销售约0.77倍仅作预期温度计，不是内在价值。",
       "indicators": [
         {
           "id": "currency_consistent_value_range_assumptions_and_dates",
@@ -1429,7 +1585,7 @@
         "I01"
       ],
       "positive_evidence": [
-        "基础市值约949.5亿港元；TTM亏损，EV/TTM销售约0.83倍仅作预期温度计，不是内在价值。"
+        "基础市值约893.7亿港元；TTM亏损，EV/TTM销售约0.77倍仅作预期温度计，不是内在价值。"
       ],
       "counter_evidence": [
         "证据仍受披露时点、口径和未披露分母限制；见下一次验证条件。"
@@ -1559,9 +1715,9 @@
     {
       "label": "reported_fy",
       "status": "not_meaningful",
-      "price": 49.56,
+      "price": 46.64,
       "currency": "HKD",
-      "price_as_of": "2026-07-28",
+      "price_as_of": "2026-08-07",
       "eps": -0.687,
       "eps_period": "FY2025",
       "eps_type": "reported_basic_loss_per_share_proxy",
@@ -1577,9 +1733,9 @@
     {
       "label": "reported_ttm",
       "status": "not_meaningful",
-      "price": 49.56,
+      "price": 46.64,
       "currency": "HKD",
-      "price_as_of": "2026-07-28",
+      "price_as_of": "2026-08-07",
       "eps": -1.176,
       "eps_period": "TTM to 2026Q1",
       "eps_type": "research_ttm_loss_per_current_share_proxy",
@@ -1596,9 +1752,9 @@
     {
       "label": "normalized_owner_earnings",
       "status": "unavailable",
-      "price": 49.56,
+      "price": 46.64,
       "currency": "HKD",
-      "price_as_of": "2026-07-28",
+      "price_as_of": "2026-08-07",
       "eps": null,
       "eps_period": "FY2025 normalized range",
       "eps_type": "fully_diluted_owner_earnings",
@@ -1615,7 +1771,7 @@
   ],
   "forward_scenarios": {
     "currency": "HKD",
-    "price_anchor": 49.56,
+    "price_anchor": 46.64,
     "scenarios": [
       {
         "scenario": "bear",
@@ -1769,10 +1925,10 @@
   "historical_valuation": {
     "status": "unavailable",
     "metric": "point_in_time_ttm_pe",
-    "current_price_hkd": 49.56,
+    "current_price_hkd": 46.64,
     "price_high_900_sessions_hkd": 110.8,
     "price_low_900_sessions_hkd": 25.5,
-    "drawdown_from_high_pct": -55.27,
+    "drawdown_from_high_pct": -57.91,
     "reason": "Negative and volatile earnings make historical PE percentiles invalid; price range is not value.",
     "look_ahead_control": "No current earnings denominator is backfilled into historical dates.",
     "source_refs": [
@@ -1781,16 +1937,17 @@
   },
   "price_move_attribution": {
     "status": "not_causal",
-    "as_of": "2026-07-28",
+    "as_of": "2026-08-07",
     "rule": "Event windows show T0/T+5/T+20 and HSTECH excess return; overlapping macro/product events prevent causal proof.",
     "source_refs": [
-      "M01"
+      "M01",
+      "M03"
     ]
   },
   "source_gaps": [
     {
       "gap": "2026Q2 revenue, vehicle margin, net loss and cash flow are not released.",
-      "resolution": "Update after Q2 results expected in August 2026; date TBA."
+      "resolution": "Update after the confirmed August 24, 2026 Q2 results and conference call."
     },
     {
       "gap": "Maintenance versus growth capex is not disclosed.",
