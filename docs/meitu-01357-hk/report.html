@@ -23,7 +23,7 @@
       --shadow: 0 18px 45px rgba(42, 50, 44, .08);
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       margin: 0;
       overflow-x: hidden;
@@ -127,6 +127,32 @@
     .rally-bars .bar-row { grid-template-columns: 178px 1fr 76px; }
     .rally-bars .track { height: 16px; }
     .rally-bars .bar-row small { display: block; color: var(--muted); font-size: 10px; line-height: 1.3; }
+    .priority-summary { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 14px; margin: 18px 0; }
+    .priority-summary > div { margin: 0; }
+    .probability-chart { margin: 16px 0 20px; }
+    .probability-scale, .probability-row { display: grid; grid-template-columns: 190px minmax(260px, 1fr) 82px; gap: 12px; align-items: center; }
+    .probability-scale { margin-bottom: 7px; color: var(--muted); font-size: 10px; }
+    .probability-axis { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
+    .probability-row { margin: 12px 0; }
+    .probability-name { font-size: 13px; font-weight: 780; line-height: 1.35; }
+    .probability-name small { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; font-weight: 620; }
+    .probability-track { position: relative; height: 16px; border-radius: 999px; background: repeating-linear-gradient(to right, #f0efe8 0, #f0efe8 calc(25% - 1px), #dfe1db calc(25% - 1px), #dfe1db 25%); }
+    .probability-range { position: absolute; top: 2px; bottom: 2px; left: var(--low); width: calc(var(--high) - var(--low)); min-width: 8px; border: 2px solid var(--blue); border-radius: 999px; background: var(--blue-soft); }
+    .probability-range::before, .probability-range::after { content: ""; position: absolute; top: 50%; width: 7px; height: 7px; transform: translateY(-50%); border-radius: 50%; background: var(--blue); }
+    .probability-range::before { left: -4px; }
+    .probability-range::after { right: -4px; }
+    .probability-range.risk { border-color: var(--amber); background: var(--amber-soft); }
+    .probability-range.risk::before, .probability-range.risk::after { background: var(--amber); }
+    .probability-value { text-align: right; font-size: 13px; font-weight: 850; font-variant-numeric: tabular-nums; }
+    .priority-events { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 14px 0 18px; }
+    .priority-event { min-width: 0; padding: 13px; border: 1px solid var(--line); border-top: 4px solid var(--blue); border-radius: 12px; background: #fff; }
+    .priority-event.company { border-top-color: var(--amber); background: #fffaf0; }
+    .priority-event time { display: block; color: var(--muted); font-size: 10px; font-weight: 820; letter-spacing: .03em; }
+    .priority-event strong { display: block; margin: 4px 0; font-size: 13px; line-height: 1.35; }
+    .priority-event small { display: block; color: var(--muted); font-size: 10px; line-height: 1.45; }
+    .confirmation-chain { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px 0; }
+    .confirmation-chain > div { position: relative; padding: 13px 12px; border: 1px solid var(--line); border-radius: 11px; background: #fff; font-size: 12px; font-weight: 760; line-height: 1.45; }
+    .confirmation-chain > div:not(:last-child)::after { content: "→"; position: absolute; z-index: 2; right: -13px; top: 50%; transform: translateY(-50%); width: 18px; color: var(--muted); text-align: center; }
     .chart { padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
     .chart.full { margin: 16px 0 20px; padding: 20px; }
     .chart-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 10px; }
@@ -244,6 +270,8 @@
     footer { padding: 28px 0 55px; color: var(--muted); font-size: 13px; }
     @media (max-width: 900px) {
       .verdict, .two, .entry-grid { grid-template-columns: 1fr; }
+      .priority-summary { grid-template-columns: 1fr; }
+      .priority-events { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .verdict-side { border-left: 0; border-top: 1px solid #e1d0a4; }
       .card { grid-column: span 6; }
       .source-list { columns: 1; }
@@ -272,6 +300,9 @@
       .earnings-bridge { grid-template-columns: 1fr; }
       .reaction-scale, .reaction-row { grid-template-columns: 90px minmax(190px, 1fr) 58px; }
       .rally-bars .bar-row { grid-template-columns: 116px minmax(120px, 1fr) 62px; gap: 8px; }
+      .probability-scale, .probability-row { grid-template-columns: 108px minmax(120px, 1fr) 62px; gap: 8px; }
+      .priority-events, .confirmation-chain { grid-template-columns: 1fr; }
+      .confirmation-chain > div:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -15px; transform: translateX(-50%); }
     }
     @media print {
       body { background: white; color: black; }
@@ -298,8 +329,8 @@
         <span class="pill">公开资料 · 非投资建议</span>
       </div>
       <div class="hero-actions">
-        <a class="diagram-jump" href="#value-capture-diagrams">直接看两张图 →</a>
-        <small>行业需求如何变成收入，以及收入如何变成每股利润</small>
+        <a class="diagram-jump" href="#priority-outlook">先看未来行情判断 →</a>
+        <small>历史主升浪、未来一个月催化与条件化概率放在报告最前</small>
       </div>
       <div class="verdict">
         <div class="verdict-main">
@@ -318,6 +349,7 @@
 
   <nav aria-label="报告目录">
     <div class="wrap">
+      <a href="#priority-outlook">置顶行情判断</a>
       <a href="#executive-summary">两个问题</a>
       <a href="#h1-update">H1 新证据</a>
       <a href="#rolling-update">滚动更新</a>
@@ -353,6 +385,74 @@
   </nav>
 
   <main class="wrap">
+    <section id="priority-outlook">
+      <p class="eyebrow">Executive Summary · Priority Outlook · 8 August 2026</p>
+      <h2>肉眼可见的机会：有高密度事件窗口，但还不是已确认的历史级主升浪</h2>
+      <p class="section-dek">把最重要的短线判断放在报告第一节：未来一至三个月存在模型、应用财报和美图中报三类催化；当前更像 10%—30% 的高波动机会。要复制历史上 50% 以上主升，必须出现“行业点火 → 应用股广度 → 美图财务兑现”的连续证据。</p>
+
+      <div class="priority-summary">
+        <div class="callout blue">
+          <strong>直接结论</strong><br>
+          8 月 10—12 日是第一确认窗，8 月 25 日至 9 月 10 日是最可能形成持续重估的高密度窗口，8 月 26 日美图正式 H1 是公司层最高权重节点。单一模型或同业财报足以点火；只有毛利、经营现金流、SBC 和完全摊薄每股利润同步改善，才把行情从板块 Beta 升级为公司 Alpha。
+        </div>
+        <div class="callout amber">
+          <strong>当前限制</strong><br>
+          7 月 30 日预告至 8 月 7 日已经上涨 10.98%，但首个反应日到 T+5 只有 +0.64%。收入与调整利润方向已部分计价；8 月 26 日若只重复预告而不补现金和毛利，存在 good-news-sold 风险。
+        </div>
+      </div>
+
+      <p><strong>概率图怎么读：</strong>区间标记是截至 8 月 8 日、以 HK$4.75 为价格锚的条件化研究判断，不是统计模型；四类结果不互斥，美图历史上经常先急涨、再出现大回撤。</p>
+      <div class="chart full probability-chart" role="img" aria-label="未来一至三个月美图事件结果条件化概率区间：至少百分之十脉冲为百分之五十至六十五，百分之二十至四十趋势行情为百分之二十五至三十五，至少百分之五十主升浪为百分之十至二十，期间至少百分之二十回撤为百分之二十五至三十五">
+        <div class="chart-head">
+          <div>
+            <div class="chart-title">未来 1—3 个月事件结果区间</div>
+            <div class="chart-subtitle">条件化判断；价格锚为 2026-08-07 收盘 HK$4.75；区间互不排斥</div>
+          </div>
+          <div class="legend"><span class="legend-item"><span class="swatch" style="background:var(--blue)"></span>上行事件</span><span class="legend-item"><span class="swatch amber"></span>双向回撤风险</span></div>
+        </div>
+        <div class="probability-scale"><span></span><div class="probability-axis"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div><span></span></div>
+        <div class="probability-row"><div class="probability-name">至少 +10% 脉冲<small>约 HK$5.23+</small></div><div class="probability-track"><span class="probability-range" style="--low:50%;--high:65%"></span></div><div class="probability-value">50%—65%</div></div>
+        <div class="probability-row"><div class="probability-name">+20%—40% 趋势<small>约 HK$5.70—6.65</small></div><div class="probability-track"><span class="probability-range" style="--low:25%;--high:35%"></span></div><div class="probability-value">25%—35%</div></div>
+        <div class="probability-row"><div class="probability-name">至少 +50% 主升<small>约 HK$7.13+</small></div><div class="probability-track"><span class="probability-range" style="--low:10%;--high:20%"></span></div><div class="probability-value">10%—20%</div></div>
+        <div class="probability-row"><div class="probability-name">期间至少 −20%<small>约 HK$3.80 或更低</small></div><div class="probability-track"><span class="probability-range risk" style="--low:25%;--high:35%"></span></div><div class="probability-value">25%—35%</div></div>
+        <p class="chart-note">这些区间用于比较事件强度和持续性，不是目标价、收益承诺或买卖线。价格换算只展示对应幅度；实际路径可能先涨后跌，因此上行与回撤可以同时发生。</p>
+      </div>
+
+      <h3>未来一个月：先看行业是否从“经营好、股价跌”转成经营与价格同向</h3>
+      <div class="priority-events" aria-label="未来一个月关键事件窗口">
+        <div class="priority-event"><time>8 月 10 日</time><strong>monday.com Q2</strong><small>企业工作流、AI 席位、利润率与财报后价格的第一测试。</small></div>
+        <div class="priority-event"><time>8 月 11—12 日</time><strong>腾讯音乐、腾讯 Q2</strong><small>中国订阅、ARPU、平台应用变现与推理效率的本地映射。</small></div>
+        <div class="priority-event"><time>8 月 21 日</time><strong>恒生指数季度检讨</strong><small>只有官方日历，尚无美图调整结果；不能提前写成被动资金利好。</small></div>
+        <div class="priority-event company"><time>8 月 26 日 · 最高权重</time><strong>美图 H1 正式业绩</strong><small>毛利、CFO、SBC、模型/渠道成本和完全摊薄每股桥决定公司 Alpha。</small></div>
+        <div class="priority-event"><time>8 月 25 日—9 月 10 日</time><strong>美国 SaaS 簇、Adobe</strong><small>两至三家公司同时上修且守住 T+5，才接近持续一至四周的行业主线。</small></div>
+      </div>
+
+      <h3>历史大行情告诉我们：点火方式反复变化，持续条件没有变化</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>历史代表行情</th><th>收盘涨幅</th><th>核心原因</th><th>对未来的有效类比</th></tr></thead>
+          <tbody>
+            <tr><td>2016-12—2017-03</td><td class="up">+134.4%</td><td>港股通、南下资金和低流通盘投机；真正 HK$20+ 只在 3 月 20 日盘中出现</td><td><span class="tag risk">不宜直接类比</span> 当前没有首次纳入港股通的制度红利</td></tr>
+            <tr><td>2020-12—2021-02</td><td class="up">+200.0%</td><td>比特币与加密资产代理交易，实际购币公告发生在阶段高点以后</td><td><span class="tag warn">只能类比高 Beta</span> 不能作为盈利质量样本</td></tr>
+            <tr><td>2022-10—2023-03</td><td class="up">+359.7%</td><td>AI 绘画病毒传播、AIGC/ChatGPT 叙事与盈利预期相继连接</td><td><span class="tag good">最像模型冲击型机会</span> 仍需用户和付费承接</td></tr>
+            <tr><td>2025-01—02</td><td class="up">+137.2%</td><td>DeepSeek 低成本模型重估叠加 FY2024 盈喜</td><td><span class="tag good">最像行业点火</span> 模型降价必须扩散到应用而非只利好模型厂</td></tr>
+            <tr><td>2025-04—07</td><td class="up">+162.6%</td><td>阿里合作、RoboNeo、H1 盈喜连续叠加</td><td><span class="tag good">最像可持续组合</span> 行业、产品与利润三层同时成立</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><small>统一筛选共识别 13 轮至少 50% 的主升和 10 轮 30%—50% 的次级反弹。13 轮主升在阶段高点后的 20 个交易日收盘收益全部为负，中位数 −16.8%，期间最大回撤中位数 −24.0%；完整逐轮证据见<a href="#historical-rallies">历史大涨账本</a>与 <a href="./data/historical-rally-ledger.csv">historical-rally-ledger.csv</a>。</small></p>
+
+      <h3>从“机会”升级成“主升浪”的四步确认</h3>
+      <div class="confirmation-chain" aria-label="未来行情确认顺序">
+        <div>至少 2—3 家应用公司财报后经营指标与 T+1/T+5 股价同向</div>
+        <div>应用股广度扩大，美图相对 HSTECH 转强，而非只有平台或模型股上涨</div>
+        <div>美图站稳 HK$4.90—5.03，成交恢复到近期五日均量约 7,083 万股</div>
+        <div>8 月 26 日毛利、CFO、SBC 与完全摊薄每股利润共同通过</div>
+      </div>
+      <div class="callout amber"><strong>最终判断：</strong>肉眼可见的机会存在，催化密度也高；但当前最可能的是战术性轮动或 10%—30% 事件行情。历史级主升仍需要一个尚未发生的模型/产品 Surprise，加上美图正式财务兑现。任何一层只有价格、没有财务，都不升级长期盈利和安全边际判断。</div>
+      <p><small>机器可读条件化概率见 <a href="./data/near-term-rally-opportunity.csv">near-term-rally-opportunity.csv</a>；未来催化与假信号见 <a href="./data/ai-application-catalyst-radar.csv">ai-application-catalyst-radar.csv</a>。这是研究支持，不构成投资建议。</small></p>
+    </section>
+
     <section id="executive-summary">
       <p class="eyebrow">Executive Summary · answer first</p>
       <h2>先回答最终的两个问题</h2>

@@ -8,6 +8,14 @@ AI 应用财报事件章：更新至 2026-08-08（含 8 月 7 日完整收盘与
 
 研究边界：公开资料、非投资建议
 
+## 置顶：未来类似大行情是否存在
+
+- 报告第一节已把上市以来主升浪的共同规律、未来一个月事件窗口、未来 1—3 个月条件化概率和四步确认链放在长期基本面之前。
+- 当前判断是未来存在高密度催化，但更可能先表现为 10%—30% 事件行情；50% 以上历史级主升仍需行业、价格广度和正式财务三层同时成立。
+- 条件化判断为：至少 10% 脉冲 50%—65%，20%—40% 趋势行情 25%—35%，50% 以上主升 10%—20%，期间至少 20% 回撤风险 25%—35%。区间不互斥，也不是统计模型、目标价或收益承诺。
+
+完整置顶判断见 [报告第一节](./report.html#priority-outlook)，机器可读情景见 [near-term-rally-opportunity.csv](./data/near-term-rally-opportunity.csv)。
+
 ## 先回答两个问题
 
 1. **完全摊薄的每股 owner earnings 能否复合十年？** 机制可理解，证据尚不够长。正向链是付费用户 → ARPU/credits → 生产力与海外收入 → 毛利和费用杠杆 → 每股 owner earnings；反向链是模型/平台替代、渠道与推理成本、SBC、可转债和奖励稀释。H1 预告加强了未来一两年的盈利证据，但没有证明留存、单位经济性或十年定价权。若以 FY2025 基础 OE、含 CB 的保守摊薄上限和十年后 18× Price/OE 计算，要让价格本身十年年化 10%（不计分红和净现金变化），每股 OE 约需年化增长 11.9%。
@@ -121,6 +129,7 @@ meitu-01357-hk/
     ├── historical-rally-ledger.csv
     ├── market-rotation.csv
     ├── market-pricing-state.csv
+    ├── near-term-rally-opportunity.csv
     ├── net-cash-bridge.csv
     ├── owner-earnings-bridge.csv
     ├── pe-denominator-matrix.csv
