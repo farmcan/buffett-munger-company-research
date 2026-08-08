@@ -3,7 +3,7 @@
   "version": "1.1",
   "title": "美图公司：事件 Surprise 与市场共振",
   "subtitle": "该终端只展示本公司事件；把冻结预期、官方实际、价格窗口、行业/资本结构传导与下一验证放在一条证据轴。",
-  "as_of": "2026-08-04T10:18:00+08:00",
+  "as_of": "2026-08-08T20:20:00+08:00",
   "timezone": "Asia/Shanghai",
   "date_range": {
     "start": "2024-10-01",
@@ -411,9 +411,9 @@
       "chain_bucket": "AI 应用 / 创意软件",
       "importance": "high",
       "impact_score": 5,
-      "why_it_matters": "首次把用户、ARR和收入增长连接到H1调整后及IFRS归母利润方向。",
+      "why_it_matters": "首次把用户、ARR 和收入增长连接到 H1 调整后及 IFRS 归母利润方向。",
       "expectation_snapshot": null,
-      "expectation_baseline": "没有可审计、事前冻结的一致预期；只与Q1已知增速和FY2025/H1基数对照，不制造精确surprise。",
+      "expectation_baseline": "没有可审计、事前冻结的一致预期；只与 Q1 已知增速和 FY2025/H1 基数对照，不制造精确 surprise。",
       "actual_results": {
         "reported_at": "2026-07-30T17:48:00+08:00",
         "metrics": [
@@ -441,41 +441,36 @@
       },
       "market_reaction": {
         "intraday": "公告7月30日盘后；7月31日首个完整交易日+10.28%",
-        "t1": "T−1 7月30日收盘至8月3日+11.45%（部分窗口）",
-        "t5": null,
+        "t1": "T−1 7月30日收盘至8月3日+11.45%（早期窗口）",
+        "t5": "T−1 7月30日收盘至8月7日+10.98%；T0至T+5 +0.64%",
         "t20": null,
         "benchmark": "HSTECH",
-        "benchmark_adjusted": "同部分窗口HSTECH +1.50%；超额约+9.95pct",
+        "benchmark_adjusted": "完整窗口HSTECH +1.13%；超额约+9.85pct",
         "volume_ratio": null,
-        "resonance": "positive_resonance_partial_window",
-        "chart_value_pct": 11.45,
-        "chart_window": "partial",
-        "chart_title": "截至8月3日部分窗口 +11.45%",
-        "chart_label": "+11.4%*",
+        "resonance": "positive_resonance_t5_complete",
         "source_refs": [
-          "meitu-P03"
+          "meitu-P08"
         ],
         "attribution_confidence": "medium",
-        "limitations": "T+5尚未形成；7月29日股价已先涨13.1%，公告不能解释全部窗口收益。"
+        "limitations": "T+5已完成；7月29日股价已先涨13.1%，公告不能解释全部窗口收益。"
       },
       "transmission_paths": [
         "ARPU/credits → 收入 → 毛利与费用杠杆",
         "调整利润 → 扣SBC/CFO/摊薄 → 每股owner earnings"
       ],
       "holdings_impacted": [
-        "研究主体：美图公司（01357.HK）",
-        "跨公司读取只作行业或风险偏好映射，不把主题相近写成经济等价。"
+        "研究主体：美图公司（01357.HK）"
       ],
       "validation": {
-        "status": "market_reviewed_partial",
-        "next_check_at": "2026-08-26正式中报",
-        "thesis_impact": "H1预告把未来一年盈利增长从猜测升级为有官方区间支持的假设，但没有证明十年护城河或现价安全边际。",
+        "status": "market_reviewed_t5_complete",
+        "next_check_at": "2026-08-26",
+        "thesis_impact": "利润方向是实质新证据，首轮重估大部分保留；T+5未继续扩张，公告前上涨和未披露现金质量仍限制结论。",
         "review_score": null
       },
       "post_event_review": "H1预告把未来一年盈利增长从猜测升级为有官方区间支持的假设，但没有证明十年护城河或现价安全边际。",
       "source_refs": [
         "meitu-F16",
-        "meitu-P03"
+        "meitu-P08"
       ],
       "source_gap": "正式毛利率、渠道/模型成本、SBC、CFO、递延收入、净现金和同日完全摊薄股数待8月26日。"
     },
@@ -517,8 +512,7 @@
         "reason": "事件尚未发生，不预填方向。",
         "source_refs": [
           "meitu-F08",
-          "meitu-F03",
-          "meitu-F16"
+          "meitu-F03"
         ]
       },
       "market_reaction": {
@@ -560,6 +554,27 @@
   ],
   "source_refs": [
     {
+      "id": "meitu-F16",
+      "title": "美图公司｜2026H1 Preliminary Business and Financial Update",
+      "tier": "primary",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf",
+      "accessed_at": "2026-08-04"
+    },
+    {
+      "id": "meitu-P08",
+      "title": "美图公司｜Tencent qfq completed daily closes through 2026-08-07",
+      "tier": "market_data",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2026-07-24,2026-08-08,30,qfq",
+      "accessed_at": "2026-08-08"
+    },
+    {
+      "id": "meitu-P03",
+      "title": "美图公司｜Tencent qfq Daily Market Snapshot through 2026-08-04",
+      "tier": "market_data",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-08-04,1000,qfq",
+      "accessed_at": "2026-08-04"
+    },
+    {
       "id": "meitu-F03",
       "title": "美图公司｜First Quarter 2026 Business Update",
       "tier": "primary",
@@ -588,13 +603,6 @@
       "accessed_at": "2026-07-29"
     },
     {
-      "id": "meitu-F16",
-      "title": "美图公司｜Business and Financial Performance Update for the Six Months Ended June 30, 2026",
-      "tier": "primary",
-      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf",
-      "accessed_at": "2026-08-04"
-    },
-    {
       "id": "meitu-M02",
       "title": "美图公司｜2026 Meitu Multimedia Festival",
       "tier": "company_claim",
@@ -607,13 +615,6 @@
       "tier": "market_data",
       "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-07-24,1000,qfq",
       "accessed_at": "2026-07-29"
-    },
-    {
-      "id": "meitu-P03",
-      "title": "美图公司｜Tencent qfq Daily Market Snapshot through 3 August 2026",
-      "tier": "market_data",
-      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2023-01-01,2026-08-04,1000,qfq",
-      "accessed_at": "2026-08-04"
     },
     {
       "id": "meitu-R05",

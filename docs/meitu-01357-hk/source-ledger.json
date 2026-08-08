@@ -5,8 +5,8 @@
     "name_en": "Meitu, Inc.",
     "ticker": "01357.HK"
   },
-  "research_snapshot_at": "2026-08-07T11:46:00+08:00",
-  "market_data_cutoff": "2026-08-07T11:46:00+08:00",
+  "research_snapshot_at": "2026-08-08",
+  "market_data_cutoff": "2026-08-07",
   "policy": {
     "facts": "Audited filings and exchange announcements take precedence.",
     "management_claims": "Speeches, press releases and company rankings are labeled as management claims unless independently corroborated.",
@@ -1704,6 +1704,27 @@
       "limitations": "Vendor data are not exchange-certified. The 7 August session was incomplete at retrieval and is not used as a completed close or T+1/T+5 result."
     },
     {
+      "id": "P08",
+      "tier": "B-",
+      "kind": "market_data",
+      "title": "Meitu and HSTECH completed daily closing snapshots through 7 August 2026",
+      "publisher": "Tencent",
+      "published_at": "2026-08-07",
+      "retrieved_at": "2026-08-08",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2026-07-24,2026-08-08,30,qfq",
+      "benchmark_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,2026-07-24,2026-08-08,30,qfq",
+      "snapshot_sha256": {
+        "01357.HK": "b662db4b5dfd29d38ca8fe7c20cdbc2660fa41d147e686e7a62e14c586a2da64",
+        "HSTECH": "df762e0bd7832f045fa039094c64959f8c67bf0c2d7fcad5fdcc0512a1450e67"
+      },
+      "used_for": [
+        "7 August completed Meitu close and market-cap anchor",
+        "completed H1 preliminary-update T+5 window",
+        "20/60/200-session moving averages and 52-week drawdown"
+      ],
+      "limitations": "Vendor data are not exchange-certified; 7 August is the latest completed session available in this snapshot and no weekend price is used."
+    },
+    {
       "id": "P07",
       "tier": "B-",
       "kind": "market_data_aggregator",
@@ -1723,6 +1744,47 @@
       "snapshot_sha256": null,
       "used_for": ["Figma good-news-sold classification", "software earnings-cluster price breadth versus IGV and QQQ"],
       "limitations": "Secondary market data, not exchange-certified. Different companies reported different financial outcomes; the same-session returns are a breadth signal, not one common surprise."
+    },
+    {
+      "id": "P09",
+      "tier": "B-",
+      "kind": "daily_short_selling_turnover",
+      "title": "Meitu daily short-selling turnover through 7 August 2026",
+      "publisher": "ET Net",
+      "published_at": "2026-08-07",
+      "retrieved_at": "2026-08-08",
+      "url": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_shortsell.php?code=01357",
+      "snapshot_sha256": "e9a64089f5d7b5724e003b7dd4ac65bbcd0c73305b2e0e5eb892110e9a7a8062",
+      "used_for": [
+        "7 August daily short-selling volume and turnover ratio",
+        "comparison with 3 to 6 August daily short-selling ratios"
+      ],
+      "limitations": "Daily short-selling turnover is a flow measure, not the SFC reportable net short position, total short interest, holder identity, borrow utilisation or directional conviction."
+    },
+    {
+      "id": "P10",
+      "tier": "B-",
+      "kind": "market_data_aggregator",
+      "title": "7 August 2026 completed US software and benchmark closes",
+      "publisher": "Public market-data aggregation",
+      "published_at": "2026-08-07",
+      "retrieved_at": "2026-08-08",
+      "url": "https://finance.yahoo.com/quote/FIG/history/",
+      "component_urls": {
+        "FIG": "https://finance.yahoo.com/quote/FIG/history/",
+        "APP": "https://finance.yahoo.com/quote/APP/history/",
+        "DDOG": "https://finance.yahoo.com/quote/DDOG/history/",
+        "HUBS": "https://finance.yahoo.com/quote/HUBS/history/",
+        "MNDY": "https://finance.yahoo.com/quote/MNDY/history/",
+        "IGV": "https://finance.yahoo.com/quote/IGV/history/",
+        "QQQ": "https://finance.yahoo.com/quote/QQQ/history/"
+      },
+      "snapshot_sha256": null,
+      "used_for": [
+        "second-session software earnings-cluster follow-through",
+        "separating broad software rebound from persistent Figma-specific weakness"
+      ],
+      "limitations": "Secondary market data, not exchange-certified. Price divergence supports an attribution boundary but does not by itself prove which accounting or operating factor caused each stock move."
     },
     {
       "id": "CAL_AI_APPS_20260807",

@@ -2,11 +2,11 @@
   "schema_version": "seed.company-research-evidence-index.v1",
   "company": "Meitu, Inc.",
   "security_id": "XHKG:01357",
-  "as_of": "2026-08-04",
+  "as_of": "2026-08-08",
   "status": "needs_human_review",
   "combined_artifact": {
     "path": "combined-artifact.v2.json",
-    "sha256": "d9b91ae2955eb938de1581940934af4af83e2f3ad128db581efcd29d546c5d89"
+    "sha256": "178512f206ef8dd02eae06db37ac1f4bb8dfab05404fb39df0a16080a9bbccb3"
   },
   "anchors": [
     {

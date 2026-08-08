@@ -102,6 +102,6 @@
     ],
     "source_refs": ["F08", "F16"]
   },
-  "source_refs": ["F01", "F02", "F03", "F04", "F05", "F06", "F07", "F08", "F14", "F16", "P03", "P04", "R12"],
+  "source_refs": ["F01", "F02", "F03", "F04", "F05", "F06", "F07", "F08", "F14", "F16", "F17", "P03", "P04", "P08", "R12"],
   "disclaimer": "Independent agent red-team for research audit only; not investment advice and not human approval."
 }

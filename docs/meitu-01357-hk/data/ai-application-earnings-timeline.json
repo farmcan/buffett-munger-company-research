@@ -1,9 +1,9 @@
 {
   "artifact_type": "earnings_season_timeline",
-  "version": "1.1",
+  "version": "1.3",
   "title": "美图与 AI 应用：财报节点、价格共振与下一验证",
   "subtitle": "把美图公司披露、创意软件财报、美国软件价格反应和下一批验证节点放在同一条北京时间轴；跨公司关系只作 thematic_peer / demand_read_through，不视为经济等价。",
-  "as_of": "2026-08-07T11:46:00+08:00",
+  "as_of": "2026-08-08T20:05:00+08:00",
   "timezone": "Asia/Shanghai",
   "date_range": {
     "start": "2026-05-06",
@@ -18,7 +18,7 @@
   "not_investment_advice": true,
   "method": {
     "date_policy": "官方 IR、SEC 或 HKEX 为 confirmed；Nasdaq 财报日历只作 reported_secondary；北京时间显式换算。",
-    "market_policy": "完成事件记录 T0/T+1/T+5；未完成交易日只写带时间戳的 intraday，不把缺失值当作 0。",
+    "market_policy": "完成事件记录 T0/T+1/T+5；8 月 7 日港股与美股均使用完整收盘，盘中快照只保留为审计轨迹，不把缺失值当作 0。",
     "causality_policy": "时间顺序、主题映射、板块广度和公司自身公告共同决定归因置信度；价格共振不是单因果证明。"
   },
   "events": [
@@ -127,15 +127,15 @@
       "market_reaction": {
         "intraday": "7 月 31 日首个完整交易日 +10.3%",
         "t1": "T−1 7 月 30 日至 8 月 3 日 +11.4%",
-        "t5": null,
-        "partial_window": "T−1 7 月 30 日至 T+4 8 月 6 日 +10.5%；T+5 交易日尚未完成；公告前 7 月 29 日已先涨",
+        "t5": "T−1 7 月 30 日至 T+5 8 月 7 日 +10.98%；T0 7 月 31 日至 T+5 +0.64%",
+        "benchmark_adjusted": "T−1→T+5 相对 HSTECH 约 +9.85pct；T0→T+5 约 +0.03pct",
         "benchmark": "HSTECH",
         "resonance": "positive_resonance",
         "attribution_confidence": "medium"
       },
       "transmission_paths": ["经营预告 → 美图自身盈利预期", "正式报表质量缺口 → 8 月 26 日再定价"],
       "next_check": "毛利、SBC、CFO、净现金、合同负债与完全摊薄股份",
-      "source_refs": ["MEITU_H1_PRELIM_2026", "MEITU_MARKET_20260807"]
+      "source_refs": ["MEITU_H1_PRELIM_2026", "MEITU_MARKET_CLOSE_20260807"]
     },
     {
       "event_id": "figma-q2-2026",
@@ -169,9 +169,10 @@
       },
       "market_reaction": {
         "t1": "8 月 6 日 US$28.095 → US$23.97，-14.7%",
-        "benchmark": "IGV -1.85%；QQQ -0.39%",
+        "t2": "8 月 7 日 US$23.29，-2.84%；相对事件前 US$28.095 两日累计 -17.1%",
+        "benchmark": "8 月 6 日 IGV -1.85%、QQQ -0.39%；8 月 7 日 IGV +3.29%、QQQ +1.17%",
         "benchmark_adjusted": "相对 IGV 约 -12.8pct；相对 QQQ 约 -14.3pct",
-        "resonance": "negative_price_resonance_despite_positive_fundamentals",
+        "resonance": "negative_price_resonance_persisted_while_broad_software_rebounded",
         "attribution_confidence": "high"
       },
       "transmission_paths": [
@@ -180,7 +181,7 @@
         "创意 SaaS 估值重估 → 美图 thematic_peer 风险偏好"
       ],
       "next_check": "Q3 revenue growth、gross margin、FCF margin、AI credits 毛利与 SBC",
-      "source_refs": ["FIGMA_Q1_2026", "FIGMA_Q2_2026", "US_SOFTWARE_MARKET_20260806"]
+      "source_refs": ["FIGMA_Q1_2026", "FIGMA_Q2_2026", "US_SOFTWARE_MARKET_20260806", "US_SOFTWARE_MARKET_20260807"]
     },
     {
       "event_id": "us-software-earnings-cluster-20260806",
@@ -203,25 +204,28 @@
         "APP -19.7%",
         "DDOG -19.1%",
         "HUBS -19.0%",
-        "IGV -1.85%；QQQ -0.39%"
+        "IGV -1.85%；QQQ -0.39%",
+        "8 月 7 日 APP +3.32%、DDOG +2.02%、HUBS +3.96%，但从事件前两日仍约 -15.8% 至 -17.4%",
+        "8 月 7 日 IGV +3.29%、QQQ +1.17%，FIG 反而再跌 2.84%"
       ],
       "market_reaction": {
         "t1": "2026-08-06 美股完整收盘",
+        "t2": "2026-08-07 广泛反弹，但财报股仍未收复缺口，FIG 未参与反弹",
         "benchmark": "IGV / QQQ",
-        "resonance": "cluster_negative_resonance",
+        "resonance": "cluster_shock_then_broad_rebound_with_figma_specific_weakness",
         "attribution_confidence": "high_for_cluster_low_for_single_name_causality"
       },
       "transmission_paths": ["财报预期重置 → 软件估值压缩", "创意/应用风险偏好 → 港股 AI 应用 beta"],
       "next_check": "8 月 10 日以后新一批软件财报能否止跌并出现盈利广度",
-      "source_refs": ["US_SOFTWARE_MARKET_20260806"]
+      "source_refs": ["US_SOFTWARE_MARKET_20260806", "US_SOFTWARE_MARKET_20260807"]
     },
     {
       "event_id": "meitu-figma-readthrough-20260806-07",
       "date": "2026-08-07",
-      "time": "11:46",
+      "time": "16:08",
       "event_timezone": "Asia/Hong_Kong",
-      "beijing_time": "2026-08-07 11:46",
-      "date_status": "completed_partial_window",
+      "beijing_time": "2026-08-07 16:08",
+      "date_status": "completed",
       "source_tier": "market_data",
       "event_type": "cross_market_readthrough",
       "company": "美图公司",
@@ -233,21 +237,58 @@
       "expectation_baseline": "8 月 5 日美图收盘 HK$4.90；Figma 结果在 8 月 6 日港股开盘前已公开。",
       "actual_results": [
         "8 月 6 日美图收盘 HK$4.73，-3.47%；HSTECH -2.28%，相对约 -1.19pct",
-        "8 月 7 日 11:46 美图 HK$4.735，+0.11%；盘中低点 HK$4.55（相对前收 -3.81%）",
-        "同一时点 HSTECH +0.25%；8 月 7 日仍是未完成交易日"
+        "8 月 7 日美图收盘 HK$4.75，+0.42%；盘中低点 HK$4.55 后收在日内区间约 91% 位置",
+        "HSTECH +0.78%；美图相对 -0.36pct。成交 5,032 万股，约为近 5 日均量的 0.71 倍，估算换手约 1.11%",
+        "每日卖空成交 354.55 万股、HK$1,660 万，卖空成交额占比 7.065%，低于 8 月 3—6 日",
+        "已核对的公告列表中，8 月 7—8 日没有新增公司经营公告"
       ],
       "market_reaction": {
-        "intraday": "8 月 7 日低开下探后回到前收附近",
-        "t1": null,
+        "intraday": "8 月 7 日下探 HK$4.55 后收于 HK$4.75，收盘接近日内高位",
+        "t1": "较 8 月 6 日 +0.42%，相对 HSTECH -0.36pct",
         "t5": null,
         "benchmark": "HSTECH",
-        "resonance": "initial_negative_then_intraday_absorption",
+        "volume_ratio": "0.71x 近 5 日均量",
+        "resonance": "shock_absorbed_without_breakout_confirmation",
         "attribution_confidence": "medium"
       },
       "transmission_paths": ["Figma 结果/美股软件共振 → 港股 AI 应用风险偏好", "美图 H1 预告支撑 → 卖压部分吸收"],
-      "next_check": "8 月 7 日完整收盘、成交量，随后 T+5；是否有新的美图官方公告",
-      "source_refs": ["MEITU_MARKET_20260807", "US_SOFTWARE_MARKET_20260806", "MEITU_MONTHLY_RETURN_20260805"],
-      "source_gap": "盘中数据不能替代收盘；未取得逐笔资金来源，不能把全部波动归给 Figma。"
+      "next_check": "8 月 10 日 monday.com、8 月 11 日腾讯音乐、8 月 12 日腾讯，以及美图 8 月 26 日 H1",
+      "source_refs": ["MEITU_MARKET_CLOSE_20260807", "MEITU_SHORT_TURNOVER_20260807", "US_SOFTWARE_MARKET_20260806", "US_SOFTWARE_MARKET_20260807", "MEITU_MONTHLY_RETURN_20260805"],
+      "source_gap": "每日卖空成交不是持有人层面的净空仓；未取得逐笔资金来源，不能把全部波动归给 Figma。"
+    },
+    {
+      "event_id": "us-software-followthrough-20260807",
+      "date": "2026-08-07",
+      "time": "16:00",
+      "event_timezone": "America/New_York",
+      "beijing_time": "2026-08-08 04:00（美股收盘）",
+      "date_status": "completed",
+      "source_tier": "market_data",
+      "event_type": "software_earnings_followthrough",
+      "company": "美国软件财报簇",
+      "ticker": "FIG / APP / DDOG / HUBS / IGV / QQQ",
+      "market": "NYSE / NASDAQ",
+      "relationship_to_meitu": "thematic_peer",
+      "impact_score": 4,
+      "why_it_matters": "第二个完整交易日把广泛软件风险偏好与 Figma 单名压力拆开，判断冲击是扩散还是收敛。",
+      "expectation_baseline": "8 月 6 日财报簇急跌后的第二日完成收盘。",
+      "actual_results": [
+        "FIG US$23.29，-2.84%；两日累计 -17.1%",
+        "APP +3.32%、DDOG +2.02%、HUBS +3.96%，但两日累计仍约 -15.8% 至 -17.4%",
+        "IGV +3.29%、QQQ +1.17%；MNDY 在 8 月 10 日财报前 +6.22%"
+      ],
+      "market_reaction": {
+        "t2": "指数和多数财报股反弹，Figma 继续下跌",
+        "benchmark": "IGV / QQQ",
+        "resonance": "broad_risk_appetite_recovered_but_figma_specific_pressure_persisted",
+        "attribution_confidence": "high_for_prices_medium_for_fundamental_causality"
+      },
+      "transmission_paths": [
+        "软件指数修复 → 系统性应用层折价暂未继续扩大",
+        "Figma 独弱 → 增速、毛利、FCF 与 SBC 的公司特定再定价"
+      ],
+      "next_check": "monday.com 财报后的广度，以及 FIG 是否止跌或继续相对 IGV 走弱",
+      "source_refs": ["US_SOFTWARE_MARKET_20260807"]
     },
     {
       "event_id": "monday-q2-2026",
@@ -420,6 +461,20 @@
       "accessed_at": "2026-08-07"
     },
     {
+      "id": "MEITU_MARKET_CLOSE_20260807",
+      "title": "Tencent Meitu and HSTECH completed closes through 2026-08-07",
+      "tier": "market_data",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,2026-07-24,2026-08-08,30,qfq",
+      "accessed_at": "2026-08-08"
+    },
+    {
+      "id": "MEITU_SHORT_TURNOVER_20260807",
+      "title": "ET Net Meitu daily short-selling turnover through 2026-08-07",
+      "tier": "reported_secondary",
+      "url": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_shortsell.php?code=01357",
+      "accessed_at": "2026-08-08"
+    },
+    {
       "id": "FIGMA_Q1_2026",
       "title": "Figma Announces First Quarter 2026 Financial Results",
       "tier": "primary",
@@ -446,6 +501,13 @@
       "tier": "market_data",
       "url": "https://finance.yahoo.com/quote/FIG/history/",
       "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "US_SOFTWARE_MARKET_20260807",
+      "title": "Completed 7 August 2026 FIG, APP, DDOG, HUBS, MNDY, IGV and QQQ closes",
+      "tier": "market_data",
+      "url": "https://finance.yahoo.com/quote/FIG/history/",
+      "accessed_at": "2026-08-08"
     },
     {
       "id": "MNDY_Q2_2026_CALENDAR",
@@ -486,7 +548,8 @@
   "data_quality": {
     "missing": [
       "Figma 以公司上一季收入指引为可审计基线；未取得事前冻结的卖方一致预期。",
-      "8 月 7 日美图为盘中快照，收盘、成交量和 T+5 尚未形成。",
+      "每日卖空成交只能说明当日卖空成交占比，不能识别持有人、借券利用率或实时净空仓；SFC 周度净空仓另行保留。",
+      "Figma/美国软件财报簇的 T+5 尚未形成。",
       "8 月 25 日至 9 月 3 日的美国 SaaS 簇只由二级日历汇总，需逐家公司 IR 确认。"
     ],
     "conflicts": [
