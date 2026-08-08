@@ -52,6 +52,16 @@ AI 应用财报事件章：更新至 2026-08-08（含 8 月 7 日完整收盘与
 
 完整图表见 [报告的催化雷达章节](./report.html#catalyst-radar)，机器可读记录见 [ai-application-catalyst-radar.csv](./data/ai-application-catalyst-radar.csv)。
 
+## 上市以来历史大涨账本
+
+- 按“60 个交易日内由局部收盘低点上涨至少 50%，同一催化制度下重叠窗口合并”的统一规则，共识别 13 轮主升；另记录 10 轮涨幅 30%—50% 的次级反弹。起止点是事后研究窗口，不是实时交易信号。
+- 2017 年真正突破 HK$20 的只有 3 月 20 日盘中：最高 HK$23.05、收盘 HK$15.98。主要原因是纳入港股通后南下资金、低流通盘与投机情绪共振，不是盈利证明。
+- 2022 年后逻辑发生质变：AI 绘画和 AIGC 先带来产品/行业重估，2023H1、FY2023、FY2024 盈喜与 2025H1 盈喜再把叙事接到订阅、毛利和利润。2025 年“DeepSeek → 阿里合作 → RoboNeo → H1 盈喜”是 AI 时代证据最完整的组合，但 2025 年盘中峰值仍只是 HK$12.56。
+- 持续性是最大的反证：13 轮主升在阶段高点后的 20 个交易日，收盘收益全部为负，中位数 −16.8%；期间最大回撤中位数 −24.0%。历史表明产品、模型和资金负责点火，付费、毛利、现金流与完全摊薄每股利润才决定能否抬高下一轮底部。
+- 2020 年 4—7 月、2021 年 8—9 月和 2022 年 4—6 月没有找到足以解释全段的硬催化，已明确标为 source gap，没有用成交放大或价格相关反推单一原因。
+
+完整可视化与逐轮来源见 [历史大涨账本章节](./report.html#historical-rallies)，机器可读记录见 [historical-rally-ledger.csv](./data/historical-rally-ledger.csv)。
+
 ## AI 应用财报时间轴与 Figma 读穿
 
 - [独立章节](./report.html#ai-earnings-timeline)把美图、Figma、Adobe、monday.com、腾讯音乐、腾讯和下一批美国 SaaS 节点放在同一条北京时间轴；机器可读记录见 [ai-application-earnings-timeline.json](./data/ai-application-earnings-timeline.json)。
@@ -108,6 +118,7 @@ meitu-01357-hk/
     ├── float-supply-bridge.csv
     ├── forward-economic-earnings-scenarios.csv
     ├── fully-diluted-share-bridge.csv
+    ├── historical-rally-ledger.csv
     ├── market-rotation.csv
     ├── market-pricing-state.csv
     ├── net-cash-bridge.csv
@@ -130,6 +141,7 @@ meitu-01357-hk/
 - 行情使用腾讯前复权日线，估值末日为 2026-08-07；8 月 7 日为最新完整交易日。中国银行汇率快照仍为 2026-08-04 CNY 0.8660/HKD，汇率未在本次更新中重取。
 - SFC 周度数据是达到申报门槛的净空仓，不是全部市场空仓、借券使用率或每日卖空成交。
 - 事件窗口区分完整 `T-1 → T0 → T+5` 与尚未完成的 partial window；重叠事件只记录共振，不做单因果归因。
+- 历史大涨采用前复权收盘价、统一阈值和恒指同窗基准；公司硬催化、行业主题、流动性/政策和 source gap 分开标记，局部高低点只作事后归因研究。
 - 历史估值必须使用当时已知盈利、股本和 FX 重建；当前不声称精确历史分位。
 - DCF、FY2026 和十年情景都是可证伪的敏感性分析，不是目标价、收益承诺或买卖指令。
 

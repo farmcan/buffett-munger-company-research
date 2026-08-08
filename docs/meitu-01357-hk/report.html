@@ -122,7 +122,11 @@
     .fill { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #2d8c6b, #85c8a8); }
     .fill.amber { background: linear-gradient(90deg, #b77619, #e4b76b); }
     .fill.red { background: linear-gradient(90deg, #a84941, #dc8a82); }
+    .fill.blue { background: linear-gradient(90deg, #315f8f, #85a9cd); }
     .bar-val { text-align: right; font-variant-numeric: tabular-nums; font-weight: 750; }
+    .rally-bars .bar-row { grid-template-columns: 178px 1fr 76px; }
+    .rally-bars .track { height: 16px; }
+    .rally-bars .bar-row small { display: block; color: var(--muted); font-size: 10px; line-height: 1.3; }
     .chart { padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
     .chart.full { margin: 16px 0 20px; padding: 20px; }
     .chart-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 10px; }
@@ -267,6 +271,7 @@
       .status-strip, .evidence-grid { grid-template-columns: 1fr; }
       .earnings-bridge { grid-template-columns: 1fr; }
       .reaction-scale, .reaction-row { grid-template-columns: 90px minmax(190px, 1fr) 58px; }
+      .rally-bars .bar-row { grid-template-columns: 116px minmax(120px, 1fr) 62px; gap: 8px; }
     }
     @media print {
       body { background: white; color: black; }
@@ -327,6 +332,7 @@
       <a href="#apps">App 与网站</a>
       <a href="#model">模型与替代</a>
       <a href="#model-economics">模型降价趋势</a>
+      <a href="#historical-rallies">历史大涨账本</a>
       <a href="#rotation">AI 应用主线</a>
       <a href="#ai-earnings-timeline">AI 应用财报轴</a>
       <a href="#financials">财务质量</a>
@@ -1181,6 +1187,87 @@
         <strong>截至 2026-08-08：应用层需求得到更多验证，广义软件风险偏好已反弹，但财报股与指数出现明显分化，“AI 主线已从硬件切到应用”仍未确认。</strong><br>
         美图 7 月 30 日盘后 H1 初步公告后首日上涨 10.3%；随后 Figma Q2 收入 +48%、NDR 136% 且上调全年收入指引，却在财报后首日下跌 14.7%，AppLovin、Datadog、HubSpot 同日约跌 19%。8 月 7 日美图从 HK$4.55 低位修复至 HK$4.75、收涨 0.42%，但落后 HSTECH 约 0.36pct；当晚 IGV 反弹 3.29%，APP/DDOG/HUBS 反弹 2%—4%，FIG 却再跌 2.84%。更准确的状态是“软件系统性卖压缓和，但 Figma 与财报股的利润捕获/估值重置尚未修复”。
       </div>
+      <h3 id="historical-rallies">上市以来大涨账本：13 轮主升、10 轮次级反弹，原因并不相同</h3>
+      <div class="callout blue">
+        <strong>先回答“以前为什么能涨”：历史行情可归入四个引擎，而不是一个永久逻辑。</strong><br>
+        2017 年冲上 20 港元以上是港股通与南下资金驱动的低流通盘行情；2019—2021 年多次大涨主要是爆款功能、游戏并购和加密概念；2022 年底以后才逐步切换到 AIGC 产品、订阅转化与利润兑现。2025 年是证据最完整的一轮，因为 DeepSeek、阿里合作、RoboNeo 和 H1 盈喜连续叠加，但当年盘中最高仍只是 HK$12.56。真正的 HK$20+ 只出现在 2017 年 3 月 20 日盘中，最高 HK$23.05，当日却收于 HK$15.98。
+      </div>
+      <div class="status-strip" aria-label="美图历史大涨的四类驱动">
+        <div class="status-box"><div class="status-key">资金与流动性</div><div class="status-value">港股通、政策刺激、空头回补</div></div>
+        <div class="status-box"><div class="status-key">产品病毒性</div><div class="status-value">社交改版、魔法照片、AI 绘画</div></div>
+        <div class="status-box"><div class="status-key">行业叙事</div><div class="status-value">加密代理、AIGC、DeepSeek、AI 应用</div></div>
+        <div class="status-box"><div class="status-key">经营与资本证明</div><div class="status-value">财报、盈喜、阿里合作与分发</div></div>
+      </div>
+      <div class="chart full rally-bars" aria-label="美图十三轮历史主升浪收盘涨幅">
+        <div class="chart-head">
+          <div><div class="chart-title">13 轮主升浪的收盘口径涨幅</div><div class="chart-subtitle">局部低点至阶段高点；横轴为线性 0%—400%。颜色表示主要驱动，不表示涨跌预测。</div></div>
+          <div class="legend"><span class="legend-item"><span class="swatch amber"></span>资金/行业</span><span class="legend-item"><span class="swatch" style="background:#315f8f"></span>产品/战略</span><span class="legend-item"><span class="swatch"></span>业绩证明</span></div>
+        </div>
+        <div class="bar-row"><div>2016-12—2017-03<small>港股通/南下资金</small></div><div class="track"><span class="fill amber" style="width:33.6%"></span></div><div class="bar-val">+134.4%</div></div>
+        <div class="bar-row"><div>2017-06—08<small>超跌、增持、H1</small></div><div class="track"><span class="fill" style="width:15.3%"></span></div><div class="bar-val">+61.1%</div></div>
+        <div class="bar-row"><div>2018-08—09<small>美和社交</small></div><div class="track"><span class="fill blue" style="width:14.1%"></span></div><div class="bar-val">+56.2%</div></div>
+        <div class="bar-row"><div>2018-12—2019-03<small>游戏并购</small></div><div class="track"><span class="fill blue" style="width:29.3%"></span></div><div class="bar-val">+117.3%</div></div>
+        <div class="bar-row"><div>2019-12—2020-02<small>加密概念代理</small></div><div class="track"><span class="fill amber" style="width:15.5%"></span></div><div class="bar-val">+62.0%</div></div>
+        <div class="bar-row"><div>2020-12—2021-02<small>比特币/区块链</small></div><div class="track"><span class="fill amber" style="width:50.0%"></span></div><div class="bar-val">+200.0%</div></div>
+        <div class="bar-row"><div>2022-10—2023-03<small>AI 绘画/AIGC</small></div><div class="track"><span class="fill blue" style="width:89.9%"></span></div><div class="bar-val">+359.7%</div></div>
+        <div class="bar-row"><div>2023-05—07<small>MiracleVision</small></div><div class="track"><span class="fill blue" style="width:23.0%"></span></div><div class="bar-val">+92.1%</div></div>
+        <div class="bar-row"><div>2023-08—11<small>H1 盈利兑现</small></div><div class="track"><span class="fill" style="width:18.5%"></span></div><div class="bar-val">+73.8%</div></div>
+        <div class="bar-row"><div>2024-02—03<small>FY2023 业绩</small></div><div class="track"><span class="fill" style="width:15.1%"></span></div><div class="bar-val">+60.3%</div></div>
+        <div class="bar-row"><div>2024-09—10<small>中国政策刺激</small></div><div class="track"><span class="fill amber" style="width:16.2%"></span></div><div class="bar-val">+64.6%</div></div>
+        <div class="bar-row"><div>2025-01—02<small>DeepSeek + 盈喜</small></div><div class="track"><span class="fill amber" style="width:34.3%"></span></div><div class="bar-val">+137.2%</div></div>
+        <div class="bar-row"><div>2025-04—07<small>阿里 + Agent + 盈喜</small></div><div class="track"><span class="fill" style="width:40.7%"></span></div><div class="bar-val">+162.6%</div></div>
+        <p class="chart-note">筛选规则：前复权收盘价在 60 个交易日内由局部低点上涨至少 50%，同一催化制度下的重叠窗口合并，因此合并后个别波段可长于 60 日。起止点是事后识别的研究窗口，不是可实时执行的交易信号。</p>
+      </div>
+      <div class="callout red">
+        <strong>持续性反证：13 轮主升在阶段高点后的 20 个交易日，收盘收益全部为负，中位数 −16.8%；期间最大回撤中位数 −24.0%。</strong><br>
+        这不是说每次上涨都“假”，而是说明美图的历史价格发现高度前置：资金、爆款和产品发布负责点火，只有付费、毛利、现金流与每股利润能提高下一轮底部。把“发生过大涨”直接外推成“会长期上涨”，在这只股票上历史胜率很低。
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>主升窗口</th><th>涨幅 / 相对恒指</th><th>对应原因</th><th>因果边界与事后持续性</th></tr></thead>
+          <tbody>
+            <tr><td>2016-12-23 → 2017-03-17</td><td><strong>+134.4%</strong><br>超额 +121.7pct</td><td><a href="https://money.people.com.cn/stock/n1/2017/0322/c67815-29160748.html">港股通纳入、南下资金连续活跃</a></td><td><span class="tag risk">流动性主导</span> 3/20 盘中 HK$23.05 后反转；高点后 20 日 −37.2%</td></tr>
+            <tr><td>2017-06-27 → 2017-08-25</td><td><strong>+61.1%</strong><br>超额 +53.3pct</td><td>解禁冲击后的修复、<a href="https://www.yicai.com/news/5386737.html">战略持有人增持</a>、H1 收入 +272.3%</td><td><span class="tag warn">混合驱动</span> 公司仍亏损；高点后 20 日 −17.9%</td></tr>
+            <tr><td>2018-08-27 → 2018-09-26</td><td><strong>+56.2%</strong><br>超额 +57.8pct</td><td><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2018/0821/ltn20180821322_c.pdf">“美和社交”改版与社交平台上线预期</a></td><td><span class="tag warn">产品叙事</span> 同期 H1/MAU 承压；高点后 20 日 −33.1%</td></tr>
+            <tr><td>2018-12-27 → 2019-03-12</td><td><strong>+117.3%</strong><br>超额 +103.8pct</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2019/0220/ltn20190220020_c.pdf">取得 Dreamscape 31% 权益及 Digital Extremes 游戏敞口</a></td><td><span class="tag info">并购期权</span> 大量发股带来摊薄；高点后 20 日 −10.3%</td></tr>
+            <tr><td>2019-12-02 → 2020-02-24</td><td><strong>+62.0%</strong><br>超额 +60.6pct</td><td><a href="https://pic.bankofchina.com/bocappd/rareport/202002/P020200210430657590269.pdf">比特币逼近万美元、区块链概念轮动</a></td><td><span class="tag risk">概念代理</span> 公司当时未购币；高点后 20 日 −36.5%</td></tr>
+            <tr><td>2020-12-16 → 2021-02-17</td><td><strong>+200.0%</strong><br>超额 +182.5pct</td><td><a href="https://pic.bankofchina.com/bocappd/rareport/202102/P020210218370527956765.pdf">比特币破 US$51,000、区块链股集体上涨</a></td><td><span class="tag risk">概念先行</span> <a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0408/2021040802162_c.pdf">公司实际购币</a>在 3 月以后；高点后 20 日 −31.9%</td></tr>
+            <tr><td>2022-10-24 → 2023-03-02</td><td><strong>+359.7%</strong><br>超额 +325.1pct</td><td><a href="https://www.cls.cn/detail/1205389">AI 绘画海外走红</a>，再叠加 ChatGPT/AIGC 与扭亏预期</td><td><span class="tag good">产品 + 行业</span> 上市以来最大收盘主升；高点后 20 日 −6.2%</td></tr>
+            <tr><td>2023-05-25 → 2023-07-03</td><td><strong>+92.1%</strong><br>超额 +89.1pct</td><td><a href="https://www.meitu.com/en/media/393">MiracleVision 与七款 AIGC 产品发布</a></td><td><span class="tag info">公司产品</span> 发布日 +21.3%，仍缺经济性；高点后 20 日 −16.8%</td></tr>
+            <tr><td>2023-08-21 → 2023-11-07</td><td><strong>+73.8%</strong><br>超额 +73.5pct</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2023/0828/2023082800511.pdf">H1 收入 +29.8%、调整后利润 +320.4%</a></td><td><span class="tag good">盈利证明</span> AI 提高付费转化；高点后 20 日 −10.3%</td></tr>
+            <tr><td>2024-02-02 → 2024-03-21</td><td><strong>+60.3%</strong><br>超额 +51.7pct</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0315/2024031501100_c.pdf">FY2023 收入 +29.3%、调整后利润 +233.2%、付费用户 +62.3%</a></td><td><span class="tag good">全年验证</span> 高点后 20 日仍 −14.2%</td></tr>
+            <tr><td>2024-09-13 → 2024-10-07</td><td><strong>+64.6%</strong><br>超额 +31.6pct</td><td><a href="https://www.news.cn/20240927/c2676c277f2943a4a8d3e3c4965c36f4/c.html">降准降息与资本市场支持政策</a></td><td><span class="tag warn">中国资产 Beta</span> 恒指同期也 +33.0%；高点后 20 日 −20.3%</td></tr>
+            <tr><td>2025-01-10 → 2025-02-19</td><td><strong>+137.2%</strong><br>超额 +116.9pct</td><td><a href="https://api-docs.deepseek.com/news/news250120/">DeepSeek-R1</a>降低模型成本想象，随后<a href="https://www.stcn.com/article/detail/1521970.html">FY2024 盈喜</a></td><td><span class="tag good">行业 + 盈利</span> 20 日收益 −4.0%，但期间最大回撤 −29.2%</td></tr>
+            <tr><td>2025-04-22 → 2025-07-31</td><td><strong>+162.6%</strong><br>超额 +147.7pct</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0520/2025052001407.pdf">阿里合作/US$2.5 亿 CB</a>、<a href="https://www.meitu.com/en/media/419">RoboNeo</a>、<a href="https://www.hkexnews.hk/listedco/listconews/sehk/2025/0721/2025072100684.pdf">H1 盈喜</a></td><td><span class="tag good">最完整组合</span> 2025 年盘中峰值 HK$12.56；高点后 20 日 −4.0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <details>
+        <summary>展开：没有被 13 轮主升覆盖的 10 轮次级反弹（30%—50%）</summary>
+        <div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>窗口</th><th>涨幅</th><th>主要解释</th><th>证据等级</th></tr></thead>
+              <tbody>
+                <tr><td>2019-07-22 → 07-25</td><td>+30.2%</td><td><a href="https://www.hk01.com/%E8%B2%A1%E7%B6%93%E5%BF%AB%E8%A8%8A/355121/%E7%BE%8E%E5%9C%96%E7%A7%80%E7%A7%80%E6%96%B0%E5%8A%9F%E8%83%BD-%E9%AD%94%E6%B3%95%E7%85%A7%E7%89%87-%E5%8F%97%E6%8D%A7-%E7%BE%8E%E5%9C%96%E5%85%AC%E5%8F%B8%E7%8F%BE%E5%8D%87%E8%BF%9113">“魔法照片”海外走红</a>，印度 DAU 据报道 +435%</td><td><span class="tag good">高</span></td></tr>
+                <tr><td>2020-04-21 → 07-09</td><td>+32.4%</td><td>疫情冲击后的市场修复；未找到可覆盖全段的公司硬公告</td><td><span class="tag neutral">低 / 缺口</span></td></tr>
+                <tr><td>2021-03-08 → 03-22</td><td>+31.9%</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0408/2021040802162_c.pdf">公司真实购入加密货币</a></td><td><span class="tag good">高</span></td></tr>
+                <tr><td>2021-08-19 → 09-06</td><td>+43.7%</td><td>加密资产反弹与仓位回补；8/25 中报含比特币减值，不能倒因解释 8/20 上涨</td><td><span class="tag neutral">低 / 缺口</span></td></tr>
+                <tr><td>2022-03-15 → 03-24</td><td>+40.2%</td><td><a href="https://www.news.cn/fortune/2022-03/16/c_1128477016.htm">金融委会议后的港股科技历史性空头回补</a></td><td><span class="tag good">高</span></td></tr>
+                <tr><td>2022-04-28 → 06-16</td><td>+36.8%</td><td>6/16 单日 +28.0%，但未检索到足以解释全段的同期公司硬催化</td><td><span class="tag neutral">低 / 缺口</span></td></tr>
+                <tr><td>2024-10-24 → 12-18</td><td>+42.4%</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2024/1204/2024120402121_c.pdf">清仓全部加密货币并计划用约 80% 收益派特别股息</a>，叠加 AI 应用轮动</td><td><span class="tag good">高</span></td></tr>
+                <tr><td>2025-12-31 → 2026-01-14</td><td>+32.1%</td><td><a href="https://www.stcn.com/article/detail/3586433.html">智谱、MiniMax 上市带动港股 AI 企业与应用概念</a></td><td><span class="tag warn">中</span></td></tr>
+                <tr><td>2026-04-28 → 06-02</td><td>+35.4%</td><td>Q1 付费/收入/ARR 硬 KPI，随后 6/1 AI 应用板块挤压</td><td><span class="tag good">高</span></td></tr>
+                <tr><td>2026-06-26 → 08-05</td><td>+35.7%</td><td>回购后修复、H1 初步更新和软件风险偏好反弹；20 日观察窗尚未完成</td><td><span class="tag warn">中</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+      <div class="callout amber">
+        <strong>对下一轮行情最有用的历史规律：</strong>单一模型新闻、爆款或合作通常足以点火，却很少单独维持主升；历史上最强、相对更耐久的两轮是 2022-10—2023-03 与 2025-04—07，因为它们把“行业需求/产品”继续接到了“订阅或利润证明”。因此未来若再出现模型大幅降价、强模型开源或 AI 应用板块普涨，先当作点火；只有美图随后披露付费净增、毛利、现金流和完全摊薄每股利润同步改善，才把它升级为更高质量行情。
+      </div>
+      <p><small>完整机器可读账本：<a href="./data/historical-rally-ledger.csv">historical-rally-ledger.csv</a>。价格为腾讯前复权日线，恒指作全历史一致基准；历史局部低点/高点是事后识别，行情数据不是交易所认证数据。原因按公司公告、同期新闻与板块广度交叉核对；无法建立硬因果的 2020-04—07、2021-08—09 和 2022-04—06 明确保留为 source gap。</small></p>
       <h3 id="catalyst-radar">美图短线先看行业：什么时候、什么事情最可能带来一波行情</h3>
       <div class="callout blue">
         <strong>先把“点火”和“持续”分开：</strong><br>
@@ -1218,7 +1305,7 @@
           </tbody>
         </table>
       </div>
-      <h3>历史走势分成六个阶段</h3>
+      <h3>AI 时代再分成六个近期阶段</h3>
       <div class="table-wrap">
         <table>
           <thead><tr><th>阶段</th><th>主导叙事</th><th>美图价格证据</th><th>事后读法</th></tr></thead>
