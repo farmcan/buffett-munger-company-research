@@ -1804,7 +1804,10 @@
         "Nasdaq secondary calendar": "https://www.nasdaq.com/market-activity/earnings"
       },
       "snapshot_sha256": null,
-      "used_for": ["future AI-application earnings timeline and Beijing-time conversion"],
+      "used_for": [
+        "future AI-application earnings timeline and Beijing-time conversion",
+        "AI-application catalyst radar and confirmation windows"
+      ],
       "limitations": "Company IR/HKEX dates are confirmed. The 25 August to 3 September SaaS cluster remains reported_secondary until each company IR date is checked."
     }
   ]

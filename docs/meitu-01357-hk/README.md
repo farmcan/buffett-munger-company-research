@@ -44,6 +44,14 @@ AI 应用财报事件章：更新至 2026-08-08（含 8 月 7 日完整收盘与
 - 8 月 5 日港交所最新文件是 7 月月报，已发行股与库存股月内均无变动；没有新的经营数据。8 月 26 日正式 H1 仍是决定毛利、CFO、SBC、净现金和每股经济性的硬门槛。
 - 估值机械同步到 HK$4.75：基本股本市值约 HK$214.85 亿 / 人民币 186.06 亿元；FY2025 持续经营 IFRS P/E 约 26.67×，研究 OE 约 18.16—19.78×。完整更新记录见 [update-2026-08-08.md](./update-2026-08-08.md)。
 
+## AI 应用短线催化雷达
+
+- 美图的短线高 beta 首先来自 AI 应用行业，不应只盯公司公告。行情点火强度取决于事件 Surprise、板块广度、财报后价格确认、资金轮动和美图相对 HSTECH 强度；持续性还必须由盈利上修、毛利/现金流和 T+5 不回吐证明。
+- 最大单日弹性来自不可预告的模型大幅降价、开源或能力跃迁；最早的已知确认窗口是 8 月 10—12 日 monday.com、腾讯音乐和腾讯；最可能形成数周重估的高密度窗口是 8 月 25 日至 9 月 10 日美国 SaaS 簇、美图 H1 与 Adobe Q3。
+- 美图的确认顺序是：应用板块广度 → 相对 HSTECH 转强 → 重新站稳 HK$4.90—5.03 区域 → 成交回到近 5 日均量约 7,083 万股附近 → 8 月 26 日毛利、CFO、SBC 和完全摊薄每股桥通过。价格区间只用于研究确认，不是交易指令。
+
+完整图表见 [报告的催化雷达章节](./report.html#catalyst-radar)，机器可读记录见 [ai-application-catalyst-radar.csv](./data/ai-application-catalyst-radar.csv)。
+
 ## AI 应用财报时间轴与 Figma 读穿
 
 - [独立章节](./report.html#ai-earnings-timeline)把美图、Figma、Adobe、monday.com、腾讯音乐、腾讯和下一批美国 SaaS 节点放在同一条北京时间轴；机器可读记录见 [ai-application-earnings-timeline.json](./data/ai-application-earnings-timeline.json)。
@@ -89,6 +97,7 @@ meitu-01357-hk/
 └── data/
     ├── app-public-signals.csv
     ├── critical-evidence-anchors.json
+    ├── ai-application-catalyst-radar.csv
     ├── ai-application-earnings-timeline.json
     ├── event-price-reactions.csv
     ├── event-timeline.csv
