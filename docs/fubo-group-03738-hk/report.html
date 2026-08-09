@@ -56,6 +56,18 @@
     body.report-parity .risk-list li { margin: 8px 0; }
     body.report-parity .footer { color: var(--muted); font-size: 13px; margin-top: 40px; }
     body.report-parity .source-link { overflow-wrap: anywhere; }
+    body.report-parity .decision-grid {
+      display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin: 18px 0;
+    }
+    body.report-parity .decision-card {
+      grid-column: span 3; padding: 18px; border: 1px solid var(--line); border-radius: 15px; background: #fff;
+    }
+    body.report-parity .decision-card strong { display: block; margin: 6px 0; font-size: 22px; line-height: 1.2; }
+    body.report-parity .rally-strip { display: grid; gap: 9px; margin: 18px 0; }
+    body.report-parity .rally-row { display: grid; grid-template-columns: 150px minmax(130px, 1fr) 76px; gap: 12px; align-items: center; }
+    body.report-parity .rally-track { height: 16px; overflow: hidden; border-radius: 999px; background: #eceeea; }
+    body.report-parity .rally-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--blue), var(--green)); }
+    body.report-parity .rally-value { text-align: right; font-weight: 820; font-variant-numeric: tabular-nums; }
     body.report-parity details p { padding: 0 15px; }
     body.report-parity .mono { font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
     body.report-parity .anchor-offset { display: block; scroll-margin-top: 70px; }
@@ -65,12 +77,15 @@
     @media (max-width: 900px) {
       body.report-parity .span4,
       body.report-parity .span6 { grid-column: span 6; }
+      body.report-parity .decision-card { grid-column: span 6; }
     }
     @media (max-width: 620px) {
       body.report-parity section.card { padding: 24px 18px; }
       body.report-parity .span4,
       body.report-parity .span6 { grid-column: span 12; }
+      body.report-parity .decision-card { grid-column: span 12; }
       body.report-parity .two-col { columns: 1; }
+      body.report-parity .rally-row { grid-template-columns: 112px minmax(80px, 1fr) 64px; gap: 8px; font-size: 13px; }
     }
 </style>
   <!-- template-parity: viewport-qa-required -->
@@ -79,12 +94,12 @@
 <header class="hero">
   <div class="wrap">
     <p class="eyebrow">Company Research · 03738.HK</p>
-    <h1>阜博集团：业务增长真实，现金、平台与到期债务仍在赛跑</h1>
-    <p class="dek">长期底稿回答版权工作流、MRR、活跃资产、客户留存和现金转化；近期监控回答 AI 版权规则、平台自建、可转债、空仓与小盘流动性怎样改变验证顺序。</p>
+    <h1>阜博集团：AI 版权基础设施有弹性，现金与到期债务决定能否重估</h1>
+    <p class="dek">它不是纯 AI App：历史大涨来自经营数据、AI 版权/RWA 叙事与小盘流动性共振，回撤则反复重估回款、研发投入、平台替代和融资风险。当前 10 日反弹约 11.8%，但量能普通、长期趋势未反转，下一步看中报现金桥与 9 月可转债处理。</p>
     <div class="meta">
       <span class="pill"><span class="dot"></span>Artifact：needs_human_review</span>
-      <span class="pill">快照：2026-07-27</span>
-      <span class="pill">价格锚点：2026-07-27 · HK$2.39</span>
+      <span class="pill">读者更新：2026-08-09</span>
+      <span class="pill">价格锚点：2026-08-07 · HK$2.56</span>
       <span class="pill">更新检查点：2026-09-27 可转债到期</span>
       <span class="pill">公开资料 · 非投资建议</span>
     </div>
@@ -104,20 +119,18 @@
 </header>
 <nav aria-label="报告目录">
   <div class="wrap">
+    <a href="#decision-first">开篇判断</a>
     <a href="#status-legend">状态图例</a>
     <a href="#report-doors">两个入口</a>
     <a href="#summary">核心快照</a>
     <a href="#long-term">五年财务</a>
     <a href="#business">收入来源</a>
-    <a href="#counterparties">客户与上下游</a>
     <a href="#quarterly">Q1/H1</a>
     <a href="#products">产品与KPI</a>
     <a href="#earnings-quality">盈利质量</a>
     <a href="#capital">债务与摊薄</a>
-    <a href="#float-supply">流通与供给</a>
     <a href="#ai-thesis">AI版权</a>
     <a href="#market-pricing">估值</a>
-    <a href="#peer-valuation">同行估值</a>
     <a href="#event-monitor">事件监控</a>
     <a href="#buffett">巴芒框架</a>
     <a href="#dimensions">25×50×9</a>
@@ -128,6 +141,45 @@
   </div>
 </nav>
 <main class="wrap">
+<section id="decision-first" class="card">
+  <p class="eyebrow">Answer first · 截至 2026-08-09</p>
+  <h2>先说结论：这是 AI 版权基础设施，不是纯 AI App；短线有弹性，重估仍卡在现金与到期债务</h2>
+  <p class="lead">阜博向内容权利方和平台提供识别、维权、授权与变现工作流。生成式 AI 让内容数量和权利冲突一起增加，扩大可服务市场；但模型更强、更便宜，也让平台自建识别与结算层更容易。行业增量能否成为股东价值，最终取决于阜博是否保住跨平台工作流、定价权、回款和每股现金收益。</p>
+
+  <div class="decision-grid">
+    <div class="decision-card"><span class="muted">业务身份</span><strong>版权科技基础设施</strong><span>FY2025 订阅收入仅占 42.6%，不能把全部收入当 ARR 或纯 SaaS。</span></div>
+    <div class="decision-card"><span class="muted">当前市场</span><strong>HK$2.56 · 33.03×</strong><span>2026-08-07 收盘；静态 FY2025 稀释 PE，不是 TTM/forward。</span></div>
+    <div class="decision-card"><span class="muted">本轮状态</span><strong>10 日 +11.8%</strong><span>最新成交量约为 20 日均量 0.99×，更像修复而非放量突破。</span></div>
+    <div class="decision-card"><span class="muted">最硬闸门</span><strong>HK$14.58亿可转债</strong><span>2026-09-27 到期；7 月末转股价 HK$5.87，现价明显价外。</span></div>
+  </div>
+
+  <div class="callout risk"><strong>当前判断：</strong>业务需求与收入增长是真实的，但“好行业”尚未被证明能稳定转化为自由现金流。股价比 52 周高点低 61.5%，不自动等于便宜；在中报披露 CFO、应收、资本化研发及可转债资金桥之前，价值重估仍是 <code>blocked</code>。这不排除 AI 版权、平台规则、合作或融资事件带来的快速行情。</div>
+
+  <h3>为什么过去能反复翻倍，又会快速回撤？</h3>
+  <div class="rally-strip" role="img" aria-label="阜博集团五段主要上涨行情涨幅比较">
+    <div class="rally-row"><span>2022-10→2023-01</span><div class="rally-track"><div class="rally-fill" style="width:85%"></div></div><span class="rally-value">+190%</span></div>
+    <div class="rally-row"><span>2024-07→2024-11</span><div class="rally-track"><div class="rally-fill" style="width:100%"></div></div><span class="rally-value">+224%</span></div>
+    <div class="rally-row"><span>2025-01→2025-03</span><div class="rally-track"><div class="rally-fill" style="width:32%"></div></div><span class="rally-value">+72%</span></div>
+    <div class="rally-row"><span>2025-06→2025-08</span><div class="rally-track"><div class="rally-fill" style="width:57%"></div></div><span class="rally-value">+127%</span></div>
+    <div class="rally-row"><span>2025-12→2026-02</span><div class="rally-track"><div class="rally-fill" style="width:24%"></div></div><span class="rally-value">+53%</span></div>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th>阶段</th><th>价格与涨幅</th><th>可验证催化</th><th>应怎样理解</th></tr></thead><tbody>
+    <tr><td>2022-10-13—2023-01-10</td><td>1.67→4.84，+189.8%</td><td>中国/港股科技与重启交易风险偏好修复；未找到足以单独解释涨幅的公司硬催化。</td><td>证明小盘 beta 可独立制造大行情，不应把每次上涨都归因于 AI。</td></tr>
+    <tr><td>2024-07-03—2024-11-20</td><td>1.18→3.82，+223.7%</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0830/2024083000071.pdf" rel="noreferrer">中期收入/毛利改善</a>、<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2024/1002/2024100200005.pdf" rel="noreferrer">最多 2 亿港元回购意向</a>、<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2024/1115/2024111500557.pdf" rel="noreferrer">Q3 MRR +32%</a>。</td><td>经营数据、资本动作与 AI 版权叙事共振，是“基本面 + 主题 + 流动性”的典型。</td></tr>
+    <tr><td>2025-01-09—2025-03-19</td><td>2.65→4.55，+71.7%</td><td><a href="https://vobile.com/news_detail?id=108&amp;lang=en-us" rel="noreferrer">生成式 AI 版权服务及 CES 展示</a>；<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0109/2025010900238.pdf" rel="noreferrer">公司称无未披露内幕消息</a>。</td><td>主要是 AI 版权主题重估；后续盈利预告晚于所选峰值，不能倒置因果。</td></tr>
+    <tr><td>2025-06-23—2025-08-29</td><td>2.92→6.64，+127.4%</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0627/2025062700431.pdf" rel="noreferrer">Vobile MAX 市场试验</a>、<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0707/2025070700031.pdf" rel="noreferrer">上海电影合作</a>及<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0828/2025082801448.pdf" rel="noreferrer">中期利润 +118.6%</a>。</td><td>公司级证据最强的一轮：产品/合作叙事最终得到财报利润验证，但峰值后的现金质量担忧仍会重估。</td></tr>
+    <tr><td>2025-12-30—2026-02-16</td><td>4.12→6.32，+53.4%</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0211/2026021100029.pdf" rel="noreferrer">Finloop RWA 合作</a>与<a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0216/2026021600816.pdf" rel="noreferrer">补充公告</a>。</td><td>事件和叙事驱动较强；RWA 能否转成经审计收入与现金仍待验证。</td></tr>
+  </tbody></table></div>
+
+  <h3>这次反弹能否持续：用四个闸门判断，而不是猜第二天</h3>
+  <div class="table-wrap"><table><thead><tr><th>闸门</th><th>当前证据</th><th>持续行情需要什么</th><th>当前状态</th></tr></thead><tbody>
+    <tr><td>行业主题</td><td>AI 生成内容持续扩大权利治理需求；公司 7 月发布 AI Song Detector MCP。</td><td>平台规则、版权许可或标杆合同带来可量化增量。</td><td class="warn">偏正，但多为叙事</td></tr>
+    <tr><td>价格与成交</td><td>10 日 +11.8%；高于 20/60 日线，仍远低于 200 日线；量比 0.99×。</td><td>放量站稳中期趋势，同时避免事件后冲高回落。</td><td class="warn">修复，未确认突破</td></tr>
+    <tr><td>经营验证</td><td>Q1 只有收入/MRR 增速，没有利润、CFO 与 EPS 绝对值。</td><td>中报显示毛利、回款和每股利润同步改善。</td><td class="bad">未验证</td></tr>
+    <tr><td>资本结构</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0806/2026080602043.pdf" rel="noreferrer">7 月月报</a>仍列 HK$14.58 亿债券余额，转股价 HK$5.87。</td><td>现金偿付、转换、回购或再融资方案不显著损害每股价值。</td><td class="bad">硬闸门未解</td></tr>
+  </tbody></table></div>
+  <p class="muted">价格为腾讯复权日线二级数据，历史区间按端点收盘计算；事件与行情同期并不证明单一因果。公司新闻只证明产品/合作已宣布，不证明收入或现金已实现。增量数据见 <a href="data/market-update-2026-08-09.csv">市场更新</a> 与 <a href="data/historical-rally-ledger.csv">历史行情台账</a>。</p>
+</section>
 <section id="status-legend">
 <h2>状态图例：先读这个再看表</h2>
 <p class="muted">等级不是从差到好的一条直线。发布状态描述复核阶段；维度/指标状态描述证据覆盖；Gate 描述是否满足研究闸门。</p>
@@ -158,7 +210,7 @@
   <div class="card"><div class="muted">FY2025 收入</div><div class="metric">HK$28.72亿</div><div class="good">同比 +19.6%</div></div>
   <div class="card"><div class="muted">FY2025 归母利润</div><div class="metric">HK$1.99亿</div><div>稀释 EPS HK$0.0775</div></div>
   <div class="card"><div class="muted">全投入现金代理</div><div class="metric bad">-HK$3.63亿</div><div>CFO − PPE − 无形资产投入</div></div>
-  <div class="card"><div class="muted">现价 / 静态 FY PE</div><div class="metric">2.39 / 30.84×</div><div>不是 TTM 或 forward</div></div>
+  <div class="card"><div class="muted">现价 / 静态 FY PE</div><div class="metric">2.56 / 33.03×</div><div>2026-08-07；不是 TTM 或 forward</div></div>
   <div class="card"><div class="muted">剩余大额可转债</div><div class="metric warn">HK$14.58亿</div><div>2026-09-27 到期；转股价 HK$5.87</div></div>
   <div class="card"><div class="muted">SFC 申报空仓</div><div class="metric">4.74%</div><div>2026-07-17；按 6 月末固定股数估算</div></div>
 </div>
@@ -204,10 +256,6 @@
 <tr><td>时点确认</td><td>99.80</td><td>3.5%</td><td>部分履约义务在特定时点满足</td><td>不能反推其余收入都具有长期续约合同</td></tr>
 </tbody></table></div>
 <p>增值及其他服务与内容识别、归因和变现相关，受平台规则、资产量及授权结果影响。会计上的“随时间确认”描述履约时点，不描述续费概率；研究上必须分别观察订阅 MRR、增值业务量、平台规则和回款。</p>
-</section>
-<section id="counterparties">
-<h2>客户、供应商与平台：会计集中度和平台权力是两套风险</h2>
-<p class="section-dek">FY2025 客户和供应商集中度已有审计披露，但对手方名称没有披露。YouTube、Meta 等平台是公开可验证的工作流与规则方，却不能因此推断为前五客户或供应商。</p>
 <h3>地域、集中度与利润池：收入增长不等于议价权</h3>
 <div class="table-wrap"><table><thead><tr><th>FY2025 观察</th><th>数值</th><th>研究含义</th><th>不能跨越的边界</th></tr></thead><tbody>
 <tr><td>中国收入</td><td>HK$14.22亿 / 49.5%</td><td>中国与美国已形成双区域收入引擎</td><td>未披露各区域毛利、现金转换与平台组合</td></tr>
@@ -216,14 +264,6 @@
 <tr><td>最大客户 / 前五客户</td><td>13% / 40%</td><td>大客户和平台结算变化可能显著影响收入与应收</td><td>客户身份及其与平台的重合度未披露</td></tr>
 <tr><td>最大供应商 / 前五供应商</td><td>8% / 34%</td><td>会计供应商集中度尚可见，但平台依赖可能不在供应商表中完整呈现</td><td>不能用供应商集中度否定 API、规则与流量入口依赖</td></tr>
 </tbody></table></div>
-<div class="table-wrap"><table><thead><tr><th>具名/匿名关系</th><th>角色</th><th>占比</th><th>证据边界</th><th>风险</th></tr></thead><tbody>
-<tr><td>最大客户 / 前五客户（匿名）</td><td>合同付款方</td><td>13% / 40% 集团收入</td><td>身份和分别占比未披露，不能计算完整 HHI</td><td>收入、应收与议价可能受少数客户影响</td></tr>
-<tr><td>最大供应商 / 前五供应商（匿名）</td><td>会计采购对手方</td><td>8% / 34% 采购</td><td>平台/API/规则依赖可能没有完整进入该采购口径</td><td>采购集中尚可见，但不代表平台可替代</td></tr>
-<tr><td>YouTube、Meta</td><td>平台工作流、规则方、潜在合作/替代者</td><td>收入/采购占比未披露</td><td>公开接入和平台政策可验证；是否属于大客户未知</td><td>API、识别、争议、流量和平台自建工具改变经济性</td></tr>
-<tr><td>影视、音乐、体育权利人与代理机构</td><td>直接客户/权利数据提供方</td><td>分类别收入与客户数未披露</td><td>NRR 128%、客户留存 98.2% 是公司定义 KPI</td><td>定义、cohort、汇率和并购口径未完全披露</td></tr>
-</tbody></table></div>
-<div class="callout"><strong>Gate 结论：</strong>会计 CR1/CR5 已知，但具名客户、双向重要性和平台合同未知；因此只能写 <code>material_concentration_names_unknown</code>，不能把 98.2% 留存直接升级为已证实护城河。</div>
-<p class="section-dek">来源 F01/F06/I01/I02；下载<a href="data/counterparty-value-chain.csv">标准关系账本</a>和<a href="data/retention-and-concentration.csv">留存/集中度底表</a>。</p>
 
 </section>
 <section id="quarterly"><h2>Q1 与 H1：百分比更新不能替代完整季度财报</h2>
@@ -303,27 +343,6 @@
 <p class="muted">上表不是把三条路径混成一个估值，而是量化“若股数达到保守法律上限、而利润不变”的每股压力。现金赎回路径不增加可转债股数，却会减少现金或增加再融资；转换路径减少债务，却增加股数。两者必须分别建模。</p>
 </section>
 
-<section id="float-supply">
-<h2>流通稀缺度与 9 月供给/融资分叉</h2>
-<p class="section-dek">阜博总市值约 HK$61.96 亿，但可观测流通市值代理约 HK$54.58 亿。这里从 25.929 亿非库存股中只扣除董事实际持股；王扬斌披露权益中的 1.12 亿份期权另列为潜在供给，避免重复扣减。</p>
-<div class="grid">
-<div class="card"><div class="k">可观测流通代理</div><div class="v">22.836 亿股</div><div class="s">占非库存股本约 88.07%；不是 official regulatory public float。</div></div>
-<div class="card"><div class="k">流通市值代理</div><div class="v">HK$54.58 亿</div><div class="s">按 2026-07-27 HK$2.39；不是公司总市值。</div></div>
-<div class="card"><div class="k">20 日股数换手</div><div class="v">0.98% / 日</div><div class="s">ADTV 约 2,229 万股；流通代理约 102.45 个 ADTV。</div></div>
-<div class="card"><div class="k">CB 最大供给</div><div class="v">10.88%</div><div class="s">2.484 亿股，相当于当前流通代理约 11.14 个 ADTV。</div></div>
-</div>
-<div class="table-wrap"><table>
-<thead><tr><th>时间/状态</th><th>事件</th><th>最大股数</th><th>占流通代理</th><th>ADTV 天数</th><th>路径</th></tr></thead>
-<tbody>
-<tr><td>当前 overhang</td><td>库存股潜在再发行</td><td>144.5 万</td><td>0.06%</td><td>0.06</td><td>暂时退出供给；再发行/注销尚未确定</td></tr>
-<tr><td>不同归属/行权期</td><td>已授期权</td><td>1.653 亿</td><td>7.24%</td><td>7.42</td><td>不是全部已归属或价内；王扬斌 1.12 亿份行权价 HK$5，当前价外</td></tr>
-<tr><td>至 2026-09-27</td><td>剩余可转债若转换</td><td>2.484 亿</td><td>10.88%</td><td>11.14</td><td>转股价 HK$5.87、当前价 HK$2.39；转换不是自动发生</td></tr>
-<tr><td>2026-09-27</td><td>若未转股现金赎回</td><td>0</td><td>0%</td><td>0</td><td>不增加当前股数，却可能转成再融资、配售或新工具的后续供给风险</td></tr>
-</tbody></table></div>
-<div class="callout risk"><strong>短期硬闸门：</strong>阜博当前流通容量在四份报告里最慢，静态流通代理约 102 个 ADTV；剩余 CB 若转换相当于约 11 个 ADTV。由于现价低于转股价，更现实的近端风险不是“自动解禁式转股”，而是现金赎回能力和由此引出的再融资条款。两条路径必须并列，不能只说稀释或只说还钱。</div>
-<p class="muted">主源：F01 年报、F05 六月月报、F04 可转债公告；市场数据 P01。下载：<a href="data/float-supply-bridge.csv">流通桥 CSV</a> · <a href="data/share-supply-calendar.csv">供给日历 CSV</a>。</p>
-</section>
-
 <section id="ai-thesis">
 <h2>AI 版权应用：增长机会还是被平台包住？</h2>
 <div class="grid">
@@ -349,36 +368,23 @@
 <section id="market-pricing">
 <h2>估值与宏观拉长的市场状态</h2>
 <div class="grid">
-<div class="card"><div class="muted">收盘价</div><div class="metric">HK$2.39</div><div>2026-07-27</div></div>
-<div class="card"><div class="muted">20 / 60 / 200 日均线</div><div class="metric">2.36 / 2.63 / 4.02</div><div>描述趋势，不是买卖点</div></div>
-<div class="card"><div class="muted">52 周区间</div><div class="metric">2.22—6.64</div><div>当前接近区间下沿</div></div>
+<div class="card"><div class="muted">收盘价</div><div class="metric">HK$2.56</div><div>2026-08-07</div></div>
+<div class="card"><div class="muted">20 / 60 / 200 日均线</div><div class="metric">2.41 / 2.54 / 3.86</div><div>描述趋势，不是买卖点</div></div>
+<div class="card"><div class="muted">52 周区间</div><div class="metric">2.22—6.64</div><div>较高点回撤 61.5%</div></div>
 </div>
 <h3>PE 分母矩阵</h3>
-<div class="table-wrap"><table class=""><thead><tr><th>分母</th><th>EPS</th><th>PE</th><th>状态</th><th>限制</th></tr></thead><tbody><tr><td>FY2025 reported diluted</td><td>0.0775</td><td>30.84×</td><td>calculated</td><td>静态 FY，不是 TTM</td></tr><tr><td>TTM to 2026Q1</td><td>—</td><td>—</td><td>unavailable</td><td>Q1 无利润/EPS</td></tr><tr><td>company adjusted group proxy</td><td>0.0901</td><td>26.51×</td><td>illustrative only</td><td>集团利润/母公司股数范围错配</td></tr><tr><td>normalized / owner earnings</td><td>—</td><td>—</td><td>unavailable</td><td>维护研发和正常营运资本不可审计</td></tr></tbody></table></div>
-<h3 id="peer-valuation">同行估值：没有纯同行，也必须把“为什么不能比”展示出来</h3>
-<p>阜博的利润池横跨版权指纹、权利数据、平台工作流、追踪归因与变现。公开市场暂未找到三家同时覆盖这些环节的纯同行。Veritone 是 AI 媒体工作流相邻公司，Getty 与 Shutterstock 是内容授权平台；它们可以帮助识别商业模式和生存风险，但不能硬凑成阜博的 PE 中位数。</p>
-<div class="table-wrap"><table>
-  <thead><tr><th>公司</th><th>角色 / 资格</th><th>价格日期</th><th>FY2025 EPS</th><th>PE</th><th>为何相邻</th><th>为何不能进入中位数</th><th>主源</th></tr></thead>
-  <tbody>
-    <tr><td>阜博集团 03738.HK</td><td><span class="tag good">target</span></td><td>HK$2.39<br>2026-07-27</td><td>HK$0.0775 diluted</td><td>30.84×</td><td>跨平台版权识别、权利数据、运营与变现</td><td>TTM、forward 与 owner earnings 分母仍不可得</td><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043003894.pdf">FY2025 年报</a></td></tr>
-    <tr><td>Veritone / VERI</td><td><span class="tag warn">excluded</span></td><td>US$1.05<br>2026-07-27</td><td>−US$1.76</td><td>N/M</td><td>AI 媒体工作流相邻</td><td>持续亏损，业务组合、债务与版权经济性不同</td><td><a href="https://www.sec.gov/Archives/edgar/data/1615165/000162828026025214/veri-20251231.htm">FY2025 10-K</a><br><small>Item 8 EPS table · SEC text lines 1819—1823</small></td></tr>
-    <tr><td>Getty Images / GETY</td><td><span class="tag warn">excluded</span></td><td>US$0.4178<br>2026-07-27</td><td>−US$0.50</td><td>N/M</td><td>内容库、许可与权利资产相邻</td><td>不是跨平台版权 SaaS/变现中间层，且 GAAP 亏损</td><td><a href="https://www.sec.gov/Archives/edgar/data/1898496/000162828026018160/gety-20251231.htm">FY2025 10-K</a><br><small>Item 8 EPS table · SEC text lines 2294—2298</small></td></tr>
-    <tr><td>Shutterstock / SSTK</td><td><span class="tag warn">excluded</span></td><td>US$5.81<br>2026-07-27</td><td>US$1.25</td><td>4.65×</td><td>创意内容搜索与授权相邻</td><td>客户、成本、平台角色与事件状态差异过大</td><td><a href="https://www.sec.gov/Archives/edgar/data/1549346/000154934626000008/sstk-20251231.htm">FY2025 10-K</a><br><small>Item 8 EPS table · SEC text lines 1877—1882</small></td></tr>
-    <tr><td>合格上市同行集合</td><td><span class="tag warn">empty</span></td><td>2026-07-27</td><td>—</td><td>unavailable</td><td>未找到 ≥3 家纯同行</td><td>“无中位数”本身就是结论；平台内部工具也不是上市可比公司</td><td><a href="./data/peer-valuation-comparison.csv">完整矩阵</a></td></tr>
-  </tbody>
-</table></div>
-<div class="callout"><strong>可支持的结论：</strong>阜博 30.84× 静态 FY PE 不能与 Shutterstock 的 4.65×直接比较，也不能用两个亏损样本推导区间。当前相对同行估值状态是 <code>not_determinable</code>；更有用的交叉检查仍是全摊薄每股现金收益、应收、资本化研发、MRR/NRR 质量与 9 月可转债资金桥。</div>
+<div class="table-wrap"><table class=""><thead><tr><th>分母</th><th>EPS</th><th>PE</th><th>状态</th><th>限制</th></tr></thead><tbody><tr><td>FY2025 reported diluted</td><td>0.0775</td><td>33.03×</td><td>calculated</td><td>静态 FY，不是 TTM</td></tr><tr><td>TTM to 2026Q1</td><td>—</td><td>—</td><td>unavailable</td><td>Q1 无利润/EPS</td></tr><tr><td>company adjusted group proxy</td><td>0.0901</td><td>28.41×</td><td>illustrative only</td><td>集团利润/母公司股数范围错配</td></tr><tr><td>normalized / owner earnings</td><td>—</td><td>—</td><td>unavailable</td><td>维护研发和正常营运资本不可审计</td></tr></tbody></table></div>
 <p><strong>高估/低估空间暂不输出。</strong> 当前 FY PE 可复算，但没有 TTM、forward、owner earnings 或无前视偏差历史分位数。价格低于 200 日均线和 52 周高点只能说明中期趋势弱、历史套牢供给可能存在，不能推出“低估”。</p>
 <h3>长周期定价：不用目标价，也能看清市场要求什么</h3>
 <div class="table-wrap"><table><thead><tr><th>交叉检查</th><th>结果</th><th>它回答什么</th><th>主要限制</th></tr></thead><tbody>
-<tr><td>静态 FY2025 稀释 PE</td><td>30.84×</td><td>现价相对已报告 EPS 的价格</td><td>不是 TTM/forward，且未处理 2026 年资本结构路径</td></tr>
-<tr><td>日期混合 EV / FY2025 收入</td><td>约 2.46×</td><td>用 2026-07-27 市值约 61.96 亿 + 2025 年末银行/可转债约 20.31 亿 − 现金约 11.57 亿，粗看企业价值相对收入</td><td>价格与资产负债表日期不同；未含租赁、受限现金与到期后资本结构，不能作精准估值</td></tr>
-<tr><td>52 周价格位置</td><td>2.39，区间 2.22—6.64</td><td>市场情绪和套牢结构</td><td>历史价格不是内在价值；高位可能是主题溢价，低位也可能是基本面折价</td></tr>
-<tr><td>200 日均线</td><td>4.02，现价低约 40.6%</td><td>中期趋势与潜在供给压力</td><td>均线不含盈利分母，不能定义高估/低估</td></tr>
+<tr><td>静态 FY2025 稀释 PE</td><td>33.03×</td><td>现价相对已报告 EPS 的价格</td><td>不是 TTM/forward，且未处理 2026 年资本结构路径</td></tr>
+<tr><td>日期混合 EV / FY2025 收入</td><td>约 2.62×</td><td>用 2026-08-07 市值约 66.38 亿 + 2025 年末银行/可转债约 20.31 亿 − 现金约 11.57 亿，粗看企业价值相对收入</td><td>价格与资产负债表日期不同；未含租赁、受限现金与到期后资本结构，不能作精准估值</td></tr>
+<tr><td>52 周价格位置</td><td>2.56，区间 2.22—6.64</td><td>市场情绪和套牢结构</td><td>历史价格不是内在价值；高位可能是主题溢价，低位也可能是基本面折价</td></tr>
+<tr><td>200 日均线</td><td>3.86，现价低约 33.7%</td><td>中期趋势与潜在供给压力</td><td>均线不含盈利分母，不能定义高估/低估</td></tr>
 </tbody></table></div>
-<p>用静态 PE 做一个<strong>纯代数的反向预期</strong>：若五年后股价只回到今天的名义水平、期间无分红，终值 PE 分别为 15× / 20× / 25×，FY2025 EPS 未来五年需复合增长约 15.5% / 9.0% / 4.3%。若要求股价年化回报 10%，相应 EPS 复合增速约升至 27.1% / 20.0% / 14.7%。这不是预测或目标价；它揭示当前 30.84× 静态 PE 对利润增长与估值维持的依赖，而且尚未加入现金赎回或完全摊薄的代价。</p>
+<p>用静态 PE 做一个<strong>纯代数的反向预期</strong>：若五年后股价只回到今天的名义水平、期间无分红，终值 PE 分别为 15× / 20× / 25×，FY2025 EPS 未来五年需复合增长约 17.1% / 10.6% / 5.7%。若要求股价年化回报 10%，相应 EPS 复合增速约升至 28.8% / 21.6% / 16.3%。这不是预测或目标价；它揭示当前 33.03× 静态 PE 对利润增长与估值维持的依赖，而且尚未加入现金赎回或完全摊薄的代价。</p>
 <h3>为什么近期在 2.2—2.5 一带，而不是此前的 4？</h3>
-<p>截至本快照，价格靠近 20 日均线但显著低于 60/200 日均线；过去一年下跌约 36.9%。已披露空仓从 4 月样本 5.92% 回落至 4.74%，因此不能把弱势简单归因于空头加仓。更一致的解释是：2025 年的 AI 版权增长预期已部分反转，而 2026Q1 只有增长百分比，现金/利润和 9 月债券资金桥尚未被正式财报验证。</p>
+<p>截至 2026-08-07，价格高于 20/60 日均线但仍显著低于 200 日均线；近 10 个交易日反弹约 11.8%，最新成交量仅约为 20 日均量 0.99 倍。已披露空仓从 4 月样本 5.92% 回落至 4.74%，因此不能把此前弱势简单归因于空头加仓。当前更像超跌修复：2026Q1 只有增长百分比，现金/利润和 9 月债券资金桥尚未被正式财报验证。</p>
 <svg viewBox="0 0 820 280" role="img" aria-label="SFC 可申报空仓占固定 6 月股数比例"><text x="70" y="22" class="chart-title">SFC 可申报空仓占固定 6 月股数比例</text><line x1="70" y1="42.0" x2="796" y2="42.0" class="grid"/><text x="62" y="46.0" text-anchor="end" class="axis">6.06</text><line x1="70" y1="89.5" x2="796" y2="89.5" class="grid"/><text x="62" y="93.5" text-anchor="end" class="axis">5.70</text><line x1="70" y1="137.0" x2="796" y2="137.0" class="grid"/><text x="62" y="141.0" text-anchor="end" class="axis">5.33</text><line x1="70" y1="184.5" x2="796" y2="184.5" class="grid"/><text x="62" y="188.5" text-anchor="end" class="axis">4.96</text><line x1="70" y1="232.0" x2="796" y2="232.0" class="grid"/><text x="62" y="236.0" text-anchor="end" class="axis">4.60</text><polyline fill="none" stroke="#4f8cff" stroke-width="3" points="70.0,122.7 312.0,60.4 554.0,163.0 796.0,213.6"/><circle cx="70.0" cy="122.7" r="4" fill="#27c2a3"><title>01-16: 5.44 %</title></circle><text x="70.0" y="260" text-anchor="middle" class="axis">01-16</text><circle cx="312.0" cy="60.4" r="4" fill="#27c2a3"><title>04-10: 5.92 %</title></circle><text x="312.0" y="260" text-anchor="middle" class="axis">04-10</text><circle cx="554.0" cy="163.0" r="4" fill="#27c2a3"><title>05-29: 5.13 %</title></circle><text x="554.0" y="260" text-anchor="middle" class="axis">05-29</text><circle cx="796.0" cy="213.6" r="4" fill="#27c2a3"><title>07-17: 4.74 %</title></circle><text x="796.0" y="260" text-anchor="middle" class="axis">07-17</text></svg>
 <div class="table-wrap"><table class=""><thead><tr><th>SFC日期</th><th>申报空仓股数</th><th>占6月固定股数%</th><th>市值百万港元</th><th>来源</th></tr></thead><tbody><tr><td>2026-01-16</td><td>141021535</td><td>5.44</td><td>692.40</td><td>SFC archived weekly report</td></tr><tr><td>2026-04-10</td><td>153398892</td><td>5.92</td><td>589.10</td><td>SFC archived weekly report</td></tr><tr><td>2026-05-29</td><td>132926071</td><td>5.13</td><td>372.20</td><td>SFC archived weekly report</td></tr><tr><td>2026-07-17</td><td>122802839</td><td>4.74</td><td>278.76</td><td>S01</td></tr></tbody></table></div>
 <p class="muted">SFC 只覆盖超过法定阈值的申报净空仓，且有发布滞后和对冲用途；不是全部 short interest，也不是当日卖空成交。</p>
@@ -412,7 +418,7 @@
 </section>
 <section id="methodology">
   <h2>可复用研究方法：事实层、解释层与决策闸门分开</h2>
-  <p class="section-dek">这套顺序与美图报告一致；行业差异只改变指标和估值分支，不改变证据纪律。</p>
+  <p class="section-dek">这套顺序不因行业主题改变：行业差异只改变指标和估值分支，不改变证据纪律。</p>
   <div class="method-grid">
     <div class="method-step"><div class="n">STEP 01</div><strong>身份与主源</strong><p>冻结证券、发行人、期间、币种、股数、价格日和官方原文。</p></div>
     <div class="method-step"><div class="n">STEP 02</div><strong>业务与价值链</strong><p>明确谁付钱、为什么付钱、收入如何变成现金，以及替代品在哪里。</p></div>
@@ -427,317 +433,6 @@
 </section>
 <section id="timeline">
   <h2>大事件时间轴：已发生与下一检查点</h2>
-<!-- company-event-terminal:start -->
-
-<style>
-  .event-terminal{margin:22px 0 26px;padding:20px;border:1px solid #cad4ce;
-  border-radius:18px;background:linear-gradient(145deg,#fbfdfb,#f7f4eb)}
-  .event-terminal *{box-sizing:border-box}
-  .et-head{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.8fr);
-  gap:18px;align-items:start}
-  .et-kicker{color:var(--green);font-size:11px;font-weight:850;letter-spacing:.12em;
-  text-transform:uppercase}
-  .et-head h3{margin:4px 0 7px;font-size:clamp(21px,2.6vw,30px)}
-  .et-head p{margin:0;color:var(--muted);font-size:13px}
-  .et-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .et-stat{padding:10px 12px;border:1px solid var(--line);border-radius:11px;background:#fff}
-  .et-stat b{display:block;font-size:21px;line-height:1.15}
-  .et-stat span{color:var(--muted);font-size:11px}
-  .et-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;
-  margin:15px 0 12px}
-  .et-legend>div{display:grid;grid-template-columns:18px 1fr;gap:7px;align-items:center;
-  padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:#fff}
-  .et-legend b{font-size:11px}.et-legend small{grid-column:2;color:var(--muted);
-  font-size:10px;line-height:1.35}
-  .et-shape{display:block;width:12px;height:12px;border:2px solid var(--green);
-  border-radius:50%;background:#fff}
-  .et-shape.filled{background:var(--green)}
-  .et-shape.ring{background:var(--green);box-shadow:0 0 0 3px rgba(23,107,80,.2)}
-  .et-shape.diamond{border:0;border-radius:1px;background:#65716b;transform:rotate(45deg)}
-  .et-axis-shell{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:#fff}
-  .et-axis{position:relative;min-width:780px;height:148px;
-  background-image:linear-gradient(to right,rgba(217,215,206,.5) 1px,transparent 1px);
-  background-size:10% 100%}
-  .et-axis:before{content:"";position:absolute;left:3%;right:3%;top:76px;
-  border-top:2px solid #d7dcd8}
-  .et-axis-label{position:absolute;top:112px;transform:translateX(-50%);
-  color:var(--muted);font-size:10px;white-space:nowrap}
-  .et-axis-label.start{transform:none}.et-axis-label.end{transform:translateX(-100%)}
-  .et-now{position:absolute;top:0;bottom:0;border-left:2px solid var(--red);z-index:1}
-  .et-now span{position:absolute;top:7px;left:5px;color:var(--red);font-size:10px;
-  font-weight:850;white-space:nowrap}
-  .et-node{position:absolute;z-index:2;width:15px;height:15px;border:3px solid var(--green);
-  border-radius:50%;background:var(--green);transform:translate(-50%,-50%);
-  box-shadow:0 2px 7px rgba(23,34,30,.18)}
-  .et-node.future{background:#fff}.et-node.reviewed{box-shadow:0 0 0 4px rgba(23,107,80,.2)}
-  .et-node.not-comparable{border:0;border-radius:2px;background:#65716b;
-  transform:translate(-50%,-50%) rotate(45deg)}
-  .et-node:hover,.et-node:focus{outline:3px solid rgba(49,95,143,.2);outline-offset:3px}
-  .et-node-date{position:absolute;left:50%;top:18px;transform:translateX(-50%) rotate(-34deg);
-  transform-origin:left top;color:#52605a;font-size:9px;white-space:nowrap}
-  .et-chart{margin:14px 0;padding:14px;border:1px solid var(--line);
-  border-radius:13px;background:#fff}
-  .et-chart-head{display:flex;justify-content:space-between;gap:12px;align-items:start}
-  .et-chart h4{margin:0;font-size:15px}.et-chart p{margin:2px 0 0;color:var(--muted);font-size:11px}
-  .et-chart-legend{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:10px}
-  .et-chart-legend i{display:inline-block;width:10px;height:7px;margin-right:4px;border-radius:2px}
-  .et-reaction-axis{display:grid;grid-template-columns:145px 1fr;margin:12px 0 5px;
-  color:var(--muted);font-size:9px}
-  .et-reaction-axis>div{display:flex;justify-content:space-between}
-  .et-reaction-row{display:grid;grid-template-columns:145px 1fr;gap:10px;align-items:center;
-  margin:6px 0}
-  .et-reaction-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}
-  .et-reaction-plot{position:relative;height:34px;border-radius:7px;background:#f7f6f1}
-  .et-reaction-plot:before{content:"";position:absolute;left:50%;top:0;bottom:0;
-  border-left:1px solid #aeb7b1}
-  .et-bar{position:absolute;height:7px;border-radius:3px;min-width:1px}
-  .et-bar.positive{left:50%}.et-bar.negative{right:50%}
-  .et-bar.t0{top:3px;background:var(--green)}
-  .et-bar.t5{top:13px;background:var(--blue)}
-  .et-bar.t20{top:23px;background:var(--amber)}
-  .et-bar em{position:absolute;top:-4px;font-style:normal;font-size:8px;font-weight:800;
-  white-space:nowrap}
-  .et-bar.positive em{left:calc(100% + 3px)}.et-bar.negative em{right:calc(100% + 3px)}
-  .et-ledger-title{display:flex;justify-content:space-between;gap:12px;align-items:end;
-  margin:17px 0 8px}
-  .et-ledger-title h4{margin:0;font-size:16px}.et-ledger-title span{color:var(--muted);
-  font-size:10px}
-  .et-event{margin:8px 0;border:1px solid var(--line);border-radius:12px;background:#fff;
-  scroll-margin-top:86px}
-  .et-event:target{border-color:var(--blue);box-shadow:0 0 0 3px rgba(49,95,143,.12)}
-  .et-event summary{display:grid;grid-template-columns:92px minmax(0,1fr) auto;
-  gap:10px;align-items:center;padding:12px 13px}
-  .et-event summary::marker{color:var(--green)}
-  .et-event-date{font-size:11px;font-weight:800;color:var(--muted)}
-  .et-event-title{font-size:13px;font-weight:820}
-  .et-badges{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
-  .et-badge{padding:2px 7px;border-radius:999px;font-size:9px;font-weight:820;background:#ecefe9;
-  color:#52605a}.et-badge.reviewed{background:var(--green-soft);color:var(--green)}
-  .et-badge.future{background:var(--amber-soft);color:var(--amber)}
-  .et-badge.nocomp{background:#edf0f2;color:#56636b}
-  .et-badge.date-estimated{background:#fff3d8;color:#8b5d00}
-  .et-badge.date-tba{background:#f2eafb;color:#67448a}
-  .et-date-legend{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:-4px 0 12px;
-  color:var(--muted);font-size:10px}
-  .et-date-legend span{padding:4px 7px;border:1px solid var(--line);border-radius:999px;
-  background:#fff}
-  .et-diagnosis{margin:12px 0;padding:13px 15px;border-left:4px solid var(--blue);
-  border-radius:10px;background:#eef4f8;color:#344a56;font-size:12px;line-height:1.65}
-  .et-diagnosis strong{color:#203943}.et-diagnosis a{font-weight:800;color:var(--blue)}
-  .et-event-body{padding:0 14px 14px}
-  .et-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .et-evidence{padding:10px 11px;border-radius:9px;background:#f7f6f1}
-  .et-evidence b{display:block;margin-bottom:3px;color:#4e5b55;font-size:10px;
-  letter-spacing:.04em}.et-evidence p,.et-evidence ul{margin:0;color:#46534d;font-size:11px}
-  .et-evidence ul{padding-left:17px}.et-evidence li{margin:2px 0}
-  .et-source-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
-  .et-source-links a{padding:3px 7px;border:1px solid var(--line);border-radius:999px;
-  text-decoration:none;font-size:9px;font-weight:750}
-  .et-preserved-label{margin:24px 0 8px!important;padding-top:18px;border-top:1px solid var(--line);
-  font-size:16px!important}
-  @media(max-width:820px){.et-head{grid-template-columns:1fr}
-  .et-legend{grid-template-columns:1fr 1fr}}
-  @media(max-width:620px){.event-terminal{padding:14px}.et-legend{grid-template-columns:1fr}
-  .et-reaction-axis,.et-reaction-row{grid-template-columns:92px 1fr}.et-event summary{
-  grid-template-columns:78px 1fr}.et-badges{grid-column:1/-1;justify-content:flex-start}
-  .et-evidence-grid{grid-template-columns:1fr}}
-</style>
-
-<div class="event-terminal" data-company="vobile"
-  data-contract="seed.earnings-season-timeline.v1.1-compatible">
-  <div class="et-head">
-    <div><div class="et-kicker">Company event validation terminal</div>
-    <h3>阜博集团｜事件 Surprise × 市场共振</h3>
-    <p>只放本公司事件。图上点击节点可跳到证据卡；价格反应是相关性观察，不是买卖指令或单因果证明。</p></div>
-    <div class="et-summary">
-      <div class="et-stat"><b>6</b><span>公司事件</span></div>
-      <div class="et-stat"><b>6</b><span>已复核价格窗</span></div>
-      <div class="et-stat"><b>6</b><span>不可比 Surprise</span></div>
-      <div class="et-stat"><b>0</b><span>未来验证节点</span></div>
-    </div>
-  </div>
-  <div class="et-legend" aria-label="事件状态图例">
-    <div><i class="et-shape"></i><b>expectation_frozen</b>
-    <small>空心：只冻结问题，不预填实际。</small></div>
-    <div><i class="et-shape filled"></i><b>actual_reported</b>
-    <small>实心：官方实际已披露。</small></div>
-    <div><i class="et-shape ring"></i><b>market_reviewed</b>
-    <small>外圈：至少一个价格窗口已复核。</small></div>
-    <div><i class="et-shape ring"></i><b>market_reviewed_partial</b>
-    <small>部分窗口：T+5/T+20尚未形成，不能当完整复盘。</small></div>
-    <div><i class="et-shape diamond"></i><b>not_comparable</b>
-    <small>菱形：无可靠基线；不等于负面。</small></div>
-  </div>
-  <div class="et-date-legend" aria-label="未来事件日期口径">
-    <b>日期口径：</b><span>已确认日期＝公司已公告</span>
-    <span>预计窗口＝研究锚点，非官宣</span><span>TBA＝官方尚未公布日期</span>
-  </div>
-
-
-      <div class="et-axis-shell" aria-label="公司事件横向时间轴">
-        <div class="et-axis">
-          <span class="et-axis-label start" style="left:3%">2025-08-28</span>
-          <span class="et-axis-label" style="left:81.356%">2026-07-30</span>
-          <span class="et-axis-label end" style="left:97%">2026-10-15</span>
-          <span class="et-now" style="left:81.356%"><span>NOW</span></span>
-          <a class="et-node reviewed not-comparable" href="#event-vobile-h1-2025" style="left:3.000%;top:48px" title="2025-08-28｜2025H1业绩｜market_reviewed｜不可比"><span class="et-node-date">08-28</span></a><a class="et-node reviewed not-comparable" href="#event-vobile-cb-proposal-2025" style="left:6.295%;top:73px" title="2025-09-23｜HK$16亿零息可转债方案｜market_reviewed｜不可比"><span class="et-node-date">09-23</span></a><a class="et-node reviewed not-comparable" href="#event-vobile-cb-completion-2025" style="left:7.748%;top:98px" title="2025-09-29｜可转债发行完成｜market_reviewed｜不可比"><span class="et-node-date">09-29</span></a><a class="et-node reviewed not-comparable" href="#event-vobile-fy2025" style="left:51.090%;top:48px" title="2026-03-27｜FY2025业绩｜market_reviewed｜不可比"><span class="et-node-date">03-27</span></a><a class="et-node reviewed not-comparable" href="#event-vobile-q1-2026" style="left:63.923%;top:73px" title="2026-05-19｜2026Q1经营数据｜market_reviewed｜不可比"><span class="et-node-date">05-19</span></a><a class="et-node reviewed not-comparable" href="#event-vobile-cb-repurchase-2026" style="left:75.787%;top:98px" title="2026-07-07｜月报披露可转债回购｜market_reviewed｜不可比"><span class="et-node-date">07-07</span></a>
-        </div>
-      </div>
-
-
-      <div class="et-chart" role="img" aria-label="事件后价格窗口柱状图">
-        <div class="et-chart-head">
-          <div><h4>事件后价格窗口</h4>
-          <p>相关性观察，不证明单一公告造成全部涨跌；缺失窗口不画成 0。</p></div>
-          <div class="et-chart-legend"><span><i style="background:var(--green)"></i>T0</span>
-          <span><i style="background:var(--blue)"></i>T+5</span>
-          <span><i style="background:var(--amber)"></i>T+20</span></div>
-        </div>
-        <div class="et-reaction-axis"><span></span><div><span>−20%</span><span>0</span>
-        <span>+20%</span></div></div>
-        <div class="et-reaction-row"><a class="et-reaction-label" href="#event-vobile-h1-2025" title="2025H1业绩">25-08-28 2025H1业绩</a><div class="et-reaction-plot"><span class="et-bar t0 positive" style="width:10.560%" title="T0 +4.40%"><em>+4.4%</em></span><span class="et-bar t5 negative" style="width:35.472%" title="T+5 -14.78%"><em>-14.8%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-vobile-cb-proposal-2025" title="HK$16亿零息可转债方案">25-09-23 HK$16亿零息可转债方案</a><div class="et-reaction-plot"><span class="et-bar t0 positive" style="width:6.120%" title="T0 +2.55%"><em>+2.5%</em></span><span class="et-bar t5 positive" style="width:40.944%" title="T+5 +17.06%"><em>+17.1%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-vobile-cb-completion-2025" title="可转债发行完成">25-09-29 可转债发行完成</a><div class="et-reaction-plot"><span class="et-bar t0 positive" style="width:18.624%" title="T0 +7.76%"><em>+7.8%</em></span><span class="et-bar t5 positive" style="width:39.432%" title="T+5 +16.43%"><em>+16.4%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-vobile-fy2025" title="FY2025业绩">26-03-27 FY2025业绩</a><div class="et-reaction-plot"><span class="et-bar t0 negative" style="width:6.936%" title="T0 -2.89%"><em>-2.9%</em></span><span class="et-bar t5 positive" style="width:9.456%" title="T+5 +3.94%"><em>+3.9%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-vobile-q1-2026" title="2026Q1经营数据">26-05-19 2026Q1经营数据</a><div class="et-reaction-plot"><span class="et-bar t0 positive" style="width:2.544%" title="T0 +1.06%"><em>+1.1%</em></span><span class="et-bar t5 positive" style="width:0.000%" title="T+5 +0.00%"><em>+0.0%</em></span></div></div><div class="et-reaction-row"><a class="et-reaction-label" href="#event-vobile-cb-repurchase-2026" title="月报披露可转债回购">26-07-07 月报披露可转债回购</a><div class="et-reaction-plot"><span class="et-bar t0 positive" style="width:9.144%" title="T0 +3.81%"><em>+3.8%</em></span><span class="et-bar t5 negative" style="width:8.136%" title="T+5 -3.39%"><em>-3.4%</em></span></div></div>
-      </div>
-
-  <div class="et-ledger-title"><h4>纵向证据账本</h4>
-  <span>预期 → 实际 → Surprise → 价格 → 传导 → 下一验证</span></div>
-
-      <details class="et-event" id="event-vobile-h1-2025">
-        <summary><span class="et-event-date">2025-08-28</span>
-        <span class="et-event-title">2025H1业绩</span>
-        <span class="et-badges"><span class="et-badge reviewed">market_reviewed</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
-        <div class="et-event-body">
-          <div class="et-evidence-grid">
-            <div class="et-evidence"><b>为什么重要</b><p>验证订阅和内容变现双引擎是否同时增长，以及利润能否转为现金。</p></div>
-            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
-            <div class="et-evidence"><b>官方实际</b><ul><li>收入HK$1,456.3m</li><li>订阅收入HK$609.9m</li><li>增值服务HK$846.4m</li><li>归母利润HK$102.3m</li></ul></div>
-            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
-            <div class="et-evidence"><b>市场反应</b><ul><li>T0/首个反应：T0 +4.40%</li><li>T+1：-0.47%</li><li>T+5：-14.78%</li><li>基准调整：T0超额 +4.08%</li></ul></div>
-            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>平台内容量 → 指纹/权利识别 → 订阅与分成收入 → 回款</li></ul></div>
-            <div class="et-evidence"><b>复盘结论</b><p>T0上涨但T+5转弱，表明财报后仍需验证现金和可转债供给。</p></div>
-            <div class="et-evidence"><b>下一验证与缺口</b>
-            <p>2025全年与2026Q1经营更新｜没有冻结的卖方共识和历史surprise分布。</p></div>
-          </div>
-          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2025/0930/2025093003000.pdf" rel="noreferrer">Vobile Group Interim Report 2025</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/3738.HK?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance 3738.HK chart API snapshot</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance Hang Seng Index chart API snapshot</a></div>
-        </div>
-      </details>
-
-      <details class="et-event" id="event-vobile-cb-proposal-2025">
-        <summary><span class="et-event-date">2025-09-23</span>
-        <span class="et-event-title">HK$16亿零息可转债方案</span>
-        <span class="et-badges"><span class="et-badge reviewed">market_reviewed</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
-        <div class="et-event-body">
-          <div class="et-evidence-grid">
-            <div class="et-evidence"><b>为什么重要</b><p>短期限融资会直接影响净债务、流通供给和每股价值，不能只看票息为零。</p></div>
-            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
-            <div class="et-evidence"><b>官方实际</b><ul><li>建议发行HK$1.6bn零息可转债</li><li>2026年到期</li><li>形成偿债、回购或转股三分支</li></ul></div>
-            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
-            <div class="et-evidence"><b>市场反应</b><ul><li>T0/首个反应：T0 +2.55%</li><li>T+1：+4.51%</li><li>T+5：+17.06%</li><li>基准调整：T0超额 +3.25%</li></ul></div>
-            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>现金融资 → 投资/营运资金</li><li>到期前 → 回购/赎回/转股 → 股本或现金变化</li></ul></div>
-            <div class="et-evidence"><b>复盘结论</b><p>市场短窗正向，但真正关键是资金用途、到期现金和充分摊薄分母。</p></div>
-            <div class="et-evidence"><b>下一验证与缺口</b>
-            <p>月报、回购公告与到期处理｜债券持有人对冲与实际借券结构不可得。</p></div>
-          </div>
-          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0923/2025092300072.pdf" rel="noreferrer">Proposed HK$1.6bn Zero-Coupon Convertible Bonds due 2026</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/3738.HK?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance 3738.HK chart API snapshot</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance Hang Seng Index chart API snapshot</a></div>
-        </div>
-      </details>
-
-      <details class="et-event" id="event-vobile-cb-completion-2025">
-        <summary><span class="et-event-date">2025-09-29</span>
-        <span class="et-event-title">可转债发行完成</span>
-        <span class="et-badges"><span class="et-badge reviewed">market_reviewed</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
-        <div class="et-event-body">
-          <div class="et-evidence-grid">
-            <div class="et-evidence"><b>为什么重要</b><p>发行完成把融资方案变成真实资本结构，后续回购不等于风险消失。</p></div>
-            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
-            <div class="et-evidence"><b>官方实际</b><ul><li>HK$1.6bn可转债发行完成</li><li>转股或现金偿还风险开始进入存续期</li></ul></div>
-            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
-            <div class="et-evidence"><b>市场反应</b><ul><li>T0/首个反应：T0 +7.76%</li><li>T+1：+9.75%</li><li>T+5：+16.43%</li><li>基准调整：T0超额 +6.89%</li></ul></div>
-            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>债券存续 → 转股价/股价/现金 → 潜在供给或偿债压力</li></ul></div>
-            <div class="et-evidence"><b>复盘结论</b><p>T0与T+5正共振，但资本结构风险需要用月报持续更新。</p></div>
-            <div class="et-evidence"><b>下一验证与缺口</b>
-            <p>2026到期前现金、回购和转换状态｜公开事件窗不能识别套利盘和方向性资金。</p></div>
-          </div>
-          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0923/2025092300072.pdf" rel="noreferrer">Proposed HK$1.6bn Zero-Coupon Convertible Bonds due 2026</a><a href="https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&amp;lang=EN&amp;market=SEHK&amp;stockId=170283" rel="noreferrer">HKEX Listed Company Title Search: 03738</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/3738.HK?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance 3738.HK chart API snapshot</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance Hang Seng Index chart API snapshot</a></div>
-        </div>
-      </details>
-
-      <details class="et-event" id="event-vobile-fy2025">
-        <summary><span class="et-event-date">2026-03-27</span>
-        <span class="et-event-title">FY2025业绩</span>
-        <span class="et-badges"><span class="et-badge reviewed">market_reviewed</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
-        <div class="et-event-body">
-          <div class="et-evidence-grid">
-            <div class="et-evidence"><b>为什么重要</b><p>利润增长需要由现金转化、应收和资本化研发共同验证。</p></div>
-            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
-            <div class="et-evidence"><b>官方实际</b><ul><li>收入HK$2.872bn</li><li>归母利润HK$199.3m</li><li>全年CFO约HK$69.9m</li></ul></div>
-            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
-            <div class="et-evidence"><b>市场反应</b><ul><li>T0/首个反应：T0 -2.89%</li><li>T+1：-7.35%</li><li>T+5：+3.94%</li><li>基准调整：T0超额 -3.27%</li></ul></div>
-            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>订阅/变现增长 → 会计利润 → CFO → 扣维持投入后的owner earnings</li></ul></div>
-            <div class="et-evidence"><b>复盘结论</b><p>T0负、T+5正，短窗分歧大；现金质量比单日方向重要。</p></div>
-            <div class="et-evidence"><b>下一验证与缺口</b>
-            <p>2026Q1经营数据与H1现金流｜未冻结一致预期；T+5仍受市场和融资事件影响。</p></div>
-          </div>
-          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043003894.pdf" rel="noreferrer">Vobile Group Annual Report 2025</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/3738.HK?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance 3738.HK chart API snapshot</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance Hang Seng Index chart API snapshot</a></div>
-        </div>
-      </details>
-
-      <details class="et-event" id="event-vobile-q1-2026">
-        <summary><span class="et-event-date">2026-05-19</span>
-        <span class="et-event-title">2026Q1经营数据</span>
-        <span class="et-badges"><span class="et-badge reviewed">market_reviewed</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
-        <div class="et-event-body">
-          <div class="et-evidence-grid">
-            <div class="et-evidence"><b>为什么重要</b><p>经营KPI要继续桥接到收入确认、现金和可转债偿债能力。</p></div>
-            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
-            <div class="et-evidence"><b>官方实际</b><ul><li>公司披露2026Q1未经审计经营数据</li><li>用于跟踪活跃资产、MRR与业务增长</li></ul></div>
-            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
-            <div class="et-evidence"><b>市场反应</b><ul><li>T0/首个反应：T0 +1.06%</li><li>T+1：-3.19%</li><li>T+5：+0.00%</li><li>基准调整：T0超额 +1.63%</li></ul></div>
-            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>活跃资产/MRR → 订阅收入 → 毛利 → 回款</li><li>内容变现规模 → 平台依赖与分成经济</li></ul></div>
-            <div class="et-evidence"><b>复盘结论</b><p>T0小幅正、T+5持平，市场没有给出持久方向；等待H1现金和债务处理。</p></div>
-            <div class="et-evidence"><b>下一验证与缺口</b>
-            <p>2026H1正式财务结果｜经营更新不等于完整季度财报，利润、CFO和应收口径待补。</p></div>
-          </div>
-          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0519/2026051900384.pdf" rel="noreferrer">Unaudited Operating Data for Q1 2026</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/3738.HK?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance 3738.HK chart API snapshot</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance Hang Seng Index chart API snapshot</a></div>
-        </div>
-      </details>
-
-      <details class="et-event" id="event-vobile-cb-repurchase-2026" open>
-        <summary><span class="et-event-date">2026-07-07</span>
-        <span class="et-event-title">月报披露可转债回购</span>
-        <span class="et-badges"><span class="et-badge reviewed">market_reviewed</span><span class="et-badge">影响 4/5</span><span class="et-badge nocomp">not_comparable</span></span></summary>
-        <div class="et-event-body">
-          <div class="et-evidence-grid">
-            <div class="et-evidence"><b>为什么重要</b><p>回购债券的价值取决于折价、现金成本、剩余本金和到期选择。</p></div>
-            <div class="et-evidence"><b>冻结预期 / 事前问题</b><p>事件前没有可审计、冻结的可比共识；因此不以事后同比增速制造 Surprise。</p></div>
-            <div class="et-evidence"><b>官方实际</b><ul><li>六月月报披露可转债回购变化</li><li>降低部分到期本金但不自动消除剩余偿债/稀释风险</li></ul></div>
-            <div class="et-evidence"><b>Surprise 状态</b><p>not_comparable｜没有可比基线，不等于负面。</p></div>
-            <div class="et-evidence"><b>市场反应</b><ul><li>T0/首个反应：T0 +3.81%</li><li>T+1：+3.39%</li><li>T+5：-3.39%</li><li>基准调整：T0超额 +0.82%</li></ul></div>
-            <div class="et-evidence"><b>行业 / 资本结构传导</b><ul><li>现金回购债券 → 净债务/流动性</li><li>剩余债券 → 到期偿还或转股</li></ul></div>
-            <div class="et-evidence"><b>复盘结论</b><p>T0小幅正、T+5转负；资本结构问题仍需定量桥。</p></div>
-            <div class="et-evidence"><b>下一验证与缺口</b>
-            <p>剩余本金、现金余额与到期处理｜公开月报不足以观察持有人对冲和实际融资成本。</p></div>
-          </div>
-          <div class="et-source-links"><strong>原始来源：</strong><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070701937.pdf" rel="noreferrer">Monthly Return for June 2026</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/3738.HK?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance 3738.HK chart API snapshot</a><a href="https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?range=5y&amp;interval=1d&amp;events=history" rel="noreferrer">Yahoo Finance Hang Seng Index chart API snapshot</a></div>
-        </div>
-      </details>
-
-  <p class="chart-note">研究边界：影响分只用于排序研究注意力，不是收益预测；
-  未来节点保持空心，缺失窗口不画成 0。</p>
-</div>
-<script>
-(() => {
-  const openTarget = () => {
-    const id = location.hash.slice(1);
-    if (!id) return;
-    const target = document.getElementById(id);
-    if (target && target.matches('details.et-event')) target.open = true;
-  };
-  openTarget();
-  window.addEventListener('hashchange', openTarget);
-})();
-</script>
-<h3 class="et-preserved-label">原报告事件表与更长历史（保留）</h3>
-<!-- company-event-terminal:end -->
   <p class="section-dek">事件窗口只说明价格在公告附近怎样变化；归因仍需同时检查市场基准、行业映射和重叠事件。</p>
   <div class="timeline">
     <div class="timeline-item">
@@ -805,7 +500,7 @@
 
 
 
-<footer><div class="wrap">Research snapshot: 2026-07-27 · Combined artifact SHA-256: <code>ed4d0093c9af2696503bd534af9389455d67051795d436ecbf097aee70f3031e</code><br>本报告用于证据审计与情景监控，不构成投资、法律、税务或会计建议。</div></footer>
+<footer><div class="wrap">Reader-facing market update: 2026-08-09 · Frozen combined artifact: 2026-07-27 · SHA-256: <code>ed4d0093c9af2696503bd534af9389455d67051795d436ecbf097aee70f3031e</code><br>增量市场数据与事件表不改变冻结事实包；本报告用于证据审计与情景监控，不构成投资、法律、税务或会计建议。</div></footer>
 </main>
 </body>
 </html>

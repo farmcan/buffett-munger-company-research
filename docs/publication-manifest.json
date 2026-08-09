@@ -1,7 +1,7 @@
 {
   "schema_version": "seed.public-research-publication.v2",
   "reviewed_for_publication": true,
-  "reviewed_at": "2026-08-08T20:12:14+08:00",
+  "reviewed_at": "2026-08-09T23:58:00+08:00",
   "artifact_status": "needs_human_review",
   "production_reviewed": false,
   "publication_scope": [
@@ -21,8 +21,10 @@
     "fubo-group-03738-hk/data/fully-diluted-share-bridge.csv",
     "fubo-group-03738-hk/data/gate-results.csv",
     "fubo-group-03738-hk/data/half-year-kpis.csv",
+    "fubo-group-03738-hk/data/historical-rally-ledger.csv",
     "fubo-group-03738-hk/data/invalidation-tests.csv",
     "fubo-group-03738-hk/data/market-price-state.csv",
+    "fubo-group-03738-hk/data/market-update-2026-08-09.csv",
     "fubo-group-03738-hk/data/net-debt-bridge.csv",
     "fubo-group-03738-hk/data/overseas-mapping.csv",
     "fubo-group-03738-hk/data/owner-earnings-cash-proxy.csv",
@@ -119,6 +121,9 @@
     "meitu-01357-hk/report.html",
     "meitu-01357-hk/source-ledger.json",
     "meitu-01357-hk/validator-results.json",
+    "meitu-vs-vobile/README.md",
+    "meitu-vs-vobile/data/comparison-scorecard.csv",
+    "meitu-vs-vobile/report.html",
     "nanhua-futures-02691-hk/README.md",
     "nanhua-futures-02691-hk/build-package.mjs",
     "nanhua-futures-02691-hk/combined-artifact.v2.json",
@@ -195,7 +200,7 @@
   ],
   "source_repository": "farmcan/seed",
   "source_branch": "main",
-  "source_commit": "b0d97752303e143d486c4faab960f444717e9a84",
+  "source_commit": "fb27ba7",
   "review_checks": {
     "contains_local_absolute_paths": false,
     "contains_private_library_paths": false,
@@ -224,6 +229,7 @@
     "mobile_runtime_checked": true,
     "status_legend_checked": true,
     "published_company_reports": 6,
+    "published_comparison_reports": 1,
     "event_timeline": {
       "contract": "seed.earnings-season-timeline.v1.1-compatible",
       "embedded_company_reports": 6,
@@ -300,10 +306,19 @@
         "gates": 9,
         "critical_evidence": 18,
         "locators": 18,
-        "sections": 20,
-        "tables": 31,
-        "charts": 6,
+        "sections": 21,
+        "tables": 33,
+        "charts": 7,
         "evidence_drawers": 18
+      }
+    },
+    "comparison_reports": {
+      "meitu-vs-vobile": {
+        "sections": 6,
+        "tables": 5,
+        "charts": 1,
+        "source_company_reports": 2,
+        "standalone_reports_remain_independent": true
       }
     }
   },

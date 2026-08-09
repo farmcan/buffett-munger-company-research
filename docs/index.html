@@ -75,6 +75,7 @@
     .nanhua { border-top: 5px solid var(--gold); }
     .smic { border-top: 5px solid var(--blue); }
     .vobile { border-top: 5px solid #8b5a91; }
+    .comparison { grid-column: 1 / -1; min-height: 250px; border-top: 5px solid #b97a18; }
     .horizon { border-top: 5px solid #c14f3c; }
     .xpeng { border-top: 5px solid #215f59; }
     .pending { opacity: .72; }
@@ -103,6 +104,7 @@
       main { padding-top: 46px; }
       .grid { grid-template-columns: 1fr; }
       .card { min-height: 0; }
+      .comparison { grid-column: auto; }
     }
   </style>
 </head>
@@ -112,9 +114,17 @@
     <h1>上市公司基本面 × 行业 × 事件研究</h1>
     <p class="lead">先核对证券身份与披露口径，再拆收入、利润、现金、行业传导、事件弹性和估值分母。每份报告同时保留可审计表格与便于理解的图表。</p>
 
-    <div class="notice">研究基于公开资料，区分事实、管理层主张、研究推断和证据缺口；六份报告使用同一发布母版、状态词表和读者主干，行业差异只进入 KPI 与估值分支。所有结论均为研究辅助，不构成投资建议。</div>
+    <div class="notice">研究基于公开资料，区分事实、管理层主张、研究推断和证据缺口；六份公司报告使用同一发布母版、状态词表和读者主干，另有一份独立比较报告。所有结论均为研究辅助，不构成投资建议。</div>
 
     <section class="grid" aria-label="公司研究报告">
+      <article class="card comparison">
+        <div class="tag">INDEPENDENT COMPARISON · AI 应用 × 版权基础设施</div>
+        <h2>美图 vs 阜博：谁更能把 AI 增量变成每股价值？</h2>
+        <div class="ticker">01357.HK / 03738.HK</div>
+        <p>第一屏直接给出二选一结论：当前可验证证据偏向美图；阜博具有更高的事件弹性，但现金质量与 2026 年 9 月可转债仍是硬风险闸门。</p>
+        <a href="./meitu-vs-vobile/report.html">阅读独立比较报告</a>
+      </article>
+
       <article class="card horizon">
         <div class="tag">V2 NEEDS HUMAN REVIEW · 智能驾驶 · 预盈利成长</div>
         <h2>地平线机器人</h2>
@@ -169,7 +179,7 @@
       <p>阅读<a href="./listed-company-fundamentals-event-research-methodology.html">V2.5 方法论与交付规范</a>，或直接打开<a href="./templates/report-publication-shell-v1.html">统一 HTML 发布母版</a>：双入口、25 个研究维度、50 个指标族、九道证据闸门、五年财务、客户/供应商关系与集中度、增长变量、同行资格与相对估值、长周期定价与空头定位。</p>
     </section>
 
-    <footer>Public snapshot · As of 2026-07-29 · Six company reports · Source URLs and limitations are preserved in each report.</footer>
+    <footer>Public snapshot · As of 2026-08-09 · Six company reports + one independent comparison · Source URLs and limitations are preserved.</footer>
   </main>
 </body>
 </html>

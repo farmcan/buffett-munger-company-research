@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>美图 vs 阜博｜AI 应用与版权基础设施比较</title>
+  <link rel="stylesheet" href="../company-report-theme.css">
+  <style>
+    :root { --meitu:#176b50; --vobile:#315f8f; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.68; }
+    .wrap { width:min(1160px,calc(100% - 34px)); margin:0 auto; }
+    .hero { padding:64px 0 28px; background:radial-gradient(circle at 10% 0,rgba(23,107,80,.12),transparent 28rem),radial-gradient(circle at 90% 0,rgba(49,95,143,.12),transparent 26rem); }
+    .eyebrow { margin:0 0 10px; color:var(--green); font-size:13px; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { max-width:980px; margin:0; font-size:clamp(40px,6vw,72px); line-height:1.04; letter-spacing:-.045em; }
+    .dek { max-width:920px; margin:22px 0 0; color:#415048; font-size:clamp(18px,2.2vw,24px); }
+    .meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+    .pill { padding:6px 10px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.62); color:var(--muted); font-size:13px; }
+    .verdict { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(260px,.75fr); margin:30px 0 0; overflow:hidden; border:1px solid #d1c28d; border-radius:22px; background:linear-gradient(135deg,#fffdf6,#fff2cc); box-shadow:var(--shadow); }
+    .verdict-main,.verdict-side { padding:28px 30px; }
+    .verdict-side { border-left:1px solid #dfd0a2; background:rgba(255,255,255,.45); }
+    .label { color:var(--amber); font-size:12px; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+    .verdict h2 { margin:7px 0 10px; font-size:clamp(26px,3vw,38px); line-height:1.18; }
+    .score { margin:8px 0 2px; color:var(--green); font-size:40px; font-weight:900; }
+    nav { position:sticky; top:0; z-index:10; overflow:auto; border-block:1px solid var(--line); background:rgba(244,241,234,.92); backdrop-filter:blur(12px); }
+    nav .wrap { display:flex; gap:4px; padding:8px 0; }
+    nav a { flex:none; padding:8px 10px; border-radius:8px; color:#48534d; font-size:13px; font-weight:750; text-decoration:none; }
+    nav a:hover { background:#fff; color:var(--green); }
+    main { padding:18px 0 86px; }
+    section { scroll-margin-top:68px; margin-top:22px; padding:32px; border:1px solid var(--line); border-radius:22px; background:var(--paper); box-shadow:var(--shadow); }
+    section h2 { margin:0 0 8px; font-size:clamp(27px,3vw,38px); line-height:1.2; }
+    h3 { margin:27px 0 9px; }
+    .sub { margin:0 0 22px; color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
+    .card { grid-column:span 3; padding:18px; border:1px solid var(--line); border-radius:15px; background:#fff; }
+    .card.wide { grid-column:span 6; }
+    .k { color:var(--muted); font-size:12px; font-weight:750; letter-spacing:.04em; }
+    .v { margin:5px 0; font-size:27px; line-height:1.15; font-weight:870; }
+    .meitu { color:var(--meitu); } .vobile { color:var(--vobile); }
+    .table-wrap { overflow:auto; margin:14px 0; }
+    table { width:100%; min-width:760px; border-collapse:collapse; }
+    th,td { padding:12px 13px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { color:#455149; font-size:12px; letter-spacing:.04em; }
+    .bar-grid { display:grid; gap:11px; margin:18px 0; }
+    .bar-row { display:grid; grid-template-columns:110px minmax(180px,1fr) 56px; gap:12px; align-items:center; }
+    .bar-track { height:18px; border-radius:999px; background:#e9ebe7; overflow:hidden; }
+    .bar-fill { height:100%; border-radius:999px; }
+    .bar-fill.meitu-bg { background:var(--meitu); } .bar-fill.vobile-bg { background:var(--vobile); }
+    .callout { margin:18px 0; padding:17px 19px; border-left:4px solid var(--amber); border-radius:12px; background:var(--amber-soft); }
+    .callout.good { border-left-color:var(--green); background:var(--green-soft); }
+    .callout.risk { border-left-color:var(--red); background:var(--red-soft); }
+    .tag { display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; font-weight:800; }
+    .tag.good { color:var(--green); background:var(--green-soft); } .tag.warn { color:var(--amber); background:var(--amber-soft); } .tag.bad { color:var(--red); background:var(--red-soft); }
+    .links { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .button { display:inline-flex; padding:10px 14px; border-radius:10px; background:var(--green); color:white; font-weight:800; text-decoration:none; }
+    .button.secondary { background:var(--vobile); }
+    footer { padding:0 0 45px; color:var(--muted); font-size:13px; }
+    a { color:var(--green); text-underline-offset:.16em; overflow-wrap:anywhere; }
+    @media(max-width:820px){ .verdict{grid-template-columns:1fr}.verdict-side{border-left:0;border-top:1px solid #dfd0a2}.card{grid-column:span 6} }
+    @media(max-width:560px){ .wrap{width:min(100% - 22px,1160px)}section{padding:23px 17px}.card,.card.wide{grid-column:span 12}.bar-row{grid-template-columns:80px minmax(100px,1fr) 44px;gap:7px;font-size:13px} }
+  </style>
+</head>
+<body data-template="company-comparison-publication-v1">
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Independent comparison · 01357.HK / 03738.HK</p>
+    <h1>美图 vs 阜博：谁更能把 AI 行业增量变成每股价值？</h1>
+    <p class="dek">两家公司都受益于 AI 内容增长，但站在价值链不同位置：美图卖创作工作流，阜博卖版权识别、治理与变现基础设施。比较的重点不是谁更“像 AI”，而是谁能留下更多现金、承受更少资本结构风险。</p>
+    <div class="meta"><span class="pill">比较日：2026-08-09</span><span class="pill">价格：2026-08-07 完整收盘</span><span class="pill">公开资料 · 非投资建议</span></div>
+    <div class="verdict">
+      <div class="verdict-main">
+        <div class="label">Answer first</div>
+        <h2>若必须二选一，当前证据偏向美图；阜博更像高事件弹性的期权，而不是更优质的生意。</h2>
+        <p>美图的付费用户、核心收入、AI 生产力 ARR、经营现金流和 owner earnings 已形成较完整的商业化证据链；阜博的收入与 MRR 增长也真实，但回款弱、研发资本化高，且 2026 年 9 月大额可转债尚未解决。研究偏好约 <strong>70 / 30</strong>，表示风险调整后的证据权重，不是三个月涨跌概率或仓位建议。</p>
+      </div>
+      <div class="verdict-side">
+        <div class="label">Research preference</div>
+        <div class="score">美图 70</div>
+        <p>阜博 30。短线若只押 AI 版权、RWA、平台规则或融资事件，阜博的股价弹性可能更大；这不等于公司质量更高。</p>
+      </div>
+    </div>
+  </div>
+</header>
+<nav><div class="wrap"><a href="#answer">第一屏结论</a><a href="#mechanism">价值链</a><a href="#scorecard">对比评分</a><a href="#valuation">估值</a><a href="#catalysts">催化与风险</a><a href="#sources">来源</a></div></nav>
+<main class="wrap">
+  <section id="answer">
+    <h2>第一屏结论：好公司、好股票和短线弹性是三件事</h2>
+    <p class="sub">以下结论只基于当前可验证资料；每一项都保留口径边界。</p>
+    <div class="grid">
+      <div class="card"><div class="k">更好的经营质量</div><div class="v meitu">美图</div><div>商业化、现金转化和资产负债表证据更完整。</div></div>
+      <div class="card"><div class="k">更高的短线事件弹性</div><div class="v vobile">阜博</div><div>小市值、低流动性及 AI 版权/RWA 叙事可放大行情。</div></div>
+      <div class="card"><div class="k">更清楚的 AI 变现</div><div class="v meitu">美图</div><div>付费用户、ARR、credits 与利润预告已建立直接证据。</div></div>
+      <div class="card"><div class="k">更大的近期硬风险</div><div class="v vobile">阜博</div><div>HK$14.58 亿可转债将于 2026-09-27 到期。</div></div>
+    </div>
+    <div class="callout good"><strong>选择框架：</strong>如果问题是“未来 3—5 年更愿意跟踪哪门生意”，偏美图；如果问题是“哪个更容易因单一事件出现 50% 以上波动”，偏阜博。若只因阜博从高点跌得更多就认定更便宜，证据不成立。</div>
+  </section>
+
+  <section id="mechanism">
+    <h2>两家公司在同一个 AI 飞轮里的不同位置</h2>
+    <p class="sub">模型更强、更便宜，会同时创造行业增量并压缩应用层能力壁垒；胜负落在工作流、客户关系、渠道、结算和单位经济。</p>
+    <div class="table-wrap"><table><thead><tr><th>链条</th><th>美图</th><th>阜博</th><th>关键差异</th></tr></thead><tbody>
+      <tr><td>客户任务</td><td>创作、美化、视频、设计与生产力</td><td>版权识别、保护、授权与变现</td><td>前者直接面向创作者/商家，后者面向权利方与平台工作流。</td></tr>
+      <tr><td>AI 带来的增量</td><td>能力提升、内容生产增加、用户愿付费购买效率</td><td>内容与权利冲突增多，识别和许可需求扩大</td><td>两者都受益于内容总量上升。</td></tr>
+      <tr><td>AI 带来的替代</td><td>基础模型、平台和低成本封装直接复制功能</td><td>平台内建识别、政策、争议和结算闭环</td><td>美图防的是产品同质化；阜博防的是平台纵向整合。</td></tr>
+      <tr><td>利润留下来的条件</td><td>工作流份额 × 付费转化 × ARPU × 留存，高于模型/渠道/CAC 成本</td><td>资产规模 × 单资产收入 × NRR × 毛利，高于获客、交付、回款和研发投入</td><td>美图已有更多终端商业化指标；阜博仍缺单资产经济与完整现金桥。</td></tr>
+    </tbody></table></div>
+    <div class="callout"><strong>共同结论：</strong>所有应用都可能越来越像“模型封装 + 工作流 + 销售”，但这不代表没有利润。投入轻、分发强、客户任务明确、留存高的封装能产生很好的利润；反过来，入口不受控、模型成本或平台抽成过高的应用，会把行业增量交给上游。</div>
+  </section>
+
+  <section id="scorecard">
+    <h2>风险调整后的证据评分：美图 83，阜博 47</h2>
+    <p class="sub">这是透明的研究成熟度/商业质量评分，不是目标价模型；权重和逐项理由在 CSV 中公开。</p>
+    <div class="bar-grid" aria-label="两家公司证据评分">
+      <div class="bar-row"><strong>美图</strong><div class="bar-track"><div class="bar-fill meitu-bg" style="width:83%"></div></div><strong>83</strong></div>
+      <div class="bar-row"><strong>阜博</strong><div class="bar-track"><div class="bar-fill vobile-bg" style="width:47%"></div></div><strong>47</strong></div>
+    </div>
+    <div class="table-wrap"><table><thead><tr><th>维度（权重）</th><th>美图</th><th>阜博</th><th>证据判断</th></tr></thead><tbody>
+      <tr><td>客户/产品验证（20）</td><td>16</td><td>14</td><td>两者均有真实增长；美图有付费用户和产品 ARR，阜博有 MRR、活跃资产和留存，但定义多为公司口径。</td></tr>
+      <tr><td>盈利与现金质量（25）</td><td>22</td><td>5</td><td>美图 FY2025 CFO 约 12.57 亿元人民币、研究 OE 可重建；阜博 CFO 仅约 0.70 亿港元，全投入现金代理约 −3.63 亿港元。</td></tr>
+      <tr><td>资产负债表/摊薄（20）</td><td>18</td><td>6</td><td>美图现金资源较强，仍需计 CB/SBC；阜博 9 月到期债务与价外转换构成硬闸门。</td></tr>
+      <tr><td>AI 商业化直接性（15）</td><td>13</td><td>8</td><td>美图 H1 核心收入、生产力 ARR 和利润方向已披露；阜博 AI 资产占比、MCP/RWA 更多是需求/产品信号。</td></tr>
+      <tr><td>估值可解释度（10）</td><td>8</td><td>5</td><td>美图可并列 IFRS、调整后和 OE；阜博 owner earnings 仍 unavailable，静态 PE 不是便宜证据。</td></tr>
+      <tr><td>事件可选性（10）</td><td>6</td><td>9</td><td>阜博对版权规则、合作、RWA、融资及流动性的弹性更高；这也是下行波动来源。</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section id="valuation">
+    <h2>当前估值：阜博跌得更多，但并没有被证明更便宜</h2>
+    <p class="sub">股价币种均为港元；盈利币种和口径不同，因此只能看各自内部倍数，不能直接比较利润绝对额。</p>
+    <div class="table-wrap"><table><thead><tr><th>项目</th><th>美图</th><th>阜博</th><th>限制</th></tr></thead><tbody>
+      <tr><td>2026-08-07 收盘</td><td>HK$4.75</td><td>HK$2.56</td><td>价格高低本身不代表估值高低。</td></tr>
+      <tr><td>约计市值</td><td>HK$214.85 亿</td><td>HK$66.38 亿</td><td>按非库存/非库藏已发行股机械计算；不等于自由流通市值。</td></tr>
+      <tr><td>FY2025 IFRS 静态 PE</td><td>持续经营归母约 26.67×</td><td>报告稀释 EPS 约 33.03×</td><td>美图盈利以人民币计；两者均不是 TTM/forward。</td></tr>
+      <tr><td>Owner earnings</td><td>研究区间约 18.16—19.78×</td><td><span class="tag bad">unavailable</span></td><td>美图区间为研究重建、非公司指引；阜博缺维护研发与正常营运资本分拆。</td></tr>
+      <tr><td>从 52 周高点回撤</td><td>约 −59.8%</td><td>约 −61.5%</td><td>回撤揭示波动和套牢供给，不构成安全边际。</td></tr>
+    </tbody></table></div>
+    <div class="callout risk"><strong>估值结论：</strong>美图是“更好的公司，但现价没有宽安全边际”；阜博是“更高风险，却没有通过可审计 owner earnings 证明更便宜”。因此当前的选择不是便宜对贵，而是较完整的商业化证据对较高的事件期权。</div>
+  </section>
+
+  <section id="catalysts">
+    <h2>未来六到十二周：哪些信息会改变结论</h2>
+    <div class="table-wrap"><table><thead><tr><th>公司</th><th>正向确认</th><th>反向证据</th><th>结论会怎样变</th></tr></thead><tbody>
+      <tr><td><strong class="meitu">美图</strong></td><td>8 月 26 日正式中报同时验证毛利、CFO、SBC、付费留存、credits 单位经济与完全摊薄每股收益。</td><td>收入增长但毛利/现金恶化；获客或模型/渠道成本吃掉增量；留存/付费降档。</td><td>现金和留存同步改善会提高优势；只有调整后利润好而现金差，优势应下调。</td></tr>
+      <tr><td><strong class="vobile">阜博</strong></td><td>中报验证回款和利润质量；9 月债务以低摊薄、可承受成本解决；AI 版权/RWA 产生可量化收入。</td><td>再融资成本高、配售/摊薄；应收和资本化研发继续上升；平台自建压缩定价权。</td><td>若现金桥与债务同时解除，阜博可由事件期权升级为经营候选；任一恶化都扩大尾部风险。</td></tr>
+    </tbody></table></div>
+    <h3>什么情况下应改选阜博？</h3>
+    <p>至少需要三项同时发生：可转债方案不显著损害每股价值；CFO 明显覆盖维护性研发与营运资本需求；单资产收入/NRR/毛利证明平台没有抽走利润。仅有 AI 产品发布、RWA 合作或股价放量，不足以改变长期排序。</p>
+  </section>
+
+  <section id="sources">
+    <h2>独立底稿与关键主源</h2>
+    <p class="sub">比较报告只消费两份独立底稿；两份公司报告本身不互相链接或依赖。</p>
+    <div class="links"><a class="button" href="../meitu-01357-hk/report.html">打开美图独立报告</a><a class="button secondary" href="../fubo-group-03738-hk/report.html">打开阜博独立报告</a></div>
+    <div class="table-wrap"><table><thead><tr><th>来源</th><th>用途</th><th>边界</th></tr></thead><tbody>
+      <tr><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042702560.pdf">美图 FY2025 年报</a></td><td>收入、利润、CFO、现金、SBC 和股本桥</td><td>已审计历史，不是 FY2026 指引。</td></tr>
+      <tr><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001140.pdf">美图 2026H1 初步更新</a></td><td>核心收入、生产力 ARR 与利润增速</td><td>未经审核/审阅，缺完整现金流和成本桥。</td></tr>
+      <tr><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043003894.pdf">阜博 FY2025 年报</a></td><td>收入、利润、CFO、应收、研发资本化及债务</td><td>已审计历史；公司 KPI 另由非审计材料补充。</td></tr>
+      <tr><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0519/2026051900384.pdf">阜博 2026Q1 经营数据</a></td><td>收入/MRR 增速</td><td>未经审计且无绝对利润、CFO 或 EPS。</td></tr>
+      <tr><td><a href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0806/2026080602043.pdf">阜博 2026 年 7 月月报</a></td><td>股数、库藏股和可转债余额/转股价</td><td>证券变动申报，不是经营财报。</td></tr>
+    </tbody></table></div>
+    <p><small>比较数据与评分见 <a href="data/comparison-scorecard.csv">comparison-scorecard.csv</a>。市场价格采用二级行情数据；财务与股本优先采用 HKEX/公司正式公告。所有结论截至 2026-08-09，不构成投资建议。</small></p>
+  </section>
+</main>
+<footer><div class="wrap">Independent comparison · 2026-08-09 · 两份公司底稿保持独立，比较层单独维护。</div></footer>
+</body>
+</html>

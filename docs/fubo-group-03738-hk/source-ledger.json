@@ -347,50 +347,6 @@
         "company-defined KPIs"
       ],
       "limitations": "Company marketing and KPI presentation; use audited filings for financial facts."
-    },
-    {
-      "id": "PEER_US_MEDIA_FY2025",
-      "tier": "A",
-      "kind": "sec_10k_set",
-      "title": "FY2025 Forms 10-K for Veritone, Getty Images and Shutterstock",
-      "publisher": "SEC / issuers",
-      "published_at": null,
-      "retrieved_at": "2026-07-27",
-      "url": "https://www.sec.gov/Archives/edgar/data/1615165/000162828026025214/veri-20251231.htm",
-      "component_urls": {
-        "VERI": "https://www.sec.gov/Archives/edgar/data/1615165/000162828026025214/veri-20251231.htm",
-        "GETY": "https://www.sec.gov/Archives/edgar/data/1898496/000162828026018160/gety-20251231.htm",
-        "SSTK": "https://www.sec.gov/Archives/edgar/data/1549346/000154934626000008/sstk-20251231.htm"
-      },
-      "component_sha256": {
-        "VERI": "5af7dfefc5851a81ffcba8a56d64879e804ab893a60510d0e87bc781dd84bb37",
-        "GETY": "b8c234836c5824ffde05ecefc3c1ca707e9473d98da3b867ac3c0aa4424cf302",
-        "SSTK": "91459c353dd2f90ecc5383230f9fd647d7d90b6ce3df2601ec28ca80841be70b"
-      },
-      "locators": {
-        "VERI": "Item 8 EPS table; SEC filing text view lines 1819-1823",
-        "GETY": "Item 8 EPS table; SEC filing text view lines 2294-2298",
-        "SSTK": "Item 8 EPS table; SEC filing text view lines 1877-1882"
-      },
-      "used_for": ["fy2025_gaap_eps", "peer_exclusion", "adjacent_business_mapping"],
-      "limitations": "All three companies are adjacent rather than direct economic peers. VERI and GETY are GAAP-loss-making; SSTK's content-licensing model is structurally different."
-    },
-    {
-      "id": "PEER_US_MEDIA_PRICES_20260727",
-      "tier": "B",
-      "kind": "frozen_secondary_quote_snapshot",
-      "title": "Yahoo Finance price snapshots for VERI, GETY and SSTK",
-      "publisher": "Yahoo Finance",
-      "published_at": "2026-07-27",
-      "retrieved_at": "2026-07-27",
-      "url": "https://query1.finance.yahoo.com/v8/finance/chart/VERI",
-      "component_sha256": {
-        "VERI": "96053382f0b719d29d35f771a439f35960e75eed7951735e87cf3c0cc9f50f7f",
-        "GETY": "d8ae1075deaa0b5f32cfc7a7cf3b6c9c8f35c3732ee4a167bf9c386c7744b19e",
-        "SSTK": "024d9fd64638b240b09c4c4ad024e9126fd114f93aad1f78e0970aa88c3478b4"
-      },
-      "used_for": ["dated_peer_prices"],
-      "limitations": "Secondary intraday quotes. Exact query URLs and timestamps are preserved in peer-valuation-comparison.csv."
     }
   ]
 }

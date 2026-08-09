@@ -1,0 +1,10 @@
+date,open_hkd,high_hkd,low_hkd,close_hkd,volume_shares,source,scope
+2026-07-28,2.390,2.440,2.290,2.300,13138000,Tencent qfq daily API,secondary market data
+2026-07-29,2.330,2.380,2.310,2.360,11450000,Tencent qfq daily API,secondary market data
+2026-07-30,2.370,2.400,2.240,2.250,15089000,Tencent qfq daily API,secondary market data
+2026-07-31,2.290,2.480,2.260,2.480,39155000,Tencent qfq daily API,secondary market data
+2026-08-03,2.480,2.570,2.425,2.465,16427000,Tencent qfq daily API,secondary market data
+2026-08-04,2.500,2.570,2.450,2.570,21922000,Tencent qfq daily API,secondary market data
+2026-08-05,2.570,2.675,2.540,2.630,19334032,Tencent qfq daily API,secondary market data
+2026-08-06,2.585,2.655,2.550,2.590,10032750,Tencent qfq daily API,secondary market data
+2026-08-07,2.580,2.580,2.475,2.560,21583000,Tencent qfq daily API,secondary market data
