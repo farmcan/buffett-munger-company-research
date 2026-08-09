@@ -330,7 +330,7 @@
       </div>
       <div class="hero-actions">
         <a class="diagram-jump" href="#priority-outlook">先看未来行情判断 →</a>
-        <small>历史主升浪、未来一个月催化与条件化概率放在报告最前</small>
+        <small>下跌概率、历史主升浪、未来一个月催化与条件化概率放在报告最前</small>
       </div>
       <div class="verdict">
         <div class="verdict-main">
@@ -349,7 +349,7 @@
 
   <nav aria-label="报告目录">
     <div class="wrap">
-      <a href="#priority-outlook">置顶行情判断</a>
+      <a href="#priority-outlook">置顶行情与下行判断</a>
       <a href="#executive-summary">两个问题</a>
       <a href="#h1-update">H1 新证据</a>
       <a href="#rolling-update">滚动更新</a>
@@ -401,7 +401,27 @@
         </div>
       </div>
 
-      <p><strong>概率图怎么读：</strong>区间标记是截至 8 月 8 日、以 HK$4.75 为价格锚的条件化研究判断，不是统计模型；四类结果不互斥，美图历史上经常先急涨、再出现大回撤。</p>
+      <h3 id="priority-downside">下跌概率先说：普通回撤不低，但三个月后仍深跌不是主情景</h3>
+      <p>下跌必须先区分两种口径：<strong>期末收益</strong>回答三个月后是否仍低于 HK$4.75；<strong>期间最大回撤</strong>回答中途是否曾跌到某个位置。美图的高波动意味着它可能先上涨、途中回撤 20%，最后仍以正收益结束。</p>
+      <div class="callout red">
+        <strong>三个月下行结论</strong><br>
+        以 2026 年 8 月 7 日收盘 HK$4.75 为锚，三个月后低于现价的条件概率约 <strong>40%—50%</strong>；三个月后仍下跌超过 20% 的概率约 <strong>10%—15%</strong>。但期间一度回撤超过 20% 的概率更高，约 <strong>25%—35%</strong>。因此“波动中出现大跌”和“基本面破坏后持续深跌”不是同一件事。
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>下跌定义</th><th>对应价格</th><th>条件概率</th><th>应如何理解</th></tr></thead>
+          <tbody>
+            <tr><td>三个月期末低于当前锚点</td><td>低于 HK$4.75</td><td><strong>40%—50%</strong></td><td>包含小幅收跌、横盘偏弱和深跌；“任何下跌”本身不等于 thesis 破坏</td></tr>
+            <tr><td>三个月期末下跌至少 10%</td><td>约 HK$4.28 或更低</td><td><strong>25%—35%</strong></td><td>常见触发是应用估值压缩、中报质量一般或行业财报继续 good-news-sold</td></tr>
+            <tr><td>期间一度回撤至少 20%</td><td>约 HK$3.80 或更低</td><td><strong>25%—35%</strong></td><td>这是路径风险；即使最终上涨也可能发生，不能与期末收益直接相加</td></tr>
+            <tr><td>三个月期末仍下跌至少 20%</td><td>约 HK$3.80 或更低</td><td><strong>10%—15%</strong></td><td>通常需要行业估值继续收缩，并叠加毛利、现金流、留存或稀释证据变差</td></tr>
+            <tr><td>极端基本面破坏</td><td>约 HK$3.30 或更低</td><td><strong>5%—10%</strong></td><td>需要正式财务与经营证据共同恶化；单日板块下跌不足以确认</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><small>这些阈值互相包含，不能相加成 100%；它们是截至 2026 年 8 月 8 日、结合历史回撤、当前价格、H1 初步公告和未来事件窗口形成的主观条件区间，不是统计模型、止损线或收益承诺。机器可读定义见 <a href="./data/near-term-rally-opportunity.csv">near-term-rally-opportunity.csv</a>。</small></p>
+
+      <p><strong>综合概率图怎么读：</strong>区间标记同样以 HK$4.75 为价格锚；四类结果不互斥，美图历史上经常先急涨、再出现大回撤。上表进一步把期末结果与路径风险拆开。</p>
       <div class="chart full probability-chart" role="img" aria-label="未来一至三个月美图事件结果条件化概率区间：至少百分之十脉冲为百分之五十至六十五，百分之二十至四十趋势行情为百分之二十五至三十五，至少百分之五十主升浪为百分之十至二十，期间至少百分之二十回撤为百分之二十五至三十五">
         <div class="chart-head">
           <div>
