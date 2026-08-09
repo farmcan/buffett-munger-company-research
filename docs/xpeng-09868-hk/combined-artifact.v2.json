@@ -3,7 +3,7 @@
   "artifact_type": "stock_fundamentals_valuation",
   "artifact_role": "public_company_research",
   "status": "needs_human_review",
-  "generated_at": "2026-08-08T12:00:00+08:00",
+  "generated_at": "2026-08-10T01:52:00+08:00",
   "security": {
     "security_id": "XHKG:09868",
     "company_name": "XPeng Inc.",
@@ -16,7 +16,7 @@
     "reporting_standard": "US GAAP"
   },
   "as_of": {
-    "research_date": "2026-08-08",
+    "research_date": "2026-08-10",
     "price": 46.64,
     "price_date": "2026-08-07",
     "price_source_ref": "M01"
@@ -50,7 +50,7 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526157849/d36361d20f.htm",
       "published_at_status": "known",
       "published_at": "2026-04-16",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "FY2025",
       "audit_status": "audited",
       "scope": "consolidated_group",
@@ -75,7 +75,7 @@
       "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001810997.json",
       "published_at_status": "known",
       "published_at": "2026-04-16",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "FY2021-FY2025",
       "audit_status": "audited",
       "scope": "consolidated_group_xbrl_facts",
@@ -94,7 +94,7 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526243143/d139430d6k.htm",
       "published_at_status": "known",
       "published_at": "2026-05-28",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2026Q1",
       "audit_status": "unaudited",
       "scope": "consolidated_group",
@@ -117,7 +117,7 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526293394/d114872d6k.htm",
       "published_at_status": "known",
       "published_at": "2026-07-02",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2026Q2",
       "audit_status": "unaudited",
       "scope": "company_operating_kpi",
@@ -136,7 +136,7 @@
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070701078.pdf",
       "published_at_status": "known",
       "published_at": "2026-07-07",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2026-06-30",
       "audit_status": "not_applicable",
       "scope": "listed_security",
@@ -155,7 +155,7 @@
       "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0417/2026041701171.pdf",
       "published_at_status": "known",
       "published_at": "2026-04-17",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2026-04-17",
       "audit_status": "not_applicable",
       "scope": "listed_security",
@@ -171,18 +171,18 @@
       "id": "F07",
       "tier": "A",
       "source_type": "regulatory_dataset",
-      "title": "SFC reportable short positions — 17 July 2026",
-      "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/17/Short_Position_Reporting_Aggregated_Data_20260717.csv?rev=76131f683e7240c3ade786261a04ff24",
+      "title": "SFC reportable short positions — 31 July 2026",
+      "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/31/Short_Position_Reporting_Aggregated_Data_20260731.csv",
       "published_at_status": "known",
-      "published_at": "2026-07-24",
-      "accessed_at": "2026-08-08",
-      "period": "2026-07-17",
+      "published_at": "2026-08-07",
+      "accessed_at": "2026-08-10",
+      "period": "2026-07-31",
       "audit_status": "not_applicable",
       "scope": "reportable_short_positions",
       "covers": [
         "short_position"
       ],
-      "content_sha256": "22e97934c1fa5fb99b869f691b9df9c76c632c23c567ed4b3668fb9fb56942a1"
+      "content_sha256": "b4a6ccc0aacb65283adb725a4a2d58a22f8df22bf4c3adca83dfc617b0243e2c"
     },
     {
       "id": "F08",
@@ -192,7 +192,7 @@
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0521/2025052100660.pdf",
       "published_at_status": "known",
       "published_at": "2025-05-21",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2025Q1_and_2025Q2_guidance",
       "audit_status": "unaudited",
       "scope": "consolidated_group",
@@ -212,7 +212,7 @@
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0819/2025081900612.pdf",
       "published_at_status": "known",
       "published_at": "2025-08-19",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2025Q2",
       "audit_status": "unaudited",
       "scope": "consolidated_group",
@@ -234,7 +234,7 @@
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0821/2025082101163.pdf",
       "published_at_status": "known",
       "published_at": "2025-08-21",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2025-08-20_to_2025-08-21",
       "audit_status": "not_applicable",
       "scope": "controlling_shareholder_transaction",
@@ -253,7 +253,7 @@
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0901/2025090100103.pdf",
       "published_at_status": "known",
       "published_at": "2025-09-01",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2025-08",
       "audit_status": "not_applicable",
       "scope": "company_operating_kpi",
@@ -272,7 +272,7 @@
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0803/2026080303094.pdf",
       "published_at_status": "known",
       "published_at": "2026-08-03",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2026-07",
       "audit_status": "not_applicable",
       "scope": "company_operating_kpi",
@@ -291,7 +291,7 @@
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0804/2026080401150.pdf",
       "published_at_status": "known",
       "published_at": "2026-08-04",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2026Q2_results_date",
       "audit_status": "not_applicable",
       "scope": "listed_security",
@@ -310,7 +310,7 @@
       "url": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-july-2026-302840496.html",
       "published_at_status": "known",
       "published_at": "2026-08-01",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2026-07",
       "audit_status": "not_applicable",
       "scope": "company_operating_kpi",
@@ -329,7 +329,7 @@
       "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk09868,day,,,900,qfq",
       "published_at_status": "known",
       "published_at": "2026-08-07",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "through_2026-08-07",
       "audit_status": "not_applicable",
       "scope": "listed_security",
@@ -339,7 +339,7 @@
         "moving_averages",
         "event_windows"
       ],
-      "content_sha256": "fc53dfbda7b8cdf7139a040afa8f7f96582286026ef8d98e04323bd411cbbf08"
+      "content_sha256": "ab922386ade7d045ffe519fcf8943e7be056fc45b3aca899d2c34e8d269c97fc"
     },
     {
       "id": "I01",
@@ -349,7 +349,7 @@
       "url": "https://www.xinhuanet.com/20260709/adab526fe8c64da19b27e907fa78393b/c.html",
       "published_at_status": "known",
       "published_at": "2026-07-09",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2026H1",
       "audit_status": "not_applicable",
       "scope": "china_auto_industry",
@@ -368,7 +368,7 @@
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0316/2026031601214.pdf",
       "published_at_status": "known",
       "published_at": "2026-03-16",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "FY2025",
       "audit_status": "audited",
       "scope": "peer_consolidated_group",
@@ -388,7 +388,7 @@
       "url": "https://www.news.cn/20260727/b508c39dd33148ac9a604a5528bc8b94/c.html",
       "published_at_status": "known",
       "published_at": "2026-07-27",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "2026-07-27",
       "audit_status": "not_applicable",
       "scope": "foreign_exchange",
@@ -405,7 +405,7 @@
       "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,,,900,qfq",
       "published_at_status": "known",
       "published_at": "2026-08-07",
-      "accessed_at": "2026-08-08",
+      "accessed_at": "2026-08-10",
       "period": "through_2026-08-07",
       "audit_status": "not_applicable",
       "scope": "market_benchmark",
@@ -414,7 +414,26 @@
         "relative_returns",
         "risk_appetite_proxy"
       ],
-      "content_sha256": "0601ca0f17d877f8335fced6324298eeb5bf51a120f5894883f41891dd9623c2"
+      "content_sha256": "1733581caa4331de8949e48ba776118fcf788714edd31ce89f0e74d2744421d9"
+    },
+    {
+      "id": "M04",
+      "tier": "C",
+      "source_type": "secondary_consensus_snapshot",
+      "title": "StockAnalysis XPeng analyst forecast page citing S&P Global",
+      "url": "https://stockanalysis.com/stocks/xpev/forecast/",
+      "published_at_status": "known",
+      "published_at": "2026-07-31",
+      "accessed_at": "2026-08-10",
+      "period": "12_month_targets_as_of_2026-07-31",
+      "audit_status": "not_applicable",
+      "scope": "NYSE_XPEV_ADS",
+      "covers": [
+        "analyst_count",
+        "price_target_range",
+        "consensus_cross_check"
+      ],
+      "content_sha256": "7c1d3dabfb8d8515e3ed711748798bee30aa7833bdd3c374813b8a9424ec4aaa"
     }
   ],
   "source_boundaries": {
@@ -422,7 +441,7 @@
     "reported_claims": "Robotaxi, humanoid, model launches and commercial targets remain management claims until outcomes are disclosed.",
     "interpretations": "Cycle bottom, moat, model commoditization, proxy float and event attribution are research interpretations.",
     "assumptions": "FX has one-day mismatch; fully diluted shares include known RSUs and maximum DiDi contingent shares as scenarios.",
-    "source_gaps": "Do not fill maintenance capex, regulatory public float, Q2 margin/cash flow or historical point-in-time PE with zero.",
+    "source_gaps": "Do not fill maintenance capex, regulatory public float, Q2 margin/cash flow or historical point-in-time PE with zero. Consensus is a secondary sentiment cross-check, not fair value.",
     "page_level_evidence": "Checksum-bound evidence-index.json and critical-evidence-locators.csv retain page/line locators."
   },
   "ownership_structure": {
@@ -2002,5 +2021,172 @@
       "named human sign-off"
     ]
   },
-  "disclaimer": "Public evidence-linked research support only; not investment advice, a target price, or named human approval."
+  "disclaimer": "Public evidence-linked research support only; not investment advice, a target price, or named human approval.",
+  "risk_reward_scenarios": {
+    "status": "research_probability_ranges_not_statistical_forecasts",
+    "price_anchor_hkd": 46.64,
+    "price_date": "2026-08-07",
+    "three_month": [
+      {
+        "horizon": "3个月",
+        "case": "bear",
+        "probability_pct": 35,
+        "price_low_hkd": 32.0,
+        "price_high_hkd": 40.0,
+        "return_low_pct": -31.4,
+        "return_high_pct": -14.2,
+        "trigger": "Q2 vehicle margin低于12%、亏损仍大或Q3指引/交付失速；弱势趋势延续。",
+        "basis": "事件与情绪区间；不是DCF。"
+      },
+      {
+        "horizon": "3个月",
+        "case": "base",
+        "probability_pct": 45,
+        "price_low_hkd": 42.0,
+        "price_high_hkd": 55.0,
+        "return_low_pct": -9.9,
+        "return_high_pct": 17.9,
+        "trigger": "Q2收入落在指引、亏损环比收窄，但Q3同比与现金质量仍未完全确认。",
+        "basis": "当前价附近的财报后再定价区间。"
+      },
+      {
+        "horizon": "3个月",
+        "case": "bull",
+        "probability_pct": 20,
+        "price_low_hkd": 60.0,
+        "price_high_hkd": 75.0,
+        "return_low_pct": 28.6,
+        "return_high_pct": 60.8,
+        "trigger": "Q2 margin/亏损/现金同时优于门槛，8—10月交付重新加速并触发空头回补。",
+        "basis": "盈利拐点预期重建；仍低于历史高位。"
+      }
+    ],
+    "three_month_probability_weighted_midpoint_hkd": 47.92,
+    "twelve_month": [
+      {
+        "horizon": "12个月",
+        "case": "bear",
+        "probability_pct": 35,
+        "revenue_low_rmb_bn": 78.0,
+        "revenue_high_rmb_bn": 82.0,
+        "ev_sales_low": 0.45,
+        "ev_sales_high": 0.6,
+        "net_cash_low_rmb_bn": 13.0,
+        "net_cash_high_rmb_bn": 16.0,
+        "price_low_hkd": 27.66,
+        "price_high_hkd": 37.5,
+        "trigger": "产品修复不持续、vehicle margin回落、费用和库存吞噬现金，扭亏再次后移。",
+        "basis": "下一12个月收入×EV/Sales＋净现金，再除已知充分摊薄股数。",
+        "return_low_pct": -40.7,
+        "return_high_pct": -19.6
+      },
+      {
+        "horizon": "12个月",
+        "case": "base",
+        "probability_pct": 45,
+        "revenue_low_rmb_bn": 90.0,
+        "revenue_high_rmb_bn": 100.0,
+        "ev_sales_low": 0.75,
+        "ev_sales_high": 0.9,
+        "net_cash_low_rmb_bn": 18.0,
+        "net_cash_high_rmb_bn": 22.0,
+        "price_low_hkd": 49.17,
+        "price_high_hkd": 64.41,
+        "trigger": "交付恢复同比增长，vehicle margin稳定在12%—14%，亏损收窄且现金大致稳定。",
+        "basis": "下一12个月收入×EV/Sales＋净现金，再除已知充分摊薄股数。",
+        "return_low_pct": 5.4,
+        "return_high_pct": 38.1
+      },
+      {
+        "horizon": "12个月",
+        "case": "bull",
+        "probability_pct": 20,
+        "revenue_low_rmb_bn": 105.0,
+        "revenue_high_rmb_bn": 120.0,
+        "ev_sales_low": 1.0,
+        "ev_sales_high": 1.15,
+        "net_cash_low_rmb_bn": 22.0,
+        "net_cash_high_rmb_bn": 28.0,
+        "price_low_hkd": 73.04,
+        "price_high_hkd": 95.46,
+        "trigger": "多车型与海外/大众技术收入共同放量，vehicle margin不低于14%，季度盈利和owner earnings可持续。",
+        "basis": "盈利拐点确认后的成长型EV/Sales区间；不是历史高点回归假设。",
+        "return_low_pct": 56.6,
+        "return_high_pct": 104.7
+      }
+    ],
+    "twelve_month_probability_weighted_midpoint_hkd": 53.81,
+    "probability_method": "Rounded subjective priors conditioned on disclosed delivery, margin, loss, cash, dilution, market trend and upcoming event evidence; not fitted frequencies or analyst consensus.",
+    "decision_boundary": "The ranges are research scenarios, not target prices or trade instructions. They must be updated after the August 24 results."
+  },
+  "consensus_diagnostics": {
+    "as_of": "2026-07-31",
+    "security": "NYSE:XPEV ADS",
+    "source_provider": "StockAnalysis page citing S&P Global",
+    "analyst_count": 25,
+    "target_low_usd": 15.04,
+    "target_average_usd": 22.04,
+    "target_median_usd": 22.05,
+    "target_high_usd": 28.11,
+    "use": "Secondary sentiment cross-check only; not Seed fair value and not mechanically converted into the HK scenario bands."
+  },
+  "market_state": {
+    "rows": [
+      {
+        "metric": "最新收盘",
+        "value": 46.64,
+        "unit": "HKD",
+        "as_of": "2026-08-07",
+        "comparison": "—"
+      },
+      {
+        "metric": "900日最高收盘",
+        "value": 108.5,
+        "unit": "HKD",
+        "as_of": "2025-11-11",
+        "comparison": "至今-57.0%"
+      },
+      {
+        "metric": "5日收益",
+        "value": -7.83,
+        "unit": "%",
+        "as_of": "2026-08-07",
+        "comparison": "HSTECH +0.60%"
+      },
+      {
+        "metric": "20日收益",
+        "value": -9.0,
+        "unit": "%",
+        "as_of": "2026-08-07",
+        "comparison": "HSTECH +2.89%"
+      },
+      {
+        "metric": "60日收益",
+        "value": -25.5,
+        "unit": "%",
+        "as_of": "2026-08-07",
+        "comparison": "HSTECH -4.19%"
+      },
+      {
+        "metric": "最新成交量/20日均量",
+        "value": 0.81,
+        "unit": "x",
+        "as_of": "2026-08-07",
+        "comparison": "12.29m / 15.18m"
+      }
+    ],
+    "close_peak_date": "2025-11-11",
+    "close_peak_hkd": 108.5,
+    "drawdown_from_close_peak_pct": -57.01,
+    "hstech_same_window_pct": -18.0,
+    "relative_gap_percentage_points": -39.01,
+    "latest_volume_shares": 12287267,
+    "adtv20_shares": 15179500,
+    "latest_volume_to_adtv20": 0.81,
+    "interpretation": "The decline is much larger than the technology benchmark, while the latest volume is below average. This supports a company-expectation reset and weak sponsorship, not a conclusion that sellers are exhausted.",
+    "source_refs": [
+      "M01",
+      "M03"
+    ]
+  }
 }

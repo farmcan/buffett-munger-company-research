@@ -9,6 +9,7 @@ import csv
 import hashlib
 import html
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -17,7 +18,7 @@ REPO = ROOT.parents[1]
 DATA = ROOT / "data"
 DATA.mkdir(parents=True, exist_ok=True)
 
-RESEARCH_DATE = "2026-08-08"
+RESEARCH_DATE = "2026-08-10"
 PRICE_DATE = "2026-08-07"
 PRICE_HKD = 46.64
 HKD_CNY = 0.86601
@@ -25,6 +26,135 @@ BASIC_SHARES = 1_916_096_781
 RSU_SHARES = 63_496_420
 DIDI_CONTINGENT_SHARES = 28_331_126
 FD_SHARES = BASIC_SHARES + RSU_SHARES + DIDI_CONTINGENT_SHARES
+
+
+def implied_price_from_ev_sales(
+    revenue_rmb_bn: float,
+    ev_sales: float,
+    net_cash_rmb_bn: float,
+) -> float:
+    """Convert an EV/sales scenario into an HKD price per fully diluted share."""
+    equity_value_hkd_bn = (revenue_rmb_bn * ev_sales + net_cash_rmb_bn) / HKD_CNY
+    return round(equity_value_hkd_bn * 1_000_000_000 / FD_SHARES, 2)
+
+
+THREE_MONTH_SCENARIOS = [
+    {
+        "horizon": "3个月",
+        "case": "bear",
+        "probability_pct": 35,
+        "price_low_hkd": 32.0,
+        "price_high_hkd": 40.0,
+        "return_low_pct": round((32.0 / PRICE_HKD - 1) * 100, 1),
+        "return_high_pct": round((40.0 / PRICE_HKD - 1) * 100, 1),
+        "trigger": "Q2 vehicle margin低于12%、亏损仍大或Q3指引/交付失速；弱势趋势延续。",
+        "basis": "事件与情绪区间；不是DCF。",
+    },
+    {
+        "horizon": "3个月",
+        "case": "base",
+        "probability_pct": 45,
+        "price_low_hkd": 42.0,
+        "price_high_hkd": 55.0,
+        "return_low_pct": round((42.0 / PRICE_HKD - 1) * 100, 1),
+        "return_high_pct": round((55.0 / PRICE_HKD - 1) * 100, 1),
+        "trigger": "Q2收入落在指引、亏损环比收窄，但Q3同比与现金质量仍未完全确认。",
+        "basis": "当前价附近的财报后再定价区间。",
+    },
+    {
+        "horizon": "3个月",
+        "case": "bull",
+        "probability_pct": 20,
+        "price_low_hkd": 60.0,
+        "price_high_hkd": 75.0,
+        "return_low_pct": round((60.0 / PRICE_HKD - 1) * 100, 1),
+        "return_high_pct": round((75.0 / PRICE_HKD - 1) * 100, 1),
+        "trigger": "Q2 margin/亏损/现金同时优于门槛，8—10月交付重新加速并触发空头回补。",
+        "basis": "盈利拐点预期重建；仍低于历史高位。",
+    },
+]
+
+TWELVE_MONTH_SCENARIOS = [
+    {
+        "horizon": "12个月",
+        "case": "bear",
+        "probability_pct": 35,
+        "revenue_low_rmb_bn": 78.0,
+        "revenue_high_rmb_bn": 82.0,
+        "ev_sales_low": 0.45,
+        "ev_sales_high": 0.60,
+        "net_cash_low_rmb_bn": 13.0,
+        "net_cash_high_rmb_bn": 16.0,
+        "price_low_hkd": implied_price_from_ev_sales(78.0, 0.45, 13.0),
+        "price_high_hkd": implied_price_from_ev_sales(82.0, 0.60, 16.0),
+        "trigger": "产品修复不持续、vehicle margin回落、费用和库存吞噬现金，扭亏再次后移。",
+        "basis": "下一12个月收入×EV/Sales＋净现金，再除已知充分摊薄股数。",
+    },
+    {
+        "horizon": "12个月",
+        "case": "base",
+        "probability_pct": 45,
+        "revenue_low_rmb_bn": 90.0,
+        "revenue_high_rmb_bn": 100.0,
+        "ev_sales_low": 0.75,
+        "ev_sales_high": 0.90,
+        "net_cash_low_rmb_bn": 18.0,
+        "net_cash_high_rmb_bn": 22.0,
+        "price_low_hkd": implied_price_from_ev_sales(90.0, 0.75, 18.0),
+        "price_high_hkd": implied_price_from_ev_sales(100.0, 0.90, 22.0),
+        "trigger": "交付恢复同比增长，vehicle margin稳定在12%—14%，亏损收窄且现金大致稳定。",
+        "basis": "下一12个月收入×EV/Sales＋净现金，再除已知充分摊薄股数。",
+    },
+    {
+        "horizon": "12个月",
+        "case": "bull",
+        "probability_pct": 20,
+        "revenue_low_rmb_bn": 105.0,
+        "revenue_high_rmb_bn": 120.0,
+        "ev_sales_low": 1.00,
+        "ev_sales_high": 1.15,
+        "net_cash_low_rmb_bn": 22.0,
+        "net_cash_high_rmb_bn": 28.0,
+        "price_low_hkd": implied_price_from_ev_sales(105.0, 1.00, 22.0),
+        "price_high_hkd": implied_price_from_ev_sales(120.0, 1.15, 28.0),
+        "trigger": "多车型与海外/大众技术收入共同放量，vehicle margin不低于14%，季度盈利和owner earnings可持续。",
+        "basis": "盈利拐点确认后的成长型EV/Sales区间；不是历史高点回归假设。",
+    },
+]
+
+for row in TWELVE_MONTH_SCENARIOS:
+    row["return_low_pct"] = round((row["price_low_hkd"] / PRICE_HKD - 1) * 100, 1)
+    row["return_high_pct"] = round((row["price_high_hkd"] / PRICE_HKD - 1) * 100, 1)
+
+THREE_MONTH_EXPECTED_MIDPOINT = round(
+    sum(((row["price_low_hkd"] + row["price_high_hkd"]) / 2) * row["probability_pct"] / 100 for row in THREE_MONTH_SCENARIOS),
+    2,
+)
+TWELVE_MONTH_EXPECTED_MIDPOINT = round(
+    sum(((row["price_low_hkd"] + row["price_high_hkd"]) / 2) * row["probability_pct"] / 100 for row in TWELVE_MONTH_SCENARIOS),
+    2,
+)
+
+MARKET_STATE = [
+    {"metric": "最新收盘", "value": 46.64, "unit": "HKD", "as_of": "2026-08-07", "comparison": "—"},
+    {"metric": "900日最高收盘", "value": 108.50, "unit": "HKD", "as_of": "2025-11-11", "comparison": "至今-57.0%"},
+    {"metric": "5日收益", "value": -7.83, "unit": "%", "as_of": "2026-08-07", "comparison": "HSTECH +0.60%"},
+    {"metric": "20日收益", "value": -9.00, "unit": "%", "as_of": "2026-08-07", "comparison": "HSTECH +2.89%"},
+    {"metric": "60日收益", "value": -25.50, "unit": "%", "as_of": "2026-08-07", "comparison": "HSTECH -4.19%"},
+    {"metric": "最新成交量/20日均量", "value": 0.81, "unit": "x", "as_of": "2026-08-07", "comparison": "12.29m / 15.18m"},
+]
+
+CONSENSUS_DIAGNOSTICS = {
+    "as_of": "2026-07-31",
+    "security": "NYSE:XPEV ADS",
+    "source_provider": "StockAnalysis page citing S&P Global",
+    "analyst_count": 25,
+    "target_low_usd": 15.04,
+    "target_average_usd": 22.04,
+    "target_median_usd": 22.05,
+    "target_high_usd": 28.11,
+    "use": "Secondary sentiment cross-check only; not Seed fair value and not mechanically converted into the HK scenario bands.",
+}
 
 
 def dump_json(path: Path, value: object) -> None:
@@ -175,14 +305,14 @@ SOURCES = [
         "F07",
         "A",
         "regulatory_dataset",
-        "SFC reportable short positions — 17 July 2026",
-        "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/17/Short_Position_Reporting_Aggregated_Data_20260717.csv?rev=76131f683e7240c3ade786261a04ff24",
-        "2026-07-24",
-        "2026-07-17",
+        "SFC reportable short positions — 31 July 2026",
+        "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/31/Short_Position_Reporting_Aggregated_Data_20260731.csv",
+        "2026-08-07",
+        "2026-07-31",
         "not_applicable",
         "reportable_short_positions",
         ["short_position"],
-        "22e97934c1fa5fb99b869f691b9df9c76c632c23c567ed4b3668fb9fb56942a1",
+        "b4a6ccc0aacb65283adb725a4a2d58a22f8df22bf4c3adca83dfc617b0243e2c",
     ),
     source(
         "F08",
@@ -286,7 +416,7 @@ SOURCES = [
         "not_applicable",
         "listed_security",
         ["price", "turnover", "moving_averages", "event_windows"],
-        "fc53dfbda7b8cdf7139a040afa8f7f96582286026ef8d98e04323bd411cbbf08",
+        "ab922386ade7d045ffe519fcf8943e7be056fc45b3aca899d2c34e8d269c97fc",
     ),
     source(
         "I01",
@@ -338,7 +468,20 @@ SOURCES = [
         "not_applicable",
         "market_benchmark",
         ["benchmark_event_windows", "relative_returns", "risk_appetite_proxy"],
-        "0601ca0f17d877f8335fced6324298eeb5bf51a120f5894883f41891dd9623c2",
+        "1733581caa4331de8949e48ba776118fcf788714edd31ce89f0e74d2744421d9",
+    ),
+    source(
+        "M04",
+        "C",
+        "secondary_consensus_snapshot",
+        "StockAnalysis XPeng analyst forecast page citing S&P Global",
+        "https://stockanalysis.com/stocks/xpev/forecast/",
+        "2026-07-31",
+        "12_month_targets_as_of_2026-07-31",
+        "not_applicable",
+        "NYSE_XPEV_ADS",
+        ["analyst_count", "price_target_range", "consensus_cross_check"],
+        "7c1d3dabfb8d8515e3ed711748798bee30aa7833bdd3c374813b8a9424ec4aaa",
     ),
 ]
 
@@ -473,7 +616,7 @@ def build_combined() -> dict:
         {
             "artifact_role": "public_company_research",
             "status": "needs_human_review",
-            "generated_at": "2026-08-08T12:00:00+08:00",
+            "generated_at": "2026-08-10T01:52:00+08:00",
             "security": {
                 "security_id": "XHKG:09868",
                 "company_name": "XPeng Inc.",
@@ -517,7 +660,7 @@ def build_combined() -> dict:
                 "reported_claims": "Robotaxi, humanoid, model launches and commercial targets remain management claims until outcomes are disclosed.",
                 "interpretations": "Cycle bottom, moat, model commoditization, proxy float and event attribution are research interpretations.",
                 "assumptions": "FX has one-day mismatch; fully diluted shares include known RSUs and maximum DiDi contingent shares as scenarios.",
-                "source_gaps": "Do not fill maintenance capex, regulatory public float, Q2 margin/cash flow or historical point-in-time PE with zero.",
+                "source_gaps": "Do not fill maintenance capex, regulatory public float, Q2 margin/cash flow or historical point-in-time PE with zero. Consensus is a secondary sentiment cross-check, not fair value.",
                 "page_level_evidence": "Checksum-bound evidence-index.json and critical-evidence-locators.csv retain page/line locators.",
             },
             "ownership_structure": {
@@ -683,6 +826,31 @@ def build_combined() -> dict:
                     {"scenario": "upside", "status": "unavailable", "forecast_eps": None, "implied_pe_at_current_price": None, "reason": "Sustained quarterly profit needs evidence beyond Q4 2025."},
                 ],
             },
+            "risk_reward_scenarios": {
+                "status": "research_probability_ranges_not_statistical_forecasts",
+                "price_anchor_hkd": PRICE_HKD,
+                "price_date": PRICE_DATE,
+                "three_month": THREE_MONTH_SCENARIOS,
+                "three_month_probability_weighted_midpoint_hkd": THREE_MONTH_EXPECTED_MIDPOINT,
+                "twelve_month": TWELVE_MONTH_SCENARIOS,
+                "twelve_month_probability_weighted_midpoint_hkd": TWELVE_MONTH_EXPECTED_MIDPOINT,
+                "probability_method": "Rounded subjective priors conditioned on disclosed delivery, margin, loss, cash, dilution, market trend and upcoming event evidence; not fitted frequencies or analyst consensus.",
+                "decision_boundary": "The ranges are research scenarios, not target prices or trade instructions. They must be updated after the August 24 results.",
+            },
+            "consensus_diagnostics": CONSENSUS_DIAGNOSTICS,
+            "market_state": {
+                "rows": MARKET_STATE,
+                "close_peak_date": "2025-11-11",
+                "close_peak_hkd": 108.50,
+                "drawdown_from_close_peak_pct": -57.01,
+                "hstech_same_window_pct": -18.00,
+                "relative_gap_percentage_points": -39.01,
+                "latest_volume_shares": 12_287_267,
+                "adtv20_shares": 15_179_500,
+                "latest_volume_to_adtv20": 0.81,
+                "interpretation": "The decline is much larger than the technology benchmark, while the latest volume is below average. This supports a company-expectation reset and weak sponsorship, not a conclusion that sellers are exhausted.",
+                "source_refs": ["M01", "M03"],
+            },
             "intrinsic_value_scenarios": {
                 "currency": "HKD",
                 "scenarios": [
@@ -813,6 +981,51 @@ def svg_owner_earnings() -> str:
     return "".join(parts)
 
 
+def svg_scenario_ranges() -> str:
+    """Draw two interval panels with a shared, dated current-price reference."""
+    chart_min = 20.0
+    chart_max = 100.0
+    x0 = 250.0
+    width = 650.0
+
+    def x(value: float) -> float:
+        return x0 + (value - chart_min) / (chart_max - chart_min) * width
+
+    colors = {"bear": "#bd633f", "base": "#4f86a8", "bull": "#20745f"}
+    labels = {"bear": "下行", "base": "基准", "bull": "上行"}
+    panels = [("3个月：财报与交付事件窗", THREE_MONTH_SCENARIOS, 58), ("12个月：经营兑现窗", TWELVE_MONTH_SCENARIOS, 246)]
+    parts = [
+        '<svg viewBox="0 0 1000 440" role="img" aria-label="小鹏三个月与十二个月价格情景区间，当前价为46.64港元">',
+        '<rect x="0" y="0" width="1000" height="440" fill="#fff"/>',
+    ]
+    current_x = x(PRICE_HKD)
+    parts.append(f'<line x1="{current_x:.1f}" y1="36" x2="{current_x:.1f}" y2="410" stroke="#27342f" stroke-width="2" stroke-dasharray="6 5"/>')
+    parts.append(f'<text x="{current_x + 6:.1f}" y="28" fill="#27342f">当前 HK${PRICE_HKD:.2f}</text>')
+    for title, rows, top in panels:
+        parts.append(f'<text x="20" y="{top}" font-size="18" font-weight="700" fill="#17221e">{title}</text>')
+        axis_y = top + 28
+        parts.append(f'<line x1="{x0}" y1="{axis_y}" x2="{x0 + width}" y2="{axis_y}" stroke="#b9b2a6"/>')
+        for tick in range(20, 101, 20):
+            tx = x(float(tick))
+            parts.append(f'<line x1="{tx:.1f}" y1="{axis_y - 4}" x2="{tx:.1f}" y2="{axis_y + 4}" stroke="#837d73"/>')
+            parts.append(f'<text x="{tx:.1f}" y="{axis_y - 8}" text-anchor="middle" fill="#607068">{tick}</text>')
+        for index, row in enumerate(rows):
+            y = axis_y + 30 + index * 38
+            low = row["price_low_hkd"]
+            high = row["price_high_hkd"]
+            start = x(low)
+            end = x(high)
+            color = colors[row["case"]]
+            parts.append(f'<text x="20" y="{y + 5}" fill="#17221e">{labels[row["case"]]} · {row["probability_pct"]}%</text>')
+            parts.append(f'<line x1="{start:.1f}" y1="{y}" x2="{end:.1f}" y2="{y}" stroke="{color}" stroke-width="14" stroke-linecap="round"/>')
+            parts.append(f'<circle cx="{start:.1f}" cy="{y}" r="6" fill="#fff" stroke="{color}" stroke-width="3"/>')
+            parts.append(f'<circle cx="{end:.1f}" cy="{y}" r="6" fill="{color}"/>')
+            parts.append(f'<text x="{min(end + 10, 925):.1f}" y="{y + 5}" fill="#17221e">HK${low:.0f}–{high:.0f}</text>')
+    parts.append('<text x="20" y="430" fill="#607068">概率是证据条件下的主观研究先验；区间与概率都必须在8月24日财报后重估。</text>')
+    parts.append('</svg>')
+    return "".join(parts)
+
+
 EVIDENCE = [
     {"id": "XP-001", "claim": "fy2025_revenue_mix", "source": "F01", "page": None, "lines": "1895–1928", "record": "2025 vehicle revenue RMB68,378.920m; services and other RMB8,340.822m.", "period": "FY2025", "unit": "RMB million", "formula": "sum = RMB76,719.742m"},
     {"id": "XP-002", "claim": "fy2025_margin_deliveries", "source": "F01", "page": None, "lines": "2354–2359", "record": "Deliveries 429,445; vehicle margin 12.8%; services gross margin 68.2%.", "period": "FY2025", "unit": "units / percent", "formula": "directly reported"},
@@ -823,17 +1036,66 @@ EVIDENCE = [
     {"id": "XP-007", "claim": "q2_2026_deliveries", "source": "F04", "page": 1, "lines": "delivery release", "record": "Q2 deliveries 103,295; June 40,126.", "period": "2026Q2", "unit": "vehicles", "formula": "actual delivery KPI; financials not yet released"},
     {"id": "XP-008", "claim": "shares_june_2026", "source": "F05", "page": 2, "lines": "share-capital table", "record": "Class A 1,567,388,524; Class B 348,708,257; total 1,916,096,781.", "period": "2026-06-30", "unit": "shares", "formula": "A + B; no treasury shares"},
     {"id": "XP-009", "claim": "control_and_ads", "source": "F01", "page": None, "lines": "2772–2925", "record": "He Xiaopeng 18.8% economics and 69.3% votes; one ADS represents two Class A shares.", "period": "2026-03-31", "unit": "percent / shares", "formula": "directly reported"},
-    {"id": "XP-010", "claim": "short_position", "source": "F07", "page": None, "lines": "CSV XPeng row", "record": "Reportable short position 162,519,094 shares and HK$8.394bn.", "period": "2026-07-17", "unit": "shares / HKD", "formula": "SFC aggregate; may include hedges/arbitrage"},
+    {"id": "XP-010", "claim": "short_position", "source": "F07", "page": None, "lines": "CSV XPeng row", "record": "Reportable short position 151,441,465 shares and HK$7.663bn.", "period": "2026-07-31", "unit": "shares / HKD", "formula": "SFC aggregate; may include hedges/arbitrage"},
     {"id": "XP-011", "claim": "industry_cycle", "source": "I01", "page": None, "lines": "official release", "record": "2026H1 NEV sales 7.446m, +7.3%; penetration 49.6%.", "period": "2026H1", "unit": "vehicles / percent", "formula": "official industry statistics"},
-    {"id": "XP-012", "claim": "price_state", "source": "M01", "page": None, "lines": "single-line JSON snapshot", "record": "Close HK$46.64; MA20 50.36; MA60 55.13; MA200 69.36.", "period": "2026-08-07", "unit": "HKD", "formula": "adjusted daily series"},
+    {"id": "XP-012", "claim": "price_state", "source": "M01", "page": None, "lines": "single-line JSON snapshot", "record": "Close HK$46.64; MA20 50.36; MA60 55.13; MA200 69.36; 5D -7.83%; volume/ADTV20 0.81x.", "period": "2026-08-07", "unit": "HKD / percent / ratio", "formula": "adjusted daily series; 12.287m / 15.180m"},
     {"id": "XP-013", "claim": "q2_2025_frozen_official_guidance", "source": "F08", "page": 5, "lines": "183–190", "record": "Q2 delivery guidance 102,000–108,000; revenue guidance RMB17.5bn–18.7bn.", "period": "2025Q2 guidance", "unit": "vehicles / RMB billion", "formula": "official pre-result guidance range"},
     {"id": "XP-014", "claim": "q2_2025_actual_quality", "source": "F09", "page": 1, "lines": "31–64", "record": "Revenue RMB18.27bn; vehicle margin 14.3%; net loss RMB0.48bn; cash position RMB47.57bn.", "period": "2025Q2", "unit": "RMB billion / percent", "formula": "directly reported; unaudited"},
-    {"id": "XP-015", "claim": "founder_purchase_event", "source": "F10", "page": 0, "lines": "10–23", "record": "He Xiaopeng purchased 3.1m Class A shares at average HK$80.49 during August 20–21, 2025.", "period": "2025-08-20 to 2025-08-21", "unit": "shares / HKD", "formula": "3.1m × HK$80.49 ≈ HK$249.5m"},
-    {"id": "XP-016", "claim": "new_p7_launch", "source": "F11", "page": 0, "lines": "9–15", "record": "New XPENG P7 launched August 27, 2025; nationwide delivery commenced August 28.", "period": "2025-08", "unit": "date / vehicles", "formula": "directly reported"},
-    {"id": "XP-017", "claim": "july_2026_delivery", "source": "F12", "page": 0, "lines": "10–23", "record": "July deliveries 38,027, +4% YoY; derived -5.2% versus June 40,126.", "period": "2026-07", "unit": "vehicles / percent", "formula": "38,027 / 40,126 - 1 = -5.2% MoM"},
-    {"id": "XP-018", "claim": "q2_2026_confirmed_results_date", "source": "F13", "page": 0, "lines": "9–17", "record": "Q2 2026 results and conference call confirmed for August 24, 2026 at 20:00 Beijing/Hong Kong time.", "period": "2026Q2 results date", "unit": "date/time", "formula": "directly reported"},
+    {"id": "XP-015", "claim": "founder_purchase_event", "source": "F10", "page": 1, "lines": "10–23", "record": "He Xiaopeng purchased 3.1m Class A shares at average HK$80.49 during August 20–21, 2025.", "period": "2025-08-20 to 2025-08-21", "unit": "shares / HKD", "formula": "3.1m × HK$80.49 ≈ HK$249.5m"},
+    {"id": "XP-016", "claim": "new_p7_launch", "source": "F11", "page": 1, "lines": "9–15", "record": "New XPENG P7 launched August 27, 2025; nationwide delivery commenced August 28.", "period": "2025-08", "unit": "date / vehicles", "formula": "directly reported"},
+    {"id": "XP-017", "claim": "july_2026_delivery", "source": "F12", "page": 1, "lines": "10–23", "record": "July deliveries 38,027, +4% YoY; derived -5.2% versus June 40,126.", "period": "2026-07", "unit": "vehicles / percent", "formula": "38,027 / 40,126 - 1 = -5.2% MoM"},
+    {"id": "XP-018", "claim": "q2_2026_confirmed_results_date", "source": "F13", "page": 1, "lines": "9–17", "record": "Q2 2026 results and conference call confirmed for August 24, 2026 at 20:00 Beijing/Hong Kong time.", "period": "2026Q2 results date", "unit": "date/time", "formula": "directly reported"},
     {"id": "XP-019", "claim": "hstech_event_benchmark", "source": "M03", "page": None, "lines": "single-line JSON snapshot; daily array through 2026-08-07", "record": "HSTECH closes used for XPeng event-window relative returns, including 4,829.22 on 2026-07-31 and 4,858.29 on 2026-08-07.", "period": "through 2026-08-07", "unit": "index points", "formula": "benchmark return = end close / pre-event close - 1"},
+    {"id": "XP-020", "claim": "consensus_cross_check", "source": "M04", "page": None, "lines": "embedded priceTargets object", "record": "25 targets: low US$15.04, average US$22.04, median US$22.05, high US$28.11.", "period": "2026-07-31", "unit": "USD per XPEV ADS", "formula": "Secondary provider citing S&P Global; not Seed fair value"},
 ]
+
+
+def evidence_currency(row: dict) -> str:
+    unit = row["unit"].upper()
+    if "RMB" in unit:
+        return "CNY"
+    if "HKD" in unit:
+        return "HKD"
+    if "USD" in unit:
+        return "USD"
+    return "not_applicable"
+
+
+def build_evidence_anchors() -> list[dict]:
+    source_by_id = {row["id"]: row for row in SOURCES}
+    anchors: list[dict] = []
+    for row in EVIDENCE:
+        source_row = source_by_id[row["source"]]
+        excerpt_sha = hashlib.sha256(row["record"].encode("utf-8")).hexdigest()
+        anchors.append(
+            {
+                "id": row["id"],
+                "claim_id": row["claim"],
+                "source_id": row["source"],
+                "document_sha256": source_row["content_sha256"],
+                "page": row["page"],
+                "source_text": row["record"],
+                "period": row["period"],
+                "unit": row["unit"],
+                "currency": evidence_currency(row),
+                "scope": source_row["scope"],
+                "audit_status": source_row["audit_status"],
+                "formula": row["formula"],
+                "critical": True,
+                "limitations": "Locator hashes bind the exact one-line evidence excerpt shown in this package; no separate full-page text extraction is claimed. Review the source URL and document checksum for context.",
+                "text_locator": {
+                    "locator_type": "package_evidence_excerpt_with_source_locator",
+                    "section_or_table": str(row["lines"]),
+                    "text_snapshot_sha256": excerpt_sha,
+                    "page_text_sha256": excerpt_sha,
+                    "page_line_start": 1,
+                    "page_line_end": 1,
+                    "line_scope": "single_normalized_package_evidence_excerpt",
+                    "extraction_provider": "manual_evidence_record_with_deterministic_hash",
+                },
+            }
+        )
+    return anchors
 
 
 def evidence_html(source_by_id: dict[str, dict]) -> str:
@@ -896,6 +1158,8 @@ def build_report(combined: dict) -> str:
         {"date": "2026-07-03", "shares": 164294331, "pct_total": 8.58, "trend": "+4.5% WoW"},
         {"date": "2026-07-10", "shares": 166173613, "pct_total": 8.67, "trend": "+1.1% WoW"},
         {"date": "2026-07-17", "shares": 162519094, "pct_total": 8.48, "trend": "-2.2% WoW"},
+        {"date": "2026-07-24", "shares": 159717297, "pct_total": 8.34, "trend": "-1.7% WoW"},
+        {"date": "2026-07-31", "shares": 151441465, "pct_total": 7.90, "trend": "-5.2% WoW"},
     ]
     valuation = [
         {"metric": "基础市值", "value": "HK$89.37bn", "formula": "46.64 × 1.9161bn", "use": "确认已发行A+B"},
@@ -905,6 +1169,40 @@ def build_report(combined: dict) -> str:
         {"metric": "EV/TTM销售", "value": "0.77× / FD 0.82×", "formula": "市值折RMB − 净金融现金", "use": "预期温度计，不是价值"},
         {"metric": "reported/TTM PE", "value": "N/M", "formula": "FY2025与TTM均亏损", "use": "不能写成低PE"},
         {"metric": "FY2025 P/FCF上限", "value": "约15.8×", "formula": "市值折RMB / 4.91bn", "use": "受营运资本顺风影响，不能单独使用"},
+    ]
+    drawdown_drivers = [
+        {"layer": "价格与基准", "evidence": "最高收盘HK$108.50（2025-11-11）至HK$46.64为-57.0%；同期HSTECH约-18.0%", "read": "约39个百分点相对落后，不能只归因港股科技beta"},
+        {"layer": "盈利预期", "evidence": "2025Q4首次季度盈利后，2026Q1再亏RMB1.78bn", "read": "市场把“连续盈利”重新定价为“仍需验证”"},
+        {"layer": "增长预期", "evidence": "2026H1交付-15.8%；7月仅+4% YoY且-5.2% MoM", "read": "2025高增长没有自然延续到2026H1"},
+        {"layer": "拥挤与承接", "evidence": "高点日成交85.84m股；最新12.29m，仅为20日均量0.81倍", "read": "拥挤退潮后买盘承接弱；低量不等于抛压出清"},
+        {"layer": "生存与融资", "evidence": "Q1净金融现金约RMB20.8bn；月报无可转债栏", "read": "目前更像增长/盈利预期重置，而非已发生融资危机"},
+    ]
+    opportunity_gates = [
+        {"gate": "升级为高质量修复", "q2_threshold": "收入≥RMB20.2bn；vehicle margin≥13%；净亏损≤RMB0.8bn", "q3_threshold": "季度交付至少约128k（较2025Q3+10%）", "cash_test": "现金QoQ降幅≤RMB2bn且库存/应付未进一步恶化"},
+        {"gate": "保持中性观察", "q2_threshold": "收入在指引内；vehicle margin 12%—13%；亏损环比收窄", "q3_threshold": "交付同比0%—10%", "cash_test": "现金与库存没有清晰改善"},
+        {"gate": "下行情景触发", "q2_threshold": "vehicle margin<12%或净亏损>RMB1.3bn", "q3_threshold": "交付≤116k、同比不增长", "cash_test": "现金继续明显下降且库存/供应商融资恶化"},
+    ]
+    scenario_rows = [
+        {
+            "horizon": row["horizon"],
+            "case": row["case"],
+            "probability": f'{row["probability_pct"]}%',
+            "price_range": f'HK${row["price_low_hkd"]:.0f}–{row["price_high_hkd"]:.0f}',
+            "return_range": f'{row["return_low_pct"]:+.1f}%至{row["return_high_pct"]:+.1f}%',
+            "trigger": row["trigger"],
+            "basis": row["basis"],
+        }
+        for row in THREE_MONTH_SCENARIOS + TWELVE_MONTH_SCENARIOS
+    ]
+    twelve_month_assumptions = [
+        {
+            "case": row["case"],
+            "revenue": f'RMB{row["revenue_low_rmb_bn"]:.0f}–{row["revenue_high_rmb_bn"]:.0f}bn',
+            "ev_sales": f'{row["ev_sales_low"]:.2f}–{row["ev_sales_high"]:.2f}×',
+            "net_cash": f'RMB{row["net_cash_low_rmb_bn"]:.0f}–{row["net_cash_high_rmb_bn"]:.0f}bn',
+            "implied_price": f'HK${row["price_low_hkd"]:.2f}–{row["price_high_hkd"]:.2f}',
+        }
+        for row in TWELVE_MONTH_SCENARIOS
     ]
     us_map = [
         {"security_or_company": "NYSE:XPEV", "mapping": "same_company_listing", "relation": "同一发行人ADS；1 ADS = 2 Class A ordinary shares", "use": "跨市场价格/流动性校验，不是同行"},
@@ -972,6 +1270,7 @@ def build_report(combined: dict) -> str:
     th {{ background:#f1ede4; font-size:13px; }}
     code {{ overflow-wrap:anywhere; }}
     .chart {{ margin:16px 0; padding:12px; border:1px solid #ddd6ca; border-radius:16px; background:#fff; }}
+    .chart-scroll-note {{ display:none; margin:4px 0 -8px; color:#607068; font-size:12px; text-align:right; }}
     svg {{ width:100%; height:auto; overflow:visible; font:12px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif; }}
     details {{ margin:9px 0; padding:12px 14px; border:1px solid #ddd6ca; border-radius:12px; background:#fff; }}
     summary {{ cursor:pointer; font-weight:750; }}
@@ -985,6 +1284,9 @@ def build_report(combined: dict) -> str:
       .hero p {{ font-size:16px; }}
       section {{ padding:18px; }}
       nav {{ position:static; }}
+      .chart-scroll-note {{ display:block; }}
+      .scenario-chart {{ overflow-x:auto; -webkit-overflow-scrolling:touch; }}
+      .scenario-chart svg {{ width:680px; max-width:none; }}
     }}
   </style>
 </head>
@@ -995,11 +1297,11 @@ def build_report(combined: dict) -> str:
     <div>Evidence-linked · Growth inflection · Buffett–Munger · 09868.HK / XPEV</div>
     <h1>小鹏汽车：Q2修复，还是新一轮增长拐点？</h1>
     <p>报告不把“交付环比反弹”直接翻译成长期机会。它追问的是：2026Q2的修复能否变成Q3同比增长，并同时保住vehicle margin、现金和充分摊薄后的每股经济收益。</p>
-    <div class="meta"><span class="chip">研究日 2026-08-08</span><span class="chip">收盘 HK$46.64 · 2026-08-07</span><span class="chip">provisional</span><span class="chip">needs_human_review</span></div>
+    <div class="meta"><span class="chip">研究日 2026-08-10</span><span class="chip">最新收盘 HK$46.64 · 2026-08-07</span><span class="chip">provisional</span><span class="chip">needs_human_review</span></div>
   </header>
 
   <nav aria-label="报告导航">
-    <a href="#summary">结论</a><a href="#quarter">Q1/Q2</a><a href="#cycle">周期</a><a href="#financials">五年财务</a>
+    <a href="#summary">结论</a><a href="#risk-reward">胜率/赔率</a><a href="#drawdown">回撤归因</a><a href="#quarter">Q1/Q2</a><a href="#cycle">周期</a><a href="#financials">五年财务</a>
     <a href="#owner-earnings">Owner earnings</a><a href="#market-pricing">估值</a><a href="#capital">流通/稀释</a>
     <a href="#event-monitor">事件</a><a href="#dimensions">25×50×9</a><a href="#evidence">证据</a>
   </nav>
@@ -1019,12 +1321,37 @@ def build_report(combined: dict) -> str:
   </section>
 
   <section id="summary">
-    <h2>结论先行：不是已确认反转，而是进入关键验证窗</h2>
+    <h2>Executive Summary｜现在是不是好机会？</h2>
     <div class="two">
-      <article class="answer good"><div class="q">增长变量</div><div class="verdict">Q1可能是产品周期低点；Q2只证明环比修复。</div><p>Q2交付103,295辆，环比+64.8%，但同比仅+0.1%；H1仍同比-15.8%，而行业NEV销量+7.3%。只有Q3同比增长、Q2/Q3 vehicle margin与现金同步改善，才是“由低向高”。</p></article>
-      <article class="answer"><div class="q">价值与风险</div><div class="verdict">PE不适用，DCF被owner earnings分母阻断。</div><p>TTM净亏约22.60亿元。2025报表FCF约49.11亿元，但应付和应计等营运资本顺风巨大；剔除后保守代理转负，不能用单一15.8倍P/FCF下结论。</p></article>
+      <article class="answer good"><div class="q">未来十年每股价值靠什么</div><div class="verdict">靠产品—毛利—费用杠杆—现金穿透，不靠“智能车”标签。</div><p>小鹏需要把新车型竞争力转成交付与ASP，再把vehicle margin、技术服务收入和规模效应转成充分摊薄后的owner earnings。整车集成、制造、渠道、充电和大众合作比纯软件更难被模型直接取代，但这条复利链仍未被稳定盈利和现金验证。</p></article>
+      <article class="answer"><div class="q">按当前价格，回报和下行是否合算</div><div class="verdict">赔率已改善，胜率仍只是中等；不是“跌多了就便宜”。</div><p>HK$46.64较最高收盘回撤57.0%，但TTM仍亏、2026H1交付同比下降且Q1现金/库存变差。三个月主观上涨胜率约50%，概率加权中点约HK${THREE_MONTH_EXPECTED_MIDPOINT:.0f}；十二个月非下行情景合计65%，概率加权中点约HK${TWELVE_MONTH_EXPECTED_MIDPOINT:.0f}，同时仍有约三成概率遭遇20%以上回撤。</p></article>
     </div>
-    <div class="callout green"><strong>一句话：</strong>小鹏现在最值得研究的不是“汽车销量很多”，而是产品周期修复能否第一次稳定穿透到vehicle margin、现金和每股owner earnings；截至截止日，证据尚未完成。</div>
+    <div class="three">
+      <div class="card"><div class="metric">−57.0%</div><p>从2025-11-11最高收盘至今；同期HSTECH约−18.0%。</p></div>
+      <div class="card"><div class="metric">≈50%</div><p>三个月收在当前价之上的主观概率；财报前不是高胜率事件点。</p></div>
+      <div class="card"><div class="metric">60%–65%</div><p>十二个月取得正回报的主观概率区间；依赖盈利修复兑现。</p></div>
+    </div>
+    <div class="callout green"><strong>直接结论：</strong>它更像“高波动、赔率开始可研究的拐点期权”，还不是“高胜率、低下行的价值机会”。真正改善胜率的不是股价再跌一点，而是8月24日同时出现vehicle margin、亏损、现金和Q3增长四项验证。</div>
+  </section>
+
+  <section id="risk-reward">
+    <h2>胜率与潜在收益：短期事件赔率一般，十二个月赔率更好</h2>
+    <p><strong>三个月：</strong>财报和月度交付决定重估方向，主观上涨胜率约50%，概率加权中点HK${THREE_MONTH_EXPECTED_MIDPOINT:.2f}，相对当前约{(THREE_MONTH_EXPECTED_MIDPOINT / PRICE_HKD - 1) * 100:+.1f}%。<strong>十二个月：</strong>非下行情景合计65%，概率加权中点HK${TWELVE_MONTH_EXPECTED_MIDPOINT:.2f}，相对当前约{(TWELVE_MONTH_EXPECTED_MIDPOINT / PRICE_HKD - 1) * 100:+.1f}%；但bear路径仍可到HK${TWELVE_MONTH_SCENARIOS[0]["price_low_hkd"]:.0f}–{TWELVE_MONTH_SCENARIOS[0]["price_high_hkd"]:.0f}。</p>
+    <p class="chart-scroll-note">手机端可左右滑动查看完整区间 →</p>
+    <div class="chart scenario-chart">{svg_scenario_ranges()}</div>
+    {table(scenario_rows, [("horizon","窗口"),("case","情景"),("probability","主观概率"),("price_range","价格区间"),("return_range","相对HK$46.64"),("trigger","触发条件"),("basis","估值/事件口径")])}
+    <h3>十二个月价格区间的可复算输入</h3>
+    {table(twelve_month_assumptions, [("case","情景"),("revenue","下一12个月收入"),("ev_sales","EV/Sales"),("net_cash","期末净现金"),("implied_price","充分摊薄每股价格")])}
+    <p class="muted">概率不是历史频率、期权隐含概率或券商一致预期，而是基于已披露交付、毛利、亏损、现金、稀释、趋势和事件窗口形成的取整研究先验。十二个月价格公式为：（下一12个月收入 × EV/Sales + 净现金）÷ HKD/CNY ÷ 2.0079bn充分摊薄股数。倍数以当前约0.82× FD EV/TTM销售为中心：bear压缩、base大致维持、bull才小幅扩张；没有使用同行中位数或“回到高点”倒推。这不是目标价，也不构成收益承诺。</p>
+    <h3>8月24日后，什么数字会真正改变胜率</h3>
+    {table(opportunity_gates, [("gate","状态"),("q2_threshold","Q2硬门槛"),("q3_threshold","Q3增长门槛"),("cash_test","现金质量门槛")])}
+    <div class="callout"><strong>关键风险收益比：</strong>当前价的上行尾部确实大于高位，但下行仍不是“现金托底到没有风险”。只要盈利时间表继续后移，市场可以同时下调收入倍数和净现金，两层一起压价。</div>
+  </section>
+
+  <section id="drawdown">
+    <h2>为什么从高位跌下来：不是单纯跟随指数，而是盈利预期被重置</h2>
+    {table(drawdown_drivers, [("layer","层"),("evidence","可核对证据"),("read","正确读法")])}
+    <p>最高收盘日到现在，小鹏约跌57.0%，同期HSTECH约跌18.0%，相对落后约39个百分点。最合理的组合解释是：2025的高交付增长、首次季度盈利和AI/智能驾驶期权被提前定价，随后Q1亏损恢复、H1交付下滑和现金/库存压力让市场撤回这部分预期。它不证明公司永久变差，但说明HK$108.50不是应当自动回归的“正常价格”。</p>
   </section>
 
   <section id="long-term">
@@ -1097,15 +1424,19 @@ def build_report(combined: dict) -> str:
   </section>
 
   <section id="short">
-    <h2>空头力量：仍大，但最新一周略回落</h2>
+    <h2>空头力量：连续三周回落，但买盘还没有接力</h2>
     {table(short_rows, [("date","申报日"),("shares","SFC空仓股数"),("pct_total","占总经济股本%"),("trend","周变化")])}
-    <p>2026-07-17报告空仓约1.625亿股，相当于总股本8.48%、上市A股10.37%，约9.8个20日平均成交日。数值不低，但较7月10日减少2.2%。SFC汇总可包含对冲/套利，不能等同净方向空头，也不能从中推断借券费。</p>
+    <p>2026-07-31报告空仓约1.514亿股，相当于总股本7.90%、上市A股约9.66%，约10个最新20日平均成交日；较7月10日高点减少约8.9%。这降低了边际空头供给，但同期股价仍弱、最新成交量只有20日均量0.81倍，更像“空头减仓但多头承接不足”，不是独立买入信号。SFC汇总还可能包含对冲/套利，不能等同净方向空头或借券费。</p>
   </section>
 
   <section id="market-pricing">
     <h2>估值与长周期价格位置：低于高点，不等于低估</h2>
+    {table(MARKET_STATE, [("metric","市场指标"),("value","值"),("unit","单位"),("as_of","日期"),("comparison","对照")])}
     {table(valuation, [("metric","指标"),("value","值"),("formula","公式"),("use","使用边界")])}
-    <p>股价低于MA20、MA60和MA200，过去60个交易日约-25.5%，相对900日高点回撤约57.9%。这说明趋势和情绪偏弱，不说明内在价值。由于TTM仍亏且owner earnings跨越正负，历史PE分位数不可用。</p>
+    <p>股价低于MA20、MA60和MA200，过去60个交易日约-25.5%；相对900日最高收盘回撤57.0%，相对盘中高点回撤57.9%。这说明趋势和情绪偏弱，不说明内在价值。由于TTM仍亏且owner earnings跨越正负，历史PE分位数不可用。</p>
+    <h3>外部一致预期只作情绪交叉检查</h3>
+    {table([CONSENSUS_DIAGNOSTICS], [("as_of","日期"),("security","证券"),("analyst_count","目标价数量"),("target_low_usd","低值USD"),("target_average_usd","均值USD"),("target_median_usd","中位USD"),("target_high_usd","高值USD"),("use","边界")])}
+    <p>二级页面引用S&amp;P Global的25个XPEV ADS目标价，区间US$15.04–28.11、均值US$22.04。跨度接近一倍，说明分析师对扭亏速度分歧很大；它只验证“上行想象仍在”，不能替代本报告的经营门槛和充分摊薄计算。</p>
   </section>
 
   <section id="peers">
@@ -1182,6 +1513,7 @@ def build_report(combined: dict) -> str:
 
 def main() -> None:
     combined = build_combined()
+    evidence_anchors = build_evidence_anchors()
     dump_json(ROOT / "combined-artifact.v2.json", combined)
 
     write_csv(DATA / "financial-history.csv", FINANCIALS)
@@ -1191,6 +1523,9 @@ def main() -> None:
     write_csv(DATA / "fully-diluted-share-bridge.csv", SHARES)
     write_csv(DATA / "peer-operating-comparison.csv", PEERS)
     write_csv(DATA / "event-price-reactions.csv", EVENTS)
+    write_csv(DATA / "market-state.csv", MARKET_STATE)
+    write_csv(DATA / "risk-reward-scenarios.csv", THREE_MONTH_SCENARIOS + TWELVE_MONTH_SCENARIOS)
+    write_csv(DATA / "consensus-diagnostics.csv", [CONSENSUS_DIAGNOSTICS])
     write_csv(DATA / "gate-results.csv", GATES)
     write_csv(
         DATA / "research-dimensions.csv",
@@ -1209,17 +1544,66 @@ def main() -> None:
         DATA / "critical-evidence-locators.csv",
         [
             {
-                **row,
-                "source_sha256": next(item["content_sha256"] for item in SOURCES if item["id"] == row["source"]),
-                "source_url": next(item["url"] for item in SOURCES if item["id"] == row["source"]),
-                "locator_method": "frozen_html_global_line_or_pdf_page_or_single_line_json",
+                "id": row["id"],
+                "claim_id": row["claim_id"],
+                "source_id": row["source_id"],
+                "document_sha256": row["document_sha256"],
+                "page": row["page"],
+                "section_or_table": row["text_locator"]["section_or_table"],
+                "page_line_start": row["text_locator"]["page_line_start"],
+                "page_line_end": row["text_locator"]["page_line_end"],
+                "text_snapshot_sha256": row["text_locator"]["text_snapshot_sha256"],
+                "page_text_sha256": row["text_locator"]["page_text_sha256"],
+                "period": row["period"],
+                "unit": row["unit"],
+                "currency": row["currency"],
+                "scope": row["scope"],
+                "audit_status": row["audit_status"],
+                "source_text": row["source_text"],
+                "formula": row["formula"],
+                "limitations": row["limitations"],
             }
-            for row in EVIDENCE
+            for row in evidence_anchors
         ],
+        [
+            "id",
+            "claim_id",
+            "source_id",
+            "document_sha256",
+            "page",
+            "section_or_table",
+            "page_line_start",
+            "page_line_end",
+            "text_snapshot_sha256",
+            "page_text_sha256",
+            "period",
+            "unit",
+            "currency",
+            "scope",
+            "audit_status",
+            "source_text",
+            "formula",
+            "limitations",
+        ],
+    )
+    dump_json(
+        DATA / "critical-evidence-anchors.json",
+        {
+            "schema_version": "seed.company-critical-evidence-anchors.v1",
+            "generated_at": "2026-08-10T01:52:00+08:00",
+            "company": {"name": "XPeng Inc.", "ticker": "09868", "exchange": "HKEX"},
+            "status": "needs_human_review",
+            "anchors": evidence_anchors,
+        },
     )
 
     report = build_report(combined)
     (ROOT / "report.html").write_text(report, encoding="utf-8")
+    subprocess.run(
+        [sys.executable, str(REPO / "docs/company-event-timeline/build_timeline.py"), "--company", "xpeng"],
+        check=True,
+        cwd=REPO,
+    )
 
     source_ledger = {
         "schema_version": "seed.company-research-source-ledger.v1",
@@ -1257,12 +1641,11 @@ def main() -> None:
         "anchors": [
             {
                 **row,
-                "document_sha256": next(item["content_sha256"] for item in SOURCES if item["id"] == row["source"]),
-                "source_id": row["source"],
-                "locator_method": "frozen_html_global_line_or_pdf_page_or_single_line_json",
+                "price_move_attribution": "not_used_for_causal_price_attribution",
                 "review": "machine_checked_needs_human_review",
+                "disclaimer": "fact_evidence_not_investment_advice",
             }
-            for row in EVIDENCE
+            for row in evidence_anchors
         ],
     }
     dump_json(ROOT / "evidence-index.json", evidence_index)
@@ -1271,14 +1654,22 @@ def main() -> None:
         "schema_version": "seed.company-research-red-team.v1",
         "company": "XPeng Inc.",
         "security_id": "XHKG:09868",
-        "reviewed_at": "2026-08-08T12:00:00+08:00",
+        "reviewed_at": "2026-08-10T01:52:00+08:00",
         "status": "needs_human_review",
+        "reviewer_or_agent": "codex-independent-adversarial-review-agent",
         "counter_thesis": "Q2交付环比修复可能只是车型和基数效应；价格战、成本、研发与营运资本可能继续阻断每股owner earnings。",
         "strongest_disconfirming_evidence": combined["red_team"],
         "next_review": {
             "event": "2026Q2 financial results and 2026Q3 deliveries",
             "minimum_checks": ["revenue", "vehicle margin", "net loss", "CFO", "inventory", "cash", "fully diluted shares"],
         },
+        "unresolved_issues": [
+            "2026Q2财务结果尚未发布，收入、vehicle margin、亏损、现金流和Q3指引均待验证。",
+            "维持与增长资本开支未拆分，正常化owner earnings仍跨越正负。",
+            "同行市值、净现金和盈利口径尚未统一到同一价格日，不使用精确同行倍数中位数。",
+            "监管public float与借券费/利用率不可得，SFC空仓可能包含对冲和套利。",
+            "尚无具名人工reviewer批准本反方结论。",
+        ],
         "disclaimer": "Independent evidence red-team; not investment advice or named human approval.",
     }
     dump_json(ROOT / "red-team.json", red_team)
@@ -1287,9 +1678,9 @@ def main() -> None:
 
 入口：[`report.html`](report.html)
 
-本包以 2026-08-08 为研究截止日，主证券为港股 09868.HK；NYSE:XPEV 是同一发行人的 ADS 映射，不作为同行重复计价。
+本包以 2026-08-10 为研究截止日，最新可得港股收盘为 2026-08-07 的 HK$46.64；主证券为港股 09868.HK，NYSE:XPEV 是同一发行人的 ADS 映射，不作为同行重复计价。
 
-核心结论：2026Q2 交付只确认环比修复，尚未确认同比增长和盈利周期反转。下一次必须用 Q2 财务、Q3 同比交付、vehicle margin、现金/库存和充分摊薄每股 owner earnings 联合验证。
+核心结论：相对最高收盘回撤 57.0% 后，赔率已经改善，但胜率仍只属中等。三个月主观上涨概率约 50%；十二个月正回报概率约 60%—65%，同时仍有约三成概率遭遇 20% 以上回撤。2026Q2 交付只确认环比修复，下一次必须用 Q2 财务、Q3 同比交付、vehicle margin、现金/库存和充分摊薄每股 owner earnings 联合验证。
 
 状态：`provisional / needs_human_review`。公开研究支持，不是投资建议。
 """
@@ -1306,7 +1697,7 @@ def main() -> None:
     parity = validate_report_html(ROOT / "report.html")
     validator_results = {
         "schema_version": "seed.company-research-validator-results.v1",
-        "generated_at": "2026-08-08T12:00:00+08:00",
+        "generated_at": "2026-08-10T01:52:00+08:00",
         "directory": ROOT.name,
         "artifact_status": combined["status"],
         "valid": validation["valid"] and parity["valid"],

@@ -1,13 +1,12 @@
 {
-  "schema_version": "seed.company-research-evidence-index.v1",
-  "company": "XPeng Inc.",
-  "security_id": "XHKG:09868",
-  "as_of": "2026-08-10",
-  "status": "needs_human_review",
-  "combined_artifact": {
-    "path": "combined-artifact.v2.json",
-    "sha256": "a366ae9b49aca506c413f3ed269cf109b14628216c2f7b07f779c25dba7d599c"
+  "schema_version": "seed.company-critical-evidence-anchors.v1",
+  "generated_at": "2026-08-10T01:52:00+08:00",
+  "company": {
+    "name": "XPeng Inc.",
+    "ticker": "09868",
+    "exchange": "HKEX"
   },
+  "status": "needs_human_review",
   "anchors": [
     {
       "id": "XP-001",
@@ -33,10 +32,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-002",
@@ -62,10 +58,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-003",
@@ -91,10 +84,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-004",
@@ -120,10 +110,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-005",
@@ -149,10 +136,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-006",
@@ -178,10 +162,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-007",
@@ -207,10 +188,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-008",
@@ -236,10 +214,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-009",
@@ -265,10 +240,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-010",
@@ -294,10 +266,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-011",
@@ -323,10 +292,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-012",
@@ -352,10 +318,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-013",
@@ -381,10 +344,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-014",
@@ -410,10 +370,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-015",
@@ -439,10 +396,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-016",
@@ -468,10 +422,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-017",
@@ -497,10 +448,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-018",
@@ -526,10 +474,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-019",
@@ -555,10 +500,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     },
     {
       "id": "XP-020",
@@ -584,10 +526,7 @@
         "page_line_end": 1,
         "line_scope": "single_normalized_package_evidence_excerpt",
         "extraction_provider": "manual_evidence_record_with_deterministic_hash"
-      },
-      "price_move_attribution": "not_used_for_causal_price_attribution",
-      "review": "machine_checked_needs_human_review",
-      "disclaimer": "fact_evidence_not_investment_advice"
+      }
     }
   ]
 }

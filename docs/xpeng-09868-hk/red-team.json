@@ -2,8 +2,9 @@
   "schema_version": "seed.company-research-red-team.v1",
   "company": "XPeng Inc.",
   "security_id": "XHKG:09868",
-  "reviewed_at": "2026-08-08T12:00:00+08:00",
+  "reviewed_at": "2026-08-10T01:52:00+08:00",
   "status": "needs_human_review",
+  "reviewer_or_agent": "codex-independent-adversarial-review-agent",
   "counter_thesis": "Q2交付环比修复可能只是车型和基数效应；价格战、成本、研发与营运资本可能继续阻断每股owner earnings。",
   "strongest_disconfirming_evidence": [
     {
@@ -56,5 +57,12 @@
       "fully diluted shares"
     ]
   },
+  "unresolved_issues": [
+    "2026Q2财务结果尚未发布，收入、vehicle margin、亏损、现金流和Q3指引均待验证。",
+    "维持与增长资本开支未拆分，正常化owner earnings仍跨越正负。",
+    "同行市值、净现金和盈利口径尚未统一到同一价格日，不使用精确同行倍数中位数。",
+    "监管public float与借券费/利用率不可得，SFC空仓可能包含对冲和套利。",
+    "尚无具名人工reviewer批准本反方结论。"
+  ],
   "disclaimer": "Independent evidence red-team; not investment advice or named human approval."
 }

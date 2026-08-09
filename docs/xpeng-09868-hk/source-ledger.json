@@ -2,7 +2,7 @@
   "schema_version": "seed.company-research-source-ledger.v1",
   "company": "XPeng Inc.",
   "security_id": "XHKG:09868",
-  "as_of": "2026-08-08",
+  "as_of": "2026-08-10",
   "sources": [
     {
       "id": "F01",
@@ -10,7 +10,7 @@
       "kind": "sec_filing",
       "title": "XPeng Inc. 2025 Form 20-F",
       "published_at": "2026-04-16",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526157849/d36361d20f.htm",
       "snapshot_sha256": "67830eaad667ed28361941559c87db8e82d3c8251dcf350680c3ddb82bbdfc4f",
       "used_for": [
@@ -32,7 +32,7 @@
       "kind": "sec_xbrl",
       "title": "SEC Companyfacts — XPeng Inc.",
       "published_at": "2026-04-16",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001810997.json",
       "snapshot_sha256": "ed50d828d7069636d4de76e3428f53dda39ea85510b200373227dcdefff361f8",
       "used_for": [
@@ -48,7 +48,7 @@
       "kind": "sec_filing",
       "title": "XPeng Q1 2026 unaudited financial results",
       "published_at": "2026-05-28",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526243143/d139430d6k.htm",
       "snapshot_sha256": "2a118814890dc969b0858f129a22bb272f27d00af769d7ce7630ae671e682f8d",
       "used_for": [
@@ -68,7 +68,7 @@
       "kind": "sec_filing",
       "title": "XPeng Q2 2026 vehicle delivery results",
       "published_at": "2026-07-02",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www.sec.gov/Archives/edgar/data/1810997/000119312526293394/d114872d6k.htm",
       "snapshot_sha256": "cb189cb10e5fdfd896efb517cbfaff93c74229be1462d358dcca232c27691ab0",
       "used_for": [
@@ -84,7 +84,7 @@
       "kind": "hkex_monthly_return",
       "title": "XPeng Monthly Return for June 2026",
       "published_at": "2026-07-07",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0707/2026070701078.pdf",
       "snapshot_sha256": "059e348df0ed5c5cc0d90cb2c751b049a323e6a7dd399feddec828f0b318dfb7",
       "used_for": [
@@ -100,7 +100,7 @@
       "kind": "hkex_announcement",
       "title": "XPeng April 2026 grant of restricted share units",
       "published_at": "2026-04-17",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0417/2026041701171.pdf",
       "snapshot_sha256": "703fb4fd83d4817bde71cf7711dd2c8347339e2b46ad7bb4824811abd5eb904f",
       "used_for": [
@@ -115,11 +115,11 @@
       "id": "F07",
       "tier": "A",
       "kind": "regulatory_dataset",
-      "title": "SFC reportable short positions — 17 July 2026",
-      "published_at": "2026-07-24",
-      "retrieved_at": "2026-08-08",
-      "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/17/Short_Position_Reporting_Aggregated_Data_20260717.csv?rev=76131f683e7240c3ade786261a04ff24",
-      "snapshot_sha256": "22e97934c1fa5fb99b869f691b9df9c76c632c23c567ed4b3668fb9fb56942a1",
+      "title": "SFC reportable short positions — 31 July 2026",
+      "published_at": "2026-08-07",
+      "retrieved_at": "2026-08-10",
+      "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/31/Short_Position_Reporting_Aggregated_Data_20260731.csv",
+      "snapshot_sha256": "b4a6ccc0aacb65283adb725a4a2d58a22f8df22bf4c3adca83dfc617b0243e2c",
       "used_for": [
         "short_position"
       ],
@@ -131,7 +131,7 @@
       "kind": "hkex_announcement",
       "title": "XPeng Q1 2025 unaudited financial results and Q2 guidance",
       "published_at": "2025-05-21",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0521/2025052100660.pdf",
       "snapshot_sha256": "916c9be66a2a75d47b7968651a33429ee57d37f2636b8ceb23540325b1ba4646",
       "used_for": [
@@ -148,7 +148,7 @@
       "kind": "hkex_announcement",
       "title": "XPeng Q2 2025 unaudited financial results",
       "published_at": "2025-08-19",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0819/2025081900612.pdf",
       "snapshot_sha256": "fcdb9db5d0a59149657e09eb094439f23144563dd4e9eebdd96467da1392323e",
       "used_for": [
@@ -167,7 +167,7 @@
       "kind": "hkex_announcement",
       "title": "XPeng controlling shareholder shareholding increase",
       "published_at": "2025-08-21",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0821/2025082101163.pdf",
       "snapshot_sha256": "96dd421e3f115ffda12d0e81405e01a2d55274be4e497823d81276e22ba309df",
       "used_for": [
@@ -183,7 +183,7 @@
       "kind": "hkex_announcement",
       "title": "XPeng August 2025 delivery results and New P7 launch",
       "published_at": "2025-09-01",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0901/2025090100103.pdf",
       "snapshot_sha256": "249a8bdff2c08a568c4a7feed873b5ffdc3e4610cac58a61d8906f0863a10d54",
       "used_for": [
@@ -199,7 +199,7 @@
       "kind": "hkex_announcement",
       "title": "XPeng July 2026 vehicle delivery results",
       "published_at": "2026-08-03",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0803/2026080303094.pdf",
       "snapshot_sha256": "22eaa67ac177213417162023835df8cb2ef8a7c4e117987843e773eff9d6e91f",
       "used_for": [
@@ -215,7 +215,7 @@
       "kind": "hkex_announcement",
       "title": "XPeng notice of board meeting for Q2 2026 results",
       "published_at": "2026-08-04",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0804/2026080401150.pdf",
       "snapshot_sha256": "7a85eb7b17d8f7b2cdd828499563f75e1e73ad7309f6fb047ddf3db62278cc75",
       "used_for": [
@@ -231,7 +231,7 @@
       "kind": "issuer_distributed_press_release",
       "title": "XPeng July 2026 delivery release dated August 1",
       "published_at": "2026-08-01",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www.prnewswire.com/news-releases/xpeng-announces-vehicle-delivery-results-for-july-2026-302840496.html",
       "snapshot_sha256": "3979bb9b51692e46c297760c7e7754d5c7a332ce9f7bf9baac4233e7176f1f2d",
       "used_for": [
@@ -247,9 +247,9 @@
       "kind": "market_data_snapshot",
       "title": "Tencent adjusted daily price history — 09868.HK",
       "published_at": "2026-08-07",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk09868,day,,,900,qfq",
-      "snapshot_sha256": "fc53dfbda7b8cdf7139a040afa8f7f96582286026ef8d98e04323bd411cbbf08",
+      "snapshot_sha256": "ab922386ade7d045ffe519fcf8943e7be056fc45b3aca899d2c34e8d269c97fc",
       "used_for": [
         "price",
         "turnover",
@@ -264,7 +264,7 @@
       "kind": "official_media_release",
       "title": "2026H1 China automobile industry statistics",
       "published_at": "2026-07-09",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www.xinhuanet.com/20260709/adab526fe8c64da19b27e907fa78393b/c.html",
       "snapshot_sha256": "aa3d92eb103e5f7913d84672479e920f71da6fe28c9e82d7ffba711d58b6dcff",
       "used_for": [
@@ -280,7 +280,7 @@
       "kind": "hkex_filing",
       "title": "Leapmotor 2025 annual results",
       "published_at": "2026-03-16",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0316/2026031601214.pdf",
       "snapshot_sha256": "3e3fab5063459d042afb1626b5a051fa7055a91316de6e6d142965df85145145",
       "used_for": [
@@ -297,7 +297,7 @@
       "kind": "official_fx_release",
       "title": "CFETS central parity rates — 27 July 2026",
       "published_at": "2026-07-27",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://www.news.cn/20260727/b508c39dd33148ac9a604a5528bc8b94/c.html",
       "snapshot_sha256": "e68ad920eccfd31c00428c910a06806e9466c7d957dd24222227b6a7d06f3d82",
       "used_for": [
@@ -311,13 +311,29 @@
       "kind": "market_data_snapshot",
       "title": "Tencent adjusted daily price history — HSTECH",
       "published_at": "2026-08-07",
-      "retrieved_at": "2026-08-08",
+      "retrieved_at": "2026-08-10",
       "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,,,900,qfq",
-      "snapshot_sha256": "0601ca0f17d877f8335fced6324298eeb5bf51a120f5894883f41891dd9623c2",
+      "snapshot_sha256": "1733581caa4331de8949e48ba776118fcf788714edd31ce89f0e74d2744421d9",
       "used_for": [
         "benchmark_event_windows",
         "relative_returns",
         "risk_appetite_proxy"
+      ],
+      "limitations": "Used within stated period, audit status and scope; market data remains a third-party snapshot."
+    },
+    {
+      "id": "M04",
+      "tier": "C",
+      "kind": "secondary_consensus_snapshot",
+      "title": "StockAnalysis XPeng analyst forecast page citing S&P Global",
+      "published_at": "2026-07-31",
+      "retrieved_at": "2026-08-10",
+      "url": "https://stockanalysis.com/stocks/xpev/forecast/",
+      "snapshot_sha256": "7c1d3dabfb8d8515e3ed711748798bee30aa7833bdd3c374813b8a9424ec4aaa",
+      "used_for": [
+        "analyst_count",
+        "price_target_range",
+        "consensus_cross_check"
       ],
       "limitations": "Used within stated period, audit status and scope; market data remains a third-party snapshot."
     }
