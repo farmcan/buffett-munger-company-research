@@ -1,0 +1,5 @@
+period,revenue_rmb_bn,revenue_yoy_pct,gross_margin_pct,net_profit_rmb_bn,net_profit_yoy_pct,operating_cash_flow_rmb_bn,fixed_asset_cash_outflow_rmb_bn,notes
+FY2023,7.931,,20.7,0.671,,1.280,0.270,Audited annual-report operating cash flow; prospectus capex proxy
+FY2024,10.731,35.3,22.7,1.154,72.0,1.358,0.834,Audited annual report; cash paid for fixed intangible and other long-term assets
+FY2025,19.292,79.8,35.2,4.312,273.5,4.603,6.617,Audited annual report; fixed-asset cash outflow is not maintenance capex
+2026Q1,5.519,28.0,34.5,1.288,40.0,2.117,,Unaudited quarterly report; investing cash outflow RMB4.178bn is not identical to capex

@@ -1,0 +1,7 @@
+terminal_pe_anchor,required_net_profit_a_price_rmb_bn,growth_vs_fy2025_a_pct,required_net_profit_h_price_rmb_bn,growth_vs_fy2025_h_pct,boundary
+25x,11.241,160.7,8.620,99.9,Sensitivity anchor only; not a fair-value target
+30x,9.367,117.2,7.183,66.6,Sensitivity anchor only; not a fair-value target
+35x,8.029,86.2,6.157,42.8,Sensitivity anchor only; not a fair-value target
+40x,7.025,62.9,5.387,24.9,Sensitivity anchor only; not a fair-value target
+45x,6.245,44.8,4.789,11.1,Sensitivity anchor only; not a fair-value target
+50x,5.620,30.3,4.310,0.0,Sensitivity anchor only; not a fair-value target

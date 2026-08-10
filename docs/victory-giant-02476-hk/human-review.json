@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "status": "pending",
+  "reviewer": null,
+  "reviewed_at": null,
+  "scope": ["market data snapshot", "A/H bridge", "financial calculations", "order and rumor evidence boundaries", "HTML rendering"],
+  "notes": "This research pack is public-source research and is not approved as investment advice."
+}

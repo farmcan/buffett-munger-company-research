@@ -1,0 +1,66 @@
+{
+  "schema_version": "seed.public-company-report-validation.v2",
+  "generated_at": "2026-08-10T22:30:00+08:00",
+  "artifact_status": "needs_human_review",
+  "valid": true,
+  "artifact_validation": {
+    "valid": true,
+    "artifact": "docs/company-research/victory-giant-02476-hk/combined-artifact.v2.json",
+    "errors": [],
+    "warnings": [],
+    "gate_count": 9,
+    "dimension_count": 25,
+    "indicator_count": 50,
+    "source_count": 16
+  },
+  "template_validation": {
+    "schema_version": "seed.public-report-template-parity.v1",
+    "generated_at": "2026-08-10T14:26:49.491462+00:00",
+    "path": "report.html",
+    "template_version": "company-research-publication-v1",
+    "valid": true,
+    "counts": {
+      "section": 20,
+      "table": 11,
+      "svg": 2,
+      "details": 8
+    },
+    "contract_counts": {
+      "required_dimensions": 25,
+      "visible_dimension_results": 25,
+      "required_indicator_ids": 50,
+      "visible_indicator_ids": 50,
+      "required_gate_ids": 9,
+      "visible_gate_ids": 9
+    },
+    "resolved_reader_jobs": {
+      "status legend": "status-legend",
+      "long-term dossier": "long-term",
+      "near-term event monitor": "event-monitor",
+      "snapshot": "summary",
+      "five-year financials": "financials",
+      "latest quarter/interim": "financials",
+      "capital/per-share bridge": "capital",
+      "market pricing": "market-pricing",
+      "Buffett–Munger interpretation": "buffett",
+      "methodology": "methodology",
+      "timeline": "timeline",
+      "next validation": "monitor",
+      "evidence/sources": "sources"
+    },
+    "missing_fragment_targets": [],
+    "errors": [],
+    "warnings": []
+  },
+  "publication_checks": {
+    "contains_local_absolute_paths": false,
+    "contains_private_library_paths": false,
+    "contains_raw_media_or_transcripts": false,
+    "contains_credentials_or_personal_data": false,
+    "primary_sources_linked": true,
+    "asr_full_text_private": true,
+    "asr_public_checksum_only": true,
+    "investment_advice_boundary_present": true,
+    "all_local_links_resolve": true
+  }
+}

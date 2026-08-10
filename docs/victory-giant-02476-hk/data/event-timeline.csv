@@ -1,0 +1,13 @@
+date,event,type,why_it_matters,status
+2026-04-21,H shares listed at HKD209.88,capital_market,Creates separate HK trading line and H-share float,verified
+2026-04-27,Over-allotment completed; H shares reached 110227500,capital_market,Finalizes H-share count,verified
+2026-05-31,NVIDIA said Vera Rubin was ramping into full production,industry,Supports platform-level demand but does not identify Victory Giant as supplier,verified_industry_only
+2026-07-08,Thailand factory qualification and construction update,operations,Shows capacity is at different stages rather than all revenue-ready,verified
+2026-07-13,Company denied broad negative product/share/project rumors,rumor_response,Positive aggregate order statement without customer/order amount,verified_company_statement
+2026-07-30,H-share intraday low HKD165.60,market,Reference point for subsequent 53% rebound,verified_market_data
+2026-08-07,H shares close HKD256.20 and A shares close CNY280.20,market,A/H rebound moved together,verified_market_data
+2026-08-07,Company issued abnormal-trading announcement,disclosure,Backlog still growing but no undisclosed material information and no interim earnings preview required,verified_company_statement
+2026-08-10,H closes HKD255.20 and A closes CNY286.00,market,A trades about 30.4% premium to H after FX; A closes at daily high while H fades from open,verified_close
+2026-08-26,NVIDIA FY2027 Q2 results,upstream_catalyst,Tests AI infrastructure demand and Rubin deployment cadence; not a Victory Giant order disclosure,official_schedule
+2026-08-28,Scheduled 2026 interim report,financial_catalyst,Next hard test for revenue margin cash capex and customer concentration,secondary_schedule
+2026-10-21,First day after six-month cornerstone lock-up ends,float_supply,Potential H-share supply event; actual selling is unknown,contractual_calendar

@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-08-10",
+  "status": "complete_for_research_not_investment_decision",
+  "strongest_bear_case": "2025 high-end HDI mix and a concentrated AI customer drove an exceptional margin and profit step-up just as the company committed to a very large capacity cycle. After the rapid August rebound, A/H still mechanically trade near 60x/46x TTM earnings. If platform timing, qualification yield, customer allocation or pricing normalizes before new plants reach efficient utilization, fixed costs and capex can compress free cash flow while the share price still embeds high growth.",
+  "tests": [
+    {"risk":"Specific Rubin order is narrative rather than disclosed fact","falsifier":"Named customer/product shipment or auditable order value","current_result":"not_falsified"},
+    {"risk":"2025 margin was peak mix rather than durable economics","falsifier":"H1/H2 gross margin holds with site/product bridge and cash conversion","current_result":"pending"},
+    {"risk":"Expansion outruns demand","falsifier":"Utilization, shipment and revenue ramp track construction and equipment spend","current_result":"pending"},
+    {"risk":"Customer concentration creates bargaining and allocation risk","falsifier":"Top-customer dependence falls while AI revenue and margin remain strong","current_result":"pending"},
+    {"risk":"H-share float supply overwhelms demand after lock-up","falsifier":"Post-unlock ownership/turnover stays stable","current_result":"pending_after_2026_10_20"},
+    {"risk":"A/H convergence thesis is mistaken for arbitrage","falsifier":"None; shares are not assumed freely fungible","current_result":"structural_warning"},
+    {"risk":"Recent rebound is event anticipation rather than new fundamental evidence","falsifier":"Interim results add quantifiable margin cash-flow and order evidence","current_result":"pending_2026_08_28"},
+    {"risk":"FY2025 growth rate is extrapolated into valuation","falsifier":"H1/H2 growth and normalized owner earnings support the implied earnings requirement","current_result":"not_yet_falsified"}
+  ],
+  "conclusion": "The evidence supports an AI-PCB growth company, not a verified customer-specific order story, a low-risk valuation, or a generic full-size vertical-chase strategy."
+}

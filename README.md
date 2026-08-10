@@ -17,8 +17,8 @@ and Munger principles.
 ## Public research reports
 
 The [GitHub Pages research index](https://farmcan.github.io/buffett-munger-company-research/)
-currently publishes six evidence-linked reports for Horizon Robotics, XPeng, Meitu, Nanhua
-Futures, SMIC, and Vobile Group.
+currently publishes seven evidence-linked reports for Horizon Robotics, XPeng, Meitu, Nanhua
+Futures, SMIC, Vobile Group, and Victory Giant Technology.
 Each report exposes the 25 dimensions, 50 indicators, nine gates, source ledger, evidence
 locators, valuation boundaries, and invalidation tests directly in HTML. All public company
 reports use one versioned publication shell (`company-research-publication-v1`) and a shared

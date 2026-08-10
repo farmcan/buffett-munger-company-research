@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-08-10",
+  "claims": [
+    {"id":"C1","claim":"02476.HK listed on 2026-04-21 at HKD209.88 and has 110,227,500 H shares after over-allotment.","status":"verified","source_ids":["S2","S3","S4"]},
+    {"id":"C2","claim":"The A and H lines are separate share classes and must be valued at their own prices; 300476.SZ is not a peer.","status":"verified","source_ids":["S2"]},
+    {"id":"C3","claim":"At 2026-08-10 close, A traded about 30.4% above the FX-adjusted H price.","status":"verified_derived","source_ids":["S10","S11","S12"],"formula":"286.00/(255.20*0.8594)-1"},
+    {"id":"C4","claim":"FY2025 revenue was RMB19.292bn, net profit RMB4.312bn and gross margin 35.2%.","status":"verified","source_ids":["S16"]},
+    {"id":"C5","claim":"2026Q1 revenue rose 27.99%, net profit 39.95% and operating cash flow 399.38% year on year.","status":"verified_unaudited","source_ids":["S4"]},
+    {"id":"C6","claim":"Top-one and top-five customer shares rose to 29.7% and 51.0% in 2025.","status":"verified","source_ids":["S1"]},
+    {"id":"C7","claim":"Company aggregate order language is positive, but no named Rubin customer, order value, price or shipment volume is publicly confirmed in the cited documents.","status":"verified_boundary","source_ids":["S5","S6","S7"]},
+    {"id":"C8","claim":"Thailand A1 phase 2 is between qualification and early validation/part-number approval, while A2 is still in construction-to-ramp stages.","status":"verified","source_ids":["S6"]},
+    {"id":"C9","claim":"The creator said the elevator company obtained Rubin orders and referred to a Jensen Huang oral promise.","status":"verified_as_creator_statement_only","source_ids":["S14"]},
+    {"id":"C10","claim":"The Jensen Huang oral promise and specific Rubin purchase order remain unverified.","status":"unverified","source_ids":["S5","S6","S7","S8","S14"]},
+    {"id":"C11","claim":"The negative rumor that initial Rubin boards failed acceptance and shifted to another supplier remains unverified; the company denied broad negative product/share/project rumors.","status":"conflicted_unresolved","source_ids":["S7","S15"]},
+    {"id":"C12","claim":"Cornerstone shares are subject to a six-month lock-up ending after 2026-10-20, creating a potential—not certain—float event.","status":"verified_calendar","source_ids":["S1"]},
+    {"id":"C13","claim":"Southbound accounts held 25,206,063 H shares, 22.85% of issued H shares, on 2026-08-08.","status":"verified","source_ids":["S9"]},
+    {"id":"C14","claim":"FY2025 operating cash flow was RMB4.603bn while cash paid for fixed intangible and other long-term assets was RMB6.617bn.","status":"verified","source_ids":["S16"]},
+    {"id":"C15","claim":"TTM net profit through 2026Q1 was approximately RMB4.680bn using FY2025 plus 2026Q1 minus 2025Q1.","status":"verified_derived","source_ids":["S4","S16"],"formula":"4311988274.40+1288427592.46-920647385.47"},
+    {"id":"C16","claim":"The 2026-08-07 announcement repeated positive aggregate backlog language but stated that no undisclosed material information existed and no interim earnings preview was required.","status":"verified_boundary","source_ids":["S17"]},
+    {"id":"C17","claim":"NVIDIA scheduled FY2027 Q2 results for 2026-08-26 two days before Victory Giant's scheduled interim report.","status":"verified_calendar","source_ids":["S17","S18"]},
+    {"id":"C18","claim":"At 2026-08-10 closing prices mechanical TTM P/E was approximately 60.0x for A shares and 46.0x for H shares after FX conversion.","status":"verified_derived","source_ids":["S10","S11","S12","S19"]}
+  ]
+}

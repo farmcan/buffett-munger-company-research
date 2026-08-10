@@ -1,0 +1,9 @@
+date,topic,claim,status,evidence_level,next_proof
+2026-03-18,orders,"Company said orders were sufficient and production/delivery normal in response to lost-order and failed-sampling rumors",company_statement,management_statement,Customer-specific purchase order or shipment data
+2026-07-08,Thailand A1 phase 2,"Passed several customer factory audits; producing AI validation boards; some part numbers passed validation",qualification,official_investor_relations,Firm order then volume production and shipment
+2026-07-08,Thailand A2,"Building topped out in Q2; still needs fit-out equipment installation customer audit sampling order placement and ramp",construction,official_investor_relations,Installed capacity utilization and revenue
+2026-07-13,AI PCB demand,"Backlog/in-hand orders continued to grow; production and shipment normal; top-customer orders increased",backlog_aggregate,official_clarification,Backlog amount customer concentration shipment and cash collection
+2026-07-13,long-term demand,"Some customers released 2027-2028 long-term demand",demand_signal,official_clarification,Binding purchase order or framework contract with volume/price
+2026-08-09,ASR Rubin order,"Creator said the elevator company had obtained Rubin orders and referred to a Jensen Huang oral promise",unverified_creator_claim,asr_secondary,Named official disclosure or customer/supplier confirmation
+2026-08-09,ASR CCL price increase,"Creator said copper-clad laminate would rise again in August and electronics again in Nov-Dec",unverified_sector_claim,asr_secondary,Supplier price notice and realized PCB pricing/margin
+2026-08-09,negative rumor,"Social posts claimed initial Rubin boards failed acceptance and orders shifted",unverified_rumor,social_low_tier,Customer or company product-level disclosure; company denied broad negative rumors

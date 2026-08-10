@@ -1,0 +1,15 @@
+metric,02476_h,300476_a,calculation_or_boundary
+price_as_of_2026_08_10_close,HKD255.20,CNY286.00,Completed closing prices
+hkd_cny_fx,0.8594,,Tencent FX quote at 2026-08-10 21:15
+h_price_cny_equivalent,CNY219.32,,255.20 x 0.8594
+a_premium_to_h_pct,,30.4%,286.00 / 219.32 - 1
+h_discount_to_a_pct,-23.3%,,219.32 / 286.00 - 1
+issued_shares_gross,110227500,872557313,HKEX June 29 poll-results announcement; A shares include 217443 treasury shares
+treasury_shares,0,217443,Treasury A shares have no voting rights and are excluded from effective EPS denominator
+effective_shares_ex_treasury,110227500,872339870,Combined effective shares 982567370
+observed_line_market_cap,CNY24.17bn,CNY249.29bn,Each line valued at its own market price; A line excludes treasury shares
+combined_observed_equity_value,,,CNY273.66bn; sum of separately priced effective A and H lines
+fy2025_eps_on_effective_shares,CNY4.39,CNY4.39,Net profit RMB4.311988bn / 982.567m effective shares
+ttm_eps_q1_2026,CNY4.76,CNY4.76,FY2025 plus 2026Q1 minus 2025Q1 net profit over effective shares
+fy2025_price_eps,50.0x,65.2x,Mechanical trailing ratio; not a forward valuation
+ttm_price_eps,46.0x,60.0x,Mechanical TTM ratio through 2026Q1; H price converted to CNY
