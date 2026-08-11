@@ -1,0 +1,3 @@
+reference,low,high,from_price_low_pct,from_price_high_pct,boundary
+recent_base,92,96,-26.16,-22.95,technical reference not intrinsic value
+first_supply_zone,140,154,12.36,23.6,technical reference not target price

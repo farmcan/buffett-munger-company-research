@@ -1,0 +1,401 @@
+{
+  "schema_version": "seed.public-company-source-ledger.v2",
+  "as_of": "2026-08-11",
+  "publication_boundary": "No raw PDFs, private data, portfolio data or credentials are included.",
+  "sources": [
+    {
+      "id": "S1",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC Annual Report 2025",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0327/2026032703338_c.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-03-27",
+      "accessed_at": "2026-08-11",
+      "period": "FY2023-FY2025",
+      "audit_status": "audited",
+      "scope": "consolidated group",
+      "covers": [
+        "five-year bridge",
+        "segments",
+        "cash flow",
+        "capital expenditure",
+        "risk factors"
+      ],
+      "content_sha256": "58888b55e4ada8f8b985e9377e83d5c71c31907c9acf873f10b1b1281c7f8d48"
+    },
+    {
+      "id": "S2",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC Annual Report 2023",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0426/2024042600583.pdf",
+      "published_at_status": "known",
+      "published_at": "2024-04-26",
+      "accessed_at": "2026-08-11",
+      "period": "FY2019-FY2023",
+      "audit_status": "audited",
+      "scope": "consolidated group",
+      "covers": [
+        "five-year summary",
+        "FY2023 statements",
+        "capital expenditure",
+        "industry discussion"
+      ],
+      "content_sha256": "226877c4f197b3886861ded0fb853982515bc168e421bff7ea2b1fc0a52567a1"
+    },
+    {
+      "id": "S3",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC Annual Report 2022",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2023/0427/2023042702169.pdf",
+      "published_at_status": "known",
+      "published_at": "2023-04-27",
+      "accessed_at": "2026-08-11",
+      "period": "FY2018-FY2022",
+      "audit_status": "audited",
+      "scope": "consolidated group",
+      "covers": [
+        "FY2021-FY2022 statements",
+        "cash flow",
+        "capital expenditure",
+        "working-capital cycles"
+      ],
+      "content_sha256": "41af943325eef323b50f1ffc6be8b190524de213cb728de73b033f9db873242c"
+    },
+    {
+      "id": "S4",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC 2026 First Quarterly Report",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042904820.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-04-29",
+      "accessed_at": "2026-08-11",
+      "period": "2026Q1",
+      "audit_status": "unaudited",
+      "scope": "consolidated group",
+      "covers": [
+        "quarterly income",
+        "gross margin",
+        "cash flow",
+        "working capital",
+        "balance sheet"
+      ],
+      "content_sha256": "534e15456c3d5d527226f0c2f6afdc6bc9316251d68385770b9562940ff872f2"
+    },
+    {
+      "id": "S5",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC Positive Profit Alert for 2026H1",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0714/2026071401066.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-07-14",
+      "accessed_at": "2026-08-11",
+      "period": "2026H1 preliminary",
+      "audit_status": "unaudited",
+      "scope": "consolidated group",
+      "covers": [
+        "profit range",
+        "adjusted profit range",
+        "management explanation",
+        "risk warning"
+      ],
+      "content_sha256": "8c85cb9d45697998d085d2ec7b73aae97656b02cf3bb33d391540cc5b1582054"
+    },
+    {
+      "id": "S6",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "Completion of Placing of 70 million New H Shares",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1217/2025121700608.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-12-17",
+      "accessed_at": "2026-08-11",
+      "period": "2025-12",
+      "audit_status": "not_applicable",
+      "scope": "H-share capital and proceeds",
+      "covers": [
+        "share issuance",
+        "placing price",
+        "net proceeds",
+        "use of proceeds"
+      ],
+      "content_sha256": "deed795150d8f7b341756f7933e0b348c59c6e6f536f4b00ccebd91f0464309d"
+    },
+    {
+      "id": "S7",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC July 2026 Monthly Return",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0805/2026080500442.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-08-05",
+      "accessed_at": "2026-08-11",
+      "period": "2026-07",
+      "audit_status": "not_applicable",
+      "scope": "A/H issued and treasury shares",
+      "covers": [
+        "H shares",
+        "A shares",
+        "treasury shares",
+        "public float"
+      ],
+      "content_sha256": "5c5feabeb449a6fe1eb9ab2b0d9195c7a92fd8fbd1b38dde2f55516a77b96f42"
+    },
+    {
+      "id": "S8",
+      "tier": "A",
+      "source_type": "exchange_market_infrastructure",
+      "title": "SSE Southbound Eligible Securities Query",
+      "url": "https://www.sse.com.cn/services/hkexsc/disclo/eligible/",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Point-in-time official query page.",
+      "accessed_at": "2026-08-11",
+      "period": "2026-08-11 query",
+      "audit_status": "not_applicable",
+      "scope": "Shanghai Southbound eligibility",
+      "covers": [
+        "Stock Connect eligibility",
+        "official query boundary"
+      ],
+      "content_sha256": "21bd6fd37c2a53a163919047b7e4c11e476213e59da66d14c466551197d8ba40"
+    },
+    {
+      "id": "S9",
+      "tier": "A",
+      "source_type": "exchange_market_infrastructure",
+      "title": "SZSE Southbound Eligible Securities Query",
+      "url": "https://www.szse.cn/szhk/hkbussiness/underlylist/",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Point-in-time official query page.",
+      "accessed_at": "2026-08-11",
+      "period": "2026-08-11 query",
+      "audit_status": "not_applicable",
+      "scope": "Shenzhen Southbound eligibility",
+      "covers": [
+        "Stock Connect eligibility",
+        "official query boundary"
+      ],
+      "content_sha256": "14217e51de2161ddb0e3ff469a588f816bfd8b72f8580a219da255aa288b3961"
+    },
+    {
+      "id": "S10",
+      "tier": "C",
+      "source_type": "defined_market_data_api",
+      "title": "Tencent 06869.HK Daily Prices",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk06869,day,2026-05-01,2026-08-11,200,qfq",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Machine endpoint has no separate publication timestamp.",
+      "accessed_at": "2026-08-11",
+      "period": "through 2026-08-11 intraday; valuation frozen at 2026-08-10 close",
+      "audit_status": "not_applicable",
+      "scope": "H-share price and volume",
+      "covers": [
+        "price",
+        "price history",
+        "drawdown",
+        "rebound",
+        "volume"
+      ],
+      "content_sha256": "70530b6d714c171b07a047b9dbe37681746e5c805923162e7a9ca612eeb8e362"
+    },
+    {
+      "id": "S11",
+      "tier": "C",
+      "source_type": "defined_market_data_api",
+      "title": "Tencent 601869.SH Daily Prices",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh601869,day,2026-05-01,2026-08-11,200,qfq",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Machine endpoint has no separate publication timestamp.",
+      "accessed_at": "2026-08-11",
+      "period": "through 2026-08-10 close",
+      "audit_status": "not_applicable",
+      "scope": "A-share price and volume",
+      "covers": [
+        "A-share price history",
+        "A/H valuation bridge",
+        "cross-listing momentum"
+      ],
+      "content_sha256": "1c4d80e13d4bb5f86ab71e8007323c05c0960ea1cd147d64a62234d6190e62ec"
+    },
+    {
+      "id": "S12",
+      "tier": "A",
+      "source_type": "official_fx_query",
+      "title": "SAFE RMB Central Parity Query",
+      "url": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do",
+      "published_at_status": "known",
+      "published_at": "2026-08-10",
+      "accessed_at": "2026-08-11",
+      "period": "2026-08-10",
+      "audit_status": "not_applicable",
+      "scope": "100 HKD = CNY86.536 central parity",
+      "covers": [
+        "HKD/CNY",
+        "A/H bridge",
+        "valuation currency conversion"
+      ],
+      "content_sha256": "d01391bd193c9b34f78339eba926af361e08c9c456ad8ec0f672018300e7af18"
+    },
+    {
+      "id": "S13",
+      "tier": "A",
+      "source_type": "industry_primary_source",
+      "title": "Corning Q2 2026 Results and Optical Communications Demand",
+      "url": "https://investor.corning.com/news-and-events/news/news-details/2026/Cornings-Strong-Second-Quarter-2026-Financial-Results1-Demonstrate-Progress-on-Recently-Upgraded-Springboard-Plan/default.aspx",
+      "published_at_status": "known",
+      "published_at": "2026-07-28",
+      "accessed_at": "2026-08-11",
+      "period": "2026Q2",
+      "audit_status": "unaudited",
+      "scope": "Corning optical communications segment; adjacent global demand signal",
+      "covers": [
+        "optical communications growth",
+        "enterprise network demand",
+        "future capacity expansion"
+      ],
+      "content_sha256": "28f354fe180288e8d34234f31960ce0c45ecb2d24d559912eca441e5bf0b1d79"
+    },
+    {
+      "id": "S14",
+      "tier": "A",
+      "source_type": "competitor_exchange_filing",
+      "title": "Dahan Cable Optical Fibre and Preform Capacity Project",
+      "url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-06-26/c0eea83a-c03e-407f-ad8b-926cd6fe760f.PDF",
+      "published_at_status": "known",
+      "published_at": "2026-06-26",
+      "accessed_at": "2026-08-11",
+      "period": "2026 expansion plan",
+      "audit_status": "not_applicable",
+      "scope": "announced domestic optical-fibre capacity",
+      "covers": [
+        "capacity plan",
+        "project cost",
+        "phasing",
+        "uncertainty warning"
+      ],
+      "content_sha256": "dee7f6b4cde8310038baeb3828c903c5a06e3f80b4a7c71cd290a787cdaf0d59"
+    },
+    {
+      "id": "S15",
+      "tier": "A",
+      "source_type": "issuer_product_release",
+      "title": "YOFC HollowBand Hollow-Core Fibre Launch",
+      "url": "https://en.yofc.com/view/3543.html",
+      "published_at_status": "known",
+      "published_at": "2026-03-06",
+      "accessed_at": "2026-08-11",
+      "period": "2026 product and pilot progress",
+      "audit_status": "not_applicable",
+      "scope": "issuer technology claims",
+      "covers": [
+        "hollow-core performance",
+        "integrated manufacturing",
+        "pilot projects",
+        "commercialisation boundary"
+      ],
+      "content_sha256": "89602cccf221b530a573909a193cfd89604f113444719e47f384c9c6e15dd434"
+    },
+    {
+      "id": "S16",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "Acquisition of 25% of YOFC Shanghai",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073002049.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-07-30",
+      "accessed_at": "2026-08-11",
+      "period": "2026-07",
+      "audit_status": "not_applicable",
+      "scope": "EUR12m acquisition and consolidation change",
+      "covers": [
+        "transaction",
+        "consolidation scope",
+        "target financials",
+        "industry-cycle risk"
+      ],
+      "content_sha256": "e5439945699208065c7f829ca277cc2c770353de9ca9cc5792cfb951d4e7c22e"
+    },
+    {
+      "id": "S17",
+      "tier": "A",
+      "source_type": "peer_investor_relations",
+      "title": "Lumentum FY2026 Results Date",
+      "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-Reporting-Date-for-Fourth-Quarter-and-Fiscal-Year-2026-Results/default.aspx",
+      "published_at_status": "known",
+      "published_at": "2026-07-29",
+      "accessed_at": "2026-08-11",
+      "period": "2026-08-11 event",
+      "audit_status": "not_applicable",
+      "scope": "adjacent optical-component event",
+      "covers": [
+        "earnings date",
+        "overnight sector signal"
+      ],
+      "content_sha256": "7e76d9c7ad19dc928dfee5a0e4c5eafdf472c5a8c8b214b00d2ba87f987b3ff8"
+    },
+    {
+      "id": "S18",
+      "tier": "A",
+      "source_type": "peer_investor_relations",
+      "title": "Coherent FY2026 Results Date",
+      "url": "https://www.coherent.com/news/press-releases/fy2026-fourth-quarter-fy2026-conference-call-announced",
+      "published_at_status": "known",
+      "published_at": "2026-07-23",
+      "accessed_at": "2026-08-11",
+      "period": "2026-08-12 event",
+      "audit_status": "not_applicable",
+      "scope": "adjacent optical-component event",
+      "covers": [
+        "earnings date",
+        "overnight sector signal"
+      ],
+      "content_sha256": "c21d9abd343c9fabcb268acc51fa3520177f4092ec4eef16a0ea839cffe57002"
+    },
+    {
+      "id": "S19",
+      "tier": "C",
+      "source_type": "defined_market_data_api",
+      "title": "Tencent CIG 06166.HK Daily Prices",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk06166,day,2026-07-24,2026-08-11,40,qfq",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Machine endpoint has no separate publication timestamp.",
+      "accessed_at": "2026-08-11",
+      "period": "2026-07-24 to 2026-08-11",
+      "audit_status": "not_applicable",
+      "scope": "adjacent Hong Kong optical theme tape",
+      "covers": [
+        "sector comparison",
+        "relative rebound"
+      ],
+      "content_sha256": "e1b57029a4298509c245ea54d139b915f459b3d352e555a1e3b553ae1d3bced5"
+    },
+    {
+      "id": "S20",
+      "tier": "C",
+      "source_type": "defined_market_data_api",
+      "title": "Tencent HSCEI Daily Prices",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSCEI,day,2026-07-24,2026-08-11,40,qfq",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Machine endpoint has no separate publication timestamp.",
+      "accessed_at": "2026-08-11",
+      "period": "2026-07-24 to 2026-08-11",
+      "audit_status": "not_applicable",
+      "scope": "broad Hong Kong market benchmark",
+      "covers": [
+        "market comparison",
+        "idiosyncratic attribution"
+      ],
+      "content_sha256": "1ee2f8b971bf3bcaa25ca7a7f46e925d846f2811fc00b8d7da1a9581e4c6af49"
+    }
+  ]
+}

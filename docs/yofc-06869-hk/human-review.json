@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "pending_assignment",
+  "reviewed_at": "not_yet_reviewed",
+  "decision": "pending",
+  "critical_gaps": [
+    "formal H1",
+    "owner earnings",
+    "effective capacity",
+    "AI revenue purity"
+  ],
+  "note": "Machine validation is not human approval."
+}

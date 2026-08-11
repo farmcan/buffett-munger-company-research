@@ -1,0 +1,4 @@
+date,actor,signal,demand_or_supply,evidence_level,boundary
+2026-07-14,YOFC,new fibre/cable demand and profitability improved,demand,issuer_profit_alert,no order or ASP
+2026-07-28,Corning,optical communications and enterprise network growth,demand_and_future_supply,peer_IR,adjacent global peer
+2026-06-26,Dahan,phased preform and 60m core-km fibre plan,supply,exchange_filing,announced is not effective capacity

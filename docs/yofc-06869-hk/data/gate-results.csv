@@ -1,0 +1,10 @@
+gate,result,reason
+identity_and_source_integrity,provisional,"Issuer, A/H classes, shares, price, currency and Stock Connect status are resolved; full ownership graph is incomplete."
+circle_of_competence,provisional,"Demand-to-cash chain is understandable, but product-level ASP, effective capacity and customer mix are not fully disclosed."
+business_economics,mixed,Q1/H1 margins and profit confirm an inflection; cycle duration and segment purity remain unresolved.
+durable_moat,provisional,"Integration, process capability and global footprint are moat candidates, not a cross-cycle proof."
+management_and_capital_allocation,provisional,"Placement, overseas expansion and acquisition are visible; diluted per-share outcomes are not."
+owner_earnings,range_only,"Cash proxy is reproducible, but maintenance capex and required working capital cannot be separated."
+survival_and_balance_sheet,provisional,"Liquidity is material and near-term survival is not the core issue; net-debt, overseas expansion and covenant details still need monitoring."
+intrinsic_value_and_margin_of_safety,inconclusive,"P/E sensitivities are reproducible, but owner-earnings value and safety margin are unavailable."
+decision_and_disconfirming_evidence,inconclusive,"The pack supports monitoring and falsification; formal H1, owner earnings and named human review remain open."
