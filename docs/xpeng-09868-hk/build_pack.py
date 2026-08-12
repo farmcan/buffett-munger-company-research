@@ -18,9 +18,9 @@ REPO = ROOT.parents[1]
 DATA = ROOT / "data"
 DATA.mkdir(parents=True, exist_ok=True)
 
-RESEARCH_DATE = "2026-08-10"
-PRICE_DATE = "2026-08-07"
-PRICE_HKD = 46.64
+RESEARCH_DATE = "2026-08-12"
+PRICE_DATE = "2026-08-11"
+PRICE_HKD = 45.74
 HKD_CNY = 0.86601
 BASIC_SHARES = 1_916_096_781
 RSU_SHARES = 63_496_420
@@ -136,12 +136,13 @@ TWELVE_MONTH_EXPECTED_MIDPOINT = round(
 )
 
 MARKET_STATE = [
-    {"metric": "最新收盘", "value": 46.64, "unit": "HKD", "as_of": "2026-08-07", "comparison": "—"},
-    {"metric": "900日最高收盘", "value": 108.50, "unit": "HKD", "as_of": "2025-11-11", "comparison": "至今-57.0%"},
-    {"metric": "5日收益", "value": -7.83, "unit": "%", "as_of": "2026-08-07", "comparison": "HSTECH +0.60%"},
-    {"metric": "20日收益", "value": -9.00, "unit": "%", "as_of": "2026-08-07", "comparison": "HSTECH +2.89%"},
-    {"metric": "60日收益", "value": -25.50, "unit": "%", "as_of": "2026-08-07", "comparison": "HSTECH -4.19%"},
-    {"metric": "最新成交量/20日均量", "value": 0.81, "unit": "x", "as_of": "2026-08-07", "comparison": "12.29m / 15.18m"},
+    {"metric": "最新收盘", "value": 45.74, "unit": "HKD", "as_of": "2026-08-11", "comparison": "8/7以来-1.93%；HSTECH -0.70%"},
+    {"metric": "900日最高收盘", "value": 108.50, "unit": "HKD", "as_of": "2025-11-11", "comparison": "至今-57.84%"},
+    {"metric": "5日收益", "value": -2.68, "unit": "%", "as_of": "2026-08-11", "comparison": "HSTECH -1.25%"},
+    {"metric": "20日收益", "value": -12.63, "unit": "%", "as_of": "2026-08-11", "comparison": "HSTECH +3.10%"},
+    {"metric": "60日收益", "value": -26.52, "unit": "%", "as_of": "2026-08-11", "comparison": "HSTECH -4.96%"},
+    {"metric": "最新成交量/20日均量", "value": 0.67, "unit": "x", "as_of": "2026-08-11", "comparison": "10.03m / 14.97m"},
+    {"metric": "8/12 10:56盘中", "value": 45.84, "unit": "HKD", "as_of": "2026-08-12", "comparison": "+0.22%；HSTECH -1.09%；相对 +1.31pct；未收盘"},
 ]
 
 CONSENSUS_DIAGNOSTICS = {
@@ -411,12 +412,12 @@ SOURCES = [
         "market_data_snapshot",
         "Tencent adjusted daily price history — 09868.HK",
         "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk09868,day,,,900,qfq",
-        "2026-08-07",
-        "through_2026-08-07",
+        "2026-08-12",
+        "through_2026-08-11_completed_close",
         "not_applicable",
         "listed_security",
         ["price", "turnover", "moving_averages", "event_windows"],
-        "ab922386ade7d045ffe519fcf8943e7be056fc45b3aca899d2c34e8d269c97fc",
+        "5363c352373b375eb0e42ec949c2d9b53dd926ab882a0afae87da549eb027f21",
     ),
     source(
         "I01",
@@ -463,12 +464,12 @@ SOURCES = [
         "market_data_snapshot",
         "Tencent adjusted daily price history — HSTECH",
         "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,,,900,qfq",
-        "2026-08-07",
-        "through_2026-08-07",
+        "2026-08-12",
+        "through_2026-08-11_completed_close",
         "not_applicable",
         "market_benchmark",
         ["benchmark_event_windows", "relative_returns", "risk_appetite_proxy"],
-        "1733581caa4331de8949e48ba776118fcf788714edd31ce89f0e74d2744421d9",
+        "bae6cbe4c09d8092260427c54f17ea41252157a4cc5e7bbdaa65a33c5ee2d966",
     ),
     source(
         "M04",
@@ -482,6 +483,19 @@ SOURCES = [
         "NYSE_XPEV_ADS",
         ["analyst_count", "price_target_range", "consensus_cross_check"],
         "7c1d3dabfb8d8515e3ed711748798bee30aa7833bdd3c374813b8a9424ec4aaa",
+    ),
+    source(
+        "M05",
+        "C",
+        "intraday_market_snapshot",
+        "Tencent intraday quotes — XPeng and HSTECH at 10:56 HKT",
+        "https://qt.gtimg.cn/q=hk09868,hkHSTECH",
+        "2026-08-12",
+        "2026-08-12T10:56:00+08:00_incomplete_session",
+        "not_applicable",
+        "listed_security_and_benchmark",
+        ["intraday_price", "intraday_relative_return", "incomplete_session_boundary"],
+        "b4862442d745589de12cb92536ff429c68dea3bd5ad4cd470d353b6bfc31e4a4",
     ),
 ]
 
@@ -616,7 +630,7 @@ def build_combined() -> dict:
         {
             "artifact_role": "public_company_research",
             "status": "needs_human_review",
-            "generated_at": "2026-08-10T01:52:00+08:00",
+            "generated_at": "2026-08-12T10:56:00+08:00",
             "security": {
                 "security_id": "XHKG:09868",
                 "company_name": "XPeng Inc.",
@@ -842,14 +856,15 @@ def build_combined() -> dict:
                 "rows": MARKET_STATE,
                 "close_peak_date": "2025-11-11",
                 "close_peak_hkd": 108.50,
-                "drawdown_from_close_peak_pct": -57.01,
-                "hstech_same_window_pct": -18.00,
-                "relative_gap_percentage_points": -39.01,
-                "latest_volume_shares": 12_287_267,
-                "adtv20_shares": 15_179_500,
-                "latest_volume_to_adtv20": 0.81,
-                "interpretation": "The decline is much larger than the technology benchmark, while the latest volume is below average. This supports a company-expectation reset and weak sponsorship, not a conclusion that sellers are exhausted.",
-                "source_refs": ["M01", "M03"],
+                "drawdown_from_close_peak_pct": -57.84,
+                "hstech_same_window_pct": -18.57,
+                "relative_gap_percentage_points": -39.28,
+                "latest_volume_shares": 10_033_070,
+                "adtv20_shares": 14_968_243,
+                "latest_volume_to_adtv20": 0.67,
+                "latest_intraday_quote": {"as_of": "2026-08-12T10:56:00+08:00", "price_hkd": 45.84, "return_pct": 0.22, "hstech_return_pct": -1.09, "relative_return_pct_points": 1.31, "status": "incomplete_session"},
+                "interpretation": "The decline is much larger than the technology benchmark, while the latest completed-session volume is below average. The 12 August relative intraday bounce is incomplete and does not change the company-expectation reset or weak-sponsorship conclusion.",
+                "source_refs": ["M01", "M03", "M05"],
             },
             "intrinsic_value_scenarios": {
                 "currency": "HKD",
@@ -890,7 +905,7 @@ def build_combined() -> dict:
                 "current_price_hkd": PRICE_HKD,
                 "price_high_900_sessions_hkd": 110.8,
                 "price_low_900_sessions_hkd": 25.5,
-                "drawdown_from_high_pct": -57.91,
+                "drawdown_from_high_pct": -58.72,
                 "reason": "Negative and volatile earnings make historical PE percentiles invalid; price range is not value.",
                 "look_ahead_control": "No current earnings denominator is backfilled into historical dates.",
                 "source_refs": ["M01"],
@@ -995,7 +1010,7 @@ def svg_scenario_ranges() -> str:
     labels = {"bear": "下行", "base": "基准", "bull": "上行"}
     panels = [("3个月：财报与交付事件窗", THREE_MONTH_SCENARIOS, 58), ("12个月：经营兑现窗", TWELVE_MONTH_SCENARIOS, 246)]
     parts = [
-        '<svg viewBox="0 0 1000 440" role="img" aria-label="小鹏三个月与十二个月价格情景区间，当前价为46.64港元">',
+        f'<svg viewBox="0 0 1000 440" role="img" aria-label="小鹏三个月与十二个月价格情景区间，当前价为{PRICE_HKD:.2f}港元">',
         '<rect x="0" y="0" width="1000" height="440" fill="#fff"/>',
     ]
     current_x = x(PRICE_HKD)
@@ -1038,14 +1053,15 @@ EVIDENCE = [
     {"id": "XP-009", "claim": "control_and_ads", "source": "F01", "page": None, "lines": "2772–2925", "record": "He Xiaopeng 18.8% economics and 69.3% votes; one ADS represents two Class A shares.", "period": "2026-03-31", "unit": "percent / shares", "formula": "directly reported"},
     {"id": "XP-010", "claim": "short_position", "source": "F07", "page": None, "lines": "CSV XPeng row", "record": "Reportable short position 151,441,465 shares and HK$7.663bn.", "period": "2026-07-31", "unit": "shares / HKD", "formula": "SFC aggregate; may include hedges/arbitrage"},
     {"id": "XP-011", "claim": "industry_cycle", "source": "I01", "page": None, "lines": "official release", "record": "2026H1 NEV sales 7.446m, +7.3%; penetration 49.6%.", "period": "2026H1", "unit": "vehicles / percent", "formula": "official industry statistics"},
-    {"id": "XP-012", "claim": "price_state", "source": "M01", "page": None, "lines": "single-line JSON snapshot", "record": "Close HK$46.64; MA20 50.36; MA60 55.13; MA200 69.36; 5D -7.83%; volume/ADTV20 0.81x.", "period": "2026-08-07", "unit": "HKD / percent / ratio", "formula": "adjusted daily series; 12.287m / 15.180m"},
+    {"id": "XP-012", "claim": "price_state", "source": "M01", "page": None, "lines": "single-line JSON snapshot", "record": "Close HK$45.74; MA20 49.85; MA60 54.60; MA200 68.99; 5D -2.68%; volume/ADTV20 0.67x.", "period": "2026-08-11", "unit": "HKD / percent / ratio", "formula": "adjusted daily series; 10.033m / 14.968m"},
     {"id": "XP-013", "claim": "q2_2025_frozen_official_guidance", "source": "F08", "page": 5, "lines": "183–190", "record": "Q2 delivery guidance 102,000–108,000; revenue guidance RMB17.5bn–18.7bn.", "period": "2025Q2 guidance", "unit": "vehicles / RMB billion", "formula": "official pre-result guidance range"},
     {"id": "XP-014", "claim": "q2_2025_actual_quality", "source": "F09", "page": 1, "lines": "31–64", "record": "Revenue RMB18.27bn; vehicle margin 14.3%; net loss RMB0.48bn; cash position RMB47.57bn.", "period": "2025Q2", "unit": "RMB billion / percent", "formula": "directly reported; unaudited"},
     {"id": "XP-015", "claim": "founder_purchase_event", "source": "F10", "page": 1, "lines": "10–23", "record": "He Xiaopeng purchased 3.1m Class A shares at average HK$80.49 during August 20–21, 2025.", "period": "2025-08-20 to 2025-08-21", "unit": "shares / HKD", "formula": "3.1m × HK$80.49 ≈ HK$249.5m"},
     {"id": "XP-016", "claim": "new_p7_launch", "source": "F11", "page": 1, "lines": "9–15", "record": "New XPENG P7 launched August 27, 2025; nationwide delivery commenced August 28.", "period": "2025-08", "unit": "date / vehicles", "formula": "directly reported"},
     {"id": "XP-017", "claim": "july_2026_delivery", "source": "F12", "page": 1, "lines": "10–23", "record": "July deliveries 38,027, +4% YoY; derived -5.2% versus June 40,126.", "period": "2026-07", "unit": "vehicles / percent", "formula": "38,027 / 40,126 - 1 = -5.2% MoM"},
     {"id": "XP-018", "claim": "q2_2026_confirmed_results_date", "source": "F13", "page": 1, "lines": "9–17", "record": "Q2 2026 results and conference call confirmed for August 24, 2026 at 20:00 Beijing/Hong Kong time.", "period": "2026Q2 results date", "unit": "date/time", "formula": "directly reported"},
-    {"id": "XP-019", "claim": "hstech_event_benchmark", "source": "M03", "page": None, "lines": "single-line JSON snapshot; daily array through 2026-08-07", "record": "HSTECH closes used for XPeng event-window relative returns, including 4,829.22 on 2026-07-31 and 4,858.29 on 2026-08-07.", "period": "through 2026-08-07", "unit": "index points", "formula": "benchmark return = end close / pre-event close - 1"},
+    {"id": "XP-019", "claim": "hstech_event_benchmark", "source": "M03", "page": None, "lines": "single-line JSON snapshot; daily array through 2026-08-11", "record": "HSTECH closes used for XPeng event-window relative returns, including 4,858.29 on 2026-08-07 and 4,824.42 on 2026-08-11.", "period": "through 2026-08-11", "unit": "index points", "formula": "benchmark return = end close / pre-event close - 1"},
+    {"id": "XP-021", "claim": "intraday_boundary", "source": "M05", "page": None, "lines": "single-line realtime quote snapshot", "record": "At 2026-08-12 10:56 HKT XPeng was HK$45.84 (+0.22%) while HSTECH was -1.09%; session incomplete.", "period": "2026-08-12T10:56:00+08:00", "unit": "HKD / percent", "formula": "vendor quote versus previous completed close; excluded from formal close and valuation"},
     {"id": "XP-020", "claim": "consensus_cross_check", "source": "M04", "page": None, "lines": "embedded priceTargets object", "record": "25 targets: low US$15.04, average US$22.04, median US$22.05, high US$28.11.", "period": "2026-07-31", "unit": "USD per XPEV ADS", "formula": "Secondary provider citing S&P Global; not Seed fair value"},
 ]
 
@@ -1151,7 +1167,7 @@ def build_report(combined: dict) -> str:
         {"cycle": "行业需求", "state": "结构扩张、非深底", "evidence": "2026H1 NEV销量+7.3%、渗透率49.6%", "implication": "总需求仍增长，但不保证单一品牌受益"},
         {"cycle": "小鹏产品", "state": "Q1低点后Q2修复，7月未再加速", "evidence": "Q2交付+64.8% QoQ、+0.1% YoY；7月38,027辆，+4% YoY、-5.2% MoM", "implication": "Q3同比与车型结构是变量是否由低向高的关键"},
         {"cycle": "盈利/现金", "state": "未确认底部", "evidence": "Q1亏损扩大、现金下降、库存上升", "implication": "交付修复不能替代margin/CFO"},
-        {"cycle": "股价/情绪", "state": "弱于长均线", "evidence": "46.64低于MA20/60/200；60日-25.5%", "implication": "不是价值证明，也说明空头并未完全撤退"},
+        {"cycle": "股价/情绪", "state": "弱于长均线", "evidence": "45.74低于MA20/60/200；20日-12.6%、60日-26.5%", "implication": "不是价值证明，也说明承接和盈利预期仍弱"},
     ]
     short_rows = [
         {"date": "2026-06-26", "shares": 157252587, "pct_total": 8.21, "trend": "baseline"},
@@ -1162,8 +1178,8 @@ def build_report(combined: dict) -> str:
         {"date": "2026-07-31", "shares": 151441465, "pct_total": 7.90, "trend": "-5.2% WoW"},
     ]
     valuation = [
-        {"metric": "基础市值", "value": "HK$89.37bn", "formula": "46.64 × 1.9161bn", "use": "确认已发行A+B"},
-        {"metric": "已知全摊薄情景市值", "value": "HK$93.65bn", "formula": "46.64 × 2.0079bn", "use": "加RSU与DiDi最高或有股"},
+        {"metric": "基础市值", "value": "HK$87.64bn", "formula": "45.74 × 1.9161bn", "use": "确认已发行A+B"},
+        {"metric": "已知全摊薄情景市值", "value": "HK$91.84bn", "formula": "45.74 × 2.0079bn", "use": "加RSU与DiDi最高或有股"},
         {"metric": "TTM收入", "value": "RMB73.94bn", "formula": "FY2025 − 2025Q1 + 2026Q1", "use": "与当前EV对齐"},
         {"metric": "净金融现金", "value": "RMB20.80bn", "formula": "现金类 − 借款 − 融资租赁", "use": "未扣经营租赁；Q1时点"},
         {"metric": "EV/TTM销售", "value": "0.77× / FD 0.82×", "formula": "市值折RMB − 净金融现金", "use": "预期温度计，不是价值"},
@@ -1171,10 +1187,10 @@ def build_report(combined: dict) -> str:
         {"metric": "FY2025 P/FCF上限", "value": "约15.8×", "formula": "市值折RMB / 4.91bn", "use": "受营运资本顺风影响，不能单独使用"},
     ]
     drawdown_drivers = [
-        {"layer": "价格与基准", "evidence": "最高收盘HK$108.50（2025-11-11）至HK$46.64为-57.0%；同期HSTECH约-18.0%", "read": "约39个百分点相对落后，不能只归因港股科技beta"},
+        {"layer": "价格与基准", "evidence": "最高收盘HK$108.50（2025-11-11）至HK$45.74为-57.84%；同期HSTECH约-18.57%", "read": "约39.28个百分点相对落后，不能只归因港股科技beta"},
         {"layer": "盈利预期", "evidence": "2025Q4首次季度盈利后，2026Q1再亏RMB1.78bn", "read": "市场把“连续盈利”重新定价为“仍需验证”"},
         {"layer": "增长预期", "evidence": "2026H1交付-15.8%；7月仅+4% YoY且-5.2% MoM", "read": "2025高增长没有自然延续到2026H1"},
-        {"layer": "拥挤与承接", "evidence": "高点日成交85.84m股；最新12.29m，仅为20日均量0.81倍", "read": "拥挤退潮后买盘承接弱；低量不等于抛压出清"},
+        {"layer": "拥挤与承接", "evidence": "高点日成交85.84m股；8/11成交10.03m，仅为20日均量0.67倍", "read": "拥挤退潮后买盘承接弱；低量不等于抛压出清"},
         {"layer": "生存与融资", "evidence": "Q1净金融现金约RMB20.8bn；月报无可转债栏", "read": "目前更像增长/盈利预期重置，而非已发生融资危机"},
     ]
     opportunity_gates = [
@@ -1297,7 +1313,7 @@ def build_report(combined: dict) -> str:
     <div>Evidence-linked · Growth inflection · Buffett–Munger · 09868.HK / XPEV</div>
     <h1>小鹏汽车：Q2修复，还是新一轮增长拐点？</h1>
     <p>报告不把“交付环比反弹”直接翻译成长期机会。它追问的是：2026Q2的修复能否变成Q3同比增长，并同时保住vehicle margin、现金和充分摊薄后的每股经济收益。</p>
-    <div class="meta"><span class="chip">研究日 2026-08-10</span><span class="chip">最新收盘 HK$46.64 · 2026-08-07</span><span class="chip">provisional</span><span class="chip">needs_human_review</span></div>
+    <div class="meta"><span class="chip">研究日 2026-08-12</span><span class="chip">最新完整收盘 HK$45.74 · 2026-08-11</span><span class="chip">今日盘中 HK$45.84 · 10:56 HKT</span><span class="chip">provisional</span><span class="chip">needs_human_review</span></div>
   </header>
 
   <nav aria-label="报告导航">
@@ -1324,14 +1340,14 @@ def build_report(combined: dict) -> str:
     <h2>Executive Summary｜现在是不是好机会？</h2>
     <div class="two">
       <article class="answer good"><div class="q">未来十年每股价值靠什么</div><div class="verdict">靠产品—毛利—费用杠杆—现金穿透，不靠“智能车”标签。</div><p>小鹏需要把新车型竞争力转成交付与ASP，再把vehicle margin、技术服务收入和规模效应转成充分摊薄后的owner earnings。整车集成、制造、渠道、充电和大众合作比纯软件更难被模型直接取代，但这条复利链仍未被稳定盈利和现金验证。</p></article>
-      <article class="answer"><div class="q">按当前价格，回报和下行是否合算</div><div class="verdict">赔率已改善，胜率仍只是中等；不是“跌多了就便宜”。</div><p>HK$46.64较最高收盘回撤57.0%，但TTM仍亏、2026H1交付同比下降且Q1现金/库存变差。三个月主观上涨胜率约50%，概率加权中点约HK${THREE_MONTH_EXPECTED_MIDPOINT:.0f}；十二个月非下行情景合计65%，概率加权中点约HK${TWELVE_MONTH_EXPECTED_MIDPOINT:.0f}，同时仍有约三成概率遭遇20%以上回撤。</p></article>
+      <article class="answer"><div class="q">按当前价格，回报和下行是否合算</div><div class="verdict">赔率已改善，胜率仍只是中等；最近走弱没有自动创造安全边际。</div><p>HK$45.74较最高收盘回撤57.84%，但TTM仍亏、2026H1交付同比下降且Q1现金/库存变差。三个月主观上涨胜率约50%，概率加权中点约HK${THREE_MONTH_EXPECTED_MIDPOINT:.0f}；十二个月非下行情景合计65%，概率加权中点约HK${TWELVE_MONTH_EXPECTED_MIDPOINT:.0f}，同时仍有约三成概率遭遇20%以上回撤。</p></article>
     </div>
     <div class="three">
-      <div class="card"><div class="metric">−57.0%</div><p>从2025-11-11最高收盘至今；同期HSTECH约−18.0%。</p></div>
+      <div class="card"><div class="metric">−57.84%</div><p>从2025-11-11最高收盘至8/11；同期HSTECH约−18.57%。</p></div>
       <div class="card"><div class="metric">≈50%</div><p>三个月收在当前价之上的主观概率；财报前不是高胜率事件点。</p></div>
       <div class="card"><div class="metric">60%–65%</div><p>十二个月取得正回报的主观概率区间；依赖盈利修复兑现。</p></div>
     </div>
-    <div class="callout green"><strong>直接结论：</strong>它更像“高波动、赔率开始可研究的拐点期权”，还不是“高胜率、低下行的价值机会”。真正改善胜率的不是股价再跌一点，而是8月24日同时出现vehicle margin、亏损、现金和Q3增长四项验证。</div>
+    <div class="callout green"><strong>更新后直接结论：</strong>它仍是“高波动、赔率开始可研究的拐点期权”，不是“高胜率、低下行的价值机会”。8 月 7—11 日小鹏下跌 1.93%、HSTECH 下跌 0.70%，且成交缩到 20 日均量约 0.67 倍：这是承接偏弱，不是新基本面事件。今天 10:56 小鹏 +0.22%、HSTECH −1.09%，相对强约 1.31pct，但仍只是未完成盘中的反弹。真正改善胜率的仍是 8 月 24 日同时出现 vehicle margin、亏损、现金和 Q3 增长四项验证。</div>
   </section>
 
   <section id="risk-reward">
@@ -1339,7 +1355,7 @@ def build_report(combined: dict) -> str:
     <p><strong>三个月：</strong>财报和月度交付决定重估方向，主观上涨胜率约50%，概率加权中点HK${THREE_MONTH_EXPECTED_MIDPOINT:.2f}，相对当前约{(THREE_MONTH_EXPECTED_MIDPOINT / PRICE_HKD - 1) * 100:+.1f}%。<strong>十二个月：</strong>非下行情景合计65%，概率加权中点HK${TWELVE_MONTH_EXPECTED_MIDPOINT:.2f}，相对当前约{(TWELVE_MONTH_EXPECTED_MIDPOINT / PRICE_HKD - 1) * 100:+.1f}%；但bear路径仍可到HK${TWELVE_MONTH_SCENARIOS[0]["price_low_hkd"]:.0f}–{TWELVE_MONTH_SCENARIOS[0]["price_high_hkd"]:.0f}。</p>
     <p class="chart-scroll-note">手机端可左右滑动查看完整区间 →</p>
     <div class="chart scenario-chart">{svg_scenario_ranges()}</div>
-    {table(scenario_rows, [("horizon","窗口"),("case","情景"),("probability","主观概率"),("price_range","价格区间"),("return_range","相对HK$46.64"),("trigger","触发条件"),("basis","估值/事件口径")])}
+    {table(scenario_rows, [("horizon","窗口"),("case","情景"),("probability","主观概率"),("price_range","价格区间"),("return_range","相对HK$45.74"),("trigger","触发条件"),("basis","估值/事件口径")])}
     <h3>十二个月价格区间的可复算输入</h3>
     {table(twelve_month_assumptions, [("case","情景"),("revenue","下一12个月收入"),("ev_sales","EV/Sales"),("net_cash","期末净现金"),("implied_price","充分摊薄每股价格")])}
     <p class="muted">概率不是历史频率、期权隐含概率或券商一致预期，而是基于已披露交付、毛利、亏损、现金、稀释、趋势和事件窗口形成的取整研究先验。十二个月价格公式为：（下一12个月收入 × EV/Sales + 净现金）÷ HKD/CNY ÷ 2.0079bn充分摊薄股数。倍数以当前约0.82× FD EV/TTM销售为中心：bear压缩、base大致维持、bull才小幅扩张；没有使用同行中位数或“回到高点”倒推。这不是目标价，也不构成收益承诺。</p>
@@ -1351,7 +1367,7 @@ def build_report(combined: dict) -> str:
   <section id="drawdown">
     <h2>为什么从高位跌下来：不是单纯跟随指数，而是盈利预期被重置</h2>
     {table(drawdown_drivers, [("layer","层"),("evidence","可核对证据"),("read","正确读法")])}
-    <p>最高收盘日到现在，小鹏约跌57.0%，同期HSTECH约跌18.0%，相对落后约39个百分点。最合理的组合解释是：2025的高交付增长、首次季度盈利和AI/智能驾驶期权被提前定价，随后Q1亏损恢复、H1交付下滑和现金/库存压力让市场撤回这部分预期。它不证明公司永久变差，但说明HK$108.50不是应当自动回归的“正常价格”。</p>
+    <p>最高收盘日到 8 月 11 日，小鹏约跌57.84%，同期HSTECH约跌18.57%，相对落后约39.28个百分点。最合理的组合解释是：2025的高交付增长、首次季度盈利和AI/智能驾驶期权被提前定价，随后Q1亏损恢复、H1交付下滑和现金/库存压力让市场撤回这部分预期。它不证明公司永久变差，但说明HK$108.50不是应当自动回归的“正常价格”。</p>
   </section>
 
   <section id="long-term">
@@ -1426,14 +1442,14 @@ def build_report(combined: dict) -> str:
   <section id="short">
     <h2>空头力量：连续三周回落，但买盘还没有接力</h2>
     {table(short_rows, [("date","申报日"),("shares","SFC空仓股数"),("pct_total","占总经济股本%"),("trend","周变化")])}
-    <p>2026-07-31报告空仓约1.514亿股，相当于总股本7.90%、上市A股约9.66%，约10个最新20日平均成交日；较7月10日高点减少约8.9%。这降低了边际空头供给，但同期股价仍弱、最新成交量只有20日均量0.81倍，更像“空头减仓但多头承接不足”，不是独立买入信号。SFC汇总还可能包含对冲/套利，不能等同净方向空头或借券费。</p>
+    <p>2026-07-31报告空仓约1.514亿股，相当于总股本7.90%、上市A股约9.66%，约10个最新20日平均成交日；较7月10日高点减少约8.9%。这降低了边际空头供给，但同期股价仍弱、8 月 11 日成交量只有20日均量约0.67倍，更像“空头减仓但多头承接不足”，不是独立买入信号。SFC汇总还可能包含对冲/套利，不能等同净方向空头或借券费。</p>
   </section>
 
   <section id="market-pricing">
     <h2>估值与长周期价格位置：低于高点，不等于低估</h2>
     {table(MARKET_STATE, [("metric","市场指标"),("value","值"),("unit","单位"),("as_of","日期"),("comparison","对照")])}
     {table(valuation, [("metric","指标"),("value","值"),("formula","公式"),("use","使用边界")])}
-    <p>股价低于MA20、MA60和MA200，过去60个交易日约-25.5%；相对900日最高收盘回撤57.0%，相对盘中高点回撤57.9%。这说明趋势和情绪偏弱，不说明内在价值。由于TTM仍亏且owner earnings跨越正负，历史PE分位数不可用。</p>
+    <p>8 月 11 日股价低于MA20约49.85、MA60约54.60和MA200约68.99，过去20/60个交易日约-12.63%/-26.52%；相对900日最高收盘回撤57.84%。这说明趋势和情绪偏弱，不说明内在价值。由于TTM仍亏且owner earnings跨越正负，历史PE分位数不可用。</p>
     <h3>外部一致预期只作情绪交叉检查</h3>
     {table([CONSENSUS_DIAGNOSTICS], [("as_of","日期"),("security","证券"),("analyst_count","目标价数量"),("target_low_usd","低值USD"),("target_average_usd","均值USD"),("target_median_usd","中位USD"),("target_high_usd","高值USD"),("use","边界")])}
     <p>二级页面引用S&amp;P Global的25个XPEV ADS目标价，区间US$15.04–28.11、均值US$22.04。跨度接近一倍，说明分析师对扭亏速度分歧很大；它只验证“上行想象仍在”，不能替代本报告的经营门槛和充分摊薄计算。</p>
@@ -1590,7 +1606,7 @@ def main() -> None:
         DATA / "critical-evidence-anchors.json",
         {
             "schema_version": "seed.company-critical-evidence-anchors.v1",
-            "generated_at": "2026-08-10T01:52:00+08:00",
+            "generated_at": "2026-08-12T10:56:00+08:00",
             "company": {"name": "XPeng Inc.", "ticker": "09868", "exchange": "HKEX"},
             "status": "needs_human_review",
             "anchors": evidence_anchors,
@@ -1654,7 +1670,7 @@ def main() -> None:
         "schema_version": "seed.company-research-red-team.v1",
         "company": "XPeng Inc.",
         "security_id": "XHKG:09868",
-        "reviewed_at": "2026-08-10T01:52:00+08:00",
+        "reviewed_at": "2026-08-12T10:56:00+08:00",
         "status": "needs_human_review",
         "reviewer_or_agent": "codex-independent-adversarial-review-agent",
         "counter_thesis": "Q2交付环比修复可能只是车型和基数效应；价格战、成本、研发与营运资本可能继续阻断每股owner earnings。",
@@ -1678,9 +1694,9 @@ def main() -> None:
 
 入口：[`report.html`](report.html)
 
-本包以 2026-08-10 为研究截止日，最新可得港股收盘为 2026-08-07 的 HK$46.64；主证券为港股 09868.HK，NYSE:XPEV 是同一发行人的 ADS 映射，不作为同行重复计价。
+本包以 2026-08-12 为研究截止日，最新完整港股收盘为 2026-08-11 的 HK$45.74；8 月 12 日 10:56 的 HK$45.84 是未完成盘中快照，不进入正式估值。主证券为港股 09868.HK，NYSE:XPEV 是同一发行人的 ADS 映射，不作为同行重复计价。
 
-核心结论：相对最高收盘回撤 57.0% 后，赔率已经改善，但胜率仍只属中等。三个月主观上涨概率约 50%；十二个月正回报概率约 60%—65%，同时仍有约三成概率遭遇 20% 以上回撤。2026Q2 交付只确认环比修复，下一次必须用 Q2 财务、Q3 同比交付、vehicle margin、现金/库存和充分摊薄每股 owner earnings 联合验证。
+核心结论：相对最高收盘回撤 57.84% 后，赔率已经改善，但胜率仍只属中等。8 月 7—11 日继续小幅落后 HSTECH，缩量说明承接偏弱；没有新增公司事件改变基本面判断。三个月主观上涨概率约 50%；十二个月正回报概率约 60%—65%，同时仍有约三成概率遭遇 20% 以上回撤。2026Q2 交付只确认环比修复，下一次必须用 8 月 24 日 Q2 财务、Q3 同比交付、vehicle margin、现金/库存和充分摊薄每股 owner earnings 联合验证。
 
 状态：`provisional / needs_human_review`。公开研究支持，不是投资建议。
 """
@@ -1697,7 +1713,7 @@ def main() -> None:
     parity = validate_report_html(ROOT / "report.html")
     validator_results = {
         "schema_version": "seed.company-research-validator-results.v1",
-        "generated_at": "2026-08-10T01:52:00+08:00",
+        "generated_at": "2026-08-12T10:56:00+08:00",
         "directory": ROOT.name,
         "artifact_status": combined["status"],
         "valid": validation["valid"] and parity["valid"],

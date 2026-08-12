@@ -1,6 +1,6 @@
 {
   "schema_version": "seed.public-company-research.v2",
-  "generated_at": "2026-08-09T17:54:05.145869+00:00",
+  "generated_at": "2026-08-12T03:14:17.412106+00:00",
   "directory": "xpeng-09868-hk",
   "valid": true,
   "publication_ready": true,
@@ -14,11 +14,11 @@
     "gate_count": 9,
     "dimension_count": 25,
     "indicator_count": 50,
-    "source_count": 20
+    "source_count": 21
   },
   "template_parity": {
     "schema_version": "seed.public-report-template-parity.v1",
-    "generated_at": "2026-08-09T17:54:05.142644+00:00",
+    "generated_at": "2026-08-12T03:14:17.408723+00:00",
     "path": "report.html",
     "template_version": "company-research-publication-v1",
     "valid": true,
@@ -26,7 +26,7 @@
       "section": 26,
       "table": 26,
       "svg": 4,
-      "details": 30
+      "details": 31
     },
     "contract_counts": {
       "required_dimensions": 25,
@@ -56,14 +56,14 @@
     "warnings": []
   },
   "counts": {
-    "sources": 20,
-    "evidence_anchors": 20,
-    "critical_evidence_anchors": 20,
-    "html_linked_evidence_anchors": 20,
+    "sources": 21,
+    "evidence_anchors": 21,
+    "critical_evidence_anchors": 21,
+    "html_linked_evidence_anchors": 21,
     "missing_critical_html_anchors": 0,
-    "evidence_locator_rows": 20,
-    "validated_evidence_locator_rows": 20,
-    "html_linked_evidence_locator_rows": 20,
+    "evidence_locator_rows": 21,
+    "validated_evidence_locator_rows": 21,
+    "html_linked_evidence_locator_rows": 21,
     "missing_evidence_locator_html_rows": 0
   },
   "errors": [],

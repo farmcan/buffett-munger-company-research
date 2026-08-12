@@ -1,6 +1,6 @@
 {
   "schema_version": "seed.public-company-research.v2",
-  "generated_at": "2026-08-09T15:32:17.660728+00:00",
+  "generated_at": "2026-08-12T03:14:17.296892+00:00",
   "directory": "meitu-01357-hk",
   "valid": true,
   "publication_ready": true,
@@ -14,17 +14,17 @@
     "gate_count": 9,
     "dimension_count": 25,
     "indicator_count": 50,
-    "source_count": 23
+    "source_count": 28
   },
   "template_parity": {
     "schema_version": "seed.public-report-template-parity.v1",
-    "generated_at": "2026-08-09T15:32:17.655081+00:00",
+    "generated_at": "2026-08-12T03:14:17.290878+00:00",
     "path": "report.html",
     "template_version": "company-research-publication-v1",
     "valid": true,
     "counts": {
       "section": 29,
-      "table": 65,
+      "table": 66,
       "svg": 8,
       "details": 35
     },
@@ -56,7 +56,7 @@
     "warnings": []
   },
   "counts": {
-    "sources": 140,
+    "sources": 145,
     "evidence_anchors": 20,
     "critical_evidence_anchors": 20,
     "html_linked_evidence_anchors": 20,

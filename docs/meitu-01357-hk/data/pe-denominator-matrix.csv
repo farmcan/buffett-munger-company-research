@@ -1,8 +1,8 @@
 price_date,price_hkd,shares_ex_treasury_mn,market_cap_hkd_mn,fx_cny_per_hkd,market_cap_cny_mn,earnings_denominator,earnings_cny_mn,pe_x,interpretation
-2026-08-07,4.75,4523.176780,21485.090,0.8660,18606.088,FY2025_total_statutory_profit_attributable_owners,582.900,31.92,Includes discontinued operations and convertible-bond accounting noise
-2026-08-07,4.75,4523.176780,21485.090,0.8660,18606.088,FY2025_continuing_IFRS_profit_attributable_owners,697.563,26.67,Best audited continuing-operation statutory denominator
-2026-08-07,4.75,4523.176780,21485.090,0.8660,18606.088,FY2025_company_adjusted_profit_attributable_owners,965.347,19.27,Company-defined; adds back share-based compensation and other items
-2026-08-07,4.75,4523.176780,21485.090,0.8660,18606.088,FY2025_adjusted_less_share_based_compensation,846.851,21.97,Research cross-check that treats share-based compensation as an owner cost
-2026-08-07,4.75,4523.176780,21485.090,0.8660,18606.088,normalized_owner_earnings_low,940.877,19.78,Retains employee SBC; removes non-operating items and treats maintenance investment conservatively; not company guidance or consensus
-2026-08-07,4.75,4523.176780,21485.090,0.8660,18606.088,normalized_owner_earnings_base,957.881,19.42,Retains employee SBC; maintenance capex midpoint and no working-capital credit; not company guidance or consensus
-2026-08-07,4.75,4523.176780,21485.090,0.8660,18606.088,normalized_owner_earnings_high,1024.532,18.16,Retains employee SBC; reported cash capex and partial normalized working-capital benefit; not company guidance or consensus
+2026-08-11,4.76,4523.176780,21530.321,0.8660,18645.258,FY2025_total_statutory_profit_attributable_owners,582.900,31.99,Includes discontinued operations and convertible-bond accounting noise
+2026-08-11,4.76,4523.176780,21530.321,0.8660,18645.258,FY2025_continuing_IFRS_profit_attributable_owners,697.563,26.73,Best audited continuing-operation statutory denominator
+2026-08-11,4.76,4523.176780,21530.321,0.8660,18645.258,FY2025_company_adjusted_profit_attributable_owners,965.347,19.31,Company-defined; adds back share-based compensation and other items
+2026-08-11,4.76,4523.176780,21530.321,0.8660,18645.258,FY2025_adjusted_less_share_based_compensation,846.851,22.02,Research cross-check that treats share-based compensation as an owner cost
+2026-08-11,4.76,4523.176780,21530.321,0.8660,18645.258,normalized_owner_earnings_low,940.877,19.82,Retains employee SBC; removes non-operating items and treats maintenance investment conservatively; not company guidance or consensus
+2026-08-11,4.76,4523.176780,21530.321,0.8660,18645.258,normalized_owner_earnings_base,957.881,19.46,Retains employee SBC; maintenance capex midpoint and no working-capital credit; not company guidance or consensus
+2026-08-11,4.76,4523.176780,21530.321,0.8660,18645.258,normalized_owner_earnings_high,1024.532,18.20,Retains employee SBC; reported cash capex and partial normalized working-capital benefit; not company guidance or consensus

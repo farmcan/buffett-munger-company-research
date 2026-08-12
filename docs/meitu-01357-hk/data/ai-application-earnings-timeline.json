@@ -3,7 +3,7 @@
   "version": "1.3",
   "title": "美图与 AI 应用：财报节点、价格共振与下一验证",
   "subtitle": "把美图公司披露、创意软件财报、美国软件价格反应和下一批验证节点放在同一条北京时间轴；跨公司关系只作 thematic_peer / demand_read_through，不视为经济等价。",
-  "as_of": "2026-08-08T20:05:00+08:00",
+  "as_of": "2026-08-12T10:56:00+08:00",
   "timezone": "Asia/Shanghai",
   "date_range": {
     "start": "2026-05-06",
@@ -18,7 +18,7 @@
   "not_investment_advice": true,
   "method": {
     "date_policy": "官方 IR、SEC 或 HKEX 为 confirmed；Nasdaq 财报日历只作 reported_secondary；北京时间显式换算。",
-    "market_policy": "完成事件记录 T0/T+1/T+5；8 月 7 日港股与美股均使用完整收盘，盘中快照只保留为审计轨迹，不把缺失值当作 0。",
+    "market_policy": "完成事件记录 T0/T+1/T+5；最新完整收盘为 8 月 11 日，8 月 12 日盘中只保留为审计轨迹，不把缺失值当作 0。",
     "causality_policy": "时间顺序、主题映射、板块广度和公司自身公告共同决定归因置信度；价格共振不是单因果证明。"
   },
   "events": [
@@ -296,7 +296,7 @@
       "time": "08:30",
       "event_timezone": "America/New_York",
       "beijing_time": "2026-08-10 20:30",
-      "date_status": "confirmed",
+      "date_status": "completed",
       "source_tier": "primary",
       "event_type": "us_workflow_saas_earnings",
       "company": "monday.com",
@@ -305,12 +305,22 @@
       "relationship_to_meitu": "thematic_peer",
       "impact_score": 3,
       "why_it_matters": "验证企业工作流席位、AI 产品与利润率能否共同成立。",
-      "expectation_baseline": "待事件前补一致预期；当前只冻结官方日期和观察问题。",
-      "actual_results": null,
-      "market_reaction": null,
+      "expectation_baseline": "没有冻结的卖方一致预期；与公司指引及同比口径比较，不计算 consensus surprise。",
+      "actual_results": [
+        "Q2 revenue US$364.6m，同比 +22%",
+        "AI products ARR 环比翻倍，贡献 17% 的净新增 ARR",
+        "non-GAAP operating income US$61.1m，margin 17%（上年 15%）",
+        "FY revenue guidance US$1.466bn–1.474bn、+19%–20%，维持不变；non-GAAP operating-income guide 上调"
+      ],
+      "market_reaction": {
+        "t1": "2026-08-10 US$93.13 → US$88.62，-4.84%",
+        "t2": "2026-08-11 US$87.47，第二日 -1.30%，两日累计约 -6.08%",
+        "resonance": "positive_operating_evidence_negative_price_confirmation",
+        "attribution_confidence": "medium"
+      },
       "transmission_paths": ["企业软件需求 → AI 工作流定价 → 软件风险偏好"],
-      "next_check": "ARR/NRR、AI 付费、销售效率、利润率和指引",
-      "source_refs": ["MNDY_Q2_2026_CALENDAR"]
+      "next_check": "后续 T+5、Q3 增速与 FCF 能否重新获得价格确认",
+      "source_refs": ["MNDY_Q2_2026_RESULTS", "US_AI_APP_MARKET_20260811"]
     },
     {
       "event_id": "tme-q2-2026",
@@ -318,7 +328,7 @@
       "time": "19:00",
       "event_timezone": "Asia/Shanghai",
       "beijing_time": "2026-08-11 19:00",
-      "date_status": "confirmed",
+      "date_status": "completed",
       "source_tier": "primary",
       "event_type": "china_consumer_application_earnings",
       "company": "腾讯音乐",
@@ -327,12 +337,22 @@
       "relationship_to_meitu": "thematic_peer",
       "impact_score": 3,
       "why_it_matters": "提供中国消费应用付费、ARPU 与内容成本的相邻读穿。",
-      "expectation_baseline": "待事件前补一致预期；当前只冻结官方日期和观察问题。",
-      "actual_results": null,
-      "market_reaction": null,
+      "expectation_baseline": "没有冻结的卖方一致预期；只比较公司同比结果和完成价格反应。",
+      "actual_results": [
+        "Q2 total revenue RMB8.93bn，同比 +5.8%",
+        "music-related revenue RMB7.61bn，同比 +11.0%；membership revenue +8.1%",
+        "non-IFRS attributable profit RMB2.69bn，同比 +4.4%",
+        "gross margin 44.2%，同比下降 0.2pct；喜马拉雅并表贡献 RMB407m revenue"
+      ],
+      "market_reaction": {
+        "t1": "TME 2026-08-11 US$9.90 → US$8.72，约 -11.92%",
+        "hk_intraday": "01698.HK 2026-08-12 10:56 约 HK$33.58、-12.91%；未收盘",
+        "resonance": "positive_growth_negative_price_confirmation",
+        "attribution_confidence": "medium"
+      },
       "transmission_paths": ["中国消费订阅 → 付费意愿/ARPU → 应用估值"],
-      "next_check": "付费用户、ARPU、内容成本、AI 产品参与度",
-      "source_refs": ["TME_Q2_2026_CALENDAR"]
+      "next_check": "并表后有机增长、毛利与财报后 T+5；不把音乐经济性直接套给美图",
+      "source_refs": ["TME_Q2_2026_RESULTS", "US_AI_APP_MARKET_20260811"]
     },
     {
       "event_id": "tencent-q2-2026",
@@ -517,11 +537,32 @@
       "accessed_at": "2026-08-07"
     },
     {
+      "id": "MNDY_Q2_2026_RESULTS",
+      "title": "monday.com Announces Second Quarter 2026 Financial Results",
+      "tier": "primary",
+      "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-1.htm",
+      "accessed_at": "2026-08-12"
+    },
+    {
       "id": "TME_Q2_2026_CALENDAR",
       "title": "Tencent Music Q2 2026 Results Calendar",
       "tier": "primary",
       "url": "https://ir.tencentmusic.com/2026-07-14-Tencent-Music-Entertainment-Group-to-Report-Second-Quarter-2026-Financial-Results-on-August-11,-2026",
       "accessed_at": "2026-08-07"
+    },
+    {
+      "id": "TME_Q2_2026_RESULTS",
+      "title": "Tencent Music Entertainment Group Second Quarter 2026 Results",
+      "tier": "primary",
+      "url": "https://ir.tencentmusic.com/download/TME+2Q26+EN+ER_0811.pdf",
+      "accessed_at": "2026-08-12"
+    },
+    {
+      "id": "US_AI_APP_MARKET_20260811",
+      "title": "Completed MNDY and TME market closes through 2026-08-11",
+      "tier": "market_data",
+      "url": "https://query2.finance.yahoo.com/v8/finance/spark?symbols=MNDY,TME&range=1mo&interval=1d",
+      "accessed_at": "2026-08-12"
     },
     {
       "id": "TENCENT_Q2_2026_CALENDAR",
@@ -549,12 +590,13 @@
     "missing": [
       "Figma 以公司上一季收入指引为可审计基线；未取得事前冻结的卖方一致预期。",
       "每日卖空成交只能说明当日卖空成交占比，不能识别持有人、借券利用率或实时净空仓；SFC 周度净空仓另行保留。",
-      "Figma/美国软件财报簇的 T+5 尚未形成。",
+      "monday.com 和腾讯音乐已有 T+1/两日价格反应，但完整 T+5 尚未形成；腾讯 Q2 尚未披露。",
       "8 月 25 日至 9 月 3 日的美国 SaaS 簇只由二级日历汇总，需逐家公司 IR 确认。"
     ],
     "conflicts": [
       "Figma 的需求/收入证据偏强，但股价和利润捕获证据偏弱；两者必须同时保留。",
-      "美图与 Figma 是 thematic_peer，不是同一客户结构、同一利润率或同一估值口径。"
+      "美图与 Figma、monday.com、腾讯音乐均不是同一客户结构、同一利润率或同一估值口径；跨公司只作 thematic_peer。",
+      "monday.com 的 AI ARR 与利润率证据偏强但价格偏弱；腾讯音乐增长为正但价格显著偏弱。经营与价格必须同时保留。"
     ],
     "manual_review_required": [
       "每个未来节点发生后追加官方实际、T+1/T+5 和基准超额，不改写事件前基线。",

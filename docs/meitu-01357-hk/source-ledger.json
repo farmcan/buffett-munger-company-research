@@ -5,8 +5,8 @@
     "name_en": "Meitu, Inc.",
     "ticker": "01357.HK"
   },
-  "research_snapshot_at": "2026-08-08",
-  "market_data_cutoff": "2026-08-07",
+  "research_snapshot_at": "2026-08-12T10:56:00+08:00",
+  "market_data_cutoff": "2026-08-11_completed_close_plus_2026-08-12_intraday",
   "policy": {
     "facts": "Audited filings and exchange announcements take precedence.",
     "management_claims": "Speeches, press releases and company rankings are labeled as management claims unless independently corroborated.",
@@ -2144,6 +2144,73 @@
       "snapshot_sha256": null,
       "used_for": ["January 2026 AI sector breadth", "Zhipu and MiniMax listing-led risk appetite"],
       "limitations": "Sector report supports thematic breadth; it is not a direct Meitu operating catalyst."
+    },
+    {
+      "id": "P12",
+      "tier": "C",
+      "kind": "market_data_snapshot",
+      "title": "Tencent Meitu and HSTECH completed daily bars through 11 August and 12 August intraday quotes",
+      "publisher": "Tencent market-data endpoint",
+      "published_at": "2026-08-12",
+      "retrieved_at": "2026-08-12T10:56:00+08:00",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk01357,day,,,1000,qfq",
+      "benchmark_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSTECH,day,,,1000,qfq",
+      "snapshot_sha256": "772dab5fcf7f0f4078876a8a5d1374c3823f39c45e984739ab32a78f36598163",
+      "intraday_snapshot_sha256": "b41e35fcaec0985852eed82ce0d4104cfb83350ab492cad2132bd5bb18f38b22",
+      "used_for": ["11 August completed price anchor", "moving averages and volume context", "12 August incomplete intraday separation"],
+      "limitations": "Mutable secondary market-data endpoint; 12 August quote is incomplete and is excluded from formal valuation and completed event windows."
+    },
+    {
+      "id": "SFC_SHORT_20260731",
+      "tier": "A",
+      "kind": "regulatory_short_position_csv",
+      "title": "Aggregated reportable short positions of specified shares — 31 July 2026",
+      "publisher": "Securities and Futures Commission Hong Kong",
+      "published_at": "2026-08-07",
+      "retrieved_at": "2026-08-12",
+      "url": "https://www.sfc.hk/-/media/EN/pdf/spr/2026/07/31/Short_Position_Reporting_Aggregated_Data_20260731.csv",
+      "snapshot_sha256": "b4a6ccc0aacb65283adb725a4a2d58a22f8df22bf4c3adca83dfc617b0243e2c",
+      "used_for": ["316.6179m reportable short shares", "7.00% of non-treasury issued-share denominator", "week-on-week inventory change"],
+      "limitations": "Reportable net shorts are not all short interest; data are delayed and positions may include hedges."
+    },
+    {
+      "id": "ETNET_SHORT_20260811",
+      "tier": "B",
+      "kind": "daily_short_turnover_snapshot",
+      "title": "Meitu daily short-selling turnover through 11 August 2026",
+      "publisher": "ET Net / HKEX-sourced display",
+      "published_at": "2026-08-11",
+      "retrieved_at": "2026-08-12T10:31:00+08:00",
+      "url": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_shortsell.php?code=01357",
+      "snapshot_sha256": "b2aea5ead30c3d8d11fdf175428b67884ed3daf79f8af190cca3999217e05baf",
+      "used_for": ["24.851% short-selling turnover ratio on 10 August", "21.941% ratio on 11 August"],
+      "limitations": "Daily short-selling turnover is a flow measure, not a change in reportable net short inventory or borrow utilisation."
+    },
+    {
+      "id": "MNDY_Q2_2026_RESULTS",
+      "tier": "A",
+      "kind": "sec_furnished_earnings_release",
+      "title": "monday.com Announces Second Quarter 2026 Financial Results",
+      "publisher": "monday.com / SEC EDGAR",
+      "published_at": "2026-08-10",
+      "retrieved_at": "2026-08-12",
+      "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-1.htm",
+      "snapshot_sha256": "5abce92d01d206a5fe9abcf8878c0d8bb1cfbc4e205fcd3e67ebb68094e6a7b2",
+      "used_for": ["Q2 revenue growth", "AI products ARR and net-new ARR contribution", "operating margin and guidance"],
+      "limitations": "Enterprise workflow thematic peer; non-GAAP metrics and management-defined AI ARR are not directly comparable with Meitu."
+    },
+    {
+      "id": "TME_Q2_2026_RESULTS",
+      "tier": "A",
+      "kind": "issuer_earnings_release",
+      "title": "Tencent Music Entertainment Group Second Quarter 2026 Results",
+      "publisher": "Tencent Music Entertainment",
+      "published_at": "2026-08-11",
+      "retrieved_at": "2026-08-12",
+      "url": "https://ir.tencentmusic.com/download/TME+2Q26+EN+ER_0811.pdf",
+      "snapshot_sha256": "c8b12cd357123ecf8b0369c75e9ba4541399528cd79c9fd334febe2ec6715fc1",
+      "used_for": ["Q2 revenue and profit growth", "music revenue", "gross margin", "Ximalaya consolidation boundary"],
+      "limitations": "Consumer subscription thematic peer; music economics and acquisition consolidation are not directly comparable with creative software."
     }
   ]
 }

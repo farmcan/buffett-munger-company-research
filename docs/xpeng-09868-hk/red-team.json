@@ -2,7 +2,7 @@
   "schema_version": "seed.company-research-red-team.v1",
   "company": "XPeng Inc.",
   "security_id": "XHKG:09868",
-  "reviewed_at": "2026-08-10T01:52:00+08:00",
+  "reviewed_at": "2026-08-12T10:56:00+08:00",
   "status": "needs_human_review",
   "reviewer_or_agent": "codex-independent-adversarial-review-agent",
   "counter_thesis": "Q2交付环比修复可能只是车型和基数效应；价格战、成本、研发与营运资本可能继续阻断每股owner earnings。",
