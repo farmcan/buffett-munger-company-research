@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "reviewer_or_agent": "independent-red-team-pass",
+  "reviewed_at": "2026-08-11T11:30:00+08:00",
+  "counter_thesis": "YOFC may be experiencing a peak-margin fibre cycle amplified by AI narrative and scarcity pricing; announced capacity can normalize ASP before new technology becomes material.",
+  "unresolved_issues": [
+    "formal H1 cash and segment data",
+    "effective capacity and ASP",
+    "AI revenue purity",
+    "maintenance capex",
+    "named human review"
+  ],
+  "tests": [
+    {
+      "test": "Profit-duration",
+      "invalidated_if": "Formal H1 or H2 shows gross-margin normalization without volume/cash offset.",
+      "next_evidence": "2026 interim results",
+      "review_date": "2026-08-31"
+    },
+    {
+      "test": "Capacity-cycle",
+      "invalidated_if": "Announced capacity becomes effective faster than demand and ASP weakens.",
+      "next_evidence": "competitor commissioning and procurement prices",
+      "review_date": "2027-03-31"
+    },
+    {
+      "test": "AI purity",
+      "invalidated_if": "Computing/data-centre exposure remains qualitative while ordinary fibre drives most earnings.",
+      "next_evidence": "segment and customer disclosure",
+      "review_date": "2026-08-31"
+    },
+    {
+      "test": "Cash conversion",
+      "invalidated_if": "Inventory, receivables and capex absorb the profit step-up.",
+      "next_evidence": "H1 cash flow and working capital",
+      "review_date": "2026-08-31"
+    }
+  ]
+}

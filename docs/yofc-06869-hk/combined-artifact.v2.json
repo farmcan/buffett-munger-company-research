@@ -1,0 +1,2261 @@
+{
+  "schema_version": "seed.stock-fundamentals-valuation.v2",
+  "artifact_type": "stock_fundamentals_valuation",
+  "artifact_role": "public_research_support",
+  "status": "needs_human_review",
+  "generated_at": "2026-08-11T11:30:00+08:00",
+  "security": {
+    "security_id": "HKEX:06869",
+    "company_name": "Yangtze Optical Fibre and Cable Joint Stock Limited Company",
+    "company_name_zh": "长飞光纤光缆股份有限公司",
+    "ticker": "06869",
+    "exchange": "HKEX",
+    "listing_type": "H_share_cross_listed_with_SSE_A_share",
+    "currency": "HKD",
+    "fiscal_year_end": "12-31",
+    "reporting_standard": "PRC Accounting Standards for Business Enterprises",
+    "cross_listing": "SSE:601869",
+    "stock_connect": "eligible_via_shanghai_and_shenzhen_southbound_as_checked_2026_08_11"
+  },
+  "as_of": {
+    "research_date": "2026-08-11",
+    "price_date": "2026-08-10",
+    "price": 124.6,
+    "price_source_ref": "S10",
+    "timezone": "Asia/Shanghai",
+    "intraday_note": "2026-08-11 quote is partial; all valuation uses the last complete 2026-08-10 close."
+  },
+  "methodology_refs": [
+    {
+      "id": "berkshire_owner_manual",
+      "title": "Berkshire Hathaway Owner's Manual",
+      "url": "https://www.berkshirehathaway.com/ownman.pdf",
+      "use": "Owner orientation, per-share value and survival boundary."
+    },
+    {
+      "id": "berkshire_1986_letter",
+      "title": "1986 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/1986.html",
+      "use": "Owner-earnings concept and maintenance-capex uncertainty."
+    },
+    {
+      "id": "berkshire_2007_letter",
+      "title": "2007 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/2007ltr.pdf",
+      "use": "Durable moat and capital-intensity tests."
+    },
+    {
+      "id": "berkshire_2018_letter",
+      "title": "2018 Chairman's Letter",
+      "url": "https://www.berkshirehathaway.com/letters/2018ltr.pdf",
+      "use": "Business-value versus market-timing and per-share capital allocation."
+    }
+  ],
+  "source_refs": [
+    {
+      "id": "S1",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC Annual Report 2025",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0327/2026032703338_c.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-03-27",
+      "accessed_at": "2026-08-11",
+      "period": "FY2023-FY2025",
+      "audit_status": "audited",
+      "scope": "consolidated group",
+      "covers": [
+        "five-year bridge",
+        "segments",
+        "cash flow",
+        "capital expenditure",
+        "risk factors"
+      ],
+      "content_sha256": "58888b55e4ada8f8b985e9377e83d5c71c31907c9acf873f10b1b1281c7f8d48"
+    },
+    {
+      "id": "S2",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC Annual Report 2023",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0426/2024042600583.pdf",
+      "published_at_status": "known",
+      "published_at": "2024-04-26",
+      "accessed_at": "2026-08-11",
+      "period": "FY2019-FY2023",
+      "audit_status": "audited",
+      "scope": "consolidated group",
+      "covers": [
+        "five-year summary",
+        "FY2023 statements",
+        "capital expenditure",
+        "industry discussion"
+      ],
+      "content_sha256": "226877c4f197b3886861ded0fb853982515bc168e421bff7ea2b1fc0a52567a1"
+    },
+    {
+      "id": "S3",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC Annual Report 2022",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2023/0427/2023042702169.pdf",
+      "published_at_status": "known",
+      "published_at": "2023-04-27",
+      "accessed_at": "2026-08-11",
+      "period": "FY2018-FY2022",
+      "audit_status": "audited",
+      "scope": "consolidated group",
+      "covers": [
+        "FY2021-FY2022 statements",
+        "cash flow",
+        "capital expenditure",
+        "working-capital cycles"
+      ],
+      "content_sha256": "41af943325eef323b50f1ffc6be8b190524de213cb728de73b033f9db873242c"
+    },
+    {
+      "id": "S4",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC 2026 First Quarterly Report",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0429/2026042904820.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-04-29",
+      "accessed_at": "2026-08-11",
+      "period": "2026Q1",
+      "audit_status": "unaudited",
+      "scope": "consolidated group",
+      "covers": [
+        "quarterly income",
+        "gross margin",
+        "cash flow",
+        "working capital",
+        "balance sheet"
+      ],
+      "content_sha256": "534e15456c3d5d527226f0c2f6afdc6bc9316251d68385770b9562940ff872f2"
+    },
+    {
+      "id": "S5",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC Positive Profit Alert for 2026H1",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0714/2026071401066.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-07-14",
+      "accessed_at": "2026-08-11",
+      "period": "2026H1 preliminary",
+      "audit_status": "unaudited",
+      "scope": "consolidated group",
+      "covers": [
+        "profit range",
+        "adjusted profit range",
+        "management explanation",
+        "risk warning"
+      ],
+      "content_sha256": "8c85cb9d45697998d085d2ec7b73aae97656b02cf3bb33d391540cc5b1582054"
+    },
+    {
+      "id": "S6",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "Completion of Placing of 70 million New H Shares",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1217/2025121700608.pdf",
+      "published_at_status": "known",
+      "published_at": "2025-12-17",
+      "accessed_at": "2026-08-11",
+      "period": "2025-12",
+      "audit_status": "not_applicable",
+      "scope": "H-share capital and proceeds",
+      "covers": [
+        "share issuance",
+        "placing price",
+        "net proceeds",
+        "use of proceeds"
+      ],
+      "content_sha256": "deed795150d8f7b341756f7933e0b348c59c6e6f536f4b00ccebd91f0464309d"
+    },
+    {
+      "id": "S7",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "YOFC July 2026 Monthly Return",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0805/2026080500442.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-08-05",
+      "accessed_at": "2026-08-11",
+      "period": "2026-07",
+      "audit_status": "not_applicable",
+      "scope": "A/H issued and treasury shares",
+      "covers": [
+        "H shares",
+        "A shares",
+        "treasury shares",
+        "public float"
+      ],
+      "content_sha256": "5c5feabeb449a6fe1eb9ab2b0d9195c7a92fd8fbd1b38dde2f55516a77b96f42"
+    },
+    {
+      "id": "S8",
+      "tier": "A",
+      "source_type": "exchange_market_infrastructure",
+      "title": "SSE Southbound Eligible Securities Query",
+      "url": "https://www.sse.com.cn/services/hkexsc/disclo/eligible/",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Point-in-time official query page.",
+      "accessed_at": "2026-08-11",
+      "period": "2026-08-11 query",
+      "audit_status": "not_applicable",
+      "scope": "Shanghai Southbound eligibility",
+      "covers": [
+        "Stock Connect eligibility",
+        "official query boundary"
+      ],
+      "content_sha256": "21bd6fd37c2a53a163919047b7e4c11e476213e59da66d14c466551197d8ba40"
+    },
+    {
+      "id": "S9",
+      "tier": "A",
+      "source_type": "exchange_market_infrastructure",
+      "title": "SZSE Southbound Eligible Securities Query",
+      "url": "https://www.szse.cn/szhk/hkbussiness/underlylist/",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Point-in-time official query page.",
+      "accessed_at": "2026-08-11",
+      "period": "2026-08-11 query",
+      "audit_status": "not_applicable",
+      "scope": "Shenzhen Southbound eligibility",
+      "covers": [
+        "Stock Connect eligibility",
+        "official query boundary"
+      ],
+      "content_sha256": "14217e51de2161ddb0e3ff469a588f816bfd8b72f8580a219da255aa288b3961"
+    },
+    {
+      "id": "S10",
+      "tier": "C",
+      "source_type": "defined_market_data_api",
+      "title": "Tencent 06869.HK Daily Prices",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk06869,day,2026-05-01,2026-08-11,200,qfq",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Machine endpoint has no separate publication timestamp.",
+      "accessed_at": "2026-08-11",
+      "period": "through 2026-08-11 intraday; valuation frozen at 2026-08-10 close",
+      "audit_status": "not_applicable",
+      "scope": "H-share price and volume",
+      "covers": [
+        "price",
+        "price history",
+        "drawdown",
+        "rebound",
+        "volume"
+      ],
+      "content_sha256": "70530b6d714c171b07a047b9dbe37681746e5c805923162e7a9ca612eeb8e362"
+    },
+    {
+      "id": "S11",
+      "tier": "C",
+      "source_type": "defined_market_data_api",
+      "title": "Tencent 601869.SH Daily Prices",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh601869,day,2026-05-01,2026-08-11,200,qfq",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Machine endpoint has no separate publication timestamp.",
+      "accessed_at": "2026-08-11",
+      "period": "through 2026-08-10 close",
+      "audit_status": "not_applicable",
+      "scope": "A-share price and volume",
+      "covers": [
+        "A-share price history",
+        "A/H valuation bridge",
+        "cross-listing momentum"
+      ],
+      "content_sha256": "1c4d80e13d4bb5f86ab71e8007323c05c0960ea1cd147d64a62234d6190e62ec"
+    },
+    {
+      "id": "S12",
+      "tier": "A",
+      "source_type": "official_fx_query",
+      "title": "SAFE RMB Central Parity Query",
+      "url": "https://www.safe.gov.cn/AppStructured/hlw/RMBQuery.do",
+      "published_at_status": "known",
+      "published_at": "2026-08-10",
+      "accessed_at": "2026-08-11",
+      "period": "2026-08-10",
+      "audit_status": "not_applicable",
+      "scope": "100 HKD = CNY86.536 central parity",
+      "covers": [
+        "HKD/CNY",
+        "A/H bridge",
+        "valuation currency conversion"
+      ],
+      "content_sha256": "d01391bd193c9b34f78339eba926af361e08c9c456ad8ec0f672018300e7af18"
+    },
+    {
+      "id": "S13",
+      "tier": "A",
+      "source_type": "industry_primary_source",
+      "title": "Corning Q2 2026 Results and Optical Communications Demand",
+      "url": "https://investor.corning.com/news-and-events/news/news-details/2026/Cornings-Strong-Second-Quarter-2026-Financial-Results1-Demonstrate-Progress-on-Recently-Upgraded-Springboard-Plan/default.aspx",
+      "published_at_status": "known",
+      "published_at": "2026-07-28",
+      "accessed_at": "2026-08-11",
+      "period": "2026Q2",
+      "audit_status": "unaudited",
+      "scope": "Corning optical communications segment; adjacent global demand signal",
+      "covers": [
+        "optical communications growth",
+        "enterprise network demand",
+        "future capacity expansion"
+      ],
+      "content_sha256": "28f354fe180288e8d34234f31960ce0c45ecb2d24d559912eca441e5bf0b1d79"
+    },
+    {
+      "id": "S14",
+      "tier": "A",
+      "source_type": "competitor_exchange_filing",
+      "title": "Dahan Cable Optical Fibre and Preform Capacity Project",
+      "url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-06-26/c0eea83a-c03e-407f-ad8b-926cd6fe760f.PDF",
+      "published_at_status": "known",
+      "published_at": "2026-06-26",
+      "accessed_at": "2026-08-11",
+      "period": "2026 expansion plan",
+      "audit_status": "not_applicable",
+      "scope": "announced domestic optical-fibre capacity",
+      "covers": [
+        "capacity plan",
+        "project cost",
+        "phasing",
+        "uncertainty warning"
+      ],
+      "content_sha256": "dee7f6b4cde8310038baeb3828c903c5a06e3f80b4a7c71cd290a787cdaf0d59"
+    },
+    {
+      "id": "S15",
+      "tier": "A",
+      "source_type": "issuer_product_release",
+      "title": "YOFC HollowBand Hollow-Core Fibre Launch",
+      "url": "https://en.yofc.com/view/3543.html",
+      "published_at_status": "known",
+      "published_at": "2026-03-06",
+      "accessed_at": "2026-08-11",
+      "period": "2026 product and pilot progress",
+      "audit_status": "not_applicable",
+      "scope": "issuer technology claims",
+      "covers": [
+        "hollow-core performance",
+        "integrated manufacturing",
+        "pilot projects",
+        "commercialisation boundary"
+      ],
+      "content_sha256": "89602cccf221b530a573909a193cfd89604f113444719e47f384c9c6e15dd434"
+    },
+    {
+      "id": "S16",
+      "tier": "A",
+      "source_type": "exchange_filing",
+      "title": "Acquisition of 25% of YOFC Shanghai",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073002049.pdf",
+      "published_at_status": "known",
+      "published_at": "2026-07-30",
+      "accessed_at": "2026-08-11",
+      "period": "2026-07",
+      "audit_status": "not_applicable",
+      "scope": "EUR12m acquisition and consolidation change",
+      "covers": [
+        "transaction",
+        "consolidation scope",
+        "target financials",
+        "industry-cycle risk"
+      ],
+      "content_sha256": "e5439945699208065c7f829ca277cc2c770353de9ca9cc5792cfb951d4e7c22e"
+    },
+    {
+      "id": "S17",
+      "tier": "A",
+      "source_type": "peer_investor_relations",
+      "title": "Lumentum FY2026 Results Date",
+      "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-Reporting-Date-for-Fourth-Quarter-and-Fiscal-Year-2026-Results/default.aspx",
+      "published_at_status": "known",
+      "published_at": "2026-07-29",
+      "accessed_at": "2026-08-11",
+      "period": "2026-08-11 event",
+      "audit_status": "not_applicable",
+      "scope": "adjacent optical-component event",
+      "covers": [
+        "earnings date",
+        "overnight sector signal"
+      ],
+      "content_sha256": "7e76d9c7ad19dc928dfee5a0e4c5eafdf472c5a8c8b214b00d2ba87f987b3ff8"
+    },
+    {
+      "id": "S18",
+      "tier": "A",
+      "source_type": "peer_investor_relations",
+      "title": "Coherent FY2026 Results Date",
+      "url": "https://www.coherent.com/news/press-releases/fy2026-fourth-quarter-fy2026-conference-call-announced",
+      "published_at_status": "known",
+      "published_at": "2026-07-23",
+      "accessed_at": "2026-08-11",
+      "period": "2026-08-12 event",
+      "audit_status": "not_applicable",
+      "scope": "adjacent optical-component event",
+      "covers": [
+        "earnings date",
+        "overnight sector signal"
+      ],
+      "content_sha256": "c21d9abd343c9fabcb268acc51fa3520177f4092ec4eef16a0ea839cffe57002"
+    },
+    {
+      "id": "S19",
+      "tier": "C",
+      "source_type": "defined_market_data_api",
+      "title": "Tencent CIG 06166.HK Daily Prices",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hk06166,day,2026-07-24,2026-08-11,40,qfq",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Machine endpoint has no separate publication timestamp.",
+      "accessed_at": "2026-08-11",
+      "period": "2026-07-24 to 2026-08-11",
+      "audit_status": "not_applicable",
+      "scope": "adjacent Hong Kong optical theme tape",
+      "covers": [
+        "sector comparison",
+        "relative rebound"
+      ],
+      "content_sha256": "e1b57029a4298509c245ea54d139b915f459b3d352e555a1e3b553ae1d3bced5"
+    },
+    {
+      "id": "S20",
+      "tier": "C",
+      "source_type": "defined_market_data_api",
+      "title": "Tencent HSCEI Daily Prices",
+      "url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=hkHSCEI,day,2026-07-24,2026-08-11,40,qfq",
+      "published_at_status": "not_disclosed",
+      "published_at": null,
+      "date_reason": "Machine endpoint has no separate publication timestamp.",
+      "accessed_at": "2026-08-11",
+      "period": "2026-07-24 to 2026-08-11",
+      "audit_status": "not_applicable",
+      "scope": "broad Hong Kong market benchmark",
+      "covers": [
+        "market comparison",
+        "idiosyncratic attribution"
+      ],
+      "content_sha256": "1ee2f8b971bf3bcaa25ca7a7f46e925d846f2811fc00b8d7da1a9581e4c6af49"
+    }
+  ],
+  "source_boundaries": {
+    "facts": "Exchange filings, official issuer/peer releases and deterministic calculations.",
+    "reported_claims": "Company profit-alert explanations and product claims remain attributed.",
+    "interpretations": "Industry classification, cycle position and risk/reward are research judgments.",
+    "assumptions": "FY2026 profit cases are sensitivities without probabilities.",
+    "source_gaps": "Formal H1 segment/cash data, effective capacity, ASP and owner earnings are unresolved.",
+    "publication": "No private portfolio, raw media or transcript is included."
+  },
+  "ownership_structure": {
+    "gross_total_shares": 827905108,
+    "h_shares": 421566794,
+    "gross_a_shares": 406338314,
+    "treasury_a_shares": 6000000,
+    "effective_total_shares": 821905108,
+    "source_refs": [
+      "S6",
+      "S7"
+    ],
+    "boundary": "A and H are separately priced share classes; the H line is valued with its own price and currency."
+  },
+  "financial_history": {
+    "currency": "CNY",
+    "scope": "consolidated group",
+    "periods": [
+      {
+        "period": "FY2021",
+        "revenue_bn": 9.5361,
+        "gross_profit_bn": 1.8718,
+        "gross_margin_pct": 19.6,
+        "parent_profit_bn": 0.7085,
+        "cfo_bn": 0.5267,
+        "capex_bn": 1.0736,
+        "cash_after_all_capex_bn": -0.5469,
+        "source_refs": [
+          "S3"
+        ]
+      },
+      {
+        "period": "FY2022",
+        "revenue_bn": 13.8303,
+        "gross_profit_bn": 3.2432,
+        "gross_margin_pct": 23.5,
+        "parent_profit_bn": 1.167,
+        "cfo_bn": 1.5945,
+        "capex_bn": 2.2282,
+        "cash_after_all_capex_bn": -0.6337,
+        "source_refs": [
+          "S3"
+        ]
+      },
+      {
+        "period": "FY2023",
+        "revenue_bn": 13.3528,
+        "gross_profit_bn": 3.272,
+        "gross_margin_pct": 24.5,
+        "parent_profit_bn": 1.2974,
+        "cfo_bn": 1.5144,
+        "capex_bn": 2.2627,
+        "cash_after_all_capex_bn": -0.7483,
+        "source_refs": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "period": "FY2024",
+        "revenue_bn": 12.1974,
+        "gross_profit_bn": 3.3301,
+        "gross_margin_pct": 27.3,
+        "parent_profit_bn": 0.6759,
+        "cfo_bn": 1.7834,
+        "capex_bn": 1.3858,
+        "cash_after_all_capex_bn": 0.3976,
+        "source_refs": [
+          "S1"
+        ]
+      },
+      {
+        "period": "FY2025",
+        "revenue_bn": 14.2521,
+        "gross_profit_bn": 4.3803,
+        "gross_margin_pct": 30.7,
+        "parent_profit_bn": 0.8137,
+        "cfo_bn": 3.6529,
+        "capex_bn": 1.4222,
+        "cash_after_all_capex_bn": 2.2306,
+        "source_refs": [
+          "S1"
+        ]
+      },
+      {
+        "period": "2026Q1",
+        "revenue_bn": 3.6954,
+        "gross_profit_bn": 1.5341,
+        "gross_margin_pct": 41.51,
+        "parent_profit_bn": 0.4951,
+        "cfo_bn": 0.6178,
+        "capex_bn": 0.3359,
+        "cash_after_all_capex_bn": 0.2818,
+        "source_refs": [
+          "S4"
+        ]
+      }
+    ]
+  },
+  "segment_data": {
+    "industry_branch": "optical_fibre_preform_fibre_cable_and_optical_connectivity_manufacturing",
+    "value_chain": "raw silica and equipment -> preform -> fibre -> cable/connectivity -> operators and data centres -> end-network traffic",
+    "fy2025_mix": {
+      "optical_transmission_pct": 58.56,
+      "optical_interconnect_pct": 22.06,
+      "overseas_revenue_pct": 42.34
+    },
+    "limitations": [
+      "No formal 2026H1 segment table yet.",
+      "AI/data-centre revenue purity is not disclosed."
+    ],
+    "source_refs": [
+      "S1",
+      "S5"
+    ]
+  },
+  "research_dimensions": [
+    {
+      "dimension": "security_and_legal_subject",
+      "status": "applicable",
+      "summary": "06869.HK 与 601869.SH 是同一发行人的 H/A 两类股份；分别定价、不可假定自由互换。",
+      "indicators": [
+        {
+          "id": "exact_security_issuer_share_class_and_rights",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S7",
+            "S10",
+            "S11",
+            "S12"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "dated_price_share_count_currency_and_listing_status",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S7",
+            "S10",
+            "S11",
+            "S12"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S7",
+        "S10",
+        "S11",
+        "S12"
+      ],
+      "positive_evidence": [
+        "06869.HK 与 601869.SH 是同一发行人的 H/A 两类股份；分别定价、不可假定自由互换。"
+      ],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "control_and_beneficial_ownership",
+      "status": "unknown",
+      "summary": "主要股东可见，但质押、交叉持股、少数股东价值转移图未完成。",
+      "indicators": [
+        {
+          "id": "controller_voting_pledges_and_cross_holdings",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S4",
+            "S7"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "value_transfers_nci_and_related_party_exposure",
+          "status": "not_disclosed",
+          "summary": "control_and_beneficial_ownership requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "control_and_beneficial_ownership requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S4",
+        "S7"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "control_and_beneficial_ownership requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "business_model",
+      "status": "applicable",
+      "summary": "从预制棒到光纤、光缆和光互联组件一体化；现金取决于需求、ASP、产品组合、良率、回款与资本开支。",
+      "indicators": [
+        {
+          "id": "payer_value_proposition_revenue_and_cash_mechanism",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S4",
+            "S5"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "capital_needs_and_business_failure_variables",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S4",
+            "S5"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S4",
+        "S5"
+      ],
+      "positive_evidence": [
+        "从预制棒到光纤、光缆和光互联组件一体化；现金取决于需求、ASP、产品组合、良率、回款与资本开支。"
+      ],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "revenue_structure",
+      "status": "unknown",
+      "summary": "2025 光传输 58.6%、光互联 22.1%，海外收入约 42.3%；2026H1 细分桥待正式中报。",
+      "indicators": [
+        {
+          "id": "segment_product_and_geography_reconciliation",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S5"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "volume_price_mix_acquisition_and_scope_bridge",
+          "status": "not_disclosed",
+          "summary": "revenue_structure requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "revenue_structure requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S5"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "revenue_structure requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "industry_chain_position",
+      "status": "applicable",
+      "summary": "位于石英/套管/设备之后、运营商与数据中心连接之前；AI 是增量，不是全部收入。",
+      "indicators": [
+        {
+          "id": "upstream_process_customer_payer_and_substitute_map",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S13",
+            "S15"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "profit_pool_and_inventory_credit_technology_risk",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S13",
+            "S15"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S13",
+        "S15"
+      ],
+      "positive_evidence": [
+        "位于石英/套管/设备之后、运营商与数据中心连接之前；AI 是增量，不是全部收入。"
+      ],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "product_and_unit_economics",
+      "status": "unknown",
+      "summary": "毛利率跃迁已观察，但光纤销量、ASP、有效产能、良率和单位贡献未完整披露。",
+      "indicators": [
+        {
+          "id": "price_volume_mix_and_incremental_economics",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S4",
+            "S5"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "industry_denominator_scope_and_comparability",
+          "status": "not_disclosed",
+          "summary": "product_and_unit_economics requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "product_and_unit_economics requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S4",
+        "S5"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "product_and_unit_economics requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "customers",
+      "status": "unknown",
+      "summary": "运营商仍是基础客户，算力数据中心客户扩张由公司归因确认；客户集中、留存与终端库存未完整披露。",
+      "indicators": [
+        {
+          "id": "customer_channel_end_user_and_payer_separation",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S5"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "concentration_retention_receivables_inventory_and_external_evidence",
+          "status": "not_disclosed",
+          "summary": "customers requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "customers requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S5"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "customers requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "suppliers",
+      "status": "unknown",
+      "summary": "一体化降低部分上游依赖，但原料、能源、设备瓶颈、关联采购与成本传导表未完成。",
+      "indicators": [
+        {
+          "id": "critical_inputs_concentration_related_parties_and_substitution",
+          "status": "not_disclosed",
+          "summary": "suppliers requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "suppliers requires additional primary-source evidence."
+          ]
+        },
+        {
+          "id": "terms_prepayments_availability_and_cost_pass_through",
+          "status": "not_disclosed",
+          "summary": "suppliers requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "suppliers requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S1"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "suppliers requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "competition_structure",
+      "status": "applicable",
+      "summary": "普通单模光纤历史上价格周期明显，AI 新型光纤改善需求；国内外扩产会重新分配利润池。",
+      "indicators": [
+        {
+          "id": "entry_exit_capacity_price_and_substitution",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S13",
+            "S14"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "competitor_customer_and_regulator_corroboration",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S13",
+            "S14"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S13",
+        "S14"
+      ],
+      "positive_evidence": [
+        "普通单模光纤历史上价格周期明显，AI 新型光纤改善需求；国内外扩产会重新分配利润池。"
+      ],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "durable_moat",
+      "status": "applicable",
+      "summary": "预制棒工艺、一体化制造、全球基地与空芯光纤是护城河候选；跨周期 ROIC 与份额保持仍未证明。",
+      "indicators": [
+        {
+          "id": "mechanism_economic_result_durability_and_direction",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S15"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "strongest_falsifying_evidence",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S15"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S15"
+      ],
+      "positive_evidence": [
+        "预制棒工艺、一体化制造、全球基地与空芯光纤是护城河候选；跨周期 ROIC 与份额保持仍未证明。"
+      ],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "revenue_quality",
+      "status": "unknown",
+      "summary": "2025 和 2026Q1 经营现金流支持收入真实性，但海外工程、回款和期末确认仍需跟踪。",
+      "indicators": [
+        {
+          "id": "revenue_receivables_contract_assets_returns_and_cash",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S4"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "acquisition_period_end_channel_and_recognition_distortion",
+          "status": "not_disclosed",
+          "summary": "revenue_quality requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "revenue_quality requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S4"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "revenue_quality requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "earnings_quality",
+      "status": "applicable",
+      "summary": "2025 扣非利润仅 RMB5.16 亿；2026Q1 扣非利润 RMB4.61 亿，H1 扣非预告 RMB20—26 亿，质量明显改善但未审计。",
+      "indicators": [
+        {
+          "id": "reported_to_normalized_parent_earnings_bridge",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S4",
+            "S5"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "tax_attribution_scope_and_adjustment_disagreement",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S4",
+            "S5"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S4",
+        "S5"
+      ],
+      "positive_evidence": [
+        "2025 扣非利润仅 RMB5.16 亿；2026Q1 扣非利润 RMB4.61 亿，H1 扣非预告 RMB20—26 亿，质量明显改善但未审计。"
+      ],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "cash_conversion",
+      "status": "unknown",
+      "summary": "2025 CFO RMB36.53 亿，减全部长期资产购置现金后代理值 RMB22.31 亿；不等同 owner earnings。",
+      "indicators": [
+        {
+          "id": "profit_operating_cash_and_distributable_cash_bridge",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "factoring_payment_restricted_cash_and_sector_scope",
+          "status": "not_disclosed",
+          "summary": "cash_conversion requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "cash_conversion requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S1"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "cash_conversion requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "working_capital",
+      "status": "unknown",
+      "summary": "2026Q1 应收较年末微降、存货升 11.1%；是否对应备货还是消化放缓尚不能确认。",
+      "indicators": [
+        {
+          "id": "receivables_inventory_payables_prepayments_and_contract_balances",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S4"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "sustainable_financing_vs_temporary_cash_release",
+          "status": "not_disclosed",
+          "summary": "working_capital requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "working_capital requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S4"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "working_capital requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "capital_intensity",
+      "status": "unknown",
+      "summary": "2025 长期资产购置现金 RMB14.22 亿；维护与增长投入不可拆分，海外扩产会提高未来资本需求。",
+      "indicators": [
+        {
+          "id": "maintenance_vs_growth_investment_range",
+          "status": "not_disclosed",
+          "summary": "capital_intensity requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "capital_intensity requires additional primary-source evidence."
+          ]
+        },
+        {
+          "id": "capex_capacity_utilization_and_competitive_requirements",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S6"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S6"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "capital_intensity requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "returns_on_capital",
+      "status": "unknown",
+      "summary": "2025 加权 ROE 6.92%，2026Q1 单季 3.53%；周期、杠杆、配股与新增产能的增量 ROIC 未拆。",
+      "indicators": [
+        {
+          "id": "multiperiod_roe_roic_and_incremental_returns",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S4",
+            "S6"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "leverage_buyback_cycle_and_accounting_decomposition",
+          "status": "not_disclosed",
+          "summary": "returns_on_capital requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "returns_on_capital requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S4",
+        "S6"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "returns_on_capital requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "balance_sheet_survival",
+      "status": "unknown",
+      "summary": "2026Q1 现金 RMB55.25 亿、债务代理约 RMB87.05 亿；配股改善流动性，但仍不是净现金公司。",
+      "indicators": [
+        {
+          "id": "debt_liquidity_covenants_guarantees_pledges_and_off_balance",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S4",
+            "S6"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "adverse_scenario_financing_need",
+          "status": "not_disclosed",
+          "summary": "balance_sheet_survival requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "balance_sheet_survival requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S4",
+        "S6"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "balance_sheet_survival requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "capital_allocation",
+      "status": "unknown",
+      "summary": "70m H 股配售、海外扩产、员工持股和上海子公司收购均已记录；每股回报尚待结果。",
+      "indicators": [
+        {
+          "id": "reinvestment_ma_dividend_buyback_issuance_debt_and_cash_ledger",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S6",
+            "S16"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "diluted_per_share_outcomes_and_opportunity_cost",
+          "status": "not_disclosed",
+          "summary": "capital_allocation requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "capital_allocation requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S6",
+        "S16"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "capital_allocation requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "management",
+      "status": "unknown",
+      "summary": "对 H1 增长原因的表述可在正式中报验证；长期承诺—结果、薪酬、接班与内部人行动账本未完成。",
+      "indicators": [
+        {
+          "id": "dated_commitments_vs_outcomes",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S5"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "incentives_compensation_succession_insider_actions_and_candor",
+          "status": "not_disclosed",
+          "summary": "management requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "management requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S5"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "management requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "governance_and_related_parties",
+      "status": "unknown",
+      "summary": "A/H 股权与收购事项可见，但关联交易、定价、公平性和监督机制的注释级复核未完成。",
+      "indicators": [
+        {
+          "id": "related_sales_purchases_loans_guarantees_and_asset_transfers",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S16"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "pricing_minority_fairness_oversight_and_dissent",
+          "status": "not_disclosed",
+          "summary": "governance_and_related_parties requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "governance_and_related_parties requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S16"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "governance_and_related_parties requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "accounting_and_audit",
+      "status": "applicable",
+      "summary": "2021—2025 来自审计年报；2026Q1 与 H1 预告明确标为未审计，未混同。",
+      "indicators": [
+        {
+          "id": "audit_kam_standard_policy_and_restatement",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "statement_reproduction_and_conflict_preservation",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "positive_evidence": [
+        "2021—2025 来自审计年报；2026Q1 与 H1 预告明确标为未审计，未混同。"
+      ],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "tax_and_legal",
+      "status": "unknown",
+      "summary": "有效税率波动和海外法域扩大已识别，完整递延税、诉讼、制裁、合规尾部风险表未完成。",
+      "indicators": [
+        {
+          "id": "effective_deferred_and_uncertain_tax",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "litigation_penalties_compliance_and_tail_exposure",
+          "status": "not_disclosed",
+          "summary": "tax_and_legal requires additional primary-source evidence.",
+          "source_refs": [],
+          "source_gaps": [
+            "tax_and_legal requires additional primary-source evidence."
+          ]
+        }
+      ],
+      "source_refs": [
+        "S1"
+      ],
+      "positive_evidence": [],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": [
+        "tax_and_legal requires additional primary-source evidence."
+      ]
+    },
+    {
+      "dimension": "per_share_economics",
+      "status": "applicable",
+      "summary": "总股本 827.905m，H 股 421.567m，A 股 406.338m，其中库存 A 股 6m；配股摊薄已入分母。",
+      "indicators": [
+        {
+          "id": "basic_diluted_and_fully_diluted_share_reconciliation",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S6",
+            "S7"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "per_share_growth_distribution_issuance_and_repurchase_outcomes",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S6",
+            "S7"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S6",
+        "S7"
+      ],
+      "positive_evidence": [
+        "总股本 827.905m，H 股 421.567m，A 股 406.338m，其中库存 A 股 6m；配股摊薄已入分母。"
+      ],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "valuation",
+      "status": "applicable",
+      "summary": "按 H 股 8 月 10 日收盘与官方汇率，FY2025 P/E 约 109.7×、Q1 TTM 约 77.1×；H1 年化敏感性约 14.9—18.6×。",
+      "indicators": [
+        {
+          "id": "currency_consistent_value_range_assumptions_and_dates",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S4",
+            "S5",
+            "S7",
+            "S10",
+            "S12"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "reverse_expectations_sensitivities_and_cross_check",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S1",
+            "S4",
+            "S5",
+            "S7",
+            "S10",
+            "S12"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S1",
+        "S4",
+        "S5",
+        "S7",
+        "S10",
+        "S12"
+      ],
+      "positive_evidence": [
+        "按 H 股 8 月 10 日收盘与官方汇率，FY2025 P/E 约 109.7×、Q1 TTM 约 77.1×；H1 年化敏感性约 14.9—18.6×。"
+      ],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": []
+    },
+    {
+      "dimension": "disconfirming_evidence",
+      "status": "applicable",
+      "summary": "最强反方是利润率处于周期峰值、供给扩张和 AI 收入纯度被高估；验证点已绑定正式中报和扩产兑现。",
+      "indicators": [
+        {
+          "id": "independent_strongest_counter_thesis",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S5",
+            "S13",
+            "S14"
+          ],
+          "source_gaps": []
+        },
+        {
+          "id": "observable_invalidation_next_evidence_and_review_date",
+          "status": "observed",
+          "summary": "Evidence is recorded in the dimension result.",
+          "source_refs": [
+            "S5",
+            "S13",
+            "S14"
+          ],
+          "source_gaps": []
+        }
+      ],
+      "source_refs": [
+        "S5",
+        "S13",
+        "S14"
+      ],
+      "positive_evidence": [
+        "最强反方是利润率处于周期峰值、供给扩张和 AI 收入纯度被高估；验证点已绑定正式中报和扩产兑现。"
+      ],
+      "counter_evidence": [
+        "The strongest contrary reading is preserved in the report and red-team review."
+      ],
+      "source_gaps": []
+    }
+  ],
+  "earnings_quality_bridge": {
+    "status": "partial_but_improving",
+    "reported_parent_profit_fy2025_cny_bn": 0.814,
+    "adjusted_parent_profit_fy2025_cny_bn": 0.516,
+    "q1_2026_parent_profit_cny_bn": 0.495,
+    "q1_2026_adjusted_parent_profit_cny_bn": 0.461,
+    "h1_2026_parent_profit_alert_cny_bn": [
+      2.4,
+      3.0
+    ],
+    "h1_2026_adjusted_profit_alert_cny_bn": [
+      2.0,
+      2.6
+    ],
+    "source_refs": [
+      "S1",
+      "S4",
+      "S5"
+    ]
+  },
+  "owner_earnings": {
+    "currency": "HKD",
+    "status": "unavailable",
+    "range": [],
+    "reason": "Maintenance capex and required working capital cannot be separated from growth investment and cycle cash release.",
+    "limitations": [
+      "CFO minus all capex is only a conservative cash proxy.",
+      "H1 profit alert contains no cash-flow or segment note."
+    ],
+    "source_refs": [
+      "S1",
+      "S4"
+    ]
+  },
+  "capital_allocation": {
+    "status": "large_reinvestment_and_consolidation_cycle",
+    "actions": [
+      "70m H-share placing",
+      "overseas capacity expansion",
+      "2025 employee stock ownership plan",
+      "YOFC Shanghai 25% acquisition"
+    ],
+    "per_share_outcome": "not_yet_observable",
+    "source_refs": [
+      "S1",
+      "S6",
+      "S16"
+    ]
+  },
+  "balance_sheet_quality": {
+    "status": "adequate_liquidity_with_net_debt_proxy",
+    "q1_2026_cash_cny_bn": 5.525,
+    "q1_2026_interest_debt_proxy_cny_bn": 8.705,
+    "q1_2026_net_debt_proxy_cny_bn": 3.18,
+    "limitations": [
+      "Proxy excludes detailed lease and long-term-payable classification.",
+      "Trading financial assets are not treated as cash."
+    ],
+    "source_refs": [
+      "S4"
+    ]
+  },
+  "pe_matrix": [
+    {
+      "label": "reported_fy",
+      "status": "calculated",
+      "price": 124.6,
+      "currency": "HKD",
+      "price_as_of": "2026-08-10",
+      "eps": 1.1358129778448152,
+      "eps_period": "FY2025",
+      "eps_type": "reported_parent_profit_on_current_group_shares_translated_to_HKD",
+      "formula": "HKD124.60 / (CNY0.813737bn / 827.905108m / 0.86536)",
+      "pe": 109.70115893236778,
+      "earnings_yield": 0.0091156739794929,
+      "source_refs": [
+        "S1",
+        "S7",
+        "S10",
+        "S12"
+      ],
+      "confidence": "high",
+      "limitations": [
+        "Current shares are used against historical profit; trailing profit is not owner earnings."
+      ]
+    },
+    {
+      "label": "reported_ttm",
+      "status": "calculated",
+      "price": 124.6,
+      "currency": "HKD",
+      "price_as_of": "2026-08-10",
+      "eps": 1.6151791209937953,
+      "eps_period": "TTM through 2026Q1",
+      "eps_type": "reported_parent_profit_on_current_group_shares_translated_to_HKD",
+      "formula": "HKD124.60 / ((FY2025 + 2026Q1 - 2025Q1) / 827.905108m / 0.86536)",
+      "pe": 77.1431467757802,
+      "earnings_yield": 0.012962914293690172,
+      "source_refs": [
+        "S1",
+        "S4",
+        "S7",
+        "S10",
+        "S12"
+      ],
+      "confidence": "high",
+      "limitations": [
+        "TTM stops at Q1 and therefore excludes the preliminary Q2 step-up."
+      ]
+    },
+    {
+      "label": "normalised_owner_earnings",
+      "status": "unavailable",
+      "price": 124.6,
+      "currency": "HKD",
+      "price_as_of": "2026-08-10",
+      "eps": null,
+      "eps_period": "normalised_midcycle",
+      "eps_type": "owner_earnings_per_share",
+      "pe": null,
+      "source_refs": [
+        "S1",
+        "S4"
+      ],
+      "confidence": "low",
+      "limitations": [
+        "Maintenance capex and required working capital are unresolved."
+      ],
+      "reason": "No decision-grade owner-earnings denominator is available."
+    }
+  ],
+  "forward_scenarios": {
+    "currency": "HKD",
+    "price_anchor": 124.6,
+    "price_as_of": "2026-08-10",
+    "scenarios": [
+      {
+        "scenario": "bear",
+        "status": "calculated_pe",
+        "forecast_eps": 4.745713740818614,
+        "implied_pe_at_current_price": 26.25527092548719,
+        "assumption": "FY2026 parent-profit sensitivity CNY3.4bn; not a forecast.",
+        "source_refs": [
+          "S5",
+          "S7",
+          "S10",
+          "S12"
+        ]
+      },
+      {
+        "scenario": "base",
+        "status": "calculated_pe",
+        "forecast_eps": 6.699831163508631,
+        "implied_pe_at_current_price": 18.597483572220092,
+        "assumption": "FY2026 parent-profit sensitivity CNY4.8bn; not a forecast.",
+        "source_refs": [
+          "S5",
+          "S7",
+          "S10",
+          "S12"
+        ]
+      },
+      {
+        "scenario": "upside",
+        "status": "calculated_pe",
+        "forecast_eps": 8.374788954385789,
+        "implied_pe_at_current_price": 14.877986857776074,
+        "assumption": "FY2026 parent-profit sensitivity CNY6.0bn; not a forecast.",
+        "source_refs": [
+          "S5",
+          "S7",
+          "S10",
+          "S12"
+        ]
+      }
+    ],
+    "boundary": "Sensitivity cases, not forecasts or probabilities."
+  },
+  "intrinsic_value_scenarios": {
+    "currency": "HKD",
+    "scenarios": [
+      {
+        "scenario": "bear",
+        "status": "unavailable",
+        "intrinsic_value_per_share": null,
+        "discount_rate_pct": null,
+        "terminal_growth_pct": null,
+        "reason": "Owner earnings and normalized cycle economics are unavailable."
+      },
+      {
+        "scenario": "base",
+        "status": "unavailable",
+        "intrinsic_value_per_share": null,
+        "discount_rate_pct": null,
+        "terminal_growth_pct": null,
+        "reason": "Owner earnings and normalized cycle economics are unavailable."
+      },
+      {
+        "scenario": "upside",
+        "status": "unavailable",
+        "intrinsic_value_per_share": null,
+        "discount_rate_pct": null,
+        "terminal_growth_pct": null,
+        "reason": "Owner earnings and normalized cycle economics are unavailable."
+      }
+    ],
+    "boundary": "No DCF is manufactured from a preliminary profit alert."
+  },
+  "moat_evidence": {
+    "positive_evidence": [
+      "Preform-to-cable integration and global production footprint.",
+      "Hollow-core product and pilot progress.",
+      "Q1/H1 mix and margin step-up."
+    ],
+    "counter_evidence": [
+      "Ordinary fibre remains cyclical.",
+      "New capacity can compress ASP.",
+      "AI revenue purity and cross-cycle ROIC are not disclosed."
+    ],
+    "missing_tests": [
+      "Effective capacity and yield.",
+      "Order/ASP bridge.",
+      "Cross-cycle incremental ROIC."
+    ],
+    "source_refs": [
+      "S1",
+      "S5",
+      "S14",
+      "S15"
+    ]
+  },
+  "red_team": [
+    {
+      "claim": "H1 earnings may be a peak-spread event rather than durable owner economics.",
+      "test": "Formal segment gross margin, H2 ASP and cash conversion.",
+      "status": "pending",
+      "source_refs": [
+        "S5",
+        "S14"
+      ]
+    },
+    {
+      "claim": "AI data-centre exposure may be smaller than the share-price narrative implies.",
+      "test": "Revenue, customer and product mix disclosed for computing/data-centre business.",
+      "status": "unresolved",
+      "source_refs": [
+        "S1",
+        "S5"
+      ]
+    },
+    {
+      "claim": "Announced industry expansion can restore oversupply.",
+      "test": "Effective capacity, commissioning, utilisation and price response over 12—24 months.",
+      "status": "pending",
+      "source_refs": [
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "claim": "The rebound may be positioning and event anticipation rather than new evidence.",
+      "test": "Formal H1 adds cash, segment and order facts beyond the July alert.",
+      "status": "pending",
+      "source_refs": [
+        "S5",
+        "S10",
+        "S19",
+        "S20"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "gate": "identity_and_source_integrity",
+      "result": "provisional",
+      "reason": "Issuer, A/H classes, shares, price, currency and Stock Connect status are resolved; full ownership graph is incomplete.",
+      "source_refs": [
+        "S7",
+        "S8",
+        "S9",
+        "S10",
+        "S12"
+      ]
+    },
+    {
+      "gate": "circle_of_competence",
+      "result": "provisional",
+      "reason": "Demand-to-cash chain is understandable, but product-level ASP, effective capacity and customer mix are not fully disclosed.",
+      "source_refs": [
+        "S1",
+        "S5"
+      ]
+    },
+    {
+      "gate": "business_economics",
+      "result": "mixed",
+      "reason": "Q1/H1 margins and profit confirm an inflection; cycle duration and segment purity remain unresolved.",
+      "source_refs": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "gate": "durable_moat",
+      "result": "provisional",
+      "reason": "Integration, process capability and global footprint are moat candidates, not a cross-cycle proof.",
+      "source_refs": [
+        "S1",
+        "S15"
+      ]
+    },
+    {
+      "gate": "management_and_capital_allocation",
+      "result": "provisional",
+      "reason": "Placement, overseas expansion and acquisition are visible; diluted per-share outcomes are not.",
+      "source_refs": [
+        "S6",
+        "S16"
+      ]
+    },
+    {
+      "gate": "owner_earnings",
+      "result": "range_only",
+      "reason": "Cash proxy is reproducible, but maintenance capex and required working capital cannot be separated.",
+      "source_refs": [
+        "S1",
+        "S4"
+      ]
+    },
+    {
+      "gate": "survival_and_balance_sheet",
+      "result": "provisional",
+      "reason": "Liquidity is material and near-term survival is not the core issue; net-debt, overseas expansion and covenant details still need monitoring.",
+      "source_refs": [
+        "S4",
+        "S6"
+      ]
+    },
+    {
+      "gate": "intrinsic_value_and_margin_of_safety",
+      "result": "inconclusive",
+      "reason": "P/E sensitivities are reproducible, but owner-earnings value and safety margin are unavailable.",
+      "source_refs": [
+        "S5",
+        "S10",
+        "S12"
+      ]
+    },
+    {
+      "gate": "decision_and_disconfirming_evidence",
+      "result": "inconclusive",
+      "reason": "The pack supports monitoring and falsification; formal H1, owner earnings and named human review remain open.",
+      "source_refs": [
+        "S5",
+        "S14"
+      ]
+    }
+  ],
+  "valuation_evidence": {
+    "status": "partial",
+    "subgates": [
+      {
+        "gate": "denominator_recency_and_pe_matrix",
+        "result": "pass_with_scope",
+        "reason": "FY and Q1 TTM are dated; forward cases are sensitivities."
+      },
+      {
+        "gate": "demand_orders_guidance_and_capacity",
+        "result": "pass_with_scope",
+        "reason": "Issuer and global demand signals exist; YOFC orders and ASP are not quantified."
+      },
+      {
+        "gate": "segment_forecast_reconciliation",
+        "result": "blocked",
+        "reason": "Formal H1 segment data is unavailable."
+      },
+      {
+        "gate": "substitution_and_capacity_cycle",
+        "result": "pass_with_scope",
+        "reason": "Technology and expansion are mapped qualitatively."
+      },
+      {
+        "gate": "peer_and_point_in_time_history",
+        "result": "blocked",
+        "reason": "No three-peer same-scope median or no-look-ahead PE history."
+      },
+      {
+        "gate": "owner_earnings_and_investment_double_count",
+        "result": "blocked",
+        "reason": "Maintenance capex is unresolved."
+      },
+      {
+        "gate": "valuation_conclusion_separation",
+        "result": "pass",
+        "reason": "Facts, sensitivities and judgment are kept separate."
+      }
+    ],
+    "pe_denominator_matrix": {
+      "status": "partial",
+      "reason": "Reported and sensitivity denominators are dated; adjusted and normalized denominators remain open.",
+      "source_refs": [
+        "S1",
+        "S4",
+        "S5",
+        "S10",
+        "S12"
+      ],
+      "rows": [
+        {
+          "label": "reported_fy",
+          "profit_cny_bn": 0.814,
+          "pe": 109.70115893236778
+        },
+        {
+          "label": "reported_ttm",
+          "profit_cny_bn": 1.157172411,
+          "pe": 77.1431467757802
+        },
+        {
+          "label": "adjusted",
+          "profit_cny_bn": null
+        },
+        {
+          "label": "forward_fy1",
+          "profit_cny_bn": 4.8,
+          "pe": 18.597483572220092
+        },
+        {
+          "label": "normalized_midcycle",
+          "profit_cny_bn": null
+        }
+      ],
+      "gaps": [
+        "Formal H1 segment and cash bridge",
+        "Normalized mid-cycle profit"
+      ]
+    },
+    "forward_driver_ledger": {
+      "status": "partial",
+      "reason": "Demand, customer mix, supply and margin drivers are explicit but not all quantified.",
+      "source_refs": [
+        "S5",
+        "S13",
+        "S14"
+      ],
+      "rows": [
+        {
+          "driver": "AI/data-center fibre demand",
+          "direction": "positive"
+        },
+        {
+          "driver": "industry capacity additions",
+          "direction": "negative_lagged"
+        }
+      ],
+      "gaps": [
+        "YOFC order volume and ASP"
+      ]
+    },
+    "segment_forecast_model": {
+      "status": "unavailable",
+      "reason": "H1 segment revenue and margin are not yet published.",
+      "source_refs": [
+        "S5"
+      ],
+      "rows": [],
+      "gaps": [
+        "Formal 2026H1 segment note"
+      ]
+    },
+    "substitution_map": {
+      "status": "partial",
+      "reason": "Solid-core, hollow-core, modules and copper/optical interconnect roles are mapped qualitatively.",
+      "source_refs": [
+        "S1",
+        "S15"
+      ],
+      "rows": [
+        {
+          "technology": "hollow-core",
+          "status": "optionality_not_material_revenue_proof"
+        }
+      ],
+      "gaps": [
+        "Commercial volumes and margins"
+      ]
+    },
+    "industry_capacity_cycle": {
+      "status": "partial",
+      "reason": "Demand confirmation and announced capacity are both present; timing and effective output are uncertain.",
+      "source_refs": [
+        "S13",
+        "S14"
+      ],
+      "rows": [
+        {
+          "side": "demand",
+          "signal": "global AI connectivity growth"
+        },
+        {
+          "side": "supply",
+          "signal": "new preform/fibre projects"
+        }
+      ],
+      "gaps": [
+        "Effective capacity and ramp dates"
+      ]
+    },
+    "peer_comparables": {
+      "status": "partial",
+      "reason": "Hengtong, ZTT, Prysmian and Corning are diversified or cross-market; no decision-grade three-peer median is used.",
+      "source_refs": [
+        "S13"
+      ],
+      "rows": [
+        {
+          "peer": "Corning",
+          "qualification": "adjacent"
+        },
+        {
+          "peer": "Prysmian",
+          "qualification": "adjacent"
+        }
+      ],
+      "gaps": [
+        "Three same-scope, same-date peers"
+      ]
+    },
+    "historical_point_in_time": {
+      "status": "partial",
+      "reason": "Price drawdown is dated, but no no-look-ahead historical P/E series is claimed.",
+      "source_refs": [
+        "S10"
+      ],
+      "rows": [
+        {
+          "date": "2026-06-22",
+          "close": 286.0
+        },
+        {
+          "date": "2026-07-30",
+          "close": 92.0
+        },
+        {
+          "date": "2026-08-10",
+          "close": 124.6
+        }
+      ],
+      "gaps": [
+        "Point-in-time EPS history"
+      ]
+    },
+    "low_pe_diagnosis": {
+      "status": "partial",
+      "reason": "The apparent forward low P/E is caused by annualizing an exceptional H1 profit alert, not by a settled normalized denominator.",
+      "source_refs": [
+        "S5",
+        "S10",
+        "S12"
+      ],
+      "rows": [
+        {
+          "diagnosis": "duration_of_peak_profit_uncertain"
+        }
+      ],
+      "gaps": [
+        "Formal H1 and H2 order/cash evidence"
+      ]
+    },
+    "price_owner_earnings_matrix": {
+      "status": "unavailable",
+      "reason": "Owner earnings is unavailable, so no price-to-owner-earnings claim is made.",
+      "source_refs": [
+        "S1",
+        "S4"
+      ],
+      "rows": [],
+      "gaps": [
+        "Maintenance capex",
+        "Required working capital"
+      ]
+    },
+    "investment_return_ledger": {
+      "status": "partial",
+      "reason": "Overseas expansion, placement and acquisition are recorded; incremental return has not matured.",
+      "source_refs": [
+        "S6",
+        "S16"
+      ],
+      "rows": [
+        {
+          "action": "H-share placing",
+          "amount_hkd_bn": 2.229
+        },
+        {
+          "action": "YOFC Shanghai 25%",
+          "amount_eur_m": 12
+        }
+      ],
+      "gaps": [
+        "Post-deployment cash returns"
+      ]
+    },
+    "price_multiple_attribution": {
+      "status": "partial",
+      "reason": "Move reflects fundamental confirmation, supply fear and crowded AI rerating rather than one event.",
+      "source_refs": [
+        "S5",
+        "S10",
+        "S14",
+        "S19",
+        "S20"
+      ],
+      "rows": [
+        {
+          "factor": "profit alert",
+          "direction": "fundamental_positive"
+        },
+        {
+          "factor": "capacity expansion",
+          "direction": "valuation_negative"
+        }
+      ],
+      "gaps": [
+        "Investor-flow and borrow data"
+      ]
+    }
+  },
+  "historical_valuation": {
+    "status": "insufficient_point_in_time_history",
+    "current_h_fy2025_pe": 109.70115893236778,
+    "current_h_q1_ttm_pe": 77.1431467757802,
+    "reason": "Distance from the price high is not a historical valuation percentile.",
+    "source_refs": [
+      "S10",
+      "S12"
+    ]
+  },
+  "price_move_attribution": {
+    "status": "multi_factor_not_single_cause",
+    "window": "2026-06-22 to 2026-08-10",
+    "high_to_trough_pct": -67.83,
+    "trough_to_price_date_pct": 35.43,
+    "five_session_rebound_pct": 30.2,
+    "interpretation": "Fundamental confirmation, capacity-cycle fear, crowded AI rerating and technical supply zones all matter.",
+    "source_refs": [
+      "S5",
+      "S10",
+      "S14",
+      "S19",
+      "S20"
+    ]
+  },
+  "risk_reward_assessment": {
+    "status": "verification_watchlist",
+    "long_term": "The H price is not cheap on reported FY/TTM earnings; it becomes mid-teens only if the H1 run rate persists.",
+    "near_term": "Rebound reward to the first supply zone is smaller than downside back to the recent base, so short-window asymmetry is not clearly favorable.",
+    "risk_zones_hkd": [
+      92,
+      96
+    ],
+    "first_supply_zone_hkd": [
+      140,
+      154
+    ],
+    "boundary": "Technical reference zones are not intrinsic values or action instructions."
+  },
+  "source_gaps": [
+    "Formal 2026H1 statements and segments.",
+    "Order, volume, ASP and effective-capacity bridge.",
+    "Maintenance capex and required working capital.",
+    "Three same-scope peers and no-look-ahead valuation history.",
+    "Named human review."
+  ],
+  "invalidation_tests": [
+    {
+      "test": "Profit-duration",
+      "invalidated_if": "Formal H1 or H2 shows gross-margin normalization without volume/cash offset.",
+      "next_evidence": "2026 interim results",
+      "review_date": "2026-08-31"
+    },
+    {
+      "test": "Capacity-cycle",
+      "invalidated_if": "Announced capacity becomes effective faster than demand and ASP weakens.",
+      "next_evidence": "competitor commissioning and procurement prices",
+      "review_date": "2027-03-31"
+    },
+    {
+      "test": "AI purity",
+      "invalidated_if": "Computing/data-centre exposure remains qualitative while ordinary fibre drives most earnings.",
+      "next_evidence": "segment and customer disclosure",
+      "review_date": "2026-08-31"
+    },
+    {
+      "test": "Cash conversion",
+      "invalidated_if": "Inventory, receivables and capex absorb the profit step-up.",
+      "next_evidence": "H1 cash flow and working capital",
+      "review_date": "2026-08-31"
+    }
+  ],
+  "review": {
+    "human_review_required": true,
+    "human_review_status": "pending",
+    "production_reviewed": false,
+    "machine_validation": "pending_rebuild",
+    "publication_boundary_reviewed": true,
+    "unresolved_critical_gaps": [
+      "formal H1",
+      "owner earnings",
+      "effective capacity",
+      "named human review"
+    ]
+  },
+  "disclaimer": "Independent public-source research support, not investment advice. It is not affiliated with Berkshire Hathaway, Warren Buffett or Charlie Munger. No buy/sell instruction, target price or return guarantee is provided."
+}

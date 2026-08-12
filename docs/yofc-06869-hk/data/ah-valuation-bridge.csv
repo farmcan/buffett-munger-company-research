@@ -1,0 +1,3 @@
+line,price,currency,cny_equivalent,shares,fungibility,note
+H,124.6,HKD,107.8239,421566794,not_freely_fungible,valuation anchor
+A,343.09,CNY,343.09,406338314,not_freely_fungible,218.2% premium to H CNY-equivalent

@@ -1,0 +1,71 @@
+{
+  "schema_version": "seed.public-company-research.v2",
+  "generated_at": "2026-08-11T02:33:10.321958+00:00",
+  "directory": "yofc-06869-hk",
+  "valid": true,
+  "publication_ready": true,
+  "production_reviewed_ready": false,
+  "artifact_status": "needs_human_review",
+  "core_validation": {
+    "valid": true,
+    "artifact": "combined-artifact.v2.json",
+    "errors": [],
+    "warnings": [],
+    "gate_count": 9,
+    "dimension_count": 25,
+    "indicator_count": 50,
+    "source_count": 20
+  },
+  "template_parity": {
+    "schema_version": "seed.public-report-template-parity.v1",
+    "generated_at": "2026-08-11T02:33:10.321441+00:00",
+    "path": "report.html",
+    "template_version": "company-research-publication-v1",
+    "valid": true,
+    "counts": {
+      "section": 21,
+      "table": 14,
+      "svg": 3,
+      "details": 34
+    },
+    "contract_counts": {
+      "required_dimensions": 25,
+      "visible_dimension_results": 25,
+      "required_indicator_ids": 50,
+      "visible_indicator_ids": 50,
+      "required_gate_ids": 9,
+      "visible_gate_ids": 9
+    },
+    "resolved_reader_jobs": {
+      "status legend": "status-legend",
+      "long-term dossier": "long-term",
+      "near-term event monitor": "event-monitor",
+      "snapshot": "summary",
+      "five-year financials": "financials",
+      "latest quarter/interim": "quarter",
+      "capital/per-share bridge": "capital",
+      "market pricing": "market-pricing",
+      "Buffett–Munger interpretation": "buffett",
+      "methodology": "methodology",
+      "timeline": "timeline",
+      "next validation": "monitor",
+      "evidence/sources": "sources"
+    },
+    "missing_fragment_targets": [],
+    "errors": [],
+    "warnings": []
+  },
+  "counts": {
+    "sources": 20,
+    "evidence_anchors": 14,
+    "critical_evidence_anchors": 14,
+    "html_linked_evidence_anchors": 14,
+    "missing_critical_html_anchors": 0,
+    "evidence_locator_rows": 0,
+    "validated_evidence_locator_rows": 0,
+    "html_linked_evidence_locator_rows": 0,
+    "missing_evidence_locator_html_rows": 0
+  },
+  "errors": [],
+  "warnings": []
+}
